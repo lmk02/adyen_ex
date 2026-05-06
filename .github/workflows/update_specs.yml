@@ -1,0 +1,158 @@
+name: Update Adyen Specs
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Daily at midnight
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  update-specs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone Adyen OpenAPI Specs
+        run: |
+          git clone --depth 100 https://github.com/Adyen/adyen-openapi /tmp/adyen-openapi
+
+      - name: Check for changes in specs
+        id: check_specs
+        run: |
+          OLD_SHA=$(cat priv/ADYEN_OPENAPI_SHA 2>/dev/null || echo "")
+          NEW_SHA=$(git -C /tmp/adyen-openapi rev-parse HEAD)
+
+          if [ "$OLD_SHA" = "$NEW_SHA" ]; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+
+            if [ -n "$OLD_SHA" ]; then
+              git -C /tmp/adyen-openapi fetch --deepen=200 origin 2>/dev/null || true
+              CHANGED_FILES=$(git -C /tmp/adyen-openapi diff --name-only --diff-filter=ACMR "$OLD_SHA" "$NEW_SHA" -- json/ 2>/dev/null \
+                | grep '\.json$' || \
+                git -C /tmp/adyen-openapi ls-files json/ | grep '\.json$' || true)
+            else
+              CHANGED_FILES=$(git -C /tmp/adyen-openapi ls-files json/ | grep '\.json$' || true)
+            fi
+
+            if [ -n "$CHANGED_FILES" ]; then
+              SERVICES=$(echo "$CHANGED_FILES" | sed -E 's|json/||g' | sed -E 's|\.json||g' | sed -E 's|-v|:v|g' | tr '\n' ' ')
+              echo "services=$SERVICES" >> $GITHUB_OUTPUT
+            else
+              echo "services=" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Sync specs into repo
+        if: steps.check_specs.outputs.changes == 'true'
+        run: |
+          rsync -a --delete --exclude='.git' /tmp/adyen-openapi/ priv/specs/
+
+      - name: Set up Elixir
+        if: steps.check_specs.outputs.changes == 'true'
+        uses: erlef/setup-beam@v1
+        with:
+          elixir-version: "1.19"
+          otp-version: "27"
+
+      - name: Cache Mix deps
+        if: steps.check_specs.outputs.changes == 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+
+      - name: Install Dependencies
+        if: steps.check_specs.outputs.changes == 'true'
+        run: mix deps.get
+
+      - name: Regenerate APIs
+        if: steps.check_specs.outputs.changes == 'true' && steps.check_specs.outputs.services != ''
+        run: mix adyen.gen ${{ steps.check_specs.outputs.services }}
+
+      - name: Configure Git
+        if: steps.check_specs.outputs.changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit Spec Updates
+        if: steps.check_specs.outputs.changes == 'true'
+        run: |
+          git -C /tmp/adyen-openapi rev-parse HEAD > priv/ADYEN_OPENAPI_SHA
+          git add priv/specs priv/ADYEN_OPENAPI_SHA generated_lib
+          git commit -m "feat(api): update adyen specs and regenerate code"
+
+      - name: Install git-cliff
+        if: steps.check_specs.outputs.changes == 'true'
+        uses: kenji-miyake/setup-git-cliff@v1
+
+      - name: Bump version
+        if: steps.check_specs.outputs.changes == 'true'
+        id: bump
+        run: |
+          CURRENT_VERSION=$(elixir scripts/bump_version.exs --current)
+
+          git fetch --tags
+          NEXT_VERSION=$(git-cliff --bump --unreleased | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+
+          echo "Current: $CURRENT_VERSION, Next from cliff: $NEXT_VERSION"
+
+          # Only use git-cliff's suggestion if it is strictly higher than current
+          # (guards against no-tags case where cliff outputs 0.1.0 regardless of current)
+          IS_HIGHER=$(printf '%s\n%s' "$CURRENT_VERSION" "$NEXT_VERSION" | sort -V | tail -n 1)
+          if [ -n "$NEXT_VERSION" ] && [ "$IS_HIGHER" = "$NEXT_VERSION" ] && [ "$NEXT_VERSION" != "$CURRENT_VERSION" ]; then
+            FINAL_VERSION=$(elixir scripts/bump_version.exs "$NEXT_VERSION")
+          else
+            FINAL_VERSION=$(elixir scripts/bump_version.exs)
+          fi
+
+          echo "version=$FINAL_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Commit Release
+        if: steps.check_specs.outputs.changes == 'true'
+        run: |
+          if [ -n "$(git status --porcelain mix.exs)" ]; then
+            git add mix.exs
+            git commit -m "chore(release): bump version to ${{ steps.bump.outputs.version }}"
+          else
+            echo "No changes in mix.exs, skipping release commit."
+          fi
+
+      - name: Tag release
+        if: steps.check_specs.outputs.changes == 'true'
+        run: |
+          git tag "v${{ steps.bump.outputs.version }}"
+
+      - name: Create Pull Request
+        if: steps.check_specs.outputs.changes == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "chore: update adyen specs (v${{ steps.bump.outputs.version }})"
+          body: |
+            This is an automated PR to update Adyen OpenAPI specifications.
+
+            Changes:
+            - Synced `priv/specs/` with the latest adyen-openapi commit.
+            - Updated `priv/ADYEN_OPENAPI_SHA` to track the synced commit.
+            - Regenerated changed API clients in `generated_lib/` via `mix adyen.gen`.
+            - Bumped version in `mix.exs` using `git-cliff`.
+          branch: "release/v${{ steps.bump.outputs.version }}"
+          base: "main"
+          delete-branch: true
+
+      - name: Push release tag
+        if: steps.check_specs.outputs.changes == 'true' && steps.cpr.outputs.pull-request-number != ''
+        run: |
+          git push origin "v${{ steps.bump.outputs.version }}"
