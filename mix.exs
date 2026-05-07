@@ -14,17 +14,12 @@ defmodule AdyenEx.MixProject do
     ]
   end
 
-  defp elixirc_paths(env) do
+  defp elixirc_paths(_env) do
     base_paths = ["lib"]
 
-    services_config =
-      if File.exists?("config/config.exs") do
-        "config/config.exs"
-        |> Config.Reader.read!(env: env)
-        |> get_in([:adyen_ex, :services]) || []
-      else
-        []
-      end
+    # Selectively include generated services based on configuration
+    # We check both Application config and ADYEN_SERVICES env var
+    services_config = Application.get_env(:adyen_ex, :services, [])
 
     services_env =
       "ADYEN_SERVICES"
