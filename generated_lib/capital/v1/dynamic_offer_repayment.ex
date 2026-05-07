@@ -1,9 +1,9 @@
-defmodule Adyen.Capital.V1.DynamicOfferRepayment do
+defmodule AdyenEx.Capital.V1.DynamicOfferRepayment do
   @moduledoc """
   Provides struct and type for a DynamicOfferRepayment
   """
 
-  @type t :: %__MODULE__{term: Adyen.Capital.V1.RepaymentTerm.t()}
+  @type t :: %__MODULE__{term: AdyenEx.Capital.V1.RepaymentTerm.t()}
 
   defstruct [:term]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Capital.V1.DynamicOfferRepayment do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [term: {Adyen.Capital.V1.RepaymentTerm, :t}]
+    [term: {AdyenEx.Capital.V1.RepaymentTerm, :t}]
   end
 end

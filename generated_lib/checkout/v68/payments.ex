@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V68.Payments do
+defmodule AdyenEx.Checkout.V68.Payments do
   @moduledoc """
   Provides API endpoints related to payments
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get the result of a payment session
@@ -16,18 +16,18 @@ defmodule Adyen.Checkout.V68.Payments do
 
   """
   @spec get_sessions_session_id(sessionId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V68.SessionResultResponse.t()} | :error
+          {:ok, AdyenEx.Checkout.V68.SessionResultResponse.t()} | :error
   def get_sessions_session_id(sessionId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:sessionResult])
 
     client.request(%{
       args: [sessionId: sessionId],
-      call: {Adyen.Checkout.V68.Payments, :get_sessions_session_id},
+      call: {AdyenEx.Checkout.V68.Payments, :get_sessions_session_id},
       url: "/sessions/#{sessionId}",
       method: :get,
       query: query,
-      response: [{200, {Adyen.Checkout.V68.SessionResultResponse, :t}}],
+      response: [{200, {AdyenEx.Checkout.V68.SessionResultResponse, :t}}],
       opts: opts
     })
   end
@@ -65,19 +65,19 @@ defmodule Adyen.Checkout.V68.Payments do
 
   **Content Types**: `application/json`
   """
-  @spec post_card_details(body :: Adyen.Checkout.V68.CardDetailsRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V68.CardDetailsResponse.t()} | :error
+  @spec post_card_details(body :: AdyenEx.Checkout.V68.CardDetailsRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V68.CardDetailsResponse.t()} | :error
   def post_card_details(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Payments, :post_card_details},
+      call: {AdyenEx.Checkout.V68.Payments, :post_card_details},
       url: "/cardDetails",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.CardDetailsRequest, :t}}],
-      response: [{200, {Adyen.Checkout.V68.CardDetailsResponse, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.CardDetailsRequest, :t}}],
+      response: [{200, {AdyenEx.Checkout.V68.CardDetailsResponse, :t}}],
       opts: opts
     })
   end
@@ -92,28 +92,28 @@ defmodule Adyen.Checkout.V68.Payments do
   **Content Types**: `application/json`
   """
   @spec post_payment_methods(
-          body :: Adyen.Checkout.V68.PaymentMethodsRequest.t(),
+          body :: AdyenEx.Checkout.V68.PaymentMethodsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V68.PaymentMethodsResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V68.PaymentMethodsResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_payment_methods(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Payments, :post_payment_methods},
+      call: {AdyenEx.Checkout.V68.Payments, :post_payment_methods},
       url: "/paymentMethods",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.PaymentMethodsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.PaymentMethodsRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.PaymentMethodsResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.PaymentMethodsResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -131,26 +131,26 @@ defmodule Adyen.Checkout.V68.Payments do
 
   **Content Types**: `application/json`
   """
-  @spec post_payments(body :: Adyen.Checkout.V68.PaymentRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V68.PaymentResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+  @spec post_payments(body :: AdyenEx.Checkout.V68.PaymentRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V68.PaymentResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_payments(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Payments, :post_payments},
+      call: {AdyenEx.Checkout.V68.Payments, :post_payments},
       url: "/payments",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.PaymentRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.PaymentRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.PaymentResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.PaymentResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -167,28 +167,28 @@ defmodule Adyen.Checkout.V68.Payments do
   **Content Types**: `application/json`
   """
   @spec post_payments_details(
-          body :: Adyen.Checkout.V68.PaymentDetailsRequest.t(),
+          body :: AdyenEx.Checkout.V68.PaymentDetailsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V68.PaymentDetailsResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V68.PaymentDetailsResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_payments_details(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Payments, :post_payments_details},
+      call: {AdyenEx.Checkout.V68.Payments, :post_payments_details},
       url: "/payments/details",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.PaymentDetailsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.PaymentDetailsRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.PaymentDetailsResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.PaymentDetailsResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -208,20 +208,20 @@ defmodule Adyen.Checkout.V68.Payments do
   **Content Types**: `application/json`
   """
   @spec post_sessions(
-          body :: Adyen.Checkout.V68.CreateCheckoutSessionRequest.t(),
+          body :: AdyenEx.Checkout.V68.CreateCheckoutSessionRequest.t(),
           opts :: keyword
-        ) :: {:ok, Adyen.Checkout.V68.CreateCheckoutSessionResponse.t()} | :error
+        ) :: {:ok, AdyenEx.Checkout.V68.CreateCheckoutSessionResponse.t()} | :error
   def post_sessions(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Payments, :post_sessions},
+      call: {AdyenEx.Checkout.V68.Payments, :post_sessions},
       url: "/sessions",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.CreateCheckoutSessionRequest, :t}}],
-      response: [{201, {Adyen.Checkout.V68.CreateCheckoutSessionResponse, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.CreateCheckoutSessionRequest, :t}}],
+      response: [{201, {AdyenEx.Checkout.V68.CreateCheckoutSessionResponse, :t}}],
       opts: opts
     })
   end

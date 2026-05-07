@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.PaginatedPaymentInstrumentsResponse do
+defmodule AdyenEx.BalancePlatform.V1.PaginatedPaymentInstrumentsResponse do
   @moduledoc """
   Provides struct and type for a PaginatedPaymentInstrumentsResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V1.PaginatedPaymentInstrumentsResponse do
   @type t :: %__MODULE__{
           hasNext: boolean,
           hasPrevious: boolean,
-          paymentInstruments: [Adyen.BalancePlatform.V1.PaymentInstrument.t()]
+          paymentInstruments: [AdyenEx.BalancePlatform.V1.PaymentInstrument.t()]
         }
 
   defstruct [:hasNext, :hasPrevious, :paymentInstruments]
@@ -19,7 +19,7 @@ defmodule Adyen.BalancePlatform.V1.PaginatedPaymentInstrumentsResponse do
     [
       hasNext: :boolean,
       hasPrevious: :boolean,
-      paymentInstruments: [{Adyen.BalancePlatform.V1.PaymentInstrument, :t}]
+      paymentInstruments: [{AdyenEx.BalancePlatform.V1.PaymentInstrument, :t}]
     ]
   end
 end

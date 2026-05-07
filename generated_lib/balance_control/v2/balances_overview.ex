@@ -1,9 +1,9 @@
-defmodule Adyen.BalanceControl.V2.BalancesOverview do
+defmodule AdyenEx.BalanceControl.V2.BalancesOverview do
   @moduledoc """
   Provides API endpoints related to balances overview
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   View the available balances for all merchant accounts under your company.
@@ -29,8 +29,8 @@ defmodule Adyen.BalanceControl.V2.BalancesOverview do
           companyAccountCode :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalanceControl.V2.CompanyBalances.t()}
-          | {:error, Adyen.BalanceControl.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalanceControl.V2.CompanyBalances.t()}
+          | {:error, AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity.t()}
   def get_balance_overview_companies_company_account_code_balances(companyAccountCode, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:currency])
@@ -38,16 +38,16 @@ defmodule Adyen.BalanceControl.V2.BalancesOverview do
     client.request(%{
       args: [companyAccountCode: companyAccountCode],
       call:
-        {Adyen.BalanceControl.V2.BalancesOverview,
+        {AdyenEx.BalanceControl.V2.BalancesOverview,
          :get_balance_overview_companies_company_account_code_balances},
       url: "/balanceOverview/companies/#{companyAccountCode}/balances",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalanceControl.V2.CompanyBalances, :t}},
-        {401, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalanceControl.V2.CompanyBalances, :t}},
+        {401, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -77,8 +77,8 @@ defmodule Adyen.BalanceControl.V2.BalancesOverview do
           merchantAccountCode :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalanceControl.V2.MerchantBalance.t()}
-          | {:error, Adyen.BalanceControl.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalanceControl.V2.MerchantBalance.t()}
+          | {:error, AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity.t()}
   def get_balance_overview_merchants_merchant_account_code_balances(
         merchantAccountCode,
         opts \\ []
@@ -89,16 +89,16 @@ defmodule Adyen.BalanceControl.V2.BalancesOverview do
     client.request(%{
       args: [merchantAccountCode: merchantAccountCode],
       call:
-        {Adyen.BalanceControl.V2.BalancesOverview,
+        {AdyenEx.BalanceControl.V2.BalancesOverview,
          :get_balance_overview_merchants_merchant_account_code_balances},
       url: "/balanceOverview/merchants/#{merchantAccountCode}/balances",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalanceControl.V2.MerchantBalance, :t}},
-        {401, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalanceControl.V2.MerchantBalance, :t}},
+        {401, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

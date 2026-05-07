@@ -1,10 +1,10 @@
-defmodule Adyen.Fund.V3.TransactionListForAccountWrapper do
+defmodule AdyenEx.Fund.V3.TransactionListForAccountWrapper do
   @moduledoc """
   Provides struct and type for a TransactionListForAccountWrapper
   """
 
   @type t :: %__MODULE__{
-          TransactionListForAccount: Adyen.Fund.V3.TransactionListForAccount.t() | nil
+          TransactionListForAccount: AdyenEx.Fund.V3.TransactionListForAccount.t() | nil
         }
 
   defstruct [:TransactionListForAccount]
@@ -14,6 +14,6 @@ defmodule Adyen.Fund.V3.TransactionListForAccountWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [TransactionListForAccount: {Adyen.Fund.V3.TransactionListForAccount, :t}]
+    [TransactionListForAccount: {AdyenEx.Fund.V3.TransactionListForAccount, :t}]
   end
 end

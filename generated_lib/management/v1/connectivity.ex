@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.Connectivity do
+defmodule AdyenEx.Management.V1.Connectivity do
   @moduledoc """
   Provides struct and type for a Connectivity
   """
 
   @type t :: %__MODULE__{
           simcardStatus: String.t() | nil,
-          terminalIPAddressURL: Adyen.Management.V1.EventUrl.t() | nil
+          terminalIPAddressURL: AdyenEx.Management.V1.EventUrl.t() | nil
         }
 
   defstruct [:simcardStatus, :terminalIPAddressURL]
@@ -17,7 +17,7 @@ defmodule Adyen.Management.V1.Connectivity do
   def __fields__(:t) do
     [
       simcardStatus: {:enum, ["ACTIVATED", "INVENTORY"]},
-      terminalIPAddressURL: {Adyen.Management.V1.EventUrl, :t}
+      terminalIPAddressURL: {AdyenEx.Management.V1.EventUrl, :t}
     ]
   end
 end

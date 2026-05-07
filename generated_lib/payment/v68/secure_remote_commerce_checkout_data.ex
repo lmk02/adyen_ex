@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.SecureRemoteCommerceCheckoutData do
+defmodule AdyenEx.Payment.V68.SecureRemoteCommerceCheckoutData do
   @moduledoc """
   Provides struct and type for a SecureRemoteCommerceCheckoutData
   """

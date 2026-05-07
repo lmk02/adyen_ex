@@ -1,9 +1,9 @@
-defmodule Adyen.OpenBanking.V1.AccountParty do
+defmodule AdyenEx.OpenBanking.V1.AccountParty do
   @moduledoc """
   Provides struct and type for a AccountParty
   """
 
-  @type t :: %__MODULE__{identity: Adyen.OpenBanking.V1.Identity.t(), role: String.t()}
+  @type t :: %__MODULE__{identity: AdyenEx.OpenBanking.V1.Identity.t(), role: String.t()}
 
   defstruct [:identity, :role]
 
@@ -13,7 +13,7 @@ defmodule Adyen.OpenBanking.V1.AccountParty do
 
   def __fields__(:t) do
     [
-      identity: {Adyen.OpenBanking.V1.Identity, :t},
+      identity: {AdyenEx.OpenBanking.V1.Identity, :t},
       role: {:enum, ["HOLDER", "AUTHORIZED_USER", "OTHER", "UNKNOWN"]}
     ]
   end

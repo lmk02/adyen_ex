@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.TerminalsTerminalLevel do
+defmodule AdyenEx.Management.V3.TerminalsTerminalLevel do
   @moduledoc """
   Provides API endpoints related to terminals terminal level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of terminals
@@ -27,8 +27,8 @@ defmodule Adyen.Management.V3.TerminalsTerminalLevel do
 
   """
   @spec get_terminals(opts :: keyword) ::
-          {:ok, Adyen.Management.V3.ListTerminalsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ListTerminalsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_terminals(opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -46,17 +46,17 @@ defmodule Adyen.Management.V3.TerminalsTerminalLevel do
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V3.TerminalsTerminalLevel, :get_terminals},
+      call: {AdyenEx.Management.V3.TerminalsTerminalLevel, :get_terminals},
       url: "/terminals",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.ListTerminalsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ListTerminalsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -78,26 +78,26 @@ defmodule Adyen.Management.V3.TerminalsTerminalLevel do
   """
   @spec post_terminals_terminal_id_reassign(
           terminalId :: String.t(),
-          body :: Adyen.Management.V3.TerminalReassignmentRequest.t(),
+          body :: AdyenEx.Management.V3.TerminalReassignmentRequest.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Management.V3.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_terminals_terminal_id_reassign(terminalId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [terminalId: terminalId, body: body],
-      call: {Adyen.Management.V3.TerminalsTerminalLevel, :post_terminals_terminal_id_reassign},
+      call: {AdyenEx.Management.V3.TerminalsTerminalLevel, :post_terminals_terminal_id_reassign},
       url: "/terminals/#{terminalId}/reassign",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.TerminalReassignmentRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.TerminalReassignmentRequest, :t}}],
       response: [
         {200, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

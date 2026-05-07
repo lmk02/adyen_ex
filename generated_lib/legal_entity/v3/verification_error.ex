@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.VerificationError do
+defmodule AdyenEx.LegalEntity.V3.VerificationError do
   @moduledoc """
   Provides struct and type for a VerificationError
   """
@@ -7,8 +7,8 @@ defmodule Adyen.LegalEntity.V3.VerificationError do
           capabilities: [String.t()] | nil,
           code: String.t() | nil,
           message: String.t() | nil,
-          remediatingActions: [Adyen.LegalEntity.V3.RemediatingAction.t()] | nil,
-          subErrors: [Adyen.LegalEntity.V3.VerificationErrorRecursive.t()] | nil,
+          remediatingActions: [AdyenEx.LegalEntity.V3.RemediatingAction.t()] | nil,
+          subErrors: [AdyenEx.LegalEntity.V3.VerificationErrorRecursive.t()] | nil,
           type: String.t() | nil
         }
 
@@ -81,8 +81,8 @@ defmodule Adyen.LegalEntity.V3.VerificationError do
       ],
       code: :string,
       message: :string,
-      remediatingActions: [{Adyen.LegalEntity.V3.RemediatingAction, :t}],
-      subErrors: [{Adyen.LegalEntity.V3.VerificationErrorRecursive, :t}],
+      remediatingActions: [{AdyenEx.LegalEntity.V3.RemediatingAction, :t}],
+      subErrors: [{AdyenEx.LegalEntity.V3.VerificationErrorRecursive, :t}],
       type: {:enum, ["dataMissing", "dataReview", "invalidInput", "pendingStatus", "rejected"]}
     ]
   end

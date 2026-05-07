@@ -1,18 +1,18 @@
-defmodule Adyen.Capital.V1.Disbursement do
+defmodule AdyenEx.Capital.V1.Disbursement do
   @moduledoc """
   Provides struct and type for a Disbursement
   """
 
   @type t :: %__MODULE__{
           accountHolderId: String.t(),
-          amount: Adyen.Capital.V1.Amount.t(),
+          amount: AdyenEx.Capital.V1.Amount.t(),
           balanceAccountId: String.t(),
-          balances: Adyen.Capital.V1.Balance.t(),
-          fee: Adyen.Capital.V1.Fee.t(),
-          fundsCollections: [Adyen.Capital.V1.FundsCollection.t()] | nil,
+          balances: AdyenEx.Capital.V1.Balance.t(),
+          fee: AdyenEx.Capital.V1.Fee.t(),
+          fundsCollections: [AdyenEx.Capital.V1.FundsCollection.t()] | nil,
           grantId: String.t(),
           id: String.t(),
-          repayment: Adyen.Capital.V1.DisbursementRepayment.t()
+          repayment: AdyenEx.Capital.V1.DisbursementRepayment.t()
         }
 
   defstruct [
@@ -34,14 +34,14 @@ defmodule Adyen.Capital.V1.Disbursement do
   def __fields__(:t) do
     [
       accountHolderId: :string,
-      amount: {Adyen.Capital.V1.Amount, :t},
+      amount: {AdyenEx.Capital.V1.Amount, :t},
       balanceAccountId: :string,
-      balances: {Adyen.Capital.V1.Balance, :t},
-      fee: {Adyen.Capital.V1.Fee, :t},
-      fundsCollections: [{Adyen.Capital.V1.FundsCollection, :t}],
+      balances: {AdyenEx.Capital.V1.Balance, :t},
+      fee: {AdyenEx.Capital.V1.Fee, :t},
+      fundsCollections: [{AdyenEx.Capital.V1.FundsCollection, :t}],
       grantId: :string,
       id: :string,
-      repayment: {Adyen.Capital.V1.DisbursementRepayment, :t}
+      repayment: {AdyenEx.Capital.V1.DisbursementRepayment, :t}
     ]
   end
 end

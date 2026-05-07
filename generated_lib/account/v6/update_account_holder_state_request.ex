@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.UpdateAccountHolderStateRequest do
+defmodule AdyenEx.Account.V6.UpdateAccountHolderStateRequest do
   @moduledoc """
   Provides struct and type for a UpdateAccountHolderStateRequest
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V3.ViasPersonalData do
+defmodule AdyenEx.Account.V3.ViasPersonalData do
   @moduledoc """
   Provides struct and type for a ViasPersonalData
   """
 
   @type t :: %__MODULE__{
           dateOfBirth: String.t() | nil,
-          documentData: [Adyen.Account.V3.PersonalDocumentDataWrapper.t()] | nil,
+          documentData: [AdyenEx.Account.V3.PersonalDocumentDataWrapper.t()] | nil,
           idNumber: String.t() | nil,
           nationality: String.t() | nil
         }
@@ -19,7 +19,7 @@ defmodule Adyen.Account.V3.ViasPersonalData do
   def __fields__(:t) do
     [
       dateOfBirth: :string,
-      documentData: [{Adyen.Account.V3.PersonalDocumentDataWrapper, :t}],
+      documentData: [{AdyenEx.Account.V3.PersonalDocumentDataWrapper, :t}],
       idNumber: :string,
       nationality: :string
     ]

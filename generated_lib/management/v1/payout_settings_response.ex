@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.PayoutSettingsResponse do
+defmodule AdyenEx.Management.V1.PayoutSettingsResponse do
   @moduledoc """
   Provides struct and type for a PayoutSettingsResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V1.PayoutSettings.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V1.PayoutSettings.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.PayoutSettingsResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V1.PayoutSettings, :t}]]
+    [data: [{AdyenEx.Management.V1.PayoutSettings, :t}]]
   end
 end

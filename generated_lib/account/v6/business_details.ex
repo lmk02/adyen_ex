@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.BusinessDetails do
+defmodule AdyenEx.Account.V6.BusinessDetails do
   @moduledoc """
   Provides struct and type for a BusinessDetails
   """
@@ -6,10 +6,10 @@ defmodule Adyen.Account.V6.BusinessDetails do
   @type t :: %__MODULE__{
           doingBusinessAs: String.t() | nil,
           legalBusinessName: String.t() | nil,
-          listedUltimateParentCompany: [Adyen.Account.V6.UltimateParentCompany.t()] | nil,
+          listedUltimateParentCompany: [AdyenEx.Account.V6.UltimateParentCompany.t()] | nil,
           registrationNumber: String.t() | nil,
-          shareholders: [Adyen.Account.V6.ShareholderContact.t()] | nil,
-          signatories: [Adyen.Account.V6.SignatoryContact.t()] | nil,
+          shareholders: [AdyenEx.Account.V6.ShareholderContact.t()] | nil,
+          signatories: [AdyenEx.Account.V6.SignatoryContact.t()] | nil,
           stockExchange: String.t() | nil,
           stockNumber: String.t() | nil,
           stockTicker: String.t() | nil,
@@ -37,10 +37,10 @@ defmodule Adyen.Account.V6.BusinessDetails do
     [
       doingBusinessAs: :string,
       legalBusinessName: :string,
-      listedUltimateParentCompany: [{Adyen.Account.V6.UltimateParentCompany, :t}],
+      listedUltimateParentCompany: [{AdyenEx.Account.V6.UltimateParentCompany, :t}],
       registrationNumber: :string,
-      shareholders: [{Adyen.Account.V6.ShareholderContact, :t}],
-      signatories: [{Adyen.Account.V6.SignatoryContact, :t}],
+      shareholders: [{AdyenEx.Account.V6.ShareholderContact, :t}],
+      signatories: [{AdyenEx.Account.V6.SignatoryContact, :t}],
       stockExchange: :string,
       stockNumber: :string,
       stockTicker: :string,

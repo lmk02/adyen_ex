@@ -1,17 +1,17 @@
-defmodule Adyen.BalancePlatform.V1.LegalEntity do
+defmodule AdyenEx.BalancePlatform.V1.LegalEntity do
   @moduledoc """
   Provides struct and type for a LegalEntity
   """
 
   @type t :: %__MODULE__{
           capabilities: map | nil,
-          documents: [Adyen.BalancePlatform.V1.EntityReference.t()] | nil,
-          entityAssociations: [Adyen.BalancePlatform.V1.LegalEntityAssociation.t()] | nil,
+          documents: [AdyenEx.BalancePlatform.V1.EntityReference.t()] | nil,
+          entityAssociations: [AdyenEx.BalancePlatform.V1.LegalEntityAssociation.t()] | nil,
           id: String.t(),
-          individual: Adyen.BalancePlatform.V1.Individual.t() | nil,
-          organization: Adyen.BalancePlatform.V1.Organization.t() | nil,
+          individual: AdyenEx.BalancePlatform.V1.Individual.t() | nil,
+          organization: AdyenEx.BalancePlatform.V1.Organization.t() | nil,
           reference: String.t() | nil,
-          transferInstruments: [Adyen.BalancePlatform.V1.TransferInstrumentReference.t()] | nil,
+          transferInstruments: [AdyenEx.BalancePlatform.V1.TransferInstrumentReference.t()] | nil,
           type: String.t() | nil
         }
 
@@ -34,13 +34,13 @@ defmodule Adyen.BalancePlatform.V1.LegalEntity do
   def __fields__(:t) do
     [
       capabilities: :map,
-      documents: [{Adyen.BalancePlatform.V1.EntityReference, :t}],
-      entityAssociations: [{Adyen.BalancePlatform.V1.LegalEntityAssociation, :t}],
+      documents: [{AdyenEx.BalancePlatform.V1.EntityReference, :t}],
+      entityAssociations: [{AdyenEx.BalancePlatform.V1.LegalEntityAssociation, :t}],
       id: :string,
-      individual: {Adyen.BalancePlatform.V1.Individual, :t},
-      organization: {Adyen.BalancePlatform.V1.Organization, :t},
+      individual: {AdyenEx.BalancePlatform.V1.Individual, :t},
+      organization: {AdyenEx.BalancePlatform.V1.Organization, :t},
       reference: :string,
-      transferInstruments: [{Adyen.BalancePlatform.V1.TransferInstrumentReference, :t}],
+      transferInstruments: [{AdyenEx.BalancePlatform.V1.TransferInstrumentReference, :t}],
       type: {:enum, ["individual", "organization"]}
     ]
   end

@@ -1,15 +1,15 @@
-defmodule Adyen.Transaction.V1.DisputeRequest do
+defmodule AdyenEx.Transaction.V1.DisputeRequest do
   @moduledoc """
   Provides struct and type for a DisputeRequest
   """
 
   @type t :: %__MODULE__{
           description: String.t() | nil,
-          disputedAmount: Adyen.Transaction.V1.Amount.t() | nil,
-          duplicateInfo: Adyen.Transaction.V1.DuplicateInfo.t() | nil,
-          fraudInfo: Adyen.Transaction.V1.FraudInfo.t() | nil,
-          notDeliveredInfo: Adyen.Transaction.V1.NotDeliveredInfo.t() | nil,
-          otherInfo: Adyen.Transaction.V1.OtherInfo.t() | nil,
+          disputedAmount: AdyenEx.Transaction.V1.Amount.t() | nil,
+          duplicateInfo: AdyenEx.Transaction.V1.DuplicateInfo.t() | nil,
+          fraudInfo: AdyenEx.Transaction.V1.FraudInfo.t() | nil,
+          notDeliveredInfo: AdyenEx.Transaction.V1.NotDeliveredInfo.t() | nil,
+          otherInfo: AdyenEx.Transaction.V1.OtherInfo.t() | nil,
           status: String.t() | nil,
           transactionId: String.t(),
           type: String.t()
@@ -34,11 +34,11 @@ defmodule Adyen.Transaction.V1.DisputeRequest do
   def __fields__(:t) do
     [
       description: :string,
-      disputedAmount: {Adyen.Transaction.V1.Amount, :t},
-      duplicateInfo: {Adyen.Transaction.V1.DuplicateInfo, :t},
-      fraudInfo: {Adyen.Transaction.V1.FraudInfo, :t},
-      notDeliveredInfo: {Adyen.Transaction.V1.NotDeliveredInfo, :t},
-      otherInfo: {Adyen.Transaction.V1.OtherInfo, :t},
+      disputedAmount: {AdyenEx.Transaction.V1.Amount, :t},
+      duplicateInfo: {AdyenEx.Transaction.V1.DuplicateInfo, :t},
+      fraudInfo: {AdyenEx.Transaction.V1.FraudInfo, :t},
+      notDeliveredInfo: {AdyenEx.Transaction.V1.NotDeliveredInfo, :t},
+      otherInfo: {AdyenEx.Transaction.V1.OtherInfo, :t},
       status: {:enum, ["draft", "submitted", "chargeback", "secondPresentment", "won", "closed"]},
       transactionId: :string,
       type: :string

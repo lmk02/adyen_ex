@@ -1,11 +1,11 @@
-defmodule Adyen.Fund.V5.Transaction do
+defmodule AdyenEx.Fund.V5.Transaction do
   @moduledoc """
   Provides struct and type for a Transaction
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Fund.V5.Amount.t() | nil,
-          bankAccountDetail: Adyen.Fund.V5.BankAccountDetail.t() | nil,
+          amount: AdyenEx.Fund.V5.Amount.t() | nil,
+          bankAccountDetail: AdyenEx.Fund.V5.BankAccountDetail.t() | nil,
           captureMerchantReference: String.t() | nil,
           capturePspReference: String.t() | nil,
           creationDate: DateTime.t() | nil,
@@ -47,8 +47,8 @@ defmodule Adyen.Fund.V5.Transaction do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Fund.V5.Amount, :t},
-      bankAccountDetail: {Adyen.Fund.V5.BankAccountDetail, :t},
+      amount: {AdyenEx.Fund.V5.Amount, :t},
+      bankAccountDetail: {AdyenEx.Fund.V5.BankAccountDetail, :t},
       captureMerchantReference: :string,
       capturePspReference: :string,
       creationDate: {:string, "date-time"},

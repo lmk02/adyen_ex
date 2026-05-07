@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.CheckTaxElectronicDeliveryConsentResponse do
+defmodule AdyenEx.LegalEntity.V4.CheckTaxElectronicDeliveryConsentResponse do
   @moduledoc """
   Provides struct and type for a CheckTaxElectronicDeliveryConsentResponse
   """

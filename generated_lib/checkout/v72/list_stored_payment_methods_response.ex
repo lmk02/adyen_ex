@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.ListStoredPaymentMethodsResponse do
+defmodule AdyenEx.Checkout.V72.ListStoredPaymentMethodsResponse do
   @moduledoc """
   Provides struct and type for a ListStoredPaymentMethodsResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Checkout.V72.ListStoredPaymentMethodsResponse do
   @type t :: %__MODULE__{
           merchantAccount: String.t() | nil,
           shopperReference: String.t() | nil,
-          storedPaymentMethods: [Adyen.Checkout.V72.StoredPaymentMethodResource.t()] | nil
+          storedPaymentMethods: [AdyenEx.Checkout.V72.StoredPaymentMethodResource.t()] | nil
         }
 
   defstruct [:merchantAccount, :shopperReference, :storedPaymentMethods]
@@ -19,7 +19,7 @@ defmodule Adyen.Checkout.V72.ListStoredPaymentMethodsResponse do
     [
       merchantAccount: :string,
       shopperReference: :string,
-      storedPaymentMethods: [{Adyen.Checkout.V72.StoredPaymentMethodResource, :t}]
+      storedPaymentMethods: [{AdyenEx.Checkout.V72.StoredPaymentMethodResource, :t}]
     ]
   end
 end

@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.Links do
+defmodule AdyenEx.Management.V1.Links do
   @moduledoc """
   Provides struct and type for a Links
   """
 
-  @type t :: %__MODULE__{self: Adyen.Management.V1.LinksElement.t()}
+  @type t :: %__MODULE__{self: AdyenEx.Management.V1.LinksElement.t()}
 
   defstruct [:self]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.Links do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [self: {Adyen.Management.V1.LinksElement, :t}]
+    [self: {AdyenEx.Management.V1.LinksElement, :t}]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AssociationFinaliseRequest do
+defmodule AdyenEx.BalancePlatform.V2.AssociationFinaliseRequest do
   @moduledoc """
   Provides struct and type for a AssociationFinaliseRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.AssociationFinaliseRequest do
   @type t :: %__MODULE__{
           ids: [String.t()],
           strongCustomerAuthentication:
-            Adyen.BalancePlatform.V2.AssociationDelegatedAuthenticationData.t(),
+            AdyenEx.BalancePlatform.V2.AssociationDelegatedAuthenticationData.t(),
           type: String.t()
         }
 
@@ -20,7 +20,7 @@ defmodule Adyen.BalancePlatform.V2.AssociationFinaliseRequest do
     [
       ids: [:string],
       strongCustomerAuthentication:
-        {Adyen.BalancePlatform.V2.AssociationDelegatedAuthenticationData, :t},
+        {AdyenEx.BalancePlatform.V2.AssociationDelegatedAuthenticationData, :t},
       type: {:const, "PaymentInstrument"}
     ]
   end

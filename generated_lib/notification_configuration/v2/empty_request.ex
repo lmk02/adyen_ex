@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V2.EmptyRequest do
+defmodule AdyenEx.NotificationConfiguration.V2.EmptyRequest do
   @moduledoc """
   Provides struct and type for a EmptyRequest
   """

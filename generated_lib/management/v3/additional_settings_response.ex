@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.AdditionalSettingsResponse do
+defmodule AdyenEx.Management.V3.AdditionalSettingsResponse do
   @moduledoc """
   Provides struct and type for a AdditionalSettingsResponse
   """

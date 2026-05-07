@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.DiagnosisResponse do
+defmodule AdyenEx.TerminalAPI.V1.DiagnosisResponse do
   @moduledoc """
   Provides struct and type for a DiagnosisResponse
   """
 
   @type t :: %__MODULE__{
-          HostStatus: [Adyen.TerminalAPI.V1.HostStatus.t()] | nil,
-          POIStatus: Adyen.TerminalAPI.V1.POIStatus.t() | nil,
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          HostStatus: [AdyenEx.TerminalAPI.V1.HostStatus.t()] | nil,
+          POIStatus: AdyenEx.TerminalAPI.V1.POIStatus.t() | nil,
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:HostStatus, :POIStatus, :Response]
@@ -17,9 +17,9 @@ defmodule Adyen.TerminalAPI.V1.DiagnosisResponse do
 
   def __fields__(:t) do
     [
-      HostStatus: [{Adyen.TerminalAPI.V1.HostStatus, :t}],
-      POIStatus: {Adyen.TerminalAPI.V1.POIStatus, :t},
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      HostStatus: [{AdyenEx.TerminalAPI.V1.HostStatus, :t}],
+      POIStatus: {AdyenEx.TerminalAPI.V1.POIStatus, :t},
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

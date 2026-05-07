@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.PayoutMethod do
+defmodule AdyenEx.Account.V6.PayoutMethod do
   @moduledoc """
   Provides struct and type for a PayoutMethod
   """

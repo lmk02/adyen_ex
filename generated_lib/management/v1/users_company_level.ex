@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.UsersCompanyLevel do
+defmodule AdyenEx.Management.V1.UsersCompanyLevel do
   @moduledoc """
   Provides API endpoints related to users company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of users
@@ -21,25 +21,25 @@ defmodule Adyen.Management.V1.UsersCompanyLevel do
 
   """
   @spec get_companies_company_id_users(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ListCompanyUsersResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ListCompanyUsersResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id_users(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize, :username])
 
     client.request(%{
       args: [companyId: companyId],
-      call: {Adyen.Management.V1.UsersCompanyLevel, :get_companies_company_id_users},
+      call: {AdyenEx.Management.V1.UsersCompanyLevel, :get_companies_company_id_users},
       url: "/companies/#{companyId}/users",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ListCompanyUsersResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.ListCompanyUsersResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -59,23 +59,23 @@ defmodule Adyen.Management.V1.UsersCompanyLevel do
           userId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.CompanyUser.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.CompanyUser.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id_users_user_id(companyId, userId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, userId: userId],
-      call: {Adyen.Management.V1.UsersCompanyLevel, :get_companies_company_id_users_user_id},
+      call: {AdyenEx.Management.V1.UsersCompanyLevel, :get_companies_company_id_users_user_id},
       url: "/companies/#{companyId}/users/#{userId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.CompanyUser, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.CompanyUser, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -96,28 +96,28 @@ defmodule Adyen.Management.V1.UsersCompanyLevel do
   @spec patch_companies_company_id_users_user_id(
           companyId :: String.t(),
           userId :: String.t(),
-          body :: Adyen.Management.V1.UpdateCompanyUserRequest.t(),
+          body :: AdyenEx.Management.V1.UpdateCompanyUserRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.CompanyUser.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.CompanyUser.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_companies_company_id_users_user_id(companyId, userId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, userId: userId, body: body],
-      call: {Adyen.Management.V1.UsersCompanyLevel, :patch_companies_company_id_users_user_id},
+      call: {AdyenEx.Management.V1.UsersCompanyLevel, :patch_companies_company_id_users_user_id},
       url: "/companies/#{companyId}/users/#{userId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V1.UpdateCompanyUserRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.UpdateCompanyUserRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.CompanyUser, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.CompanyUser, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -137,28 +137,28 @@ defmodule Adyen.Management.V1.UsersCompanyLevel do
   """
   @spec post_companies_company_id_users(
           companyId :: String.t(),
-          body :: Adyen.Management.V1.CreateCompanyUserRequest.t(),
+          body :: AdyenEx.Management.V1.CreateCompanyUserRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.CreateCompanyUserResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.CreateCompanyUserResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_companies_company_id_users(companyId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, body: body],
-      call: {Adyen.Management.V1.UsersCompanyLevel, :post_companies_company_id_users},
+      call: {AdyenEx.Management.V1.UsersCompanyLevel, :post_companies_company_id_users},
       url: "/companies/#{companyId}/users",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.CreateCompanyUserRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.CreateCompanyUserRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.CreateCompanyUserResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.CreateCompanyUserResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

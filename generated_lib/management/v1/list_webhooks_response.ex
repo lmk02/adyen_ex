@@ -1,12 +1,12 @@
-defmodule Adyen.Management.V1.ListWebhooksResponse do
+defmodule AdyenEx.Management.V1.ListWebhooksResponse do
   @moduledoc """
   Provides struct and type for a ListWebhooksResponse
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V1.PaginationLinks.t() | nil,
+          _links: AdyenEx.Management.V1.PaginationLinks.t() | nil,
           accountReference: String.t() | nil,
-          data: [Adyen.Management.V1.Webhook.t()] | nil,
+          data: [AdyenEx.Management.V1.Webhook.t()] | nil,
           itemsTotal: integer,
           pagesTotal: integer
         }
@@ -19,9 +19,9 @@ defmodule Adyen.Management.V1.ListWebhooksResponse do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V1.PaginationLinks, :t},
+      _links: {AdyenEx.Management.V1.PaginationLinks, :t},
       accountReference: :string,
-      data: [{Adyen.Management.V1.Webhook, :t}],
+      data: [{AdyenEx.Management.V1.Webhook, :t}],
       itemsTotal: {:integer, "int32"},
       pagesTotal: {:integer, "int32"}
     ]

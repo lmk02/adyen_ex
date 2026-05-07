@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.PaymentInstrumentUpdateRequest do
+defmodule AdyenEx.BalancePlatform.V2.PaymentInstrumentUpdateRequest do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentUpdateRequest
   """
 
   @type t :: %__MODULE__{
           balanceAccountId: String.t() | nil,
-          card: Adyen.BalancePlatform.V2.CardInfo.t() | nil,
+          card: AdyenEx.BalancePlatform.V2.CardInfo.t() | nil,
           status: String.t() | nil,
           statusComment: String.t() | nil,
           statusReason: String.t() | nil
@@ -20,7 +20,7 @@ defmodule Adyen.BalancePlatform.V2.PaymentInstrumentUpdateRequest do
   def __fields__(:t) do
     [
       balanceAccountId: :string,
-      card: {Adyen.BalancePlatform.V2.CardInfo, :t},
+      card: {AdyenEx.BalancePlatform.V2.CardInfo, :t},
       status: {:enum, ["active", "closed", "inactive", "suspended"]},
       statusComment: :string,
       statusReason:

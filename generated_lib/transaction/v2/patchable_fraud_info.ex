@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V2.PatchableFraudInfo do
+defmodule AdyenEx.Transaction.V2.PatchableFraudInfo do
   @moduledoc """
   Provides struct and type for a PatchableFraudInfo
   """

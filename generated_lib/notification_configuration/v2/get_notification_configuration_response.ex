@@ -1,11 +1,11 @@
-defmodule Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse do
+defmodule AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse do
   @moduledoc """
   Provides struct and type for a GetNotificationConfigurationResponse
   """
 
   @type t :: %__MODULE__{
           configurationDetails:
-            Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails.t(),
+            AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails.t(),
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil
@@ -20,7 +20,7 @@ defmodule Adyen.NotificationConfiguration.V2.GetNotificationConfigurationRespons
   def __fields__(:t) do
     [
       configurationDetails:
-        {Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails, :t},
+        {AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails, :t},
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean

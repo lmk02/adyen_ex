@@ -1,16 +1,16 @@
-defmodule Adyen.Management.V1.ScheduleTerminalActionsRequest do
+defmodule AdyenEx.Management.V1.ScheduleTerminalActionsRequest do
   @moduledoc """
   Provides struct and type for a ScheduleTerminalActionsRequest
   """
 
   @type t :: %__MODULE__{
           actionDetails:
-            Adyen.Management.V1.ForceRebootDetails.t()
-            | Adyen.Management.V1.InstallAndroidAppDetails.t()
-            | Adyen.Management.V1.InstallAndroidCertificateDetails.t()
-            | Adyen.Management.V1.ReleaseUpdateDetails.t()
-            | Adyen.Management.V1.UninstallAndroidAppDetails.t()
-            | Adyen.Management.V1.UninstallAndroidCertificateDetails.t()
+            AdyenEx.Management.V1.ForceRebootDetails.t()
+            | AdyenEx.Management.V1.InstallAndroidAppDetails.t()
+            | AdyenEx.Management.V1.InstallAndroidCertificateDetails.t()
+            | AdyenEx.Management.V1.ReleaseUpdateDetails.t()
+            | AdyenEx.Management.V1.UninstallAndroidAppDetails.t()
+            | AdyenEx.Management.V1.UninstallAndroidCertificateDetails.t()
             | nil,
           scheduledAt: String.t() | nil,
           storeId: String.t() | nil,
@@ -28,12 +28,12 @@ defmodule Adyen.Management.V1.ScheduleTerminalActionsRequest do
       actionDetails:
         {:union,
          [
-           {Adyen.Management.V1.ForceRebootDetails, :t},
-           {Adyen.Management.V1.InstallAndroidAppDetails, :t},
-           {Adyen.Management.V1.InstallAndroidCertificateDetails, :t},
-           {Adyen.Management.V1.ReleaseUpdateDetails, :t},
-           {Adyen.Management.V1.UninstallAndroidAppDetails, :t},
-           {Adyen.Management.V1.UninstallAndroidCertificateDetails, :t}
+           {AdyenEx.Management.V1.ForceRebootDetails, :t},
+           {AdyenEx.Management.V1.InstallAndroidAppDetails, :t},
+           {AdyenEx.Management.V1.InstallAndroidCertificateDetails, :t},
+           {AdyenEx.Management.V1.ReleaseUpdateDetails, :t},
+           {AdyenEx.Management.V1.UninstallAndroidAppDetails, :t},
+           {AdyenEx.Management.V1.UninstallAndroidCertificateDetails, :t}
          ]},
       scheduledAt: :string,
       storeId: :string,

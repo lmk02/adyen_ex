@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V67.PixRecurring do
+defmodule AdyenEx.Checkout.V67.PixRecurring do
   @moduledoc """
   Provides struct and type for a PixRecurring
   """
@@ -8,9 +8,9 @@ defmodule Adyen.Checkout.V67.PixRecurring do
           businessDayOnly: boolean | nil,
           endsAt: String.t() | nil,
           frequency: String.t() | nil,
-          minAmount: Adyen.Checkout.V67.Amount.t() | nil,
+          minAmount: AdyenEx.Checkout.V67.Amount.t() | nil,
           originalPspReference: String.t() | nil,
-          recurringAmount: Adyen.Checkout.V67.Amount.t() | nil,
+          recurringAmount: AdyenEx.Checkout.V67.Amount.t() | nil,
           recurringStatement: String.t() | nil,
           retryPolicy: boolean | nil,
           startsAt: String.t() | nil
@@ -39,9 +39,9 @@ defmodule Adyen.Checkout.V67.PixRecurring do
       businessDayOnly: :boolean,
       endsAt: :string,
       frequency: {:enum, ["weekly", "monthly", "quarterly", "half-yearly", "yearly"]},
-      minAmount: {Adyen.Checkout.V67.Amount, :t},
+      minAmount: {AdyenEx.Checkout.V67.Amount, :t},
       originalPspReference: :string,
-      recurringAmount: {Adyen.Checkout.V67.Amount, :t},
+      recurringAmount: {AdyenEx.Checkout.V67.Amount, :t},
       recurringStatement: :string,
       retryPolicy: :boolean,
       startsAt: :string

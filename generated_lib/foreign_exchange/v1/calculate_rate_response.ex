@@ -1,10 +1,10 @@
-defmodule Adyen.ForeignExchange.V1.CalculateRateResponse do
+defmodule AdyenEx.ForeignExchange.V1.CalculateRateResponse do
   @moduledoc """
   Provides struct and type for a CalculateRateResponse
   """
 
   @type t :: %__MODULE__{
-          exchangeCalculations: [Adyen.ForeignExchange.V1.CalculateRateResponseItem.t()] | nil
+          exchangeCalculations: [AdyenEx.ForeignExchange.V1.CalculateRateResponseItem.t()] | nil
         }
 
   defstruct [:exchangeCalculations]
@@ -14,6 +14,6 @@ defmodule Adyen.ForeignExchange.V1.CalculateRateResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [exchangeCalculations: [{Adyen.ForeignExchange.V1.CalculateRateResponseItem, :t}]]
+    [exchangeCalculations: [{AdyenEx.ForeignExchange.V1.CalculateRateResponseItem, :t}]]
   end
 end

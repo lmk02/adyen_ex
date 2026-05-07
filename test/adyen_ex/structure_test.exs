@@ -1,7 +1,7 @@
-defmodule Adyen.StructureTest do
+defmodule AdyenEx.StructureTest do
   use ExUnit.Case
 
-  alias Adyen.Account.V6.Accounts
+  alias AdyenEx.Account.V6.Accounts
 
   test "modules are generated on the fly" do
     assert Code.ensure_loaded?(Accounts)

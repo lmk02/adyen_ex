@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.PayoutSettings do
+defmodule AdyenEx.Management.V1.PayoutSettings do
   @moduledoc """
   Provides struct and type for a PayoutSettings
   """

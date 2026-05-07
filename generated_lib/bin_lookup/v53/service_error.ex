@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V53.ServiceError do
+defmodule AdyenEx.BinLookup.V53.ServiceError do
   @moduledoc """
   Provides struct and type for a ServiceError
   """

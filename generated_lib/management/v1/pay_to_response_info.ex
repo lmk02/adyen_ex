@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.PayToResponseInfo do
+defmodule AdyenEx.Management.V1.PayToResponseInfo do
   @moduledoc """
   Provides struct and type for a PayToResponseInfo
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.SwishResponseInfo do
+defmodule AdyenEx.Management.V1.SwishResponseInfo do
   @moduledoc """
   Provides struct and type for a SwishResponseInfo
   """

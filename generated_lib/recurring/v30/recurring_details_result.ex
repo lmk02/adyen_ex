@@ -1,11 +1,11 @@
-defmodule Adyen.Recurring.V30.RecurringDetailsResult do
+defmodule AdyenEx.Recurring.V30.RecurringDetailsResult do
   @moduledoc """
   Provides struct and type for a RecurringDetailsResult
   """
 
   @type t :: %__MODULE__{
           creationDate: DateTime.t() | nil,
-          details: [Adyen.Recurring.V30.RecurringDetailWrapper.t()] | nil,
+          details: [AdyenEx.Recurring.V30.RecurringDetailWrapper.t()] | nil,
           lastKnownShopperEmail: String.t() | nil,
           shopperReference: String.t() | nil
         }
@@ -19,7 +19,7 @@ defmodule Adyen.Recurring.V30.RecurringDetailsResult do
   def __fields__(:t) do
     [
       creationDate: {:string, "date-time"},
-      details: [{Adyen.Recurring.V30.RecurringDetailWrapper, :t}],
+      details: [{AdyenEx.Recurring.V30.RecurringDetailWrapper, :t}],
       lastKnownShopperEmail: :string,
       shopperReference: :string
     ]

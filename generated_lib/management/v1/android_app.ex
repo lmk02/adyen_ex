@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AndroidApp do
+defmodule AdyenEx.Management.V1.AndroidApp do
   @moduledoc """
   Provides struct and type for a AndroidApp
   """

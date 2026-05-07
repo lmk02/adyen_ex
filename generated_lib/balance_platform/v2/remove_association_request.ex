@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RemoveAssociationRequest do
+defmodule AdyenEx.BalancePlatform.V2.RemoveAssociationRequest do
   @moduledoc """
   Provides struct and type for a RemoveAssociationRequest
   """

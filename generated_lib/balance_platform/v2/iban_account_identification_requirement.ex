@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.IbanAccountIdentificationRequirement do
+defmodule AdyenEx.BalancePlatform.V2.IbanAccountIdentificationRequirement do
   @moduledoc """
   Provides struct and type for a IbanAccountIdentificationRequirement
   """

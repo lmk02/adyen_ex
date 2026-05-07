@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.PlatformPayment do
+defmodule AdyenEx.Transfer.V4.PlatformPayment do
   @moduledoc """
   Provides struct and type for a PlatformPayment
   """

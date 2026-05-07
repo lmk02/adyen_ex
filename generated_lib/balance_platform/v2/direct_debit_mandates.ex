@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.DirectDebitMandates do
+defmodule AdyenEx.BalancePlatform.V2.DirectDebitMandates do
   @moduledoc """
   Provides API endpoints related to direct debit mandates
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of mandates
@@ -18,24 +18,24 @@ defmodule Adyen.BalancePlatform.V2.DirectDebitMandates do
 
   """
   @spec get_mandates(opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.ListMandatesResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.ListMandatesResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def get_mandates(opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:balanceAccountId, :cursor, :paymentInstrumentId])
 
     client.request(%{
       args: [],
-      call: {Adyen.BalancePlatform.V2.DirectDebitMandates, :get_mandates},
+      call: {AdyenEx.BalancePlatform.V2.DirectDebitMandates, :get_mandates},
       url: "/mandates",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalancePlatform.V2.ListMandatesResponse, :t}},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.ListMandatesResponse, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -47,23 +47,23 @@ defmodule Adyen.BalancePlatform.V2.DirectDebitMandates do
   Returns the details of the specified [direct debit mandate](https://docs.adyen.com/business-accounts/accept-direct-debits-uk).
   """
   @spec get_mandates_mandate_id(mandateId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.Mandate.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.Mandate.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def get_mandates_mandate_id(mandateId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [mandateId: mandateId],
-      call: {Adyen.BalancePlatform.V2.DirectDebitMandates, :get_mandates_mandate_id},
+      call: {AdyenEx.BalancePlatform.V2.DirectDebitMandates, :get_mandates_mandate_id},
       url: "/mandates/#{mandateId}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.Mandate, :t}},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.Mandate, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -80,26 +80,26 @@ defmodule Adyen.BalancePlatform.V2.DirectDebitMandates do
   """
   @spec patch_mandates_mandate_id(
           mandateId :: String.t(),
-          body :: Adyen.BalancePlatform.V2.MandateUpdate.t(),
+          body :: AdyenEx.BalancePlatform.V2.MandateUpdate.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def patch_mandates_mandate_id(mandateId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [mandateId: mandateId, body: body],
-      call: {Adyen.BalancePlatform.V2.DirectDebitMandates, :patch_mandates_mandate_id},
+      call: {AdyenEx.BalancePlatform.V2.DirectDebitMandates, :patch_mandates_mandate_id},
       url: "/mandates/#{mandateId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.MandateUpdate, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.MandateUpdate, :t}}],
       response: [
         {202, :null},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -111,22 +111,22 @@ defmodule Adyen.BalancePlatform.V2.DirectDebitMandates do
   Cancel a specified [direct debit mandate](https://docs.adyen.com/business-accounts/accept-direct-debits-uk).
   """
   @spec post_mandates_mandate_id_cancel(mandateId :: String.t(), opts :: keyword) ::
-          :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def post_mandates_mandate_id_cancel(mandateId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [mandateId: mandateId],
-      call: {Adyen.BalancePlatform.V2.DirectDebitMandates, :post_mandates_mandate_id_cancel},
+      call: {AdyenEx.BalancePlatform.V2.DirectDebitMandates, :post_mandates_mandate_id_cancel},
       url: "/mandates/#{mandateId}/cancel",
       method: :post,
       response: [
         {202, :null},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

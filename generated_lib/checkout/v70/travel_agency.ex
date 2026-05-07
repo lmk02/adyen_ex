@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.TravelAgency do
+defmodule AdyenEx.Checkout.V70.TravelAgency do
   @moduledoc """
   Provides struct and type for a TravelAgency
   """

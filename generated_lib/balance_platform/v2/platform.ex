@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.Platform do
+defmodule AdyenEx.BalancePlatform.V2.Platform do
   @moduledoc """
   Provides API endpoints related to platform
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a balance platform
@@ -11,23 +11,23 @@ defmodule Adyen.BalancePlatform.V2.Platform do
   Returns a balance platform.
   """
   @spec get_balance_platforms_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.BalancePlatform.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.BalancePlatform.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_balance_platforms_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.Platform, :get_balance_platforms_id},
+      call: {AdyenEx.BalancePlatform.V2.Platform, :get_balance_platforms_id},
       url: "/balancePlatforms/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.BalancePlatform, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.BalancePlatform, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -47,25 +47,25 @@ defmodule Adyen.BalancePlatform.V2.Platform do
 
   """
   @spec get_balance_platforms_id_account_holders(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.PaginatedAccountHoldersResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.PaginatedAccountHoldersResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_balance_platforms_id_account_holders(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :offset])
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.Platform, :get_balance_platforms_id_account_holders},
+      call: {AdyenEx.BalancePlatform.V2.Platform, :get_balance_platforms_id_account_holders},
       url: "/balancePlatforms/#{id}/accountHolders",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalancePlatform.V2.PaginatedAccountHoldersResponse, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.PaginatedAccountHoldersResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -77,23 +77,23 @@ defmodule Adyen.BalancePlatform.V2.Platform do
   Returns a list of transaction rules associated with a balance platform.
   """
   @spec get_balance_platforms_id_transaction_rules(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.TransactionRulesResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.TransactionRulesResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_balance_platforms_id_transaction_rules(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.Platform, :get_balance_platforms_id_transaction_rules},
+      call: {AdyenEx.BalancePlatform.V2.Platform, :get_balance_platforms_id_transaction_rules},
       url: "/balancePlatforms/#{id}/transactionRules",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.TransactionRulesResponse, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.TransactionRulesResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,14 +1,14 @@
-defmodule Adyen.Checkout.V46.PaymentMethod do
+defmodule AdyenEx.Checkout.V46.PaymentMethod do
   @moduledoc """
   Provides struct and type for a PaymentMethod
   """
 
   @type t :: %__MODULE__{
-          apps: [Adyen.Checkout.V46.PaymentMethodUPIApps.t()] | nil,
+          apps: [AdyenEx.Checkout.V46.PaymentMethodUPIApps.t()] | nil,
           configuration: map | nil,
-          details: [Adyen.Checkout.V46.InputDetail.t()] | nil,
-          group: Adyen.Checkout.V46.PaymentMethodGroup.t() | nil,
-          inputDetails: [Adyen.Checkout.V46.InputDetail.t()] | nil,
+          details: [AdyenEx.Checkout.V46.InputDetail.t()] | nil,
+          group: AdyenEx.Checkout.V46.PaymentMethodGroup.t() | nil,
+          inputDetails: [AdyenEx.Checkout.V46.InputDetail.t()] | nil,
           name: String.t() | nil,
           promoted: boolean | nil,
           supportsRecurring: boolean | nil,
@@ -33,11 +33,11 @@ defmodule Adyen.Checkout.V46.PaymentMethod do
 
   def __fields__(:t) do
     [
-      apps: [{Adyen.Checkout.V46.PaymentMethodUPIApps, :t}],
+      apps: [{AdyenEx.Checkout.V46.PaymentMethodUPIApps, :t}],
       configuration: :map,
-      details: [{Adyen.Checkout.V46.InputDetail, :t}],
-      group: {Adyen.Checkout.V46.PaymentMethodGroup, :t},
-      inputDetails: [{Adyen.Checkout.V46.InputDetail, :t}],
+      details: [{AdyenEx.Checkout.V46.InputDetail, :t}],
+      group: {AdyenEx.Checkout.V46.PaymentMethodGroup, :t},
+      inputDetails: [{AdyenEx.Checkout.V46.InputDetail, :t}],
       name: :string,
       promoted: :boolean,
       supportsRecurring: :boolean,

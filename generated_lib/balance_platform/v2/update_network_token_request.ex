@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.UpdateNetworkTokenRequest do
+defmodule AdyenEx.BalancePlatform.V2.UpdateNetworkTokenRequest do
   @moduledoc """
   Provides struct and type for a UpdateNetworkTokenRequest
   """

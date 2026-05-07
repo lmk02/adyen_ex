@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.TestWebhookResponse do
+defmodule AdyenEx.Management.V1.TestWebhookResponse do
   @moduledoc """
   Provides struct and type for a TestWebhookResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V1.TestOutput.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V1.TestOutput.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.TestWebhookResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V1.TestOutput, :t}]]
+    [data: [{AdyenEx.Management.V1.TestOutput, :t}]]
   end
 end

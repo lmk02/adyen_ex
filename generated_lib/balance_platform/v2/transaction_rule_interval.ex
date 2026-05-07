@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TransactionRuleInterval do
+defmodule AdyenEx.BalancePlatform.V2.TransactionRuleInterval do
   @moduledoc """
   Provides struct and type for a TransactionRuleInterval
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.TransactionRuleInterval do
   @type t :: %__MODULE__{
           dayOfMonth: integer | nil,
           dayOfWeek: String.t() | nil,
-          duration: Adyen.BalancePlatform.V2.Duration.t() | nil,
+          duration: AdyenEx.BalancePlatform.V2.Duration.t() | nil,
           timeOfDay: String.t() | nil,
           timeZone: String.t() | nil,
           type: String.t()
@@ -23,7 +23,7 @@ defmodule Adyen.BalancePlatform.V2.TransactionRuleInterval do
       dayOfMonth: {:integer, "int32"},
       dayOfWeek:
         {:enum, ["friday", "monday", "saturday", "sunday", "thursday", "tuesday", "wednesday"]},
-      duration: {Adyen.BalancePlatform.V2.Duration, :t},
+      duration: {AdyenEx.BalancePlatform.V2.Duration, :t},
       timeOfDay: :string,
       timeZone: :string,
       type:

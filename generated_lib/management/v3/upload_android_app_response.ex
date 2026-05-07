@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.UploadAndroidAppResponse do
+defmodule AdyenEx.Management.V3.UploadAndroidAppResponse do
   @moduledoc """
   Provides struct and type for a UploadAndroidAppResponse
   """

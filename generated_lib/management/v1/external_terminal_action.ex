@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ExternalTerminalAction do
+defmodule AdyenEx.Management.V1.ExternalTerminalAction do
   @moduledoc """
   Provides struct and type for a ExternalTerminalAction
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.CreateAccountRequest do
+defmodule AdyenEx.Account.V3.CreateAccountRequest do
   @moduledoc """
   Provides struct and type for a CreateAccountRequest
   """

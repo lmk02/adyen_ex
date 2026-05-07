@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.ReprocessAndroidAppResponse do
+defmodule AdyenEx.Management.V3.ReprocessAndroidAppResponse do
   @moduledoc """
   Provides struct and type for a ReprocessAndroidAppResponse
   """

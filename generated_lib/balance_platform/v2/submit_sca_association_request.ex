@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.SubmitScaAssociationRequest do
+defmodule AdyenEx.BalancePlatform.V2.SubmitScaAssociationRequest do
   @moduledoc """
   Provides struct and type for a SubmitScaAssociationRequest
   """
 
-  @type t :: %__MODULE__{entities: [Adyen.BalancePlatform.V2.ScaEntity.t()]}
+  @type t :: %__MODULE__{entities: [AdyenEx.BalancePlatform.V2.ScaEntity.t()]}
 
   defstruct [:entities]
 
@@ -12,6 +12,6 @@ defmodule Adyen.BalancePlatform.V2.SubmitScaAssociationRequest do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [entities: [{Adyen.BalancePlatform.V2.ScaEntity, :t}]]
+    [entities: [{AdyenEx.BalancePlatform.V2.ScaEntity, :t}]]
   end
 end

@@ -1,13 +1,13 @@
-defmodule Adyen.Checkout.V65.CheckoutSessionThreeDs2RequestData do
+defmodule AdyenEx.Checkout.V65.CheckoutSessionThreeDs2RequestData do
   @moduledoc """
   Provides struct and type for a CheckoutSessionThreeDs2RequestData
   """
 
   @type t :: %__MODULE__{
-          homePhone: Adyen.Checkout.V65.Phone.t() | nil,
-          mobilePhone: Adyen.Checkout.V65.Phone.t() | nil,
+          homePhone: AdyenEx.Checkout.V65.Phone.t() | nil,
+          mobilePhone: AdyenEx.Checkout.V65.Phone.t() | nil,
           threeDSRequestorChallengeInd: String.t() | nil,
-          workPhone: Adyen.Checkout.V65.Phone.t() | nil
+          workPhone: AdyenEx.Checkout.V65.Phone.t() | nil
         }
 
   defstruct [:homePhone, :mobilePhone, :threeDSRequestorChallengeInd, :workPhone]
@@ -18,10 +18,10 @@ defmodule Adyen.Checkout.V65.CheckoutSessionThreeDs2RequestData do
 
   def __fields__(:t) do
     [
-      homePhone: {Adyen.Checkout.V65.Phone, :t},
-      mobilePhone: {Adyen.Checkout.V65.Phone, :t},
+      homePhone: {AdyenEx.Checkout.V65.Phone, :t},
+      mobilePhone: {AdyenEx.Checkout.V65.Phone, :t},
       threeDSRequestorChallengeInd: {:enum, ["01", "02", "03", "04", "05", "06"]},
-      workPhone: {Adyen.Checkout.V65.Phone, :t}
+      workPhone: {AdyenEx.Checkout.V65.Phone, :t}
     ]
   end
 end

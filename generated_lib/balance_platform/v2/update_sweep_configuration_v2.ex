@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.UpdateSweepConfigurationV2 do
+defmodule AdyenEx.BalancePlatform.V2.UpdateSweepConfigurationV2 do
   @moduledoc """
   Provides struct and type for a UpdateSweepConfigurationV2
   """
 
   @type t :: %__MODULE__{
           category: String.t() | nil,
-          counterparty: Adyen.BalancePlatform.V2.SweepCounterparty.t() | nil,
+          counterparty: AdyenEx.BalancePlatform.V2.SweepCounterparty.t() | nil,
           currency: String.t() | nil,
           description: String.t() | nil,
           id: String.t() | nil,
@@ -14,11 +14,11 @@ defmodule Adyen.BalancePlatform.V2.UpdateSweepConfigurationV2 do
           reasonDetail: String.t() | nil,
           reference: String.t() | nil,
           referenceForBeneficiary: String.t() | nil,
-          schedule: Adyen.BalancePlatform.V2.SweepSchedule.t() | nil,
+          schedule: AdyenEx.BalancePlatform.V2.SweepSchedule.t() | nil,
           status: String.t() | nil,
-          sweepAmount: Adyen.BalancePlatform.V2.Amount.t() | nil,
-          targetAmount: Adyen.BalancePlatform.V2.Amount.t() | nil,
-          triggerAmount: Adyen.BalancePlatform.V2.Amount.t() | nil,
+          sweepAmount: AdyenEx.BalancePlatform.V2.Amount.t() | nil,
+          targetAmount: AdyenEx.BalancePlatform.V2.Amount.t() | nil,
+          triggerAmount: AdyenEx.BalancePlatform.V2.Amount.t() | nil,
           type: String.t() | nil
         }
 
@@ -48,7 +48,7 @@ defmodule Adyen.BalancePlatform.V2.UpdateSweepConfigurationV2 do
   def __fields__(:t) do
     [
       category: {:enum, ["bank", "internal", "platformPayment"]},
-      counterparty: {Adyen.BalancePlatform.V2.SweepCounterparty, :t},
+      counterparty: {AdyenEx.BalancePlatform.V2.SweepCounterparty, :t},
       currency: :string,
       description: :string,
       id: :string,
@@ -76,11 +76,11 @@ defmodule Adyen.BalancePlatform.V2.UpdateSweepConfigurationV2 do
       reasonDetail: :string,
       reference: :string,
       referenceForBeneficiary: :string,
-      schedule: {Adyen.BalancePlatform.V2.SweepSchedule, :t},
+      schedule: {AdyenEx.BalancePlatform.V2.SweepSchedule, :t},
       status: {:enum, ["active", "inactive"]},
-      sweepAmount: {Adyen.BalancePlatform.V2.Amount, :t},
-      targetAmount: {Adyen.BalancePlatform.V2.Amount, :t},
-      triggerAmount: {Adyen.BalancePlatform.V2.Amount, :t},
+      sweepAmount: {AdyenEx.BalancePlatform.V2.Amount, :t},
+      targetAmount: {AdyenEx.BalancePlatform.V2.Amount, :t},
+      triggerAmount: {AdyenEx.BalancePlatform.V2.Amount, :t},
       type: {:enum, ["pull", "push"]}
     ]
   end

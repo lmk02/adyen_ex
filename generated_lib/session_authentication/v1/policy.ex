@@ -1,10 +1,10 @@
-defmodule Adyen.SessionAuthentication.V1.Policy do
+defmodule AdyenEx.SessionAuthentication.V1.Policy do
   @moduledoc """
   Provides struct and type for a Policy
   """
 
   @type t :: %__MODULE__{
-          resources: [Adyen.SessionAuthentication.V1.Resource.t()] | nil,
+          resources: [AdyenEx.SessionAuthentication.V1.Resource.t()] | nil,
           roles: [String.t()] | nil
         }
 
@@ -15,6 +15,6 @@ defmodule Adyen.SessionAuthentication.V1.Policy do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [resources: [{Adyen.SessionAuthentication.V1.Resource, :t}], roles: [:string]]
+    [resources: [{AdyenEx.SessionAuthentication.V1.Resource, :t}], roles: [:string]]
   end
 end

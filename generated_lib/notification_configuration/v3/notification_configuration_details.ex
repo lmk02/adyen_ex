@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V3.NotificationConfigurationDetails do
+defmodule AdyenEx.NotificationConfiguration.V3.NotificationConfigurationDetails do
   @moduledoc """
   Provides struct and type for a NotificationConfigurationDetails
   """
@@ -8,7 +8,7 @@ defmodule Adyen.NotificationConfiguration.V3.NotificationConfigurationDetails do
           apiVersion: integer | nil,
           description: String.t() | nil,
           eventConfigs:
-            [Adyen.NotificationConfiguration.V3.NotificationEventConfigurationWrapper.t()] | nil,
+            [AdyenEx.NotificationConfiguration.V3.NotificationEventConfigurationWrapper.t()] | nil,
           messageFormat: String.t() | nil,
           notificationId: integer | nil,
           notifyPassword: String.t() | nil,
@@ -42,7 +42,7 @@ defmodule Adyen.NotificationConfiguration.V3.NotificationConfigurationDetails do
       apiVersion: {:integer, "int32"},
       description: :string,
       eventConfigs: [
-        {Adyen.NotificationConfiguration.V3.NotificationEventConfigurationWrapper, :t}
+        {AdyenEx.NotificationConfiguration.V3.NotificationEventConfigurationWrapper, :t}
       ],
       messageFormat: {:enum, ["JSON", "SOAP"]},
       notificationId: {:integer, "int64"},

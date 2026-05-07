@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V3.ErrorFieldTypeWrapper do
+defmodule AdyenEx.Account.V3.ErrorFieldTypeWrapper do
   @moduledoc """
   Provides struct and type for a ErrorFieldTypeWrapper
   """
 
-  @type t :: %__MODULE__{ErrorFieldType: Adyen.Account.V3.ErrorFieldType.t() | nil}
+  @type t :: %__MODULE__{ErrorFieldType: AdyenEx.Account.V3.ErrorFieldType.t() | nil}
 
   defstruct [:ErrorFieldType]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V3.ErrorFieldTypeWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [ErrorFieldType: {Adyen.Account.V3.ErrorFieldType, :t}]
+    [ErrorFieldType: {AdyenEx.Account.V3.ErrorFieldType, :t}]
   end
 end

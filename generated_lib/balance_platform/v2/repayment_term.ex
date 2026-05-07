@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RepaymentTerm do
+defmodule AdyenEx.BalancePlatform.V2.RepaymentTerm do
   @moduledoc """
   Provides struct and type for a RepaymentTerm
   """

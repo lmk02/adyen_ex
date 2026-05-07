@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.IdealDonations do
+defmodule AdyenEx.Checkout.V66.IdealDonations do
   @moduledoc """
   Provides struct and type for a IdealDonations
   """

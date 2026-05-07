@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V1.InvalidField do
+defmodule AdyenEx.Transfer.V1.InvalidField do
   @moduledoc """
   Provides struct and type for a InvalidField
   """

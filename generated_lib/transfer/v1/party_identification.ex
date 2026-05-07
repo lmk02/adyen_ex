@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V1.PartyIdentification do
+defmodule AdyenEx.Transfer.V1.PartyIdentification do
   @moduledoc """
   Provides struct and type for a PartyIdentification
   """

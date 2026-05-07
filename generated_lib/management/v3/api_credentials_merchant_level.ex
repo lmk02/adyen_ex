@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
+defmodule AdyenEx.Management.V3.APICredentialsMerchantLevel do
   @moduledoc """
   Provides API endpoints related to api credentials merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of API credentials
@@ -20,8 +20,8 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_api_credentials(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.ListMerchantApiCredentialsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ListMerchantApiCredentialsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_api_credentials(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize])
@@ -29,19 +29,19 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V3.APICredentialsMerchantLevel,
+        {AdyenEx.Management.V3.APICredentialsMerchantLevel,
          :get_merchants_merchant_id_api_credentials},
       url: "/merchants/#{merchantId}/apiCredentials",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.ListMerchantApiCredentialsResponse, :t}},
+        {200, {AdyenEx.Management.V3.ListMerchantApiCredentialsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -60,8 +60,8 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
           apiCredentialId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.ApiCredential.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ApiCredential.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_api_credentials_api_credential_id(
         merchantId,
         apiCredentialId,
@@ -72,18 +72,18 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId],
       call:
-        {Adyen.Management.V3.APICredentialsMerchantLevel,
+        {AdyenEx.Management.V3.APICredentialsMerchantLevel,
          :get_merchants_merchant_id_api_credentials_api_credential_id},
       url: "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.ApiCredential, :t}},
+        {200, {AdyenEx.Management.V3.ApiCredential, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -104,11 +104,11 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
   @spec patch_merchants_merchant_id_api_credentials_api_credential_id(
           merchantId :: String.t(),
           apiCredentialId :: String.t(),
-          body :: Adyen.Management.V3.UpdateMerchantApiCredentialRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateMerchantApiCredentialRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.ApiCredential.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ApiCredential.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_api_credentials_api_credential_id(
         merchantId,
         apiCredentialId,
@@ -120,22 +120,22 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId, body: body],
       call:
-        {Adyen.Management.V3.APICredentialsMerchantLevel,
+        {AdyenEx.Management.V3.APICredentialsMerchantLevel,
          :patch_merchants_merchant_id_api_credentials_api_credential_id},
       url: "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}",
       body: body,
       method: :patch,
       request: [
-        {"application/json", {Adyen.Management.V3.UpdateMerchantApiCredentialRequest, :t}}
+        {"application/json", {AdyenEx.Management.V3.UpdateMerchantApiCredentialRequest, :t}}
       ],
       response: [
-        {200, {Adyen.Management.V3.ApiCredential, :t}},
+        {200, {AdyenEx.Management.V3.ApiCredential, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -164,33 +164,33 @@ defmodule Adyen.Management.V3.APICredentialsMerchantLevel do
   """
   @spec post_merchants_merchant_id_api_credentials(
           merchantId :: String.t(),
-          body :: Adyen.Management.V3.CreateMerchantApiCredentialRequest.t(),
+          body :: AdyenEx.Management.V3.CreateMerchantApiCredentialRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.CreateApiCredentialResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.CreateApiCredentialResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_merchants_merchant_id_api_credentials(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.Management.V3.APICredentialsMerchantLevel,
+        {AdyenEx.Management.V3.APICredentialsMerchantLevel,
          :post_merchants_merchant_id_api_credentials},
       url: "/merchants/#{merchantId}/apiCredentials",
       body: body,
       method: :post,
       request: [
-        {"application/json", {Adyen.Management.V3.CreateMerchantApiCredentialRequest, :t}}
+        {"application/json", {AdyenEx.Management.V3.CreateMerchantApiCredentialRequest, :t}}
       ],
       response: [
-        {200, {Adyen.Management.V3.CreateApiCredentialResponse, :t}},
+        {200, {AdyenEx.Management.V3.CreateApiCredentialResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

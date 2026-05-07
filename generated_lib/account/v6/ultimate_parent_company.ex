@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V6.UltimateParentCompany do
+defmodule AdyenEx.Account.V6.UltimateParentCompany do
   @moduledoc """
   Provides struct and type for a UltimateParentCompany
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V6.ViasAddress.t() | nil,
-          businessDetails: Adyen.Account.V6.UltimateParentCompanyBusinessDetails.t() | nil,
+          address: AdyenEx.Account.V6.ViasAddress.t() | nil,
+          businessDetails: AdyenEx.Account.V6.UltimateParentCompanyBusinessDetails.t() | nil,
           ultimateParentCompanyCode: String.t() | nil
         }
 
@@ -17,8 +17,8 @@ defmodule Adyen.Account.V6.UltimateParentCompany do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V6.ViasAddress, :t},
-      businessDetails: {Adyen.Account.V6.UltimateParentCompanyBusinessDetails, :t},
+      address: {AdyenEx.Account.V6.ViasAddress, :t},
+      businessDetails: {AdyenEx.Account.V6.UltimateParentCompanyBusinessDetails, :t},
       ultimateParentCompanyCode: :string
     ]
   end

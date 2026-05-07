@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.UpdateCompanyApiCredentialRequest do
+defmodule AdyenEx.Management.V3.UpdateCompanyApiCredentialRequest do
   @moduledoc """
   Provides struct and type for a UpdateCompanyApiCredentialRequest
   """

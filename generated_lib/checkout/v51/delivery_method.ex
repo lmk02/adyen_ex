@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V51.DeliveryMethod do
+defmodule AdyenEx.Checkout.V51.DeliveryMethod do
   @moduledoc """
   Provides struct and type for a DeliveryMethod
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V51.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V51.Amount.t() | nil,
           description: String.t() | nil,
           reference: String.t() | nil,
           selected: boolean | nil,
@@ -19,7 +19,7 @@ defmodule Adyen.Checkout.V51.DeliveryMethod do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V51.Amount, :t},
+      amount: {AdyenEx.Checkout.V51.Amount, :t},
       description: :string,
       reference: :string,
       selected: :boolean,

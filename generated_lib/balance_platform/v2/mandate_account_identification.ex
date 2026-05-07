@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MandateAccountIdentification do
+defmodule AdyenEx.BalancePlatform.V2.MandateAccountIdentification do
   @moduledoc """
   Provides struct and type for a MandateAccountIdentification
   """

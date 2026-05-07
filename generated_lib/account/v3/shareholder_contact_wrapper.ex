@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V3.ShareholderContactWrapper do
+defmodule AdyenEx.Account.V3.ShareholderContactWrapper do
   @moduledoc """
   Provides struct and type for a ShareholderContactWrapper
   """
 
-  @type t :: %__MODULE__{ShareholderContact: Adyen.Account.V3.ShareholderContact.t() | nil}
+  @type t :: %__MODULE__{ShareholderContact: AdyenEx.Account.V3.ShareholderContact.t() | nil}
 
   defstruct [:ShareholderContact]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V3.ShareholderContactWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [ShareholderContact: {Adyen.Account.V3.ShareholderContact, :t}]
+    [ShareholderContact: {AdyenEx.Account.V3.ShareholderContact, :t}]
   end
 end

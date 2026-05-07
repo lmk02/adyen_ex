@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ForceRebootDetails do
+defmodule AdyenEx.Management.V1.ForceRebootDetails do
   @moduledoc """
   Provides struct and type for a ForceRebootDetails
   """

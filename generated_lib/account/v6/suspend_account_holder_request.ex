@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.SuspendAccountHolderRequest do
+defmodule AdyenEx.Account.V6.SuspendAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a SuspendAccountHolderRequest
   """

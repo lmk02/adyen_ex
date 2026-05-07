@@ -1,11 +1,11 @@
-defmodule Adyen.Fund.V5.AccountDetailBalance do
+defmodule AdyenEx.Fund.V5.AccountDetailBalance do
   @moduledoc """
   Provides struct and type for a AccountDetailBalance
   """
 
   @type t :: %__MODULE__{
           accountCode: String.t() | nil,
-          detailBalance: Adyen.Fund.V5.DetailBalance.t() | nil
+          detailBalance: AdyenEx.Fund.V5.DetailBalance.t() | nil
         }
 
   defstruct [:accountCode, :detailBalance]
@@ -15,6 +15,6 @@ defmodule Adyen.Fund.V5.AccountDetailBalance do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [accountCode: :string, detailBalance: {Adyen.Fund.V5.DetailBalance, :t}]
+    [accountCode: :string, detailBalance: {AdyenEx.Fund.V5.DetailBalance, :t}]
   end
 end

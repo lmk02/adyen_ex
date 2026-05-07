@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.SourceAccountTypesRestriction do
+defmodule AdyenEx.BalancePlatform.V2.SourceAccountTypesRestriction do
   @moduledoc """
   Provides struct and type for a SourceAccountTypesRestriction
   """

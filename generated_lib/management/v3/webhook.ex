@@ -1,16 +1,16 @@
-defmodule Adyen.Management.V3.Webhook do
+defmodule AdyenEx.Management.V3.Webhook do
   @moduledoc """
   Provides struct and type for a Webhook
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V3.WebhookLinks.t() | nil,
+          _links: AdyenEx.Management.V3.WebhookLinks.t() | nil,
           acceptsExpiredCertificate: boolean | nil,
           acceptsSelfSignedCertificate: boolean | nil,
           acceptsUntrustedRootCertificate: boolean | nil,
           accountReference: String.t() | nil,
           active: boolean,
-          additionalSettings: Adyen.Management.V3.AdditionalSettingsResponse.t() | nil,
+          additionalSettings: AdyenEx.Management.V3.AdditionalSettingsResponse.t() | nil,
           certificateAlias: String.t() | nil,
           communicationFormat: String.t(),
           description: String.t() | nil,
@@ -59,13 +59,13 @@ defmodule Adyen.Management.V3.Webhook do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V3.WebhookLinks, :t},
+      _links: {AdyenEx.Management.V3.WebhookLinks, :t},
       acceptsExpiredCertificate: :boolean,
       acceptsSelfSignedCertificate: :boolean,
       acceptsUntrustedRootCertificate: :boolean,
       accountReference: :string,
       active: :boolean,
-      additionalSettings: {Adyen.Management.V3.AdditionalSettingsResponse, :t},
+      additionalSettings: {AdyenEx.Management.V3.AdditionalSettingsResponse, :t},
       certificateAlias: :string,
       communicationFormat: {:enum, ["http", "json", "soap"]},
       description: :string,

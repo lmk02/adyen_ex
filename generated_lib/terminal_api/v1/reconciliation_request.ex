@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.ReconciliationRequest do
+defmodule AdyenEx.TerminalAPI.V1.ReconciliationRequest do
   @moduledoc """
   Provides struct and type for a ReconciliationRequest
   """

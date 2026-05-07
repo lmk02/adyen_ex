@@ -1,10 +1,10 @@
-defmodule Adyen.Fund.V6.SetupBeneficiaryResponse do
+defmodule AdyenEx.Fund.V6.SetupBeneficiaryResponse do
   @moduledoc """
   Provides struct and type for a SetupBeneficiaryResponse
   """
 
   @type t :: %__MODULE__{
-          invalidFields: [Adyen.Fund.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Fund.V6.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Fund.V6.SetupBeneficiaryResponse do
 
   def __fields__(:t) do
     [
-      invalidFields: [{Adyen.Fund.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Fund.V6.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.POISystemData do
+defmodule AdyenEx.TerminalAPI.V1.POISystemData do
   @moduledoc """
   Provides struct and type for a POISystemData
   """
 
   @type t :: %__MODULE__{
           DateTime: DateTime.t(),
-          POISoftware: Adyen.TerminalAPI.V1.POISoftware.t(),
-          POIStatus: Adyen.TerminalAPI.V1.POIStatus.t() | nil
+          POISoftware: AdyenEx.TerminalAPI.V1.POISoftware.t(),
+          POIStatus: AdyenEx.TerminalAPI.V1.POIStatus.t() | nil
         }
 
   defstruct [:DateTime, :POISoftware, :POIStatus]
@@ -18,8 +18,8 @@ defmodule Adyen.TerminalAPI.V1.POISystemData do
   def __fields__(:t) do
     [
       DateTime: {:string, "date-time"},
-      POISoftware: {Adyen.TerminalAPI.V1.POISoftware, :t},
-      POIStatus: {Adyen.TerminalAPI.V1.POIStatus, :t}
+      POISoftware: {AdyenEx.TerminalAPI.V1.POISoftware, :t},
+      POIStatus: {AdyenEx.TerminalAPI.V1.POIStatus, :t}
     ]
   end
 end

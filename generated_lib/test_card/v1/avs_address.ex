@@ -1,4 +1,4 @@
-defmodule Adyen.TestCard.V1.AvsAddress do
+defmodule AdyenEx.TestCard.V1.AvsAddress do
   @moduledoc """
   Provides struct and type for a AvsAddress
   """

@@ -1,24 +1,24 @@
-defmodule Adyen.Payout.V68.StoreDetailAndSubmitRequest do
+defmodule AdyenEx.Payout.V68.StoreDetailAndSubmitRequest do
   @moduledoc """
   Provides struct and type for a StoreDetailAndSubmitRequest
   """
 
   @type t :: %__MODULE__{
           additionalData: map | nil,
-          amount: Adyen.Payout.V68.Amount.t(),
-          bank: Adyen.Payout.V68.BankAccount.t() | nil,
-          billingAddress: Adyen.Payout.V68.Address.t() | nil,
-          card: Adyen.Payout.V68.Card.t() | nil,
+          amount: AdyenEx.Payout.V68.Amount.t(),
+          bank: AdyenEx.Payout.V68.BankAccount.t() | nil,
+          billingAddress: AdyenEx.Payout.V68.Address.t() | nil,
+          card: AdyenEx.Payout.V68.Card.t() | nil,
           dateOfBirth: Date.t(),
           entityType: String.t(),
           fraudOffset: integer | nil,
           merchantAccount: String.t(),
           nationality: String.t(),
-          recurring: Adyen.Payout.V68.Recurring.t(),
+          recurring: AdyenEx.Payout.V68.Recurring.t(),
           reference: String.t(),
           selectedBrand: String.t() | nil,
           shopperEmail: String.t(),
-          shopperName: Adyen.Payout.V68.Name.t() | nil,
+          shopperName: AdyenEx.Payout.V68.Name.t() | nil,
           shopperReference: String.t(),
           shopperStatement: String.t() | nil,
           socialSecurityNumber: String.t() | nil,
@@ -54,20 +54,20 @@ defmodule Adyen.Payout.V68.StoreDetailAndSubmitRequest do
   def __fields__(:t) do
     [
       additionalData: :map,
-      amount: {Adyen.Payout.V68.Amount, :t},
-      bank: {Adyen.Payout.V68.BankAccount, :t},
-      billingAddress: {Adyen.Payout.V68.Address, :t},
-      card: {Adyen.Payout.V68.Card, :t},
+      amount: {AdyenEx.Payout.V68.Amount, :t},
+      bank: {AdyenEx.Payout.V68.BankAccount, :t},
+      billingAddress: {AdyenEx.Payout.V68.Address, :t},
+      card: {AdyenEx.Payout.V68.Card, :t},
       dateOfBirth: {:string, "date"},
       entityType: {:enum, ["NaturalPerson", "Company"]},
       fraudOffset: {:integer, "int32"},
       merchantAccount: :string,
       nationality: :string,
-      recurring: {Adyen.Payout.V68.Recurring, :t},
+      recurring: {AdyenEx.Payout.V68.Recurring, :t},
       reference: :string,
       selectedBrand: :string,
       shopperEmail: :string,
-      shopperName: {Adyen.Payout.V68.Name, :t},
+      shopperName: {AdyenEx.Payout.V68.Name, :t},
       shopperReference: :string,
       shopperStatement: :string,
       socialSecurityNumber: :string,

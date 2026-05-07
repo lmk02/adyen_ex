@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.GooglePayDonations do
+defmodule AdyenEx.Checkout.V70.GooglePayDonations do
   @moduledoc """
   Provides struct and type for a GooglePayDonations
   """

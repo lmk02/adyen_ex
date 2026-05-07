@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.EntityReference do
+defmodule AdyenEx.LegalEntity.V4.EntityReference do
   @moduledoc """
   Provides struct and type for a EntityReference
   """

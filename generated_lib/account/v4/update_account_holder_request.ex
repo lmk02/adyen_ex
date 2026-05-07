@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V4.UpdateAccountHolderRequest do
+defmodule AdyenEx.Account.V4.UpdateAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a UpdateAccountHolderRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          accountHolderDetails: Adyen.Account.V4.AccountHolderDetails.t() | nil,
+          accountHolderDetails: AdyenEx.Account.V4.AccountHolderDetails.t() | nil,
           description: String.t() | nil,
           primaryCurrency: String.t() | nil,
           processingTier: integer | nil
@@ -26,7 +26,7 @@ defmodule Adyen.Account.V4.UpdateAccountHolderRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V4.AccountHolderDetails, :t},
+      accountHolderDetails: {AdyenEx.Account.V4.AccountHolderDetails, :t},
       description: :string,
       primaryCurrency: :string,
       processingTier: {:integer, "int32"}

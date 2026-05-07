@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V40.PixDetails do
+defmodule AdyenEx.Checkout.V40.PixDetails do
   @moduledoc """
   Provides struct and type for a PixDetails
   """
 
   @type t :: %__MODULE__{
           checkoutAttemptId: String.t() | nil,
-          pixRecurring: Adyen.Checkout.V40.PixRecurring.t() | nil,
+          pixRecurring: AdyenEx.Checkout.V40.PixRecurring.t() | nil,
           recurringDetailReference: String.t() | nil,
           type: String.t() | nil
         }
@@ -19,7 +19,7 @@ defmodule Adyen.Checkout.V40.PixDetails do
   def __fields__(:t) do
     [
       checkoutAttemptId: :string,
-      pixRecurring: {Adyen.Checkout.V40.PixRecurring, :t},
+      pixRecurring: {AdyenEx.Checkout.V40.PixRecurring, :t},
       recurringDetailReference: :string,
       type: {:const, "pix"}
     ]

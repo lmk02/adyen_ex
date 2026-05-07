@@ -1,9 +1,9 @@
-defmodule Adyen.Dispute.V30.SupplyDefenseDocumentResponse do
+defmodule AdyenEx.Dispute.V30.SupplyDefenseDocumentResponse do
   @moduledoc """
   Provides struct and type for a SupplyDefenseDocumentResponse
   """
 
-  @type t :: %__MODULE__{disputeServiceResult: Adyen.Dispute.V30.DisputeServiceResult.t()}
+  @type t :: %__MODULE__{disputeServiceResult: AdyenEx.Dispute.V30.DisputeServiceResult.t()}
 
   defstruct [:disputeServiceResult]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Dispute.V30.SupplyDefenseDocumentResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [disputeServiceResult: {Adyen.Dispute.V30.DisputeServiceResult, :t}]
+    [disputeServiceResult: {AdyenEx.Dispute.V30.DisputeServiceResult, :t}]
   end
 end

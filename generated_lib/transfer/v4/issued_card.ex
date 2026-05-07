@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.IssuedCard do
+defmodule AdyenEx.Transfer.V4.IssuedCard do
   @moduledoc """
   Provides struct and type for a IssuedCard
   """
@@ -7,12 +7,12 @@ defmodule Adyen.Transfer.V4.IssuedCard do
           authorisationType: String.t() | nil,
           panEntryMode: String.t() | nil,
           processingType: String.t() | nil,
-          relayedAuthorisationData: Adyen.Transfer.V4.RelayedAuthorisationData.t() | nil,
+          relayedAuthorisationData: AdyenEx.Transfer.V4.RelayedAuthorisationData.t() | nil,
           schemeTraceId: String.t() | nil,
           schemeUniqueTransactionId: String.t() | nil,
-          threeDSecure: Adyen.Transfer.V4.ThreeDSecure.t() | nil,
+          threeDSecure: AdyenEx.Transfer.V4.ThreeDSecure.t() | nil,
           type: String.t() | nil,
-          validationFacts: [Adyen.Transfer.V4.TransferNotificationValidationFact.t()] | nil
+          validationFacts: [AdyenEx.Transfer.V4.TransferNotificationValidationFact.t()] | nil
         }
 
   defstruct [
@@ -48,12 +48,12 @@ defmodule Adyen.Transfer.V4.IssuedCard do
            "recurring",
            "token"
          ]},
-      relayedAuthorisationData: {Adyen.Transfer.V4.RelayedAuthorisationData, :t},
+      relayedAuthorisationData: {AdyenEx.Transfer.V4.RelayedAuthorisationData, :t},
       schemeTraceId: :string,
       schemeUniqueTransactionId: :string,
-      threeDSecure: {Adyen.Transfer.V4.ThreeDSecure, :t},
+      threeDSecure: {AdyenEx.Transfer.V4.ThreeDSecure, :t},
       type: {:const, "issuedCard"},
-      validationFacts: [{Adyen.Transfer.V4.TransferNotificationValidationFact, :t}]
+      validationFacts: [{AdyenEx.Transfer.V4.TransferNotificationValidationFact, :t}]
     ]
   end
 end

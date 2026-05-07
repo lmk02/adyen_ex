@@ -1,9 +1,9 @@
-defmodule Adyen.Capital.V1.DynamicOffers do
+defmodule AdyenEx.Capital.V1.DynamicOffers do
   @moduledoc """
   Provides API endpoints related to dynamic offers
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get all available dynamic offers
@@ -19,21 +19,21 @@ defmodule Adyen.Capital.V1.DynamicOffers do
 
   """
   @spec get_dynamic_offers(opts :: keyword) ::
-          {:ok, Adyen.Capital.V1.GetDynamicOffersResponse.t()}
-          | {:error, Adyen.Capital.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Capital.V1.GetDynamicOffersResponse.t()}
+          | {:error, AdyenEx.Capital.V1.DefaultErrorResponseEntity.t()}
   def get_dynamic_offers(opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:accountHolderId, :financingType])
 
     client.request(%{
       args: [],
-      call: {Adyen.Capital.V1.DynamicOffers, :get_dynamic_offers},
+      call: {AdyenEx.Capital.V1.DynamicOffers, :get_dynamic_offers},
       url: "/dynamicOffers",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Capital.V1.GetDynamicOffersResponse, :t}},
-        {422, {Adyen.Capital.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Capital.V1.GetDynamicOffersResponse, :t}},
+        {422, {AdyenEx.Capital.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -57,24 +57,24 @@ defmodule Adyen.Capital.V1.DynamicOffers do
   """
   @spec post_dynamic_offers_id_calculate(
           id :: String.t(),
-          body :: Adyen.Capital.V1.CalculateGrantOfferRequest.t(),
+          body :: AdyenEx.Capital.V1.CalculateGrantOfferRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Capital.V1.CalculatedGrantOffer.t()}
-          | {:error, Adyen.Capital.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Capital.V1.CalculatedGrantOffer.t()}
+          | {:error, AdyenEx.Capital.V1.DefaultErrorResponseEntity.t()}
   def post_dynamic_offers_id_calculate(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.Capital.V1.DynamicOffers, :post_dynamic_offers_id_calculate},
+      call: {AdyenEx.Capital.V1.DynamicOffers, :post_dynamic_offers_id_calculate},
       url: "/dynamicOffers/#{id}/calculate",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Capital.V1.CalculateGrantOfferRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Capital.V1.CalculateGrantOfferRequest, :t}}],
       response: [
-        {200, {Adyen.Capital.V1.CalculatedGrantOffer, :t}},
-        {422, {Adyen.Capital.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Capital.V1.CalculatedGrantOffer, :t}},
+        {422, {AdyenEx.Capital.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -98,24 +98,24 @@ defmodule Adyen.Capital.V1.DynamicOffers do
   """
   @spec post_dynamic_offers_id_grant_offer(
           id :: String.t(),
-          body :: Adyen.Capital.V1.CreateGrantOfferRequest.t(),
+          body :: AdyenEx.Capital.V1.CreateGrantOfferRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Capital.V1.GrantOffer.t()}
-          | {:error, Adyen.Capital.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Capital.V1.GrantOffer.t()}
+          | {:error, AdyenEx.Capital.V1.DefaultErrorResponseEntity.t()}
   def post_dynamic_offers_id_grant_offer(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.Capital.V1.DynamicOffers, :post_dynamic_offers_id_grant_offer},
+      call: {AdyenEx.Capital.V1.DynamicOffers, :post_dynamic_offers_id_grant_offer},
       url: "/dynamicOffers/#{id}/grantOffer",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Capital.V1.CreateGrantOfferRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Capital.V1.CreateGrantOfferRequest, :t}}],
       response: [
-        {200, {Adyen.Capital.V1.GrantOffer, :t}},
-        {422, {Adyen.Capital.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Capital.V1.GrantOffer, :t}},
+        {422, {AdyenEx.Capital.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

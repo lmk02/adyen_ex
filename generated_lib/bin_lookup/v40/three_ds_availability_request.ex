@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V40.ThreeDSAvailabilityRequest do
+defmodule AdyenEx.BinLookup.V40.ThreeDSAvailabilityRequest do
   @moduledoc """
   Provides struct and type for a ThreeDSAvailabilityRequest
   """

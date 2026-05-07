@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ReceiptPrinting do
+defmodule AdyenEx.Management.V1.ReceiptPrinting do
   @moduledoc """
   Provides struct and type for a ReceiptPrinting
   """

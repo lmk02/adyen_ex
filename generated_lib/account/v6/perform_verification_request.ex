@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.PerformVerificationRequest do
+defmodule AdyenEx.Account.V6.PerformVerificationRequest do
   @moduledoc """
   Provides struct and type for a PerformVerificationRequest
   """

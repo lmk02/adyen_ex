@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.CheckoutQrCodeAction do
+defmodule AdyenEx.Checkout.V49.CheckoutQrCodeAction do
   @moduledoc """
   Provides struct and type for a CheckoutQrCodeAction
   """

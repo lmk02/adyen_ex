@@ -1,13 +1,13 @@
-defmodule Adyen.Transaction.V4.PatchableDisputeRequest do
+defmodule AdyenEx.Transaction.V4.PatchableDisputeRequest do
   @moduledoc """
   Provides struct and type for a PatchableDisputeRequest
   """
 
   @type t :: %__MODULE__{
-          duplicateInfo: Adyen.Transaction.V4.PatchableDuplicateInfo.t() | nil,
-          fraudInfo: Adyen.Transaction.V4.PatchableFraudInfo.t() | nil,
-          notDeliveredInfo: Adyen.Transaction.V4.PatchableNotDeliveredInfo.t() | nil,
-          otherInfo: Adyen.Transaction.V4.PatchableOtherInfo.t() | nil,
+          duplicateInfo: AdyenEx.Transaction.V4.PatchableDuplicateInfo.t() | nil,
+          fraudInfo: AdyenEx.Transaction.V4.PatchableFraudInfo.t() | nil,
+          notDeliveredInfo: AdyenEx.Transaction.V4.PatchableNotDeliveredInfo.t() | nil,
+          otherInfo: AdyenEx.Transaction.V4.PatchableOtherInfo.t() | nil,
           status: String.t() | nil
         }
 
@@ -19,10 +19,10 @@ defmodule Adyen.Transaction.V4.PatchableDisputeRequest do
 
   def __fields__(:t) do
     [
-      duplicateInfo: {:union, [{Adyen.Transaction.V4.PatchableDuplicateInfo, :t}, :null]},
-      fraudInfo: {:union, [{Adyen.Transaction.V4.PatchableFraudInfo, :t}, :null]},
-      notDeliveredInfo: {:union, [{Adyen.Transaction.V4.PatchableNotDeliveredInfo, :t}, :null]},
-      otherInfo: {:union, [{Adyen.Transaction.V4.PatchableOtherInfo, :t}, :null]},
+      duplicateInfo: {:union, [{AdyenEx.Transaction.V4.PatchableDuplicateInfo, :t}, :null]},
+      fraudInfo: {:union, [{AdyenEx.Transaction.V4.PatchableFraudInfo, :t}, :null]},
+      notDeliveredInfo: {:union, [{AdyenEx.Transaction.V4.PatchableNotDeliveredInfo, :t}, :null]},
+      otherInfo: {:union, [{AdyenEx.Transaction.V4.PatchableOtherInfo, :t}, :null]},
       status:
         {:union,
          [

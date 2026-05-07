@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V64.PayoutResponse do
+defmodule AdyenEx.Payout.V64.PayoutResponse do
   @moduledoc """
   Provides struct and type for a PayoutResponse
   """
@@ -6,9 +6,9 @@ defmodule Adyen.Payout.V64.PayoutResponse do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           authCode: String.t() | nil,
-          dccAmount: Adyen.Payout.V64.Amount.t() | nil,
+          dccAmount: AdyenEx.Payout.V64.Amount.t() | nil,
           dccSignature: String.t() | nil,
-          fraudResult: Adyen.Payout.V64.FraudResult.t() | nil,
+          fraudResult: AdyenEx.Payout.V64.FraudResult.t() | nil,
           issuerUrl: String.t() | nil,
           md: String.t() | nil,
           paRequest: String.t() | nil,
@@ -39,9 +39,9 @@ defmodule Adyen.Payout.V64.PayoutResponse do
     [
       additionalData: :map,
       authCode: :string,
-      dccAmount: {Adyen.Payout.V64.Amount, :t},
+      dccAmount: {AdyenEx.Payout.V64.Amount, :t},
       dccSignature: :string,
-      fraudResult: {Adyen.Payout.V64.FraudResult, :t},
+      fraudResult: {AdyenEx.Payout.V64.FraudResult, :t},
       issuerUrl: :string,
       md: :string,
       paRequest: :string,

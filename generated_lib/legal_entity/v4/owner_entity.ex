@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.OwnerEntity do
+defmodule AdyenEx.LegalEntity.V4.OwnerEntity do
   @moduledoc """
   Provides struct and type for a OwnerEntity
   """

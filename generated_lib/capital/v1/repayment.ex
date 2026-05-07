@@ -1,12 +1,12 @@
-defmodule Adyen.Capital.V1.Repayment do
+defmodule AdyenEx.Capital.V1.Repayment do
   @moduledoc """
   Provides struct and type for a Repayment
   """
 
   @type t :: %__MODULE__{
           basisPoints: integer,
-          term: Adyen.Capital.V1.RepaymentTerm.t() | nil,
-          threshold: Adyen.Capital.V1.ThresholdRepayment.t() | nil
+          term: AdyenEx.Capital.V1.RepaymentTerm.t() | nil,
+          threshold: AdyenEx.Capital.V1.ThresholdRepayment.t() | nil
         }
 
   defstruct [:basisPoints, :term, :threshold]
@@ -18,8 +18,8 @@ defmodule Adyen.Capital.V1.Repayment do
   def __fields__(:t) do
     [
       basisPoints: {:integer, "int32"},
-      term: {Adyen.Capital.V1.RepaymentTerm, :t},
-      threshold: {Adyen.Capital.V1.ThresholdRepayment, :t}
+      term: {AdyenEx.Capital.V1.RepaymentTerm, :t},
+      threshold: {AdyenEx.Capital.V1.ThresholdRepayment, :t}
     ]
   end
 end

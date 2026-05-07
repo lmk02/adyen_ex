@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.BirthData do
+defmodule AdyenEx.LegalEntity.V3.BirthData do
   @moduledoc """
   Provides struct and type for a BirthData
   """

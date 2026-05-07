@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.CreateMerchantResponse do
+defmodule AdyenEx.Management.V1.CreateMerchantResponse do
   @moduledoc """
   Provides struct and type for a CreateMerchantResponse
   """

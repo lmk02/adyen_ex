@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.BalanceAccountInfo do
+defmodule AdyenEx.BalancePlatform.V1.BalanceAccountInfo do
   @moduledoc """
   Provides struct and type for a BalanceAccountInfo
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V2.Bank do
+defmodule AdyenEx.Transfer.V2.Bank do
   @moduledoc """
   Provides struct and type for a Bank
   """

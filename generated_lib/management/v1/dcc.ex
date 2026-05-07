@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Dcc do
+defmodule AdyenEx.Management.V1.Dcc do
   @moduledoc """
   Provides struct and type for a Dcc
   """

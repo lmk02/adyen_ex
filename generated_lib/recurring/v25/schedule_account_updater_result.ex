@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V25.ScheduleAccountUpdaterResult do
+defmodule AdyenEx.Recurring.V25.ScheduleAccountUpdaterResult do
   @moduledoc """
   Provides struct and type for a ScheduleAccountUpdaterResult
   """

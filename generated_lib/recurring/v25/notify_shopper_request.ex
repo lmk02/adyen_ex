@@ -1,10 +1,10 @@
-defmodule Adyen.Recurring.V25.NotifyShopperRequest do
+defmodule AdyenEx.Recurring.V25.NotifyShopperRequest do
   @moduledoc """
   Provides struct and type for a NotifyShopperRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Recurring.V25.Amount.t(),
+          amount: AdyenEx.Recurring.V25.Amount.t(),
           billingDate: String.t() | nil,
           billingSequenceNumber: String.t() | nil,
           displayedReference: String.t() | nil,
@@ -33,7 +33,7 @@ defmodule Adyen.Recurring.V25.NotifyShopperRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Recurring.V25.Amount, :t},
+      amount: {AdyenEx.Recurring.V25.Amount, :t},
       billingDate: :string,
       billingSequenceNumber: :string,
       displayedReference: :string,

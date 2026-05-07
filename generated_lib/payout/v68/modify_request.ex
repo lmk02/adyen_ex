@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V68.ModifyRequest do
+defmodule AdyenEx.Payout.V68.ModifyRequest do
   @moduledoc """
   Provides struct and type for a ModifyRequest
   """

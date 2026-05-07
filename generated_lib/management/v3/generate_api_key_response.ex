@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.GenerateApiKeyResponse do
+defmodule AdyenEx.Management.V3.GenerateApiKeyResponse do
   @moduledoc """
   Provides struct and type for a GenerateApiKeyResponse
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.PaymentMethodGroup do
+defmodule AdyenEx.Checkout.V50.PaymentMethodGroup do
   @moduledoc """
   Provides struct and type for a PaymentMethodGroup
   """

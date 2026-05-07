@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.DocumentPage do
+defmodule AdyenEx.LegalEntity.V4.DocumentPage do
   @moduledoc """
   Provides struct and type for a DocumentPage
   """

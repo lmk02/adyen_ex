@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.RiskScoresRestriction do
+defmodule AdyenEx.BalancePlatform.V2.RiskScoresRestriction do
   @moduledoc """
   Provides struct and type for a RiskScoresRestriction
   """
 
   @type t :: %__MODULE__{
           operation: String.t(),
-          value: Adyen.BalancePlatform.V2.RiskScores.t() | nil
+          value: AdyenEx.BalancePlatform.V2.RiskScores.t() | nil
         }
 
   defstruct [:operation, :value]
@@ -15,6 +15,6 @@ defmodule Adyen.BalancePlatform.V2.RiskScoresRestriction do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [operation: :string, value: {Adyen.BalancePlatform.V2.RiskScores, :t}]
+    [operation: :string, value: {AdyenEx.BalancePlatform.V2.RiskScores, :t}]
   end
 end

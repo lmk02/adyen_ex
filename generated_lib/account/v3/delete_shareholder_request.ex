@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.DeleteShareholderRequest do
+defmodule AdyenEx.Account.V3.DeleteShareholderRequest do
   @moduledoc """
   Provides struct and type for a DeleteShareholderRequest
   """

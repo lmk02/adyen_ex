@@ -1,4 +1,4 @@
-defmodule Adyen.SoftPOSConfiguration.V3.CertificateLoadingResponse do
+defmodule AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingResponse do
   @moduledoc """
   Provides struct and type for a CertificateLoadingResponse
   """

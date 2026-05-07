@@ -1,4 +1,4 @@
-defmodule Adyen.Capital.V1.BankAccountIdentification do
+defmodule AdyenEx.Capital.V1.BankAccountIdentification do
   @moduledoc """
   Provides struct and type for a BankAccountIdentification
   """

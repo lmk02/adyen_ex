@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.ItemDetailLine do
+defmodule AdyenEx.Checkout.V71.ItemDetailLine do
   @moduledoc """
   Provides struct and type for a ItemDetailLine
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V1.TransferInstruments do
+defmodule AdyenEx.BalancePlatform.V1.TransferInstruments do
   @moduledoc """
   Provides API endpoints related to transfer instruments
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a transfer instrument
@@ -11,22 +11,22 @@ defmodule Adyen.BalancePlatform.V1.TransferInstruments do
   Deletes a transfer instrument.
   """
   @spec delete_transfer_instruments_id(id :: String.t(), opts :: keyword) ::
-          :ok | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          :ok | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def delete_transfer_instruments_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.TransferInstruments, :delete_transfer_instruments_id},
+      call: {AdyenEx.BalancePlatform.V1.TransferInstruments, :delete_transfer_instruments_id},
       url: "/transferInstruments/#{id}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -38,23 +38,23 @@ defmodule Adyen.BalancePlatform.V1.TransferInstruments do
   Returns the details of a transfer instrument.
   """
   @spec get_transfer_instruments_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.TransferInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransferInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def get_transfer_instruments_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.TransferInstruments, :get_transfer_instruments_id},
+      call: {AdyenEx.BalancePlatform.V1.TransferInstruments, :get_transfer_instruments_id},
       url: "/transferInstruments/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransferInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransferInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -71,28 +71,28 @@ defmodule Adyen.BalancePlatform.V1.TransferInstruments do
   """
   @spec patch_transfer_instruments_id(
           id :: String.t(),
-          body :: Adyen.BalancePlatform.V1.TransferInstrumentInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.TransferInstrumentInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransferInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransferInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def patch_transfer_instruments_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.BalancePlatform.V1.TransferInstruments, :patch_transfer_instruments_id},
+      call: {AdyenEx.BalancePlatform.V1.TransferInstruments, :patch_transfer_instruments_id},
       url: "/transferInstruments/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.TransferInstrumentInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.TransferInstrumentInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransferInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransferInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -112,28 +112,28 @@ defmodule Adyen.BalancePlatform.V1.TransferInstruments do
   **Content Types**: `application/json`
   """
   @spec post_transfer_instruments(
-          body :: Adyen.BalancePlatform.V1.TransferInstrumentInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.TransferInstrumentInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransferInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransferInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def post_transfer_instruments(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V1.TransferInstruments, :post_transfer_instruments},
+      call: {AdyenEx.BalancePlatform.V1.TransferInstruments, :post_transfer_instruments},
       url: "/transferInstruments",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.TransferInstrumentInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.TransferInstrumentInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransferInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransferInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })

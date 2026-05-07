@@ -1,9 +1,9 @@
-defmodule Adyen.Transaction.V4.DisputeAttachments do
+defmodule AdyenEx.Transaction.V4.DisputeAttachments do
   @moduledoc """
   Provides API endpoints related to dispute attachments
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete attachment from a dispute
@@ -14,22 +14,22 @@ defmodule Adyen.Transaction.V4.DisputeAttachments do
           disputeId :: String.t(),
           attachmentId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Transaction.V4.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.Transaction.V4.DefaultErrorResponseEntity.t()}
   def delete_disputes_dispute_id_attachments_attachment_id(disputeId, attachmentId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [disputeId: disputeId, attachmentId: attachmentId],
       call:
-        {Adyen.Transaction.V4.DisputeAttachments,
+        {AdyenEx.Transaction.V4.DisputeAttachments,
          :delete_disputes_dispute_id_attachments_attachment_id},
       url: "/disputes/#{disputeId}/attachments/#{attachmentId}",
       method: :delete,
       response: [
         {204, :null},
-        {401, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}}
+        {401, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -41,21 +41,21 @@ defmodule Adyen.Transaction.V4.DisputeAttachments do
   Get a list of attachments associated with a dispute ID.
   """
   @spec get_disputes_dispute_id_attachments(disputeId :: String.t(), opts :: keyword) ::
-          {:ok, [Adyen.Transaction.V4.DisputeAttachment.t()]}
-          | {:error, Adyen.Transaction.V4.DefaultErrorResponseEntity.t()}
+          {:ok, [AdyenEx.Transaction.V4.DisputeAttachment.t()]}
+          | {:error, AdyenEx.Transaction.V4.DefaultErrorResponseEntity.t()}
   def get_disputes_dispute_id_attachments(disputeId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [disputeId: disputeId],
-      call: {Adyen.Transaction.V4.DisputeAttachments, :get_disputes_dispute_id_attachments},
+      call: {AdyenEx.Transaction.V4.DisputeAttachments, :get_disputes_dispute_id_attachments},
       url: "/disputes/#{disputeId}/attachments",
       method: :get,
       response: [
-        {200, [{Adyen.Transaction.V4.DisputeAttachment, :t}]},
-        {401, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}}
+        {200, [{AdyenEx.Transaction.V4.DisputeAttachment, :t}]},
+        {401, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -71,23 +71,23 @@ defmodule Adyen.Transaction.V4.DisputeAttachments do
           attachmentId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Transaction.V4.DisputeAttachment.t()}
-          | {:error, Adyen.Transaction.V4.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Transaction.V4.DisputeAttachment.t()}
+          | {:error, AdyenEx.Transaction.V4.DefaultErrorResponseEntity.t()}
   def get_disputes_dispute_id_attachments_attachment_id(disputeId, attachmentId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [disputeId: disputeId, attachmentId: attachmentId],
       call:
-        {Adyen.Transaction.V4.DisputeAttachments,
+        {AdyenEx.Transaction.V4.DisputeAttachments,
          :get_disputes_dispute_id_attachments_attachment_id},
       url: "/disputes/#{disputeId}/attachments/#{attachmentId}",
       method: :get,
       response: [
-        {200, {Adyen.Transaction.V4.DisputeAttachment, :t}},
-        {401, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Transaction.V4.DisputeAttachment, :t}},
+        {401, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -104,26 +104,26 @@ defmodule Adyen.Transaction.V4.DisputeAttachments do
   """
   @spec post_disputes_dispute_id_attachments(
           disputeId :: String.t(),
-          body :: Adyen.Transaction.V4.DisputeAttachment.t(),
+          body :: AdyenEx.Transaction.V4.DisputeAttachment.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Transaction.V4.AttachDocumentResponse.t()}
-          | {:error, Adyen.Transaction.V4.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Transaction.V4.AttachDocumentResponse.t()}
+          | {:error, AdyenEx.Transaction.V4.DefaultErrorResponseEntity.t()}
   def post_disputes_dispute_id_attachments(disputeId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [disputeId: disputeId, body: body],
-      call: {Adyen.Transaction.V4.DisputeAttachments, :post_disputes_dispute_id_attachments},
+      call: {AdyenEx.Transaction.V4.DisputeAttachments, :post_disputes_dispute_id_attachments},
       url: "/disputes/#{disputeId}/attachments",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Transaction.V4.DisputeAttachment, :t}}],
+      request: [{"application/json", {AdyenEx.Transaction.V4.DisputeAttachment, :t}}],
       response: [
-        {200, {Adyen.Transaction.V4.AttachDocumentResponse, :t}},
-        {401, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V4.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Transaction.V4.AttachDocumentResponse, :t}},
+        {401, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V4.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

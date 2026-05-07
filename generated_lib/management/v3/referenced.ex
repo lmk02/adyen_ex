@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Referenced do
+defmodule AdyenEx.Management.V3.Referenced do
   @moduledoc """
   Provides struct and type for a Referenced
   """

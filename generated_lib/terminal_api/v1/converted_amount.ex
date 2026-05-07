@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.ConvertedAmount do
+defmodule AdyenEx.TerminalAPI.V1.ConvertedAmount do
   @moduledoc """
   Provides struct and type for a ConvertedAmount
   """

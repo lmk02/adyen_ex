@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.TerminalActionsTerminalLevel do
+defmodule AdyenEx.Management.V3.TerminalActionsTerminalLevel do
   @moduledoc """
   Provides API endpoint related to terminal actions terminal level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create a terminal action
@@ -25,28 +25,29 @@ defmodule Adyen.Management.V3.TerminalActionsTerminalLevel do
   **Content Types**: `application/json`
   """
   @spec post_terminals_schedule_actions(
-          body :: Adyen.Management.V3.ScheduleTerminalActionsRequest.t(),
+          body :: AdyenEx.Management.V3.ScheduleTerminalActionsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.ScheduleTerminalActionsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ScheduleTerminalActionsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_terminals_schedule_actions(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Management.V3.TerminalActionsTerminalLevel, :post_terminals_schedule_actions},
+      call:
+        {AdyenEx.Management.V3.TerminalActionsTerminalLevel, :post_terminals_schedule_actions},
       url: "/terminals/scheduleActions",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.ScheduleTerminalActionsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.ScheduleTerminalActionsRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.ScheduleTerminalActionsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ScheduleTerminalActionsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

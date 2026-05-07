@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.TransferLimitListResponse do
+defmodule AdyenEx.BalancePlatform.V2.TransferLimitListResponse do
   @moduledoc """
   Provides struct and type for a TransferLimitListResponse
   """
 
-  @type t :: %__MODULE__{transferLimits: [Adyen.BalancePlatform.V2.TransferLimit.t()]}
+  @type t :: %__MODULE__{transferLimits: [AdyenEx.BalancePlatform.V2.TransferLimit.t()]}
 
   defstruct [:transferLimits]
 
@@ -12,6 +12,6 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitListResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [transferLimits: [{Adyen.BalancePlatform.V2.TransferLimit, :t}]]
+    [transferLimits: [{AdyenEx.BalancePlatform.V2.TransferLimit, :t}]]
   end
 end

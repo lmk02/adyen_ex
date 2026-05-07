@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.PaymentMethodResponse do
+defmodule AdyenEx.Management.V3.PaymentMethodResponse do
   @moduledoc """
   Provides struct and type for a PaymentMethodResponse
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V3.PaginationLinks.t() | nil,
-          data: [Adyen.Management.V3.PaymentMethod.t()] | nil,
+          _links: AdyenEx.Management.V3.PaginationLinks.t() | nil,
+          data: [AdyenEx.Management.V3.PaymentMethod.t()] | nil,
           itemsTotal: integer,
           pagesTotal: integer,
           typesWithErrors: [String.t()] | nil
@@ -19,8 +19,8 @@ defmodule Adyen.Management.V3.PaymentMethodResponse do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V3.PaginationLinks, :t},
-      data: [{Adyen.Management.V3.PaymentMethod, :t}],
+      _links: {AdyenEx.Management.V3.PaginationLinks, :t},
+      data: [{AdyenEx.Management.V3.PaymentMethod, :t}],
       itemsTotal: {:integer, "int32"},
       pagesTotal: {:integer, "int32"},
       typesWithErrors: [

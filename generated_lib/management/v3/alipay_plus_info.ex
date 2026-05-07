@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.AlipayPlusInfo do
+defmodule AdyenEx.Management.V3.AlipayPlusInfo do
   @moduledoc """
   Provides struct and type for a AlipayPlusInfo
   """

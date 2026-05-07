@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.RestServiceError do
+defmodule AdyenEx.BalancePlatform.V1.RestServiceError do
   @moduledoc """
   Provides struct and type for a RestServiceError
   """
@@ -7,9 +7,9 @@ defmodule Adyen.BalancePlatform.V1.RestServiceError do
           detail: String.t(),
           errorCode: String.t(),
           instance: String.t() | nil,
-          invalidFields: [Adyen.BalancePlatform.V1.InvalidField.t()] | nil,
+          invalidFields: [AdyenEx.BalancePlatform.V1.InvalidField.t()] | nil,
           requestId: String.t() | nil,
-          response: Adyen.BalancePlatform.V1.JSONObject.t() | nil,
+          response: AdyenEx.BalancePlatform.V1.JSONObject.t() | nil,
           status: integer,
           title: String.t(),
           type: String.t()
@@ -36,9 +36,9 @@ defmodule Adyen.BalancePlatform.V1.RestServiceError do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.BalancePlatform.V1.InvalidField, :t}],
+      invalidFields: [{AdyenEx.BalancePlatform.V1.InvalidField, :t}],
       requestId: :string,
-      response: {Adyen.BalancePlatform.V1.JSONObject, :t},
+      response: {AdyenEx.BalancePlatform.V1.JSONObject, :t},
       status: {:integer, "int32"},
       title: :string,
       type: :string

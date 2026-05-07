@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse do
+defmodule AdyenEx.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse do
   @moduledoc """
   Provides struct and type for a GetTermsOfServiceAcceptanceInfosResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.LegalEntity.V3.TermsOfServiceAcceptanceInfo.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.LegalEntity.V3.TermsOfServiceAcceptanceInfo.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.LegalEntity.V3.TermsOfServiceAcceptanceInfo, :t}]]
+    [data: [{AdyenEx.LegalEntity.V3.TermsOfServiceAcceptanceInfo, :t}]]
   end
 end

@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
+defmodule AdyenEx.Management.V3.TerminalOrdersCompanyLevel do
   @moduledoc """
   Provides API endpoints related to terminal orders company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of billing entities
@@ -23,8 +23,8 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
 
   """
   @spec get_companies_company_id_billing_entities(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.BillingEntitiesResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.BillingEntitiesResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_billing_entities(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:name])
@@ -32,18 +32,18 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_billing_entities},
       url: "/companies/#{companyId}/billingEntities",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.BillingEntitiesResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.BillingEntitiesResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -69,8 +69,8 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
 
   """
   @spec get_companies_company_id_shipping_locations(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.ShippingLocationsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ShippingLocationsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_shipping_locations(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :name, :offset])
@@ -78,18 +78,18 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_shipping_locations},
       url: "/companies/#{companyId}/shippingLocations",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.ShippingLocationsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ShippingLocationsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -108,25 +108,25 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
   In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).
   """
   @spec get_companies_company_id_terminal_models(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.TerminalModelsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalModelsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_terminal_models(companyId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_terminal_models},
       url: "/companies/#{companyId}/terminalModels",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.TerminalModelsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalModelsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -153,8 +153,8 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
 
   """
   @spec get_companies_company_id_terminal_orders(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.TerminalOrdersResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalOrdersResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_terminal_orders(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:customerOrderReference, :limit, :offset, :status])
@@ -162,18 +162,18 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_terminal_orders},
       url: "/companies/#{companyId}/terminalOrders",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.TerminalOrdersResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalOrdersResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -195,25 +195,25 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
           orderId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.TerminalOrder.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_terminal_orders_order_id(companyId, orderId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, orderId: orderId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_terminal_orders_order_id},
       url: "/companies/#{companyId}/terminalOrders/#{orderId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.TerminalOrder, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalOrder, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -239,8 +239,8 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
 
   """
   @spec get_companies_company_id_terminal_products(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.TerminalProductsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalProductsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_terminal_products(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:country, :limit, :offset, :terminalModelId])
@@ -248,18 +248,18 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :get_companies_company_id_terminal_products},
       url: "/companies/#{companyId}/terminalProducts",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.TerminalProductsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalProductsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -287,30 +287,30 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
   @spec patch_companies_company_id_terminal_orders_order_id(
           companyId :: String.t(),
           orderId :: String.t(),
-          body :: Adyen.Management.V3.TerminalOrderRequest.t(),
+          body :: AdyenEx.Management.V3.TerminalOrderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.TerminalOrder.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_companies_company_id_terminal_orders_order_id(companyId, orderId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, orderId: orderId, body: body],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :patch_companies_company_id_terminal_orders_order_id},
       url: "/companies/#{companyId}/terminalOrders/#{orderId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V3.TerminalOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.TerminalOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.TerminalOrder, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalOrder, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -332,30 +332,30 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
   """
   @spec post_companies_company_id_shipping_locations(
           companyId :: String.t(),
-          body :: Adyen.Management.V3.ShippingLocation.t(),
+          body :: AdyenEx.Management.V3.ShippingLocation.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.ShippingLocation.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ShippingLocation.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_shipping_locations(companyId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, body: body],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :post_companies_company_id_shipping_locations},
       url: "/companies/#{companyId}/shippingLocations",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.ShippingLocation, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.ShippingLocation, :t}}],
       response: [
-        {200, {Adyen.Management.V3.ShippingLocation, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ShippingLocation, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -378,30 +378,30 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
   """
   @spec post_companies_company_id_terminal_orders(
           companyId :: String.t(),
-          body :: Adyen.Management.V3.TerminalOrderRequest.t(),
+          body :: AdyenEx.Management.V3.TerminalOrderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.TerminalOrder.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_terminal_orders(companyId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, body: body],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :post_companies_company_id_terminal_orders},
       url: "/companies/#{companyId}/terminalOrders",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.TerminalOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.TerminalOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.TerminalOrder, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalOrder, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -424,25 +424,25 @@ defmodule Adyen.Management.V3.TerminalOrdersCompanyLevel do
           orderId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.TerminalOrder.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_terminal_orders_order_id_cancel(companyId, orderId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, orderId: orderId],
       call:
-        {Adyen.Management.V3.TerminalOrdersCompanyLevel,
+        {AdyenEx.Management.V3.TerminalOrdersCompanyLevel,
          :post_companies_company_id_terminal_orders_order_id_cancel},
       url: "/companies/#{companyId}/terminalOrders/#{orderId}/cancel",
       method: :post,
       response: [
-        {200, {Adyen.Management.V3.TerminalOrder, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.TerminalOrder, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

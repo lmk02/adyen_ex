@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.StoredValueAccountStatus do
+defmodule AdyenEx.TerminalAPI.V1.StoredValueAccountStatus do
   @moduledoc """
   Provides struct and type for a StoredValueAccountStatus
   """
 
   @type t :: %__MODULE__{
           CurrentBalance: number | nil,
-          StoredValueAccountID: Adyen.TerminalAPI.V1.StoredValueAccountID.t()
+          StoredValueAccountID: AdyenEx.TerminalAPI.V1.StoredValueAccountID.t()
         }
 
   defstruct [:CurrentBalance, :StoredValueAccountID]
@@ -17,7 +17,7 @@ defmodule Adyen.TerminalAPI.V1.StoredValueAccountStatus do
   def __fields__(:t) do
     [
       CurrentBalance: :number,
-      StoredValueAccountID: {Adyen.TerminalAPI.V1.StoredValueAccountID, :t}
+      StoredValueAccountID: {AdyenEx.TerminalAPI.V1.StoredValueAccountID, :t}
     ]
   end
 end

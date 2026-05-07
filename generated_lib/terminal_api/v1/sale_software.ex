@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.SaleSoftware do
+defmodule AdyenEx.TerminalAPI.V1.SaleSoftware do
   @moduledoc """
   Provides struct and type for a SaleSoftware
   """

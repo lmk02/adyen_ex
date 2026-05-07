@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V70.Recurring do
+defmodule AdyenEx.Checkout.V70.Recurring do
   @moduledoc """
   Provides API endpoints related to recurring
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a token for stored payment details
@@ -28,7 +28,7 @@ defmodule Adyen.Checkout.V70.Recurring do
     client.request(%{
       args: [storedPaymentMethodId: storedPaymentMethodId],
       call:
-        {Adyen.Checkout.V70.Recurring, :delete_stored_payment_methods_stored_payment_method_id},
+        {AdyenEx.Checkout.V70.Recurring, :delete_stored_payment_methods_stored_payment_method_id},
       url: "/storedPaymentMethods/#{storedPaymentMethodId}",
       method: :delete,
       query: query,
@@ -51,18 +51,18 @@ defmodule Adyen.Checkout.V70.Recurring do
 
   """
   @spec get_stored_payment_methods(opts :: keyword) ::
-          {:ok, Adyen.Checkout.V70.ListStoredPaymentMethodsResponse.t()} | :error
+          {:ok, AdyenEx.Checkout.V70.ListStoredPaymentMethodsResponse.t()} | :error
   def get_stored_payment_methods(opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:merchantAccount, :shopperReference])
 
     client.request(%{
       args: [],
-      call: {Adyen.Checkout.V70.Recurring, :get_stored_payment_methods},
+      call: {AdyenEx.Checkout.V70.Recurring, :get_stored_payment_methods},
       url: "/storedPaymentMethods",
       method: :get,
       query: query,
-      response: [{200, {Adyen.Checkout.V70.ListStoredPaymentMethodsResponse, :t}}],
+      response: [{200, {AdyenEx.Checkout.V70.ListStoredPaymentMethodsResponse, :t}}],
       opts: opts
     })
   end
@@ -76,19 +76,19 @@ defmodule Adyen.Checkout.V70.Recurring do
 
   **Content Types**: `application/json`
   """
-  @spec post_forward(body :: Adyen.Checkout.V70.CheckoutForwardRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V70.CheckoutForwardResponse.t()} | :error
+  @spec post_forward(body :: AdyenEx.Checkout.V70.CheckoutForwardRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V70.CheckoutForwardResponse.t()} | :error
   def post_forward(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V70.Recurring, :post_forward},
+      call: {AdyenEx.Checkout.V70.Recurring, :post_forward},
       url: "/forward",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V70.CheckoutForwardRequest, :t}}],
-      response: [{200, {Adyen.Checkout.V70.CheckoutForwardResponse, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V70.CheckoutForwardRequest, :t}}],
+      response: [{200, {AdyenEx.Checkout.V70.CheckoutForwardResponse, :t}}],
       opts: opts
     })
   end
@@ -103,20 +103,20 @@ defmodule Adyen.Checkout.V70.Recurring do
   **Content Types**: `application/json`
   """
   @spec post_stored_payment_methods(
-          body :: Adyen.Checkout.V70.StoredPaymentMethodRequest.t(),
+          body :: AdyenEx.Checkout.V70.StoredPaymentMethodRequest.t(),
           opts :: keyword
-        ) :: {:ok, Adyen.Checkout.V70.StoredPaymentMethodResource.t()} | :error
+        ) :: {:ok, AdyenEx.Checkout.V70.StoredPaymentMethodResource.t()} | :error
   def post_stored_payment_methods(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V70.Recurring, :post_stored_payment_methods},
+      call: {AdyenEx.Checkout.V70.Recurring, :post_stored_payment_methods},
       url: "/storedPaymentMethods",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V70.StoredPaymentMethodRequest, :t}}],
-      response: [{201, {Adyen.Checkout.V70.StoredPaymentMethodResource, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V70.StoredPaymentMethodRequest, :t}}],
+      response: [{201, {AdyenEx.Checkout.V70.StoredPaymentMethodResource, :t}}],
       opts: opts
     })
   end

@@ -1,15 +1,15 @@
-defmodule Adyen.Payment.V46.ApplicationInfo do
+defmodule AdyenEx.Payment.V46.ApplicationInfo do
   @moduledoc """
   Provides struct and type for a ApplicationInfo
   """
 
   @type t :: %__MODULE__{
-          adyenLibrary: Adyen.Payment.V46.CommonField.t() | nil,
-          adyenPaymentSource: Adyen.Payment.V46.CommonField.t() | nil,
-          externalPlatform: Adyen.Payment.V46.ExternalPlatform.t() | nil,
-          merchantApplication: Adyen.Payment.V46.CommonField.t() | nil,
-          merchantDevice: Adyen.Payment.V46.MerchantDevice.t() | nil,
-          shopperInteractionDevice: Adyen.Payment.V46.ShopperInteractionDevice.t() | nil
+          adyenLibrary: AdyenEx.Payment.V46.CommonField.t() | nil,
+          adyenPaymentSource: AdyenEx.Payment.V46.CommonField.t() | nil,
+          externalPlatform: AdyenEx.Payment.V46.ExternalPlatform.t() | nil,
+          merchantApplication: AdyenEx.Payment.V46.CommonField.t() | nil,
+          merchantDevice: AdyenEx.Payment.V46.MerchantDevice.t() | nil,
+          shopperInteractionDevice: AdyenEx.Payment.V46.ShopperInteractionDevice.t() | nil
         }
 
   defstruct [
@@ -27,12 +27,12 @@ defmodule Adyen.Payment.V46.ApplicationInfo do
 
   def __fields__(:t) do
     [
-      adyenLibrary: {Adyen.Payment.V46.CommonField, :t},
-      adyenPaymentSource: {Adyen.Payment.V46.CommonField, :t},
-      externalPlatform: {Adyen.Payment.V46.ExternalPlatform, :t},
-      merchantApplication: {Adyen.Payment.V46.CommonField, :t},
-      merchantDevice: {Adyen.Payment.V46.MerchantDevice, :t},
-      shopperInteractionDevice: {Adyen.Payment.V46.ShopperInteractionDevice, :t}
+      adyenLibrary: {AdyenEx.Payment.V46.CommonField, :t},
+      adyenPaymentSource: {AdyenEx.Payment.V46.CommonField, :t},
+      externalPlatform: {AdyenEx.Payment.V46.ExternalPlatform, :t},
+      merchantApplication: {AdyenEx.Payment.V46.CommonField, :t},
+      merchantDevice: {AdyenEx.Payment.V46.MerchantDevice, :t},
+      shopperInteractionDevice: {AdyenEx.Payment.V46.ShopperInteractionDevice, :t}
     ]
   end
 end

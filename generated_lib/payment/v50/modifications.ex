@@ -1,9 +1,9 @@
-defmodule Adyen.Payment.V50.Modifications do
+defmodule AdyenEx.Payment.V50.Modifications do
   @moduledoc """
   Provides API endpoints related to modifications
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Change the authorised amount
@@ -20,28 +20,28 @@ defmodule Adyen.Payment.V50.Modifications do
   **Content Types**: `application/json`
   """
   @spec post_adjust_authorisation(
-          body :: Adyen.Payment.V50.AdjustAuthorisationRequest.t(),
+          body :: AdyenEx.Payment.V50.AdjustAuthorisationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_adjust_authorisation(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_adjust_authorisation},
+      call: {AdyenEx.Payment.V50.Modifications, :post_adjust_authorisation},
       url: "/adjustAuthorisation",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.AdjustAuthorisationRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.AdjustAuthorisationRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -60,26 +60,26 @@ defmodule Adyen.Payment.V50.Modifications do
 
   **Content Types**: `application/json`
   """
-  @spec post_cancel(body :: Adyen.Payment.V50.CancelRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+  @spec post_cancel(body :: AdyenEx.Payment.V50.CancelRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_cancel(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_cancel},
+      call: {AdyenEx.Payment.V50.Modifications, :post_cancel},
       url: "/cancel",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.CancelRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.CancelRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -105,28 +105,28 @@ defmodule Adyen.Payment.V50.Modifications do
   **Content Types**: `application/json`
   """
   @spec post_cancel_or_refund(
-          body :: Adyen.Payment.V50.CancelOrRefundRequest.t(),
+          body :: AdyenEx.Payment.V50.CancelOrRefundRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_cancel_or_refund(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_cancel_or_refund},
+      call: {AdyenEx.Payment.V50.Modifications, :post_cancel_or_refund},
       url: "/cancelOrRefund",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.CancelOrRefundRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.CancelOrRefundRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -148,26 +148,26 @@ defmodule Adyen.Payment.V50.Modifications do
 
   **Content Types**: `application/json`
   """
-  @spec post_capture(body :: Adyen.Payment.V50.CaptureRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+  @spec post_capture(body :: AdyenEx.Payment.V50.CaptureRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_capture(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_capture},
+      call: {AdyenEx.Payment.V50.Modifications, :post_capture},
       url: "/capture",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.CaptureRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.CaptureRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -184,26 +184,26 @@ defmodule Adyen.Payment.V50.Modifications do
 
   **Content Types**: `application/json`
   """
-  @spec post_donate(body :: Adyen.Payment.V50.DonationRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+  @spec post_donate(body :: AdyenEx.Payment.V50.DonationRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_donate(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_donate},
+      call: {AdyenEx.Payment.V50.Modifications, :post_donate},
       url: "/donate",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.DonationRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.DonationRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -225,26 +225,26 @@ defmodule Adyen.Payment.V50.Modifications do
 
   **Content Types**: `application/json`
   """
-  @spec post_refund(body :: Adyen.Payment.V50.RefundRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+  @spec post_refund(body :: AdyenEx.Payment.V50.RefundRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_refund(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_refund},
+      call: {AdyenEx.Payment.V50.Modifications, :post_refund},
       url: "/refund",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.RefundRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.RefundRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -266,28 +266,28 @@ defmodule Adyen.Payment.V50.Modifications do
   **Content Types**: `application/json`
   """
   @spec post_technical_cancel(
-          body :: Adyen.Payment.V50.TechnicalCancelRequest.t(),
+          body :: AdyenEx.Payment.V50.TechnicalCancelRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_technical_cancel(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_technical_cancel},
+      call: {AdyenEx.Payment.V50.Modifications, :post_technical_cancel},
       url: "/technicalCancel",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.TechnicalCancelRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.TechnicalCancelRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -307,28 +307,28 @@ defmodule Adyen.Payment.V50.Modifications do
   **Content Types**: `application/json`
   """
   @spec post_void_pending_refund(
-          body :: Adyen.Payment.V50.VoidPendingRefundRequest.t(),
+          body :: AdyenEx.Payment.V50.VoidPendingRefundRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V50.ModificationResult.t()}
-          | {:error, Adyen.Payment.V50.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V50.ModificationResult.t()}
+          | {:error, AdyenEx.Payment.V50.ServiceError.t()}
   def post_void_pending_refund(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V50.Modifications, :post_void_pending_refund},
+      call: {AdyenEx.Payment.V50.Modifications, :post_void_pending_refund},
       url: "/voidPendingRefund",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V50.VoidPendingRefundRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V50.VoidPendingRefundRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V50.ModificationResult, :t}},
-        {400, {Adyen.Payment.V50.ServiceError, :t}},
-        {401, {Adyen.Payment.V50.ServiceError, :t}},
-        {403, {Adyen.Payment.V50.ServiceError, :t}},
-        {422, {Adyen.Payment.V50.ServiceError, :t}},
-        {500, {Adyen.Payment.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V50.ModificationResult, :t}},
+        {400, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V50.ServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.StoreSplitConfiguration do
+defmodule AdyenEx.Management.V3.StoreSplitConfiguration do
   @moduledoc """
   Provides struct and type for a StoreSplitConfiguration
   """

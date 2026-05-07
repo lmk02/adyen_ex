@@ -1,18 +1,18 @@
-defmodule Adyen.BalancePlatform.V2.BalanceAccount do
+defmodule AdyenEx.BalancePlatform.V2.BalanceAccount do
   @moduledoc """
   Provides struct and type for a BalanceAccount
   """
 
   @type t :: %__MODULE__{
           accountHolderId: String.t(),
-          balances: [Adyen.BalancePlatform.V2.Balance.t()] | nil,
+          balances: [AdyenEx.BalancePlatform.V2.Balance.t()] | nil,
           defaultCurrencyCode: String.t() | nil,
           description: String.t() | nil,
           id: String.t(),
           metadata: map | nil,
           migratedAccountCode: String.t() | nil,
           platformPaymentConfiguration:
-            Adyen.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
+            AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
           reference: String.t() | nil,
           status: String.t() | nil,
           timeZone: String.t() | nil
@@ -39,13 +39,13 @@ defmodule Adyen.BalancePlatform.V2.BalanceAccount do
   def __fields__(:t) do
     [
       accountHolderId: :string,
-      balances: [{Adyen.BalancePlatform.V2.Balance, :t}],
+      balances: [{AdyenEx.BalancePlatform.V2.Balance, :t}],
       defaultCurrencyCode: :string,
       description: :string,
       id: :string,
       metadata: :map,
       migratedAccountCode: :string,
-      platformPaymentConfiguration: {Adyen.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
+      platformPaymentConfiguration: {AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
       reference: :string,
       status: {:enum, ["active", "closed", "inactive", "suspended"]},
       timeZone: :string

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.GivexResponseInfo do
+defmodule AdyenEx.Management.V3.GivexResponseInfo do
   @moduledoc """
   Provides struct and type for a GivexResponseInfo
   """

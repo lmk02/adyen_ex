@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.BalanceInquiryResponse do
+defmodule AdyenEx.TerminalAPI.V1.BalanceInquiryResponse do
   @moduledoc """
   Provides struct and type for a BalanceInquiryResponse
   """
 
   @type t :: %__MODULE__{
-          PaymentAccountStatus: Adyen.TerminalAPI.V1.PaymentAccountStatus.t() | nil,
-          PaymentReceipt: [Adyen.TerminalAPI.V1.PaymentReceipt.t()] | nil,
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          PaymentAccountStatus: AdyenEx.TerminalAPI.V1.PaymentAccountStatus.t() | nil,
+          PaymentReceipt: [AdyenEx.TerminalAPI.V1.PaymentReceipt.t()] | nil,
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:PaymentAccountStatus, :PaymentReceipt, :Response]
@@ -17,9 +17,9 @@ defmodule Adyen.TerminalAPI.V1.BalanceInquiryResponse do
 
   def __fields__(:t) do
     [
-      PaymentAccountStatus: {Adyen.TerminalAPI.V1.PaymentAccountStatus, :t},
-      PaymentReceipt: [{Adyen.TerminalAPI.V1.PaymentReceipt, :t}],
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      PaymentAccountStatus: {AdyenEx.TerminalAPI.V1.PaymentAccountStatus, :t},
+      PaymentReceipt: [{AdyenEx.TerminalAPI.V1.PaymentReceipt, :t}],
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

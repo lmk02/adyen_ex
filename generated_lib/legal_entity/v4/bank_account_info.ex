@@ -1,25 +1,25 @@
-defmodule Adyen.LegalEntity.V4.BankAccountInfo do
+defmodule AdyenEx.LegalEntity.V4.BankAccountInfo do
   @moduledoc """
   Provides struct and type for a BankAccountInfo
   """
 
   @type t :: %__MODULE__{
           accountIdentification:
-            Adyen.LegalEntity.V4.AULocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.CALocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.CZLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.DKLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.HKLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.HULocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.IbanAccountIdentification.t()
-            | Adyen.LegalEntity.V4.NOLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.NZLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.NumberAndBicAccountIdentification.t()
-            | Adyen.LegalEntity.V4.PLLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.SELocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.SGLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.UKLocalAccountIdentification.t()
-            | Adyen.LegalEntity.V4.USLocalAccountIdentification.t()
+            AdyenEx.LegalEntity.V4.AULocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.CALocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.CZLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.DKLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.HKLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.HULocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.IbanAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.NOLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.NZLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.NumberAndBicAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.PLLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.SELocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.SGLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.UKLocalAccountIdentification.t()
+            | AdyenEx.LegalEntity.V4.USLocalAccountIdentification.t()
             | nil,
           accountType: String.t() | nil,
           bankName: String.t() | nil,
@@ -38,21 +38,21 @@ defmodule Adyen.LegalEntity.V4.BankAccountInfo do
       accountIdentification:
         {:union,
          [
-           {Adyen.LegalEntity.V4.AULocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.CALocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.CZLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.DKLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.HKLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.HULocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.IbanAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.NOLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.NZLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.NumberAndBicAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.PLLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.SELocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.SGLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.UKLocalAccountIdentification, :t},
-           {Adyen.LegalEntity.V4.USLocalAccountIdentification, :t}
+           {AdyenEx.LegalEntity.V4.AULocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.CALocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.CZLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.DKLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.HKLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.HULocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.IbanAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.NOLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.NZLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.NumberAndBicAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.PLLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.SELocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.SGLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.UKLocalAccountIdentification, :t},
+           {AdyenEx.LegalEntity.V4.USLocalAccountIdentification, :t}
          ]},
       accountType: :string,
       bankName: :string,

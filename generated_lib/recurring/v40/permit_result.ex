@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V40.PermitResult do
+defmodule AdyenEx.Recurring.V40.PermitResult do
   @moduledoc """
   Provides struct and type for a PermitResult
   """

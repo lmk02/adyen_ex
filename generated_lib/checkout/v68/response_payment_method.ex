@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.ResponsePaymentMethod do
+defmodule AdyenEx.Checkout.V68.ResponsePaymentMethod do
   @moduledoc """
   Provides struct and type for a ResponsePaymentMethod
   """

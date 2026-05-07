@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.RakutenPayDetails do
+defmodule AdyenEx.Checkout.V72.RakutenPayDetails do
   @moduledoc """
   Provides struct and type for a RakutenPayDetails
   """

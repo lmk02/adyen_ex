@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V30.SubmitResponse do
+defmodule AdyenEx.Payout.V30.SubmitResponse do
   @moduledoc """
   Provides struct and type for a SubmitResponse
   """

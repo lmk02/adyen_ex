@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.WebhookSetting do
+defmodule AdyenEx.BalancePlatform.V2.WebhookSetting do
   @moduledoc """
   Provides struct and type for a WebhookSetting
   """
@@ -7,7 +7,7 @@ defmodule Adyen.BalancePlatform.V2.WebhookSetting do
           currency: String.t(),
           id: String.t(),
           status: String.t(),
-          target: Adyen.BalancePlatform.V2.Target.t(),
+          target: AdyenEx.BalancePlatform.V2.Target.t(),
           type: String.t()
         }
 
@@ -22,7 +22,7 @@ defmodule Adyen.BalancePlatform.V2.WebhookSetting do
       currency: :string,
       id: :string,
       status: :string,
-      target: {Adyen.BalancePlatform.V2.Target, :t},
+      target: {AdyenEx.BalancePlatform.V2.Target, :t},
       type: {:const, "balance"}
     ]
   end

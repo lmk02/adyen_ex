@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.AcceptTermsOfServiceRequest do
+defmodule AdyenEx.LegalEntity.V4.AcceptTermsOfServiceRequest do
   @moduledoc """
   Provides struct and type for a AcceptTermsOfServiceRequest
   """

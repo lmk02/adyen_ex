@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
+defmodule AdyenEx.Management.V1.TerminalSettingsStoreLevel do
   @moduledoc """
   Provides API endpoints related to terminal settings store level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get the terminal logo
@@ -28,7 +28,8 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
           reference :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Logo.t()} | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Logo.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_stores_reference_terminal_logos(merchantId, reference, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:model])
@@ -36,19 +37,19 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
     client.request(%{
       args: [merchantId: merchantId, reference: reference],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel,
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel,
          :get_merchants_merchant_id_stores_reference_terminal_logos},
       url: "/merchants/#{merchantId}/stores/#{reference}/terminalLogos",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.Logo, :t}},
+        {200, {AdyenEx.Management.V1.Logo, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -73,8 +74,8 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
           reference :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalSettings.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalSettings.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_stores_reference_terminal_settings(
         merchantId,
         reference,
@@ -85,18 +86,18 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
     client.request(%{
       args: [merchantId: merchantId, reference: reference],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel,
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel,
          :get_merchants_merchant_id_stores_reference_terminal_settings},
       url: "/merchants/#{merchantId}/stores/#{reference}/terminalSettings",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.TerminalSettings, :t}},
+        {200, {AdyenEx.Management.V1.TerminalSettings, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -121,24 +122,26 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
 
   """
   @spec get_stores_store_id_terminal_logos(storeId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.Logo.t()} | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Logo.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_stores_store_id_terminal_logos(storeId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:model])
 
     client.request(%{
       args: [storeId: storeId],
-      call: {Adyen.Management.V1.TerminalSettingsStoreLevel, :get_stores_store_id_terminal_logos},
+      call:
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel, :get_stores_store_id_terminal_logos},
       url: "/stores/#{storeId}/terminalLogos",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.Logo, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.Logo, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -159,24 +162,24 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
   In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).
   """
   @spec get_stores_store_id_terminal_settings(storeId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.TerminalSettings.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalSettings.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_stores_store_id_terminal_settings(storeId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [storeId: storeId],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel, :get_stores_store_id_terminal_settings},
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel, :get_stores_store_id_terminal_settings},
       url: "/stores/#{storeId}/terminalSettings",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.TerminalSettings, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.TerminalSettings, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -207,10 +210,11 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
   @spec patch_merchants_merchant_id_stores_reference_terminal_logos(
           merchantId :: String.t(),
           reference :: String.t(),
-          body :: Adyen.Management.V1.Logo.t(),
+          body :: AdyenEx.Management.V1.Logo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Logo.t()} | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Logo.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_merchants_merchant_id_stores_reference_terminal_logos(
         merchantId,
         reference,
@@ -223,21 +227,21 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
     client.request(%{
       args: [merchantId: merchantId, reference: reference, body: body],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel,
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel,
          :patch_merchants_merchant_id_stores_reference_terminal_logos},
       url: "/merchants/#{merchantId}/stores/#{reference}/terminalLogos",
       body: body,
       method: :patch,
       query: query,
-      request: [{"application/json", {Adyen.Management.V1.Logo, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.Logo, :t}}],
       response: [
-        {200, {Adyen.Management.V1.Logo, :t}},
+        {200, {AdyenEx.Management.V1.Logo, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -267,11 +271,11 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
   @spec patch_merchants_merchant_id_stores_reference_terminal_settings(
           merchantId :: String.t(),
           reference :: String.t(),
-          body :: Adyen.Management.V1.TerminalSettings.t(),
+          body :: AdyenEx.Management.V1.TerminalSettings.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalSettings.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalSettings.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_merchants_merchant_id_stores_reference_terminal_settings(
         merchantId,
         reference,
@@ -283,20 +287,20 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
     client.request(%{
       args: [merchantId: merchantId, reference: reference, body: body],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel,
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel,
          :patch_merchants_merchant_id_stores_reference_terminal_settings},
       url: "/merchants/#{merchantId}/stores/#{reference}/terminalSettings",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V1.TerminalSettings, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.TerminalSettings, :t}}],
       response: [
-        {200, {Adyen.Management.V1.TerminalSettings, :t}},
+        {200, {AdyenEx.Management.V1.TerminalSettings, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -326,10 +330,11 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
   """
   @spec patch_stores_store_id_terminal_logos(
           storeId :: String.t(),
-          body :: Adyen.Management.V1.Logo.t(),
+          body :: AdyenEx.Management.V1.Logo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Logo.t()} | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Logo.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_stores_store_id_terminal_logos(storeId, body, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:model])
@@ -337,19 +342,19 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
     client.request(%{
       args: [storeId: storeId, body: body],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel, :patch_stores_store_id_terminal_logos},
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel, :patch_stores_store_id_terminal_logos},
       url: "/stores/#{storeId}/terminalLogos",
       body: body,
       method: :patch,
       query: query,
-      request: [{"application/json", {Adyen.Management.V1.Logo, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.Logo, :t}}],
       response: [
-        {200, {Adyen.Management.V1.Logo, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.Logo, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -378,29 +383,30 @@ defmodule Adyen.Management.V1.TerminalSettingsStoreLevel do
   """
   @spec patch_stores_store_id_terminal_settings(
           storeId :: String.t(),
-          body :: Adyen.Management.V1.TerminalSettings.t(),
+          body :: AdyenEx.Management.V1.TerminalSettings.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalSettings.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalSettings.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_stores_store_id_terminal_settings(storeId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [storeId: storeId, body: body],
       call:
-        {Adyen.Management.V1.TerminalSettingsStoreLevel, :patch_stores_store_id_terminal_settings},
+        {AdyenEx.Management.V1.TerminalSettingsStoreLevel,
+         :patch_stores_store_id_terminal_settings},
       url: "/stores/#{storeId}/terminalSettings",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V1.TerminalSettings, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.TerminalSettings, :t}}],
       response: [
-        {200, {Adyen.Management.V1.TerminalSettings, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.TerminalSettings, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.UpiQrDetails do
+defmodule AdyenEx.Checkout.V49.UpiQrDetails do
   @moduledoc """
   Provides struct and type for a UpiQrDetails
   """

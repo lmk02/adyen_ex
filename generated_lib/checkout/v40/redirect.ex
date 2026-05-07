@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.Redirect do
+defmodule AdyenEx.Checkout.V40.Redirect do
   @moduledoc """
   Provides struct and type for a Redirect
   """

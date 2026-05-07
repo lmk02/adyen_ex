@@ -1,14 +1,14 @@
-defmodule Adyen.Fund.V6.AccountHolderBalanceResponse do
+defmodule AdyenEx.Fund.V6.AccountHolderBalanceResponse do
   @moduledoc """
   Provides struct and type for a AccountHolderBalanceResponse
   """
 
   @type t :: %__MODULE__{
-          balancePerAccount: [Adyen.Fund.V6.AccountDetailBalance.t()] | nil,
-          invalidFields: [Adyen.Fund.V6.ErrorFieldType.t()] | nil,
+          balancePerAccount: [AdyenEx.Fund.V6.AccountDetailBalance.t()] | nil,
+          invalidFields: [AdyenEx.Fund.V6.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
-          totalBalance: Adyen.Fund.V6.DetailBalance.t() | nil
+          totalBalance: AdyenEx.Fund.V6.DetailBalance.t() | nil
         }
 
   defstruct [:balancePerAccount, :invalidFields, :pspReference, :resultCode, :totalBalance]
@@ -19,11 +19,11 @@ defmodule Adyen.Fund.V6.AccountHolderBalanceResponse do
 
   def __fields__(:t) do
     [
-      balancePerAccount: [{Adyen.Fund.V6.AccountDetailBalance, :t}],
-      invalidFields: [{Adyen.Fund.V6.ErrorFieldType, :t}],
+      balancePerAccount: [{AdyenEx.Fund.V6.AccountDetailBalance, :t}],
+      invalidFields: [{AdyenEx.Fund.V6.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string,
-      totalBalance: {Adyen.Fund.V6.DetailBalance, :t}
+      totalBalance: {AdyenEx.Fund.V6.DetailBalance, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.TransferInstrumentReference do
+defmodule AdyenEx.LegalEntity.V3.TransferInstrumentReference do
   @moduledoc """
   Provides struct and type for a TransferInstrumentReference
   """

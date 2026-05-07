@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.Address do
+defmodule AdyenEx.TfmAPI.V1.Address do
   @moduledoc """
   Provides struct and type for a Address
   """

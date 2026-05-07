@@ -1,4 +1,4 @@
-defmodule Adyen.Hop.V6.CollectInformation do
+defmodule AdyenEx.Hop.V6.CollectInformation do
   @moduledoc """
   Provides struct and type for a CollectInformation
   """

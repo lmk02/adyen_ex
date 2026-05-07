@@ -1,9 +1,9 @@
-defmodule Adyen.Fund.V3.AccountDetailBalanceWrapper do
+defmodule AdyenEx.Fund.V3.AccountDetailBalanceWrapper do
   @moduledoc """
   Provides struct and type for a AccountDetailBalanceWrapper
   """
 
-  @type t :: %__MODULE__{AccountDetailBalance: Adyen.Fund.V3.AccountDetailBalance.t() | nil}
+  @type t :: %__MODULE__{AccountDetailBalance: AdyenEx.Fund.V3.AccountDetailBalance.t() | nil}
 
   defstruct [:AccountDetailBalance]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Fund.V3.AccountDetailBalanceWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [AccountDetailBalance: {Adyen.Fund.V3.AccountDetailBalance, :t}]
+    [AccountDetailBalance: {AdyenEx.Fund.V3.AccountDetailBalance, :t}]
   end
 end

@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V1.TransactionRules do
+defmodule AdyenEx.BalancePlatform.V1.TransactionRules do
   @moduledoc """
   Provides API endpoints related to transaction rules
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a transaction rule
@@ -14,24 +14,25 @@ defmodule Adyen.BalancePlatform.V1.TransactionRules do
           transactionRuleId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRule.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRule.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def delete_transaction_rules_transaction_rule_id(transactionRuleId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [transactionRuleId: transactionRuleId],
       call:
-        {Adyen.BalancePlatform.V1.TransactionRules, :delete_transaction_rules_transaction_rule_id},
+        {AdyenEx.BalancePlatform.V1.TransactionRules,
+         :delete_transaction_rules_transaction_rule_id},
       url: "/transactionRules/#{transactionRuleId}",
       method: :delete,
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRule, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRule, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -46,24 +47,24 @@ defmodule Adyen.BalancePlatform.V1.TransactionRules do
           transactionRuleId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRuleResponse.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRuleResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_transaction_rules_transaction_rule_id(transactionRuleId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [transactionRuleId: transactionRuleId],
       call:
-        {Adyen.BalancePlatform.V1.TransactionRules, :get_transaction_rules_transaction_rule_id},
+        {AdyenEx.BalancePlatform.V1.TransactionRules, :get_transaction_rules_transaction_rule_id},
       url: "/transactionRules/#{transactionRuleId}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRuleResponse, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRuleResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -84,29 +85,30 @@ defmodule Adyen.BalancePlatform.V1.TransactionRules do
   """
   @spec patch_transaction_rules_transaction_rule_id(
           transactionRuleId :: String.t(),
-          body :: Adyen.BalancePlatform.V1.TransactionRuleInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.TransactionRuleInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRule.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRule.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def patch_transaction_rules_transaction_rule_id(transactionRuleId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [transactionRuleId: transactionRuleId, body: body],
       call:
-        {Adyen.BalancePlatform.V1.TransactionRules, :patch_transaction_rules_transaction_rule_id},
+        {AdyenEx.BalancePlatform.V1.TransactionRules,
+         :patch_transaction_rules_transaction_rule_id},
       url: "/transactionRules/#{transactionRuleId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.TransactionRuleInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.TransactionRuleInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRule, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRule, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -122,28 +124,28 @@ defmodule Adyen.BalancePlatform.V1.TransactionRules do
   **Content Types**: `application/json`
   """
   @spec post_transaction_rules(
-          body :: Adyen.BalancePlatform.V1.TransactionRuleInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.TransactionRuleInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRule.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRule.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def post_transaction_rules(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V1.TransactionRules, :post_transaction_rules},
+      call: {AdyenEx.BalancePlatform.V1.TransactionRules, :post_transaction_rules},
       url: "/transactionRules",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.TransactionRuleInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.TransactionRuleInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRule, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRule, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

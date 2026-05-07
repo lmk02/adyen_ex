@@ -1,15 +1,15 @@
-defmodule Adyen.BalancePlatform.V1.Contact do
+defmodule AdyenEx.BalancePlatform.V1.Contact do
   @moduledoc """
   Provides struct and type for a Contact
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.BalancePlatform.V1.Address.t() | nil,
+          address: AdyenEx.BalancePlatform.V1.Address.t() | nil,
           email: String.t() | nil,
           fullPhoneNumber: String.t() | nil,
-          name: Adyen.BalancePlatform.V1.Name.t() | nil,
-          personalData: Adyen.BalancePlatform.V1.PersonalData.t() | nil,
-          phoneNumber: Adyen.BalancePlatform.V1.PhoneNumber.t() | nil,
+          name: AdyenEx.BalancePlatform.V1.Name.t() | nil,
+          personalData: AdyenEx.BalancePlatform.V1.PersonalData.t() | nil,
+          phoneNumber: AdyenEx.BalancePlatform.V1.PhoneNumber.t() | nil,
           webAddress: String.t() | nil
         }
 
@@ -21,12 +21,12 @@ defmodule Adyen.BalancePlatform.V1.Contact do
 
   def __fields__(:t) do
     [
-      address: {Adyen.BalancePlatform.V1.Address, :t},
+      address: {AdyenEx.BalancePlatform.V1.Address, :t},
       email: :string,
       fullPhoneNumber: :string,
-      name: {Adyen.BalancePlatform.V1.Name, :t},
-      personalData: {Adyen.BalancePlatform.V1.PersonalData, :t},
-      phoneNumber: {Adyen.BalancePlatform.V1.PhoneNumber, :t},
+      name: {AdyenEx.BalancePlatform.V1.Name, :t},
+      personalData: {AdyenEx.BalancePlatform.V1.PersonalData, :t},
+      phoneNumber: {AdyenEx.BalancePlatform.V1.PhoneNumber, :t},
       webAddress: :string
     ]
   end

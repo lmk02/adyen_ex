@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Association do
+defmodule AdyenEx.BalancePlatform.V2.Association do
   @moduledoc """
   Provides struct and type for a Association
   """

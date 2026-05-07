@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AdditionalCommission do
+defmodule AdyenEx.Management.V1.AdditionalCommission do
   @moduledoc """
   Provides struct and type for a AdditionalCommission
   """

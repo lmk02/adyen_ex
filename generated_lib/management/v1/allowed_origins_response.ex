@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.AllowedOriginsResponse do
+defmodule AdyenEx.Management.V1.AllowedOriginsResponse do
   @moduledoc """
   Provides struct and type for a AllowedOriginsResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V1.AllowedOrigin.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V1.AllowedOrigin.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.AllowedOriginsResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V1.AllowedOrigin, :t}]]
+    [data: [{AdyenEx.Management.V1.AllowedOrigin, :t}]]
   end
 end

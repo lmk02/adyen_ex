@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
+defmodule AdyenEx.Management.V3.APICredentialsCompanyLevel do
   @moduledoc """
   Provides API endpoints related to api credentials company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of API credentials
@@ -20,8 +20,8 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
 
   """
   @spec get_companies_company_id_api_credentials(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.ListCompanyApiCredentialsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ListCompanyApiCredentialsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_api_credentials(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize])
@@ -29,18 +29,18 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.APICredentialsCompanyLevel,
+        {AdyenEx.Management.V3.APICredentialsCompanyLevel,
          :get_companies_company_id_api_credentials},
       url: "/companies/#{companyId}/apiCredentials",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.ListCompanyApiCredentialsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ListCompanyApiCredentialsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -59,8 +59,8 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
           apiCredentialId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.CompanyApiCredential.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.CompanyApiCredential.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_api_credentials_api_credential_id(
         companyId,
         apiCredentialId,
@@ -71,17 +71,17 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId],
       call:
-        {Adyen.Management.V3.APICredentialsCompanyLevel,
+        {AdyenEx.Management.V3.APICredentialsCompanyLevel,
          :get_companies_company_id_api_credentials_api_credential_id},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.CompanyApiCredential, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.CompanyApiCredential, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -102,11 +102,11 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
   @spec patch_companies_company_id_api_credentials_api_credential_id(
           companyId :: String.t(),
           apiCredentialId :: String.t(),
-          body :: Adyen.Management.V3.UpdateCompanyApiCredentialRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateCompanyApiCredentialRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.CompanyApiCredential.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.CompanyApiCredential.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_companies_company_id_api_credentials_api_credential_id(
         companyId,
         apiCredentialId,
@@ -118,19 +118,21 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId, body: body],
       call:
-        {Adyen.Management.V3.APICredentialsCompanyLevel,
+        {AdyenEx.Management.V3.APICredentialsCompanyLevel,
          :patch_companies_company_id_api_credentials_api_credential_id},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V3.UpdateCompanyApiCredentialRequest, :t}}],
+      request: [
+        {"application/json", {AdyenEx.Management.V3.UpdateCompanyApiCredentialRequest, :t}}
+      ],
       response: [
-        {200, {Adyen.Management.V3.CompanyApiCredential, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.CompanyApiCredential, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -159,30 +161,32 @@ defmodule Adyen.Management.V3.APICredentialsCompanyLevel do
   """
   @spec post_companies_company_id_api_credentials(
           companyId :: String.t(),
-          body :: Adyen.Management.V3.CreateCompanyApiCredentialRequest.t(),
+          body :: AdyenEx.Management.V3.CreateCompanyApiCredentialRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.CreateCompanyApiCredentialResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.CreateCompanyApiCredentialResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_api_credentials(companyId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, body: body],
       call:
-        {Adyen.Management.V3.APICredentialsCompanyLevel,
+        {AdyenEx.Management.V3.APICredentialsCompanyLevel,
          :post_companies_company_id_api_credentials},
       url: "/companies/#{companyId}/apiCredentials",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.CreateCompanyApiCredentialRequest, :t}}],
+      request: [
+        {"application/json", {AdyenEx.Management.V3.CreateCompanyApiCredentialRequest, :t}}
+      ],
       response: [
-        {200, {Adyen.Management.V3.CreateCompanyApiCredentialResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.CreateCompanyApiCredentialResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

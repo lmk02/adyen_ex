@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.GetTerminalDetailsResponse do
+defmodule AdyenEx.TfmAPI.V1.GetTerminalDetailsResponse do
   @moduledoc """
   Provides struct and type for a GetTerminalDetailsResponse
   """
@@ -24,7 +24,7 @@ defmodule Adyen.TfmAPI.V1.GetTerminalDetailsResponse do
           serialNumber: String.t() | nil,
           simStatus: String.t() | nil,
           store: String.t() | nil,
-          storeDetails: Adyen.TfmAPI.V1.Store.t() | nil,
+          storeDetails: AdyenEx.TfmAPI.V1.Store.t() | nil,
           terminal: String.t(),
           terminalStatus: String.t() | nil,
           wifiIp: String.t() | nil,
@@ -85,7 +85,7 @@ defmodule Adyen.TfmAPI.V1.GetTerminalDetailsResponse do
       serialNumber: :string,
       simStatus: :string,
       store: :string,
-      storeDetails: {Adyen.TfmAPI.V1.Store, :t},
+      storeDetails: {AdyenEx.TfmAPI.V1.Store, :t},
       terminal: :string,
       terminalStatus:
         {:enum,

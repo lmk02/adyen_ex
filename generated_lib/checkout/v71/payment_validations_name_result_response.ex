@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.PaymentValidationsNameResultResponse do
+defmodule AdyenEx.Checkout.V71.PaymentValidationsNameResultResponse do
   @moduledoc """
   Provides struct and type for a PaymentValidationsNameResultResponse
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.AuthenticationData do
+defmodule AdyenEx.Checkout.V69.AuthenticationData do
   @moduledoc """
   Provides struct and type for a AuthenticationData
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Checkout.V69.AuthenticationData do
   @type t :: %__MODULE__{
           attemptAuthentication: String.t() | nil,
           authenticationOnly: boolean | nil,
-          threeDSRequestData: Adyen.Checkout.V69.ThreeDSRequestData.t() | nil
+          threeDSRequestData: AdyenEx.Checkout.V69.ThreeDSRequestData.t() | nil
         }
 
   defstruct [:attemptAuthentication, :authenticationOnly, :threeDSRequestData]
@@ -19,7 +19,7 @@ defmodule Adyen.Checkout.V69.AuthenticationData do
     [
       attemptAuthentication: {:enum, ["always", "never"]},
       authenticationOnly: :boolean,
-      threeDSRequestData: {Adyen.Checkout.V69.ThreeDSRequestData, :t}
+      threeDSRequestData: {AdyenEx.Checkout.V69.ThreeDSRequestData, :t}
     ]
   end
 end

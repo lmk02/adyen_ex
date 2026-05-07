@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.TransferNotificationValidationFact do
+defmodule AdyenEx.Transfer.V4.TransferNotificationValidationFact do
   @moduledoc """
   Provides struct and type for a TransferNotificationValidationFact
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V52.KlarnaDetails do
+defmodule AdyenEx.Checkout.V52.KlarnaDetails do
   @moduledoc """
   Provides struct and type for a KlarnaDetails
   """

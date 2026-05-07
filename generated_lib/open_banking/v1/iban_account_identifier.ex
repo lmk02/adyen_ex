@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.IBANAccountIdentifier do
+defmodule AdyenEx.OpenBanking.V1.IBANAccountIdentifier do
   @moduledoc """
   Provides struct and type for a IBANAccountIdentifier
   """

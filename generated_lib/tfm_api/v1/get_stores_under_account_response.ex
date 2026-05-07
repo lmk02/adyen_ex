@@ -1,9 +1,9 @@
-defmodule Adyen.TfmAPI.V1.GetStoresUnderAccountResponse do
+defmodule AdyenEx.TfmAPI.V1.GetStoresUnderAccountResponse do
   @moduledoc """
   Provides struct and type for a GetStoresUnderAccountResponse
   """
 
-  @type t :: %__MODULE__{stores: [Adyen.TfmAPI.V1.Store.t()] | nil}
+  @type t :: %__MODULE__{stores: [AdyenEx.TfmAPI.V1.Store.t()] | nil}
 
   defstruct [:stores]
 
@@ -12,6 +12,6 @@ defmodule Adyen.TfmAPI.V1.GetStoresUnderAccountResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [stores: [{Adyen.TfmAPI.V1.Store, :t}]]
+    [stores: [{AdyenEx.TfmAPI.V1.Store, :t}]]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.MolPayDetails do
+defmodule AdyenEx.Checkout.V50.MolPayDetails do
   @moduledoc """
   Provides struct and type for a MolPayDetails
   """

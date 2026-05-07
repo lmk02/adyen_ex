@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.HomeScreenSettings do
+defmodule AdyenEx.Management.V1.HomeScreenSettings do
   @moduledoc """
   Provides struct and type for a HomeScreenSettings
   """

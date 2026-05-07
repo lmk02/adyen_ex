@@ -1,18 +1,18 @@
-defmodule Adyen.Account.V3.GetAccountHolderResponse do
+defmodule AdyenEx.Account.V3.GetAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a GetAccountHolderResponse
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t() | nil,
-          accountHolderDetails: Adyen.Account.V3.AccountHolderDetails.t() | nil,
-          accountHolderStatus: Adyen.Account.V3.AccountHolderStatus.t() | nil,
-          accounts: [Adyen.Account.V3.AccountWrapper.t()] | nil,
+          accountHolderDetails: AdyenEx.Account.V3.AccountHolderDetails.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V3.AccountHolderStatus.t() | nil,
+          accounts: [AdyenEx.Account.V3.AccountWrapper.t()] | nil,
           legalEntity: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil,
-          verification: Adyen.Account.V3.KYCVerificationResult.t() | nil
+          verification: AdyenEx.Account.V3.KYCVerificationResult.t() | nil
         }
 
   defstruct [
@@ -34,14 +34,14 @@ defmodule Adyen.Account.V3.GetAccountHolderResponse do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V3.AccountHolderDetails, :t},
-      accountHolderStatus: {Adyen.Account.V3.AccountHolderStatus, :t},
-      accounts: [{Adyen.Account.V3.AccountWrapper, :t}],
+      accountHolderDetails: {AdyenEx.Account.V3.AccountHolderDetails, :t},
+      accountHolderStatus: {AdyenEx.Account.V3.AccountHolderStatus, :t},
+      accounts: [{AdyenEx.Account.V3.AccountWrapper, :t}],
       legalEntity: {:enum, ["Business", "Individual", "NonProfit"]},
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean,
-      verification: {Adyen.Account.V3.KYCVerificationResult, :t}
+      verification: {AdyenEx.Account.V3.KYCVerificationResult, :t}
     ]
   end
 end

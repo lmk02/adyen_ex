@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.SupportedCardTypes do
+defmodule AdyenEx.Management.V3.SupportedCardTypes do
   @moduledoc """
   Provides struct and type for a SupportedCardTypes
   """

@@ -1,17 +1,17 @@
-defmodule Adyen.LegalEntity.V1.Individual do
+defmodule AdyenEx.LegalEntity.V1.Individual do
   @moduledoc """
   Provides struct and type for a Individual
   """
 
   @type t :: %__MODULE__{
-          birthData: Adyen.LegalEntity.V1.BirthData.t() | nil,
+          birthData: AdyenEx.LegalEntity.V1.BirthData.t() | nil,
           email: String.t() | nil,
-          identificationData: Adyen.LegalEntity.V1.IdentificationData.t() | nil,
-          name: Adyen.LegalEntity.V1.Name.t(),
+          identificationData: AdyenEx.LegalEntity.V1.IdentificationData.t() | nil,
+          name: AdyenEx.LegalEntity.V1.Name.t(),
           nationality: String.t() | nil,
-          phone: Adyen.LegalEntity.V1.PhoneNumber.t() | nil,
-          residentialAddress: Adyen.LegalEntity.V1.Address.t(),
-          webData: Adyen.LegalEntity.V1.WebData.t() | nil
+          phone: AdyenEx.LegalEntity.V1.PhoneNumber.t() | nil,
+          residentialAddress: AdyenEx.LegalEntity.V1.Address.t(),
+          webData: AdyenEx.LegalEntity.V1.WebData.t() | nil
         }
 
   defstruct [
@@ -31,14 +31,14 @@ defmodule Adyen.LegalEntity.V1.Individual do
 
   def __fields__(:t) do
     [
-      birthData: {Adyen.LegalEntity.V1.BirthData, :t},
+      birthData: {AdyenEx.LegalEntity.V1.BirthData, :t},
       email: :string,
-      identificationData: {Adyen.LegalEntity.V1.IdentificationData, :t},
-      name: {Adyen.LegalEntity.V1.Name, :t},
+      identificationData: {AdyenEx.LegalEntity.V1.IdentificationData, :t},
+      name: {AdyenEx.LegalEntity.V1.Name, :t},
       nationality: :string,
-      phone: {Adyen.LegalEntity.V1.PhoneNumber, :t},
-      residentialAddress: {Adyen.LegalEntity.V1.Address, :t},
-      webData: {Adyen.LegalEntity.V1.WebData, :t}
+      phone: {AdyenEx.LegalEntity.V1.PhoneNumber, :t},
+      residentialAddress: {AdyenEx.LegalEntity.V1.Address, :t},
+      webData: {AdyenEx.LegalEntity.V1.WebData, :t}
     ]
   end
 end

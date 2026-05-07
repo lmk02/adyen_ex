@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.PhoneNumber do
+defmodule AdyenEx.LegalEntity.V2.PhoneNumber do
   @moduledoc """
   Provides struct and type for a PhoneNumber
   """

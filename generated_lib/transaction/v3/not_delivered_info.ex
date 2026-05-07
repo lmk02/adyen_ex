@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V3.NotDeliveredInfo do
+defmodule AdyenEx.Transaction.V3.NotDeliveredInfo do
   @moduledoc """
   Provides struct and type for a NotDeliveredInfo
   """

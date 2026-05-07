@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V66.PaymentDetailsRequest do
+defmodule AdyenEx.Checkout.V66.PaymentDetailsRequest do
   @moduledoc """
   Provides struct and type for a PaymentDetailsRequest
   """
 
   @type t :: %__MODULE__{
-          details: Adyen.Checkout.V66.PaymentCompletionDetails.t(),
+          details: AdyenEx.Checkout.V66.PaymentCompletionDetails.t(),
           paymentData: String.t() | nil,
           threeDSAuthenticationOnly: boolean | nil
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Checkout.V66.PaymentDetailsRequest do
 
   def __fields__(:t) do
     [
-      details: {Adyen.Checkout.V66.PaymentCompletionDetails, :t},
+      details: {AdyenEx.Checkout.V66.PaymentCompletionDetails, :t},
       paymentData: :string,
       threeDSAuthenticationOnly: :boolean
     ]

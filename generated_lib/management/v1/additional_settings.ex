@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AdditionalSettings do
+defmodule AdyenEx.Management.V1.AdditionalSettings do
   @moduledoc """
   Provides struct and type for a AdditionalSettings
   """

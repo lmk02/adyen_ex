@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.LineItem do
+defmodule AdyenEx.Checkout.V50.LineItem do
   @moduledoc """
   Provides struct and type for a LineItem
   """

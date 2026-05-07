@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.ExecutionDate do
+defmodule AdyenEx.Transfer.V3.ExecutionDate do
   @moduledoc """
   Provides struct and type for a ExecutionDate
   """

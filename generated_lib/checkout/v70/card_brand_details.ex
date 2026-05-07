@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.CardBrandDetails do
+defmodule AdyenEx.Checkout.V70.CardBrandDetails do
   @moduledoc """
   Provides struct and type for a CardBrandDetails
   """

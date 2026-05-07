@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.DeletePayoutMethodRequest do
+defmodule AdyenEx.Account.V6.DeletePayoutMethodRequest do
   @moduledoc """
   Provides struct and type for a DeletePayoutMethodRequest
   """

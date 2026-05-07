@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V53.Recurring do
+defmodule AdyenEx.Checkout.V53.Recurring do
   @moduledoc """
   Provides API endpoints related to recurring
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Forward stored payment details
@@ -14,19 +14,19 @@ defmodule Adyen.Checkout.V53.Recurring do
 
   **Content Types**: `application/json`
   """
-  @spec post_forward(body :: Adyen.Checkout.V53.CheckoutForwardRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V53.CheckoutForwardResponse.t()} | :error
+  @spec post_forward(body :: AdyenEx.Checkout.V53.CheckoutForwardRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V53.CheckoutForwardResponse.t()} | :error
   def post_forward(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V53.Recurring, :post_forward},
+      call: {AdyenEx.Checkout.V53.Recurring, :post_forward},
       url: "/forward",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V53.CheckoutForwardRequest, :t}}],
-      response: [{200, {Adyen.Checkout.V53.CheckoutForwardResponse, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V53.CheckoutForwardRequest, :t}}],
+      response: [{200, {AdyenEx.Checkout.V53.CheckoutForwardResponse, :t}}],
       opts: opts
     })
   end
@@ -41,20 +41,20 @@ defmodule Adyen.Checkout.V53.Recurring do
   **Content Types**: `application/json`
   """
   @spec post_stored_payment_methods(
-          body :: Adyen.Checkout.V53.StoredPaymentMethodRequest.t(),
+          body :: AdyenEx.Checkout.V53.StoredPaymentMethodRequest.t(),
           opts :: keyword
-        ) :: {:ok, Adyen.Checkout.V53.StoredPaymentMethodResource.t()} | :error
+        ) :: {:ok, AdyenEx.Checkout.V53.StoredPaymentMethodResource.t()} | :error
   def post_stored_payment_methods(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V53.Recurring, :post_stored_payment_methods},
+      call: {AdyenEx.Checkout.V53.Recurring, :post_stored_payment_methods},
       url: "/storedPaymentMethods",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V53.StoredPaymentMethodRequest, :t}}],
-      response: [{201, {Adyen.Checkout.V53.StoredPaymentMethodResource, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V53.StoredPaymentMethodRequest, :t}}],
+      response: [{201, {AdyenEx.Checkout.V53.StoredPaymentMethodResource, :t}}],
       opts: opts
     })
   end

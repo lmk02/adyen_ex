@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V4.GetPciQuestionnaireInfosResponse do
+defmodule AdyenEx.LegalEntity.V4.GetPciQuestionnaireInfosResponse do
   @moduledoc """
   Provides struct and type for a GetPciQuestionnaireInfosResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.LegalEntity.V4.PciDocumentInfo.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.LegalEntity.V4.PciDocumentInfo.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.LegalEntity.V4.GetPciQuestionnaireInfosResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.LegalEntity.V4.PciDocumentInfo, :t}]]
+    [data: [{AdyenEx.LegalEntity.V4.PciDocumentInfo, :t}]]
   end
 end

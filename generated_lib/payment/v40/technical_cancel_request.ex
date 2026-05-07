@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V40.TechnicalCancelRequest do
+defmodule AdyenEx.Payment.V40.TechnicalCancelRequest do
   @moduledoc """
   Provides struct and type for a TechnicalCancelRequest
   """
@@ -6,10 +6,10 @@ defmodule Adyen.Payment.V40.TechnicalCancelRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V40.Amount.t() | nil,
+          modificationAmount: AdyenEx.Payment.V40.Amount.t() | nil,
           originalMerchantReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V40.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V40.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -33,10 +33,10 @@ defmodule Adyen.Payment.V40.TechnicalCancelRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V40.Amount, :t},
+      modificationAmount: {AdyenEx.Payment.V40.Amount, :t},
       originalMerchantReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V40.Split, :t}],
+      splits: [{AdyenEx.Payment.V40.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

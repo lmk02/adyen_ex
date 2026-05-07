@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.PayPalResponseInfo do
+defmodule AdyenEx.Management.V1.PayPalResponseInfo do
   @moduledoc """
   Provides struct and type for a PayPalResponseInfo
   """

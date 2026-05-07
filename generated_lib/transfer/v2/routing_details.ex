@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V2.RoutingDetails do
+defmodule AdyenEx.Transfer.V2.RoutingDetails do
   @moduledoc """
   Provides struct and type for a RoutingDetails
   """

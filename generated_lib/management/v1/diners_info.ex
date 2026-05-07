@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.DinersInfo do
+defmodule AdyenEx.Management.V1.DinersInfo do
   @moduledoc """
   Provides struct and type for a DinersInfo
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Management.V1.DinersInfo do
           midNumber: String.t() | nil,
           reuseMidNumber: boolean,
           serviceLevel: String.t() | nil,
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V1.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:midNumber, :reuseMidNumber, :serviceLevel, :transactionDescription]
@@ -21,7 +21,7 @@ defmodule Adyen.Management.V1.DinersInfo do
       midNumber: :string,
       reuseMidNumber: :boolean,
       serviceLevel: {:enum, ["noContract", "gatewayContract"]},
-      transactionDescription: {Adyen.Management.V1.TransactionDescriptionInfo, :t}
+      transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionInfo, :t}
     ]
   end
 end

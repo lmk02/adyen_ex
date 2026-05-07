@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.DeviceInfo do
+defmodule AdyenEx.BalancePlatform.V2.DeviceInfo do
   @moduledoc """
   Provides struct and type for a DeviceInfo
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.DeviceInfo do
   @type t :: %__MODULE__{
           formFactor: String.t() | nil,
           osName: String.t() | nil,
-          phone: Adyen.BalancePlatform.V2.PhoneInfo.t() | nil
+          phone: AdyenEx.BalancePlatform.V2.PhoneInfo.t() | nil
         }
 
   defstruct [:formFactor, :osName, :phone]
@@ -16,6 +16,6 @@ defmodule Adyen.BalancePlatform.V2.DeviceInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [formFactor: :string, osName: :string, phone: {Adyen.BalancePlatform.V2.PhoneInfo, :t}]
+    [formFactor: :string, osName: :string, phone: {AdyenEx.BalancePlatform.V2.PhoneInfo, :t}]
   end
 end

@@ -1,9 +1,9 @@
-defmodule Adyen.Transfer.V2.Transfers do
+defmodule AdyenEx.Transfer.V2.Transfers do
   @moduledoc """
   Provides API endpoint related to transfers
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Transfer funds
@@ -28,27 +28,27 @@ defmodule Adyen.Transfer.V2.Transfers do
 
   **Content Types**: `application/json`
   """
-  @spec post_transfers(body :: Adyen.Transfer.V2.TransferInfo.t(), opts :: keyword) ::
-          {:ok, Adyen.Transfer.V2.Transfer.t()}
+  @spec post_transfers(body :: AdyenEx.Transfer.V2.TransferInfo.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Transfer.V2.Transfer.t()}
           | {:error,
-             Adyen.Transfer.V2.ServiceError.t()
-             | Adyen.Transfer.V2.TransferServiceRestServiceError.t()}
+             AdyenEx.Transfer.V2.ServiceError.t()
+             | AdyenEx.Transfer.V2.TransferServiceRestServiceError.t()}
   def post_transfers(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Transfer.V2.Transfers, :post_transfers},
+      call: {AdyenEx.Transfer.V2.Transfers, :post_transfers},
       url: "/transfers",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Transfer.V2.TransferInfo, :t}}],
+      request: [{"application/json", {AdyenEx.Transfer.V2.TransferInfo, :t}}],
       response: [
-        {202, {Adyen.Transfer.V2.Transfer, :t}},
-        {401, {Adyen.Transfer.V2.ServiceError, :t}},
-        {403, {Adyen.Transfer.V2.TransferServiceRestServiceError, :t}},
-        {422, {Adyen.Transfer.V2.TransferServiceRestServiceError, :t}},
-        {500, {Adyen.Transfer.V2.TransferServiceRestServiceError, :t}}
+        {202, {AdyenEx.Transfer.V2.Transfer, :t}},
+        {401, {AdyenEx.Transfer.V2.ServiceError, :t}},
+        {403, {AdyenEx.Transfer.V2.TransferServiceRestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V2.TransferServiceRestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V2.TransferServiceRestServiceError, :t}}
       ],
       opts: opts
     })

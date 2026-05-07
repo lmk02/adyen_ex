@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.EBankingFinlandDetails do
+defmodule AdyenEx.Checkout.V40.EBankingFinlandDetails do
   @moduledoc """
   Provides struct and type for a EBankingFinlandDetails
   """

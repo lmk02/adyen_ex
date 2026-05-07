@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.PersonalData do
+defmodule AdyenEx.BalancePlatform.V1.PersonalData do
   @moduledoc """
   Provides struct and type for a PersonalData
   """

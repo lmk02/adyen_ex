@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.BlikDetails do
+defmodule AdyenEx.Checkout.V71.BlikDetails do
   @moduledoc """
   Provides struct and type for a BlikDetails
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Configuration do
+defmodule AdyenEx.Management.V3.Configuration do
   @moduledoc """
   Provides struct and type for a Configuration
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Management.V3.Configuration do
           brand: String.t(),
           commercial: boolean | nil,
           country: [String.t()] | nil,
-          currencies: [Adyen.Management.V3.Currency.t()],
+          currencies: [AdyenEx.Management.V3.Currency.t()],
           sources: [String.t()] | nil
         }
 
@@ -22,7 +22,7 @@ defmodule Adyen.Management.V3.Configuration do
       brand: :string,
       commercial: :boolean,
       country: [:string],
-      currencies: [{Adyen.Management.V3.Currency, :t}],
+      currencies: [{AdyenEx.Management.V3.Currency, :t}],
       sources: [:string]
     ]
   end

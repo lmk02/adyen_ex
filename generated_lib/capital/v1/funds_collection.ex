@@ -1,10 +1,10 @@
-defmodule Adyen.Capital.V1.FundsCollection do
+defmodule AdyenEx.Capital.V1.FundsCollection do
   @moduledoc """
   Provides struct and type for a FundsCollection
   """
 
   @type t :: %__MODULE__{
-          accountIdentification: Adyen.Capital.V1.BankAccountIdentification.t() | nil,
+          accountIdentification: AdyenEx.Capital.V1.BankAccountIdentification.t() | nil,
           fundsCollectionType: String.t() | nil
         }
 
@@ -16,7 +16,7 @@ defmodule Adyen.Capital.V1.FundsCollection do
 
   def __fields__(:t) do
     [
-      accountIdentification: {Adyen.Capital.V1.BankAccountIdentification, :t},
+      accountIdentification: {AdyenEx.Capital.V1.BankAccountIdentification, :t},
       fundsCollectionType: {:enum, ["UnscheduledRepayment", "Revocation"]}
     ]
   end

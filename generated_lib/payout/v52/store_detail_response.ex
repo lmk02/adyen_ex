@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V52.StoreDetailResponse do
+defmodule AdyenEx.Payout.V52.StoreDetailResponse do
   @moduledoc """
   Provides struct and type for a StoreDetailResponse
   """

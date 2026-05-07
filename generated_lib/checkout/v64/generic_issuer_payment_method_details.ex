@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V64.GenericIssuerPaymentMethodDetails do
+defmodule AdyenEx.Checkout.V64.GenericIssuerPaymentMethodDetails do
   @moduledoc """
   Provides struct and type for a GenericIssuerPaymentMethodDetails
   """

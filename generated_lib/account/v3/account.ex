@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.Account do
+defmodule AdyenEx.Account.V3.Account do
   @moduledoc """
   Provides struct and type for a Account
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Account.V3.Account do
           accountCode: String.t() | nil,
           beneficiaryAccount: String.t() | nil,
           beneficiaryMerchantReference: String.t() | nil,
-          payoutSchedule: Adyen.Account.V3.PayoutScheduleResponse.t() | nil
+          payoutSchedule: AdyenEx.Account.V3.PayoutScheduleResponse.t() | nil
         }
 
   defstruct [:accountCode, :beneficiaryAccount, :beneficiaryMerchantReference, :payoutSchedule]
@@ -21,7 +21,7 @@ defmodule Adyen.Account.V3.Account do
       accountCode: :string,
       beneficiaryAccount: :string,
       beneficiaryMerchantReference: :string,
-      payoutSchedule: {Adyen.Account.V3.PayoutScheduleResponse, :t}
+      payoutSchedule: {AdyenEx.Account.V3.PayoutScheduleResponse, :t}
     ]
   end
 end

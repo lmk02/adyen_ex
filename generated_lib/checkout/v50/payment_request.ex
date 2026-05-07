@@ -1,26 +1,26 @@
-defmodule Adyen.Checkout.V50.PaymentRequest do
+defmodule AdyenEx.Checkout.V50.PaymentRequest do
   @moduledoc """
   Provides struct and type for a PaymentRequest
   """
 
   @type t :: %__MODULE__{
-          accountInfo: Adyen.Checkout.V50.AccountInfo.t() | nil,
-          additionalAmount: Adyen.Checkout.V50.Amount.t() | nil,
+          accountInfo: AdyenEx.Checkout.V50.AccountInfo.t() | nil,
+          additionalAmount: AdyenEx.Checkout.V50.Amount.t() | nil,
           additionalData: map | nil,
-          amount: Adyen.Checkout.V50.Amount.t(),
-          applicationInfo: Adyen.Checkout.V50.ApplicationInfo.t() | nil,
-          bankAccount: Adyen.Checkout.V50.CheckoutBankAccount.t() | nil,
-          billingAddress: Adyen.Checkout.V50.BillingAddress.t() | nil,
-          browserInfo: Adyen.Checkout.V50.BrowserInfo.t() | nil,
+          amount: AdyenEx.Checkout.V50.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V50.ApplicationInfo.t() | nil,
+          bankAccount: AdyenEx.Checkout.V50.CheckoutBankAccount.t() | nil,
+          billingAddress: AdyenEx.Checkout.V50.BillingAddress.t() | nil,
+          browserInfo: AdyenEx.Checkout.V50.BrowserInfo.t() | nil,
           captureDelayHours: integer | nil,
           channel: String.t() | nil,
           checkoutAttemptId: String.t() | nil,
-          company: Adyen.Checkout.V50.Company.t() | nil,
+          company: AdyenEx.Checkout.V50.Company.t() | nil,
           conversionId: String.t() | nil,
           countryCode: String.t() | nil,
           dateOfBirth: DateTime.t() | nil,
-          dccQuote: Adyen.Checkout.V50.ForexQuote.t() | nil,
-          deliveryAddress: Adyen.Checkout.V50.DeliveryAddress.t() | nil,
+          dccQuote: AdyenEx.Checkout.V50.ForexQuote.t() | nil,
+          deliveryAddress: AdyenEx.Checkout.V50.DeliveryAddress.t() | nil,
           deliveryDate: DateTime.t() | nil,
           deviceFingerprint: String.t() | nil,
           enableOneClick: boolean | nil,
@@ -28,79 +28,79 @@ defmodule Adyen.Checkout.V50.PaymentRequest do
           enableRecurring: boolean | nil,
           entityType: String.t() | nil,
           fraudOffset: integer | nil,
-          fundOrigin: Adyen.Checkout.V50.FundOrigin.t() | nil,
-          fundRecipient: Adyen.Checkout.V50.FundRecipient.t() | nil,
-          installments: Adyen.Checkout.V50.Installments.t() | nil,
-          lineItems: [Adyen.Checkout.V50.LineItem.t()] | nil,
-          mandate: Adyen.Checkout.V50.Mandate.t() | nil,
+          fundOrigin: AdyenEx.Checkout.V50.FundOrigin.t() | nil,
+          fundRecipient: AdyenEx.Checkout.V50.FundRecipient.t() | nil,
+          installments: AdyenEx.Checkout.V50.Installments.t() | nil,
+          lineItems: [AdyenEx.Checkout.V50.LineItem.t()] | nil,
+          mandate: AdyenEx.Checkout.V50.Mandate.t() | nil,
           mcc: String.t() | nil,
           merchantAccount: String.t(),
           merchantOrderReference: String.t() | nil,
-          merchantRiskIndicator: Adyen.Checkout.V50.MerchantRiskIndicator.t() | nil,
+          merchantRiskIndicator: AdyenEx.Checkout.V50.MerchantRiskIndicator.t() | nil,
           metadata: map | nil,
-          mpiData: Adyen.Checkout.V50.ThreeDSecureData.t() | nil,
-          order: Adyen.Checkout.V50.EncryptedOrderData.t() | nil,
+          mpiData: AdyenEx.Checkout.V50.ThreeDSecureData.t() | nil,
+          order: AdyenEx.Checkout.V50.EncryptedOrderData.t() | nil,
           orderReference: String.t() | nil,
           origin: String.t() | nil,
           paymentMethod:
-            Adyen.Checkout.V50.AchDetails.t()
-            | Adyen.Checkout.V50.AffirmDetails.t()
-            | Adyen.Checkout.V50.AfterpayDetails.t()
-            | Adyen.Checkout.V50.AlmaDetails.t()
-            | Adyen.Checkout.V50.AmazonPayDetails.t()
-            | Adyen.Checkout.V50.AncvDetails.t()
-            | Adyen.Checkout.V50.AndroidPayDetails.t()
-            | Adyen.Checkout.V50.ApplePayDetails.t()
-            | Adyen.Checkout.V50.BacsDirectDebitDetails.t()
-            | Adyen.Checkout.V50.BillDeskDetails.t()
-            | Adyen.Checkout.V50.BlikDetails.t()
-            | Adyen.Checkout.V50.CardDetails.t()
-            | Adyen.Checkout.V50.CashAppDetails.t()
-            | Adyen.Checkout.V50.CellulantDetails.t()
-            | Adyen.Checkout.V50.DirectDebitAuDetails.t()
-            | Adyen.Checkout.V50.DokuDetails.t()
-            | Adyen.Checkout.V50.DragonpayDetails.t()
-            | Adyen.Checkout.V50.EBankingFinlandDetails.t()
-            | Adyen.Checkout.V50.EcontextVoucherDetails.t()
-            | Adyen.Checkout.V50.EftDetails.t()
-            | Adyen.Checkout.V50.ExternalTokenDetails.t()
-            | Adyen.Checkout.V50.FastlaneDetails.t()
-            | Adyen.Checkout.V50.GenericIssuerPaymentMethodDetails.t()
-            | Adyen.Checkout.V50.GooglePayDetails.t()
-            | Adyen.Checkout.V50.IdealDetails.t()
-            | Adyen.Checkout.V50.KlarnaDetails.t()
-            | Adyen.Checkout.V50.KlarnaNetworkDetails.t()
-            | Adyen.Checkout.V50.MasterpassDetails.t()
-            | Adyen.Checkout.V50.MbwayDetails.t()
-            | Adyen.Checkout.V50.MobilePayDetails.t()
-            | Adyen.Checkout.V50.MolPayDetails.t()
-            | Adyen.Checkout.V50.OpenInvoiceDetails.t()
-            | Adyen.Checkout.V50.PayByBankAISDirectDebitDetails.t()
-            | Adyen.Checkout.V50.PayByBankDetails.t()
-            | Adyen.Checkout.V50.PayPalDetails.t()
-            | Adyen.Checkout.V50.PayPayDetails.t()
-            | Adyen.Checkout.V50.PayToDetails.t()
-            | Adyen.Checkout.V50.PayUUpiDetails.t()
-            | Adyen.Checkout.V50.PayWithGoogleDetails.t()
-            | Adyen.Checkout.V50.PaymentDetails.t()
-            | Adyen.Checkout.V50.PixDetails.t()
-            | Adyen.Checkout.V50.PixPayByBankDetails.t()
-            | Adyen.Checkout.V50.PseDetails.t()
-            | Adyen.Checkout.V50.RakutenPayDetails.t()
-            | Adyen.Checkout.V50.RatepayDetails.t()
-            | Adyen.Checkout.V50.RivertyDetails.t()
-            | Adyen.Checkout.V50.SamsungPayDetails.t()
-            | Adyen.Checkout.V50.SepaDirectDebitDetails.t()
-            | Adyen.Checkout.V50.StoredPaymentMethodDetails.t()
-            | Adyen.Checkout.V50.TwintDetails.t()
-            | Adyen.Checkout.V50.UpiCollectDetails.t()
-            | Adyen.Checkout.V50.UpiIntentDetails.t()
-            | Adyen.Checkout.V50.UpiQrDetails.t()
-            | Adyen.Checkout.V50.VippsDetails.t()
-            | Adyen.Checkout.V50.VisaCheckoutDetails.t()
-            | Adyen.Checkout.V50.WeChatPayDetails.t()
-            | Adyen.Checkout.V50.WeChatPayMiniProgramDetails.t()
-            | Adyen.Checkout.V50.ZipDetails.t(),
+            AdyenEx.Checkout.V50.AchDetails.t()
+            | AdyenEx.Checkout.V50.AffirmDetails.t()
+            | AdyenEx.Checkout.V50.AfterpayDetails.t()
+            | AdyenEx.Checkout.V50.AlmaDetails.t()
+            | AdyenEx.Checkout.V50.AmazonPayDetails.t()
+            | AdyenEx.Checkout.V50.AncvDetails.t()
+            | AdyenEx.Checkout.V50.AndroidPayDetails.t()
+            | AdyenEx.Checkout.V50.ApplePayDetails.t()
+            | AdyenEx.Checkout.V50.BacsDirectDebitDetails.t()
+            | AdyenEx.Checkout.V50.BillDeskDetails.t()
+            | AdyenEx.Checkout.V50.BlikDetails.t()
+            | AdyenEx.Checkout.V50.CardDetails.t()
+            | AdyenEx.Checkout.V50.CashAppDetails.t()
+            | AdyenEx.Checkout.V50.CellulantDetails.t()
+            | AdyenEx.Checkout.V50.DirectDebitAuDetails.t()
+            | AdyenEx.Checkout.V50.DokuDetails.t()
+            | AdyenEx.Checkout.V50.DragonpayDetails.t()
+            | AdyenEx.Checkout.V50.EBankingFinlandDetails.t()
+            | AdyenEx.Checkout.V50.EcontextVoucherDetails.t()
+            | AdyenEx.Checkout.V50.EftDetails.t()
+            | AdyenEx.Checkout.V50.ExternalTokenDetails.t()
+            | AdyenEx.Checkout.V50.FastlaneDetails.t()
+            | AdyenEx.Checkout.V50.GenericIssuerPaymentMethodDetails.t()
+            | AdyenEx.Checkout.V50.GooglePayDetails.t()
+            | AdyenEx.Checkout.V50.IdealDetails.t()
+            | AdyenEx.Checkout.V50.KlarnaDetails.t()
+            | AdyenEx.Checkout.V50.KlarnaNetworkDetails.t()
+            | AdyenEx.Checkout.V50.MasterpassDetails.t()
+            | AdyenEx.Checkout.V50.MbwayDetails.t()
+            | AdyenEx.Checkout.V50.MobilePayDetails.t()
+            | AdyenEx.Checkout.V50.MolPayDetails.t()
+            | AdyenEx.Checkout.V50.OpenInvoiceDetails.t()
+            | AdyenEx.Checkout.V50.PayByBankAISDirectDebitDetails.t()
+            | AdyenEx.Checkout.V50.PayByBankDetails.t()
+            | AdyenEx.Checkout.V50.PayPalDetails.t()
+            | AdyenEx.Checkout.V50.PayPayDetails.t()
+            | AdyenEx.Checkout.V50.PayToDetails.t()
+            | AdyenEx.Checkout.V50.PayUUpiDetails.t()
+            | AdyenEx.Checkout.V50.PayWithGoogleDetails.t()
+            | AdyenEx.Checkout.V50.PaymentDetails.t()
+            | AdyenEx.Checkout.V50.PixDetails.t()
+            | AdyenEx.Checkout.V50.PixPayByBankDetails.t()
+            | AdyenEx.Checkout.V50.PseDetails.t()
+            | AdyenEx.Checkout.V50.RakutenPayDetails.t()
+            | AdyenEx.Checkout.V50.RatepayDetails.t()
+            | AdyenEx.Checkout.V50.RivertyDetails.t()
+            | AdyenEx.Checkout.V50.SamsungPayDetails.t()
+            | AdyenEx.Checkout.V50.SepaDirectDebitDetails.t()
+            | AdyenEx.Checkout.V50.StoredPaymentMethodDetails.t()
+            | AdyenEx.Checkout.V50.TwintDetails.t()
+            | AdyenEx.Checkout.V50.UpiCollectDetails.t()
+            | AdyenEx.Checkout.V50.UpiIntentDetails.t()
+            | AdyenEx.Checkout.V50.UpiQrDetails.t()
+            | AdyenEx.Checkout.V50.VippsDetails.t()
+            | AdyenEx.Checkout.V50.VisaCheckoutDetails.t()
+            | AdyenEx.Checkout.V50.WeChatPayDetails.t()
+            | AdyenEx.Checkout.V50.WeChatPayMiniProgramDetails.t()
+            | AdyenEx.Checkout.V50.ZipDetails.t(),
           recurringExpiry: String.t() | nil,
           recurringFrequency: String.t() | nil,
           recurringProcessingModel: String.t() | nil,
@@ -108,24 +108,24 @@ defmodule Adyen.Checkout.V50.PaymentRequest do
           redirectToIssuerMethod: String.t() | nil,
           reference: String.t(),
           returnUrl: String.t(),
-          riskData: Adyen.Checkout.V50.RiskData.t() | nil,
+          riskData: AdyenEx.Checkout.V50.RiskData.t() | nil,
           sessionValidity: String.t() | nil,
           shopperConversionId: String.t() | nil,
           shopperEmail: String.t() | nil,
           shopperIP: String.t() | nil,
           shopperInteraction: String.t() | nil,
           shopperLocale: String.t() | nil,
-          shopperName: Adyen.Checkout.V50.ShopperName.t() | nil,
+          shopperName: AdyenEx.Checkout.V50.ShopperName.t() | nil,
           shopperReference: String.t() | nil,
           shopperStatement: String.t() | nil,
           socialSecurityNumber: String.t() | nil,
-          splits: [Adyen.Checkout.V50.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V50.Split.t()] | nil,
           store: String.t() | nil,
           storePaymentMethod: boolean | nil,
-          subMerchants: [Adyen.Checkout.V50.SubMerchantInfoWrapper.t()] | nil,
-          surcharge: Adyen.Checkout.V50.Surcharge.t() | nil,
+          subMerchants: [AdyenEx.Checkout.V50.SubMerchantInfoWrapper.t()] | nil,
+          surcharge: AdyenEx.Checkout.V50.Surcharge.t() | nil,
           telephoneNumber: String.t() | nil,
-          threeDS2RequestData: Adyen.Checkout.V50.ThreeDs2RequestFields.t() | nil,
+          threeDS2RequestData: AdyenEx.Checkout.V50.ThreeDs2RequestFields.t() | nil,
           threeDSAuthenticationOnly: boolean | nil,
           trustedShopper: boolean | nil
         }
@@ -205,23 +205,23 @@ defmodule Adyen.Checkout.V50.PaymentRequest do
 
   def __fields__(:t) do
     [
-      accountInfo: {Adyen.Checkout.V50.AccountInfo, :t},
-      additionalAmount: {Adyen.Checkout.V50.Amount, :t},
+      accountInfo: {AdyenEx.Checkout.V50.AccountInfo, :t},
+      additionalAmount: {AdyenEx.Checkout.V50.Amount, :t},
       additionalData: :map,
-      amount: {Adyen.Checkout.V50.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V50.ApplicationInfo, :t},
-      bankAccount: {Adyen.Checkout.V50.CheckoutBankAccount, :t},
-      billingAddress: {Adyen.Checkout.V50.BillingAddress, :t},
-      browserInfo: {Adyen.Checkout.V50.BrowserInfo, :t},
+      amount: {AdyenEx.Checkout.V50.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V50.ApplicationInfo, :t},
+      bankAccount: {AdyenEx.Checkout.V50.CheckoutBankAccount, :t},
+      billingAddress: {AdyenEx.Checkout.V50.BillingAddress, :t},
+      browserInfo: {AdyenEx.Checkout.V50.BrowserInfo, :t},
       captureDelayHours: {:integer, "int32"},
       channel: {:enum, ["iOS", "Android", "Web"]},
       checkoutAttemptId: :string,
-      company: {Adyen.Checkout.V50.Company, :t},
+      company: {AdyenEx.Checkout.V50.Company, :t},
       conversionId: :string,
       countryCode: :string,
       dateOfBirth: {:string, "date-time"},
-      dccQuote: {Adyen.Checkout.V50.ForexQuote, :t},
-      deliveryAddress: {Adyen.Checkout.V50.DeliveryAddress, :t},
+      dccQuote: {AdyenEx.Checkout.V50.ForexQuote, :t},
+      deliveryAddress: {AdyenEx.Checkout.V50.DeliveryAddress, :t},
       deliveryDate: {:string, "date-time"},
       deviceFingerprint: :string,
       enableOneClick: :boolean,
@@ -229,81 +229,81 @@ defmodule Adyen.Checkout.V50.PaymentRequest do
       enableRecurring: :boolean,
       entityType: {:enum, ["NaturalPerson", "CompanyName"]},
       fraudOffset: {:integer, "int32"},
-      fundOrigin: {Adyen.Checkout.V50.FundOrigin, :t},
-      fundRecipient: {Adyen.Checkout.V50.FundRecipient, :t},
-      installments: {Adyen.Checkout.V50.Installments, :t},
-      lineItems: [{Adyen.Checkout.V50.LineItem, :t}],
-      mandate: {Adyen.Checkout.V50.Mandate, :t},
+      fundOrigin: {AdyenEx.Checkout.V50.FundOrigin, :t},
+      fundRecipient: {AdyenEx.Checkout.V50.FundRecipient, :t},
+      installments: {AdyenEx.Checkout.V50.Installments, :t},
+      lineItems: [{AdyenEx.Checkout.V50.LineItem, :t}],
+      mandate: {AdyenEx.Checkout.V50.Mandate, :t},
       mcc: :string,
       merchantAccount: :string,
       merchantOrderReference: :string,
-      merchantRiskIndicator: {Adyen.Checkout.V50.MerchantRiskIndicator, :t},
+      merchantRiskIndicator: {AdyenEx.Checkout.V50.MerchantRiskIndicator, :t},
       metadata: :map,
-      mpiData: {Adyen.Checkout.V50.ThreeDSecureData, :t},
-      order: {Adyen.Checkout.V50.EncryptedOrderData, :t},
+      mpiData: {AdyenEx.Checkout.V50.ThreeDSecureData, :t},
+      order: {AdyenEx.Checkout.V50.EncryptedOrderData, :t},
       orderReference: :string,
       origin: :string,
       paymentMethod:
         {:union,
          [
-           {Adyen.Checkout.V50.AchDetails, :t},
-           {Adyen.Checkout.V50.AffirmDetails, :t},
-           {Adyen.Checkout.V50.AfterpayDetails, :t},
-           {Adyen.Checkout.V50.AlmaDetails, :t},
-           {Adyen.Checkout.V50.AmazonPayDetails, :t},
-           {Adyen.Checkout.V50.AncvDetails, :t},
-           {Adyen.Checkout.V50.AndroidPayDetails, :t},
-           {Adyen.Checkout.V50.ApplePayDetails, :t},
-           {Adyen.Checkout.V50.BacsDirectDebitDetails, :t},
-           {Adyen.Checkout.V50.BillDeskDetails, :t},
-           {Adyen.Checkout.V50.BlikDetails, :t},
-           {Adyen.Checkout.V50.CardDetails, :t},
-           {Adyen.Checkout.V50.CashAppDetails, :t},
-           {Adyen.Checkout.V50.CellulantDetails, :t},
-           {Adyen.Checkout.V50.DirectDebitAuDetails, :t},
-           {Adyen.Checkout.V50.DokuDetails, :t},
-           {Adyen.Checkout.V50.DragonpayDetails, :t},
-           {Adyen.Checkout.V50.EBankingFinlandDetails, :t},
-           {Adyen.Checkout.V50.EcontextVoucherDetails, :t},
-           {Adyen.Checkout.V50.EftDetails, :t},
-           {Adyen.Checkout.V50.ExternalTokenDetails, :t},
-           {Adyen.Checkout.V50.FastlaneDetails, :t},
-           {Adyen.Checkout.V50.GenericIssuerPaymentMethodDetails, :t},
-           {Adyen.Checkout.V50.GooglePayDetails, :t},
-           {Adyen.Checkout.V50.IdealDetails, :t},
-           {Adyen.Checkout.V50.KlarnaDetails, :t},
-           {Adyen.Checkout.V50.KlarnaNetworkDetails, :t},
-           {Adyen.Checkout.V50.MasterpassDetails, :t},
-           {Adyen.Checkout.V50.MbwayDetails, :t},
-           {Adyen.Checkout.V50.MobilePayDetails, :t},
-           {Adyen.Checkout.V50.MolPayDetails, :t},
-           {Adyen.Checkout.V50.OpenInvoiceDetails, :t},
-           {Adyen.Checkout.V50.PayByBankAISDirectDebitDetails, :t},
-           {Adyen.Checkout.V50.PayByBankDetails, :t},
-           {Adyen.Checkout.V50.PayPalDetails, :t},
-           {Adyen.Checkout.V50.PayPayDetails, :t},
-           {Adyen.Checkout.V50.PayToDetails, :t},
-           {Adyen.Checkout.V50.PayUUpiDetails, :t},
-           {Adyen.Checkout.V50.PayWithGoogleDetails, :t},
-           {Adyen.Checkout.V50.PaymentDetails, :t},
-           {Adyen.Checkout.V50.PixDetails, :t},
-           {Adyen.Checkout.V50.PixPayByBankDetails, :t},
-           {Adyen.Checkout.V50.PseDetails, :t},
-           {Adyen.Checkout.V50.RakutenPayDetails, :t},
-           {Adyen.Checkout.V50.RatepayDetails, :t},
-           {Adyen.Checkout.V50.RivertyDetails, :t},
-           {Adyen.Checkout.V50.SamsungPayDetails, :t},
-           {Adyen.Checkout.V50.SepaDirectDebitDetails, :t},
-           {Adyen.Checkout.V50.StoredPaymentMethodDetails, :t},
-           {Adyen.Checkout.V50.TwintDetails, :t},
-           {Adyen.Checkout.V50.UpiCollectDetails, :t},
-           {Adyen.Checkout.V50.UpiIntentDetails, :t},
-           {Adyen.Checkout.V50.UpiQrDetails, :t},
-           {Adyen.Checkout.V50.VippsDetails, :t},
-           {Adyen.Checkout.V50.VisaCheckoutDetails, :t},
-           {Adyen.Checkout.V50.WeChatPayDetails, :t},
-           {Adyen.Checkout.V50.WeChatPayMiniProgramDetails, :t},
-           {Adyen.Checkout.V50.ZipDetails, :t}
+           {AdyenEx.Checkout.V50.AchDetails, :t},
+           {AdyenEx.Checkout.V50.AffirmDetails, :t},
+           {AdyenEx.Checkout.V50.AfterpayDetails, :t},
+           {AdyenEx.Checkout.V50.AlmaDetails, :t},
+           {AdyenEx.Checkout.V50.AmazonPayDetails, :t},
+           {AdyenEx.Checkout.V50.AncvDetails, :t},
+           {AdyenEx.Checkout.V50.AndroidPayDetails, :t},
+           {AdyenEx.Checkout.V50.ApplePayDetails, :t},
+           {AdyenEx.Checkout.V50.BacsDirectDebitDetails, :t},
+           {AdyenEx.Checkout.V50.BillDeskDetails, :t},
+           {AdyenEx.Checkout.V50.BlikDetails, :t},
+           {AdyenEx.Checkout.V50.CardDetails, :t},
+           {AdyenEx.Checkout.V50.CashAppDetails, :t},
+           {AdyenEx.Checkout.V50.CellulantDetails, :t},
+           {AdyenEx.Checkout.V50.DirectDebitAuDetails, :t},
+           {AdyenEx.Checkout.V50.DokuDetails, :t},
+           {AdyenEx.Checkout.V50.DragonpayDetails, :t},
+           {AdyenEx.Checkout.V50.EBankingFinlandDetails, :t},
+           {AdyenEx.Checkout.V50.EcontextVoucherDetails, :t},
+           {AdyenEx.Checkout.V50.EftDetails, :t},
+           {AdyenEx.Checkout.V50.ExternalTokenDetails, :t},
+           {AdyenEx.Checkout.V50.FastlaneDetails, :t},
+           {AdyenEx.Checkout.V50.GenericIssuerPaymentMethodDetails, :t},
+           {AdyenEx.Checkout.V50.GooglePayDetails, :t},
+           {AdyenEx.Checkout.V50.IdealDetails, :t},
+           {AdyenEx.Checkout.V50.KlarnaDetails, :t},
+           {AdyenEx.Checkout.V50.KlarnaNetworkDetails, :t},
+           {AdyenEx.Checkout.V50.MasterpassDetails, :t},
+           {AdyenEx.Checkout.V50.MbwayDetails, :t},
+           {AdyenEx.Checkout.V50.MobilePayDetails, :t},
+           {AdyenEx.Checkout.V50.MolPayDetails, :t},
+           {AdyenEx.Checkout.V50.OpenInvoiceDetails, :t},
+           {AdyenEx.Checkout.V50.PayByBankAISDirectDebitDetails, :t},
+           {AdyenEx.Checkout.V50.PayByBankDetails, :t},
+           {AdyenEx.Checkout.V50.PayPalDetails, :t},
+           {AdyenEx.Checkout.V50.PayPayDetails, :t},
+           {AdyenEx.Checkout.V50.PayToDetails, :t},
+           {AdyenEx.Checkout.V50.PayUUpiDetails, :t},
+           {AdyenEx.Checkout.V50.PayWithGoogleDetails, :t},
+           {AdyenEx.Checkout.V50.PaymentDetails, :t},
+           {AdyenEx.Checkout.V50.PixDetails, :t},
+           {AdyenEx.Checkout.V50.PixPayByBankDetails, :t},
+           {AdyenEx.Checkout.V50.PseDetails, :t},
+           {AdyenEx.Checkout.V50.RakutenPayDetails, :t},
+           {AdyenEx.Checkout.V50.RatepayDetails, :t},
+           {AdyenEx.Checkout.V50.RivertyDetails, :t},
+           {AdyenEx.Checkout.V50.SamsungPayDetails, :t},
+           {AdyenEx.Checkout.V50.SepaDirectDebitDetails, :t},
+           {AdyenEx.Checkout.V50.StoredPaymentMethodDetails, :t},
+           {AdyenEx.Checkout.V50.TwintDetails, :t},
+           {AdyenEx.Checkout.V50.UpiCollectDetails, :t},
+           {AdyenEx.Checkout.V50.UpiIntentDetails, :t},
+           {AdyenEx.Checkout.V50.UpiQrDetails, :t},
+           {AdyenEx.Checkout.V50.VippsDetails, :t},
+           {AdyenEx.Checkout.V50.VisaCheckoutDetails, :t},
+           {AdyenEx.Checkout.V50.WeChatPayDetails, :t},
+           {AdyenEx.Checkout.V50.WeChatPayMiniProgramDetails, :t},
+           {AdyenEx.Checkout.V50.ZipDetails, :t}
          ]},
       recurringExpiry: :string,
       recurringFrequency: :string,
@@ -312,24 +312,24 @@ defmodule Adyen.Checkout.V50.PaymentRequest do
       redirectToIssuerMethod: :string,
       reference: :string,
       returnUrl: :string,
-      riskData: {Adyen.Checkout.V50.RiskData, :t},
+      riskData: {AdyenEx.Checkout.V50.RiskData, :t},
       sessionValidity: :string,
       shopperConversionId: :string,
       shopperEmail: :string,
       shopperIP: :string,
       shopperInteraction: {:enum, ["Ecommerce", "ContAuth", "Moto", "POS"]},
       shopperLocale: :string,
-      shopperName: {Adyen.Checkout.V50.ShopperName, :t},
+      shopperName: {AdyenEx.Checkout.V50.ShopperName, :t},
       shopperReference: :string,
       shopperStatement: :string,
       socialSecurityNumber: :string,
-      splits: [{Adyen.Checkout.V50.Split, :t}],
+      splits: [{AdyenEx.Checkout.V50.Split, :t}],
       store: :string,
       storePaymentMethod: :boolean,
-      subMerchants: [{Adyen.Checkout.V50.SubMerchantInfoWrapper, :t}],
-      surcharge: {Adyen.Checkout.V50.Surcharge, :t},
+      subMerchants: [{AdyenEx.Checkout.V50.SubMerchantInfoWrapper, :t}],
+      surcharge: {AdyenEx.Checkout.V50.Surcharge, :t},
       telephoneNumber: :string,
-      threeDS2RequestData: {Adyen.Checkout.V50.ThreeDs2RequestFields, :t},
+      threeDS2RequestData: {AdyenEx.Checkout.V50.ThreeDs2RequestFields, :t},
       threeDSAuthenticationOnly: :boolean,
       trustedShopper: :boolean
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V50.DSPublicKeyDetail do
+defmodule AdyenEx.BinLookup.V50.DSPublicKeyDetail do
   @moduledoc """
   Provides struct and type for a DSPublicKeyDetail
   """

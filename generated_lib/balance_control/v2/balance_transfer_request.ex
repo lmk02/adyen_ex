@@ -1,10 +1,10 @@
-defmodule Adyen.BalanceControl.V2.BalanceTransferRequest do
+defmodule AdyenEx.BalanceControl.V2.BalanceTransferRequest do
   @moduledoc """
   Provides struct and type for a BalanceTransferRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.BalanceControl.V2.Amount.t(),
+          amount: AdyenEx.BalanceControl.V2.Amount.t(),
           fromMerchant: String.t(),
           reference: String.t() | nil,
           toMerchant: String.t(),
@@ -19,7 +19,7 @@ defmodule Adyen.BalanceControl.V2.BalanceTransferRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.BalanceControl.V2.Amount, :t},
+      amount: {AdyenEx.BalanceControl.V2.Amount, :t},
       fromMerchant: :string,
       reference: :string,
       toMerchant: :string,

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.InternalReviewTrackingData do
+defmodule AdyenEx.Transfer.V4.InternalReviewTrackingData do
   @moduledoc """
   Provides struct and type for a InternalReviewTrackingData
   """

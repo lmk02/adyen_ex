@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.EventUrl do
+defmodule AdyenEx.Management.V1.EventUrl do
   @moduledoc """
   Provides struct and type for a EventUrl
   """
 
   @type t :: %__MODULE__{
-          eventLocalUrls: [Adyen.Management.V1.Url.t()] | nil,
-          eventPublicUrls: [Adyen.Management.V1.Url.t()] | nil
+          eventLocalUrls: [AdyenEx.Management.V1.Url.t()] | nil,
+          eventPublicUrls: [AdyenEx.Management.V1.Url.t()] | nil
         }
 
   defstruct [:eventLocalUrls, :eventPublicUrls]
@@ -16,8 +16,8 @@ defmodule Adyen.Management.V1.EventUrl do
 
   def __fields__(:t) do
     [
-      eventLocalUrls: [{Adyen.Management.V1.Url, :t}],
-      eventPublicUrls: [{Adyen.Management.V1.Url, :t}]
+      eventLocalUrls: [{AdyenEx.Management.V1.Url, :t}],
+      eventPublicUrls: [{AdyenEx.Management.V1.Url, :t}]
     ]
   end
 end

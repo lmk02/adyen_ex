@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.TaxReportingClassification do
+defmodule AdyenEx.LegalEntity.V2.TaxReportingClassification do
   @moduledoc """
   Provides struct and type for a TaxReportingClassification
   """

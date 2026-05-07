@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.BalanceAccountUpdateRequest do
+defmodule AdyenEx.BalancePlatform.V2.BalanceAccountUpdateRequest do
   @moduledoc """
   Provides struct and type for a BalanceAccountUpdateRequest
   """
@@ -8,7 +8,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceAccountUpdateRequest do
           description: String.t() | nil,
           metadata: map | nil,
           platformPaymentConfiguration:
-            Adyen.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
+            AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
           reference: String.t() | nil,
           status: String.t() | nil,
           timeZone: String.t() | nil
@@ -33,7 +33,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceAccountUpdateRequest do
       accountHolderId: :string,
       description: :string,
       metadata: :map,
-      platformPaymentConfiguration: {Adyen.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
+      platformPaymentConfiguration: {AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
       reference: :string,
       status: {:enum, ["active", "closed", "inactive", "suspended"]},
       timeZone: :string

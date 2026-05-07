@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.MealVoucherFRInfo do
+defmodule AdyenEx.Management.V1.MealVoucherFRInfo do
   @moduledoc """
   Provides struct and type for a MealVoucherFRInfo
   """

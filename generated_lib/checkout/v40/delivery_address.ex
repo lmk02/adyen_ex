@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.DeliveryAddress do
+defmodule AdyenEx.Checkout.V40.DeliveryAddress do
   @moduledoc """
   Provides struct and type for a DeliveryAddress
   """

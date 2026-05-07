@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.PaymentInstrumentReference do
+defmodule AdyenEx.BalancePlatform.V1.PaymentInstrumentReference do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentReference
   """

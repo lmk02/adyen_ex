@@ -1,4 +1,4 @@
-defmodule Adyen.SoftPOSConfiguration.V3.CertificateLoadingRequest do
+defmodule AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingRequest do
   @moduledoc """
   Provides struct and type for a CertificateLoadingRequest
   """
@@ -7,7 +7,7 @@ defmodule Adyen.SoftPOSConfiguration.V3.CertificateLoadingRequest do
           merchantAccount: String.t(),
           setupToken: String.t(),
           store: String.t() | nil,
-          subMerchantData: Adyen.SoftPOSConfiguration.V3.SubMerchantData.t() | nil
+          subMerchantData: AdyenEx.SoftPOSConfiguration.V3.SubMerchantData.t() | nil
         }
 
   defstruct [:merchantAccount, :setupToken, :store, :subMerchantData]
@@ -21,7 +21,7 @@ defmodule Adyen.SoftPOSConfiguration.V3.CertificateLoadingRequest do
       merchantAccount: :string,
       setupToken: :string,
       store: :string,
-      subMerchantData: {Adyen.SoftPOSConfiguration.V3.SubMerchantData, :t}
+      subMerchantData: {AdyenEx.SoftPOSConfiguration.V3.SubMerchantData, :t}
     ]
   end
 end

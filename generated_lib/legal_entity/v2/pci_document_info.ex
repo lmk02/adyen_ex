@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.PciDocumentInfo do
+defmodule AdyenEx.LegalEntity.V2.PciDocumentInfo do
   @moduledoc """
   Provides struct and type for a PciDocumentInfo
   """

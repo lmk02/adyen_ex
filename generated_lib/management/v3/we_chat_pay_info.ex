@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.WeChatPayInfo do
+defmodule AdyenEx.Management.V3.WeChatPayInfo do
   @moduledoc """
   Provides struct and type for a WeChatPayInfo
   """

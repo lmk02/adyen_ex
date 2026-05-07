@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V37.UpiIntentDetails do
+defmodule AdyenEx.Checkout.V37.UpiIntentDetails do
   @moduledoc """
   Provides struct and type for a UpiIntentDetails
   """

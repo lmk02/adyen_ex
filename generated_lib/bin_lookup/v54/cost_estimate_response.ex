@@ -1,11 +1,11 @@
-defmodule Adyen.BinLookup.V54.CostEstimateResponse do
+defmodule AdyenEx.BinLookup.V54.CostEstimateResponse do
   @moduledoc """
   Provides struct and type for a CostEstimateResponse
   """
 
   @type t :: %__MODULE__{
-          cardBin: Adyen.BinLookup.V54.CardBin.t() | nil,
-          costEstimateAmount: Adyen.BinLookup.V54.Amount.t() | nil,
+          cardBin: AdyenEx.BinLookup.V54.CardBin.t() | nil,
+          costEstimateAmount: AdyenEx.BinLookup.V54.Amount.t() | nil,
           costEstimateReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -18,8 +18,8 @@ defmodule Adyen.BinLookup.V54.CostEstimateResponse do
 
   def __fields__(:t) do
     [
-      cardBin: {Adyen.BinLookup.V54.CardBin, :t},
-      costEstimateAmount: {Adyen.BinLookup.V54.Amount, :t},
+      cardBin: {AdyenEx.BinLookup.V54.CardBin, :t},
+      costEstimateAmount: {AdyenEx.BinLookup.V54.Amount, :t},
       costEstimateReference: :string,
       resultCode: :string
     ]

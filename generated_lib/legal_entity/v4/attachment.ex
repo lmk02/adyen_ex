@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.Attachment do
+defmodule AdyenEx.LegalEntity.V4.Attachment do
   @moduledoc """
   Provides struct and type for a Attachment
   """

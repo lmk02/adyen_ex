@@ -1,9 +1,9 @@
-defmodule Adyen.BalanceControl.V1.General do
+defmodule AdyenEx.BalanceControl.V1.General do
   @moduledoc """
   Provides API endpoint related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Start a balance transfer
@@ -23,20 +23,20 @@ defmodule Adyen.BalanceControl.V1.General do
   **Content Types**: `application/json`
   """
   @spec post_balance_transfer(
-          body :: Adyen.BalanceControl.V1.BalanceTransferRequest.t(),
+          body :: AdyenEx.BalanceControl.V1.BalanceTransferRequest.t(),
           opts :: keyword
-        ) :: {:ok, Adyen.BalanceControl.V1.BalanceTransferResponse.t()} | :error
+        ) :: {:ok, AdyenEx.BalanceControl.V1.BalanceTransferResponse.t()} | :error
   def post_balance_transfer(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalanceControl.V1.General, :post_balance_transfer},
+      call: {AdyenEx.BalanceControl.V1.General, :post_balance_transfer},
       url: "/balanceTransfer",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalanceControl.V1.BalanceTransferRequest, :t}}],
-      response: [{200, {Adyen.BalanceControl.V1.BalanceTransferResponse, :t}}],
+      request: [{"application/json", {AdyenEx.BalanceControl.V1.BalanceTransferRequest, :t}}],
+      response: [{200, {AdyenEx.BalanceControl.V1.BalanceTransferResponse, :t}}],
       opts: opts
     })
   end

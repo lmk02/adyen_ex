@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V46.AmazonPayDetails do
+defmodule AdyenEx.Checkout.V46.AmazonPayDetails do
   @moduledoc """
   Provides struct and type for a AmazonPayDetails
   """

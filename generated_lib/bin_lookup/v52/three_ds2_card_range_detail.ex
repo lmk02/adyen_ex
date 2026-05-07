@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V52.ThreeDs2CardRangeDetail do
+defmodule AdyenEx.BinLookup.V52.ThreeDs2CardRangeDetail do
   @moduledoc """
   Provides struct and type for a ThreeDs2CardRangeDetail
   """

@@ -1,16 +1,16 @@
-defmodule Adyen.Account.V6.StoreDetail do
+defmodule AdyenEx.Account.V6.StoreDetail do
   @moduledoc """
   Provides struct and type for a StoreDetail
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V6.ViasAddress.t(),
+          address: AdyenEx.Account.V6.ViasAddress.t(),
           fullPhoneNumber: String.t() | nil,
           logo: String.t() | nil,
           merchantAccount: String.t(),
           merchantCategoryCode: String.t(),
           merchantHouseNumber: String.t() | nil,
-          phoneNumber: Adyen.Account.V6.ViasPhoneNumber.t() | nil,
+          phoneNumber: AdyenEx.Account.V6.ViasPhoneNumber.t() | nil,
           shopperInteraction: String.t() | nil,
           splitConfigurationUUID: String.t() | nil,
           status: String.t() | nil,
@@ -45,13 +45,13 @@ defmodule Adyen.Account.V6.StoreDetail do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V6.ViasAddress, :t},
+      address: {AdyenEx.Account.V6.ViasAddress, :t},
       fullPhoneNumber: :string,
       logo: :string,
       merchantAccount: :string,
       merchantCategoryCode: :string,
       merchantHouseNumber: :string,
-      phoneNumber: {Adyen.Account.V6.ViasPhoneNumber, :t},
+      phoneNumber: {AdyenEx.Account.V6.ViasPhoneNumber, :t},
       shopperInteraction: {:enum, ["Ecommerce", "POS"]},
       splitConfigurationUUID: :string,
       status: {:enum, ["Active", "Closed", "Inactive", "InactiveWithModifications", "Pending"]},

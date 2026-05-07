@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RegisterSCAFinalResponse do
+defmodule AdyenEx.BalancePlatform.V2.RegisterSCAFinalResponse do
   @moduledoc """
   Provides struct and type for a RegisterSCAFinalResponse
   """

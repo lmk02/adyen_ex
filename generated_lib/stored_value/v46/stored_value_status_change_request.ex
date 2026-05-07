@@ -1,10 +1,10 @@
-defmodule Adyen.StoredValue.V46.StoredValueStatusChangeRequest do
+defmodule AdyenEx.StoredValue.V46.StoredValueStatusChangeRequest do
   @moduledoc """
   Provides struct and type for a StoredValueStatusChangeRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.StoredValue.V46.Amount.t() | nil,
+          amount: AdyenEx.StoredValue.V46.Amount.t() | nil,
           merchantAccount: String.t(),
           paymentMethod: map,
           recurringDetailReference: String.t() | nil,
@@ -33,7 +33,7 @@ defmodule Adyen.StoredValue.V46.StoredValueStatusChangeRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.StoredValue.V46.Amount, :t},
+      amount: {AdyenEx.StoredValue.V46.Amount, :t},
       merchantAccount: :string,
       paymentMethod: :map,
       recurringDetailReference: :string,

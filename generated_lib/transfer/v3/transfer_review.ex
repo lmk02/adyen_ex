@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.TransferReview do
+defmodule AdyenEx.Transfer.V3.TransferReview do
   @moduledoc """
   Provides struct and type for a TransferReview
   """

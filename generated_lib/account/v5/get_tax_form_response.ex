@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.GetTaxFormResponse do
+defmodule AdyenEx.Account.V5.GetTaxFormResponse do
   @moduledoc """
   Provides struct and type for a GetTaxFormResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Account.V5.GetTaxFormResponse do
   @type t :: %__MODULE__{
           content: String.t() | nil,
           contentType: String.t() | nil,
-          invalidFields: [Adyen.Account.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V5.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -21,7 +21,7 @@ defmodule Adyen.Account.V5.GetTaxFormResponse do
     [
       content: {:string, "byte"},
       contentType: :string,
-      invalidFields: [{Adyen.Account.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V5.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

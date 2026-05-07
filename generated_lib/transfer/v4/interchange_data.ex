@@ -1,10 +1,10 @@
-defmodule Adyen.Transfer.V4.InterchangeData do
+defmodule AdyenEx.Transfer.V4.InterchangeData do
   @moduledoc """
   Provides struct and type for a InterchangeData
   """
 
   @type t :: %__MODULE__{
-          interchangeAmount: Adyen.Transfer.V4.Amount.t() | nil,
+          interchangeAmount: AdyenEx.Transfer.V4.Amount.t() | nil,
           interchangeRateIndicator: String.t() | nil,
           type: String.t()
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Transfer.V4.InterchangeData do
 
   def __fields__(:t) do
     [
-      interchangeAmount: {Adyen.Transfer.V4.Amount, :t},
+      interchangeAmount: {AdyenEx.Transfer.V4.Amount, :t},
       interchangeRateIndicator: :string,
       type: {:const, "interchangeData"}
     ]

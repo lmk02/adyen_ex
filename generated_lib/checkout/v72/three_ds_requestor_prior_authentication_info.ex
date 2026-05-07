@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.ThreeDSRequestorPriorAuthenticationInfo do
+defmodule AdyenEx.Checkout.V72.ThreeDSRequestorPriorAuthenticationInfo do
   @moduledoc """
   Provides struct and type for a ThreeDSRequestorPriorAuthenticationInfo
   """

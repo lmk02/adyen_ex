@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V64.ModificationResult do
+defmodule AdyenEx.Payment.V64.ModificationResult do
   @moduledoc """
   Provides struct and type for a ModificationResult
   """

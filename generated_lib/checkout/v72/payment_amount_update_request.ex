@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.PaymentAmountUpdateRequest do
+defmodule AdyenEx.Checkout.V72.PaymentAmountUpdateRequest do
   @moduledoc """
   Provides struct and type for a PaymentAmountUpdateRequest
   """
@@ -6,14 +6,14 @@ defmodule Adyen.Checkout.V72.PaymentAmountUpdateRequest do
   @type t :: %__MODULE__{
           adjustAuthType: String.t() | nil,
           adjustAuthorisationData: String.t() | nil,
-          amount: Adyen.Checkout.V72.Amount.t(),
-          applicationInfo: Adyen.Checkout.V72.ApplicationInfo.t() | nil,
+          amount: AdyenEx.Checkout.V72.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V72.ApplicationInfo.t() | nil,
           industryUsage: String.t() | nil,
-          lineItems: [Adyen.Checkout.V72.LineItem.t()] | nil,
+          lineItems: [AdyenEx.Checkout.V72.LineItem.t()] | nil,
           merchantAccount: String.t(),
-          mpiData: Adyen.Checkout.V72.ThreeDSecureData.t() | nil,
+          mpiData: AdyenEx.Checkout.V72.ThreeDSecureData.t() | nil,
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V72.Split.t()] | nil
+          splits: [AdyenEx.Checkout.V72.Split.t()] | nil
         }
 
   defstruct [
@@ -37,14 +37,14 @@ defmodule Adyen.Checkout.V72.PaymentAmountUpdateRequest do
     [
       adjustAuthType: {:enum, ["cardholderInitiatedTransaction", "merchantInitiatedTransaction"]},
       adjustAuthorisationData: :string,
-      amount: {Adyen.Checkout.V72.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V72.ApplicationInfo, :t},
+      amount: {AdyenEx.Checkout.V72.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V72.ApplicationInfo, :t},
       industryUsage: {:enum, ["delayedCharge", "installment", "noShow"]},
-      lineItems: [{Adyen.Checkout.V72.LineItem, :t}],
+      lineItems: [{AdyenEx.Checkout.V72.LineItem, :t}],
       merchantAccount: :string,
-      mpiData: {Adyen.Checkout.V72.ThreeDSecureData, :t},
+      mpiData: {AdyenEx.Checkout.V72.ThreeDSecureData, :t},
       reference: :string,
-      splits: [{Adyen.Checkout.V72.Split, :t}]
+      splits: [{AdyenEx.Checkout.V72.Split, :t}]
     ]
   end
 end

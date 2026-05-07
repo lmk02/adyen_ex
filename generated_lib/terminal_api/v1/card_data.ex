@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.CardData do
+defmodule AdyenEx.TerminalAPI.V1.CardData do
   @moduledoc """
   Provides struct and type for a CardData
   """
@@ -9,9 +9,9 @@ defmodule Adyen.TerminalAPI.V1.CardData do
           MaskedPan: String.t() | nil,
           PaymentAccountRef: String.t() | nil,
           PaymentBrand: String.t() | nil,
-          PaymentToken: Adyen.TerminalAPI.V1.PaymentToken.t() | nil,
+          PaymentToken: AdyenEx.TerminalAPI.V1.PaymentToken.t() | nil,
           ProtectedCardData: String.t() | nil,
-          SensitiveCardData: Adyen.TerminalAPI.V1.SensitiveCardData.t() | nil
+          SensitiveCardData: AdyenEx.TerminalAPI.V1.SensitiveCardData.t() | nil
         }
 
   defstruct [
@@ -50,9 +50,9 @@ defmodule Adyen.TerminalAPI.V1.CardData do
       MaskedPan: :string,
       PaymentAccountRef: :string,
       PaymentBrand: :string,
-      PaymentToken: {Adyen.TerminalAPI.V1.PaymentToken, :t},
+      PaymentToken: {AdyenEx.TerminalAPI.V1.PaymentToken, :t},
       ProtectedCardData: :string,
-      SensitiveCardData: {Adyen.TerminalAPI.V1.SensitiveCardData, :t}
+      SensitiveCardData: {AdyenEx.TerminalAPI.V1.SensitiveCardData, :t}
     ]
   end
 end

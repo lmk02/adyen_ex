@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V6.UploadDocumentRequest do
+defmodule AdyenEx.Account.V6.UploadDocumentRequest do
   @moduledoc """
   Provides struct and type for a UploadDocumentRequest
   """
 
   @type t :: %__MODULE__{
           documentContent: String.t(),
-          documentDetail: Adyen.Account.V6.DocumentDetail.t()
+          documentDetail: AdyenEx.Account.V6.DocumentDetail.t()
         }
 
   defstruct [:documentContent, :documentDetail]
@@ -15,6 +15,6 @@ defmodule Adyen.Account.V6.UploadDocumentRequest do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [documentContent: {:string, "byte"}, documentDetail: {Adyen.Account.V6.DocumentDetail, :t}]
+    [documentContent: {:string, "byte"}, documentDetail: {AdyenEx.Account.V6.DocumentDetail, :t}]
   end
 end

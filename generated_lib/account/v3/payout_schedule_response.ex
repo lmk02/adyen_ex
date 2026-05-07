@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.PayoutScheduleResponse do
+defmodule AdyenEx.Account.V3.PayoutScheduleResponse do
   @moduledoc """
   Provides struct and type for a PayoutScheduleResponse
   """

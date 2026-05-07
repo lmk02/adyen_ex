@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.StockData do
+defmodule AdyenEx.LegalEntity.V3.StockData do
   @moduledoc """
   Provides struct and type for a StockData
   """

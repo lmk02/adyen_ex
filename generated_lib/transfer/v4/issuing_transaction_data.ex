@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.IssuingTransactionData do
+defmodule AdyenEx.Transfer.V4.IssuingTransactionData do
   @moduledoc """
   Provides struct and type for a IssuingTransactionData
   """

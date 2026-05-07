@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.PaymentData do
+defmodule AdyenEx.TerminalAPI.V1.PaymentData do
   @moduledoc """
   Provides struct and type for a PaymentData
   """
 
   @type t :: %__MODULE__{
-          CardAcquisitionReference: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
-          Instalment: Adyen.TerminalAPI.V1.Instalment.t() | nil,
-          PaymentInstrumentData: Adyen.TerminalAPI.V1.PaymentInstrumentData.t() | nil,
+          CardAcquisitionReference: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
+          Instalment: AdyenEx.TerminalAPI.V1.Instalment.t() | nil,
+          PaymentInstrumentData: AdyenEx.TerminalAPI.V1.PaymentInstrumentData.t() | nil,
           PaymentType: String.t() | nil,
           RequestedValidityDate: Date.t() | nil,
           SplitPaymentFlag: boolean | nil
@@ -27,9 +27,9 @@ defmodule Adyen.TerminalAPI.V1.PaymentData do
 
   def __fields__(:t) do
     [
-      CardAcquisitionReference: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
-      Instalment: {Adyen.TerminalAPI.V1.Instalment, :t},
-      PaymentInstrumentData: {Adyen.TerminalAPI.V1.PaymentInstrumentData, :t},
+      CardAcquisitionReference: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
+      Instalment: {AdyenEx.TerminalAPI.V1.Instalment, :t},
+      PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t},
       PaymentType:
         {:enum,
          [

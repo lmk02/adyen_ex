@@ -1,9 +1,12 @@
-defmodule Adyen.Transfer.V4.Airline do
+defmodule AdyenEx.Transfer.V4.Airline do
   @moduledoc """
   Provides struct and type for a Airline
   """
 
-  @type t :: %__MODULE__{legs: [Adyen.Transfer.V4.Leg.t()] | nil, ticketNumber: String.t() | nil}
+  @type t :: %__MODULE__{
+          legs: [AdyenEx.Transfer.V4.Leg.t()] | nil,
+          ticketNumber: String.t() | nil
+        }
 
   defstruct [:legs, :ticketNumber]
 
@@ -12,6 +15,6 @@ defmodule Adyen.Transfer.V4.Airline do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [legs: [{Adyen.Transfer.V4.Leg, :t}], ticketNumber: :string]
+    [legs: [{AdyenEx.Transfer.V4.Leg, :t}], ticketNumber: :string]
   end
 end

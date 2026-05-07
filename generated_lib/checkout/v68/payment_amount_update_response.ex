@@ -1,16 +1,16 @@
-defmodule Adyen.Checkout.V68.PaymentAmountUpdateResponse do
+defmodule AdyenEx.Checkout.V68.PaymentAmountUpdateResponse do
   @moduledoc """
   Provides struct and type for a PaymentAmountUpdateResponse
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V68.Amount.t(),
+          amount: AdyenEx.Checkout.V68.Amount.t(),
           merchantAccount: String.t(),
           paymentPspReference: String.t(),
           pspReference: String.t(),
           reason: String.t() | nil,
           reference: String.t(),
-          splits: [Adyen.Checkout.V68.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V68.Split.t()] | nil,
           status: String.t()
         }
 
@@ -31,13 +31,13 @@ defmodule Adyen.Checkout.V68.PaymentAmountUpdateResponse do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V68.Amount, :t},
+      amount: {AdyenEx.Checkout.V68.Amount, :t},
       merchantAccount: :string,
       paymentPspReference: :string,
       pspReference: :string,
       reason: {:enum, ["delayedCharge", "noShow"]},
       reference: :string,
-      splits: [{Adyen.Checkout.V68.Split, :t}],
+      splits: [{AdyenEx.Checkout.V68.Split, :t}],
       status: {:const, "received"}
     ]
   end

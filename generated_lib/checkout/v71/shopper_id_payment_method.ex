@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.ShopperIdPaymentMethod do
+defmodule AdyenEx.Checkout.V71.ShopperIdPaymentMethod do
   @moduledoc """
   Provides struct and type for a ShopperIdPaymentMethod
   """

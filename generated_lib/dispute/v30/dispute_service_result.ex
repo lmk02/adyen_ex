@@ -1,4 +1,4 @@
-defmodule Adyen.Dispute.V30.DisputeServiceResult do
+defmodule AdyenEx.Dispute.V30.DisputeServiceResult do
   @moduledoc """
   Provides struct and type for a DisputeServiceResult
   """

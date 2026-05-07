@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Gratuity do
+defmodule AdyenEx.Management.V1.Gratuity do
   @moduledoc """
   Provides struct and type for a Gratuity
   """

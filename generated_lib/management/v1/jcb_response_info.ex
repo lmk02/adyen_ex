@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.JCBResponseInfo do
+defmodule AdyenEx.Management.V1.JCBResponseInfo do
   @moduledoc """
   Provides struct and type for a JCBResponseInfo
   """
@@ -7,7 +7,8 @@ defmodule Adyen.Management.V1.JCBResponseInfo do
           midNumber: String.t() | nil,
           reuseMidNumber: boolean | nil,
           serviceLevel: String.t() | nil,
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:midNumber, :reuseMidNumber, :serviceLevel, :transactionDescription]
@@ -21,7 +22,7 @@ defmodule Adyen.Management.V1.JCBResponseInfo do
       midNumber: :string,
       reuseMidNumber: :boolean,
       serviceLevel: :string,
-      transactionDescription: {Adyen.Management.V1.TransactionDescriptionResponseInfo, :t}
+      transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionResponseInfo, :t}
     ]
   end
 end

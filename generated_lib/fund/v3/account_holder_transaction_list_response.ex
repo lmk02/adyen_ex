@@ -1,10 +1,10 @@
-defmodule Adyen.Fund.V3.AccountHolderTransactionListResponse do
+defmodule AdyenEx.Fund.V3.AccountHolderTransactionListResponse do
   @moduledoc """
   Provides struct and type for a AccountHolderTransactionListResponse
   """
 
   @type t :: %__MODULE__{
-          accountTransactionLists: [Adyen.Fund.V3.AccountTransactionListWrapper.t()] | nil,
+          accountTransactionLists: [AdyenEx.Fund.V3.AccountTransactionListWrapper.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Fund.V3.AccountHolderTransactionListResponse do
 
   def __fields__(:t) do
     [
-      accountTransactionLists: [{Adyen.Fund.V3.AccountTransactionListWrapper, :t}],
+      accountTransactionLists: [{AdyenEx.Fund.V3.AccountTransactionListWrapper, :t}],
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean

@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.PersonalDocumentData do
+defmodule AdyenEx.Account.V6.PersonalDocumentData do
   @moduledoc """
   Provides struct and type for a PersonalDocumentData
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.SignatoryContactWrapper do
+defmodule AdyenEx.Account.V4.SignatoryContactWrapper do
   @moduledoc """
   Provides struct and type for a SignatoryContactWrapper
   """
 
-  @type t :: %__MODULE__{SignatoryContact: Adyen.Account.V4.SignatoryContact.t() | nil}
+  @type t :: %__MODULE__{SignatoryContact: AdyenEx.Account.V4.SignatoryContact.t() | nil}
 
   defstruct [:SignatoryContact]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V4.SignatoryContactWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [SignatoryContact: {Adyen.Account.V4.SignatoryContact, :t}]
+    [SignatoryContact: {AdyenEx.Account.V4.SignatoryContact, :t}]
   end
 end

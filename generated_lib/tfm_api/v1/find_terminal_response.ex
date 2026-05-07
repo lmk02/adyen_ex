@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.FindTerminalResponse do
+defmodule AdyenEx.TfmAPI.V1.FindTerminalResponse do
   @moduledoc """
   Provides struct and type for a FindTerminalResponse
   """

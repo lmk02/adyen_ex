@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.GetTotalsResponse do
+defmodule AdyenEx.TerminalAPI.V1.GetTotalsResponse do
   @moduledoc """
   Provides struct and type for a GetTotalsResponse
   """
 
   @type t :: %__MODULE__{
           POIReconciliationID: integer,
-          Response: Adyen.TerminalAPI.V1.Response.t(),
-          TransactionTotals: [Adyen.TerminalAPI.V1.TransactionTotals.t()] | nil
+          Response: AdyenEx.TerminalAPI.V1.Response.t(),
+          TransactionTotals: [AdyenEx.TerminalAPI.V1.TransactionTotals.t()] | nil
         }
 
   defstruct [:POIReconciliationID, :Response, :TransactionTotals]
@@ -18,8 +18,8 @@ defmodule Adyen.TerminalAPI.V1.GetTotalsResponse do
   def __fields__(:t) do
     [
       POIReconciliationID: :integer,
-      Response: {Adyen.TerminalAPI.V1.Response, :t},
-      TransactionTotals: [{Adyen.TerminalAPI.V1.TransactionTotals, :t}]
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t},
+      TransactionTotals: [{AdyenEx.TerminalAPI.V1.TransactionTotals, :t}]
     ]
   end
 end

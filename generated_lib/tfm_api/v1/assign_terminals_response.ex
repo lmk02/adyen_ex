@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.AssignTerminalsResponse do
+defmodule AdyenEx.TfmAPI.V1.AssignTerminalsResponse do
   @moduledoc """
   Provides struct and type for a AssignTerminalsResponse
   """

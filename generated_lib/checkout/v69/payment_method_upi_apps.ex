@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V69.PaymentMethodUPIApps do
+defmodule AdyenEx.Checkout.V69.PaymentMethodUPIApps do
   @moduledoc """
   Provides struct and type for a PaymentMethodUPIApps
   """
 
   @type t :: %__MODULE__{
-          appIdentifierInfo: Adyen.Checkout.V69.AppIdentifierInfo.t() | nil,
+          appIdentifierInfo: AdyenEx.Checkout.V69.AppIdentifierInfo.t() | nil,
           id: String.t(),
           name: String.t()
         }
@@ -16,6 +16,6 @@ defmodule Adyen.Checkout.V69.PaymentMethodUPIApps do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [appIdentifierInfo: {Adyen.Checkout.V69.AppIdentifierInfo, :t}, id: :string, name: :string]
+    [appIdentifierInfo: {AdyenEx.Checkout.V69.AppIdentifierInfo, :t}, id: :string, name: :string]
   end
 end

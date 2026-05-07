@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.SetupBeneficiaryResponse do
+defmodule AdyenEx.Fund.V3.SetupBeneficiaryResponse do
   @moduledoc """
   Provides struct and type for a SetupBeneficiaryResponse
   """

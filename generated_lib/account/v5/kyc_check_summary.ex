@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.KYCCheckSummary do
+defmodule AdyenEx.Account.V5.KYCCheckSummary do
   @moduledoc """
   Provides struct and type for a KYCCheckSummary
   """

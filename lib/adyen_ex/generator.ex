@@ -83,9 +83,9 @@ defmodule AdyenEx.Generator do
 
   defp generate_code(service, version, spec_path, base_output_path) do
     clean_name = String.replace(service, "Service", "")
-    base_module = Module.concat(["Adyen", clean_name, String.capitalize(version)])
+    base_module = Module.concat(["AdyenEx", clean_name, String.capitalize(version)])
     location = Path.join([base_output_path, Macro.underscore(clean_name), version])
-    profile_name = String.to_atom("adyen_#{Macro.underscore(service)}_#{version}")
+    profile_name = String.to_atom("adyen_ex_#{Macro.underscore(service)}_#{version}")
 
     # Register the profile dynamically for oapi_generator
     Application.put_env(:oapi_generator, profile_name,

@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.Company do
+defmodule AdyenEx.Management.V1.Company do
   @moduledoc """
   Provides struct and type for a Company
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V1.CompanyLinks.t() | nil,
-          dataCenters: [Adyen.Management.V1.DataCenter.t()] | nil,
+          _links: AdyenEx.Management.V1.CompanyLinks.t() | nil,
+          dataCenters: [AdyenEx.Management.V1.DataCenter.t()] | nil,
           description: String.t() | nil,
           id: String.t() | nil,
           name: String.t() | nil,
@@ -21,8 +21,8 @@ defmodule Adyen.Management.V1.Company do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V1.CompanyLinks, :t},
-      dataCenters: [{Adyen.Management.V1.DataCenter, :t}],
+      _links: {AdyenEx.Management.V1.CompanyLinks, :t},
+      dataCenters: [{AdyenEx.Management.V1.DataCenter, :t}],
       description: :string,
       id: :string,
       name: :string,

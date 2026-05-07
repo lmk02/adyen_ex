@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.ViasPhoneNumber do
+defmodule AdyenEx.Account.V3.ViasPhoneNumber do
   @moduledoc """
   Provides struct and type for a ViasPhoneNumber
   """

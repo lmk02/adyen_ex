@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.WeChatPayDetails do
+defmodule AdyenEx.Checkout.V72.WeChatPayDetails do
   @moduledoc """
   Provides struct and type for a WeChatPayDetails
   """

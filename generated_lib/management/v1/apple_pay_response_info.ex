@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ApplePayResponseInfo do
+defmodule AdyenEx.Management.V1.ApplePayResponseInfo do
   @moduledoc """
   Provides struct and type for a ApplePayResponseInfo
   """

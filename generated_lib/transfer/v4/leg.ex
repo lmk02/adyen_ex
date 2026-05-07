@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.Leg do
+defmodule AdyenEx.Transfer.V4.Leg do
   @moduledoc """
   Provides struct and type for a Leg
   """

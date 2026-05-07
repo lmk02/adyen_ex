@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Hardware do
+defmodule AdyenEx.Management.V3.Hardware do
   @moduledoc """
   Provides struct and type for a Hardware
   """

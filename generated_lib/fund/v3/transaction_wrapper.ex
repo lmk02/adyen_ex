@@ -1,9 +1,9 @@
-defmodule Adyen.Fund.V3.TransactionWrapper do
+defmodule AdyenEx.Fund.V3.TransactionWrapper do
   @moduledoc """
   Provides struct and type for a TransactionWrapper
   """
 
-  @type t :: %__MODULE__{Transaction: Adyen.Fund.V3.Transaction.t() | nil}
+  @type t :: %__MODULE__{Transaction: AdyenEx.Fund.V3.Transaction.t() | nil}
 
   defstruct [:Transaction]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Fund.V3.TransactionWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [Transaction: {Adyen.Fund.V3.Transaction, :t}]
+    [Transaction: {AdyenEx.Fund.V3.Transaction, :t}]
   end
 end

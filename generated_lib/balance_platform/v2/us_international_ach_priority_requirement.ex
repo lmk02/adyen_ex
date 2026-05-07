@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.USInternationalAchPriorityRequirement do
+defmodule AdyenEx.BalancePlatform.V2.USInternationalAchPriorityRequirement do
   @moduledoc """
   Provides struct and type for a USInternationalAchPriorityRequirement
   """

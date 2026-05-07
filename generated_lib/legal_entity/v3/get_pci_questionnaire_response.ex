@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.GetPciQuestionnaireResponse do
+defmodule AdyenEx.LegalEntity.V3.GetPciQuestionnaireResponse do
   @moduledoc """
   Provides struct and type for a GetPciQuestionnaireResponse
   """

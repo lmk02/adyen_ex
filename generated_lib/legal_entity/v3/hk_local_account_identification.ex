@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.HKLocalAccountIdentification do
+defmodule AdyenEx.LegalEntity.V3.HKLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a HKLocalAccountIdentification
   """

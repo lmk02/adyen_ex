@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.TestCompanyWebhookRequest do
+defmodule AdyenEx.Management.V1.TestCompanyWebhookRequest do
   @moduledoc """
   Provides struct and type for a TestCompanyWebhookRequest
   """
 
   @type t :: %__MODULE__{
           merchantIds: [String.t()] | nil,
-          notification: Adyen.Management.V1.CustomNotification.t() | nil,
+          notification: AdyenEx.Management.V1.CustomNotification.t() | nil,
           types: [String.t()] | nil
         }
 
@@ -18,7 +18,7 @@ defmodule Adyen.Management.V1.TestCompanyWebhookRequest do
   def __fields__(:t) do
     [
       merchantIds: [:string],
-      notification: {Adyen.Management.V1.CustomNotification, :t},
+      notification: {AdyenEx.Management.V1.CustomNotification, :t},
       types: [:string]
     ]
   end

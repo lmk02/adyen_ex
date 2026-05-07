@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.OfflineProcessing do
+defmodule AdyenEx.Management.V3.OfflineProcessing do
   @moduledoc """
   Provides struct and type for a OfflineProcessing
   """
 
   @type t :: %__MODULE__{
           chipFloorLimit: integer | nil,
-          offlineSwipeLimits: [Adyen.Management.V3.MinorUnitsMonetaryValue.t()] | nil
+          offlineSwipeLimits: [AdyenEx.Management.V3.MinorUnitsMonetaryValue.t()] | nil
         }
 
   defstruct [:chipFloorLimit, :offlineSwipeLimits]
@@ -17,7 +17,7 @@ defmodule Adyen.Management.V3.OfflineProcessing do
   def __fields__(:t) do
     [
       chipFloorLimit: {:integer, "int32"},
-      offlineSwipeLimits: [{Adyen.Management.V3.MinorUnitsMonetaryValue, :t}]
+      offlineSwipeLimits: [{AdyenEx.Management.V3.MinorUnitsMonetaryValue, :t}]
     ]
   end
 end

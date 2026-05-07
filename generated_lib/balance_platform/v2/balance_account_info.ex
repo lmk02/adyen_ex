@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.BalanceAccountInfo do
+defmodule AdyenEx.BalancePlatform.V2.BalanceAccountInfo do
   @moduledoc """
   Provides struct and type for a BalanceAccountInfo
   """
@@ -10,7 +10,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceAccountInfo do
           metadata: map | nil,
           migratedAccountCode: String.t() | nil,
           platformPaymentConfiguration:
-            Adyen.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
+            AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration.t() | nil,
           reference: String.t() | nil,
           timeZone: String.t() | nil
         }
@@ -37,7 +37,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceAccountInfo do
       description: :string,
       metadata: :map,
       migratedAccountCode: :string,
-      platformPaymentConfiguration: {Adyen.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
+      platformPaymentConfiguration: {AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration, :t},
       reference: :string,
       timeZone: :string
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V50.RefundRequest do
+defmodule AdyenEx.Payment.V50.RefundRequest do
   @moduledoc """
   Provides struct and type for a RefundRequest
   """
@@ -6,12 +6,12 @@ defmodule Adyen.Payment.V50.RefundRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V50.Amount.t(),
-          mpiData: Adyen.Payment.V50.ThreeDSecureData.t() | nil,
+          modificationAmount: AdyenEx.Payment.V50.Amount.t(),
+          mpiData: AdyenEx.Payment.V50.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V50.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V50.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -37,12 +37,12 @@ defmodule Adyen.Payment.V50.RefundRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V50.Amount, :t},
-      mpiData: {Adyen.Payment.V50.ThreeDSecureData, :t},
+      modificationAmount: {AdyenEx.Payment.V50.Amount, :t},
+      mpiData: {AdyenEx.Payment.V50.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       originalReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V50.Split, :t}],
+      splits: [{AdyenEx.Payment.V50.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

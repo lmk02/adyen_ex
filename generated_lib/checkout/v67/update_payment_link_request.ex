@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V67.UpdatePaymentLinkRequest do
+defmodule AdyenEx.Checkout.V67.UpdatePaymentLinkRequest do
   @moduledoc """
   Provides struct and type for a UpdatePaymentLinkRequest
   """

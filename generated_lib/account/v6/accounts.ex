@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V6.Accounts do
+defmodule AdyenEx.Account.V6.Accounts do
   @moduledoc """
   Provides API endpoints related to accounts
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Close an account
@@ -14,27 +14,27 @@ defmodule Adyen.Account.V6.Accounts do
 
   **Content Types**: `application/json`
   """
-  @spec post_close_account(body :: Adyen.Account.V6.CloseAccountRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Account.V6.CloseAccountResponse.t()}
-          | {:error, Adyen.Account.V6.ServiceError.t()}
+  @spec post_close_account(body :: AdyenEx.Account.V6.CloseAccountRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Account.V6.CloseAccountResponse.t()}
+          | {:error, AdyenEx.Account.V6.ServiceError.t()}
   def post_close_account(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V6.Accounts, :post_close_account},
+      call: {AdyenEx.Account.V6.Accounts, :post_close_account},
       url: "/closeAccount",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V6.CloseAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V6.CloseAccountRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V6.CloseAccountResponse, :t}},
-        {202, {Adyen.Account.V6.CloseAccountResponse, :t}},
-        {400, {Adyen.Account.V6.ServiceError, :t}},
-        {401, {Adyen.Account.V6.ServiceError, :t}},
-        {403, {Adyen.Account.V6.ServiceError, :t}},
-        {422, {Adyen.Account.V6.ServiceError, :t}},
-        {500, {Adyen.Account.V6.ServiceError, :t}}
+        {200, {AdyenEx.Account.V6.CloseAccountResponse, :t}},
+        {202, {AdyenEx.Account.V6.CloseAccountResponse, :t}},
+        {400, {AdyenEx.Account.V6.ServiceError, :t}},
+        {401, {AdyenEx.Account.V6.ServiceError, :t}},
+        {403, {AdyenEx.Account.V6.ServiceError, :t}},
+        {422, {AdyenEx.Account.V6.ServiceError, :t}},
+        {500, {AdyenEx.Account.V6.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -49,27 +49,27 @@ defmodule Adyen.Account.V6.Accounts do
 
   **Content Types**: `application/json`
   """
-  @spec post_create_account(body :: Adyen.Account.V6.CreateAccountRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Account.V6.CreateAccountResponse.t()}
-          | {:error, Adyen.Account.V6.ServiceError.t()}
+  @spec post_create_account(body :: AdyenEx.Account.V6.CreateAccountRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Account.V6.CreateAccountResponse.t()}
+          | {:error, AdyenEx.Account.V6.ServiceError.t()}
   def post_create_account(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V6.Accounts, :post_create_account},
+      call: {AdyenEx.Account.V6.Accounts, :post_create_account},
       url: "/createAccount",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V6.CreateAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V6.CreateAccountRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V6.CreateAccountResponse, :t}},
-        {202, {Adyen.Account.V6.CreateAccountResponse, :t}},
-        {400, {Adyen.Account.V6.ServiceError, :t}},
-        {401, {Adyen.Account.V6.ServiceError, :t}},
-        {403, {Adyen.Account.V6.ServiceError, :t}},
-        {422, {Adyen.Account.V6.ServiceError, :t}},
-        {500, {Adyen.Account.V6.ServiceError, :t}}
+        {200, {AdyenEx.Account.V6.CreateAccountResponse, :t}},
+        {202, {AdyenEx.Account.V6.CreateAccountResponse, :t}},
+        {400, {AdyenEx.Account.V6.ServiceError, :t}},
+        {401, {AdyenEx.Account.V6.ServiceError, :t}},
+        {403, {AdyenEx.Account.V6.ServiceError, :t}},
+        {422, {AdyenEx.Account.V6.ServiceError, :t}},
+        {500, {AdyenEx.Account.V6.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -84,27 +84,27 @@ defmodule Adyen.Account.V6.Accounts do
 
   **Content Types**: `application/json`
   """
-  @spec post_update_account(body :: Adyen.Account.V6.UpdateAccountRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Account.V6.UpdateAccountResponse.t()}
-          | {:error, Adyen.Account.V6.ServiceError.t()}
+  @spec post_update_account(body :: AdyenEx.Account.V6.UpdateAccountRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Account.V6.UpdateAccountResponse.t()}
+          | {:error, AdyenEx.Account.V6.ServiceError.t()}
   def post_update_account(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V6.Accounts, :post_update_account},
+      call: {AdyenEx.Account.V6.Accounts, :post_update_account},
       url: "/updateAccount",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V6.UpdateAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V6.UpdateAccountRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V6.UpdateAccountResponse, :t}},
-        {202, {Adyen.Account.V6.UpdateAccountResponse, :t}},
-        {400, {Adyen.Account.V6.ServiceError, :t}},
-        {401, {Adyen.Account.V6.ServiceError, :t}},
-        {403, {Adyen.Account.V6.ServiceError, :t}},
-        {422, {Adyen.Account.V6.ServiceError, :t}},
-        {500, {Adyen.Account.V6.ServiceError, :t}}
+        {200, {AdyenEx.Account.V6.UpdateAccountResponse, :t}},
+        {202, {AdyenEx.Account.V6.UpdateAccountResponse, :t}},
+        {400, {AdyenEx.Account.V6.ServiceError, :t}},
+        {401, {AdyenEx.Account.V6.ServiceError, :t}},
+        {403, {AdyenEx.Account.V6.ServiceError, :t}},
+        {422, {AdyenEx.Account.V6.ServiceError, :t}},
+        {500, {AdyenEx.Account.V6.ServiceError, :t}}
       ],
       opts: opts
     })

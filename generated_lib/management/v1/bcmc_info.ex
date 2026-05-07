@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.BcmcInfo do
+defmodule AdyenEx.Management.V1.BcmcInfo do
   @moduledoc """
   Provides struct and type for a BcmcInfo
   """

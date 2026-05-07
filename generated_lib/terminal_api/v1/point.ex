@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.Point do
+defmodule AdyenEx.TerminalAPI.V1.Point do
   @moduledoc """
   Provides struct and type for a Point
   """

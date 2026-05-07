@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.ShopperTaxInfo do
+defmodule AdyenEx.Checkout.V68.ShopperTaxInfo do
   @moduledoc """
   Provides struct and type for a ShopperTaxInfo
   """

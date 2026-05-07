@@ -1,26 +1,26 @@
-defmodule Adyen.BalancePlatform.V2.BankAccountIdentificationValidationRequest do
+defmodule AdyenEx.BalancePlatform.V2.BankAccountIdentificationValidationRequest do
   @moduledoc """
   Provides struct and type for a BankAccountIdentificationValidationRequest
   """
 
   @type t :: %__MODULE__{
           accountIdentification:
-            Adyen.BalancePlatform.V2.AULocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.BRLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.CALocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.CZLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.DKLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.HKLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.HULocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.IbanAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.NOLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.NZLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.NumberAndBicAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.PLLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.SELocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.SGLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.UKLocalAccountIdentification.t()
-            | Adyen.BalancePlatform.V2.USLocalAccountIdentification.t()
+            AdyenEx.BalancePlatform.V2.AULocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.BRLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.CALocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.CZLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.DKLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.HKLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.HULocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.IbanAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.NOLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.NZLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.NumberAndBicAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.PLLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.SELocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.SGLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.UKLocalAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V2.USLocalAccountIdentification.t()
         }
 
   defstruct [:accountIdentification]
@@ -34,22 +34,22 @@ defmodule Adyen.BalancePlatform.V2.BankAccountIdentificationValidationRequest do
       accountIdentification:
         {:union,
          [
-           {Adyen.BalancePlatform.V2.AULocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.BRLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.CALocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.CZLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.DKLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.HKLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.HULocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.IbanAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.NOLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.NZLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.NumberAndBicAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.PLLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.SELocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.SGLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.UKLocalAccountIdentification, :t},
-           {Adyen.BalancePlatform.V2.USLocalAccountIdentification, :t}
+           {AdyenEx.BalancePlatform.V2.AULocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.BRLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.CALocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.CZLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.DKLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.HKLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.HULocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.IbanAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.NOLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.NZLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.NumberAndBicAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.PLLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.SELocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.SGLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.UKLocalAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V2.USLocalAccountIdentification, :t}
          ]}
     ]
   end

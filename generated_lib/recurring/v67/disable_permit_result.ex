@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V67.DisablePermitResult do
+defmodule AdyenEx.Recurring.V67.DisablePermitResult do
   @moduledoc """
   Provides struct and type for a DisablePermitResult
   """

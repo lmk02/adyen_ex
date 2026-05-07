@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.CreateAccountHolderResponse do
+defmodule AdyenEx.Account.V4.CreateAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a CreateAccountHolderResponse
   """
@@ -6,15 +6,15 @@ defmodule Adyen.Account.V4.CreateAccountHolderResponse do
   @type t :: %__MODULE__{
           accountCode: String.t() | nil,
           accountHolderCode: String.t() | nil,
-          accountHolderDetails: Adyen.Account.V4.AccountHolderDetails.t() | nil,
-          accountHolderStatus: Adyen.Account.V4.AccountHolderStatus.t() | nil,
+          accountHolderDetails: AdyenEx.Account.V4.AccountHolderDetails.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V4.AccountHolderStatus.t() | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V4.ErrorFieldTypeWrapper.t()] | nil,
+          invalidFields: [AdyenEx.Account.V4.ErrorFieldTypeWrapper.t()] | nil,
           legalEntity: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil,
-          verification: Adyen.Account.V4.KYCVerificationResult.t() | nil
+          verification: AdyenEx.Account.V4.KYCVerificationResult.t() | nil
         }
 
   defstruct [
@@ -39,15 +39,15 @@ defmodule Adyen.Account.V4.CreateAccountHolderResponse do
     [
       accountCode: :string,
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V4.AccountHolderDetails, :t},
-      accountHolderStatus: {Adyen.Account.V4.AccountHolderStatus, :t},
+      accountHolderDetails: {AdyenEx.Account.V4.AccountHolderDetails, :t},
+      accountHolderStatus: {AdyenEx.Account.V4.AccountHolderStatus, :t},
       description: :string,
-      invalidFields: [{Adyen.Account.V4.ErrorFieldTypeWrapper, :t}],
+      invalidFields: [{AdyenEx.Account.V4.ErrorFieldTypeWrapper, :t}],
       legalEntity: {:enum, ["Business", "Individual", "NonProfit"]},
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean,
-      verification: {Adyen.Account.V4.KYCVerificationResult, :t}
+      verification: {AdyenEx.Account.V4.KYCVerificationResult, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.RIXAccountIdentifier do
+defmodule AdyenEx.OpenBanking.V1.RIXAccountIdentifier do
   @moduledoc """
   Provides struct and type for a RIXAccountIdentifier
   """

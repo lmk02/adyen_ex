@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.Name do
+defmodule AdyenEx.LegalEntity.V3.Name do
   @moduledoc """
   Provides struct and type for a Name
   """

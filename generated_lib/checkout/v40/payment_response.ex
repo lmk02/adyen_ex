@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.PaymentResponse do
+defmodule AdyenEx.Checkout.V40.PaymentResponse do
   @moduledoc """
   Provides struct and type for a PaymentResponse
   """
@@ -6,13 +6,13 @@ defmodule Adyen.Checkout.V40.PaymentResponse do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           authentication: map | nil,
-          details: [Adyen.Checkout.V40.InputDetail.t()] | nil,
-          fraudResult: Adyen.Checkout.V40.FraudResult.t() | nil,
-          order: Adyen.Checkout.V40.CheckoutOrderResponse.t() | nil,
+          details: [AdyenEx.Checkout.V40.InputDetail.t()] | nil,
+          fraudResult: AdyenEx.Checkout.V40.FraudResult.t() | nil,
+          order: AdyenEx.Checkout.V40.CheckoutOrderResponse.t() | nil,
           outputDetails: map | nil,
           paymentData: String.t() | nil,
           pspReference: String.t() | nil,
-          redirect: Adyen.Checkout.V40.Redirect.t() | nil,
+          redirect: AdyenEx.Checkout.V40.Redirect.t() | nil,
           refusalReason: String.t() | nil,
           refusalReasonCode: String.t() | nil,
           resultCode: String.t() | nil
@@ -41,13 +41,13 @@ defmodule Adyen.Checkout.V40.PaymentResponse do
     [
       additionalData: :map,
       authentication: :map,
-      details: [{Adyen.Checkout.V40.InputDetail, :t}],
-      fraudResult: {Adyen.Checkout.V40.FraudResult, :t},
-      order: {Adyen.Checkout.V40.CheckoutOrderResponse, :t},
+      details: [{AdyenEx.Checkout.V40.InputDetail, :t}],
+      fraudResult: {AdyenEx.Checkout.V40.FraudResult, :t},
+      order: {AdyenEx.Checkout.V40.CheckoutOrderResponse, :t},
       outputDetails: :map,
       paymentData: :string,
       pspReference: :string,
-      redirect: {Adyen.Checkout.V40.Redirect, :t},
+      redirect: {AdyenEx.Checkout.V40.Redirect, :t},
       refusalReason: :string,
       refusalReasonCode: :string,
       resultCode:

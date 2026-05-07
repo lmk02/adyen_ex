@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V5.NotificationConfigurationDetails do
+defmodule AdyenEx.NotificationConfiguration.V5.NotificationConfigurationDetails do
   @moduledoc """
   Provides struct and type for a NotificationConfigurationDetails
   """
@@ -8,7 +8,7 @@ defmodule Adyen.NotificationConfiguration.V5.NotificationConfigurationDetails do
           apiVersion: integer | nil,
           description: String.t() | nil,
           eventConfigs:
-            [Adyen.NotificationConfiguration.V5.NotificationEventConfiguration.t()] | nil,
+            [AdyenEx.NotificationConfiguration.V5.NotificationEventConfiguration.t()] | nil,
           hmacSignatureKey: String.t() | nil,
           notificationId: integer | nil,
           notifyPassword: String.t() | nil,
@@ -39,7 +39,7 @@ defmodule Adyen.NotificationConfiguration.V5.NotificationConfigurationDetails do
       active: :boolean,
       apiVersion: {:integer, "int32"},
       description: :string,
-      eventConfigs: [{Adyen.NotificationConfiguration.V5.NotificationEventConfiguration, :t}],
+      eventConfigs: [{AdyenEx.NotificationConfiguration.V5.NotificationEventConfiguration, :t}],
       hmacSignatureKey: :string,
       notificationId: {:integer, "int64"},
       notifyPassword: :string,

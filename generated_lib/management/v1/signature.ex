@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Signature do
+defmodule AdyenEx.Management.V1.Signature do
   @moduledoc """
   Provides struct and type for a Signature
   """

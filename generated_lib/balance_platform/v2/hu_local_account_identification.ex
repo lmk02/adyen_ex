@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.HULocalAccountIdentification do
+defmodule AdyenEx.BalancePlatform.V2.HULocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a HULocalAccountIdentification
   """

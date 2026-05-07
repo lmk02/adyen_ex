@@ -1,11 +1,11 @@
-defmodule Adyen.ForeignExchange.V1.CalculateRateRequestItem do
+defmodule AdyenEx.ForeignExchange.V1.CalculateRateRequestItem do
   @moduledoc """
   Provides struct and type for a CalculateRateRequestItem
   """
 
   @type t :: %__MODULE__{
           exchangeSide: String.t(),
-          sourceAmount: Adyen.ForeignExchange.V1.Amount.t(),
+          sourceAmount: AdyenEx.ForeignExchange.V1.Amount.t(),
           targetCurrency: String.t(),
           type: String.t()
         }
@@ -19,7 +19,7 @@ defmodule Adyen.ForeignExchange.V1.CalculateRateRequestItem do
   def __fields__(:t) do
     [
       exchangeSide: {:enum, ["buy", "sell"]},
-      sourceAmount: {Adyen.ForeignExchange.V1.Amount, :t},
+      sourceAmount: {AdyenEx.ForeignExchange.V1.Amount, :t},
       targetCurrency: :string,
       type: {:enum, ["splitPayment", "balanceConversion", "transfer", "splitRefund"]}
     ]

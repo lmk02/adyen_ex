@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.ExternalReason do
+defmodule AdyenEx.Transfer.V4.ExternalReason do
   @moduledoc """
   Provides struct and type for a ExternalReason
   """

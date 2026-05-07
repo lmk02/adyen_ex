@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.CreateCompanyWebhookRequest do
+defmodule AdyenEx.Management.V1.CreateCompanyWebhookRequest do
   @moduledoc """
   Provides struct and type for a CreateCompanyWebhookRequest
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Management.V1.CreateCompanyWebhookRequest do
           acceptsSelfSignedCertificate: boolean | nil,
           acceptsUntrustedRootCertificate: boolean | nil,
           active: boolean,
-          additionalSettings: Adyen.Management.V1.AdditionalSettings.t() | nil,
+          additionalSettings: AdyenEx.Management.V1.AdditionalSettings.t() | nil,
           communicationFormat: String.t(),
           description: String.t() | nil,
           filterMerchantAccountType: String.t(),
@@ -51,7 +51,7 @@ defmodule Adyen.Management.V1.CreateCompanyWebhookRequest do
       acceptsSelfSignedCertificate: :boolean,
       acceptsUntrustedRootCertificate: :boolean,
       active: :boolean,
-      additionalSettings: {Adyen.Management.V1.AdditionalSettings, :t},
+      additionalSettings: {AdyenEx.Management.V1.AdditionalSettings, :t},
       communicationFormat: {:enum, ["http", "json", "soap"]},
       description: :string,
       filterMerchantAccountType: {:enum, ["allAccounts", "excludeAccounts", "includeAccounts"]},

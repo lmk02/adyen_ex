@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.CloseStoresRequest do
+defmodule AdyenEx.Account.V5.CloseStoresRequest do
   @moduledoc """
   Provides struct and type for a CloseStoresRequest
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Fund.V3.DetailBalance do
+defmodule AdyenEx.Fund.V3.DetailBalance do
   @moduledoc """
   Provides struct and type for a DetailBalance
   """
 
   @type t :: %__MODULE__{
-          balance: [Adyen.Fund.V3.AmountWrapper.t()] | nil,
-          pendingBalance: [Adyen.Fund.V3.AmountWrapper.t()] | nil
+          balance: [AdyenEx.Fund.V3.AmountWrapper.t()] | nil,
+          pendingBalance: [AdyenEx.Fund.V3.AmountWrapper.t()] | nil
         }
 
   defstruct [:balance, :pendingBalance]
@@ -16,8 +16,8 @@ defmodule Adyen.Fund.V3.DetailBalance do
 
   def __fields__(:t) do
     [
-      balance: [{Adyen.Fund.V3.AmountWrapper, :t}],
-      pendingBalance: [{Adyen.Fund.V3.AmountWrapper, :t}]
+      balance: [{AdyenEx.Fund.V3.AmountWrapper, :t}],
+      pendingBalance: [{AdyenEx.Fund.V3.AmountWrapper, :t}]
     ]
   end
 end

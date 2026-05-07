@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V67.Donations do
+defmodule AdyenEx.Checkout.V67.Donations do
   @moduledoc """
   Provides API endpoints related to donations
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of donation campaigns.
@@ -15,28 +15,28 @@ defmodule Adyen.Checkout.V67.Donations do
   **Content Types**: `application/json`
   """
   @spec post_donation_campaigns(
-          body :: Adyen.Checkout.V67.DonationCampaignsRequest.t(),
+          body :: AdyenEx.Checkout.V67.DonationCampaignsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V67.DonationCampaignsResponse.t()}
-          | {:error, Adyen.Checkout.V67.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V67.DonationCampaignsResponse.t()}
+          | {:error, AdyenEx.Checkout.V67.ServiceError.t()}
   def post_donation_campaigns(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V67.Donations, :post_donation_campaigns},
+      call: {AdyenEx.Checkout.V67.Donations, :post_donation_campaigns},
       url: "/donationCampaigns",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V67.DonationCampaignsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V67.DonationCampaignsRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V67.DonationCampaignsResponse, :t}},
-        {400, {Adyen.Checkout.V67.ServiceError, :t}},
-        {401, {Adyen.Checkout.V67.ServiceError, :t}},
-        {403, {Adyen.Checkout.V67.ServiceError, :t}},
-        {422, {Adyen.Checkout.V67.ServiceError, :t}},
-        {500, {Adyen.Checkout.V67.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V67.DonationCampaignsResponse, :t}},
+        {400, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -53,26 +53,26 @@ defmodule Adyen.Checkout.V67.Donations do
 
   **Content Types**: `application/json`
   """
-  @spec post_donations(body :: Adyen.Checkout.V67.DonationPaymentRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V67.DonationPaymentResponse.t()}
-          | {:error, Adyen.Checkout.V67.ServiceError.t()}
+  @spec post_donations(body :: AdyenEx.Checkout.V67.DonationPaymentRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V67.DonationPaymentResponse.t()}
+          | {:error, AdyenEx.Checkout.V67.ServiceError.t()}
   def post_donations(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V67.Donations, :post_donations},
+      call: {AdyenEx.Checkout.V67.Donations, :post_donations},
       url: "/donations",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V67.DonationPaymentRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V67.DonationPaymentRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V67.DonationPaymentResponse, :t}},
-        {400, {Adyen.Checkout.V67.ServiceError, :t}},
-        {401, {Adyen.Checkout.V67.ServiceError, :t}},
-        {403, {Adyen.Checkout.V67.ServiceError, :t}},
-        {422, {Adyen.Checkout.V67.ServiceError, :t}},
-        {500, {Adyen.Checkout.V67.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V67.DonationPaymentResponse, :t}},
+        {400, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V67.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V67.ServiceError, :t}}
       ],
       opts: opts
     })

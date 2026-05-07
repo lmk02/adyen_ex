@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.ServiceError do
+defmodule AdyenEx.Checkout.V51.ServiceError do
   @moduledoc """
   Provides struct and type for a ServiceError
   """

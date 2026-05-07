@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.Passenger do
+defmodule AdyenEx.Checkout.V72.Passenger do
   @moduledoc """
   Provides struct and type for a Passenger
   """

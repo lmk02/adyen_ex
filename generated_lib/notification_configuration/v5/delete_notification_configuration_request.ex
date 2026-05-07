@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V5.DeleteNotificationConfigurationRequest do
+defmodule AdyenEx.NotificationConfiguration.V5.DeleteNotificationConfigurationRequest do
   @moduledoc """
   Provides struct and type for a DeleteNotificationConfigurationRequest
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.CalculateTermsOfServiceStatusResponse do
+defmodule AdyenEx.LegalEntity.V4.CalculateTermsOfServiceStatusResponse do
   @moduledoc """
   Provides struct and type for a CalculateTermsOfServiceStatusResponse
   """

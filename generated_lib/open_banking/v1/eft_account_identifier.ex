@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.EFTAccountIdentifier do
+defmodule AdyenEx.OpenBanking.V1.EFTAccountIdentifier do
   @moduledoc """
   Provides struct and type for a EFTAccountIdentifier
   """

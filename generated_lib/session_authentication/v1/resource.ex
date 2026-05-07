@@ -1,4 +1,4 @@
-defmodule Adyen.SessionAuthentication.V1.Resource do
+defmodule AdyenEx.SessionAuthentication.V1.Resource do
   @moduledoc """
   Provides struct and type for a Resource
   """

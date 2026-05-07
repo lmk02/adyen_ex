@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V51.MerchantDevice do
+defmodule AdyenEx.Payment.V51.MerchantDevice do
   @moduledoc """
   Provides struct and type for a MerchantDevice
   """

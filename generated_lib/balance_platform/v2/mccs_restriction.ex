@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MccsRestriction do
+defmodule AdyenEx.BalancePlatform.V2.MccsRestriction do
   @moduledoc """
   Provides struct and type for a MccsRestriction
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.MessageReference do
+defmodule AdyenEx.TerminalAPI.V1.MessageReference do
   @moduledoc """
   Provides struct and type for a MessageReference
   """

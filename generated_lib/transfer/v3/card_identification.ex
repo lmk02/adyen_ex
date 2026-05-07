@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.CardIdentification do
+defmodule AdyenEx.Transfer.V3.CardIdentification do
   @moduledoc """
   Provides struct and type for a CardIdentification
   """

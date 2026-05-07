@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V5.DeleteLegalArrangementRequest do
+defmodule AdyenEx.Account.V5.DeleteLegalArrangementRequest do
   @moduledoc """
   Provides struct and type for a DeleteLegalArrangementRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          legalArrangements: [Adyen.Account.V5.LegalArrangementRequest.t()]
+          legalArrangements: [AdyenEx.Account.V5.LegalArrangementRequest.t()]
         }
 
   defstruct [:accountHolderCode, :legalArrangements]
@@ -17,7 +17,7 @@ defmodule Adyen.Account.V5.DeleteLegalArrangementRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      legalArrangements: [{Adyen.Account.V5.LegalArrangementRequest, :t}]
+      legalArrangements: [{AdyenEx.Account.V5.LegalArrangementRequest, :t}]
     ]
   end
 end

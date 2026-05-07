@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Opi do
+defmodule AdyenEx.Management.V3.Opi do
   @moduledoc """
   Provides struct and type for a Opi
   """

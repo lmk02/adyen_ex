@@ -1,9 +1,9 @@
-defmodule Adyen.Transfer.V1.Transfers do
+defmodule AdyenEx.Transfer.V1.Transfers do
   @moduledoc """
   Provides API endpoint related to transfers
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Transfer funds
@@ -18,27 +18,27 @@ defmodule Adyen.Transfer.V1.Transfers do
 
   **Content Types**: `application/json`
   """
-  @spec post_transfers(body :: Adyen.Transfer.V1.TransferInfoOld.t(), opts :: keyword) ::
-          {:ok, Adyen.Transfer.V1.TransferOld.t()}
+  @spec post_transfers(body :: AdyenEx.Transfer.V1.TransferInfoOld.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Transfer.V1.TransferOld.t()}
           | {:error,
-             Adyen.Transfer.V1.ServiceError.t()
-             | Adyen.Transfer.V1.TransferServiceRestServiceError.t()}
+             AdyenEx.Transfer.V1.ServiceError.t()
+             | AdyenEx.Transfer.V1.TransferServiceRestServiceError.t()}
   def post_transfers(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Transfer.V1.Transfers, :post_transfers},
+      call: {AdyenEx.Transfer.V1.Transfers, :post_transfers},
       url: "/transfers",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Transfer.V1.TransferInfoOld, :t}}],
+      request: [{"application/json", {AdyenEx.Transfer.V1.TransferInfoOld, :t}}],
       response: [
-        {200, {Adyen.Transfer.V1.TransferOld, :t}},
-        {401, {Adyen.Transfer.V1.ServiceError, :t}},
-        {403, {Adyen.Transfer.V1.TransferServiceRestServiceError, :t}},
-        {422, {Adyen.Transfer.V1.TransferServiceRestServiceError, :t}},
-        {500, {Adyen.Transfer.V1.TransferServiceRestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V1.TransferOld, :t}},
+        {401, {AdyenEx.Transfer.V1.ServiceError, :t}},
+        {403, {AdyenEx.Transfer.V1.TransferServiceRestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V1.TransferServiceRestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V1.TransferServiceRestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,21 +1,21 @@
-defmodule Adyen.Payout.V68.PayoutRequest do
+defmodule AdyenEx.Payout.V68.PayoutRequest do
   @moduledoc """
   Provides struct and type for a PayoutRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Payout.V68.Amount.t(),
-          billingAddress: Adyen.Payout.V68.Address.t() | nil,
-          card: Adyen.Payout.V68.Card.t() | nil,
+          amount: AdyenEx.Payout.V68.Amount.t(),
+          billingAddress: AdyenEx.Payout.V68.Address.t() | nil,
+          card: AdyenEx.Payout.V68.Card.t() | nil,
           fraudOffset: integer | nil,
-          fundSource: Adyen.Payout.V68.FundSource.t() | nil,
+          fundSource: AdyenEx.Payout.V68.FundSource.t() | nil,
           merchantAccount: String.t(),
-          recurring: Adyen.Payout.V68.Recurring.t() | nil,
+          recurring: AdyenEx.Payout.V68.Recurring.t() | nil,
           reference: String.t(),
           selectedRecurringDetailReference: String.t() | nil,
           shopperEmail: String.t() | nil,
           shopperInteraction: String.t() | nil,
-          shopperName: Adyen.Payout.V68.Name.t() | nil,
+          shopperName: AdyenEx.Payout.V68.Name.t() | nil,
           shopperReference: String.t() | nil,
           telephoneNumber: String.t() | nil
         }
@@ -43,18 +43,18 @@ defmodule Adyen.Payout.V68.PayoutRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Payout.V68.Amount, :t},
-      billingAddress: {Adyen.Payout.V68.Address, :t},
-      card: {Adyen.Payout.V68.Card, :t},
+      amount: {AdyenEx.Payout.V68.Amount, :t},
+      billingAddress: {AdyenEx.Payout.V68.Address, :t},
+      card: {AdyenEx.Payout.V68.Card, :t},
       fraudOffset: {:integer, "int32"},
-      fundSource: {Adyen.Payout.V68.FundSource, :t},
+      fundSource: {AdyenEx.Payout.V68.FundSource, :t},
       merchantAccount: :string,
-      recurring: {Adyen.Payout.V68.Recurring, :t},
+      recurring: {AdyenEx.Payout.V68.Recurring, :t},
       reference: :string,
       selectedRecurringDetailReference: :string,
       shopperEmail: :string,
       shopperInteraction: {:enum, ["Ecommerce", "ContAuth", "Moto", "POS"]},
-      shopperName: {Adyen.Payout.V68.Name, :t},
+      shopperName: {AdyenEx.Payout.V68.Name, :t},
       shopperReference: :string,
       telephoneNumber: :string
     ]

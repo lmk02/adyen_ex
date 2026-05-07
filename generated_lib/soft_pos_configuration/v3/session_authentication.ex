@@ -1,9 +1,9 @@
-defmodule Adyen.SoftPOSConfiguration.V3.SessionAuthentication do
+defmodule AdyenEx.SoftPOSConfiguration.V3.SessionAuthentication do
   @moduledoc """
   Provides API endpoint related to session authentication
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create a communication session
@@ -15,29 +15,29 @@ defmodule Adyen.SoftPOSConfiguration.V3.SessionAuthentication do
   **Content Types**: `application/json`
   """
   @spec post_auth_certificate(
-          body :: Adyen.SoftPOSConfiguration.V3.CertificateLoadingRequest.t(),
+          body :: AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.SoftPOSConfiguration.V3.CertificateLoadingResponse.t()}
-          | {:error, Adyen.SoftPOSConfiguration.V3.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingResponse.t()}
+          | {:error, AdyenEx.SoftPOSConfiguration.V3.DefaultErrorResponseEntity.t()}
   def post_auth_certificate(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.SoftPOSConfiguration.V3.SessionAuthentication, :post_auth_certificate},
+      call: {AdyenEx.SoftPOSConfiguration.V3.SessionAuthentication, :post_auth_certificate},
       url: "/auth/certificate",
       body: body,
       method: :post,
       request: [
-        {"application/json", {Adyen.SoftPOSConfiguration.V3.CertificateLoadingRequest, :t}}
+        {"application/json", {AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingRequest, :t}}
       ],
       response: [
-        {201, {Adyen.SoftPOSConfiguration.V3.CertificateLoadingResponse, :t}},
-        {400, {Adyen.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}}
+        {201, {AdyenEx.SoftPOSConfiguration.V3.CertificateLoadingResponse, :t}},
+        {400, {AdyenEx.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.SoftPOSConfiguration.V3.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

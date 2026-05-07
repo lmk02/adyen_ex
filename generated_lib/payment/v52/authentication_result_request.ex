@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V52.AuthenticationResultRequest do
+defmodule AdyenEx.Payment.V52.AuthenticationResultRequest do
   @moduledoc """
   Provides struct and type for a AuthenticationResultRequest
   """

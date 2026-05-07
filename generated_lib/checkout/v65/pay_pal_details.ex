@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V65.PayPalDetails do
+defmodule AdyenEx.Checkout.V65.PayPalDetails do
   @moduledoc """
   Provides struct and type for a PayPalDetails
   """

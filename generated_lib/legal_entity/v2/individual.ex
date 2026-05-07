@@ -1,18 +1,18 @@
-defmodule Adyen.LegalEntity.V2.Individual do
+defmodule AdyenEx.LegalEntity.V2.Individual do
   @moduledoc """
   Provides struct and type for a Individual
   """
 
   @type t :: %__MODULE__{
-          birthData: Adyen.LegalEntity.V2.BirthData.t() | nil,
+          birthData: AdyenEx.LegalEntity.V2.BirthData.t() | nil,
           email: String.t() | nil,
-          identificationData: Adyen.LegalEntity.V2.IdentificationData.t() | nil,
-          name: Adyen.LegalEntity.V2.Name.t(),
+          identificationData: AdyenEx.LegalEntity.V2.IdentificationData.t() | nil,
+          name: AdyenEx.LegalEntity.V2.Name.t(),
           nationality: String.t() | nil,
-          phone: Adyen.LegalEntity.V2.PhoneNumber.t() | nil,
-          residentialAddress: Adyen.LegalEntity.V2.Address.t(),
-          taxInformation: [Adyen.LegalEntity.V2.TaxInformation.t()] | nil,
-          webData: Adyen.LegalEntity.V2.WebData.t() | nil
+          phone: AdyenEx.LegalEntity.V2.PhoneNumber.t() | nil,
+          residentialAddress: AdyenEx.LegalEntity.V2.Address.t(),
+          taxInformation: [AdyenEx.LegalEntity.V2.TaxInformation.t()] | nil,
+          webData: AdyenEx.LegalEntity.V2.WebData.t() | nil
         }
 
   defstruct [
@@ -33,15 +33,15 @@ defmodule Adyen.LegalEntity.V2.Individual do
 
   def __fields__(:t) do
     [
-      birthData: {Adyen.LegalEntity.V2.BirthData, :t},
+      birthData: {AdyenEx.LegalEntity.V2.BirthData, :t},
       email: :string,
-      identificationData: {Adyen.LegalEntity.V2.IdentificationData, :t},
-      name: {Adyen.LegalEntity.V2.Name, :t},
+      identificationData: {AdyenEx.LegalEntity.V2.IdentificationData, :t},
+      name: {AdyenEx.LegalEntity.V2.Name, :t},
       nationality: :string,
-      phone: {Adyen.LegalEntity.V2.PhoneNumber, :t},
-      residentialAddress: {Adyen.LegalEntity.V2.Address, :t},
-      taxInformation: [{Adyen.LegalEntity.V2.TaxInformation, :t}],
-      webData: {Adyen.LegalEntity.V2.WebData, :t}
+      phone: {AdyenEx.LegalEntity.V2.PhoneNumber, :t},
+      residentialAddress: {AdyenEx.LegalEntity.V2.Address, :t},
+      taxInformation: [{AdyenEx.LegalEntity.V2.TaxInformation, :t}],
+      webData: {AdyenEx.LegalEntity.V2.WebData, :t}
     ]
   end
 end

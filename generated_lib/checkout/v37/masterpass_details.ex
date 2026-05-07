@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V37.MasterpassDetails do
+defmodule AdyenEx.Checkout.V37.MasterpassDetails do
   @moduledoc """
   Provides struct and type for a MasterpassDetails
   """

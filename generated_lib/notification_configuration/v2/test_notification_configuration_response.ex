@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V2.TestNotificationConfigurationResponse do
+defmodule AdyenEx.NotificationConfiguration.V2.TestNotificationConfigurationResponse do
   @moduledoc """
   Provides struct and type for a TestNotificationConfigurationResponse
   """
@@ -6,7 +6,8 @@ defmodule Adyen.NotificationConfiguration.V2.TestNotificationConfigurationRespon
   @type t :: %__MODULE__{
           errorMessages: [String.t()] | nil,
           eventTypes: [String.t()] | nil,
-          exchangeMessages: [Adyen.NotificationConfiguration.V2.ExchangeMessageWrapper.t()] | nil,
+          exchangeMessages:
+            [AdyenEx.NotificationConfiguration.V2.ExchangeMessageWrapper.t()] | nil,
           notificationId: integer,
           okMessages: [String.t()] | nil,
           pspReference: String.t() | nil,
@@ -61,7 +62,7 @@ defmodule Adyen.NotificationConfiguration.V2.TestNotificationConfigurationRespon
           "TRANSFER_NOT_PAIDOUT_TRANSFERS"
         ]
       ],
-      exchangeMessages: [{Adyen.NotificationConfiguration.V2.ExchangeMessageWrapper, :t}],
+      exchangeMessages: [{AdyenEx.NotificationConfiguration.V2.ExchangeMessageWrapper, :t}],
       notificationId: {:integer, "int64"},
       okMessages: [:string],
       pspReference: :string,

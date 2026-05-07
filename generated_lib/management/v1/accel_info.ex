@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.AccelInfo do
+defmodule AdyenEx.Management.V1.AccelInfo do
   @moduledoc """
   Provides struct and type for a AccelInfo
   """
 
   @type t :: %__MODULE__{
           processingType: String.t(),
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V1.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:processingType, :transactionDescription]
@@ -17,7 +17,7 @@ defmodule Adyen.Management.V1.AccelInfo do
   def __fields__(:t) do
     [
       processingType: {:enum, ["billpay", "ecom", "pos"]},
-      transactionDescription: {Adyen.Management.V1.TransactionDescriptionInfo, :t}
+      transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionInfo, :t}
     ]
   end
 end

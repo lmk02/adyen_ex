@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V49.Address do
+defmodule AdyenEx.Recurring.V49.Address do
   @moduledoc """
   Provides struct and type for a Address
   """

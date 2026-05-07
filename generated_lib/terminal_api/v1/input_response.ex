@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.InputResponse do
+defmodule AdyenEx.TerminalAPI.V1.InputResponse do
   @moduledoc """
   Provides struct and type for a InputResponse
   """
 
   @type t :: %__MODULE__{
-          InputResult: Adyen.TerminalAPI.V1.InputResult.t(),
-          OutputResult: Adyen.TerminalAPI.V1.OutputResult.t() | nil
+          InputResult: AdyenEx.TerminalAPI.V1.InputResult.t(),
+          OutputResult: AdyenEx.TerminalAPI.V1.OutputResult.t() | nil
         }
 
   defstruct [:InputResult, :OutputResult]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.InputResponse do
 
   def __fields__(:t) do
     [
-      InputResult: {Adyen.TerminalAPI.V1.InputResult, :t},
-      OutputResult: {Adyen.TerminalAPI.V1.OutputResult, :t}
+      InputResult: {AdyenEx.TerminalAPI.V1.InputResult, :t},
+      OutputResult: {AdyenEx.TerminalAPI.V1.OutputResult, :t}
     ]
   end
 end

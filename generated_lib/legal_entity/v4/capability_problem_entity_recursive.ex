@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.CapabilityProblemEntityRecursive do
+defmodule AdyenEx.LegalEntity.V4.CapabilityProblemEntityRecursive do
   @moduledoc """
   Provides struct and type for a CapabilityProblemEntityRecursive
   """

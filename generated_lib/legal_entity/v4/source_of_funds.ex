@@ -1,17 +1,17 @@
-defmodule Adyen.LegalEntity.V4.SourceOfFunds do
+defmodule AdyenEx.LegalEntity.V4.SourceOfFunds do
   @moduledoc """
   Provides struct and type for a SourceOfFunds
   """
 
   @type t :: %__MODULE__{
           adyenProcessedFunds: boolean,
-          amount: Adyen.LegalEntity.V4.Amount.t() | nil,
+          amount: AdyenEx.LegalEntity.V4.Amount.t() | nil,
           assetMonthsHeld: integer | nil,
           cryptocurrencyExchange: String.t() | nil,
           dateOfFundsReceived: Date.t() | nil,
           dateOfSourceEvent: Date.t() | nil,
           description: String.t() | nil,
-          financiers: [Adyen.LegalEntity.V4.Financier.t()] | nil,
+          financiers: [AdyenEx.LegalEntity.V4.Financier.t()] | nil,
           originatorLegalEntityId: String.t() | nil,
           purpose: String.t() | nil,
           relationship: String.t() | nil,
@@ -42,13 +42,13 @@ defmodule Adyen.LegalEntity.V4.SourceOfFunds do
   def __fields__(:t) do
     [
       adyenProcessedFunds: :boolean,
-      amount: {Adyen.LegalEntity.V4.Amount, :t},
+      amount: {AdyenEx.LegalEntity.V4.Amount, :t},
       assetMonthsHeld: {:integer, "int32"},
       cryptocurrencyExchange: :string,
       dateOfFundsReceived: {:string, "date"},
       dateOfSourceEvent: {:string, "date"},
       description: :string,
-      financiers: [{Adyen.LegalEntity.V4.Financier, :t}],
+      financiers: [{AdyenEx.LegalEntity.V4.Financier, :t}],
       originatorLegalEntityId: :string,
       purpose: :string,
       relationship: :string,

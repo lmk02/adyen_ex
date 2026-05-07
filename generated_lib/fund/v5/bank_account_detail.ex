@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V5.BankAccountDetail do
+defmodule AdyenEx.Fund.V5.BankAccountDetail do
   @moduledoc """
   Provides struct and type for a BankAccountDetail
   """

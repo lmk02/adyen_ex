@@ -1,4 +1,4 @@
-defmodule Adyen.Dispute.V30.DeleteDefenseDocumentRequest do
+defmodule AdyenEx.Dispute.V30.DeleteDefenseDocumentRequest do
   @moduledoc """
   Provides struct and type for a DeleteDefenseDocumentRequest
   """

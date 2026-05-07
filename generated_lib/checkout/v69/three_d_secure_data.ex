@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.ThreeDSecureData do
+defmodule AdyenEx.Checkout.V69.ThreeDSecureData do
   @moduledoc """
   Provides struct and type for a ThreeDSecureData
   """

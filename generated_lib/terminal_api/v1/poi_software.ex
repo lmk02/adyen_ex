@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.POISoftware do
+defmodule AdyenEx.TerminalAPI.V1.POISoftware do
   @moduledoc """
   Provides struct and type for a POISoftware
   """

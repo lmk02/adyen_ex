@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.TransactionDescriptionInfo do
+defmodule AdyenEx.Management.V3.TransactionDescriptionInfo do
   @moduledoc """
   Provides struct and type for a TransactionDescriptionInfo
   """

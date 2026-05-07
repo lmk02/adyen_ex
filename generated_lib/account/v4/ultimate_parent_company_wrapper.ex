@@ -1,9 +1,11 @@
-defmodule Adyen.Account.V4.UltimateParentCompanyWrapper do
+defmodule AdyenEx.Account.V4.UltimateParentCompanyWrapper do
   @moduledoc """
   Provides struct and type for a UltimateParentCompanyWrapper
   """
 
-  @type t :: %__MODULE__{UltimateParentCompany: Adyen.Account.V4.UltimateParentCompany.t() | nil}
+  @type t :: %__MODULE__{
+          UltimateParentCompany: AdyenEx.Account.V4.UltimateParentCompany.t() | nil
+        }
 
   defstruct [:UltimateParentCompany]
 
@@ -12,6 +14,6 @@ defmodule Adyen.Account.V4.UltimateParentCompanyWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [UltimateParentCompany: {Adyen.Account.V4.UltimateParentCompany, :t}]
+    [UltimateParentCompany: {AdyenEx.Account.V4.UltimateParentCompany, :t}]
   end
 end

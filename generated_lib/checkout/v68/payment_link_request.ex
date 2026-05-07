@@ -1,45 +1,45 @@
-defmodule Adyen.Checkout.V68.PaymentLinkRequest do
+defmodule AdyenEx.Checkout.V68.PaymentLinkRequest do
   @moduledoc """
   Provides struct and type for a PaymentLinkRequest
   """
 
   @type t :: %__MODULE__{
           allowedPaymentMethods: [String.t()] | nil,
-          amount: Adyen.Checkout.V68.Amount.t(),
-          applicationInfo: Adyen.Checkout.V68.ApplicationInfo.t() | nil,
-          billingAddress: Adyen.Checkout.V68.Address.t() | nil,
+          amount: AdyenEx.Checkout.V68.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V68.ApplicationInfo.t() | nil,
+          billingAddress: AdyenEx.Checkout.V68.Address.t() | nil,
           blockedPaymentMethods: [String.t()] | nil,
           countryCode: String.t() | nil,
           deliverAt: DateTime.t() | nil,
-          deliveryAddress: Adyen.Checkout.V68.Address.t() | nil,
+          deliveryAddress: AdyenEx.Checkout.V68.Address.t() | nil,
           description: String.t() | nil,
           expiresAt: String.t() | nil,
-          fundOrigin: Adyen.Checkout.V68.FundOrigin.t() | nil,
-          fundRecipient: Adyen.Checkout.V68.FundRecipient.t() | nil,
+          fundOrigin: AdyenEx.Checkout.V68.FundOrigin.t() | nil,
+          fundRecipient: AdyenEx.Checkout.V68.FundRecipient.t() | nil,
           installmentOptions: map | nil,
-          lineItems: [Adyen.Checkout.V68.LineItem.t()] | nil,
+          lineItems: [AdyenEx.Checkout.V68.LineItem.t()] | nil,
           manualCapture: boolean | nil,
           merchantAccount: String.t(),
           merchantOrderReference: String.t() | nil,
           metadata: map | nil,
-          platformChargebackLogic: Adyen.Checkout.V68.PlatformChargebackLogic.t() | nil,
+          platformChargebackLogic: AdyenEx.Checkout.V68.PlatformChargebackLogic.t() | nil,
           recurringProcessingModel: String.t() | nil,
           reference: String.t(),
           requiredShopperFields: [String.t()] | nil,
           returnUrl: String.t() | nil,
           reusable: boolean | nil,
-          riskData: Adyen.Checkout.V68.RiskData.t() | nil,
+          riskData: AdyenEx.Checkout.V68.RiskData.t() | nil,
           shopperEmail: String.t() | nil,
           shopperLocale: String.t() | nil,
-          shopperName: Adyen.Checkout.V68.Name.t() | nil,
+          shopperName: AdyenEx.Checkout.V68.Name.t() | nil,
           shopperReference: String.t() | nil,
           showRemovePaymentMethodButton: boolean | nil,
-          splits: [Adyen.Checkout.V68.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V68.Split.t()] | nil,
           store: String.t() | nil,
           storePaymentMethodMode: String.t() | nil,
           telephoneNumber: String.t() | nil,
           themeId: String.t() | nil,
-          threeDS2RequestData: Adyen.Checkout.V68.CheckoutSessionThreeDs2RequestData.t() | nil
+          threeDS2RequestData: AdyenEx.Checkout.V68.CheckoutSessionThreeDs2RequestData.t() | nil
         }
 
   defstruct [
@@ -88,24 +88,24 @@ defmodule Adyen.Checkout.V68.PaymentLinkRequest do
   def __fields__(:t) do
     [
       allowedPaymentMethods: [:string],
-      amount: {Adyen.Checkout.V68.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V68.ApplicationInfo, :t},
-      billingAddress: {Adyen.Checkout.V68.Address, :t},
+      amount: {AdyenEx.Checkout.V68.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V68.ApplicationInfo, :t},
+      billingAddress: {AdyenEx.Checkout.V68.Address, :t},
       blockedPaymentMethods: [:string],
       countryCode: :string,
       deliverAt: {:string, "date-time"},
-      deliveryAddress: {Adyen.Checkout.V68.Address, :t},
+      deliveryAddress: {AdyenEx.Checkout.V68.Address, :t},
       description: :string,
       expiresAt: :string,
-      fundOrigin: {Adyen.Checkout.V68.FundOrigin, :t},
-      fundRecipient: {Adyen.Checkout.V68.FundRecipient, :t},
+      fundOrigin: {AdyenEx.Checkout.V68.FundOrigin, :t},
+      fundRecipient: {AdyenEx.Checkout.V68.FundRecipient, :t},
       installmentOptions: :map,
-      lineItems: [{Adyen.Checkout.V68.LineItem, :t}],
+      lineItems: [{AdyenEx.Checkout.V68.LineItem, :t}],
       manualCapture: :boolean,
       merchantAccount: :string,
       merchantOrderReference: :string,
       metadata: :map,
-      platformChargebackLogic: {Adyen.Checkout.V68.PlatformChargebackLogic, :t},
+      platformChargebackLogic: {AdyenEx.Checkout.V68.PlatformChargebackLogic, :t},
       recurringProcessingModel: {:enum, ["CardOnFile", "Subscription", "UnscheduledCardOnFile"]},
       reference: :string,
       requiredShopperFields: [
@@ -119,18 +119,18 @@ defmodule Adyen.Checkout.V68.PaymentLinkRequest do
       ],
       returnUrl: :string,
       reusable: :boolean,
-      riskData: {Adyen.Checkout.V68.RiskData, :t},
+      riskData: {AdyenEx.Checkout.V68.RiskData, :t},
       shopperEmail: :string,
       shopperLocale: :string,
-      shopperName: {Adyen.Checkout.V68.Name, :t},
+      shopperName: {AdyenEx.Checkout.V68.Name, :t},
       shopperReference: :string,
       showRemovePaymentMethodButton: :boolean,
-      splits: [{Adyen.Checkout.V68.Split, :t}],
+      splits: [{AdyenEx.Checkout.V68.Split, :t}],
       store: :string,
       storePaymentMethodMode: {:enum, ["askForConsent", "disabled", "enabled"]},
       telephoneNumber: :string,
       themeId: :string,
-      threeDS2RequestData: {Adyen.Checkout.V68.CheckoutSessionThreeDs2RequestData, :t}
+      threeDS2RequestData: {AdyenEx.Checkout.V68.CheckoutSessionThreeDs2RequestData, :t}
     ]
   end
 end

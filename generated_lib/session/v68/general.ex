@@ -1,9 +1,9 @@
-defmodule Adyen.Session.V68.General do
+defmodule AdyenEx.Session.V68.General do
   @moduledoc """
   Provides API endpoint related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create a communication session
@@ -17,19 +17,19 @@ defmodule Adyen.Session.V68.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_sessions(body :: Adyen.Session.V68.CreateSessionRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Session.V68.CreateSessionResponse.t()} | :error
+  @spec post_sessions(body :: AdyenEx.Session.V68.CreateSessionRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Session.V68.CreateSessionResponse.t()} | :error
   def post_sessions(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Session.V68.General, :post_sessions},
+      call: {AdyenEx.Session.V68.General, :post_sessions},
       url: "/sessions",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Session.V68.CreateSessionRequest, :t}}],
-      response: [{201, {Adyen.Session.V68.CreateSessionResponse, :t}}],
+      request: [{"application/json", {AdyenEx.Session.V68.CreateSessionRequest, :t}}],
+      response: [{201, {AdyenEx.Session.V68.CreateSessionResponse, :t}}],
       opts: opts
     })
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.FastlaneDetails do
+defmodule AdyenEx.Checkout.V70.FastlaneDetails do
   @moduledoc """
   Provides struct and type for a FastlaneDetails
   """

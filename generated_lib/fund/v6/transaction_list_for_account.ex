@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V6.TransactionListForAccount do
+defmodule AdyenEx.Fund.V6.TransactionListForAccount do
   @moduledoc """
   Provides struct and type for a TransactionListForAccount
   """

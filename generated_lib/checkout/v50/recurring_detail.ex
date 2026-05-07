@@ -1,19 +1,19 @@
-defmodule Adyen.Checkout.V50.RecurringDetail do
+defmodule AdyenEx.Checkout.V50.RecurringDetail do
   @moduledoc """
   Provides struct and type for a RecurringDetail
   """
 
   @type t :: %__MODULE__{
-          apps: [Adyen.Checkout.V50.PaymentMethodUPIApps.t()] | nil,
+          apps: [AdyenEx.Checkout.V50.PaymentMethodUPIApps.t()] | nil,
           brands: [String.t()] | nil,
           configuration: map | nil,
-          details: [Adyen.Checkout.V50.InputDetail.t()] | nil,
-          group: Adyen.Checkout.V50.PaymentMethodGroup.t() | nil,
-          inputDetails: [Adyen.Checkout.V50.InputDetail.t()] | nil,
+          details: [AdyenEx.Checkout.V50.InputDetail.t()] | nil,
+          group: AdyenEx.Checkout.V50.PaymentMethodGroup.t() | nil,
+          inputDetails: [AdyenEx.Checkout.V50.InputDetail.t()] | nil,
           name: String.t() | nil,
           promoted: boolean | nil,
           recurringDetailReference: String.t() | nil,
-          storedDetails: Adyen.Checkout.V50.StoredDetails.t() | nil,
+          storedDetails: AdyenEx.Checkout.V50.StoredDetails.t() | nil,
           supportsRecurring: boolean | nil,
           type: String.t() | nil
         }
@@ -39,16 +39,16 @@ defmodule Adyen.Checkout.V50.RecurringDetail do
 
   def __fields__(:t) do
     [
-      apps: [{Adyen.Checkout.V50.PaymentMethodUPIApps, :t}],
+      apps: [{AdyenEx.Checkout.V50.PaymentMethodUPIApps, :t}],
       brands: [:string],
       configuration: :map,
-      details: [{Adyen.Checkout.V50.InputDetail, :t}],
-      group: {Adyen.Checkout.V50.PaymentMethodGroup, :t},
-      inputDetails: [{Adyen.Checkout.V50.InputDetail, :t}],
+      details: [{AdyenEx.Checkout.V50.InputDetail, :t}],
+      group: {AdyenEx.Checkout.V50.PaymentMethodGroup, :t},
+      inputDetails: [{AdyenEx.Checkout.V50.InputDetail, :t}],
       name: :string,
       promoted: :boolean,
       recurringDetailReference: :string,
-      storedDetails: {Adyen.Checkout.V50.StoredDetails, :t},
+      storedDetails: {AdyenEx.Checkout.V50.StoredDetails, :t},
       supportsRecurring: :boolean,
       type: :string
     ]

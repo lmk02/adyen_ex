@@ -1,9 +1,9 @@
-defmodule Adyen.Transaction.V2.RaiseDisputes do
+defmodule AdyenEx.Transaction.V2.RaiseDisputes do
   @moduledoc """
   Provides API endpoints related to raise disputes
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of raised disputes
@@ -25,8 +25,8 @@ defmodule Adyen.Transaction.V2.RaiseDisputes do
 
   """
   @spec get_disputes(opts :: keyword) ::
-          {:ok, [[Adyen.Transaction.V2.DisputeResponse.t()]]}
-          | {:error, Adyen.Transaction.V2.DefaultErrorResponseEntity.t()}
+          {:ok, [[AdyenEx.Transaction.V2.DisputeResponse.t()]]}
+          | {:error, AdyenEx.Transaction.V2.DefaultErrorResponseEntity.t()}
   def get_disputes(opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -42,15 +42,15 @@ defmodule Adyen.Transaction.V2.RaiseDisputes do
 
     client.request(%{
       args: [],
-      call: {Adyen.Transaction.V2.RaiseDisputes, :get_disputes},
+      call: {AdyenEx.Transaction.V2.RaiseDisputes, :get_disputes},
       url: "/disputes",
       method: :get,
       query: query,
       response: [
-        {200, [[{Adyen.Transaction.V2.DisputeResponse, :t}]]},
-        {401, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}}
+        {200, [[{AdyenEx.Transaction.V2.DisputeResponse, :t}]]},
+        {401, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -62,21 +62,21 @@ defmodule Adyen.Transaction.V2.RaiseDisputes do
   Get a raised dispute by ID.
   """
   @spec get_disputes_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Transaction.V2.DisputeResponse.t()}
-          | {:error, Adyen.Transaction.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Transaction.V2.DisputeResponse.t()}
+          | {:error, AdyenEx.Transaction.V2.DefaultErrorResponseEntity.t()}
   def get_disputes_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.Transaction.V2.RaiseDisputes, :get_disputes_id},
+      call: {AdyenEx.Transaction.V2.RaiseDisputes, :get_disputes_id},
       url: "/disputes/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.Transaction.V2.DisputeResponse, :t}},
-        {401, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Transaction.V2.DisputeResponse, :t}},
+        {401, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -95,26 +95,26 @@ defmodule Adyen.Transaction.V2.RaiseDisputes do
   """
   @spec patch_disputes_id(
           id :: String.t(),
-          body :: Adyen.Transaction.V2.PatchableDisputeRequest.t(),
+          body :: AdyenEx.Transaction.V2.PatchableDisputeRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Transaction.V2.DisputeResponse.t()}
-          | {:error, Adyen.Transaction.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.Transaction.V2.DisputeResponse.t()}
+          | {:error, AdyenEx.Transaction.V2.DefaultErrorResponseEntity.t()}
   def patch_disputes_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.Transaction.V2.RaiseDisputes, :patch_disputes_id},
+      call: {AdyenEx.Transaction.V2.RaiseDisputes, :patch_disputes_id},
       url: "/disputes/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Transaction.V2.PatchableDisputeRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Transaction.V2.PatchableDisputeRequest, :t}}],
       response: [
-        {200, {Adyen.Transaction.V2.DisputeResponse, :t}},
-        {401, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Transaction.V2.DisputeResponse, :t}},
+        {401, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -131,24 +131,24 @@ defmodule Adyen.Transaction.V2.RaiseDisputes do
 
   **Content Types**: `application/json`
   """
-  @spec post_disputes(body :: Adyen.Transaction.V2.DisputeRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Transaction.V2.DisputeResponse.t()}
-          | {:error, Adyen.Transaction.V2.DefaultErrorResponseEntity.t()}
+  @spec post_disputes(body :: AdyenEx.Transaction.V2.DisputeRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Transaction.V2.DisputeResponse.t()}
+          | {:error, AdyenEx.Transaction.V2.DefaultErrorResponseEntity.t()}
   def post_disputes(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Transaction.V2.RaiseDisputes, :post_disputes},
+      call: {AdyenEx.Transaction.V2.RaiseDisputes, :post_disputes},
       url: "/disputes",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Transaction.V2.DisputeRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Transaction.V2.DisputeRequest, :t}}],
       response: [
-        {200, {Adyen.Transaction.V2.DisputeResponse, :t}},
-        {401, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.Transaction.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.Transaction.V2.DisputeResponse, :t}},
+        {401, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.Transaction.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

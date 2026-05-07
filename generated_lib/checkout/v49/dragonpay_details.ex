@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.DragonpayDetails do
+defmodule AdyenEx.Checkout.V49.DragonpayDetails do
   @moduledoc """
   Provides struct and type for a DragonpayDetails
   """

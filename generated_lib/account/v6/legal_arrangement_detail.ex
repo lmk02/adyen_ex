@@ -1,12 +1,12 @@
-defmodule Adyen.Account.V6.LegalArrangementDetail do
+defmodule AdyenEx.Account.V6.LegalArrangementDetail do
   @moduledoc """
   Provides struct and type for a LegalArrangementDetail
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V6.ViasAddress.t(),
+          address: AdyenEx.Account.V6.ViasAddress.t(),
           legalArrangementCode: String.t() | nil,
-          legalArrangementEntities: [Adyen.Account.V6.LegalArrangementEntityDetail.t()] | nil,
+          legalArrangementEntities: [AdyenEx.Account.V6.LegalArrangementEntityDetail.t()] | nil,
           legalArrangementReference: String.t() | nil,
           legalForm: String.t() | nil,
           name: String.t(),
@@ -33,9 +33,9 @@ defmodule Adyen.Account.V6.LegalArrangementDetail do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V6.ViasAddress, :t},
+      address: {AdyenEx.Account.V6.ViasAddress, :t},
       legalArrangementCode: :string,
-      legalArrangementEntities: [{Adyen.Account.V6.LegalArrangementEntityDetail, :t}],
+      legalArrangementEntities: [{AdyenEx.Account.V6.LegalArrangementEntityDetail, :t}],
       legalArrangementReference: :string,
       legalForm:
         {:enum,

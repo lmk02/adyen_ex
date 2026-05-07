@@ -1,10 +1,10 @@
-defmodule Adyen.Account.V4.GetUploadedDocumentsResponse do
+defmodule AdyenEx.Account.V4.GetUploadedDocumentsResponse do
   @moduledoc """
   Provides struct and type for a GetUploadedDocumentsResponse
   """
 
   @type t :: %__MODULE__{
-          documentDetails: [Adyen.Account.V4.DocumentDetailWrapper.t()] | nil,
+          documentDetails: [AdyenEx.Account.V4.DocumentDetailWrapper.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Account.V4.GetUploadedDocumentsResponse do
 
   def __fields__(:t) do
     [
-      documentDetails: [{Adyen.Account.V4.DocumentDetailWrapper, :t}],
+      documentDetails: [{AdyenEx.Account.V4.DocumentDetailWrapper, :t}],
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean

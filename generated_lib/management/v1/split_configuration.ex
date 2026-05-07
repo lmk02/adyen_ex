@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.SplitConfiguration do
+defmodule AdyenEx.Management.V1.SplitConfiguration do
   @moduledoc """
   Provides struct and type for a SplitConfiguration
   """
 
   @type t :: %__MODULE__{
           description: String.t(),
-          rules: [Adyen.Management.V1.SplitConfigurationRule.t()],
+          rules: [AdyenEx.Management.V1.SplitConfigurationRule.t()],
           splitConfigurationId: String.t() | nil
         }
 
@@ -18,7 +18,7 @@ defmodule Adyen.Management.V1.SplitConfiguration do
   def __fields__(:t) do
     [
       description: :string,
-      rules: [{Adyen.Management.V1.SplitConfigurationRule, :t}],
+      rules: [{AdyenEx.Management.V1.SplitConfigurationRule, :t}],
       splitConfigurationId: :string
     ]
   end

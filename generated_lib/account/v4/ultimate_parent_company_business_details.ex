@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.UltimateParentCompanyBusinessDetails do
+defmodule AdyenEx.Account.V4.UltimateParentCompanyBusinessDetails do
   @moduledoc """
   Provides struct and type for a UltimateParentCompanyBusinessDetails
   """

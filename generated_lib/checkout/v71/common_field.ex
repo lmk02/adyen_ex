@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.CommonField do
+defmodule AdyenEx.Checkout.V71.CommonField do
   @moduledoc """
   Provides struct and type for a CommonField
   """

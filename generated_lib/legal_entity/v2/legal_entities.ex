@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V2.LegalEntities do
+defmodule AdyenEx.LegalEntity.V2.LegalEntities do
   @moduledoc """
   Provides API endpoints related to legal entities
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a legal entity
@@ -20,23 +20,23 @@ defmodule Adyen.LegalEntity.V2.LegalEntities do
 
   """
   @spec get_legal_entities_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V2.LegalEntity.t()}
-          | {:error, Adyen.LegalEntity.V2.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V2.LegalEntity.t()}
+          | {:error, AdyenEx.LegalEntity.V2.ServiceError.t()}
   def get_legal_entities_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V2.LegalEntities, :get_legal_entities_id},
+      call: {AdyenEx.LegalEntity.V2.LegalEntities, :get_legal_entities_id},
       url: "/legalEntities/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V2.LegalEntity, :t}},
-        {400, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V2.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V2.LegalEntity, :t}},
+        {400, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -57,23 +57,23 @@ defmodule Adyen.LegalEntity.V2.LegalEntities do
 
   """
   @spec get_legal_entities_id_business_lines(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V2.BusinessLines.t()}
-          | {:error, Adyen.LegalEntity.V2.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V2.BusinessLines.t()}
+          | {:error, AdyenEx.LegalEntity.V2.ServiceError.t()}
   def get_legal_entities_id_business_lines(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V2.LegalEntities, :get_legal_entities_id_business_lines},
+      call: {AdyenEx.LegalEntity.V2.LegalEntities, :get_legal_entities_id_business_lines},
       url: "/legalEntities/#{id}/businessLines",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V2.BusinessLines, :t}},
-        {400, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V2.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V2.BusinessLines, :t}},
+        {400, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -103,28 +103,28 @@ defmodule Adyen.LegalEntity.V2.LegalEntities do
   """
   @spec patch_legal_entities_id(
           id :: String.t(),
-          body :: Adyen.LegalEntity.V2.LegalEntityInfo.t(),
+          body :: AdyenEx.LegalEntity.V2.LegalEntityInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V2.LegalEntity.t()}
-          | {:error, Adyen.LegalEntity.V2.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V2.LegalEntity.t()}
+          | {:error, AdyenEx.LegalEntity.V2.ServiceError.t()}
   def patch_legal_entities_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.LegalEntity.V2.LegalEntities, :patch_legal_entities_id},
+      call: {AdyenEx.LegalEntity.V2.LegalEntities, :patch_legal_entities_id},
       url: "/legalEntities/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.LegalEntity.V2.LegalEntityInfo, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V2.LegalEntityInfo, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V2.LegalEntity, :t}},
-        {400, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V2.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V2.LegalEntity, :t}},
+        {400, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -151,28 +151,28 @@ defmodule Adyen.LegalEntity.V2.LegalEntities do
   **Content Types**: `application/json`
   """
   @spec post_legal_entities(
-          body :: Adyen.LegalEntity.V2.LegalEntityInfoRequiredType.t(),
+          body :: AdyenEx.LegalEntity.V2.LegalEntityInfoRequiredType.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V2.LegalEntity.t()}
-          | {:error, Adyen.LegalEntity.V2.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V2.LegalEntity.t()}
+          | {:error, AdyenEx.LegalEntity.V2.ServiceError.t()}
   def post_legal_entities(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.LegalEntity.V2.LegalEntities, :post_legal_entities},
+      call: {AdyenEx.LegalEntity.V2.LegalEntities, :post_legal_entities},
       url: "/legalEntities",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.LegalEntity.V2.LegalEntityInfoRequiredType, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V2.LegalEntityInfoRequiredType, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V2.LegalEntity, :t}},
-        {400, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V2.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V2.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V2.LegalEntity, :t}},
+        {400, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V2.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V2.ServiceError, :t}}
       ],
       opts: opts
     })

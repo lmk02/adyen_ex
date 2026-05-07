@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V52.CheckoutThreeDs2FingerPrintAction do
+defmodule AdyenEx.Checkout.V52.CheckoutThreeDs2FingerPrintAction do
   @moduledoc """
   Provides struct and type for a CheckoutThreeDs2FingerPrintAction
   """

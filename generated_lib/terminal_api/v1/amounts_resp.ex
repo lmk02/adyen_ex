@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.AmountsResp do
+defmodule AdyenEx.TerminalAPI.V1.AmountsResp do
   @moduledoc """
   Provides struct and type for a AmountsResp
   """

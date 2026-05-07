@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.GetStoresUnderAccountRequest do
+defmodule AdyenEx.TfmAPI.V1.GetStoresUnderAccountRequest do
   @moduledoc """
   Provides struct and type for a GetStoresUnderAccountRequest
   """

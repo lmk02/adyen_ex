@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.Name do
+defmodule AdyenEx.Checkout.V69.Name do
   @moduledoc """
   Provides struct and type for a Name
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V1.NotificationUrl do
+defmodule AdyenEx.Management.V1.NotificationUrl do
   @moduledoc """
   Provides struct and type for a NotificationUrl
   """
 
   @type t :: %__MODULE__{
-          localUrls: [Adyen.Management.V1.Url.t()] | nil,
-          publicUrls: [Adyen.Management.V1.Url.t()] | nil
+          localUrls: [AdyenEx.Management.V1.Url.t()] | nil,
+          publicUrls: [AdyenEx.Management.V1.Url.t()] | nil
         }
 
   defstruct [:localUrls, :publicUrls]
@@ -15,6 +15,6 @@ defmodule Adyen.Management.V1.NotificationUrl do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [localUrls: [{Adyen.Management.V1.Url, :t}], publicUrls: [{Adyen.Management.V1.Url, :t}]]
+    [localUrls: [{AdyenEx.Management.V1.Url, :t}], publicUrls: [{AdyenEx.Management.V1.Url, :t}]]
   end
 end

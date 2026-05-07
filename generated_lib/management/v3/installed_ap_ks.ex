@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.InstalledAPKs do
+defmodule AdyenEx.Management.V3.InstalledAPKs do
   @moduledoc """
   Provides struct and type for a InstalledAPKs
   """

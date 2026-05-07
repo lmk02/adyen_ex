@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V25.DisableRequest do
+defmodule AdyenEx.Recurring.V25.DisableRequest do
   @moduledoc """
   Provides struct and type for a DisableRequest
   """

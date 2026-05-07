@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Passcodes do
+defmodule AdyenEx.Management.V1.Passcodes do
   @moduledoc """
   Provides struct and type for a Passcodes
   """

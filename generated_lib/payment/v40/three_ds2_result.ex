@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V40.ThreeDs2Result do
+defmodule AdyenEx.Payment.V40.ThreeDs2Result do
   @moduledoc """
   Provides struct and type for a ThreeDs2Result
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.PaymentsApp.V1.BoardingTokenRequest do
+defmodule AdyenEx.PaymentsApp.V1.BoardingTokenRequest do
   @moduledoc """
   Provides struct and type for a BoardingTokenRequest
   """

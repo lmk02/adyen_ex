@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V3.HostedOnboarding do
+defmodule AdyenEx.LegalEntity.V3.HostedOnboarding do
   @moduledoc """
   Provides API endpoints related to hosted onboarding
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of hosted onboarding page themes
@@ -20,23 +20,23 @@ defmodule Adyen.LegalEntity.V3.HostedOnboarding do
 
   """
   @spec get_themes(opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V3.OnboardingThemes.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.OnboardingThemes.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def get_themes(opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [],
-      call: {Adyen.LegalEntity.V3.HostedOnboarding, :get_themes},
+      call: {AdyenEx.LegalEntity.V3.HostedOnboarding, :get_themes},
       url: "/themes",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V3.OnboardingThemes, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.OnboardingThemes, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -57,23 +57,23 @@ defmodule Adyen.LegalEntity.V3.HostedOnboarding do
 
   """
   @spec get_themes_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V3.OnboardingTheme.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.OnboardingTheme.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def get_themes_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V3.HostedOnboarding, :get_themes_id},
+      call: {AdyenEx.LegalEntity.V3.HostedOnboarding, :get_themes_id},
       url: "/themes/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V3.OnboardingTheme, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.OnboardingTheme, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -99,28 +99,28 @@ defmodule Adyen.LegalEntity.V3.HostedOnboarding do
   """
   @spec post_legal_entities_id_onboarding_links(
           id :: String.t(),
-          body :: Adyen.LegalEntity.V3.OnboardingLinkInfo.t(),
+          body :: AdyenEx.LegalEntity.V3.OnboardingLinkInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V3.OnboardingLink.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.OnboardingLink.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def post_legal_entities_id_onboarding_links(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.LegalEntity.V3.HostedOnboarding, :post_legal_entities_id_onboarding_links},
+      call: {AdyenEx.LegalEntity.V3.HostedOnboarding, :post_legal_entities_id_onboarding_links},
       url: "/legalEntities/#{id}/onboardingLinks",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.LegalEntity.V3.OnboardingLinkInfo, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V3.OnboardingLinkInfo, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V3.OnboardingLink, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.OnboardingLink, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })

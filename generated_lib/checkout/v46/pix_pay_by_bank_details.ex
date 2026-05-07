@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V46.PixPayByBankDetails do
+defmodule AdyenEx.Checkout.V46.PixPayByBankDetails do
   @moduledoc """
   Provides struct and type for a PixPayByBankDetails
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Checkout.V46.PixPayByBankDetails do
           deviceId: String.t() | nil,
           issuer: String.t() | nil,
           recurringDetailReference: String.t() | nil,
-          riskSignals: Adyen.Checkout.V46.PixPayByBankRiskSignals.t() | nil,
+          riskSignals: AdyenEx.Checkout.V46.PixPayByBankRiskSignals.t() | nil,
           type: String.t() | nil
         }
 
@@ -31,7 +31,7 @@ defmodule Adyen.Checkout.V46.PixPayByBankDetails do
       deviceId: :string,
       issuer: :string,
       recurringDetailReference: :string,
-      riskSignals: {Adyen.Checkout.V46.PixPayByBankRiskSignals, :t},
+      riskSignals: {AdyenEx.Checkout.V46.PixPayByBankRiskSignals, :t},
       type: {:const, "paybybank_pix"}
     ]
   end

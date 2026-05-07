@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.VerificationDeadline do
+defmodule AdyenEx.LegalEntity.V4.VerificationDeadline do
   @moduledoc """
   Provides struct and type for a VerificationDeadline
   """

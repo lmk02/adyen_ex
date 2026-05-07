@@ -1,4 +1,4 @@
-defmodule Adyen.CloudDevice.V1.ConnectedDevicesResponse do
+defmodule AdyenEx.CloudDevice.V1.ConnectedDevicesResponse do
   @moduledoc """
   Provides struct and type for a ConnectedDevicesResponse
   """

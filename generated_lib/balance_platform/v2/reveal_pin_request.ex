@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RevealPinRequest do
+defmodule AdyenEx.BalancePlatform.V2.RevealPinRequest do
   @moduledoc """
   Provides struct and type for a RevealPinRequest
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.PciSigningRequest do
+defmodule AdyenEx.LegalEntity.V4.PciSigningRequest do
   @moduledoc """
   Provides struct and type for a PciSigningRequest
   """

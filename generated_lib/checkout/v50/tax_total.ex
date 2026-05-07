@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V50.TaxTotal do
+defmodule AdyenEx.Checkout.V50.TaxTotal do
   @moduledoc """
   Provides struct and type for a TaxTotal
   """
 
-  @type t :: %__MODULE__{amount: Adyen.Checkout.V50.Amount.t() | nil}
+  @type t :: %__MODULE__{amount: AdyenEx.Checkout.V50.Amount.t() | nil}
 
   defstruct [:amount]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Checkout.V50.TaxTotal do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [amount: {Adyen.Checkout.V50.Amount, :t}]
+    [amount: {AdyenEx.Checkout.V50.Amount, :t}]
   end
 end

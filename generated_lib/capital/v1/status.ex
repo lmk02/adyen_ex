@@ -1,9 +1,9 @@
-defmodule Adyen.Capital.V1.Status do
+defmodule AdyenEx.Capital.V1.Status do
   @moduledoc """
   Provides struct and type for a Status
   """
 
-  @type t :: %__MODULE__{actions: [Adyen.Capital.V1.Action.t()] | nil, code: String.t()}
+  @type t :: %__MODULE__{actions: [AdyenEx.Capital.V1.Action.t()] | nil, code: String.t()}
 
   defstruct [:actions, :code]
 
@@ -13,7 +13,7 @@ defmodule Adyen.Capital.V1.Status do
 
   def __fields__(:t) do
     [
-      actions: [{Adyen.Capital.V1.Action, :t}],
+      actions: [{AdyenEx.Capital.V1.Action, :t}],
       code:
         {:enum,
          [

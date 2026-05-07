@@ -1,4 +1,4 @@
-defmodule Adyen.Capital.V1.Balance do
+defmodule AdyenEx.Capital.V1.Balance do
   @moduledoc """
   Provides struct and type for a Balance
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V2.TransferServiceRestServiceError do
+defmodule AdyenEx.Transfer.V2.TransferServiceRestServiceError do
   @moduledoc """
   Provides struct and type for a TransferServiceRestServiceError
   """
@@ -7,10 +7,10 @@ defmodule Adyen.Transfer.V2.TransferServiceRestServiceError do
           detail: String.t(),
           errorCode: String.t(),
           instance: String.t() | nil,
-          invalidFields: [Adyen.Transfer.V2.InvalidField.t()] | nil,
+          invalidFields: [AdyenEx.Transfer.V2.InvalidField.t()] | nil,
           requestId: String.t() | nil,
           response: map | nil,
-          routingDetails: [Adyen.Transfer.V2.RoutingDetails.t()] | nil,
+          routingDetails: [AdyenEx.Transfer.V2.RoutingDetails.t()] | nil,
           status: integer,
           title: String.t(),
           type: String.t()
@@ -38,10 +38,10 @@ defmodule Adyen.Transfer.V2.TransferServiceRestServiceError do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.Transfer.V2.InvalidField, :t}],
+      invalidFields: [{AdyenEx.Transfer.V2.InvalidField, :t}],
       requestId: :string,
       response: :map,
-      routingDetails: [{Adyen.Transfer.V2.RoutingDetails, :t}],
+      routingDetails: [{AdyenEx.Transfer.V2.RoutingDetails, :t}],
       status: {:integer, "int32"},
       title: :string,
       type: :string

@@ -1,14 +1,14 @@
-defmodule Adyen.Management.V3.PaginationLinks do
+defmodule AdyenEx.Management.V3.PaginationLinks do
   @moduledoc """
   Provides struct and type for a PaginationLinks
   """
 
   @type t :: %__MODULE__{
-          first: Adyen.Management.V3.LinksElement.t(),
-          last: Adyen.Management.V3.LinksElement.t(),
-          next: Adyen.Management.V3.LinksElement.t() | nil,
-          prev: Adyen.Management.V3.LinksElement.t() | nil,
-          self: Adyen.Management.V3.LinksElement.t()
+          first: AdyenEx.Management.V3.LinksElement.t(),
+          last: AdyenEx.Management.V3.LinksElement.t(),
+          next: AdyenEx.Management.V3.LinksElement.t() | nil,
+          prev: AdyenEx.Management.V3.LinksElement.t() | nil,
+          self: AdyenEx.Management.V3.LinksElement.t()
         }
 
   defstruct [:first, :last, :next, :prev, :self]
@@ -19,11 +19,11 @@ defmodule Adyen.Management.V3.PaginationLinks do
 
   def __fields__(:t) do
     [
-      first: {Adyen.Management.V3.LinksElement, :t},
-      last: {Adyen.Management.V3.LinksElement, :t},
-      next: {Adyen.Management.V3.LinksElement, :t},
-      prev: {Adyen.Management.V3.LinksElement, :t},
-      self: {Adyen.Management.V3.LinksElement, :t}
+      first: {AdyenEx.Management.V3.LinksElement, :t},
+      last: {AdyenEx.Management.V3.LinksElement, :t},
+      next: {AdyenEx.Management.V3.LinksElement, :t},
+      prev: {AdyenEx.Management.V3.LinksElement, :t},
+      self: {AdyenEx.Management.V3.LinksElement, :t}
     ]
   end
 end

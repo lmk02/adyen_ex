@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.TransferFundsResponse do
+defmodule AdyenEx.Fund.V3.TransferFundsResponse do
   @moduledoc """
   Provides struct and type for a TransferFundsResponse
   """

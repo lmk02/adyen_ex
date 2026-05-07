@@ -1,16 +1,16 @@
-defmodule Adyen.BinLookup.V40.CostEstimateRequest do
+defmodule AdyenEx.BinLookup.V40.CostEstimateRequest do
   @moduledoc """
   Provides struct and type for a CostEstimateRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.BinLookup.V40.Amount.t(),
-          assumptions: Adyen.BinLookup.V40.CostEstimateAssumptions.t() | nil,
+          amount: AdyenEx.BinLookup.V40.Amount.t(),
+          assumptions: AdyenEx.BinLookup.V40.CostEstimateAssumptions.t() | nil,
           cardNumber: String.t() | nil,
           encryptedCardNumber: String.t() | nil,
           merchantAccount: String.t(),
-          merchantDetails: Adyen.BinLookup.V40.MerchantDetails.t() | nil,
-          recurring: Adyen.BinLookup.V40.Recurring.t() | nil,
+          merchantDetails: AdyenEx.BinLookup.V40.MerchantDetails.t() | nil,
+          recurring: AdyenEx.BinLookup.V40.Recurring.t() | nil,
           selectedRecurringDetailReference: String.t() | nil,
           shopperInteraction: String.t() | nil,
           shopperReference: String.t() | nil
@@ -35,13 +35,13 @@ defmodule Adyen.BinLookup.V40.CostEstimateRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.BinLookup.V40.Amount, :t},
-      assumptions: {Adyen.BinLookup.V40.CostEstimateAssumptions, :t},
+      amount: {AdyenEx.BinLookup.V40.Amount, :t},
+      assumptions: {AdyenEx.BinLookup.V40.CostEstimateAssumptions, :t},
       cardNumber: :string,
       encryptedCardNumber: :string,
       merchantAccount: :string,
-      merchantDetails: {Adyen.BinLookup.V40.MerchantDetails, :t},
-      recurring: {Adyen.BinLookup.V40.Recurring, :t},
+      merchantDetails: {AdyenEx.BinLookup.V40.MerchantDetails, :t},
+      recurring: {AdyenEx.BinLookup.V40.Recurring, :t},
       selectedRecurringDetailReference: :string,
       shopperInteraction: {:enum, ["Ecommerce", "ContAuth", "Moto", "POS"]},
       shopperReference: :string

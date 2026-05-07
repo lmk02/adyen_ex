@@ -1,4 +1,4 @@
-defmodule Adyen.Session.V68.CreateSessionResponse do
+defmodule AdyenEx.Session.V68.CreateSessionResponse do
   @moduledoc """
   Provides struct and type for a CreateSessionResponse
   """

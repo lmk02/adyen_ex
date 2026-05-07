@@ -1,15 +1,15 @@
-defmodule Adyen.Checkout.V71.ApplicationInfo do
+defmodule AdyenEx.Checkout.V71.ApplicationInfo do
   @moduledoc """
   Provides struct and type for a ApplicationInfo
   """
 
   @type t :: %__MODULE__{
-          adyenLibrary: Adyen.Checkout.V71.CommonField.t() | nil,
-          adyenPaymentSource: Adyen.Checkout.V71.CommonField.t() | nil,
-          externalPlatform: Adyen.Checkout.V71.ExternalPlatform.t() | nil,
-          merchantApplication: Adyen.Checkout.V71.CommonField.t() | nil,
-          merchantDevice: Adyen.Checkout.V71.MerchantDevice.t() | nil,
-          shopperInteractionDevice: Adyen.Checkout.V71.ShopperInteractionDevice.t() | nil
+          adyenLibrary: AdyenEx.Checkout.V71.CommonField.t() | nil,
+          adyenPaymentSource: AdyenEx.Checkout.V71.CommonField.t() | nil,
+          externalPlatform: AdyenEx.Checkout.V71.ExternalPlatform.t() | nil,
+          merchantApplication: AdyenEx.Checkout.V71.CommonField.t() | nil,
+          merchantDevice: AdyenEx.Checkout.V71.MerchantDevice.t() | nil,
+          shopperInteractionDevice: AdyenEx.Checkout.V71.ShopperInteractionDevice.t() | nil
         }
 
   defstruct [
@@ -27,12 +27,12 @@ defmodule Adyen.Checkout.V71.ApplicationInfo do
 
   def __fields__(:t) do
     [
-      adyenLibrary: {Adyen.Checkout.V71.CommonField, :t},
-      adyenPaymentSource: {Adyen.Checkout.V71.CommonField, :t},
-      externalPlatform: {Adyen.Checkout.V71.ExternalPlatform, :t},
-      merchantApplication: {Adyen.Checkout.V71.CommonField, :t},
-      merchantDevice: {Adyen.Checkout.V71.MerchantDevice, :t},
-      shopperInteractionDevice: {Adyen.Checkout.V71.ShopperInteractionDevice, :t}
+      adyenLibrary: {AdyenEx.Checkout.V71.CommonField, :t},
+      adyenPaymentSource: {AdyenEx.Checkout.V71.CommonField, :t},
+      externalPlatform: {AdyenEx.Checkout.V71.ExternalPlatform, :t},
+      merchantApplication: {AdyenEx.Checkout.V71.CommonField, :t},
+      merchantDevice: {AdyenEx.Checkout.V71.MerchantDevice, :t},
+      shopperInteractionDevice: {AdyenEx.Checkout.V71.ShopperInteractionDevice, :t}
     ]
   end
 end

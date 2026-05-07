@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.DocumentDetail do
+defmodule AdyenEx.Account.V5.DocumentDetail do
   @moduledoc """
   Provides struct and type for a DocumentDetail
   """

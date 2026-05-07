@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.CreateMerchantUserRequest do
+defmodule AdyenEx.Management.V3.CreateMerchantUserRequest do
   @moduledoc """
   Provides struct and type for a CreateMerchantUserRequest
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Management.V3.CreateMerchantUserRequest do
           accountGroups: [String.t()] | nil,
           email: String.t(),
           loginMethod: String.t() | nil,
-          name: Adyen.Management.V3.Name.t(),
+          name: AdyenEx.Management.V3.Name.t(),
           roles: [String.t()] | nil,
           timeZoneCode: String.t() | nil,
           username: String.t()
@@ -24,7 +24,7 @@ defmodule Adyen.Management.V3.CreateMerchantUserRequest do
       accountGroups: [:string],
       email: :string,
       loginMethod: :string,
-      name: {Adyen.Management.V3.Name, :t},
+      name: {AdyenEx.Management.V3.Name, :t},
       roles: [:string],
       timeZoneCode: :string,
       username: :string

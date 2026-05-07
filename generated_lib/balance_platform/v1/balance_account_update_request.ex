@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.BalanceAccountUpdateRequest do
+defmodule AdyenEx.BalancePlatform.V1.BalanceAccountUpdateRequest do
   @moduledoc """
   Provides struct and type for a BalanceAccountUpdateRequest
   """

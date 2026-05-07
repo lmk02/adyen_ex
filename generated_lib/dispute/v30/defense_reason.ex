@@ -1,10 +1,10 @@
-defmodule Adyen.Dispute.V30.DefenseReason do
+defmodule AdyenEx.Dispute.V30.DefenseReason do
   @moduledoc """
   Provides struct and type for a DefenseReason
   """
 
   @type t :: %__MODULE__{
-          defenseDocumentTypes: [Adyen.Dispute.V30.DefenseDocumentType.t()] | nil,
+          defenseDocumentTypes: [AdyenEx.Dispute.V30.DefenseDocumentType.t()] | nil,
           defenseReasonCode: String.t(),
           satisfied: boolean
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Dispute.V30.DefenseReason do
 
   def __fields__(:t) do
     [
-      defenseDocumentTypes: [{Adyen.Dispute.V30.DefenseDocumentType, :t}],
+      defenseDocumentTypes: [{AdyenEx.Dispute.V30.DefenseDocumentType, :t}],
       defenseReasonCode: :string,
       satisfied: :boolean
     ]

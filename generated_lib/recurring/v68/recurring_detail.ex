@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V68.RecurringDetail do
+defmodule AdyenEx.Recurring.V68.RecurringDetail do
   @moduledoc """
   Provides struct and type for a RecurringDetail
   """
@@ -7,9 +7,9 @@ defmodule Adyen.Recurring.V68.RecurringDetail do
           additionalData: map | nil,
           alias: String.t() | nil,
           aliasType: String.t() | nil,
-          bank: Adyen.Recurring.V68.BankAccount.t() | nil,
-          billingAddress: Adyen.Recurring.V68.Address.t() | nil,
-          card: Adyen.Recurring.V68.Card.t() | nil,
+          bank: AdyenEx.Recurring.V68.BankAccount.t() | nil,
+          billingAddress: AdyenEx.Recurring.V68.Address.t() | nil,
+          card: AdyenEx.Recurring.V68.Card.t() | nil,
           contractTypes: [String.t()] | nil,
           creationDate: DateTime.t() | nil,
           firstPspReference: String.t() | nil,
@@ -17,9 +17,9 @@ defmodule Adyen.Recurring.V68.RecurringDetail do
           networkTxReference: String.t() | nil,
           paymentMethodVariant: String.t() | nil,
           recurringDetailReference: String.t(),
-          shopperName: Adyen.Recurring.V68.Name.t() | nil,
+          shopperName: AdyenEx.Recurring.V68.Name.t() | nil,
           socialSecurityNumber: String.t() | nil,
-          tokenDetails: Adyen.Recurring.V68.TokenDetails.t() | nil,
+          tokenDetails: AdyenEx.Recurring.V68.TokenDetails.t() | nil,
           variant: String.t()
         }
 
@@ -52,9 +52,9 @@ defmodule Adyen.Recurring.V68.RecurringDetail do
       additionalData: :map,
       alias: :string,
       aliasType: :string,
-      bank: {Adyen.Recurring.V68.BankAccount, :t},
-      billingAddress: {Adyen.Recurring.V68.Address, :t},
-      card: {Adyen.Recurring.V68.Card, :t},
+      bank: {AdyenEx.Recurring.V68.BankAccount, :t},
+      billingAddress: {AdyenEx.Recurring.V68.Address, :t},
+      card: {AdyenEx.Recurring.V68.Card, :t},
       contractTypes: [:string],
       creationDate: {:string, "date-time"},
       firstPspReference: :string,
@@ -62,9 +62,9 @@ defmodule Adyen.Recurring.V68.RecurringDetail do
       networkTxReference: :string,
       paymentMethodVariant: :string,
       recurringDetailReference: :string,
-      shopperName: {Adyen.Recurring.V68.Name, :t},
+      shopperName: {AdyenEx.Recurring.V68.Name, :t},
       socialSecurityNumber: :string,
-      tokenDetails: {Adyen.Recurring.V68.TokenDetails, :t},
+      tokenDetails: {AdyenEx.Recurring.V68.TokenDetails, :t},
       variant: :string
     ]
   end

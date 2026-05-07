@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.FundDestination do
+defmodule AdyenEx.Payment.V68.FundDestination do
   @moduledoc """
   Provides struct and type for a FundDestination
   """
@@ -6,13 +6,13 @@ defmodule Adyen.Payment.V68.FundDestination do
   @type t :: %__MODULE__{
           IBAN: String.t() | nil,
           additionalData: map | nil,
-          billingAddress: Adyen.Payment.V68.Address.t() | nil,
-          card: Adyen.Payment.V68.Card.t() | nil,
+          billingAddress: AdyenEx.Payment.V68.Address.t() | nil,
+          card: AdyenEx.Payment.V68.Card.t() | nil,
           selectedRecurringDetailReference: String.t() | nil,
           shopperEmail: String.t() | nil,
-          shopperName: Adyen.Payment.V68.Name.t() | nil,
+          shopperName: AdyenEx.Payment.V68.Name.t() | nil,
           shopperReference: String.t() | nil,
-          subMerchant: Adyen.Payment.V68.SubMerchant.t() | nil,
+          subMerchant: AdyenEx.Payment.V68.SubMerchant.t() | nil,
           telephoneNumber: String.t() | nil,
           walletPurpose: String.t() | nil
         }
@@ -39,13 +39,13 @@ defmodule Adyen.Payment.V68.FundDestination do
     [
       IBAN: :string,
       additionalData: :map,
-      billingAddress: {Adyen.Payment.V68.Address, :t},
-      card: {Adyen.Payment.V68.Card, :t},
+      billingAddress: {AdyenEx.Payment.V68.Address, :t},
+      card: {AdyenEx.Payment.V68.Card, :t},
       selectedRecurringDetailReference: :string,
       shopperEmail: :string,
-      shopperName: {Adyen.Payment.V68.Name, :t},
+      shopperName: {AdyenEx.Payment.V68.Name, :t},
       shopperReference: :string,
-      subMerchant: {Adyen.Payment.V68.SubMerchant, :t},
+      subMerchant: {AdyenEx.Payment.V68.SubMerchant, :t},
       telephoneNumber: :string,
       walletPurpose: :string
     ]

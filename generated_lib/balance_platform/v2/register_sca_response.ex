@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RegisterSCAResponse do
+defmodule AdyenEx.BalancePlatform.V2.RegisterSCAResponse do
   @moduledoc """
   Provides struct and type for a RegisterSCAResponse
   """

@@ -1,12 +1,12 @@
-defmodule Adyen.NotificationConfiguration.V5.GetNotificationConfigurationResponse do
+defmodule AdyenEx.NotificationConfiguration.V5.GetNotificationConfigurationResponse do
   @moduledoc """
   Provides struct and type for a GetNotificationConfigurationResponse
   """
 
   @type t :: %__MODULE__{
           configurationDetails:
-            Adyen.NotificationConfiguration.V5.NotificationConfigurationDetails.t(),
-          invalidFields: [Adyen.NotificationConfiguration.V5.ErrorFieldType.t()] | nil,
+            AdyenEx.NotificationConfiguration.V5.NotificationConfigurationDetails.t(),
+          invalidFields: [AdyenEx.NotificationConfiguration.V5.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -20,8 +20,8 @@ defmodule Adyen.NotificationConfiguration.V5.GetNotificationConfigurationRespons
   def __fields__(:t) do
     [
       configurationDetails:
-        {Adyen.NotificationConfiguration.V5.NotificationConfigurationDetails, :t},
-      invalidFields: [{Adyen.NotificationConfiguration.V5.ErrorFieldType, :t}],
+        {AdyenEx.NotificationConfiguration.V5.NotificationConfigurationDetails, :t},
+      invalidFields: [{AdyenEx.NotificationConfiguration.V5.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

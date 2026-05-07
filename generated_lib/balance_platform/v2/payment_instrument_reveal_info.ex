@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.PaymentInstrumentRevealInfo do
+defmodule AdyenEx.BalancePlatform.V2.PaymentInstrumentRevealInfo do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentRevealInfo
   """
 
   @type t :: %__MODULE__{
           cvc: String.t(),
-          expiration: Adyen.BalancePlatform.V2.Expiry.t(),
+          expiration: AdyenEx.BalancePlatform.V2.Expiry.t(),
           pan: String.t()
         }
 
@@ -16,6 +16,6 @@ defmodule Adyen.BalancePlatform.V2.PaymentInstrumentRevealInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [cvc: :string, expiration: {Adyen.BalancePlatform.V2.Expiry, :t}, pan: :string]
+    [cvc: :string, expiration: {AdyenEx.BalancePlatform.V2.Expiry, :t}, pan: :string]
   end
 end

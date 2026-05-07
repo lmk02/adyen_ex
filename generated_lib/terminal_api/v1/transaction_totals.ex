@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.TransactionTotals do
+defmodule AdyenEx.TerminalAPI.V1.TransactionTotals do
   @moduledoc """
   Provides struct and type for a TransactionTotals
   """
@@ -11,7 +11,7 @@ defmodule Adyen.TerminalAPI.V1.TransactionTotals do
           POIID: String.t() | nil,
           PaymentCurrency: String.t() | nil,
           PaymentInstrumentType: String.t(),
-          PaymentTotals: [Adyen.TerminalAPI.V1.PaymentTotals.t()] | nil,
+          PaymentTotals: [AdyenEx.TerminalAPI.V1.PaymentTotals.t()] | nil,
           SaleID: String.t() | nil,
           ShiftNumber: String.t() | nil,
           TotalsGroupID: String.t() | nil
@@ -44,7 +44,7 @@ defmodule Adyen.TerminalAPI.V1.TransactionTotals do
       POIID: :string,
       PaymentCurrency: :string,
       PaymentInstrumentType: {:enum, ["Card", "Cash", "Check", "Mobile", "StoredValue"]},
-      PaymentTotals: [{Adyen.TerminalAPI.V1.PaymentTotals, :t}],
+      PaymentTotals: [{AdyenEx.TerminalAPI.V1.PaymentTotals, :t}],
       SaleID: :string,
       ShiftNumber: :string,
       TotalsGroupID: :string

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.StoreLocation do
+defmodule AdyenEx.Management.V1.StoreLocation do
   @moduledoc """
   Provides struct and type for a StoreLocation
   """

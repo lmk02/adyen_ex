@@ -1,9 +1,9 @@
-defmodule Adyen.Capital.V1.DisbursementInfoUpdate do
+defmodule AdyenEx.Capital.V1.DisbursementInfoUpdate do
   @moduledoc """
   Provides struct and type for a DisbursementInfoUpdate
   """
 
-  @type t :: %__MODULE__{repayment: Adyen.Capital.V1.DisbursementRepaymentInfoUpdate.t() | nil}
+  @type t :: %__MODULE__{repayment: AdyenEx.Capital.V1.DisbursementRepaymentInfoUpdate.t() | nil}
 
   defstruct [:repayment]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Capital.V1.DisbursementInfoUpdate do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [repayment: {Adyen.Capital.V1.DisbursementRepaymentInfoUpdate, :t}]
+    [repayment: {AdyenEx.Capital.V1.DisbursementRepaymentInfoUpdate, :t}]
   end
 end

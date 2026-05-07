@@ -1,9 +1,9 @@
-defmodule Adyen.NotificationConfiguration.V2.General do
+defmodule AdyenEx.NotificationConfiguration.V2.General do
   @moduledoc """
   Provides API endpoints related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Subscribe to notifications
@@ -15,31 +15,32 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_create_notification_configuration(
-          body :: Adyen.NotificationConfiguration.V2.CreateNotificationConfigurationRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.CreateNotificationConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_create_notification_configuration(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.NotificationConfiguration.V2.General, :post_create_notification_configuration},
+      call:
+        {AdyenEx.NotificationConfiguration.V2.General, :post_create_notification_configuration},
       url: "/createNotificationConfiguration",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.NotificationConfiguration.V2.CreateNotificationConfigurationRequest, :t}}
+         {AdyenEx.NotificationConfiguration.V2.CreateNotificationConfigurationRequest, :t}}
       ],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200, {AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -55,32 +56,32 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_delete_notification_configurations(
-          body :: Adyen.NotificationConfiguration.V2.DeleteNotificationConfigurationRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.DeleteNotificationConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.GenericResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.GenericResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_delete_notification_configurations(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
       call:
-        {Adyen.NotificationConfiguration.V2.General, :post_delete_notification_configurations},
+        {AdyenEx.NotificationConfiguration.V2.General, :post_delete_notification_configurations},
       url: "/deleteNotificationConfigurations",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.NotificationConfiguration.V2.DeleteNotificationConfigurationRequest, :t}}
+         {AdyenEx.NotificationConfiguration.V2.DeleteNotificationConfigurationRequest, :t}}
       ],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.GenericResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200, {AdyenEx.NotificationConfiguration.V2.GenericResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -96,31 +97,31 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_get_notification_configuration(
-          body :: Adyen.NotificationConfiguration.V2.GetNotificationConfigurationRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_get_notification_configuration(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.NotificationConfiguration.V2.General, :post_get_notification_configuration},
+      call: {AdyenEx.NotificationConfiguration.V2.General, :post_get_notification_configuration},
       url: "/getNotificationConfiguration",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.NotificationConfiguration.V2.GetNotificationConfigurationRequest, :t}}
+         {AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationRequest, :t}}
       ],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200, {AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -136,29 +137,30 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_get_notification_configuration_list(
-          body :: Adyen.NotificationConfiguration.V2.EmptyRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.EmptyRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.GetNotificationConfigurationListResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationListResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_get_notification_configuration_list(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
       call:
-        {Adyen.NotificationConfiguration.V2.General, :post_get_notification_configuration_list},
+        {AdyenEx.NotificationConfiguration.V2.General, :post_get_notification_configuration_list},
       url: "/getNotificationConfigurationList",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.NotificationConfiguration.V2.EmptyRequest, :t}}],
+      request: [{"application/json", {AdyenEx.NotificationConfiguration.V2.EmptyRequest, :t}}],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.GetNotificationConfigurationListResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200,
+         {AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationListResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -174,31 +176,31 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_test_notification_configuration(
-          body :: Adyen.NotificationConfiguration.V2.TestNotificationConfigurationRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.TestNotificationConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.TestNotificationConfigurationResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.TestNotificationConfigurationResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_test_notification_configuration(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.NotificationConfiguration.V2.General, :post_test_notification_configuration},
+      call: {AdyenEx.NotificationConfiguration.V2.General, :post_test_notification_configuration},
       url: "/testNotificationConfiguration",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.NotificationConfiguration.V2.TestNotificationConfigurationRequest, :t}}
+         {AdyenEx.NotificationConfiguration.V2.TestNotificationConfigurationRequest, :t}}
       ],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.TestNotificationConfigurationResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200, {AdyenEx.NotificationConfiguration.V2.TestNotificationConfigurationResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -214,31 +216,32 @@ defmodule Adyen.NotificationConfiguration.V2.General do
   **Content Types**: `application/json`
   """
   @spec post_update_notification_configuration(
-          body :: Adyen.NotificationConfiguration.V2.UpdateNotificationConfigurationRequest.t(),
+          body :: AdyenEx.NotificationConfiguration.V2.UpdateNotificationConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
-          | {:error, Adyen.NotificationConfiguration.V2.ServiceError.t()}
+          {:ok, AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse.t()}
+          | {:error, AdyenEx.NotificationConfiguration.V2.ServiceError.t()}
   def post_update_notification_configuration(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.NotificationConfiguration.V2.General, :post_update_notification_configuration},
+      call:
+        {AdyenEx.NotificationConfiguration.V2.General, :post_update_notification_configuration},
       url: "/updateNotificationConfiguration",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.NotificationConfiguration.V2.UpdateNotificationConfigurationRequest, :t}}
+         {AdyenEx.NotificationConfiguration.V2.UpdateNotificationConfigurationRequest, :t}}
       ],
       response: [
-        {200, {Adyen.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
-        {400, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {401, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {403, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {422, {Adyen.NotificationConfiguration.V2.ServiceError, :t}},
-        {500, {Adyen.NotificationConfiguration.V2.ServiceError, :t}}
+        {200, {AdyenEx.NotificationConfiguration.V2.GetNotificationConfigurationResponse, :t}},
+        {400, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {401, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {403, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {422, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}},
+        {500, {AdyenEx.NotificationConfiguration.V2.ServiceError, :t}}
       ],
       opts: opts
     })

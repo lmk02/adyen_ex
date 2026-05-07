@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V52.CardBin do
+defmodule AdyenEx.BinLookup.V52.CardBin do
   @moduledoc """
   Provides struct and type for a CardBin
   """

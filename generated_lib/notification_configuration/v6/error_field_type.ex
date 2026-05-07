@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V6.ErrorFieldType do
+defmodule AdyenEx.NotificationConfiguration.V6.ErrorFieldType do
   @moduledoc """
   Provides struct and type for a ErrorFieldType
   """
@@ -6,7 +6,7 @@ defmodule Adyen.NotificationConfiguration.V6.ErrorFieldType do
   @type t :: %__MODULE__{
           errorCode: integer | nil,
           errorDescription: String.t() | nil,
-          fieldType: Adyen.NotificationConfiguration.V6.FieldType.t() | nil
+          fieldType: AdyenEx.NotificationConfiguration.V6.FieldType.t() | nil
         }
 
   defstruct [:errorCode, :errorDescription, :fieldType]
@@ -19,7 +19,7 @@ defmodule Adyen.NotificationConfiguration.V6.ErrorFieldType do
     [
       errorCode: {:integer, "int32"},
       errorDescription: :string,
-      fieldType: {Adyen.NotificationConfiguration.V6.FieldType, :t}
+      fieldType: {AdyenEx.NotificationConfiguration.V6.FieldType, :t}
     ]
   end
 end

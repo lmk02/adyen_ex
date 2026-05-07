@@ -1,9 +1,9 @@
-defmodule Adyen.Transfer.V4.Capital do
+defmodule AdyenEx.Transfer.V4.Capital do
   @moduledoc """
   Provides API endpoints related to capital
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a capital account
@@ -16,26 +16,26 @@ defmodule Adyen.Transfer.V4.Capital do
 
   """
   @spec get_grants(opts :: keyword) ::
-          {:ok, Adyen.Transfer.V4.CapitalGrants.t()}
-          | {:error, Adyen.Transfer.V4.RestServiceError.t()}
+          {:ok, AdyenEx.Transfer.V4.CapitalGrants.t()}
+          | {:error, AdyenEx.Transfer.V4.RestServiceError.t()}
   def get_grants(opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:counterpartyAccountHolderId])
 
     client.request(%{
       args: [],
-      call: {Adyen.Transfer.V4.Capital, :get_grants},
+      call: {AdyenEx.Transfer.V4.Capital, :get_grants},
       url: "/grants",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Transfer.V4.CapitalGrants, :t}},
-        {400, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {401, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {403, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {404, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {422, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {500, {Adyen.Transfer.V4.RestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V4.CapitalGrants, :t}},
+        {400, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {401, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {403, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {404, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V4.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -47,24 +47,24 @@ defmodule Adyen.Transfer.V4.Capital do
   Returns the details of a capital account specified in the path.
   """
   @spec get_grants_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Transfer.V4.CapitalGrant.t()}
-          | {:error, Adyen.Transfer.V4.RestServiceError.t()}
+          {:ok, AdyenEx.Transfer.V4.CapitalGrant.t()}
+          | {:error, AdyenEx.Transfer.V4.RestServiceError.t()}
   def get_grants_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.Transfer.V4.Capital, :get_grants_id},
+      call: {AdyenEx.Transfer.V4.Capital, :get_grants_id},
       url: "/grants/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.Transfer.V4.CapitalGrant, :t}},
-        {400, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {401, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {403, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {404, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {422, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {500, {Adyen.Transfer.V4.RestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V4.CapitalGrant, :t}},
+        {400, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {401, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {403, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {404, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V4.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -79,27 +79,27 @@ defmodule Adyen.Transfer.V4.Capital do
 
   **Content Types**: `application/json`
   """
-  @spec post_grants(body :: Adyen.Transfer.V4.CapitalGrantInfo.t(), opts :: keyword) ::
-          {:ok, Adyen.Transfer.V4.CapitalGrant.t()}
-          | {:error, Adyen.Transfer.V4.RestServiceError.t()}
+  @spec post_grants(body :: AdyenEx.Transfer.V4.CapitalGrantInfo.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Transfer.V4.CapitalGrant.t()}
+          | {:error, AdyenEx.Transfer.V4.RestServiceError.t()}
   def post_grants(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Transfer.V4.Capital, :post_grants},
+      call: {AdyenEx.Transfer.V4.Capital, :post_grants},
       url: "/grants",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Transfer.V4.CapitalGrantInfo, :t}}],
+      request: [{"application/json", {AdyenEx.Transfer.V4.CapitalGrantInfo, :t}}],
       response: [
-        {200, {Adyen.Transfer.V4.CapitalGrant, :t}},
-        {400, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {401, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {403, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {404, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {422, {Adyen.Transfer.V4.RestServiceError, :t}},
-        {500, {Adyen.Transfer.V4.RestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V4.CapitalGrant, :t}},
+        {400, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {401, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {403, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {404, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V4.RestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V4.RestServiceError, :t}}
       ],
       opts: opts
     })

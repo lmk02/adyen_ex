@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.Address do
+defmodule AdyenEx.LegalEntity.V2.Address do
   @moduledoc """
   Provides struct and type for a Address
   """

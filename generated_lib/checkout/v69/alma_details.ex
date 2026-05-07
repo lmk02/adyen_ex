@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.AlmaDetails do
+defmodule AdyenEx.Checkout.V69.AlmaDetails do
   @moduledoc """
   Provides struct and type for a AlmaDetails
   """

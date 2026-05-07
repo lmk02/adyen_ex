@@ -1,10 +1,10 @@
-defmodule Adyen.Account.V6.KYCPayoutMethodCheckResult do
+defmodule AdyenEx.Account.V6.KYCPayoutMethodCheckResult do
   @moduledoc """
   Provides struct and type for a KYCPayoutMethodCheckResult
   """
 
   @type t :: %__MODULE__{
-          checks: [Adyen.Account.V6.KYCCheckStatusData.t()] | nil,
+          checks: [AdyenEx.Account.V6.KYCCheckStatusData.t()] | nil,
           payoutMethodCode: String.t() | nil
         }
 
@@ -15,6 +15,6 @@ defmodule Adyen.Account.V6.KYCPayoutMethodCheckResult do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [checks: [{Adyen.Account.V6.KYCCheckStatusData, :t}], payoutMethodCode: :string]
+    [checks: [{AdyenEx.Account.V6.KYCCheckStatusData, :t}], payoutMethodCode: :string]
   end
 end

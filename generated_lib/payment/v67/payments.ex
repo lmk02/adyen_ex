@@ -1,9 +1,9 @@
-defmodule Adyen.Payment.V67.Payments do
+defmodule AdyenEx.Payment.V67.Payments do
   @moduledoc """
   Provides API endpoints related to payments
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create an authorisation
@@ -15,26 +15,26 @@ defmodule Adyen.Payment.V67.Payments do
 
   **Content Types**: `application/json`
   """
-  @spec post_authorise(body :: Adyen.Payment.V67.PaymentRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V67.PaymentResult.t()}
-          | {:error, Adyen.Payment.V67.ServiceError.t()}
+  @spec post_authorise(body :: AdyenEx.Payment.V67.PaymentRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V67.PaymentResult.t()}
+          | {:error, AdyenEx.Payment.V67.ServiceError.t()}
   def post_authorise(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V67.Payments, :post_authorise},
+      call: {AdyenEx.Payment.V67.Payments, :post_authorise},
       url: "/authorise",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V67.PaymentRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V67.PaymentRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V67.PaymentResult, :t}},
-        {400, {Adyen.Payment.V67.ServiceError, :t}},
-        {401, {Adyen.Payment.V67.ServiceError, :t}},
-        {403, {Adyen.Payment.V67.ServiceError, :t}},
-        {422, {Adyen.Payment.V67.ServiceError, :t}},
-        {500, {Adyen.Payment.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V67.PaymentResult, :t}},
+        {400, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -51,26 +51,26 @@ defmodule Adyen.Payment.V67.Payments do
 
   **Content Types**: `application/json`
   """
-  @spec post_authorise3_d(body :: Adyen.Payment.V67.PaymentRequest3D.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V67.PaymentResult.t()}
-          | {:error, Adyen.Payment.V67.ServiceError.t()}
+  @spec post_authorise3_d(body :: AdyenEx.Payment.V67.PaymentRequest3D.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V67.PaymentResult.t()}
+          | {:error, AdyenEx.Payment.V67.ServiceError.t()}
   def post_authorise3_d(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V67.Payments, :post_authorise3_d},
+      call: {AdyenEx.Payment.V67.Payments, :post_authorise3_d},
       url: "/authorise3d",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V67.PaymentRequest3D, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V67.PaymentRequest3D, :t}}],
       response: [
-        {200, {Adyen.Payment.V67.PaymentResult, :t}},
-        {400, {Adyen.Payment.V67.ServiceError, :t}},
-        {401, {Adyen.Payment.V67.ServiceError, :t}},
-        {403, {Adyen.Payment.V67.ServiceError, :t}},
-        {422, {Adyen.Payment.V67.ServiceError, :t}},
-        {500, {Adyen.Payment.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V67.PaymentResult, :t}},
+        {400, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -87,26 +87,26 @@ defmodule Adyen.Payment.V67.Payments do
 
   **Content Types**: `application/json`
   """
-  @spec post_authorise3_ds2(body :: Adyen.Payment.V67.PaymentRequest3Ds2.t(), opts :: keyword) ::
-          {:ok, Adyen.Payment.V67.PaymentResult.t()}
-          | {:error, Adyen.Payment.V67.ServiceError.t()}
+  @spec post_authorise3_ds2(body :: AdyenEx.Payment.V67.PaymentRequest3Ds2.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payment.V67.PaymentResult.t()}
+          | {:error, AdyenEx.Payment.V67.ServiceError.t()}
   def post_authorise3_ds2(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V67.Payments, :post_authorise3_ds2},
+      call: {AdyenEx.Payment.V67.Payments, :post_authorise3_ds2},
       url: "/authorise3ds2",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V67.PaymentRequest3Ds2, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V67.PaymentRequest3Ds2, :t}}],
       response: [
-        {200, {Adyen.Payment.V67.PaymentResult, :t}},
-        {400, {Adyen.Payment.V67.ServiceError, :t}},
-        {401, {Adyen.Payment.V67.ServiceError, :t}},
-        {403, {Adyen.Payment.V67.ServiceError, :t}},
-        {422, {Adyen.Payment.V67.ServiceError, :t}},
-        {500, {Adyen.Payment.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V67.PaymentResult, :t}},
+        {400, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -122,28 +122,28 @@ defmodule Adyen.Payment.V67.Payments do
   **Content Types**: `application/json`
   """
   @spec post_get_authentication_result(
-          body :: Adyen.Payment.V67.AuthenticationResultRequest.t(),
+          body :: AdyenEx.Payment.V67.AuthenticationResultRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V67.AuthenticationResultResponse.t()}
-          | {:error, Adyen.Payment.V67.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V67.AuthenticationResultResponse.t()}
+          | {:error, AdyenEx.Payment.V67.ServiceError.t()}
   def post_get_authentication_result(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V67.Payments, :post_get_authentication_result},
+      call: {AdyenEx.Payment.V67.Payments, :post_get_authentication_result},
       url: "/getAuthenticationResult",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V67.AuthenticationResultRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V67.AuthenticationResultRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V67.AuthenticationResultResponse, :t}},
-        {400, {Adyen.Payment.V67.ServiceError, :t}},
-        {401, {Adyen.Payment.V67.ServiceError, :t}},
-        {403, {Adyen.Payment.V67.ServiceError, :t}},
-        {422, {Adyen.Payment.V67.ServiceError, :t}},
-        {500, {Adyen.Payment.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V67.AuthenticationResultResponse, :t}},
+        {400, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -159,28 +159,28 @@ defmodule Adyen.Payment.V67.Payments do
   **Content Types**: `application/json`
   """
   @spec post_retrieve3_ds2_result(
-          body :: Adyen.Payment.V67.ThreeDs2ResultRequest.t(),
+          body :: AdyenEx.Payment.V67.ThreeDs2ResultRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payment.V67.ThreeDs2ResultResponse.t()}
-          | {:error, Adyen.Payment.V67.ServiceError.t()}
+          {:ok, AdyenEx.Payment.V67.ThreeDs2ResultResponse.t()}
+          | {:error, AdyenEx.Payment.V67.ServiceError.t()}
   def post_retrieve3_ds2_result(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payment.V67.Payments, :post_retrieve3_ds2_result},
+      call: {AdyenEx.Payment.V67.Payments, :post_retrieve3_ds2_result},
       url: "/retrieve3ds2Result",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payment.V67.ThreeDs2ResultRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payment.V67.ThreeDs2ResultRequest, :t}}],
       response: [
-        {200, {Adyen.Payment.V67.ThreeDs2ResultResponse, :t}},
-        {400, {Adyen.Payment.V67.ServiceError, :t}},
-        {401, {Adyen.Payment.V67.ServiceError, :t}},
-        {403, {Adyen.Payment.V67.ServiceError, :t}},
-        {422, {Adyen.Payment.V67.ServiceError, :t}},
-        {500, {Adyen.Payment.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payment.V67.ThreeDs2ResultResponse, :t}},
+        {400, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payment.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payment.V67.ServiceError, :t}}
       ],
       opts: opts
     })

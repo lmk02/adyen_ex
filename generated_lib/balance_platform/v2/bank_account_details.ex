@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.BankAccountDetails do
+defmodule AdyenEx.BalancePlatform.V2.BankAccountDetails do
   @moduledoc """
   Provides struct and type for a BankAccountDetails
   """

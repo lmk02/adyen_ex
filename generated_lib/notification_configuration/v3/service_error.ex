@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V3.ServiceError do
+defmodule AdyenEx.NotificationConfiguration.V3.ServiceError do
   @moduledoc """
   Provides struct and type for a ServiceError
   """

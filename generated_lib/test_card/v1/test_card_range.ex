@@ -1,10 +1,10 @@
-defmodule Adyen.TestCard.V1.TestCardRange do
+defmodule AdyenEx.TestCard.V1.TestCardRange do
   @moduledoc """
   Provides struct and type for a TestCardRange
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.TestCard.V1.AvsAddress.t() | nil,
+          address: AdyenEx.TestCard.V1.AvsAddress.t() | nil,
           cardHolderName: String.t(),
           cvc: String.t() | nil,
           expiryMonth: String.t(),
@@ -35,7 +35,7 @@ defmodule Adyen.TestCard.V1.TestCardRange do
 
   def __fields__(:t) do
     [
-      address: {Adyen.TestCard.V1.AvsAddress, :t},
+      address: {AdyenEx.TestCard.V1.AvsAddress, :t},
       cardHolderName: :string,
       cvc: :string,
       expiryMonth:

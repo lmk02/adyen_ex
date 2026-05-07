@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.OnboardingLinkSettings do
+defmodule AdyenEx.LegalEntity.V2.OnboardingLinkSettings do
   @moduledoc """
   Provides struct and type for a OnboardingLinkSettings
   """

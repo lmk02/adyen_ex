@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.BusinessLineInfo do
+defmodule AdyenEx.LegalEntity.V4.BusinessLineInfo do
   @moduledoc """
   Provides struct and type for a BusinessLineInfo
   """
@@ -9,9 +9,9 @@ defmodule Adyen.LegalEntity.V4.BusinessLineInfo do
           legalEntityId: String.t(),
           salesChannels: [String.t()] | nil,
           service: String.t(),
-          sourceOfFunds: Adyen.LegalEntity.V4.SourceOfFunds.t() | nil,
-          webData: [Adyen.LegalEntity.V4.WebData.t()] | nil,
-          webDataExemption: Adyen.LegalEntity.V4.WebDataExemption.t() | nil
+          sourceOfFunds: AdyenEx.LegalEntity.V4.SourceOfFunds.t() | nil,
+          webData: [AdyenEx.LegalEntity.V4.WebData.t()] | nil,
+          webDataExemption: AdyenEx.LegalEntity.V4.WebDataExemption.t() | nil
         }
 
   defstruct [
@@ -36,9 +36,9 @@ defmodule Adyen.LegalEntity.V4.BusinessLineInfo do
       legalEntityId: :string,
       salesChannels: [:string],
       service: {:enum, ["paymentProcessing", "issuing", "banking"]},
-      sourceOfFunds: {Adyen.LegalEntity.V4.SourceOfFunds, :t},
-      webData: [{Adyen.LegalEntity.V4.WebData, :t}],
-      webDataExemption: {Adyen.LegalEntity.V4.WebDataExemption, :t}
+      sourceOfFunds: {AdyenEx.LegalEntity.V4.SourceOfFunds, :t},
+      webData: [{AdyenEx.LegalEntity.V4.WebData, :t}],
+      webDataExemption: {AdyenEx.LegalEntity.V4.WebDataExemption, :t}
     ]
   end
 end

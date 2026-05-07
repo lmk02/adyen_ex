@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.ListNetworkTokensResponse do
+defmodule AdyenEx.BalancePlatform.V2.ListNetworkTokensResponse do
   @moduledoc """
   Provides struct and type for a ListNetworkTokensResponse
   """
 
-  @type t :: %__MODULE__{networkTokens: [Adyen.BalancePlatform.V2.NetworkToken.t()] | nil}
+  @type t :: %__MODULE__{networkTokens: [AdyenEx.BalancePlatform.V2.NetworkToken.t()] | nil}
 
   defstruct [:networkTokens]
 
@@ -12,6 +12,6 @@ defmodule Adyen.BalancePlatform.V2.ListNetworkTokensResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [networkTokens: [{Adyen.BalancePlatform.V2.NetworkToken, :t}]]
+    [networkTokens: [{AdyenEx.BalancePlatform.V2.NetworkToken, :t}]]
   end
 end

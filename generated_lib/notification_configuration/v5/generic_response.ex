@@ -1,10 +1,10 @@
-defmodule Adyen.NotificationConfiguration.V5.GenericResponse do
+defmodule AdyenEx.NotificationConfiguration.V5.GenericResponse do
   @moduledoc """
   Provides struct and type for a GenericResponse
   """
 
   @type t :: %__MODULE__{
-          invalidFields: [Adyen.NotificationConfiguration.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.NotificationConfiguration.V5.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -17,7 +17,7 @@ defmodule Adyen.NotificationConfiguration.V5.GenericResponse do
 
   def __fields__(:t) do
     [
-      invalidFields: [{Adyen.NotificationConfiguration.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.NotificationConfiguration.V5.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

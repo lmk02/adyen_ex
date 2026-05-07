@@ -1,9 +1,9 @@
-defmodule Adyen.Recurring.V40.RecurringDetailWrapper do
+defmodule AdyenEx.Recurring.V40.RecurringDetailWrapper do
   @moduledoc """
   Provides struct and type for a RecurringDetailWrapper
   """
 
-  @type t :: %__MODULE__{RecurringDetail: Adyen.Recurring.V40.RecurringDetail.t() | nil}
+  @type t :: %__MODULE__{RecurringDetail: AdyenEx.Recurring.V40.RecurringDetail.t() | nil}
 
   defstruct [:RecurringDetail]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Recurring.V40.RecurringDetailWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [RecurringDetail: {Adyen.Recurring.V40.RecurringDetail, :t}]
+    [RecurringDetail: {AdyenEx.Recurring.V40.RecurringDetail, :t}]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V67.CaptureRequest do
+defmodule AdyenEx.Payment.V67.CaptureRequest do
   @moduledoc """
   Provides struct and type for a CaptureRequest
   """
@@ -6,12 +6,12 @@ defmodule Adyen.Payment.V67.CaptureRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V67.Amount.t(),
-          mpiData: Adyen.Payment.V67.ThreeDSecureData.t() | nil,
+          modificationAmount: AdyenEx.Payment.V67.Amount.t(),
+          mpiData: AdyenEx.Payment.V67.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V67.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V67.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -37,12 +37,12 @@ defmodule Adyen.Payment.V67.CaptureRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V67.Amount, :t},
-      mpiData: {Adyen.Payment.V67.ThreeDSecureData, :t},
+      modificationAmount: {AdyenEx.Payment.V67.Amount, :t},
+      mpiData: {AdyenEx.Payment.V67.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       originalReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V67.Split, :t}],
+      splits: [{AdyenEx.Payment.V67.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

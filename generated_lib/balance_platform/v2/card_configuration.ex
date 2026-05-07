@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CardConfiguration do
+defmodule AdyenEx.BalancePlatform.V2.CardConfiguration do
   @moduledoc """
   Provides struct and type for a CardConfiguration
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.CardConfiguration do
   @type t :: %__MODULE__{
           activation: String.t() | nil,
           activationUrl: String.t() | nil,
-          bulkAddress: Adyen.BalancePlatform.V2.BulkAddress.t() | nil,
+          bulkAddress: AdyenEx.BalancePlatform.V2.BulkAddress.t() | nil,
           cardImageId: String.t() | nil,
           carrier: String.t() | nil,
           carrierImageId: String.t() | nil,
@@ -47,7 +47,7 @@ defmodule Adyen.BalancePlatform.V2.CardConfiguration do
     [
       activation: :string,
       activationUrl: :string,
-      bulkAddress: {Adyen.BalancePlatform.V2.BulkAddress, :t},
+      bulkAddress: {AdyenEx.BalancePlatform.V2.BulkAddress, :t},
       cardImageId: :string,
       carrier: :string,
       carrierImageId: :string,

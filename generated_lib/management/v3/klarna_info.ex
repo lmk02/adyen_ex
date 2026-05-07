@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.KlarnaInfo do
+defmodule AdyenEx.Management.V3.KlarnaInfo do
   @moduledoc """
   Provides struct and type for a KlarnaInfo
   """

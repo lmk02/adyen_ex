@@ -1,14 +1,14 @@
-defmodule Adyen.Checkout.V46.DonationPaymentResponse do
+defmodule AdyenEx.Checkout.V46.DonationPaymentResponse do
   @moduledoc """
   Provides struct and type for a DonationPaymentResponse
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V46.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V46.Amount.t() | nil,
           donationAccount: String.t() | nil,
           id: String.t() | nil,
           merchantAccount: String.t() | nil,
-          payment: Adyen.Checkout.V46.PaymentResponse.t() | nil,
+          payment: AdyenEx.Checkout.V46.PaymentResponse.t() | nil,
           reference: String.t() | nil,
           status: String.t() | nil
         }
@@ -21,11 +21,11 @@ defmodule Adyen.Checkout.V46.DonationPaymentResponse do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V46.Amount, :t},
+      amount: {AdyenEx.Checkout.V46.Amount, :t},
       donationAccount: :string,
       id: :string,
       merchantAccount: :string,
-      payment: {Adyen.Checkout.V46.PaymentResponse, :t},
+      payment: {AdyenEx.Checkout.V46.PaymentResponse, :t},
       reference: :string,
       status: {:enum, ["completed", "pending", "refused"]}
     ]

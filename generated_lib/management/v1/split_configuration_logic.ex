@@ -1,17 +1,17 @@
-defmodule Adyen.Management.V1.SplitConfigurationLogic do
+defmodule AdyenEx.Management.V1.SplitConfigurationLogic do
   @moduledoc """
   Provides struct and type for a SplitConfigurationLogic
   """
 
   @type t :: %__MODULE__{
           acquiringFees: String.t() | nil,
-          additionalCommission: Adyen.Management.V1.AdditionalCommission.t() | nil,
+          additionalCommission: AdyenEx.Management.V1.AdditionalCommission.t() | nil,
           adyenCommission: String.t() | nil,
           adyenFees: String.t() | nil,
           adyenMarkup: String.t() | nil,
           chargeback: String.t() | nil,
           chargebackCostAllocation: String.t() | nil,
-          commission: Adyen.Management.V1.Commission.t(),
+          commission: AdyenEx.Management.V1.Commission.t(),
           interchange: String.t() | nil,
           paymentFee: String.t() | nil,
           refund: String.t() | nil,
@@ -50,7 +50,7 @@ defmodule Adyen.Management.V1.SplitConfigurationLogic do
   def __fields__(:t) do
     [
       acquiringFees: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
-      additionalCommission: {Adyen.Management.V1.AdditionalCommission, :t},
+      additionalCommission: {AdyenEx.Management.V1.AdditionalCommission, :t},
       adyenCommission: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
       adyenFees: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
       adyenMarkup: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
@@ -59,7 +59,7 @@ defmodule Adyen.Management.V1.SplitConfigurationLogic do
          ["deductFromLiableAccount", "deductFromOneBalanceAccount", "deductAccordingToSplitRatio"]},
       chargebackCostAllocation:
         {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
-      commission: {Adyen.Management.V1.Commission, :t},
+      commission: {AdyenEx.Management.V1.Commission, :t},
       interchange: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
       paymentFee: {:enum, ["deductFromLiableAccount", "deductFromOneBalanceAccount"]},
       refund:

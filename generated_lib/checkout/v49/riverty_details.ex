@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.RivertyDetails do
+defmodule AdyenEx.Checkout.V49.RivertyDetails do
   @moduledoc """
   Provides struct and type for a RivertyDetails
   """

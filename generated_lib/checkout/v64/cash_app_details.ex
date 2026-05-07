@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V64.CashAppDetails do
+defmodule AdyenEx.Checkout.V64.CashAppDetails do
   @moduledoc """
   Provides struct and type for a CashAppDetails
   """

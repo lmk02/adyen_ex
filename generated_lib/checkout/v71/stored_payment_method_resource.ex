@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.StoredPaymentMethodResource do
+defmodule AdyenEx.Checkout.V71.StoredPaymentMethodResource do
   @moduledoc """
   Provides struct and type for a StoredPaymentMethodResource
   """
@@ -17,7 +17,7 @@ defmodule Adyen.Checkout.V71.StoredPaymentMethodResource do
           id: String.t() | nil,
           issuerName: String.t() | nil,
           lastFour: String.t() | nil,
-          mandate: Adyen.Checkout.V71.TokenMandate.t() | nil,
+          mandate: AdyenEx.Checkout.V71.TokenMandate.t() | nil,
           name: String.t() | nil,
           networkTxReference: String.t() | nil,
           ownerName: String.t() | nil,
@@ -70,7 +70,7 @@ defmodule Adyen.Checkout.V71.StoredPaymentMethodResource do
       id: :string,
       issuerName: :string,
       lastFour: :string,
-      mandate: {Adyen.Checkout.V71.TokenMandate, :t},
+      mandate: {AdyenEx.Checkout.V71.TokenMandate, :t},
       name: :string,
       networkTxReference: :string,
       ownerName: :string,

@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V1.PaymentInstrumentGroups do
+defmodule AdyenEx.BalancePlatform.V1.PaymentInstrumentGroups do
   @moduledoc """
   Provides API endpoints related to payment instrument groups
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a payment instrument group
@@ -11,23 +11,24 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstrumentGroups do
   Returns the details of a payment instrument group.
   """
   @spec get_payment_instrument_groups_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.PaymentInstrumentGroup.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrumentGroup.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_payment_instrument_groups_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.PaymentInstrumentGroups, :get_payment_instrument_groups_id},
+      call:
+        {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroups, :get_payment_instrument_groups_id},
       url: "/paymentInstrumentGroups/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.PaymentInstrumentGroup, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroup, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -39,25 +40,25 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstrumentGroups do
   Returns a list of all the transaction rules associated with a payment instrument group.
   """
   @spec get_payment_instrument_groups_id_transaction_rules(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRulesResponse.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRulesResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_payment_instrument_groups_id_transaction_rules(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
       call:
-        {Adyen.BalancePlatform.V1.PaymentInstrumentGroups,
+        {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroups,
          :get_payment_instrument_groups_id_transaction_rules},
       url: "/paymentInstrumentGroups/#{id}/transactionRules",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRulesResponse, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRulesResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -73,28 +74,28 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstrumentGroups do
   **Content Types**: `application/json`
   """
   @spec post_payment_instrument_groups(
-          body :: Adyen.BalancePlatform.V1.PaymentInstrumentGroupInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.PaymentInstrumentGroupInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.PaymentInstrumentGroup.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrumentGroup.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def post_payment_instrument_groups(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V1.PaymentInstrumentGroups, :post_payment_instrument_groups},
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroups, :post_payment_instrument_groups},
       url: "/paymentInstrumentGroups",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.PaymentInstrumentGroupInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroupInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.PaymentInstrumentGroup, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrumentGroup, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

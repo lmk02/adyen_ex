@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.PayUUpiDetails do
+defmodule AdyenEx.Checkout.V71.PayUUpiDetails do
   @moduledoc """
   Provides struct and type for a PayUUpiDetails
   """

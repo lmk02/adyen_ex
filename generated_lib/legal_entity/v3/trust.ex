@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.Trust do
+defmodule AdyenEx.LegalEntity.V3.Trust do
   @moduledoc """
   Provides struct and type for a Trust
   """
@@ -9,12 +9,12 @@ defmodule Adyen.LegalEntity.V3.Trust do
           description: String.t() | nil,
           doingBusinessAs: String.t() | nil,
           name: String.t(),
-          principalPlaceOfBusiness: Adyen.LegalEntity.V3.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V3.Address.t(),
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V3.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V3.Address.t(),
           registrationNumber: String.t() | nil,
-          taxInformation: [Adyen.LegalEntity.V3.TaxInformation.t()] | nil,
+          taxInformation: [AdyenEx.LegalEntity.V3.TaxInformation.t()] | nil,
           type: String.t(),
-          undefinedBeneficiaryInfo: [Adyen.LegalEntity.V3.UndefinedBeneficiary.t()] | nil,
+          undefinedBeneficiaryInfo: [AdyenEx.LegalEntity.V3.UndefinedBeneficiary.t()] | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil
         }
@@ -46,10 +46,10 @@ defmodule Adyen.LegalEntity.V3.Trust do
       description: :string,
       doingBusinessAs: :string,
       name: :string,
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V3.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V3.Address, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V3.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V3.Address, :t},
       registrationNumber: :string,
-      taxInformation: [{Adyen.LegalEntity.V3.TaxInformation, :t}],
+      taxInformation: [{AdyenEx.LegalEntity.V3.TaxInformation, :t}],
       type:
         {:enum,
          [
@@ -73,7 +73,7 @@ defmodule Adyen.LegalEntity.V3.Trust do
            "publicTradingTrust",
            "unlistedPublicUnitTrust"
          ]},
-      undefinedBeneficiaryInfo: [{Adyen.LegalEntity.V3.UndefinedBeneficiary, :t}],
+      undefinedBeneficiaryInfo: [{AdyenEx.LegalEntity.V3.UndefinedBeneficiary, :t}],
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
       vatNumber: :string
     ]

@@ -1,22 +1,22 @@
-defmodule Adyen.LegalEntity.V2.LegalEntity do
+defmodule AdyenEx.LegalEntity.V2.LegalEntity do
   @moduledoc """
   Provides struct and type for a LegalEntity
   """
 
   @type t :: %__MODULE__{
           capabilities: map | nil,
-          documentDetails: [Adyen.LegalEntity.V2.DocumentReference.t()] | nil,
-          documents: [Adyen.LegalEntity.V2.EntityReference.t()] | nil,
-          entityAssociations: [Adyen.LegalEntity.V2.LegalEntityAssociation.t()] | nil,
+          documentDetails: [AdyenEx.LegalEntity.V2.DocumentReference.t()] | nil,
+          documents: [AdyenEx.LegalEntity.V2.EntityReference.t()] | nil,
+          entityAssociations: [AdyenEx.LegalEntity.V2.LegalEntityAssociation.t()] | nil,
           id: String.t(),
-          individual: Adyen.LegalEntity.V2.Individual.t() | nil,
-          organization: Adyen.LegalEntity.V2.Organization.t() | nil,
+          individual: AdyenEx.LegalEntity.V2.Individual.t() | nil,
+          organization: AdyenEx.LegalEntity.V2.Organization.t() | nil,
           reference: String.t() | nil,
-          soleProprietorship: Adyen.LegalEntity.V2.SoleProprietorship.t() | nil,
-          transferInstruments: [Adyen.LegalEntity.V2.TransferInstrumentReference.t()] | nil,
-          trust: Adyen.LegalEntity.V2.Trust.t() | nil,
+          soleProprietorship: AdyenEx.LegalEntity.V2.SoleProprietorship.t() | nil,
+          transferInstruments: [AdyenEx.LegalEntity.V2.TransferInstrumentReference.t()] | nil,
+          trust: AdyenEx.LegalEntity.V2.Trust.t() | nil,
           type: String.t() | nil,
-          unincorporatedPartnership: Adyen.LegalEntity.V2.UnincorporatedPartnership.t() | nil,
+          unincorporatedPartnership: AdyenEx.LegalEntity.V2.UnincorporatedPartnership.t() | nil,
           verificationPlan: String.t() | nil
         }
 
@@ -44,16 +44,16 @@ defmodule Adyen.LegalEntity.V2.LegalEntity do
   def __fields__(:t) do
     [
       capabilities: :map,
-      documentDetails: [{Adyen.LegalEntity.V2.DocumentReference, :t}],
-      documents: [{Adyen.LegalEntity.V2.EntityReference, :t}],
-      entityAssociations: [{Adyen.LegalEntity.V2.LegalEntityAssociation, :t}],
+      documentDetails: [{AdyenEx.LegalEntity.V2.DocumentReference, :t}],
+      documents: [{AdyenEx.LegalEntity.V2.EntityReference, :t}],
+      entityAssociations: [{AdyenEx.LegalEntity.V2.LegalEntityAssociation, :t}],
       id: :string,
-      individual: {Adyen.LegalEntity.V2.Individual, :t},
-      organization: {Adyen.LegalEntity.V2.Organization, :t},
+      individual: {AdyenEx.LegalEntity.V2.Individual, :t},
+      organization: {AdyenEx.LegalEntity.V2.Organization, :t},
       reference: :string,
-      soleProprietorship: {Adyen.LegalEntity.V2.SoleProprietorship, :t},
-      transferInstruments: [{Adyen.LegalEntity.V2.TransferInstrumentReference, :t}],
-      trust: {Adyen.LegalEntity.V2.Trust, :t},
+      soleProprietorship: {AdyenEx.LegalEntity.V2.SoleProprietorship, :t},
+      transferInstruments: [{AdyenEx.LegalEntity.V2.TransferInstrumentReference, :t}],
+      trust: {AdyenEx.LegalEntity.V2.Trust, :t},
       type:
         {:enum,
          [
@@ -63,7 +63,7 @@ defmodule Adyen.LegalEntity.V2.LegalEntity do
            "trust",
            "unincorporatedPartnership"
          ]},
-      unincorporatedPartnership: {Adyen.LegalEntity.V2.UnincorporatedPartnership, :t},
+      unincorporatedPartnership: {AdyenEx.LegalEntity.V2.UnincorporatedPartnership, :t},
       verificationPlan: :string
     ]
   end

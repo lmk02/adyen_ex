@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.AccountHolderInfo do
+defmodule AdyenEx.BalancePlatform.V1.AccountHolderInfo do
   @moduledoc """
   Provides struct and type for a AccountHolderInfo
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V1.AccountHolderInfo do
   @type t :: %__MODULE__{
           balancePlatform: String.t() | nil,
           capabilities: map | nil,
-          contactDetails: Adyen.BalancePlatform.V1.ContactDetails.t() | nil,
+          contactDetails: AdyenEx.BalancePlatform.V1.ContactDetails.t() | nil,
           description: String.t() | nil,
           legalEntityId: String.t(),
           reference: String.t() | nil,
@@ -31,7 +31,7 @@ defmodule Adyen.BalancePlatform.V1.AccountHolderInfo do
     [
       balancePlatform: :string,
       capabilities: :map,
-      contactDetails: {Adyen.BalancePlatform.V1.ContactDetails, :t},
+      contactDetails: {AdyenEx.BalancePlatform.V1.ContactDetails, :t},
       description: :string,
       legalEntityId: :string,
       reference: :string,

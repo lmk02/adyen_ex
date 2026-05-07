@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.AccountVerificationRoutesRequest do
+defmodule AdyenEx.OpenBanking.V1.AccountVerificationRoutesRequest do
   @moduledoc """
   Provides struct and type for a AccountVerificationRoutesRequest
   """

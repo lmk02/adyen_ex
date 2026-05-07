@@ -1,11 +1,11 @@
-defmodule Adyen.Recurring.V68.PermitRestriction do
+defmodule AdyenEx.Recurring.V68.PermitRestriction do
   @moduledoc """
   Provides struct and type for a PermitRestriction
   """
 
   @type t :: %__MODULE__{
-          maxAmount: Adyen.Recurring.V68.Amount.t() | nil,
-          singleTransactionLimit: Adyen.Recurring.V68.Amount.t() | nil,
+          maxAmount: AdyenEx.Recurring.V68.Amount.t() | nil,
+          singleTransactionLimit: AdyenEx.Recurring.V68.Amount.t() | nil,
           singleUse: boolean | nil
         }
 
@@ -17,8 +17,8 @@ defmodule Adyen.Recurring.V68.PermitRestriction do
 
   def __fields__(:t) do
     [
-      maxAmount: {Adyen.Recurring.V68.Amount, :t},
-      singleTransactionLimit: {Adyen.Recurring.V68.Amount, :t},
+      maxAmount: {AdyenEx.Recurring.V68.Amount, :t},
+      singleTransactionLimit: {AdyenEx.Recurring.V68.Amount, :t},
       singleUse: :boolean
     ]
   end

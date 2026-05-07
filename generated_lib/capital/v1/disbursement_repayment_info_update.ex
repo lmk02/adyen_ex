@@ -1,4 +1,4 @@
-defmodule Adyen.Capital.V1.DisbursementRepaymentInfoUpdate do
+defmodule AdyenEx.Capital.V1.DisbursementRepaymentInfoUpdate do
   @moduledoc """
   Provides struct and type for a DisbursementRepaymentInfoUpdate
   """

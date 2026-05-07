@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PaymentToken do
+defmodule AdyenEx.TerminalAPI.V1.PaymentToken do
   @moduledoc """
   Provides struct and type for a PaymentToken
   """

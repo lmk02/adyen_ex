@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.DebitAccountHolderResponse do
+defmodule AdyenEx.Fund.V3.DebitAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a DebitAccountHolderResponse
   """

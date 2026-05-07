@@ -1,15 +1,15 @@
-defmodule Adyen.TerminalAPI.V1.PaymentInstrumentData do
+defmodule AdyenEx.TerminalAPI.V1.PaymentInstrumentData do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentData
   """
 
   @type t :: %__MODULE__{
-          CardData: Adyen.TerminalAPI.V1.CardData.t() | nil,
-          CheckData: Adyen.TerminalAPI.V1.CheckData.t() | nil,
-          MobileData: Adyen.TerminalAPI.V1.MobileData.t() | nil,
+          CardData: AdyenEx.TerminalAPI.V1.CardData.t() | nil,
+          CheckData: AdyenEx.TerminalAPI.V1.CheckData.t() | nil,
+          MobileData: AdyenEx.TerminalAPI.V1.MobileData.t() | nil,
           PaymentInstrumentType: String.t(),
           ProtectedCardData: String.t() | nil,
-          StoredValueAccountID: Adyen.TerminalAPI.V1.StoredValueAccountID.t() | nil
+          StoredValueAccountID: AdyenEx.TerminalAPI.V1.StoredValueAccountID.t() | nil
         }
 
   defstruct [
@@ -27,12 +27,12 @@ defmodule Adyen.TerminalAPI.V1.PaymentInstrumentData do
 
   def __fields__(:t) do
     [
-      CardData: {Adyen.TerminalAPI.V1.CardData, :t},
-      CheckData: {Adyen.TerminalAPI.V1.CheckData, :t},
-      MobileData: {Adyen.TerminalAPI.V1.MobileData, :t},
+      CardData: {AdyenEx.TerminalAPI.V1.CardData, :t},
+      CheckData: {AdyenEx.TerminalAPI.V1.CheckData, :t},
+      MobileData: {AdyenEx.TerminalAPI.V1.MobileData, :t},
       PaymentInstrumentType: {:enum, ["Card", "Cash", "Check", "Mobile", "StoredValue"]},
       ProtectedCardData: :string,
-      StoredValueAccountID: {Adyen.TerminalAPI.V1.StoredValueAccountID, :t}
+      StoredValueAccountID: {AdyenEx.TerminalAPI.V1.StoredValueAccountID, :t}
     ]
   end
 end

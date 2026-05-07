@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V1.JSONObject do
+defmodule AdyenEx.BalancePlatform.V1.JSONObject do
   @moduledoc """
   Provides struct and type for a JSONObject
   """
 
   @type t :: %__MODULE__{
-          paths: [Adyen.BalancePlatform.V1.JSONPath.t()] | nil,
-          rootPath: Adyen.BalancePlatform.V1.JSONPath.t() | nil
+          paths: [AdyenEx.BalancePlatform.V1.JSONPath.t()] | nil,
+          rootPath: AdyenEx.BalancePlatform.V1.JSONPath.t() | nil
         }
 
   defstruct [:paths, :rootPath]
@@ -16,8 +16,8 @@ defmodule Adyen.BalancePlatform.V1.JSONObject do
 
   def __fields__(:t) do
     [
-      paths: [{Adyen.BalancePlatform.V1.JSONPath, :t}],
-      rootPath: {Adyen.BalancePlatform.V1.JSONPath, :t}
+      paths: [{AdyenEx.BalancePlatform.V1.JSONPath, :t}],
+      rootPath: {AdyenEx.BalancePlatform.V1.JSONPath, :t}
     ]
   end
 end

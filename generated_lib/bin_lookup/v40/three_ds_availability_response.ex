@@ -1,12 +1,12 @@
-defmodule Adyen.BinLookup.V40.ThreeDSAvailabilityResponse do
+defmodule AdyenEx.BinLookup.V40.ThreeDSAvailabilityResponse do
   @moduledoc """
   Provides struct and type for a ThreeDSAvailabilityResponse
   """
 
   @type t :: %__MODULE__{
-          dsPublicKeys: [Adyen.BinLookup.V40.DSPublicKeyDetail.t()] | nil,
+          dsPublicKeys: [AdyenEx.BinLookup.V40.DSPublicKeyDetail.t()] | nil,
           threeDS1Supported: boolean | nil,
-          threeDS2CardRangeDetails: [Adyen.BinLookup.V40.ThreeDs2CardRangeDetail.t()] | nil,
+          threeDS2CardRangeDetails: [AdyenEx.BinLookup.V40.ThreeDs2CardRangeDetail.t()] | nil,
           threeDS2supported: boolean | nil
         }
 
@@ -18,9 +18,9 @@ defmodule Adyen.BinLookup.V40.ThreeDSAvailabilityResponse do
 
   def __fields__(:t) do
     [
-      dsPublicKeys: [{Adyen.BinLookup.V40.DSPublicKeyDetail, :t}],
+      dsPublicKeys: [{AdyenEx.BinLookup.V40.DSPublicKeyDetail, :t}],
       threeDS1Supported: :boolean,
-      threeDS2CardRangeDetails: [{Adyen.BinLookup.V40.ThreeDs2CardRangeDetail, :t}],
+      threeDS2CardRangeDetails: [{AdyenEx.BinLookup.V40.ThreeDs2CardRangeDetail, :t}],
       threeDS2supported: :boolean
     ]
   end

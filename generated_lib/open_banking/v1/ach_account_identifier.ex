@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.ACHAccountIdentifier do
+defmodule AdyenEx.OpenBanking.V1.ACHAccountIdentifier do
   @moduledoc """
   Provides struct and type for a ACHAccountIdentifier
   """

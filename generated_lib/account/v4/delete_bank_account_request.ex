@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.DeleteBankAccountRequest do
+defmodule AdyenEx.Account.V4.DeleteBankAccountRequest do
   @moduledoc """
   Provides struct and type for a DeleteBankAccountRequest
   """

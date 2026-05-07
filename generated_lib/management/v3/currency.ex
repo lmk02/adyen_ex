@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Currency do
+defmodule AdyenEx.Management.V3.Currency do
   @moduledoc """
   Provides struct and type for a Currency
   """

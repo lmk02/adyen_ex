@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.MerchantData do
+defmodule AdyenEx.Transfer.V3.MerchantData do
   @moduledoc """
   Provides struct and type for a MerchantData
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Transfer.V3.MerchantData do
           acquirerId: String.t() | nil,
           mcc: String.t() | nil,
           merchantId: String.t() | nil,
-          nameLocation: Adyen.Transfer.V3.NameLocation.t() | nil,
+          nameLocation: AdyenEx.Transfer.V3.NameLocation.t() | nil,
           postalCode: String.t() | nil
         }
 
@@ -22,7 +22,7 @@ defmodule Adyen.Transfer.V3.MerchantData do
       acquirerId: :string,
       mcc: :string,
       merchantId: :string,
-      nameLocation: {Adyen.Transfer.V3.NameLocation, :t},
+      nameLocation: {AdyenEx.Transfer.V3.NameLocation, :t},
       postalCode: :string
     ]
   end

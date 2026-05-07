@@ -1,12 +1,12 @@
-defmodule Adyen.Account.V5.AccountHolderStatus do
+defmodule AdyenEx.Account.V5.AccountHolderStatus do
   @moduledoc """
   Provides struct and type for a AccountHolderStatus
   """
 
   @type t :: %__MODULE__{
-          events: [Adyen.Account.V5.AccountEvent.t()] | nil,
-          payoutState: Adyen.Account.V5.AccountPayoutState.t() | nil,
-          processingState: Adyen.Account.V5.AccountProcessingState.t() | nil,
+          events: [AdyenEx.Account.V5.AccountEvent.t()] | nil,
+          payoutState: AdyenEx.Account.V5.AccountPayoutState.t() | nil,
+          processingState: AdyenEx.Account.V5.AccountProcessingState.t() | nil,
           status: String.t(),
           statusReason: String.t() | nil
         }
@@ -19,9 +19,9 @@ defmodule Adyen.Account.V5.AccountHolderStatus do
 
   def __fields__(:t) do
     [
-      events: [{Adyen.Account.V5.AccountEvent, :t}],
-      payoutState: {Adyen.Account.V5.AccountPayoutState, :t},
-      processingState: {Adyen.Account.V5.AccountProcessingState, :t},
+      events: [{AdyenEx.Account.V5.AccountEvent, :t}],
+      payoutState: {AdyenEx.Account.V5.AccountPayoutState, :t},
+      processingState: {AdyenEx.Account.V5.AccountProcessingState, :t},
       status: {:enum, ["Active", "Closed", "Inactive", "Suspended"]},
       statusReason: :string
     ]

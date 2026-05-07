@@ -1,22 +1,22 @@
-defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
+defmodule AdyenEx.Checkout.V68.ThreeDs2RequestFields do
   @moduledoc """
   Provides struct and type for a ThreeDs2RequestFields
   """
 
   @type t :: %__MODULE__{
-          acctInfo: Adyen.Checkout.V68.AcctInfo.t() | nil,
+          acctInfo: AdyenEx.Checkout.V68.AcctInfo.t() | nil,
           acctType: String.t() | nil,
           acquirerBIN: String.t() | nil,
           acquirerMerchantID: String.t() | nil,
           addrMatch: String.t() | nil,
           authenticationOnly: boolean | nil,
           challengeIndicator: String.t() | nil,
-          deviceRenderOptions: Adyen.Checkout.V68.DeviceRenderOptions.t() | nil,
-          homePhone: Adyen.Checkout.V68.Phone.t() | nil,
+          deviceRenderOptions: AdyenEx.Checkout.V68.DeviceRenderOptions.t() | nil,
+          homePhone: AdyenEx.Checkout.V68.Phone.t() | nil,
           mcc: String.t() | nil,
           merchantName: String.t() | nil,
           messageVersion: String.t() | nil,
-          mobilePhone: Adyen.Checkout.V68.Phone.t() | nil,
+          mobilePhone: AdyenEx.Checkout.V68.Phone.t() | nil,
           notificationURL: String.t() | nil,
           payTokenInd: boolean | nil,
           paymentAuthenticationUseCase: String.t() | nil,
@@ -24,24 +24,24 @@ defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
           recurringExpiry: String.t() | nil,
           recurringFrequency: String.t() | nil,
           sdkAppID: String.t() | nil,
-          sdkEphemPubKey: Adyen.Checkout.V68.SDKEphemPubKey.t() | nil,
+          sdkEphemPubKey: AdyenEx.Checkout.V68.SDKEphemPubKey.t() | nil,
           sdkMaxTimeout: integer | nil,
           sdkReferenceNumber: String.t() | nil,
           sdkTransID: String.t() | nil,
           threeDSCompInd: String.t() | nil,
           threeDSRequestorAuthenticationInd: String.t() | nil,
           threeDSRequestorAuthenticationInfo:
-            Adyen.Checkout.V68.ThreeDSRequestorAuthenticationInfo.t() | nil,
+            AdyenEx.Checkout.V68.ThreeDSRequestorAuthenticationInfo.t() | nil,
           threeDSRequestorChallengeInd: String.t() | nil,
           threeDSRequestorID: String.t() | nil,
           threeDSRequestorName: String.t() | nil,
           threeDSRequestorPriorAuthenticationInfo:
-            Adyen.Checkout.V68.ThreeDSRequestorPriorAuthenticationInfo.t() | nil,
+            AdyenEx.Checkout.V68.ThreeDSRequestorPriorAuthenticationInfo.t() | nil,
           threeDSRequestorURL: String.t() | nil,
           transType: String.t() | nil,
           transactionType: String.t() | nil,
           whiteListStatus: String.t() | nil,
-          workPhone: Adyen.Checkout.V68.Phone.t() | nil
+          workPhone: AdyenEx.Checkout.V68.Phone.t() | nil
         }
 
   defstruct [
@@ -89,7 +89,7 @@ defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
 
   def __fields__(:t) do
     [
-      acctInfo: {Adyen.Checkout.V68.AcctInfo, :t},
+      acctInfo: {AdyenEx.Checkout.V68.AcctInfo, :t},
       acctType: {:enum, ["01", "02", "03"]},
       acquirerBIN: :string,
       acquirerMerchantID: :string,
@@ -98,12 +98,12 @@ defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
       challengeIndicator:
         {:enum,
          ["noPreference", "requestNoChallenge", "requestChallenge", "requestChallengeAsMandate"]},
-      deviceRenderOptions: {Adyen.Checkout.V68.DeviceRenderOptions, :t},
-      homePhone: {Adyen.Checkout.V68.Phone, :t},
+      deviceRenderOptions: {AdyenEx.Checkout.V68.DeviceRenderOptions, :t},
+      homePhone: {AdyenEx.Checkout.V68.Phone, :t},
       mcc: :string,
       merchantName: :string,
       messageVersion: :string,
-      mobilePhone: {Adyen.Checkout.V68.Phone, :t},
+      mobilePhone: {AdyenEx.Checkout.V68.Phone, :t},
       notificationURL: :string,
       payTokenInd: :boolean,
       paymentAuthenticationUseCase: :string,
@@ -111,19 +111,19 @@ defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
       recurringExpiry: :string,
       recurringFrequency: :string,
       sdkAppID: :string,
-      sdkEphemPubKey: {Adyen.Checkout.V68.SDKEphemPubKey, :t},
+      sdkEphemPubKey: {AdyenEx.Checkout.V68.SDKEphemPubKey, :t},
       sdkMaxTimeout: {:integer, "int32"},
       sdkReferenceNumber: :string,
       sdkTransID: :string,
       threeDSCompInd: :string,
       threeDSRequestorAuthenticationInd: :string,
       threeDSRequestorAuthenticationInfo:
-        {Adyen.Checkout.V68.ThreeDSRequestorAuthenticationInfo, :t},
+        {AdyenEx.Checkout.V68.ThreeDSRequestorAuthenticationInfo, :t},
       threeDSRequestorChallengeInd: {:enum, ["01", "02", "03", "04", "05", "06"]},
       threeDSRequestorID: :string,
       threeDSRequestorName: :string,
       threeDSRequestorPriorAuthenticationInfo:
-        {Adyen.Checkout.V68.ThreeDSRequestorPriorAuthenticationInfo, :t},
+        {AdyenEx.Checkout.V68.ThreeDSRequestorPriorAuthenticationInfo, :t},
       threeDSRequestorURL: :string,
       transType: {:enum, ["01", "03", "10", "11", "28"]},
       transactionType:
@@ -136,7 +136,7 @@ defmodule Adyen.Checkout.V68.ThreeDs2RequestFields do
            "prepaidActivationAndLoad"
          ]},
       whiteListStatus: :string,
-      workPhone: {Adyen.Checkout.V68.Phone, :t}
+      workPhone: {AdyenEx.Checkout.V68.Phone, :t}
     ]
   end
 end

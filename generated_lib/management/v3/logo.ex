@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Logo do
+defmodule AdyenEx.Management.V3.Logo do
   @moduledoc """
   Provides struct and type for a Logo
   """

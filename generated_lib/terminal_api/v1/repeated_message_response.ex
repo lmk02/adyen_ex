@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.RepeatedMessageResponse do
+defmodule AdyenEx.TerminalAPI.V1.RepeatedMessageResponse do
   @moduledoc """
   Provides struct and type for a RepeatedMessageResponse
   """
 
   @type t :: %__MODULE__{
-          MessageHeader: Adyen.TerminalAPI.V1.MessageHeader.t(),
-          RepeatedResponseMessageBody: Adyen.TerminalAPI.V1.RepeatedResponseMessageBody.t()
+          MessageHeader: AdyenEx.TerminalAPI.V1.MessageHeader.t(),
+          RepeatedResponseMessageBody: AdyenEx.TerminalAPI.V1.RepeatedResponseMessageBody.t()
         }
 
   defstruct [:MessageHeader, :RepeatedResponseMessageBody]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.RepeatedMessageResponse do
 
   def __fields__(:t) do
     [
-      MessageHeader: {Adyen.TerminalAPI.V1.MessageHeader, :t},
-      RepeatedResponseMessageBody: {Adyen.TerminalAPI.V1.RepeatedResponseMessageBody, :t}
+      MessageHeader: {AdyenEx.TerminalAPI.V1.MessageHeader, :t},
+      RepeatedResponseMessageBody: {AdyenEx.TerminalAPI.V1.RepeatedResponseMessageBody, :t}
     ]
   end
 end

@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
+defmodule AdyenEx.Management.V1.AllowedOriginsMerchantLevel do
   @moduledoc """
   Provides API endpoints related to allowed origins merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete an allowed origin
@@ -18,7 +18,7 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
           apiCredentialId :: String.t(),
           originId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Management.V1.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def delete_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins_origin_id(
         merchantId,
         apiCredentialId,
@@ -30,18 +30,18 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId, originId: originId],
       call:
-        {Adyen.Management.V1.AllowedOriginsMerchantLevel,
+        {AdyenEx.Management.V1.AllowedOriginsMerchantLevel,
          :delete_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins_origin_id},
       url:
         "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}/allowedOrigins/#{originId}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -60,8 +60,8 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
           apiCredentialId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOriginsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOriginsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins(
         merchantId,
         apiCredentialId,
@@ -72,18 +72,18 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId],
       call:
-        {Adyen.Management.V1.AllowedOriginsMerchantLevel,
+        {AdyenEx.Management.V1.AllowedOriginsMerchantLevel,
          :get_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins},
       url: "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}/allowedOrigins",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOriginsResponse, :t}},
+        {200, {AdyenEx.Management.V1.AllowedOriginsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -103,8 +103,8 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
           originId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins_origin_id(
         merchantId,
         apiCredentialId,
@@ -116,19 +116,19 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId, originId: originId],
       call:
-        {Adyen.Management.V1.AllowedOriginsMerchantLevel,
+        {AdyenEx.Management.V1.AllowedOriginsMerchantLevel,
          :get_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins_origin_id},
       url:
         "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}/allowedOrigins/#{originId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -149,11 +149,11 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
   @spec post_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins(
           merchantId :: String.t(),
           apiCredentialId :: String.t(),
-          body :: Adyen.Management.V1.AllowedOrigin.t(),
+          body :: AdyenEx.Management.V1.AllowedOrigin.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins(
         merchantId,
         apiCredentialId,
@@ -165,20 +165,20 @@ defmodule Adyen.Management.V1.AllowedOriginsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId, body: body],
       call:
-        {Adyen.Management.V1.AllowedOriginsMerchantLevel,
+        {AdyenEx.Management.V1.AllowedOriginsMerchantLevel,
          :post_merchants_merchant_id_api_credentials_api_credential_id_allowed_origins},
       url: "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}/allowedOrigins",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.AllowedOrigin, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.AllowedOrigin, :t}}],
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

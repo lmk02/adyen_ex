@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.Phone do
+defmodule AdyenEx.Checkout.V50.Phone do
   @moduledoc """
   Provides struct and type for a Phone
   """

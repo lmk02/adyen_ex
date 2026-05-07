@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.UnincorporatedPartnership do
+defmodule AdyenEx.LegalEntity.V4.UnincorporatedPartnership do
   @moduledoc """
   Provides struct and type for a UnincorporatedPartnership
   """
@@ -10,10 +10,10 @@ defmodule Adyen.LegalEntity.V4.UnincorporatedPartnership do
           doingBusinessAs: String.t() | nil,
           doingBusinessAsAbsent: boolean | nil,
           name: String.t(),
-          principalPlaceOfBusiness: Adyen.LegalEntity.V4.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V4.Address.t(),
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V4.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V4.Address.t(),
           registrationNumber: String.t() | nil,
-          taxInformation: [Adyen.LegalEntity.V4.TaxInformation.t()] | nil,
+          taxInformation: [AdyenEx.LegalEntity.V4.TaxInformation.t()] | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil
@@ -47,10 +47,10 @@ defmodule Adyen.LegalEntity.V4.UnincorporatedPartnership do
       doingBusinessAs: :string,
       doingBusinessAsAbsent: :boolean,
       name: :string,
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V4.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V4.Address, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V4.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V4.Address, :t},
       registrationNumber: :string,
-      taxInformation: [{Adyen.LegalEntity.V4.TaxInformation, :t}],
+      taxInformation: [{AdyenEx.LegalEntity.V4.TaxInformation, :t}],
       type:
         {:enum,
          [

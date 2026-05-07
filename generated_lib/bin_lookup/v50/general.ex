@@ -1,9 +1,9 @@
-defmodule Adyen.BinLookup.V50.General do
+defmodule AdyenEx.BinLookup.V50.General do
   @moduledoc """
   Provides API endpoints related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Check if 3D Secure is available
@@ -17,28 +17,28 @@ defmodule Adyen.BinLookup.V50.General do
   **Content Types**: `application/json`
   """
   @spec post_get3_ds_availability(
-          body :: Adyen.BinLookup.V50.ThreeDSAvailabilityRequest.t(),
+          body :: AdyenEx.BinLookup.V50.ThreeDSAvailabilityRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BinLookup.V50.ThreeDSAvailabilityResponse.t()}
-          | {:error, Adyen.BinLookup.V50.ServiceError.t()}
+          {:ok, AdyenEx.BinLookup.V50.ThreeDSAvailabilityResponse.t()}
+          | {:error, AdyenEx.BinLookup.V50.ServiceError.t()}
   def post_get3_ds_availability(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BinLookup.V50.General, :post_get3_ds_availability},
+      call: {AdyenEx.BinLookup.V50.General, :post_get3_ds_availability},
       url: "/get3dsAvailability",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BinLookup.V50.ThreeDSAvailabilityRequest, :t}}],
+      request: [{"application/json", {AdyenEx.BinLookup.V50.ThreeDSAvailabilityRequest, :t}}],
       response: [
-        {200, {Adyen.BinLookup.V50.ThreeDSAvailabilityResponse, :t}},
-        {400, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {401, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {403, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {422, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {500, {Adyen.BinLookup.V50.ServiceError, :t}}
+        {200, {AdyenEx.BinLookup.V50.ThreeDSAvailabilityResponse, :t}},
+        {400, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {401, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {403, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {422, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {500, {AdyenEx.BinLookup.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -60,28 +60,28 @@ defmodule Adyen.BinLookup.V50.General do
   **Content Types**: `application/json`
   """
   @spec post_get_cost_estimate(
-          body :: Adyen.BinLookup.V50.CostEstimateRequest.t(),
+          body :: AdyenEx.BinLookup.V50.CostEstimateRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BinLookup.V50.CostEstimateResponse.t()}
-          | {:error, Adyen.BinLookup.V50.ServiceError.t()}
+          {:ok, AdyenEx.BinLookup.V50.CostEstimateResponse.t()}
+          | {:error, AdyenEx.BinLookup.V50.ServiceError.t()}
   def post_get_cost_estimate(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BinLookup.V50.General, :post_get_cost_estimate},
+      call: {AdyenEx.BinLookup.V50.General, :post_get_cost_estimate},
       url: "/getCostEstimate",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BinLookup.V50.CostEstimateRequest, :t}}],
+      request: [{"application/json", {AdyenEx.BinLookup.V50.CostEstimateRequest, :t}}],
       response: [
-        {200, {Adyen.BinLookup.V50.CostEstimateResponse, :t}},
-        {400, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {401, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {403, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {422, {Adyen.BinLookup.V50.ServiceError, :t}},
-        {500, {Adyen.BinLookup.V50.ServiceError, :t}}
+        {200, {AdyenEx.BinLookup.V50.CostEstimateResponse, :t}},
+        {400, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {401, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {403, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {422, {AdyenEx.BinLookup.V50.ServiceError, :t}},
+        {500, {AdyenEx.BinLookup.V50.ServiceError, :t}}
       ],
       opts: opts
     })

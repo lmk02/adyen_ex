@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.DiagnosisRequest do
+defmodule AdyenEx.TerminalAPI.V1.DiagnosisRequest do
   @moduledoc """
   Provides struct and type for a DiagnosisRequest
   """

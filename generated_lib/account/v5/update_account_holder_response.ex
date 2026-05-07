@@ -1,19 +1,19 @@
-defmodule Adyen.Account.V5.UpdateAccountHolderResponse do
+defmodule AdyenEx.Account.V5.UpdateAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a UpdateAccountHolderResponse
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t() | nil,
-          accountHolderDetails: Adyen.Account.V5.AccountHolderDetails.t() | nil,
-          accountHolderStatus: Adyen.Account.V5.AccountHolderStatus.t() | nil,
+          accountHolderDetails: AdyenEx.Account.V5.AccountHolderDetails.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V5.AccountHolderStatus.t() | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V5.ErrorFieldType.t()] | nil,
           legalEntity: String.t() | nil,
           primaryCurrency: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
-          verification: Adyen.Account.V5.KYCVerificationResult.t() | nil
+          verification: AdyenEx.Account.V5.KYCVerificationResult.t() | nil
         }
 
   defstruct [
@@ -36,15 +36,15 @@ defmodule Adyen.Account.V5.UpdateAccountHolderResponse do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V5.AccountHolderDetails, :t},
-      accountHolderStatus: {Adyen.Account.V5.AccountHolderStatus, :t},
+      accountHolderDetails: {AdyenEx.Account.V5.AccountHolderDetails, :t},
+      accountHolderStatus: {AdyenEx.Account.V5.AccountHolderStatus, :t},
       description: :string,
-      invalidFields: [{Adyen.Account.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V5.ErrorFieldType, :t}],
       legalEntity: {:enum, ["Business", "Individual", "NonProfit"]},
       primaryCurrency: :string,
       pspReference: :string,
       resultCode: :string,
-      verification: {Adyen.Account.V5.KYCVerificationResult, :t}
+      verification: {AdyenEx.Account.V5.KYCVerificationResult, :t}
     ]
   end
 end

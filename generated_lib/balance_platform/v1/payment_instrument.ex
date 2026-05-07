@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.PaymentInstrument do
+defmodule AdyenEx.BalancePlatform.V1.PaymentInstrument do
   @moduledoc """
   Provides struct and type for a PaymentInstrument
   """
@@ -6,10 +6,10 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstrument do
   @type t :: %__MODULE__{
           balanceAccountId: String.t(),
           bankAccount:
-            Adyen.BalancePlatform.V1.IbanAccountIdentification.t()
-            | Adyen.BalancePlatform.V1.USLocalAccountIdentification.t()
+            AdyenEx.BalancePlatform.V1.IbanAccountIdentification.t()
+            | AdyenEx.BalancePlatform.V1.USLocalAccountIdentification.t()
             | nil,
-          card: Adyen.BalancePlatform.V1.Card.t() | nil,
+          card: AdyenEx.BalancePlatform.V1.Card.t() | nil,
           description: String.t() | nil,
           id: String.t(),
           issuingCountryCode: String.t(),
@@ -42,10 +42,10 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstrument do
       bankAccount:
         {:union,
          [
-           {Adyen.BalancePlatform.V1.IbanAccountIdentification, :t},
-           {Adyen.BalancePlatform.V1.USLocalAccountIdentification, :t}
+           {AdyenEx.BalancePlatform.V1.IbanAccountIdentification, :t},
+           {AdyenEx.BalancePlatform.V1.USLocalAccountIdentification, :t}
          ]},
-      card: {Adyen.BalancePlatform.V1.Card, :t},
+      card: {AdyenEx.BalancePlatform.V1.Card, :t},
       description: :string,
       id: :string,
       issuingCountryCode: :string,

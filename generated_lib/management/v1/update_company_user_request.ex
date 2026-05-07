@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UpdateCompanyUserRequest do
+defmodule AdyenEx.Management.V1.UpdateCompanyUserRequest do
   @moduledoc """
   Provides struct and type for a UpdateCompanyUserRequest
   """
@@ -9,7 +9,7 @@ defmodule Adyen.Management.V1.UpdateCompanyUserRequest do
           associatedMerchantAccounts: [String.t()] | nil,
           email: String.t() | nil,
           loginMethod: String.t() | nil,
-          name: Adyen.Management.V1.Name2.t() | nil,
+          name: AdyenEx.Management.V1.Name2.t() | nil,
           roles: [String.t()] | nil,
           timeZoneCode: String.t() | nil
         }
@@ -36,7 +36,7 @@ defmodule Adyen.Management.V1.UpdateCompanyUserRequest do
       associatedMerchantAccounts: [:string],
       email: :string,
       loginMethod: :string,
-      name: {Adyen.Management.V1.Name2, :t},
+      name: {AdyenEx.Management.V1.Name2, :t},
       roles: [:string],
       timeZoneCode: :string
     ]

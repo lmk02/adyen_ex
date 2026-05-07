@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
+defmodule AdyenEx.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
   @moduledoc """
   Provides API endpoints related to transfer limits balance platform level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a scheduled or pending transfer limit
@@ -15,7 +15,7 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
           id :: String.t(),
           transferLimitId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def delete_balance_platforms_id_transfer_limits_transfer_limit_id(
         id,
         transferLimitId,
@@ -26,14 +26,14 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
     client.request(%{
       args: [id: id, transferLimitId: transferLimitId],
       call:
-        {Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
+        {AdyenEx.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
          :delete_balance_platforms_id_transfer_limits_transfer_limit_id},
       url: "/balancePlatforms/#{id}/transferLimits/#{transferLimitId}",
       method: :delete,
       response: [
         {204, :null},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -60,8 +60,8 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
 
   """
   @spec get_balance_platforms_id_transfer_limits(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.TransferLimitListResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.TransferLimitListResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def get_balance_platforms_id_transfer_limits(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:scope, :status, :transferType])
@@ -69,15 +69,15 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
     client.request(%{
       args: [id: id],
       call:
-        {Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
+        {AdyenEx.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
          :get_balance_platforms_id_transfer_limits},
       url: "/balancePlatforms/#{id}/transferLimits",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalancePlatform.V2.TransferLimitListResponse, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.TransferLimitListResponse, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -94,22 +94,22 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
           transferLimitId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V2.TransferLimit.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.TransferLimit.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def get_balance_platforms_id_transfer_limits_transfer_limit_id(id, transferLimitId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, transferLimitId: transferLimitId],
       call:
-        {Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
+        {AdyenEx.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
          :get_balance_platforms_id_transfer_limits_transfer_limit_id},
       url: "/balancePlatforms/#{id}/transferLimits/#{transferLimitId}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.TransferLimit, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.TransferLimit, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -126,27 +126,27 @@ defmodule Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel do
   """
   @spec post_balance_platforms_id_transfer_limits(
           id :: String.t(),
-          body :: Adyen.BalancePlatform.V2.CreateTransferLimitRequest.t(),
+          body :: AdyenEx.BalancePlatform.V2.CreateTransferLimitRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V2.TransferLimit.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.TransferLimit.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def post_balance_platforms_id_transfer_limits(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
       call:
-        {Adyen.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
+        {AdyenEx.BalancePlatform.V2.TransferLimitsBalancePlatformLevel,
          :post_balance_platforms_id_transfer_limits},
       url: "/balancePlatforms/#{id}/transferLimits",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.CreateTransferLimitRequest, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.CreateTransferLimitRequest, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V2.TransferLimit, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.TransferLimit, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

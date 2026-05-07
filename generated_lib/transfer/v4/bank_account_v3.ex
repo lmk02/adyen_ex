@@ -1,27 +1,27 @@
-defmodule Adyen.Transfer.V4.BankAccountV3 do
+defmodule AdyenEx.Transfer.V4.BankAccountV3 do
   @moduledoc """
   Provides struct and type for a BankAccountV3
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.Transfer.V4.PartyIdentification.t(),
+          accountHolder: AdyenEx.Transfer.V4.PartyIdentification.t(),
           accountIdentification:
-            Adyen.Transfer.V4.AULocalAccountIdentification.t()
-            | Adyen.Transfer.V4.BRLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.CALocalAccountIdentification.t()
-            | Adyen.Transfer.V4.CZLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.DKLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.HKLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.HULocalAccountIdentification.t()
-            | Adyen.Transfer.V4.IbanAccountIdentification.t()
-            | Adyen.Transfer.V4.NOLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.NZLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.NumberAndBicAccountIdentification.t()
-            | Adyen.Transfer.V4.PLLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.SELocalAccountIdentification.t()
-            | Adyen.Transfer.V4.SGLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.UKLocalAccountIdentification.t()
-            | Adyen.Transfer.V4.USLocalAccountIdentification.t(),
+            AdyenEx.Transfer.V4.AULocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.BRLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.CALocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.CZLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.DKLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.HKLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.HULocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.IbanAccountIdentification.t()
+            | AdyenEx.Transfer.V4.NOLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.NZLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.NumberAndBicAccountIdentification.t()
+            | AdyenEx.Transfer.V4.PLLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.SELocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.SGLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.UKLocalAccountIdentification.t()
+            | AdyenEx.Transfer.V4.USLocalAccountIdentification.t(),
           storedPaymentMethodId: String.t() | nil
         }
 
@@ -33,26 +33,26 @@ defmodule Adyen.Transfer.V4.BankAccountV3 do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.Transfer.V4.PartyIdentification, :t},
+      accountHolder: {AdyenEx.Transfer.V4.PartyIdentification, :t},
       accountIdentification:
         {:union,
          [
-           {Adyen.Transfer.V4.AULocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.BRLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.CALocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.CZLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.DKLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.HKLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.HULocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.IbanAccountIdentification, :t},
-           {Adyen.Transfer.V4.NOLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.NZLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.NumberAndBicAccountIdentification, :t},
-           {Adyen.Transfer.V4.PLLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.SELocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.SGLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.UKLocalAccountIdentification, :t},
-           {Adyen.Transfer.V4.USLocalAccountIdentification, :t}
+           {AdyenEx.Transfer.V4.AULocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.BRLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.CALocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.CZLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.DKLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.HKLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.HULocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.IbanAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.NOLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.NZLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.NumberAndBicAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.PLLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.SELocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.SGLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.UKLocalAccountIdentification, :t},
+           {AdyenEx.Transfer.V4.USLocalAccountIdentification, :t}
          ]},
       storedPaymentMethodId: :string
     ]

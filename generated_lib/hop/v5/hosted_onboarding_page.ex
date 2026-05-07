@@ -1,9 +1,9 @@
-defmodule Adyen.Hop.V5.HostedOnboardingPage do
+defmodule AdyenEx.Hop.V5.HostedOnboardingPage do
   @moduledoc """
   Provides API endpoint related to hosted onboarding page
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a link to a Adyen-hosted onboarding page
@@ -14,26 +14,29 @@ defmodule Adyen.Hop.V5.HostedOnboardingPage do
 
   **Content Types**: `application/json`
   """
-  @spec post_get_onboarding_url(body :: Adyen.Hop.V5.GetOnboardingUrlRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Hop.V5.GetOnboardingUrlResponse.t()}
-          | {:error, Adyen.Hop.V5.ServiceError.t()}
+  @spec post_get_onboarding_url(
+          body :: AdyenEx.Hop.V5.GetOnboardingUrlRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.Hop.V5.GetOnboardingUrlResponse.t()}
+          | {:error, AdyenEx.Hop.V5.ServiceError.t()}
   def post_get_onboarding_url(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Hop.V5.HostedOnboardingPage, :post_get_onboarding_url},
+      call: {AdyenEx.Hop.V5.HostedOnboardingPage, :post_get_onboarding_url},
       url: "/getOnboardingUrl",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Hop.V5.GetOnboardingUrlRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Hop.V5.GetOnboardingUrlRequest, :t}}],
       response: [
-        {200, {Adyen.Hop.V5.GetOnboardingUrlResponse, :t}},
-        {400, {Adyen.Hop.V5.ServiceError, :t}},
-        {401, {Adyen.Hop.V5.ServiceError, :t}},
-        {403, {Adyen.Hop.V5.ServiceError, :t}},
-        {422, {Adyen.Hop.V5.ServiceError, :t}},
-        {500, {Adyen.Hop.V5.ServiceError, :t}}
+        {200, {AdyenEx.Hop.V5.GetOnboardingUrlResponse, :t}},
+        {400, {AdyenEx.Hop.V5.ServiceError, :t}},
+        {401, {AdyenEx.Hop.V5.ServiceError, :t}},
+        {403, {AdyenEx.Hop.V5.ServiceError, :t}},
+        {422, {AdyenEx.Hop.V5.ServiceError, :t}},
+        {500, {AdyenEx.Hop.V5.ServiceError, :t}}
       ],
       opts: opts
     })

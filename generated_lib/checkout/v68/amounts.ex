@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.Amounts do
+defmodule AdyenEx.Checkout.V68.Amounts do
   @moduledoc """
   Provides struct and type for a Amounts
   """

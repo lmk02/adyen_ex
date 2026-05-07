@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V2.GenericResponse do
+defmodule AdyenEx.NotificationConfiguration.V2.GenericResponse do
   @moduledoc """
   Provides struct and type for a GenericResponse
   """

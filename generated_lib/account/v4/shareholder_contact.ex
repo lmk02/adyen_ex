@@ -1,16 +1,16 @@
-defmodule Adyen.Account.V4.ShareholderContact do
+defmodule AdyenEx.Account.V4.ShareholderContact do
   @moduledoc """
   Provides struct and type for a ShareholderContact
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V4.ViasAddress.t() | nil,
+          address: AdyenEx.Account.V4.ViasAddress.t() | nil,
           email: String.t() | nil,
           fullPhoneNumber: String.t() | nil,
           jobTitle: String.t() | nil,
-          name: Adyen.Account.V4.ViasName.t() | nil,
-          personalData: Adyen.Account.V4.ViasPersonalData.t() | nil,
-          phoneNumber: Adyen.Account.V4.ViasPhoneNumber.t() | nil,
+          name: AdyenEx.Account.V4.ViasName.t() | nil,
+          personalData: AdyenEx.Account.V4.ViasPersonalData.t() | nil,
+          phoneNumber: AdyenEx.Account.V4.ViasPhoneNumber.t() | nil,
           shareholderCode: String.t() | nil,
           shareholderType: String.t() | nil,
           webAddress: String.t() | nil
@@ -35,13 +35,13 @@ defmodule Adyen.Account.V4.ShareholderContact do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V4.ViasAddress, :t},
+      address: {AdyenEx.Account.V4.ViasAddress, :t},
       email: :string,
       fullPhoneNumber: :string,
       jobTitle: :string,
-      name: {Adyen.Account.V4.ViasName, :t},
-      personalData: {Adyen.Account.V4.ViasPersonalData, :t},
-      phoneNumber: {Adyen.Account.V4.ViasPhoneNumber, :t},
+      name: {AdyenEx.Account.V4.ViasName, :t},
+      personalData: {AdyenEx.Account.V4.ViasPersonalData, :t},
+      phoneNumber: {AdyenEx.Account.V4.ViasPhoneNumber, :t},
       shareholderCode: :string,
       shareholderType: {:enum, ["Controller", "Owner", "Signatory"]},
       webAddress: :string

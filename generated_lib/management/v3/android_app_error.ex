@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.AndroidAppError do
+defmodule AdyenEx.Management.V3.AndroidAppError do
   @moduledoc """
   Provides struct and type for a AndroidAppError
   """

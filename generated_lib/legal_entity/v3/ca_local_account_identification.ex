@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.CALocalAccountIdentification do
+defmodule AdyenEx.LegalEntity.V3.CALocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a CALocalAccountIdentification
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.Transfer.V4.Fee do
+defmodule AdyenEx.Transfer.V4.Fee do
   @moduledoc """
   Provides struct and type for a Fee
   """
 
-  @type t :: %__MODULE__{amount: Adyen.Transfer.V4.Amount.t()}
+  @type t :: %__MODULE__{amount: AdyenEx.Transfer.V4.Amount.t()}
 
   defstruct [:amount]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Transfer.V4.Fee do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [amount: {Adyen.Transfer.V4.Amount, :t}]
+    [amount: {AdyenEx.Transfer.V4.Amount, :t}]
   end
 end

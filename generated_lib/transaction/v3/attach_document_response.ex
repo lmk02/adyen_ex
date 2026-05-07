@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V3.AttachDocumentResponse do
+defmodule AdyenEx.Transaction.V3.AttachDocumentResponse do
   @moduledoc """
   Provides struct and type for a AttachDocumentResponse
   """

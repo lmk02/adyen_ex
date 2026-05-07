@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V53.SplitAmount do
+defmodule AdyenEx.Checkout.V53.SplitAmount do
   @moduledoc """
   Provides struct and type for a SplitAmount
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UpdateSplitConfigurationRequest do
+defmodule AdyenEx.Management.V1.UpdateSplitConfigurationRequest do
   @moduledoc """
   Provides struct and type for a UpdateSplitConfigurationRequest
   """

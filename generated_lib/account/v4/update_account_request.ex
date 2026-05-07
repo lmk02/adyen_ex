@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.UpdateAccountRequest do
+defmodule AdyenEx.Account.V4.UpdateAccountRequest do
   @moduledoc """
   Provides struct and type for a UpdateAccountRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Account.V4.UpdateAccountRequest do
   @type t :: %__MODULE__{
           accountCode: String.t(),
           description: String.t() | nil,
-          payoutSchedule: Adyen.Account.V4.UpdatePayoutScheduleRequest.t() | nil
+          payoutSchedule: AdyenEx.Account.V4.UpdatePayoutScheduleRequest.t() | nil
         }
 
   defstruct [:accountCode, :description, :payoutSchedule]
@@ -19,7 +19,7 @@ defmodule Adyen.Account.V4.UpdateAccountRequest do
     [
       accountCode: :string,
       description: :string,
-      payoutSchedule: {Adyen.Account.V4.UpdatePayoutScheduleRequest, :t}
+      payoutSchedule: {AdyenEx.Account.V4.UpdatePayoutScheduleRequest, :t}
     ]
   end
 end

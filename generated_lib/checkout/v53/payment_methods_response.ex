@@ -1,13 +1,13 @@
-defmodule Adyen.Checkout.V53.PaymentMethodsResponse do
+defmodule AdyenEx.Checkout.V53.PaymentMethodsResponse do
   @moduledoc """
   Provides struct and type for a PaymentMethodsResponse
   """
 
   @type t :: %__MODULE__{
-          groups: [Adyen.Checkout.V53.PaymentMethodsGroup.t()] | nil,
-          oneClickPaymentMethods: [Adyen.Checkout.V53.RecurringDetail.t()] | nil,
-          paymentMethods: [Adyen.Checkout.V53.PaymentMethod.t()] | nil,
-          storedPaymentMethods: [Adyen.Checkout.V53.StoredPaymentMethod.t()] | nil
+          groups: [AdyenEx.Checkout.V53.PaymentMethodsGroup.t()] | nil,
+          oneClickPaymentMethods: [AdyenEx.Checkout.V53.RecurringDetail.t()] | nil,
+          paymentMethods: [AdyenEx.Checkout.V53.PaymentMethod.t()] | nil,
+          storedPaymentMethods: [AdyenEx.Checkout.V53.StoredPaymentMethod.t()] | nil
         }
 
   defstruct [:groups, :oneClickPaymentMethods, :paymentMethods, :storedPaymentMethods]
@@ -18,10 +18,10 @@ defmodule Adyen.Checkout.V53.PaymentMethodsResponse do
 
   def __fields__(:t) do
     [
-      groups: [{Adyen.Checkout.V53.PaymentMethodsGroup, :t}],
-      oneClickPaymentMethods: [{Adyen.Checkout.V53.RecurringDetail, :t}],
-      paymentMethods: [{Adyen.Checkout.V53.PaymentMethod, :t}],
-      storedPaymentMethods: [{Adyen.Checkout.V53.StoredPaymentMethod, :t}]
+      groups: [{AdyenEx.Checkout.V53.PaymentMethodsGroup, :t}],
+      oneClickPaymentMethods: [{AdyenEx.Checkout.V53.RecurringDetail, :t}],
+      paymentMethods: [{AdyenEx.Checkout.V53.PaymentMethod, :t}],
+      storedPaymentMethods: [{AdyenEx.Checkout.V53.StoredPaymentMethod, :t}]
     ]
   end
 end

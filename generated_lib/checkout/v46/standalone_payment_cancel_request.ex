@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V46.StandalonePaymentCancelRequest do
+defmodule AdyenEx.Checkout.V46.StandalonePaymentCancelRequest do
   @moduledoc """
   Provides struct and type for a StandalonePaymentCancelRequest
   """
 
   @type t :: %__MODULE__{
-          applicationInfo: Adyen.Checkout.V46.ApplicationInfo.t() | nil,
+          applicationInfo: AdyenEx.Checkout.V46.ApplicationInfo.t() | nil,
           merchantAccount: String.t(),
           paymentReference: String.t(),
           reference: String.t() | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Checkout.V46.StandalonePaymentCancelRequest do
 
   def __fields__(:t) do
     [
-      applicationInfo: {Adyen.Checkout.V46.ApplicationInfo, :t},
+      applicationInfo: {AdyenEx.Checkout.V46.ApplicationInfo, :t},
       merchantAccount: :string,
       paymentReference: :string,
       reference: :string

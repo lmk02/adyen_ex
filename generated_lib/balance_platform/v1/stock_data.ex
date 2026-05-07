@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.StockData do
+defmodule AdyenEx.BalancePlatform.V1.StockData do
   @moduledoc """
   Provides struct and type for a StockData
   """

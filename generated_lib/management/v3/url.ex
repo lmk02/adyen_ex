@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Url do
+defmodule AdyenEx.Management.V3.Url do
   @moduledoc """
   Provides struct and type for a Url
   """

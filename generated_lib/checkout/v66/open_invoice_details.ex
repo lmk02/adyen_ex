@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.OpenInvoiceDetails do
+defmodule AdyenEx.Checkout.V66.OpenInvoiceDetails do
   @moduledoc """
   Provides struct and type for a OpenInvoiceDetails
   """

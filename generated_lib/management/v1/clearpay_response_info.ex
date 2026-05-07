@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ClearpayResponseInfo do
+defmodule AdyenEx.Management.V1.ClearpayResponseInfo do
   @moduledoc """
   Provides struct and type for a ClearpayResponseInfo
   """

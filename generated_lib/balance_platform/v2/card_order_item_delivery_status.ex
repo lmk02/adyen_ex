@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CardOrderItemDeliveryStatus do
+defmodule AdyenEx.BalancePlatform.V2.CardOrderItemDeliveryStatus do
   @moduledoc """
   Provides struct and type for a CardOrderItemDeliveryStatus
   """

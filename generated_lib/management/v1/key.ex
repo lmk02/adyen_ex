@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Key do
+defmodule AdyenEx.Management.V1.Key do
   @moduledoc """
   Provides struct and type for a Key
   """

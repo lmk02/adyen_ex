@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.LocalizedInformation do
+defmodule AdyenEx.Management.V1.LocalizedInformation do
   @moduledoc """
   Provides struct and type for a LocalizedInformation
   """
 
-  @type t :: %__MODULE__{localShopperStatement: [Adyen.Management.V1.LocalShopperStatement.t()]}
+  @type t :: %__MODULE__{localShopperStatement: [AdyenEx.Management.V1.LocalShopperStatement.t()]}
 
   defstruct [:localShopperStatement]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.LocalizedInformation do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [localShopperStatement: [{Adyen.Management.V1.LocalShopperStatement, :t}]]
+    [localShopperStatement: [{AdyenEx.Management.V1.LocalShopperStatement, :t}]]
   end
 end

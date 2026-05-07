@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
+defmodule AdyenEx.Management.V3.PayoutSettingsMerchantLevel do
   @moduledoc """
   Provides API endpoints related to payout settings merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a payout setting
@@ -20,7 +20,7 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
           merchantId :: String.t(),
           payoutSettingsId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Management.V3.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def delete_merchants_merchant_id_payout_settings_payout_settings_id(
         merchantId,
         payoutSettingsId,
@@ -31,17 +31,17 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, payoutSettingsId: payoutSettingsId],
       call:
-        {Adyen.Management.V3.PayoutSettingsMerchantLevel,
+        {AdyenEx.Management.V3.PayoutSettingsMerchantLevel,
          :delete_merchants_merchant_id_payout_settings_payout_settings_id},
       url: "/merchants/#{merchantId}/payoutSettings/#{payoutSettingsId}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -58,26 +58,26 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
   * Management API—Payout account settings read
   """
   @spec get_merchants_merchant_id_payout_settings(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.PayoutSettingsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.PayoutSettingsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_payout_settings(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V3.PayoutSettingsMerchantLevel,
+        {AdyenEx.Management.V3.PayoutSettingsMerchantLevel,
          :get_merchants_merchant_id_payout_settings},
       url: "/merchants/#{merchantId}/payoutSettings",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.PayoutSettingsResponse, :t}},
+        {200, {AdyenEx.Management.V3.PayoutSettingsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -98,8 +98,8 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
           payoutSettingsId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.PayoutSettings.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.PayoutSettings.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_payout_settings_payout_settings_id(
         merchantId,
         payoutSettingsId,
@@ -110,18 +110,18 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, payoutSettingsId: payoutSettingsId],
       call:
-        {Adyen.Management.V3.PayoutSettingsMerchantLevel,
+        {AdyenEx.Management.V3.PayoutSettingsMerchantLevel,
          :get_merchants_merchant_id_payout_settings_payout_settings_id},
       url: "/merchants/#{merchantId}/payoutSettings/#{payoutSettingsId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.PayoutSettings, :t}},
+        {200, {AdyenEx.Management.V3.PayoutSettings, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -145,11 +145,11 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
   @spec patch_merchants_merchant_id_payout_settings_payout_settings_id(
           merchantId :: String.t(),
           payoutSettingsId :: String.t(),
-          body :: Adyen.Management.V3.UpdatePayoutSettingsRequest.t(),
+          body :: AdyenEx.Management.V3.UpdatePayoutSettingsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.PayoutSettings.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.PayoutSettings.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_payout_settings_payout_settings_id(
         merchantId,
         payoutSettingsId,
@@ -161,20 +161,20 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, payoutSettingsId: payoutSettingsId, body: body],
       call:
-        {Adyen.Management.V3.PayoutSettingsMerchantLevel,
+        {AdyenEx.Management.V3.PayoutSettingsMerchantLevel,
          :patch_merchants_merchant_id_payout_settings_payout_settings_id},
       url: "/merchants/#{merchantId}/payoutSettings/#{payoutSettingsId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V3.UpdatePayoutSettingsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.UpdatePayoutSettingsRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.PayoutSettings, :t}},
+        {200, {AdyenEx.Management.V3.PayoutSettings, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -199,31 +199,31 @@ defmodule Adyen.Management.V3.PayoutSettingsMerchantLevel do
   """
   @spec post_merchants_merchant_id_payout_settings(
           merchantId :: String.t(),
-          body :: Adyen.Management.V3.PayoutSettingsRequest.t(),
+          body :: AdyenEx.Management.V3.PayoutSettingsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.PayoutSettings.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.PayoutSettings.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_merchants_merchant_id_payout_settings(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.Management.V3.PayoutSettingsMerchantLevel,
+        {AdyenEx.Management.V3.PayoutSettingsMerchantLevel,
          :post_merchants_merchant_id_payout_settings},
       url: "/merchants/#{merchantId}/payoutSettings",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.PayoutSettingsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.PayoutSettingsRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.PayoutSettings, :t}},
+        {200, {AdyenEx.Management.V3.PayoutSettings, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

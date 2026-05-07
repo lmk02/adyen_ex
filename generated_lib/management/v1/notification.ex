@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Notification do
+defmodule AdyenEx.Management.V1.Notification do
   @moduledoc """
   Provides struct and type for a Notification
   """

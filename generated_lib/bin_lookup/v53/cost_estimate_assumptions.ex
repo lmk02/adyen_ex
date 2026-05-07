@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V53.CostEstimateAssumptions do
+defmodule AdyenEx.BinLookup.V53.CostEstimateAssumptions do
   @moduledoc """
   Provides struct and type for a CostEstimateAssumptions
   """

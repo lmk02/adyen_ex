@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AssociationInitiateRequest do
+defmodule AdyenEx.BalancePlatform.V2.AssociationInitiateRequest do
   @moduledoc """
   Provides struct and type for a AssociationInitiateRequest
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.SofortInfo do
+defmodule AdyenEx.Management.V1.SofortInfo do
   @moduledoc """
   Provides struct and type for a SofortInfo
   """

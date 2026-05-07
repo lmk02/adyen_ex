@@ -1,18 +1,18 @@
-defmodule Adyen.Checkout.V67.PaymentRefundResponse do
+defmodule AdyenEx.Checkout.V67.PaymentRefundResponse do
   @moduledoc """
   Provides struct and type for a PaymentRefundResponse
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V67.Amount.t(),
+          amount: AdyenEx.Checkout.V67.Amount.t(),
           capturePspReference: String.t() | nil,
-          lineItems: [Adyen.Checkout.V67.LineItem.t()] | nil,
+          lineItems: [AdyenEx.Checkout.V67.LineItem.t()] | nil,
           merchantAccount: String.t(),
           merchantRefundReason: String.t() | nil,
           paymentPspReference: String.t(),
           pspReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V67.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V67.Split.t()] | nil,
           status: String.t(),
           store: String.t() | nil
         }
@@ -37,16 +37,16 @@ defmodule Adyen.Checkout.V67.PaymentRefundResponse do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V67.Amount, :t},
+      amount: {AdyenEx.Checkout.V67.Amount, :t},
       capturePspReference: :string,
-      lineItems: [{Adyen.Checkout.V67.LineItem, :t}],
+      lineItems: [{AdyenEx.Checkout.V67.LineItem, :t}],
       merchantAccount: :string,
       merchantRefundReason:
         {:enum, ["FRAUD", "CUSTOMER REQUEST", "RETURN", "DUPLICATE", "OTHER"]},
       paymentPspReference: :string,
       pspReference: :string,
       reference: :string,
-      splits: [{Adyen.Checkout.V67.Split, :t}],
+      splits: [{AdyenEx.Checkout.V67.Split, :t}],
       status: {:const, "received"},
       store: :string
     ]

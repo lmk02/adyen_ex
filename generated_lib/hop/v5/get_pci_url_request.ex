@@ -1,4 +1,4 @@
-defmodule Adyen.Hop.V5.GetPciUrlRequest do
+defmodule AdyenEx.Hop.V5.GetPciUrlRequest do
   @moduledoc """
   Provides struct and type for a GetPciUrlRequest
   """

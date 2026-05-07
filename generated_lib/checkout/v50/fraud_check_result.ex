@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.FraudCheckResult do
+defmodule AdyenEx.Checkout.V50.FraudCheckResult do
   @moduledoc """
   Provides struct and type for a FraudCheckResult
   """

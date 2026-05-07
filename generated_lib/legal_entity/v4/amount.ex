@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.Amount do
+defmodule AdyenEx.LegalEntity.V4.Amount do
   @moduledoc """
   Provides struct and type for a Amount
   """

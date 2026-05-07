@@ -1,12 +1,12 @@
-defmodule Adyen.Management.V1.StoreAndForward do
+defmodule AdyenEx.Management.V1.StoreAndForward do
   @moduledoc """
   Provides struct and type for a StoreAndForward
   """
 
   @type t :: %__MODULE__{
-          maxAmount: [Adyen.Management.V1.MinorUnitsMonetaryValue.t()] | nil,
+          maxAmount: [AdyenEx.Management.V1.MinorUnitsMonetaryValue.t()] | nil,
           maxPayments: integer | nil,
-          supportedCardTypes: Adyen.Management.V1.SupportedCardTypes.t() | nil
+          supportedCardTypes: AdyenEx.Management.V1.SupportedCardTypes.t() | nil
         }
 
   defstruct [:maxAmount, :maxPayments, :supportedCardTypes]
@@ -17,9 +17,9 @@ defmodule Adyen.Management.V1.StoreAndForward do
 
   def __fields__(:t) do
     [
-      maxAmount: [{Adyen.Management.V1.MinorUnitsMonetaryValue, :t}],
+      maxAmount: [{AdyenEx.Management.V1.MinorUnitsMonetaryValue, :t}],
       maxPayments: {:integer, "int32"},
-      supportedCardTypes: {Adyen.Management.V1.SupportedCardTypes, :t}
+      supportedCardTypes: {AdyenEx.Management.V1.SupportedCardTypes, :t}
     ]
   end
 end

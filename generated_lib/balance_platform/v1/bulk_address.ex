@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.BulkAddress do
+defmodule AdyenEx.BalancePlatform.V1.BulkAddress do
   @moduledoc """
   Provides struct and type for a BulkAddress
   """

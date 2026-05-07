@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TerminalActionScheduleDetail do
+defmodule AdyenEx.Management.V1.TerminalActionScheduleDetail do
   @moduledoc """
   Provides struct and type for a TerminalActionScheduleDetail
   """

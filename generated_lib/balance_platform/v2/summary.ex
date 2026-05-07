@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Summary do
+defmodule AdyenEx.BalancePlatform.V2.Summary do
   @moduledoc """
   Provides struct and type for a Summary
   """

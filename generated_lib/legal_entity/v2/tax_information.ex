@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.TaxInformation do
+defmodule AdyenEx.LegalEntity.V2.TaxInformation do
   @moduledoc """
   Provides struct and type for a TaxInformation
   """

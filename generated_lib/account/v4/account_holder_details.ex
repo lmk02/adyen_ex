@@ -1,20 +1,20 @@
-defmodule Adyen.Account.V4.AccountHolderDetails do
+defmodule AdyenEx.Account.V4.AccountHolderDetails do
   @moduledoc """
   Provides struct and type for a AccountHolderDetails
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V4.ViasAddress.t(),
-          bankAccountDetails: [Adyen.Account.V4.BankAccountDetailWrapper.t()] | nil,
-          businessDetails: Adyen.Account.V4.BusinessDetails.t() | nil,
+          address: AdyenEx.Account.V4.ViasAddress.t(),
+          bankAccountDetails: [AdyenEx.Account.V4.BankAccountDetailWrapper.t()] | nil,
+          businessDetails: AdyenEx.Account.V4.BusinessDetails.t() | nil,
           email: String.t() | nil,
           fullPhoneNumber: String.t() | nil,
-          individualDetails: Adyen.Account.V4.IndividualDetails.t() | nil,
+          individualDetails: AdyenEx.Account.V4.IndividualDetails.t() | nil,
           lastReviewDate: String.t() | nil,
           merchantCategoryCode: String.t() | nil,
           metadata: map | nil,
-          phoneNumber: Adyen.Account.V4.ViasPhoneNumber.t() | nil,
-          principalBusinessAddress: Adyen.Account.V4.ViasAddress.t() | nil,
+          phoneNumber: AdyenEx.Account.V4.ViasPhoneNumber.t() | nil,
+          principalBusinessAddress: AdyenEx.Account.V4.ViasAddress.t() | nil,
           webAddress: String.t() | nil
         }
 
@@ -39,17 +39,17 @@ defmodule Adyen.Account.V4.AccountHolderDetails do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V4.ViasAddress, :t},
-      bankAccountDetails: [{Adyen.Account.V4.BankAccountDetailWrapper, :t}],
-      businessDetails: {Adyen.Account.V4.BusinessDetails, :t},
+      address: {AdyenEx.Account.V4.ViasAddress, :t},
+      bankAccountDetails: [{AdyenEx.Account.V4.BankAccountDetailWrapper, :t}],
+      businessDetails: {AdyenEx.Account.V4.BusinessDetails, :t},
       email: :string,
       fullPhoneNumber: :string,
-      individualDetails: {Adyen.Account.V4.IndividualDetails, :t},
+      individualDetails: {AdyenEx.Account.V4.IndividualDetails, :t},
       lastReviewDate: :string,
       merchantCategoryCode: :string,
       metadata: :map,
-      phoneNumber: {Adyen.Account.V4.ViasPhoneNumber, :t},
-      principalBusinessAddress: {Adyen.Account.V4.ViasAddress, :t},
+      phoneNumber: {AdyenEx.Account.V4.ViasPhoneNumber, :t},
+      principalBusinessAddress: {AdyenEx.Account.V4.ViasAddress, :t},
       webAddress: :string
     ]
   end

@@ -1,16 +1,16 @@
-defmodule Adyen.Checkout.V68.PaymentCaptureResponse do
+defmodule AdyenEx.Checkout.V68.PaymentCaptureResponse do
   @moduledoc """
   Provides struct and type for a PaymentCaptureResponse
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V68.Amount.t(),
-          lineItems: [Adyen.Checkout.V68.LineItem.t()] | nil,
+          amount: AdyenEx.Checkout.V68.Amount.t(),
+          lineItems: [AdyenEx.Checkout.V68.LineItem.t()] | nil,
           merchantAccount: String.t(),
           paymentPspReference: String.t(),
           pspReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V68.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V68.Split.t()] | nil,
           status: String.t()
         }
 
@@ -31,13 +31,13 @@ defmodule Adyen.Checkout.V68.PaymentCaptureResponse do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V68.Amount, :t},
-      lineItems: [{Adyen.Checkout.V68.LineItem, :t}],
+      amount: {AdyenEx.Checkout.V68.Amount, :t},
+      lineItems: [{AdyenEx.Checkout.V68.LineItem, :t}],
       merchantAccount: :string,
       paymentPspReference: :string,
       pspReference: :string,
       reference: :string,
-      splits: [{Adyen.Checkout.V68.Split, :t}],
+      splits: [{AdyenEx.Checkout.V68.Split, :t}],
       status: {:const, "received"}
     ]
   end

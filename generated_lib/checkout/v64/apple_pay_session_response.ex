@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V64.ApplePaySessionResponse do
+defmodule AdyenEx.Checkout.V64.ApplePaySessionResponse do
   @moduledoc """
   Provides struct and type for a ApplePaySessionResponse
   """

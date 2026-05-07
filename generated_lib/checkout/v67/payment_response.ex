@@ -1,31 +1,31 @@
-defmodule Adyen.Checkout.V67.PaymentResponse do
+defmodule AdyenEx.Checkout.V67.PaymentResponse do
   @moduledoc """
   Provides struct and type for a PaymentResponse
   """
 
   @type t :: %__MODULE__{
           action:
-            Adyen.Checkout.V67.CheckoutAwaitAction.t()
-            | Adyen.Checkout.V67.CheckoutBankTransferAction.t()
-            | Adyen.Checkout.V67.CheckoutNativeRedirectAction.t()
-            | Adyen.Checkout.V67.CheckoutQrCodeAction.t()
-            | Adyen.Checkout.V67.CheckoutRedirectAction.t()
-            | Adyen.Checkout.V67.CheckoutSDKAction.t()
-            | Adyen.Checkout.V67.CheckoutThreeDs2Action.t()
-            | Adyen.Checkout.V67.CheckoutVoucherAction.t()
+            AdyenEx.Checkout.V67.CheckoutAwaitAction.t()
+            | AdyenEx.Checkout.V67.CheckoutBankTransferAction.t()
+            | AdyenEx.Checkout.V67.CheckoutNativeRedirectAction.t()
+            | AdyenEx.Checkout.V67.CheckoutQrCodeAction.t()
+            | AdyenEx.Checkout.V67.CheckoutRedirectAction.t()
+            | AdyenEx.Checkout.V67.CheckoutSDKAction.t()
+            | AdyenEx.Checkout.V67.CheckoutThreeDs2Action.t()
+            | AdyenEx.Checkout.V67.CheckoutVoucherAction.t()
             | nil,
           additionalData: map | nil,
-          amount: Adyen.Checkout.V67.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V67.Amount.t() | nil,
           donationToken: String.t() | nil,
-          fraudResult: Adyen.Checkout.V67.FraudResult.t() | nil,
+          fraudResult: AdyenEx.Checkout.V67.FraudResult.t() | nil,
           merchantReference: String.t() | nil,
-          order: Adyen.Checkout.V67.CheckoutOrderResponse.t() | nil,
+          order: AdyenEx.Checkout.V67.CheckoutOrderResponse.t() | nil,
           pspReference: String.t() | nil,
           refusalReason: String.t() | nil,
           refusalReasonCode: String.t() | nil,
           resultCode: String.t() | nil,
-          threeDS2ResponseData: Adyen.Checkout.V67.ThreeDs2ResponseData.t() | nil,
-          threeDS2Result: Adyen.Checkout.V67.ThreeDs2Result.t() | nil,
+          threeDS2ResponseData: AdyenEx.Checkout.V67.ThreeDs2ResponseData.t() | nil,
+          threeDS2Result: AdyenEx.Checkout.V67.ThreeDs2Result.t() | nil,
           threeDSPaymentData: String.t() | nil
         }
 
@@ -55,21 +55,21 @@ defmodule Adyen.Checkout.V67.PaymentResponse do
       action:
         {:union,
          [
-           {Adyen.Checkout.V67.CheckoutAwaitAction, :t},
-           {Adyen.Checkout.V67.CheckoutBankTransferAction, :t},
-           {Adyen.Checkout.V67.CheckoutNativeRedirectAction, :t},
-           {Adyen.Checkout.V67.CheckoutQrCodeAction, :t},
-           {Adyen.Checkout.V67.CheckoutRedirectAction, :t},
-           {Adyen.Checkout.V67.CheckoutSDKAction, :t},
-           {Adyen.Checkout.V67.CheckoutThreeDs2Action, :t},
-           {Adyen.Checkout.V67.CheckoutVoucherAction, :t}
+           {AdyenEx.Checkout.V67.CheckoutAwaitAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutBankTransferAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutNativeRedirectAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutQrCodeAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutRedirectAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutSDKAction, :t},
+           {AdyenEx.Checkout.V67.CheckoutThreeDs2Action, :t},
+           {AdyenEx.Checkout.V67.CheckoutVoucherAction, :t}
          ]},
       additionalData: :map,
-      amount: {Adyen.Checkout.V67.Amount, :t},
+      amount: {AdyenEx.Checkout.V67.Amount, :t},
       donationToken: :string,
-      fraudResult: {Adyen.Checkout.V67.FraudResult, :t},
+      fraudResult: {AdyenEx.Checkout.V67.FraudResult, :t},
       merchantReference: :string,
-      order: {Adyen.Checkout.V67.CheckoutOrderResponse, :t},
+      order: {AdyenEx.Checkout.V67.CheckoutOrderResponse, :t},
       pspReference: :string,
       refusalReason: :string,
       refusalReasonCode: :string,
@@ -91,8 +91,8 @@ defmodule Adyen.Checkout.V67.PaymentResponse do
            "Refused",
            "Success"
          ]},
-      threeDS2ResponseData: {Adyen.Checkout.V67.ThreeDs2ResponseData, :t},
-      threeDS2Result: {Adyen.Checkout.V67.ThreeDs2Result, :t},
+      threeDS2ResponseData: {AdyenEx.Checkout.V67.ThreeDs2ResponseData, :t},
+      threeDS2Result: {AdyenEx.Checkout.V67.ThreeDs2Result, :t},
       threeDSPaymentData: :string
     ]
   end

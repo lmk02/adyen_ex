@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.Lodging do
+defmodule AdyenEx.Transfer.V4.Lodging do
   @moduledoc """
   Provides struct and type for a Lodging
   """

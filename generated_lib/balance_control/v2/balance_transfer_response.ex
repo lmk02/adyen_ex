@@ -1,4 +1,4 @@
-defmodule Adyen.BalanceControl.V2.BalanceTransferResponse do
+defmodule AdyenEx.BalanceControl.V2.BalanceTransferResponse do
   @moduledoc """
   Provides struct and type for a BalanceTransferResponse
   """

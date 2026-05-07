@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V67.CheckoutSDKAction do
+defmodule AdyenEx.Checkout.V67.CheckoutSDKAction do
   @moduledoc """
   Provides struct and type for a CheckoutSDKAction
   """

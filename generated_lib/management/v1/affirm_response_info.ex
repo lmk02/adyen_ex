@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AffirmResponseInfo do
+defmodule AdyenEx.Management.V1.AffirmResponseInfo do
   @moduledoc """
   Provides struct and type for a AffirmResponseInfo
   """

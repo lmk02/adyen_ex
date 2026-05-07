@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.Geolocation do
+defmodule AdyenEx.TerminalAPI.V1.Geolocation do
   @moduledoc """
   Provides struct and type for a Geolocation
   """
 
   @type t :: %__MODULE__{
-          GeographicCoordinates: Adyen.TerminalAPI.V1.GeographicCoordinates.t() | nil,
-          UTMCoordinates: Adyen.TerminalAPI.V1.UTMCoordinates.t() | nil
+          GeographicCoordinates: AdyenEx.TerminalAPI.V1.GeographicCoordinates.t() | nil,
+          UTMCoordinates: AdyenEx.TerminalAPI.V1.UTMCoordinates.t() | nil
         }
 
   defstruct [:GeographicCoordinates, :UTMCoordinates]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.Geolocation do
 
   def __fields__(:t) do
     [
-      GeographicCoordinates: {Adyen.TerminalAPI.V1.GeographicCoordinates, :t},
-      UTMCoordinates: {Adyen.TerminalAPI.V1.UTMCoordinates, :t}
+      GeographicCoordinates: {AdyenEx.TerminalAPI.V1.GeographicCoordinates, :t},
+      UTMCoordinates: {AdyenEx.TerminalAPI.V1.UTMCoordinates, :t}
     ]
   end
 end

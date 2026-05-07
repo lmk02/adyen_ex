@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.GooglePayInfo do
+defmodule AdyenEx.Management.V3.GooglePayInfo do
   @moduledoc """
   Provides struct and type for a GooglePayInfo
   """

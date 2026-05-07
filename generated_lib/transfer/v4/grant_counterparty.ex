@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.GrantCounterparty do
+defmodule AdyenEx.Transfer.V4.GrantCounterparty do
   @moduledoc """
   Provides struct and type for a GrantCounterparty
   """

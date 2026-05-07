@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.AbortRequest do
+defmodule AdyenEx.TerminalAPI.V1.AbortRequest do
   @moduledoc """
   Provides struct and type for a AbortRequest
   """
 
   @type t :: %__MODULE__{
           AbortReason: String.t(),
-          DisplayOutput: Adyen.TerminalAPI.V1.DisplayOutput.t() | nil,
-          MessageReference: Adyen.TerminalAPI.V1.MessageReference.t()
+          DisplayOutput: AdyenEx.TerminalAPI.V1.DisplayOutput.t() | nil,
+          MessageReference: AdyenEx.TerminalAPI.V1.MessageReference.t()
         }
 
   defstruct [:AbortReason, :DisplayOutput, :MessageReference]
@@ -18,8 +18,8 @@ defmodule Adyen.TerminalAPI.V1.AbortRequest do
   def __fields__(:t) do
     [
       AbortReason: :string,
-      DisplayOutput: {Adyen.TerminalAPI.V1.DisplayOutput, :t},
-      MessageReference: {Adyen.TerminalAPI.V1.MessageReference, :t}
+      DisplayOutput: {AdyenEx.TerminalAPI.V1.DisplayOutput, :t},
+      MessageReference: {AdyenEx.TerminalAPI.V1.MessageReference, :t}
     ]
   end
 end

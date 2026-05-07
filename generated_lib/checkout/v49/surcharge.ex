@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.Surcharge do
+defmodule AdyenEx.Checkout.V49.Surcharge do
   @moduledoc """
   Provides struct and type for a Surcharge
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.NotificationConfiguration.V2.NotificationConfigurationDetailsWrapper do
+defmodule AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetailsWrapper do
   @moduledoc """
   Provides struct and type for a NotificationConfigurationDetailsWrapper
   """
 
   @type t :: %__MODULE__{
           NotificationConfigurationDetails:
-            Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails.t() | nil
+            AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails.t() | nil
         }
 
   defstruct [:NotificationConfigurationDetails]
@@ -17,7 +17,7 @@ defmodule Adyen.NotificationConfiguration.V2.NotificationConfigurationDetailsWra
   def __fields__(:t) do
     [
       NotificationConfigurationDetails:
-        {Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails, :t}
+        {AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails, :t}
     ]
   end
 end

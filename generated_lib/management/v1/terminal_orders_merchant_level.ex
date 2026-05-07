@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
+defmodule AdyenEx.Management.V1.TerminalOrdersMerchantLevel do
   @moduledoc """
   Provides API endpoints related to terminal orders merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of billing entities
@@ -23,8 +23,8 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_billing_entities(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.BillingEntitiesResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.BillingEntitiesResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_billing_entities(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:name])
@@ -32,19 +32,19 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_billing_entities},
       url: "/merchants/#{merchantId}/billingEntities",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.BillingEntitiesResponse, :t}},
+        {200, {AdyenEx.Management.V1.BillingEntitiesResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -70,8 +70,8 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_shipping_locations(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ShippingLocationsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ShippingLocationsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_shipping_locations(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :name, :offset])
@@ -79,19 +79,19 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_shipping_locations},
       url: "/merchants/#{merchantId}/shippingLocations",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ShippingLocationsResponse, :t}},
+        {200, {AdyenEx.Management.V1.ShippingLocationsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -109,26 +109,26 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
   In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).
   """
   @spec get_merchants_merchant_id_terminal_models(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.TerminalModelsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalModelsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_terminal_models(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_terminal_models},
       url: "/merchants/#{merchantId}/terminalModels",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.TerminalModelsResponse, :t}},
+        {200, {AdyenEx.Management.V1.TerminalModelsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -154,8 +154,8 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_terminal_orders(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.TerminalOrdersResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalOrdersResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_terminal_orders(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:customerOrderReference, :limit, :offset, :status])
@@ -163,19 +163,19 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_terminal_orders},
       url: "/merchants/#{merchantId}/terminalOrders",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.TerminalOrdersResponse, :t}},
+        {200, {AdyenEx.Management.V1.TerminalOrdersResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -197,26 +197,26 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
           orderId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalOrder.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_terminal_orders_order_id(merchantId, orderId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, orderId: orderId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_terminal_orders_order_id},
       url: "/merchants/#{merchantId}/terminalOrders/#{orderId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.TerminalOrder, :t}},
+        {200, {AdyenEx.Management.V1.TerminalOrder, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -242,8 +242,8 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_terminal_products(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.TerminalProductsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalProductsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_terminal_products(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:country, :limit, :offset, :terminalModelId])
@@ -251,19 +251,19 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :get_merchants_merchant_id_terminal_products},
       url: "/merchants/#{merchantId}/terminalProducts",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.TerminalProductsResponse, :t}},
+        {200, {AdyenEx.Management.V1.TerminalProductsResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -291,31 +291,31 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
   @spec patch_merchants_merchant_id_terminal_orders_order_id(
           merchantId :: String.t(),
           orderId :: String.t(),
-          body :: Adyen.Management.V1.TerminalOrderRequest.t(),
+          body :: AdyenEx.Management.V1.TerminalOrderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalOrder.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_merchants_merchant_id_terminal_orders_order_id(merchantId, orderId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, orderId: orderId, body: body],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :patch_merchants_merchant_id_terminal_orders_order_id},
       url: "/merchants/#{merchantId}/terminalOrders/#{orderId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V1.TerminalOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.TerminalOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.TerminalOrder, :t}},
+        {200, {AdyenEx.Management.V1.TerminalOrder, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -337,31 +337,31 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
   """
   @spec post_merchants_merchant_id_shipping_locations(
           merchantId :: String.t(),
-          body :: Adyen.Management.V1.ShippingLocation.t(),
+          body :: AdyenEx.Management.V1.ShippingLocation.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.ShippingLocation.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ShippingLocation.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_shipping_locations(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :post_merchants_merchant_id_shipping_locations},
       url: "/merchants/#{merchantId}/shippingLocations",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.ShippingLocation, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.ShippingLocation, :t}}],
       response: [
-        {200, {Adyen.Management.V1.ShippingLocation, :t}},
+        {200, {AdyenEx.Management.V1.ShippingLocation, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -384,31 +384,31 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
   """
   @spec post_merchants_merchant_id_terminal_orders(
           merchantId :: String.t(),
-          body :: Adyen.Management.V1.TerminalOrderRequest.t(),
+          body :: AdyenEx.Management.V1.TerminalOrderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalOrder.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_terminal_orders(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :post_merchants_merchant_id_terminal_orders},
       url: "/merchants/#{merchantId}/terminalOrders",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.TerminalOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.TerminalOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.TerminalOrder, :t}},
+        {200, {AdyenEx.Management.V1.TerminalOrder, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -431,26 +431,26 @@ defmodule Adyen.Management.V1.TerminalOrdersMerchantLevel do
           orderId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TerminalOrder.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TerminalOrder.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_terminal_orders_order_id_cancel(merchantId, orderId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, orderId: orderId],
       call:
-        {Adyen.Management.V1.TerminalOrdersMerchantLevel,
+        {AdyenEx.Management.V1.TerminalOrdersMerchantLevel,
          :post_merchants_merchant_id_terminal_orders_order_id_cancel},
       url: "/merchants/#{merchantId}/terminalOrders/#{orderId}/cancel",
       method: :post,
       response: [
-        {200, {Adyen.Management.V1.TerminalOrder, :t}},
+        {200, {AdyenEx.Management.V1.TerminalOrder, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

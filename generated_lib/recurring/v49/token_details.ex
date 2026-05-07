@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V49.TokenDetails do
+defmodule AdyenEx.Recurring.V49.TokenDetails do
   @moduledoc """
   Provides struct and type for a TokenDetails
   """

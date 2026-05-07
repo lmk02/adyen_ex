@@ -1,14 +1,14 @@
-defmodule Adyen.Checkout.V72.DonationCampaign do
+defmodule AdyenEx.Checkout.V72.DonationCampaign do
   @moduledoc """
   Provides struct and type for a DonationCampaign
   """
 
   @type t :: %__MODULE__{
-          amounts: Adyen.Checkout.V72.Amounts.t() | nil,
+          amounts: AdyenEx.Checkout.V72.Amounts.t() | nil,
           bannerUrl: String.t() | nil,
           campaignName: String.t() | nil,
           causeName: String.t() | nil,
-          donation: Adyen.Checkout.V72.Donation.t() | nil,
+          donation: AdyenEx.Checkout.V72.Donation.t() | nil,
           id: String.t() | nil,
           logoUrl: String.t() | nil,
           nonprofitDescription: String.t() | nil,
@@ -37,11 +37,11 @@ defmodule Adyen.Checkout.V72.DonationCampaign do
 
   def __fields__(:t) do
     [
-      amounts: {Adyen.Checkout.V72.Amounts, :t},
+      amounts: {AdyenEx.Checkout.V72.Amounts, :t},
       bannerUrl: :string,
       campaignName: :string,
       causeName: :string,
-      donation: {Adyen.Checkout.V72.Donation, :t},
+      donation: {AdyenEx.Checkout.V72.Donation, :t},
       id: :string,
       logoUrl: :string,
       nonprofitDescription: :string,

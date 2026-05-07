@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.Provider do
+defmodule AdyenEx.OpenBanking.V1.Provider do
   @moduledoc """
   Provides struct and type for a Provider
   """

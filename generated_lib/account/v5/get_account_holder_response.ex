@@ -1,22 +1,22 @@
-defmodule Adyen.Account.V5.GetAccountHolderResponse do
+defmodule AdyenEx.Account.V5.GetAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a GetAccountHolderResponse
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t() | nil,
-          accountHolderDetails: Adyen.Account.V5.AccountHolderDetails.t() | nil,
-          accountHolderStatus: Adyen.Account.V5.AccountHolderStatus.t() | nil,
-          accounts: [Adyen.Account.V5.Account.t()] | nil,
+          accountHolderDetails: AdyenEx.Account.V5.AccountHolderDetails.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V5.AccountHolderStatus.t() | nil,
+          accounts: [AdyenEx.Account.V5.Account.t()] | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V5.ErrorFieldType.t()] | nil,
           legalEntity: String.t() | nil,
-          migrationData: Adyen.Account.V5.MigrationData.t() | nil,
+          migrationData: AdyenEx.Account.V5.MigrationData.t() | nil,
           primaryCurrency: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           systemUpToDateTime: DateTime.t() | nil,
-          verification: Adyen.Account.V5.KYCVerificationResult.t() | nil
+          verification: AdyenEx.Account.V5.KYCVerificationResult.t() | nil
         }
 
   defstruct [
@@ -42,18 +42,18 @@ defmodule Adyen.Account.V5.GetAccountHolderResponse do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V5.AccountHolderDetails, :t},
-      accountHolderStatus: {Adyen.Account.V5.AccountHolderStatus, :t},
-      accounts: [{Adyen.Account.V5.Account, :t}],
+      accountHolderDetails: {AdyenEx.Account.V5.AccountHolderDetails, :t},
+      accountHolderStatus: {AdyenEx.Account.V5.AccountHolderStatus, :t},
+      accounts: [{AdyenEx.Account.V5.Account, :t}],
       description: :string,
-      invalidFields: [{Adyen.Account.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V5.ErrorFieldType, :t}],
       legalEntity: {:enum, ["Business", "Individual", "NonProfit"]},
-      migrationData: {Adyen.Account.V5.MigrationData, :t},
+      migrationData: {AdyenEx.Account.V5.MigrationData, :t},
       primaryCurrency: :string,
       pspReference: :string,
       resultCode: :string,
       systemUpToDateTime: {:string, "date-time"},
-      verification: {Adyen.Account.V5.KYCVerificationResult, :t}
+      verification: {AdyenEx.Account.V5.KYCVerificationResult, :t}
     ]
   end
 end

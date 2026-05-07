@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.TerminalConnectivityCellular do
+defmodule AdyenEx.Management.V3.TerminalConnectivityCellular do
   @moduledoc """
   Provides struct and type for a TerminalConnectivityCellular
   """

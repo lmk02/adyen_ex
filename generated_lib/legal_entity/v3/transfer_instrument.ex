@@ -1,15 +1,15 @@
-defmodule Adyen.LegalEntity.V3.TransferInstrument do
+defmodule AdyenEx.LegalEntity.V3.TransferInstrument do
   @moduledoc """
   Provides struct and type for a TransferInstrument
   """
 
   @type t :: %__MODULE__{
-          bankAccount: Adyen.LegalEntity.V3.BankAccountInfo.t(),
+          bankAccount: AdyenEx.LegalEntity.V3.BankAccountInfo.t(),
           capabilities: map | nil,
-          documentDetails: [Adyen.LegalEntity.V3.DocumentReference.t()] | nil,
+          documentDetails: [AdyenEx.LegalEntity.V3.DocumentReference.t()] | nil,
           id: String.t(),
           legalEntityId: String.t(),
-          problems: [Adyen.LegalEntity.V3.CapabilityProblem.t()] | nil,
+          problems: [AdyenEx.LegalEntity.V3.CapabilityProblem.t()] | nil,
           type: String.t()
         }
 
@@ -21,12 +21,12 @@ defmodule Adyen.LegalEntity.V3.TransferInstrument do
 
   def __fields__(:t) do
     [
-      bankAccount: {Adyen.LegalEntity.V3.BankAccountInfo, :t},
+      bankAccount: {AdyenEx.LegalEntity.V3.BankAccountInfo, :t},
       capabilities: :map,
-      documentDetails: [{Adyen.LegalEntity.V3.DocumentReference, :t}],
+      documentDetails: [{AdyenEx.LegalEntity.V3.DocumentReference, :t}],
       id: :string,
       legalEntityId: :string,
-      problems: [{Adyen.LegalEntity.V3.CapabilityProblem, :t}],
+      problems: [{AdyenEx.LegalEntity.V3.CapabilityProblem, :t}],
       type: {:enum, ["bankAccount", "recurringDetail"]}
     ]
   end

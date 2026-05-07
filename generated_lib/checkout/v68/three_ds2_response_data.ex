@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.ThreeDs2ResponseData do
+defmodule AdyenEx.Checkout.V68.ThreeDs2ResponseData do
   @moduledoc """
   Provides struct and type for a ThreeDs2ResponseData
   """

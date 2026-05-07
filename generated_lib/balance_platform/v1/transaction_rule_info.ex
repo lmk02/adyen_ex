@@ -1,16 +1,16 @@
-defmodule Adyen.BalancePlatform.V1.TransactionRuleInfo do
+defmodule AdyenEx.BalancePlatform.V1.TransactionRuleInfo do
   @moduledoc """
   Provides struct and type for a TransactionRuleInfo
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.BalancePlatform.V1.Amount.t() | nil,
+          amount: AdyenEx.BalancePlatform.V1.Amount.t() | nil,
           balancePlatformId: String.t() | nil,
           countries: [String.t()] | nil,
           description: String.t(),
           endDate: String.t() | nil,
           entryModes: [String.t()] | nil,
-          interval: Adyen.BalancePlatform.V1.TransactionRuleInterval.t(),
+          interval: AdyenEx.BalancePlatform.V1.TransactionRuleInterval.t(),
           maxTransactions: integer | nil,
           mccs: [String.t()] | nil,
           paymentInstrumentGroupId: String.t() | nil,
@@ -47,7 +47,7 @@ defmodule Adyen.BalancePlatform.V1.TransactionRuleInfo do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.BalancePlatform.V1.Amount, :t},
+      amount: {AdyenEx.BalancePlatform.V1.Amount, :t},
       balancePlatformId: :string,
       countries: [:string],
       description: :string,
@@ -65,7 +65,7 @@ defmodule Adyen.BalancePlatform.V1.TransactionRuleInfo do
           "unknown"
         ]
       ],
-      interval: {Adyen.BalancePlatform.V1.TransactionRuleInterval, :t},
+      interval: {AdyenEx.BalancePlatform.V1.TransactionRuleInterval, :t},
       maxTransactions: {:integer, "int32"},
       mccs: [:string],
       paymentInstrumentGroupId: :string,

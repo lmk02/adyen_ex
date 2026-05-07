@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.HostStatus do
+defmodule AdyenEx.TerminalAPI.V1.HostStatus do
   @moduledoc """
   Provides struct and type for a HostStatus
   """

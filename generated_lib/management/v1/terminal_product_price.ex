@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TerminalProductPrice do
+defmodule AdyenEx.Management.V1.TerminalProductPrice do
   @moduledoc """
   Provides struct and type for a TerminalProductPrice
   """

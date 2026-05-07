@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.CardAcquisitionTransaction do
+defmodule AdyenEx.TerminalAPI.V1.CardAcquisitionTransaction do
   @moduledoc """
   Provides struct and type for a CardAcquisitionTransaction
   """

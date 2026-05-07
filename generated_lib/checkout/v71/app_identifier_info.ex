@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.AppIdentifierInfo do
+defmodule AdyenEx.Checkout.V71.AppIdentifierInfo do
   @moduledoc """
   Provides struct and type for a AppIdentifierInfo
   """

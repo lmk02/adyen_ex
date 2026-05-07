@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.LinksElement do
+defmodule AdyenEx.Management.V1.LinksElement do
   @moduledoc """
   Provides struct and type for a LinksElement
   """

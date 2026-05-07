@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.AffirmDetails do
+defmodule AdyenEx.Checkout.V72.AffirmDetails do
   @moduledoc """
   Provides struct and type for a AffirmDetails
   """

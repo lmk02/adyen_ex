@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TwintInfo do
+defmodule AdyenEx.Management.V1.TwintInfo do
   @moduledoc """
   Provides struct and type for a TwintInfo
   """

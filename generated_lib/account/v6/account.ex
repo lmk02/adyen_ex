@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.Account do
+defmodule AdyenEx.Account.V6.Account do
   @moduledoc """
   Provides struct and type for a Account
   """
@@ -11,7 +11,7 @@ defmodule Adyen.Account.V6.Account do
           description: String.t() | nil,
           metadata: map | nil,
           payoutMethodCode: String.t() | nil,
-          payoutSchedule: Adyen.Account.V6.PayoutScheduleResponse.t() | nil,
+          payoutSchedule: AdyenEx.Account.V6.PayoutScheduleResponse.t() | nil,
           payoutSpeed: String.t() | nil,
           status: String.t() | nil
         }
@@ -42,7 +42,7 @@ defmodule Adyen.Account.V6.Account do
       description: :string,
       metadata: :map,
       payoutMethodCode: :string,
-      payoutSchedule: {Adyen.Account.V6.PayoutScheduleResponse, :t},
+      payoutSchedule: {AdyenEx.Account.V6.PayoutScheduleResponse, :t},
       payoutSpeed: {:enum, ["INSTANT", "SAME_DAY", "STANDARD"]},
       status: :string
     ]

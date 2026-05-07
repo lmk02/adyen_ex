@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.AndroidPayDetails do
+defmodule AdyenEx.Checkout.V50.AndroidPayDetails do
   @moduledoc """
   Provides struct and type for a AndroidPayDetails
   """

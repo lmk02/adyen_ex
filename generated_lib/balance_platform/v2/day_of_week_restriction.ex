@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.DayOfWeekRestriction do
+defmodule AdyenEx.BalancePlatform.V2.DayOfWeekRestriction do
   @moduledoc """
   Provides struct and type for a DayOfWeekRestriction
   """

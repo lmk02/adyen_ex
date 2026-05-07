@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.PaymentInstrument do
+defmodule AdyenEx.Transfer.V4.PaymentInstrument do
   @moduledoc """
   Provides struct and type for a PaymentInstrument
   """

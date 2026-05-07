@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.Ticket do
+defmodule AdyenEx.Checkout.V70.Ticket do
   @moduledoc """
   Provides struct and type for a Ticket
   """

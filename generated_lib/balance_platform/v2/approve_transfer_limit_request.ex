@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.ApproveTransferLimitRequest do
+defmodule AdyenEx.BalancePlatform.V2.ApproveTransferLimitRequest do
   @moduledoc """
   Provides struct and type for a ApproveTransferLimitRequest
   """

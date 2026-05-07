@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.ApproveAssociationRequest do
+defmodule AdyenEx.BalancePlatform.V2.ApproveAssociationRequest do
   @moduledoc """
   Provides struct and type for a ApproveAssociationRequest
   """

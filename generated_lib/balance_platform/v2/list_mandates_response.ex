@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.ListMandatesResponse do
+defmodule AdyenEx.BalancePlatform.V2.ListMandatesResponse do
   @moduledoc """
   Provides struct and type for a ListMandatesResponse
   """
 
   @type t :: %__MODULE__{
-          link: Adyen.BalancePlatform.V2.Link.t(),
-          mandates: [Adyen.BalancePlatform.V2.Mandate.t()]
+          link: AdyenEx.BalancePlatform.V2.Link.t(),
+          mandates: [AdyenEx.BalancePlatform.V2.Mandate.t()]
         }
 
   defstruct [:link, :mandates]
@@ -16,8 +16,8 @@ defmodule Adyen.BalancePlatform.V2.ListMandatesResponse do
 
   def __fields__(:t) do
     [
-      link: {Adyen.BalancePlatform.V2.Link, :t},
-      mandates: [{Adyen.BalancePlatform.V2.Mandate, :t}]
+      link: {AdyenEx.BalancePlatform.V2.Link, :t},
+      mandates: [{AdyenEx.BalancePlatform.V2.Mandate, :t}]
     ]
   end
 end

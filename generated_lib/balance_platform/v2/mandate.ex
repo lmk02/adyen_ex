@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.Mandate do
+defmodule AdyenEx.BalancePlatform.V2.Mandate do
   @moduledoc """
   Provides struct and type for a Mandate
   """
 
   @type t :: %__MODULE__{
           balanceAccountId: String.t() | nil,
-          counterparty: Adyen.BalancePlatform.V2.MandateBankAccount.t() | nil,
+          counterparty: AdyenEx.BalancePlatform.V2.MandateBankAccount.t() | nil,
           createdAt: DateTime.t() | nil,
           id: String.t() | nil,
           paymentInstrumentId: String.t() | nil,
@@ -32,7 +32,7 @@ defmodule Adyen.BalancePlatform.V2.Mandate do
   def __fields__(:t) do
     [
       balanceAccountId: :string,
-      counterparty: {Adyen.BalancePlatform.V2.MandateBankAccount, :t},
+      counterparty: {AdyenEx.BalancePlatform.V2.MandateBankAccount, :t},
       createdAt: {:string, "date-time"},
       id: :string,
       paymentInstrumentId: :string,

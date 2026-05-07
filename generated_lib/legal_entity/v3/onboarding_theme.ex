@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.OnboardingTheme do
+defmodule AdyenEx.LegalEntity.V3.OnboardingTheme do
   @moduledoc """
   Provides struct and type for a OnboardingTheme
   """

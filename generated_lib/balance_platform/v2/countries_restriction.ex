@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CountriesRestriction do
+defmodule AdyenEx.BalancePlatform.V2.CountriesRestriction do
   @moduledoc """
   Provides struct and type for a CountriesRestriction
   """

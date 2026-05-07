@@ -1,9 +1,9 @@
-defmodule Adyen.SessionAuthentication.V1.SessionAuthentication do
+defmodule AdyenEx.SessionAuthentication.V1.SessionAuthentication do
   @moduledoc """
   Provides API endpoint related to session authentication
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create a session token
@@ -20,28 +20,28 @@ defmodule Adyen.SessionAuthentication.V1.SessionAuthentication do
   **Content Types**: `application/json`
   """
   @spec post_sessions(
-          body :: Adyen.SessionAuthentication.V1.AuthenticationSessionRequest.t(),
+          body :: AdyenEx.SessionAuthentication.V1.AuthenticationSessionRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.SessionAuthentication.V1.AuthenticationSessionResponse.t()}
-          | {:error, Adyen.SessionAuthentication.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.SessionAuthentication.V1.AuthenticationSessionResponse.t()}
+          | {:error, AdyenEx.SessionAuthentication.V1.DefaultErrorResponseEntity.t()}
   def post_sessions(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.SessionAuthentication.V1.SessionAuthentication, :post_sessions},
+      call: {AdyenEx.SessionAuthentication.V1.SessionAuthentication, :post_sessions},
       url: "/sessions",
       body: body,
       method: :post,
       request: [
-        {"application/json", {Adyen.SessionAuthentication.V1.AuthenticationSessionRequest, :t}}
+        {"application/json", {AdyenEx.SessionAuthentication.V1.AuthenticationSessionRequest, :t}}
       ],
       response: [
-        {200, {Adyen.SessionAuthentication.V1.AuthenticationSessionResponse, :t}},
-        {400, {Adyen.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.SessionAuthentication.V1.AuthenticationSessionResponse, :t}},
+        {400, {AdyenEx.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.SessionAuthentication.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

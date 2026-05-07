@@ -1,11 +1,11 @@
-defmodule Adyen.BalancePlatform.V2.MandateBankAccount do
+defmodule AdyenEx.BalancePlatform.V2.MandateBankAccount do
   @moduledoc """
   Provides struct and type for a MandateBankAccount
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.BalancePlatform.V2.MandatePartyIdentification.t(),
-          accountIdentification: Adyen.BalancePlatform.V2.MandateAccountIdentification.t()
+          accountHolder: AdyenEx.BalancePlatform.V2.MandatePartyIdentification.t(),
+          accountIdentification: AdyenEx.BalancePlatform.V2.MandateAccountIdentification.t()
         }
 
   defstruct [:accountHolder, :accountIdentification]
@@ -16,8 +16,8 @@ defmodule Adyen.BalancePlatform.V2.MandateBankAccount do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.BalancePlatform.V2.MandatePartyIdentification, :t},
-      accountIdentification: {Adyen.BalancePlatform.V2.MandateAccountIdentification, :t}
+      accountHolder: {AdyenEx.BalancePlatform.V2.MandatePartyIdentification, :t},
+      accountIdentification: {AdyenEx.BalancePlatform.V2.MandateAccountIdentification, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V64.CheckoutForwardResponseFromUrl do
+defmodule AdyenEx.Checkout.V64.CheckoutForwardResponseFromUrl do
   @moduledoc """
   Provides struct and type for a CheckoutForwardResponseFromUrl
   """

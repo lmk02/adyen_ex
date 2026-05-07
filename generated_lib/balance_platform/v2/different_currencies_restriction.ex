@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.DifferentCurrenciesRestriction do
+defmodule AdyenEx.BalancePlatform.V2.DifferentCurrenciesRestriction do
   @moduledoc """
   Provides struct and type for a DifferentCurrenciesRestriction
   """

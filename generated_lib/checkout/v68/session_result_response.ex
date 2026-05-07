@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.SessionResultResponse do
+defmodule AdyenEx.Checkout.V68.SessionResultResponse do
   @moduledoc """
   Provides struct and type for a SessionResultResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Checkout.V68.SessionResultResponse do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           id: String.t() | nil,
-          payments: [Adyen.Checkout.V68.Payment.t()] | nil,
+          payments: [AdyenEx.Checkout.V68.Payment.t()] | nil,
           reference: String.t() | nil,
           status: String.t() | nil
         }
@@ -21,7 +21,7 @@ defmodule Adyen.Checkout.V68.SessionResultResponse do
     [
       additionalData: :map,
       id: :string,
-      payments: [{Adyen.Checkout.V68.Payment, :t}],
+      payments: [{AdyenEx.Checkout.V68.Payment, :t}],
       reference: :string,
       status: {:enum, ["active", "canceled", "completed", "expired", "paymentPending", "refused"]}
     ]

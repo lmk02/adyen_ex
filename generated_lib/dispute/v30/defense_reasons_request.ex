@@ -1,4 +1,4 @@
-defmodule Adyen.Dispute.V30.DefenseReasonsRequest do
+defmodule AdyenEx.Dispute.V30.DefenseReasonsRequest do
   @moduledoc """
   Provides struct and type for a DefenseReasonsRequest
   """

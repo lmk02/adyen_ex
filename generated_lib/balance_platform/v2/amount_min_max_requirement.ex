@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AmountMinMaxRequirement do
+defmodule AdyenEx.BalancePlatform.V2.AmountMinMaxRequirement do
   @moduledoc """
   Provides struct and type for a AmountMinMaxRequirement
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V68.Orders do
+defmodule AdyenEx.Checkout.V68.Orders do
   @moduledoc """
   Provides API endpoints related to orders
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create an order
@@ -14,26 +14,26 @@ defmodule Adyen.Checkout.V68.Orders do
 
   **Content Types**: `application/json`
   """
-  @spec post_orders(body :: Adyen.Checkout.V68.CreateOrderRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V68.CreateOrderResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+  @spec post_orders(body :: AdyenEx.Checkout.V68.CreateOrderRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V68.CreateOrderResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_orders(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Orders, :post_orders},
+      call: {AdyenEx.Checkout.V68.Orders, :post_orders},
       url: "/orders",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.CreateOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.CreateOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.CreateOrderResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.CreateOrderResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -48,26 +48,26 @@ defmodule Adyen.Checkout.V68.Orders do
 
   **Content Types**: `application/json`
   """
-  @spec post_orders_cancel(body :: Adyen.Checkout.V68.CancelOrderRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Checkout.V68.CancelOrderResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+  @spec post_orders_cancel(body :: AdyenEx.Checkout.V68.CancelOrderRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Checkout.V68.CancelOrderResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_orders_cancel(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Orders, :post_orders_cancel},
+      call: {AdyenEx.Checkout.V68.Orders, :post_orders_cancel},
       url: "/orders/cancel",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.CancelOrderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.CancelOrderRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.CancelOrderResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.CancelOrderResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -83,28 +83,28 @@ defmodule Adyen.Checkout.V68.Orders do
   **Content Types**: `application/json`
   """
   @spec post_payment_methods_balance(
-          body :: Adyen.Checkout.V68.BalanceCheckRequest.t(),
+          body :: AdyenEx.Checkout.V68.BalanceCheckRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V68.BalanceCheckResponse.t()}
-          | {:error, Adyen.Checkout.V68.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V68.BalanceCheckResponse.t()}
+          | {:error, AdyenEx.Checkout.V68.ServiceError.t()}
   def post_payment_methods_balance(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V68.Orders, :post_payment_methods_balance},
+      call: {AdyenEx.Checkout.V68.Orders, :post_payment_methods_balance},
       url: "/paymentMethods/balance",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V68.BalanceCheckRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V68.BalanceCheckRequest, :t}}],
       response: [
-        {200, {Adyen.Checkout.V68.BalanceCheckResponse, :t}},
-        {400, {Adyen.Checkout.V68.ServiceError, :t}},
-        {401, {Adyen.Checkout.V68.ServiceError, :t}},
-        {403, {Adyen.Checkout.V68.ServiceError, :t}},
-        {422, {Adyen.Checkout.V68.ServiceError, :t}},
-        {500, {Adyen.Checkout.V68.ServiceError, :t}}
+        {200, {AdyenEx.Checkout.V68.BalanceCheckResponse, :t}},
+        {400, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V68.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V68.ServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V54.BinDetail do
+defmodule AdyenEx.BinLookup.V54.BinDetail do
   @moduledoc """
   Provides struct and type for a BinDetail
   """

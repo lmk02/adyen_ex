@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AssociationFinaliseResponse do
+defmodule AdyenEx.BalancePlatform.V2.AssociationFinaliseResponse do
   @moduledoc """
   Provides struct and type for a AssociationFinaliseResponse
   """

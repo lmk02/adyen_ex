@@ -1,11 +1,11 @@
-defmodule Adyen.StoredValue.V46.StoredValueLoadResponse do
+defmodule AdyenEx.StoredValue.V46.StoredValueLoadResponse do
   @moduledoc """
   Provides struct and type for a StoredValueLoadResponse
   """
 
   @type t :: %__MODULE__{
           authCode: String.t() | nil,
-          currentBalance: Adyen.StoredValue.V46.Amount.t() | nil,
+          currentBalance: AdyenEx.StoredValue.V46.Amount.t() | nil,
           pspReference: String.t() | nil,
           refusalReason: String.t() | nil,
           resultCode: String.t() | nil,
@@ -28,7 +28,7 @@ defmodule Adyen.StoredValue.V46.StoredValueLoadResponse do
   def __fields__(:t) do
     [
       authCode: :string,
-      currentBalance: {Adyen.StoredValue.V46.Amount, :t},
+      currentBalance: {AdyenEx.StoredValue.V46.Amount, :t},
       pspReference: :string,
       refusalReason: :string,
       resultCode: {:enum, ["Success", "Refused", "Error", "NotEnoughBalance"]},

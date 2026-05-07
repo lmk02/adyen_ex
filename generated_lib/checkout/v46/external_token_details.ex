@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V46.ExternalTokenDetails do
+defmodule AdyenEx.Checkout.V46.ExternalTokenDetails do
   @moduledoc """
   Provides struct and type for a ExternalTokenDetails
   """

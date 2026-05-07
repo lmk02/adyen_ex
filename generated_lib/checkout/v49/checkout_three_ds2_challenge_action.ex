@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.CheckoutThreeDs2ChallengeAction do
+defmodule AdyenEx.Checkout.V49.CheckoutThreeDs2ChallengeAction do
   @moduledoc """
   Provides struct and type for a CheckoutThreeDs2ChallengeAction
   """

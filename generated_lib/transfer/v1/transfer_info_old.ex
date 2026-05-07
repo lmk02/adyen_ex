@@ -1,14 +1,14 @@
-defmodule Adyen.Transfer.V1.TransferInfoOld do
+defmodule AdyenEx.Transfer.V1.TransferInfoOld do
   @moduledoc """
   Provides struct and type for a TransferInfoOld
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Transfer.V1.Amount.t(),
+          amount: AdyenEx.Transfer.V1.Amount.t(),
           description: String.t() | nil,
-          destination: Adyen.Transfer.V1.PartyIdentification.t(),
+          destination: AdyenEx.Transfer.V1.PartyIdentification.t(),
           reference: String.t() | nil,
-          source: Adyen.Transfer.V1.InternalPartyIdentification.t()
+          source: AdyenEx.Transfer.V1.InternalPartyIdentification.t()
         }
 
   defstruct [:amount, :description, :destination, :reference, :source]
@@ -19,11 +19,11 @@ defmodule Adyen.Transfer.V1.TransferInfoOld do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Transfer.V1.Amount, :t},
+      amount: {AdyenEx.Transfer.V1.Amount, :t},
       description: :string,
-      destination: {Adyen.Transfer.V1.PartyIdentification, :t},
+      destination: {AdyenEx.Transfer.V1.PartyIdentification, :t},
       reference: :string,
-      source: {Adyen.Transfer.V1.InternalPartyIdentification, :t}
+      source: {AdyenEx.Transfer.V1.InternalPartyIdentification, :t}
     ]
   end
 end

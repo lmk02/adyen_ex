@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PaymentReceipt do
+defmodule AdyenEx.TerminalAPI.V1.PaymentReceipt do
   @moduledoc """
   Provides struct and type for a PaymentReceipt
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TerminalAPI.V1.PaymentReceipt do
   @type t :: %__MODULE__{
           DocumentQualifier: String.t(),
           IntegratedPrintFlag: boolean | nil,
-          OutputContent: Adyen.TerminalAPI.V1.OutputContent.t(),
+          OutputContent: AdyenEx.TerminalAPI.V1.OutputContent.t(),
           RequiredSignatureFlag: boolean | nil
         }
 
@@ -22,7 +22,7 @@ defmodule Adyen.TerminalAPI.V1.PaymentReceipt do
         {:enum,
          ["CashierReceipt", "CustomerReceipt", "Document", "Journal", "SaleReceipt", "Voucher"]},
       IntegratedPrintFlag: :boolean,
-      OutputContent: {Adyen.TerminalAPI.V1.OutputContent, :t},
+      OutputContent: {AdyenEx.TerminalAPI.V1.OutputContent, :t},
       RequiredSignatureFlag: :boolean
     ]
   end

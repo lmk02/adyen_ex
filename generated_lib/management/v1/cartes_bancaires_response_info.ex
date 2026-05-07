@@ -1,11 +1,12 @@
-defmodule Adyen.Management.V1.CartesBancairesResponseInfo do
+defmodule AdyenEx.Management.V1.CartesBancairesResponseInfo do
   @moduledoc """
   Provides struct and type for a CartesBancairesResponseInfo
   """
 
   @type t :: %__MODULE__{
           siret: String.t() | nil,
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:siret, :transactionDescription]
@@ -17,7 +18,7 @@ defmodule Adyen.Management.V1.CartesBancairesResponseInfo do
   def __fields__(:t) do
     [
       siret: :string,
-      transactionDescription: {Adyen.Management.V1.TransactionDescriptionResponseInfo, :t}
+      transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionResponseInfo, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.SoftPOSConfiguration.V3.SubMerchantData do
+defmodule AdyenEx.SoftPOSConfiguration.V3.SubMerchantData do
   @moduledoc """
   Provides struct and type for a SubMerchantData
   """

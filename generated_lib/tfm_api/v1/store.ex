@@ -1,10 +1,10 @@
-defmodule Adyen.TfmAPI.V1.Store do
+defmodule AdyenEx.TfmAPI.V1.Store do
   @moduledoc """
   Provides struct and type for a Store
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.TfmAPI.V1.Address.t() | nil,
+          address: AdyenEx.TfmAPI.V1.Address.t() | nil,
           description: String.t() | nil,
           inStoreTerminals: [String.t()] | nil,
           merchantAccountCode: String.t() | nil,
@@ -20,7 +20,7 @@ defmodule Adyen.TfmAPI.V1.Store do
 
   def __fields__(:t) do
     [
-      address: {Adyen.TfmAPI.V1.Address, :t},
+      address: {AdyenEx.TfmAPI.V1.Address, :t},
       description: :string,
       inStoreTerminals: [:string],
       merchantAccountCode: :string,

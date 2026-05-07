@@ -1,12 +1,12 @@
-defmodule Adyen.Checkout.V46.FundOrigin do
+defmodule AdyenEx.Checkout.V46.FundOrigin do
   @moduledoc """
   Provides struct and type for a FundOrigin
   """
 
   @type t :: %__MODULE__{
-          billingAddress: Adyen.Checkout.V46.Address.t() | nil,
+          billingAddress: AdyenEx.Checkout.V46.Address.t() | nil,
           shopperEmail: String.t() | nil,
-          shopperName: Adyen.Checkout.V46.Name.t() | nil,
+          shopperName: AdyenEx.Checkout.V46.Name.t() | nil,
           telephoneNumber: String.t() | nil,
           walletIdentifier: String.t() | nil
         }
@@ -19,9 +19,9 @@ defmodule Adyen.Checkout.V46.FundOrigin do
 
   def __fields__(:t) do
     [
-      billingAddress: {Adyen.Checkout.V46.Address, :t},
+      billingAddress: {AdyenEx.Checkout.V46.Address, :t},
       shopperEmail: :string,
-      shopperName: {Adyen.Checkout.V46.Name, :t},
+      shopperName: {AdyenEx.Checkout.V46.Name, :t},
       telephoneNumber: :string,
       walletIdentifier: :string
     ]

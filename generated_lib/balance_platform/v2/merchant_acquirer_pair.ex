@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MerchantAcquirerPair do
+defmodule AdyenEx.BalancePlatform.V2.MerchantAcquirerPair do
   @moduledoc """
   Provides struct and type for a MerchantAcquirerPair
   """

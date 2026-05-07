@@ -1,9 +1,9 @@
-defmodule Adyen.Transfer.V3.Transactions do
+defmodule AdyenEx.Transfer.V3.Transactions do
   @moduledoc """
   Provides API endpoints related to transactions
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get all transactions
@@ -56,8 +56,8 @@ defmodule Adyen.Transfer.V3.Transactions do
 
   """
   @spec get_transactions(opts :: keyword) ::
-          {:ok, Adyen.Transfer.V3.TransactionSearchResponse.t()}
-          | {:error, Adyen.Transfer.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Transfer.V3.TransactionSearchResponse.t()}
+          | {:error, AdyenEx.Transfer.V3.RestServiceError.t()}
   def get_transactions(opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -76,16 +76,16 @@ defmodule Adyen.Transfer.V3.Transactions do
 
     client.request(%{
       args: [],
-      call: {Adyen.Transfer.V3.Transactions, :get_transactions},
+      call: {AdyenEx.Transfer.V3.Transactions, :get_transactions},
       url: "/transactions",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Transfer.V3.TransactionSearchResponse, :t}},
-        {401, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {403, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {422, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {500, {Adyen.Transfer.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V3.TransactionSearchResponse, :t}},
+        {401, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -99,22 +99,22 @@ defmodule Adyen.Transfer.V3.Transactions do
   Returns a transaction.
   """
   @spec get_transactions_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Transfer.V3.Transaction.t()}
-          | {:error, Adyen.Transfer.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Transfer.V3.Transaction.t()}
+          | {:error, AdyenEx.Transfer.V3.RestServiceError.t()}
   def get_transactions_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.Transfer.V3.Transactions, :get_transactions_id},
+      call: {AdyenEx.Transfer.V3.Transactions, :get_transactions_id},
       url: "/transactions/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.Transfer.V3.Transaction, :t}},
-        {401, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {403, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {422, {Adyen.Transfer.V3.RestServiceError, :t}},
-        {500, {Adyen.Transfer.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Transfer.V3.Transaction, :t}},
+        {401, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Transfer.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Transfer.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

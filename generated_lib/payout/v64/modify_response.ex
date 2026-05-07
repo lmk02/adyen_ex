@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V64.ModifyResponse do
+defmodule AdyenEx.Payout.V64.ModifyResponse do
   @moduledoc """
   Provides struct and type for a ModifyResponse
   """

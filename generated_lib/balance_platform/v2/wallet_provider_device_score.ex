@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.WalletProviderDeviceScore do
+defmodule AdyenEx.BalancePlatform.V2.WalletProviderDeviceScore do
   @moduledoc """
   Provides struct and type for a WalletProviderDeviceScore
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V30.DisableResult do
+defmodule AdyenEx.Recurring.V30.DisableResult do
   @moduledoc """
   Provides struct and type for a DisableResult
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PaymentAcquirerData do
+defmodule AdyenEx.TerminalAPI.V1.PaymentAcquirerData do
   @moduledoc """
   Provides struct and type for a PaymentAcquirerData
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TerminalAPI.V1.PaymentAcquirerData do
   @type t :: %__MODULE__{
           AcquirerID: integer | nil,
           AcquirerPOIID: String.t(),
-          AcquirerTransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
+          AcquirerTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           ApprovalCode: String.t() | nil,
           HostReconciliationID: String.t() | nil,
           MerchantID: String.t()
@@ -29,7 +29,7 @@ defmodule Adyen.TerminalAPI.V1.PaymentAcquirerData do
     [
       AcquirerID: :integer,
       AcquirerPOIID: :string,
-      AcquirerTransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
+      AcquirerTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       ApprovalCode: :string,
       HostReconciliationID: :string,
       MerchantID: :string

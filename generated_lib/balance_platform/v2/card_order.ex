@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CardOrder do
+defmodule AdyenEx.BalancePlatform.V2.CardOrder do
   @moduledoc """
   Provides struct and type for a CardOrder
   """

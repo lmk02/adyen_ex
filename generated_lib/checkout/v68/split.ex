@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V68.Split do
+defmodule AdyenEx.Checkout.V68.Split do
   @moduledoc """
   Provides struct and type for a Split
   """
 
   @type t :: %__MODULE__{
           account: String.t() | nil,
-          amount: Adyen.Checkout.V68.SplitAmount.t() | nil,
+          amount: AdyenEx.Checkout.V68.SplitAmount.t() | nil,
           description: String.t() | nil,
           reference: String.t() | nil,
           type: String.t()
@@ -20,7 +20,7 @@ defmodule Adyen.Checkout.V68.Split do
   def __fields__(:t) do
     [
       account: :string,
-      amount: {Adyen.Checkout.V68.SplitAmount, :t},
+      amount: {AdyenEx.Checkout.V68.SplitAmount, :t},
       description: :string,
       reference: :string,
       type:

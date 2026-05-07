@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.Verification do
+defmodule AdyenEx.Account.V4.Verification do
   @moduledoc """
   Provides API endpoints related to verification
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete bank accounts
@@ -15,29 +15,29 @@ defmodule Adyen.Account.V4.Verification do
   **Content Types**: `application/json`
   """
   @spec post_delete_bank_accounts(
-          body :: Adyen.Account.V4.DeleteBankAccountRequest.t(),
+          body :: AdyenEx.Account.V4.DeleteBankAccountRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GenericResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GenericResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_delete_bank_accounts(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_delete_bank_accounts},
+      call: {AdyenEx.Account.V4.Verification, :post_delete_bank_accounts},
       url: "/deleteBankAccounts",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.DeleteBankAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.DeleteBankAccountRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GenericResponse, :t}},
-        {202, {Adyen.Account.V4.GenericResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {202, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -53,29 +53,29 @@ defmodule Adyen.Account.V4.Verification do
   **Content Types**: `application/json`
   """
   @spec post_delete_legal_arrangements(
-          body :: Adyen.Account.V4.DeleteLegalArrangementRequest.t(),
+          body :: AdyenEx.Account.V4.DeleteLegalArrangementRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GenericResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GenericResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_delete_legal_arrangements(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_delete_legal_arrangements},
+      call: {AdyenEx.Account.V4.Verification, :post_delete_legal_arrangements},
       url: "/deleteLegalArrangements",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.DeleteLegalArrangementRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.DeleteLegalArrangementRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GenericResponse, :t}},
-        {202, {Adyen.Account.V4.GenericResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {202, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -91,29 +91,29 @@ defmodule Adyen.Account.V4.Verification do
   **Content Types**: `application/json`
   """
   @spec post_delete_shareholders(
-          body :: Adyen.Account.V4.DeleteShareholderRequest.t(),
+          body :: AdyenEx.Account.V4.DeleteShareholderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GenericResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GenericResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_delete_shareholders(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_delete_shareholders},
+      call: {AdyenEx.Account.V4.Verification, :post_delete_shareholders},
       url: "/deleteShareholders",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.DeleteShareholderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.DeleteShareholderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GenericResponse, :t}},
-        {202, {Adyen.Account.V4.GenericResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {202, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -129,29 +129,29 @@ defmodule Adyen.Account.V4.Verification do
   **Content Types**: `application/json`
   """
   @spec post_delete_signatories(
-          body :: Adyen.Account.V4.DeleteSignatoriesRequest.t(),
+          body :: AdyenEx.Account.V4.DeleteSignatoriesRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GenericResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GenericResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_delete_signatories(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_delete_signatories},
+      call: {AdyenEx.Account.V4.Verification, :post_delete_signatories},
       url: "/deleteSignatories",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.DeleteSignatoriesRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.DeleteSignatoriesRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GenericResponse, :t}},
-        {202, {Adyen.Account.V4.GenericResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {202, {AdyenEx.Account.V4.GenericResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -167,28 +167,28 @@ defmodule Adyen.Account.V4.Verification do
   **Content Types**: `application/json`
   """
   @spec post_get_uploaded_documents(
-          body :: Adyen.Account.V4.GetUploadedDocumentsRequest.t(),
+          body :: AdyenEx.Account.V4.GetUploadedDocumentsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GetUploadedDocumentsResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GetUploadedDocumentsResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_get_uploaded_documents(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_get_uploaded_documents},
+      call: {AdyenEx.Account.V4.Verification, :post_get_uploaded_documents},
       url: "/getUploadedDocuments",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.GetUploadedDocumentsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.GetUploadedDocumentsRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GetUploadedDocumentsResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GetUploadedDocumentsResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -203,27 +203,30 @@ defmodule Adyen.Account.V4.Verification do
 
   **Content Types**: `application/json`
   """
-  @spec post_upload_document(body :: Adyen.Account.V4.UploadDocumentRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Account.V4.UpdateAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+  @spec post_upload_document(
+          body :: AdyenEx.Account.V4.UploadDocumentRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.Account.V4.UpdateAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_upload_document(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.Verification, :post_upload_document},
+      call: {AdyenEx.Account.V4.Verification, :post_upload_document},
       url: "/uploadDocument",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.UploadDocumentRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.UploadDocumentRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.UpdateAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.UpdateAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.UpdateAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.UpdateAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,12 +1,12 @@
-defmodule Adyen.BalancePlatform.V2.SearchRegisteredDevicesResponse do
+defmodule AdyenEx.BalancePlatform.V2.SearchRegisteredDevicesResponse do
   @moduledoc """
   Provides struct and type for a SearchRegisteredDevicesResponse
   """
 
   @type t :: %__MODULE__{
-          data: [Adyen.BalancePlatform.V2.Device.t()] | nil,
+          data: [AdyenEx.BalancePlatform.V2.Device.t()] | nil,
           itemsTotal: integer | nil,
-          link: Adyen.BalancePlatform.V2.Link.t() | nil,
+          link: AdyenEx.BalancePlatform.V2.Link.t() | nil,
           pagesTotal: integer | nil
         }
 
@@ -18,9 +18,9 @@ defmodule Adyen.BalancePlatform.V2.SearchRegisteredDevicesResponse do
 
   def __fields__(:t) do
     [
-      data: [{Adyen.BalancePlatform.V2.Device, :t}],
+      data: [{AdyenEx.BalancePlatform.V2.Device, :t}],
       itemsTotal: {:integer, "int32"},
-      link: {Adyen.BalancePlatform.V2.Link, :t},
+      link: {AdyenEx.BalancePlatform.V2.Link, :t},
       pagesTotal: {:integer, "int32"}
     ]
   end

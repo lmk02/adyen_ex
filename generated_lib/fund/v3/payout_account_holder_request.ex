@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.PayoutAccountHolderRequest do
+defmodule AdyenEx.Fund.V3.PayoutAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a PayoutAccountHolderRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Fund.V3.PayoutAccountHolderRequest do
   @type t :: %__MODULE__{
           accountCode: String.t(),
           accountHolderCode: String.t(),
-          amount: Adyen.Fund.V3.Amount.t() | nil,
+          amount: AdyenEx.Fund.V3.Amount.t() | nil,
           bankAccountUUID: String.t() | nil,
           description: String.t() | nil,
           merchantReference: String.t() | nil
@@ -29,7 +29,7 @@ defmodule Adyen.Fund.V3.PayoutAccountHolderRequest do
     [
       accountCode: :string,
       accountHolderCode: :string,
-      amount: {Adyen.Fund.V3.Amount, :t},
+      amount: {AdyenEx.Fund.V3.Amount, :t},
       bankAccountUUID: :string,
       description: :string,
       merchantReference: :string

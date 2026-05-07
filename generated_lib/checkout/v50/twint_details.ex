@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.TwintDetails do
+defmodule AdyenEx.Checkout.V50.TwintDetails do
   @moduledoc """
   Provides struct and type for a TwintDetails
   """

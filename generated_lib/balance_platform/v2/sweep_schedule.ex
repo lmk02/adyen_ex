@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.SweepSchedule do
+defmodule AdyenEx.BalancePlatform.V2.SweepSchedule do
   @moduledoc """
   Provides struct and type for a SweepSchedule
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.AreaSize do
+defmodule AdyenEx.TerminalAPI.V1.AreaSize do
   @moduledoc """
   Provides struct and type for a AreaSize
   """

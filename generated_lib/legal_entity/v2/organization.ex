@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.Organization do
+defmodule AdyenEx.LegalEntity.V2.Organization do
   @moduledoc """
   Provides struct and type for a Organization
   """
@@ -10,17 +10,17 @@ defmodule Adyen.LegalEntity.V2.Organization do
           doingBusinessAs: String.t() | nil,
           email: String.t() | nil,
           legalName: String.t(),
-          phone: Adyen.LegalEntity.V2.PhoneNumber.t() | nil,
-          principalPlaceOfBusiness: Adyen.LegalEntity.V2.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V2.Address.t(),
+          phone: AdyenEx.LegalEntity.V2.PhoneNumber.t() | nil,
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V2.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V2.Address.t(),
           registrationNumber: String.t() | nil,
-          stockData: Adyen.LegalEntity.V2.StockData.t() | nil,
-          taxInformation: [Adyen.LegalEntity.V2.TaxInformation.t()] | nil,
-          taxReportingClassification: Adyen.LegalEntity.V2.TaxReportingClassification.t() | nil,
+          stockData: AdyenEx.LegalEntity.V2.StockData.t() | nil,
+          taxInformation: [AdyenEx.LegalEntity.V2.TaxInformation.t()] | nil,
+          taxReportingClassification: AdyenEx.LegalEntity.V2.TaxReportingClassification.t() | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil,
-          webData: Adyen.LegalEntity.V2.WebData.t() | nil
+          webData: AdyenEx.LegalEntity.V2.WebData.t() | nil
         }
 
   defstruct [
@@ -55,13 +55,13 @@ defmodule Adyen.LegalEntity.V2.Organization do
       doingBusinessAs: :string,
       email: :string,
       legalName: :string,
-      phone: {Adyen.LegalEntity.V2.PhoneNumber, :t},
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V2.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V2.Address, :t},
+      phone: {AdyenEx.LegalEntity.V2.PhoneNumber, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V2.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V2.Address, :t},
       registrationNumber: :string,
-      stockData: {Adyen.LegalEntity.V2.StockData, :t},
-      taxInformation: [{Adyen.LegalEntity.V2.TaxInformation, :t}],
-      taxReportingClassification: {Adyen.LegalEntity.V2.TaxReportingClassification, :t},
+      stockData: {AdyenEx.LegalEntity.V2.StockData, :t},
+      taxInformation: [{AdyenEx.LegalEntity.V2.TaxInformation, :t}],
+      taxReportingClassification: {AdyenEx.LegalEntity.V2.TaxReportingClassification, :t},
       type:
         {:enum,
          [
@@ -74,7 +74,7 @@ defmodule Adyen.LegalEntity.V2.Organization do
          ]},
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
       vatNumber: :string,
-      webData: {Adyen.LegalEntity.V2.WebData, :t}
+      webData: {AdyenEx.LegalEntity.V2.WebData, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.IbanAccountIdentification do
+defmodule AdyenEx.Transfer.V4.IbanAccountIdentification do
   @moduledoc """
   Provides struct and type for a IbanAccountIdentification
   """

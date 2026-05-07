@@ -1,18 +1,18 @@
-defmodule Adyen.Checkout.V70.PaymentRefundRequest do
+defmodule AdyenEx.Checkout.V70.PaymentRefundRequest do
   @moduledoc """
   Provides struct and type for a PaymentRefundRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V70.Amount.t(),
-          applicationInfo: Adyen.Checkout.V70.ApplicationInfo.t() | nil,
+          amount: AdyenEx.Checkout.V70.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V70.ApplicationInfo.t() | nil,
           capturePspReference: String.t() | nil,
-          enhancedSchemeData: Adyen.Checkout.V70.EnhancedSchemeData.t() | nil,
-          lineItems: [Adyen.Checkout.V70.LineItem.t()] | nil,
+          enhancedSchemeData: AdyenEx.Checkout.V70.EnhancedSchemeData.t() | nil,
+          lineItems: [AdyenEx.Checkout.V70.LineItem.t()] | nil,
           merchantAccount: String.t(),
           merchantRefundReason: String.t() | nil,
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V70.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V70.Split.t()] | nil,
           store: String.t() | nil
         }
 
@@ -35,16 +35,16 @@ defmodule Adyen.Checkout.V70.PaymentRefundRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V70.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V70.ApplicationInfo, :t},
+      amount: {AdyenEx.Checkout.V70.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V70.ApplicationInfo, :t},
       capturePspReference: :string,
-      enhancedSchemeData: {Adyen.Checkout.V70.EnhancedSchemeData, :t},
-      lineItems: [{Adyen.Checkout.V70.LineItem, :t}],
+      enhancedSchemeData: {AdyenEx.Checkout.V70.EnhancedSchemeData, :t},
+      lineItems: [{AdyenEx.Checkout.V70.LineItem, :t}],
       merchantAccount: :string,
       merchantRefundReason:
         {:enum, ["FRAUD", "CUSTOMER REQUEST", "RETURN", "DUPLICATE", "OTHER"]},
       reference: :string,
-      splits: [{Adyen.Checkout.V70.Split, :t}],
+      splits: [{AdyenEx.Checkout.V70.Split, :t}],
       store: :string
     ]
   end

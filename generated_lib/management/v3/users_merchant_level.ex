@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.UsersMerchantLevel do
+defmodule AdyenEx.Management.V3.UsersMerchantLevel do
   @moduledoc """
   Provides API endpoints related to users merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of users
@@ -21,26 +21,26 @@ defmodule Adyen.Management.V3.UsersMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_users(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.ListMerchantUsersResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ListMerchantUsersResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_users(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize, :username])
 
     client.request(%{
       args: [merchantId: merchantId],
-      call: {Adyen.Management.V3.UsersMerchantLevel, :get_merchants_merchant_id_users},
+      call: {AdyenEx.Management.V3.UsersMerchantLevel, :get_merchants_merchant_id_users},
       url: "/merchants/#{merchantId}/users",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.ListMerchantUsersResponse, :t}},
+        {200, {AdyenEx.Management.V3.ListMerchantUsersResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -60,23 +60,24 @@ defmodule Adyen.Management.V3.UsersMerchantLevel do
           userId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.User.t()} | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.User.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_users_user_id(merchantId, userId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, userId: userId],
-      call: {Adyen.Management.V3.UsersMerchantLevel, :get_merchants_merchant_id_users_user_id},
+      call: {AdyenEx.Management.V3.UsersMerchantLevel, :get_merchants_merchant_id_users_user_id},
       url: "/merchants/#{merchantId}/users/#{userId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.User, :t}},
+        {200, {AdyenEx.Management.V3.User, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -97,28 +98,30 @@ defmodule Adyen.Management.V3.UsersMerchantLevel do
   @spec patch_merchants_merchant_id_users_user_id(
           merchantId :: String.t(),
           userId :: String.t(),
-          body :: Adyen.Management.V3.UpdateMerchantUserRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateMerchantUserRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.User.t()} | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.User.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_users_user_id(merchantId, userId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, userId: userId, body: body],
-      call: {Adyen.Management.V3.UsersMerchantLevel, :patch_merchants_merchant_id_users_user_id},
+      call:
+        {AdyenEx.Management.V3.UsersMerchantLevel, :patch_merchants_merchant_id_users_user_id},
       url: "/merchants/#{merchantId}/users/#{userId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V3.UpdateMerchantUserRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.UpdateMerchantUserRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.User, :t}},
+        {200, {AdyenEx.Management.V3.User, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -138,29 +141,29 @@ defmodule Adyen.Management.V3.UsersMerchantLevel do
   """
   @spec post_merchants_merchant_id_users(
           merchantId :: String.t(),
-          body :: Adyen.Management.V3.CreateMerchantUserRequest.t(),
+          body :: AdyenEx.Management.V3.CreateMerchantUserRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.CreateUserResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.CreateUserResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_merchants_merchant_id_users(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
-      call: {Adyen.Management.V3.UsersMerchantLevel, :post_merchants_merchant_id_users},
+      call: {AdyenEx.Management.V3.UsersMerchantLevel, :post_merchants_merchant_id_users},
       url: "/merchants/#{merchantId}/users",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.CreateMerchantUserRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.CreateMerchantUserRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.CreateUserResponse, :t}},
+        {200, {AdyenEx.Management.V3.CreateUserResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

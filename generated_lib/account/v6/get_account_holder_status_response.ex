@@ -1,12 +1,12 @@
-defmodule Adyen.Account.V6.GetAccountHolderStatusResponse do
+defmodule AdyenEx.Account.V6.GetAccountHolderStatusResponse do
   @moduledoc """
   Provides struct and type for a GetAccountHolderStatusResponse
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t() | nil,
-          accountHolderStatus: Adyen.Account.V6.AccountHolderStatus.t() | nil,
-          invalidFields: [Adyen.Account.V6.ErrorFieldType.t()] | nil,
+          accountHolderStatus: AdyenEx.Account.V6.AccountHolderStatus.t() | nil,
+          invalidFields: [AdyenEx.Account.V6.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -20,8 +20,8 @@ defmodule Adyen.Account.V6.GetAccountHolderStatusResponse do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderStatus: {Adyen.Account.V6.AccountHolderStatus, :t},
-      invalidFields: [{Adyen.Account.V6.ErrorFieldType, :t}],
+      accountHolderStatus: {AdyenEx.Account.V6.AccountHolderStatus, :t},
+      invalidFields: [{AdyenEx.Account.V6.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

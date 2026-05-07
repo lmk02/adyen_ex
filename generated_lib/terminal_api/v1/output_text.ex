@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.OutputText do
+defmodule AdyenEx.TerminalAPI.V1.OutputText do
   @moduledoc """
   Provides struct and type for a OutputText
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.TransactionRulesResult do
+defmodule AdyenEx.Transfer.V4.TransactionRulesResult do
   @moduledoc """
   Provides struct and type for a TransactionRulesResult
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Transfer.V4.TransactionRulesResult do
           advice: String.t() | nil,
           allHardBlockRulesPassed: boolean | nil,
           score: integer | nil,
-          triggeredTransactionRules: [Adyen.Transfer.V4.TransactionEventViolation.t()] | nil
+          triggeredTransactionRules: [AdyenEx.Transfer.V4.TransactionEventViolation.t()] | nil
         }
 
   defstruct [:advice, :allHardBlockRulesPassed, :score, :triggeredTransactionRules]
@@ -21,7 +21,7 @@ defmodule Adyen.Transfer.V4.TransactionRulesResult do
       advice: :string,
       allHardBlockRulesPassed: :boolean,
       score: {:integer, "int32"},
-      triggeredTransactionRules: [{Adyen.Transfer.V4.TransactionEventViolation, :t}]
+      triggeredTransactionRules: [{AdyenEx.Transfer.V4.TransactionEventViolation, :t}]
     ]
   end
 end

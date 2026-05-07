@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.PaymentMethodIssuer do
+defmodule AdyenEx.Checkout.V70.PaymentMethodIssuer do
   @moduledoc """
   Provides struct and type for a PaymentMethodIssuer
   """

@@ -1,14 +1,14 @@
-defmodule Adyen.Management.V3.WebhookLinks do
+defmodule AdyenEx.Management.V3.WebhookLinks do
   @moduledoc """
   Provides struct and type for a WebhookLinks
   """
 
   @type t :: %__MODULE__{
-          company: Adyen.Management.V3.LinksElement.t() | nil,
-          generateHmac: Adyen.Management.V3.LinksElement.t(),
-          merchant: Adyen.Management.V3.LinksElement.t() | nil,
-          self: Adyen.Management.V3.LinksElement.t(),
-          testWebhook: Adyen.Management.V3.LinksElement.t()
+          company: AdyenEx.Management.V3.LinksElement.t() | nil,
+          generateHmac: AdyenEx.Management.V3.LinksElement.t(),
+          merchant: AdyenEx.Management.V3.LinksElement.t() | nil,
+          self: AdyenEx.Management.V3.LinksElement.t(),
+          testWebhook: AdyenEx.Management.V3.LinksElement.t()
         }
 
   defstruct [:company, :generateHmac, :merchant, :self, :testWebhook]
@@ -19,11 +19,11 @@ defmodule Adyen.Management.V3.WebhookLinks do
 
   def __fields__(:t) do
     [
-      company: {Adyen.Management.V3.LinksElement, :t},
-      generateHmac: {Adyen.Management.V3.LinksElement, :t},
-      merchant: {Adyen.Management.V3.LinksElement, :t},
-      self: {Adyen.Management.V3.LinksElement, :t},
-      testWebhook: {Adyen.Management.V3.LinksElement, :t}
+      company: {AdyenEx.Management.V3.LinksElement, :t},
+      generateHmac: {AdyenEx.Management.V3.LinksElement, :t},
+      merchant: {AdyenEx.Management.V3.LinksElement, :t},
+      self: {AdyenEx.Management.V3.LinksElement, :t},
+      testWebhook: {AdyenEx.Management.V3.LinksElement, :t}
     ]
   end
 end

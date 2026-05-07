@@ -1,9 +1,9 @@
-defmodule Adyen.TfmAPI.V1.General do
+defmodule AdyenEx.TfmAPI.V1.General do
   @moduledoc """
   Provides API endpoints related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Assign terminals
@@ -16,26 +16,29 @@ defmodule Adyen.TfmAPI.V1.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_assign_terminals(body :: Adyen.TfmAPI.V1.AssignTerminalsRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.TfmAPI.V1.AssignTerminalsResponse.t()}
-          | {:error, Adyen.TfmAPI.V1.ServiceError.t()}
+  @spec post_assign_terminals(
+          body :: AdyenEx.TfmAPI.V1.AssignTerminalsRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.TfmAPI.V1.AssignTerminalsResponse.t()}
+          | {:error, AdyenEx.TfmAPI.V1.ServiceError.t()}
   def post_assign_terminals(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.TfmAPI.V1.General, :post_assign_terminals},
+      call: {AdyenEx.TfmAPI.V1.General, :post_assign_terminals},
       url: "/assignTerminals",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.TfmAPI.V1.AssignTerminalsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.TfmAPI.V1.AssignTerminalsRequest, :t}}],
       response: [
-        {200, {Adyen.TfmAPI.V1.AssignTerminalsResponse, :t}},
-        {400, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {401, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {403, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {422, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {500, {Adyen.TfmAPI.V1.ServiceError, :t}}
+        {200, {AdyenEx.TfmAPI.V1.AssignTerminalsResponse, :t}},
+        {400, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {401, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {403, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {422, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {500, {AdyenEx.TfmAPI.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -52,26 +55,26 @@ defmodule Adyen.TfmAPI.V1.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_find_terminal(body :: Adyen.TfmAPI.V1.FindTerminalRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.TfmAPI.V1.FindTerminalResponse.t()}
-          | {:error, Adyen.TfmAPI.V1.ServiceError.t()}
+  @spec post_find_terminal(body :: AdyenEx.TfmAPI.V1.FindTerminalRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.TfmAPI.V1.FindTerminalResponse.t()}
+          | {:error, AdyenEx.TfmAPI.V1.ServiceError.t()}
   def post_find_terminal(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.TfmAPI.V1.General, :post_find_terminal},
+      call: {AdyenEx.TfmAPI.V1.General, :post_find_terminal},
       url: "/findTerminal",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.TfmAPI.V1.FindTerminalRequest, :t}}],
+      request: [{"application/json", {AdyenEx.TfmAPI.V1.FindTerminalRequest, :t}}],
       response: [
-        {200, {Adyen.TfmAPI.V1.FindTerminalResponse, :t}},
-        {400, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {401, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {403, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {422, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {500, {Adyen.TfmAPI.V1.ServiceError, :t}}
+        {200, {AdyenEx.TfmAPI.V1.FindTerminalResponse, :t}},
+        {400, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {401, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {403, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {422, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {500, {AdyenEx.TfmAPI.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -89,28 +92,28 @@ defmodule Adyen.TfmAPI.V1.General do
   **Content Types**: `application/json`
   """
   @spec post_get_stores_under_account(
-          body :: Adyen.TfmAPI.V1.GetStoresUnderAccountRequest.t(),
+          body :: AdyenEx.TfmAPI.V1.GetStoresUnderAccountRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.TfmAPI.V1.GetStoresUnderAccountResponse.t()}
-          | {:error, Adyen.TfmAPI.V1.ServiceError.t()}
+          {:ok, AdyenEx.TfmAPI.V1.GetStoresUnderAccountResponse.t()}
+          | {:error, AdyenEx.TfmAPI.V1.ServiceError.t()}
   def post_get_stores_under_account(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.TfmAPI.V1.General, :post_get_stores_under_account},
+      call: {AdyenEx.TfmAPI.V1.General, :post_get_stores_under_account},
       url: "/getStoresUnderAccount",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.TfmAPI.V1.GetStoresUnderAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.TfmAPI.V1.GetStoresUnderAccountRequest, :t}}],
       response: [
-        {200, {Adyen.TfmAPI.V1.GetStoresUnderAccountResponse, :t}},
-        {400, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {401, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {403, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {422, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {500, {Adyen.TfmAPI.V1.ServiceError, :t}}
+        {200, {AdyenEx.TfmAPI.V1.GetStoresUnderAccountResponse, :t}},
+        {400, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {401, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {403, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {422, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {500, {AdyenEx.TfmAPI.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -128,28 +131,28 @@ defmodule Adyen.TfmAPI.V1.General do
   **Content Types**: `application/json`
   """
   @spec post_get_terminal_details(
-          body :: Adyen.TfmAPI.V1.GetTerminalDetailsRequest.t(),
+          body :: AdyenEx.TfmAPI.V1.GetTerminalDetailsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.TfmAPI.V1.GetTerminalDetailsResponse.t()}
-          | {:error, Adyen.TfmAPI.V1.ServiceError.t()}
+          {:ok, AdyenEx.TfmAPI.V1.GetTerminalDetailsResponse.t()}
+          | {:error, AdyenEx.TfmAPI.V1.ServiceError.t()}
   def post_get_terminal_details(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.TfmAPI.V1.General, :post_get_terminal_details},
+      call: {AdyenEx.TfmAPI.V1.General, :post_get_terminal_details},
       url: "/getTerminalDetails",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.TfmAPI.V1.GetTerminalDetailsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.TfmAPI.V1.GetTerminalDetailsRequest, :t}}],
       response: [
-        {200, {Adyen.TfmAPI.V1.GetTerminalDetailsResponse, :t}},
-        {400, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {401, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {403, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {422, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {500, {Adyen.TfmAPI.V1.ServiceError, :t}}
+        {200, {AdyenEx.TfmAPI.V1.GetTerminalDetailsResponse, :t}},
+        {400, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {401, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {403, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {422, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {500, {AdyenEx.TfmAPI.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -167,28 +170,28 @@ defmodule Adyen.TfmAPI.V1.General do
   **Content Types**: `application/json`
   """
   @spec post_get_terminals_under_account(
-          body :: Adyen.TfmAPI.V1.GetTerminalsUnderAccountRequest.t(),
+          body :: AdyenEx.TfmAPI.V1.GetTerminalsUnderAccountRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.TfmAPI.V1.GetTerminalsUnderAccountResponse.t()}
-          | {:error, Adyen.TfmAPI.V1.ServiceError.t()}
+          {:ok, AdyenEx.TfmAPI.V1.GetTerminalsUnderAccountResponse.t()}
+          | {:error, AdyenEx.TfmAPI.V1.ServiceError.t()}
   def post_get_terminals_under_account(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.TfmAPI.V1.General, :post_get_terminals_under_account},
+      call: {AdyenEx.TfmAPI.V1.General, :post_get_terminals_under_account},
       url: "/getTerminalsUnderAccount",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.TfmAPI.V1.GetTerminalsUnderAccountRequest, :t}}],
+      request: [{"application/json", {AdyenEx.TfmAPI.V1.GetTerminalsUnderAccountRequest, :t}}],
       response: [
-        {200, {Adyen.TfmAPI.V1.GetTerminalsUnderAccountResponse, :t}},
-        {400, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {401, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {403, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {422, {Adyen.TfmAPI.V1.ServiceError, :t}},
-        {500, {Adyen.TfmAPI.V1.ServiceError, :t}}
+        {200, {AdyenEx.TfmAPI.V1.GetTerminalsUnderAccountResponse, :t}},
+        {400, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {401, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {403, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {422, {AdyenEx.TfmAPI.V1.ServiceError, :t}},
+        {500, {AdyenEx.TfmAPI.V1.ServiceError, :t}}
       ],
       opts: opts
     })

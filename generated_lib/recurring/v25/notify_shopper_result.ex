@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V25.NotifyShopperResult do
+defmodule AdyenEx.Recurring.V25.NotifyShopperResult do
   @moduledoc """
   Provides struct and type for a NotifyShopperResult
   """

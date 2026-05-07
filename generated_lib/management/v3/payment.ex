@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Payment do
+defmodule AdyenEx.Management.V3.Payment do
   @moduledoc """
   Provides struct and type for a Payment
   """

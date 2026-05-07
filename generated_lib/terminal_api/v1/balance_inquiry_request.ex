@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.BalanceInquiryRequest do
+defmodule AdyenEx.TerminalAPI.V1.BalanceInquiryRequest do
   @moduledoc """
   Provides struct and type for a BalanceInquiryRequest
   """
 
   @type t :: %__MODULE__{
-          LoyaltyAccountReq: Adyen.TerminalAPI.V1.LoyaltyAccountReq.t() | nil,
-          PaymentAccountReq: Adyen.TerminalAPI.V1.PaymentAccountReq.t() | nil
+          LoyaltyAccountReq: AdyenEx.TerminalAPI.V1.LoyaltyAccountReq.t() | nil,
+          PaymentAccountReq: AdyenEx.TerminalAPI.V1.PaymentAccountReq.t() | nil
         }
 
   defstruct [:LoyaltyAccountReq, :PaymentAccountReq]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.BalanceInquiryRequest do
 
   def __fields__(:t) do
     [
-      LoyaltyAccountReq: {Adyen.TerminalAPI.V1.LoyaltyAccountReq, :t},
-      PaymentAccountReq: {Adyen.TerminalAPI.V1.PaymentAccountReq, :t}
+      LoyaltyAccountReq: {AdyenEx.TerminalAPI.V1.LoyaltyAccountReq, :t},
+      PaymentAccountReq: {AdyenEx.TerminalAPI.V1.PaymentAccountReq, :t}
     ]
   end
 end

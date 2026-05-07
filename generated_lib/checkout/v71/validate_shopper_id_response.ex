@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.ValidateShopperIdResponse do
+defmodule AdyenEx.Checkout.V71.ValidateShopperIdResponse do
   @moduledoc """
   Provides struct and type for a ValidateShopperIdResponse
   """

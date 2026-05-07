@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V40.RefundRequest do
+defmodule AdyenEx.Payment.V40.RefundRequest do
   @moduledoc """
   Provides struct and type for a RefundRequest
   """
@@ -6,11 +6,11 @@ defmodule Adyen.Payment.V40.RefundRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V40.Amount.t(),
+          modificationAmount: AdyenEx.Payment.V40.Amount.t(),
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V40.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V40.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -35,11 +35,11 @@ defmodule Adyen.Payment.V40.RefundRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V40.Amount, :t},
+      modificationAmount: {AdyenEx.Payment.V40.Amount, :t},
       originalMerchantReference: :string,
       originalReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V40.Split, :t}],
+      splits: [{AdyenEx.Payment.V40.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

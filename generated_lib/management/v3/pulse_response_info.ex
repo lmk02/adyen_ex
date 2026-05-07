@@ -1,11 +1,12 @@
-defmodule Adyen.Management.V3.PulseResponseInfo do
+defmodule AdyenEx.Management.V3.PulseResponseInfo do
   @moduledoc """
   Provides struct and type for a PulseResponseInfo
   """
 
   @type t :: %__MODULE__{
           processingType: String.t(),
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V3.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:processingType, :transactionDescription]
@@ -17,7 +18,7 @@ defmodule Adyen.Management.V3.PulseResponseInfo do
   def __fields__(:t) do
     [
       processingType: {:enum, ["billpay", "ecom", "pos"]},
-      transactionDescription: {Adyen.Management.V3.TransactionDescriptionResponseInfo, :t}
+      transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionResponseInfo, :t}
     ]
   end
 end

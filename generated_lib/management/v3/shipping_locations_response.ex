@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.ShippingLocationsResponse do
+defmodule AdyenEx.Management.V3.ShippingLocationsResponse do
   @moduledoc """
   Provides struct and type for a ShippingLocationsResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V3.ShippingLocation.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V3.ShippingLocation.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V3.ShippingLocationsResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V3.ShippingLocation, :t}]]
+    [data: [{AdyenEx.Management.V3.ShippingLocation, :t}]]
   end
 end

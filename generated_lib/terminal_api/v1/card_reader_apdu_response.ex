@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.CardReaderAPDUResponse do
+defmodule AdyenEx.TerminalAPI.V1.CardReaderAPDUResponse do
   @moduledoc """
   Provides struct and type for a CardReaderAPDUResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TerminalAPI.V1.CardReaderAPDUResponse do
   @type t :: %__MODULE__{
           APDUData: String.t() | nil,
           CardStatusWords: String.t(),
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:APDUData, :CardStatusWords, :Response]
@@ -19,7 +19,7 @@ defmodule Adyen.TerminalAPI.V1.CardReaderAPDUResponse do
     [
       APDUData: {:string, "byte"},
       CardStatusWords: {:string, "byte"},
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

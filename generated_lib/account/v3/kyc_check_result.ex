@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V3.KYCCheckResult do
+defmodule AdyenEx.Account.V3.KYCCheckResult do
   @moduledoc """
   Provides struct and type for a KYCCheckResult
   """
 
-  @type t :: %__MODULE__{checks: [Adyen.Account.V3.KYCCheckStatusData.t()] | nil}
+  @type t :: %__MODULE__{checks: [AdyenEx.Account.V3.KYCCheckStatusData.t()] | nil}
 
   defstruct [:checks]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V3.KYCCheckResult do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [checks: [{Adyen.Account.V3.KYCCheckStatusData, :t}]]
+    [checks: [{AdyenEx.Account.V3.KYCCheckStatusData, :t}]]
   end
 end

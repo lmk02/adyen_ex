@@ -1,16 +1,16 @@
-defmodule Adyen.BalancePlatform.V2.GrantOffer do
+defmodule AdyenEx.BalancePlatform.V2.GrantOffer do
   @moduledoc """
   Provides struct and type for a GrantOffer
   """
 
   @type t :: %__MODULE__{
           accountHolderId: String.t(),
-          amount: Adyen.BalancePlatform.V2.Amount.t() | nil,
+          amount: AdyenEx.BalancePlatform.V2.Amount.t() | nil,
           contractType: String.t() | nil,
           expiresAt: DateTime.t() | nil,
-          fee: Adyen.BalancePlatform.V2.Fee.t() | nil,
+          fee: AdyenEx.BalancePlatform.V2.Fee.t() | nil,
           id: String.t() | nil,
-          repayment: Adyen.BalancePlatform.V2.Repayment.t() | nil,
+          repayment: AdyenEx.BalancePlatform.V2.Repayment.t() | nil,
           startsAt: DateTime.t() | nil
         }
 
@@ -32,12 +32,12 @@ defmodule Adyen.BalancePlatform.V2.GrantOffer do
   def __fields__(:t) do
     [
       accountHolderId: :string,
-      amount: {Adyen.BalancePlatform.V2.Amount, :t},
+      amount: {AdyenEx.BalancePlatform.V2.Amount, :t},
       contractType: {:enum, ["cashAdvance", "loan"]},
       expiresAt: {:string, "date-time"},
-      fee: {Adyen.BalancePlatform.V2.Fee, :t},
+      fee: {AdyenEx.BalancePlatform.V2.Fee, :t},
       id: :string,
-      repayment: {Adyen.BalancePlatform.V2.Repayment, :t},
+      repayment: {AdyenEx.BalancePlatform.V2.Repayment, :t},
       startsAt: {:string, "date-time"}
     ]
   end

@@ -1,10 +1,10 @@
-defmodule Adyen.Management.V3.CustomNotification do
+defmodule AdyenEx.Management.V3.CustomNotification do
   @moduledoc """
   Provides struct and type for a CustomNotification
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Management.V3.Amount.t() | nil,
+          amount: AdyenEx.Management.V3.Amount.t() | nil,
           eventCode: String.t() | nil,
           eventDate: DateTime.t() | nil,
           merchantReference: String.t() | nil,
@@ -29,7 +29,7 @@ defmodule Adyen.Management.V3.CustomNotification do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Management.V3.Amount, :t},
+      amount: {AdyenEx.Management.V3.Amount, :t},
       eventCode: :string,
       eventDate: {:string, "date-time"},
       merchantReference: :string,

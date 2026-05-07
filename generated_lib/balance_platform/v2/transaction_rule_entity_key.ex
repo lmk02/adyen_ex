@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TransactionRuleEntityKey do
+defmodule AdyenEx.BalancePlatform.V2.TransactionRuleEntityKey do
   @moduledoc """
   Provides struct and type for a TransactionRuleEntityKey
   """

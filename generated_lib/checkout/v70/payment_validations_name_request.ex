@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.PaymentValidationsNameRequest do
+defmodule AdyenEx.Checkout.V70.PaymentValidationsNameRequest do
   @moduledoc """
   Provides struct and type for a PaymentValidationsNameRequest
   """

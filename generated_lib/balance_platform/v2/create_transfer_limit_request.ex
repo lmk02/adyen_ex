@@ -1,13 +1,13 @@
-defmodule Adyen.BalancePlatform.V2.CreateTransferLimitRequest do
+defmodule AdyenEx.BalancePlatform.V2.CreateTransferLimitRequest do
   @moduledoc """
   Provides struct and type for a CreateTransferLimitRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.BalancePlatform.V2.Amount.t(),
+          amount: AdyenEx.BalancePlatform.V2.Amount.t(),
           endsAt: DateTime.t() | nil,
           reference: String.t() | nil,
-          scaInformation: Adyen.BalancePlatform.V2.CreateScaInformation.t() | nil,
+          scaInformation: AdyenEx.BalancePlatform.V2.CreateScaInformation.t() | nil,
           scope: String.t(),
           startsAt: DateTime.t() | nil,
           transferType: String.t()
@@ -21,10 +21,10 @@ defmodule Adyen.BalancePlatform.V2.CreateTransferLimitRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.BalancePlatform.V2.Amount, :t},
+      amount: {AdyenEx.BalancePlatform.V2.Amount, :t},
       endsAt: {:string, "date-time"},
       reference: :string,
-      scaInformation: {Adyen.BalancePlatform.V2.CreateScaInformation, :t},
+      scaInformation: {AdyenEx.BalancePlatform.V2.CreateScaInformation, :t},
       scope: {:enum, ["perDay", "perTransaction"]},
       startsAt: {:string, "date-time"},
       transferType: {:enum, ["instant", "all"]}

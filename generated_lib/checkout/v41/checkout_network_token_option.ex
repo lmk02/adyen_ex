@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V41.CheckoutNetworkTokenOption do
+defmodule AdyenEx.Checkout.V41.CheckoutNetworkTokenOption do
   @moduledoc """
   Provides struct and type for a CheckoutNetworkTokenOption
   """

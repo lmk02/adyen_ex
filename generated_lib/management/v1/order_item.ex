@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.OrderItem do
+defmodule AdyenEx.Management.V1.OrderItem do
   @moduledoc """
   Provides struct and type for a OrderItem
   """

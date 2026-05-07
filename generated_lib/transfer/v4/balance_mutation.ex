@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.BalanceMutation do
+defmodule AdyenEx.Transfer.V4.BalanceMutation do
   @moduledoc """
   Provides struct and type for a BalanceMutation
   """

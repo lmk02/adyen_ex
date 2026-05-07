@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.FieldType do
+defmodule AdyenEx.Account.V6.FieldType do
   @moduledoc """
   Provides struct and type for a FieldType
   """

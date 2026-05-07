@@ -1,15 +1,15 @@
-defmodule Adyen.Checkout.V69.PaymentAmountUpdateRequest do
+defmodule AdyenEx.Checkout.V69.PaymentAmountUpdateRequest do
   @moduledoc """
   Provides struct and type for a PaymentAmountUpdateRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V69.Amount.t(),
-          applicationInfo: Adyen.Checkout.V69.ApplicationInfo.t() | nil,
+          amount: AdyenEx.Checkout.V69.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V69.ApplicationInfo.t() | nil,
           merchantAccount: String.t(),
           reason: String.t() | nil,
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V69.Split.t()] | nil
+          splits: [AdyenEx.Checkout.V69.Split.t()] | nil
         }
 
   defstruct [:amount, :applicationInfo, :merchantAccount, :reason, :reference, :splits]
@@ -20,12 +20,12 @@ defmodule Adyen.Checkout.V69.PaymentAmountUpdateRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V69.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V69.ApplicationInfo, :t},
+      amount: {AdyenEx.Checkout.V69.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V69.ApplicationInfo, :t},
       merchantAccount: :string,
       reason: {:enum, ["delayedCharge", "noShow"]},
       reference: :string,
-      splits: [{Adyen.Checkout.V69.Split, :t}]
+      splits: [{AdyenEx.Checkout.V69.Split, :t}]
     ]
   end
 end

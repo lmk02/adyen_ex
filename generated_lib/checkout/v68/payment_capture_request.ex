@@ -1,15 +1,15 @@
-defmodule Adyen.Checkout.V68.PaymentCaptureRequest do
+defmodule AdyenEx.Checkout.V68.PaymentCaptureRequest do
   @moduledoc """
   Provides struct and type for a PaymentCaptureRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V68.Amount.t(),
-          applicationInfo: Adyen.Checkout.V68.ApplicationInfo.t() | nil,
-          lineItems: [Adyen.Checkout.V68.LineItem.t()] | nil,
+          amount: AdyenEx.Checkout.V68.Amount.t(),
+          applicationInfo: AdyenEx.Checkout.V68.ApplicationInfo.t() | nil,
+          lineItems: [AdyenEx.Checkout.V68.LineItem.t()] | nil,
           merchantAccount: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Checkout.V68.Split.t()] | nil
+          splits: [AdyenEx.Checkout.V68.Split.t()] | nil
         }
 
   defstruct [:amount, :applicationInfo, :lineItems, :merchantAccount, :reference, :splits]
@@ -20,12 +20,12 @@ defmodule Adyen.Checkout.V68.PaymentCaptureRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V68.Amount, :t},
-      applicationInfo: {Adyen.Checkout.V68.ApplicationInfo, :t},
-      lineItems: [{Adyen.Checkout.V68.LineItem, :t}],
+      amount: {AdyenEx.Checkout.V68.Amount, :t},
+      applicationInfo: {AdyenEx.Checkout.V68.ApplicationInfo, :t},
+      lineItems: [{AdyenEx.Checkout.V68.LineItem, :t}],
       merchantAccount: :string,
       reference: :string,
-      splits: [{Adyen.Checkout.V68.Split, :t}]
+      splits: [{AdyenEx.Checkout.V68.Split, :t}]
     ]
   end
 end

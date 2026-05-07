@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.Company do
+defmodule AdyenEx.Checkout.V50.Company do
   @moduledoc """
   Provides struct and type for a Company
   """

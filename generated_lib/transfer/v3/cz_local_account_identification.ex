@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.CZLocalAccountIdentification do
+defmodule AdyenEx.Transfer.V3.CZLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a CZLocalAccountIdentification
   """

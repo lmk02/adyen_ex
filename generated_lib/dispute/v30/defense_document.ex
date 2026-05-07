@@ -1,4 +1,4 @@
-defmodule Adyen.Dispute.V30.DefenseDocument do
+defmodule AdyenEx.Dispute.V30.DefenseDocument do
   @moduledoc """
   Provides struct and type for a DefenseDocument
   """

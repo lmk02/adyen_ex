@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.StoredValueAccountID do
+defmodule AdyenEx.TerminalAPI.V1.StoredValueAccountID do
   @moduledoc """
   Provides struct and type for a StoredValueAccountID
   """

@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V67.CardDetailsResponse do
+defmodule AdyenEx.Checkout.V67.CardDetailsResponse do
   @moduledoc """
   Provides struct and type for a CardDetailsResponse
   """
 
   @type t :: %__MODULE__{
-          brands: [Adyen.Checkout.V67.CardBrandDetails.t()] | nil,
+          brands: [AdyenEx.Checkout.V67.CardBrandDetails.t()] | nil,
           fundingSource: String.t() | nil,
           isCardCommercial: boolean | nil,
           issuingCountryCode: String.t() | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Checkout.V67.CardDetailsResponse do
 
   def __fields__(:t) do
     [
-      brands: [{Adyen.Checkout.V67.CardBrandDetails, :t}],
+      brands: [{AdyenEx.Checkout.V67.CardBrandDetails, :t}],
       fundingSource: :string,
       isCardCommercial: :boolean,
       issuingCountryCode: :string

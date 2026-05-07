@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.CreateCompanyUserRequest do
+defmodule AdyenEx.Management.V1.CreateCompanyUserRequest do
   @moduledoc """
   Provides struct and type for a CreateCompanyUserRequest
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Management.V1.CreateCompanyUserRequest do
           associatedMerchantAccounts: [String.t()] | nil,
           email: String.t(),
           loginMethod: String.t() | nil,
-          name: Adyen.Management.V1.Name.t(),
+          name: AdyenEx.Management.V1.Name.t(),
           roles: [String.t()] | nil,
           timeZoneCode: String.t() | nil,
           username: String.t()
@@ -35,7 +35,7 @@ defmodule Adyen.Management.V1.CreateCompanyUserRequest do
       associatedMerchantAccounts: [:string],
       email: :string,
       loginMethod: :string,
-      name: {Adyen.Management.V1.Name, :t},
+      name: {AdyenEx.Management.V1.Name, :t},
       roles: [:string],
       timeZoneCode: :string,
       username: :string

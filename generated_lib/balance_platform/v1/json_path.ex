@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.JSONPath do
+defmodule AdyenEx.BalancePlatform.V1.JSONPath do
   @moduledoc """
   Provides struct and type for a JSONPath
   """

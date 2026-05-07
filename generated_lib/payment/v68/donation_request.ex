@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.DonationRequest do
+defmodule AdyenEx.Payment.V68.DonationRequest do
   @moduledoc """
   Provides struct and type for a DonationRequest
   """
@@ -6,9 +6,9 @@ defmodule Adyen.Payment.V68.DonationRequest do
   @type t :: %__MODULE__{
           donationAccount: String.t(),
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V68.Amount.t(),
+          modificationAmount: AdyenEx.Payment.V68.Amount.t(),
           originalReference: String.t() | nil,
-          platformChargebackLogic: Adyen.Payment.V68.PlatformChargebackLogic.t() | nil,
+          platformChargebackLogic: AdyenEx.Payment.V68.PlatformChargebackLogic.t() | nil,
           reference: String.t() | nil
         }
 
@@ -29,9 +29,9 @@ defmodule Adyen.Payment.V68.DonationRequest do
     [
       donationAccount: :string,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V68.Amount, :t},
+      modificationAmount: {AdyenEx.Payment.V68.Amount, :t},
       originalReference: :string,
-      platformChargebackLogic: {Adyen.Payment.V68.PlatformChargebackLogic, :t},
+      platformChargebackLogic: {AdyenEx.Payment.V68.PlatformChargebackLogic, :t},
       reference: :string
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.SaleData do
+defmodule AdyenEx.TerminalAPI.V1.SaleData do
   @moduledoc """
   Provides struct and type for a SaleData
   """
@@ -9,11 +9,11 @@ defmodule Adyen.TerminalAPI.V1.SaleData do
           OperatorID: String.t() | nil,
           OperatorLanguage: String.t() | nil,
           SaleReferenceID: String.t() | nil,
-          SaleTerminalData: Adyen.TerminalAPI.V1.SaleTerminalData.t() | nil,
+          SaleTerminalData: AdyenEx.TerminalAPI.V1.SaleTerminalData.t() | nil,
           SaleToAcquirerData: String.t() | nil,
-          SaleToIssuerData: Adyen.TerminalAPI.V1.SaleToIssuerData.t() | nil,
+          SaleToIssuerData: AdyenEx.TerminalAPI.V1.SaleToIssuerData.t() | nil,
           SaleToPOIData: String.t() | nil,
-          SaleTransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t(),
+          SaleTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t(),
           ShiftNumber: String.t() | nil,
           TokenRequestedType: String.t() | nil
         }
@@ -44,11 +44,11 @@ defmodule Adyen.TerminalAPI.V1.SaleData do
       OperatorID: :string,
       OperatorLanguage: :string,
       SaleReferenceID: :string,
-      SaleTerminalData: {Adyen.TerminalAPI.V1.SaleTerminalData, :t},
+      SaleTerminalData: {AdyenEx.TerminalAPI.V1.SaleTerminalData, :t},
       SaleToAcquirerData: :string,
-      SaleToIssuerData: {Adyen.TerminalAPI.V1.SaleToIssuerData, :t},
+      SaleToIssuerData: {AdyenEx.TerminalAPI.V1.SaleToIssuerData, :t},
       SaleToPOIData: :string,
-      SaleTransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
+      SaleTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       ShiftNumber: :string,
       TokenRequestedType: {:enum, ["Customer", "Transaction"]}
     ]

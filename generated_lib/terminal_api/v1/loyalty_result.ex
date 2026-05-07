@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.LoyaltyResult do
+defmodule AdyenEx.TerminalAPI.V1.LoyaltyResult do
   @moduledoc """
   Provides struct and type for a LoyaltyResult
   """
 
   @type t :: %__MODULE__{
           CurrentBalance: number | nil,
-          LoyaltyAccount: Adyen.TerminalAPI.V1.LoyaltyAccount.t(),
-          LoyaltyAcquirerData: Adyen.TerminalAPI.V1.LoyaltyAcquirerData.t() | nil
+          LoyaltyAccount: AdyenEx.TerminalAPI.V1.LoyaltyAccount.t(),
+          LoyaltyAcquirerData: AdyenEx.TerminalAPI.V1.LoyaltyAcquirerData.t() | nil
         }
 
   defstruct [:CurrentBalance, :LoyaltyAccount, :LoyaltyAcquirerData]
@@ -18,8 +18,8 @@ defmodule Adyen.TerminalAPI.V1.LoyaltyResult do
   def __fields__(:t) do
     [
       CurrentBalance: :number,
-      LoyaltyAccount: {Adyen.TerminalAPI.V1.LoyaltyAccount, :t},
-      LoyaltyAcquirerData: {Adyen.TerminalAPI.V1.LoyaltyAcquirerData, :t}
+      LoyaltyAccount: {AdyenEx.TerminalAPI.V1.LoyaltyAccount, :t},
+      LoyaltyAcquirerData: {AdyenEx.TerminalAPI.V1.LoyaltyAcquirerData, :t}
     ]
   end
 end

@@ -1,10 +1,10 @@
-defmodule Adyen.Fund.V6.RefundFundsTransferResponse do
+defmodule AdyenEx.Fund.V6.RefundFundsTransferResponse do
   @moduledoc """
   Provides struct and type for a RefundFundsTransferResponse
   """
 
   @type t :: %__MODULE__{
-          invalidFields: [Adyen.Fund.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Fund.V6.ErrorFieldType.t()] | nil,
           merchantReference: String.t() | nil,
           message: String.t() | nil,
           originalReference: String.t() | nil,
@@ -27,7 +27,7 @@ defmodule Adyen.Fund.V6.RefundFundsTransferResponse do
 
   def __fields__(:t) do
     [
-      invalidFields: [{Adyen.Fund.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Fund.V6.ErrorFieldType, :t}],
       merchantReference: :string,
       message: :string,
       originalReference: :string,

@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.UpdatePayoutScheduleRequest do
+defmodule AdyenEx.Account.V6.UpdatePayoutScheduleRequest do
   @moduledoc """
   Provides struct and type for a UpdatePayoutScheduleRequest
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.Installments do
+defmodule AdyenEx.Checkout.V70.Installments do
   @moduledoc """
   Provides struct and type for a Installments
   """

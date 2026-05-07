@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V6.GetNotificationConfigurationRequest do
+defmodule AdyenEx.NotificationConfiguration.V6.GetNotificationConfigurationRequest do
   @moduledoc """
   Provides struct and type for a GetNotificationConfigurationRequest
   """

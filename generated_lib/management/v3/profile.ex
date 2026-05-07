@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Profile do
+defmodule AdyenEx.Management.V3.Profile do
   @moduledoc """
   Provides struct and type for a Profile
   """
@@ -11,12 +11,12 @@ defmodule Adyen.Management.V3.Profile do
           defaultProfile: boolean | nil,
           domainSuffix: String.t() | nil,
           eap: String.t() | nil,
-          eapCaCert: Adyen.Management.V3.File.t() | nil,
-          eapClientCert: Adyen.Management.V3.File.t() | nil,
-          eapClientKey: Adyen.Management.V3.File.t() | nil,
+          eapCaCert: AdyenEx.Management.V3.File.t() | nil,
+          eapClientCert: AdyenEx.Management.V3.File.t() | nil,
+          eapClientKey: AdyenEx.Management.V3.File.t() | nil,
           eapClientPwd: String.t() | nil,
           eapIdentity: String.t() | nil,
-          eapIntermediateCert: Adyen.Management.V3.File.t() | nil,
+          eapIntermediateCert: AdyenEx.Management.V3.File.t() | nil,
           eapPwd: String.t() | nil,
           hiddenSsid: boolean | nil,
           name: String.t() | nil,
@@ -60,12 +60,12 @@ defmodule Adyen.Management.V3.Profile do
       defaultProfile: :boolean,
       domainSuffix: :string,
       eap: :string,
-      eapCaCert: {Adyen.Management.V3.File, :t},
-      eapClientCert: {Adyen.Management.V3.File, :t},
-      eapClientKey: {Adyen.Management.V3.File, :t},
+      eapCaCert: {AdyenEx.Management.V3.File, :t},
+      eapClientCert: {AdyenEx.Management.V3.File, :t},
+      eapClientKey: {AdyenEx.Management.V3.File, :t},
       eapClientPwd: :string,
       eapIdentity: :string,
-      eapIntermediateCert: {Adyen.Management.V3.File, :t},
+      eapIntermediateCert: {AdyenEx.Management.V3.File, :t},
       eapPwd: :string,
       hiddenSsid: :boolean,
       name: :string,

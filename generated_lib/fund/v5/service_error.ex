@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V5.ServiceError do
+defmodule AdyenEx.Fund.V5.ServiceError do
   @moduledoc """
   Provides struct and type for a ServiceError
   """

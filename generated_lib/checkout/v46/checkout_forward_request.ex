@@ -1,16 +1,16 @@
-defmodule Adyen.Checkout.V46.CheckoutForwardRequest do
+defmodule AdyenEx.Checkout.V46.CheckoutForwardRequest do
   @moduledoc """
   Provides struct and type for a CheckoutForwardRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V46.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V46.Amount.t() | nil,
           baseUrl: String.t(),
           merchantAccount: String.t(),
           merchantReference: String.t() | nil,
-          options: Adyen.Checkout.V46.CheckoutForwardRequestOptions.t() | nil,
-          paymentMethod: Adyen.Checkout.V46.CheckoutForwardRequestCard.t() | nil,
-          request: Adyen.Checkout.V46.CheckoutOutgoingForwardRequest.t(),
+          options: AdyenEx.Checkout.V46.CheckoutForwardRequestOptions.t() | nil,
+          paymentMethod: AdyenEx.Checkout.V46.CheckoutForwardRequestCard.t() | nil,
+          request: AdyenEx.Checkout.V46.CheckoutOutgoingForwardRequest.t(),
           shopperReference: String.t(),
           storedPaymentMethodId: String.t() | nil
         }
@@ -33,13 +33,13 @@ defmodule Adyen.Checkout.V46.CheckoutForwardRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V46.Amount, :t},
+      amount: {AdyenEx.Checkout.V46.Amount, :t},
       baseUrl: :string,
       merchantAccount: :string,
       merchantReference: :string,
-      options: {Adyen.Checkout.V46.CheckoutForwardRequestOptions, :t},
-      paymentMethod: {Adyen.Checkout.V46.CheckoutForwardRequestCard, :t},
-      request: {Adyen.Checkout.V46.CheckoutOutgoingForwardRequest, :t},
+      options: {AdyenEx.Checkout.V46.CheckoutForwardRequestOptions, :t},
+      paymentMethod: {AdyenEx.Checkout.V46.CheckoutForwardRequestCard, :t},
+      request: {AdyenEx.Checkout.V46.CheckoutOutgoingForwardRequest, :t},
       shopperReference: :string,
       storedPaymentMethodId: :string
     ]

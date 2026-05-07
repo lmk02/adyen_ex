@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.CancelOrRefundRequest do
+defmodule AdyenEx.Payment.V68.CancelOrRefundRequest do
   @moduledoc """
   Provides struct and type for a CancelOrRefundRequest
   """
@@ -6,10 +6,10 @@ defmodule Adyen.Payment.V68.CancelOrRefundRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          mpiData: Adyen.Payment.V68.ThreeDSecureData.t() | nil,
+          mpiData: AdyenEx.Payment.V68.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
-          platformChargebackLogic: Adyen.Payment.V68.PlatformChargebackLogic.t() | nil,
+          platformChargebackLogic: AdyenEx.Payment.V68.PlatformChargebackLogic.t() | nil,
           reference: String.t() | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
@@ -35,10 +35,10 @@ defmodule Adyen.Payment.V68.CancelOrRefundRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      mpiData: {Adyen.Payment.V68.ThreeDSecureData, :t},
+      mpiData: {AdyenEx.Payment.V68.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       originalReference: :string,
-      platformChargebackLogic: {Adyen.Payment.V68.PlatformChargebackLogic, :t},
+      platformChargebackLogic: {AdyenEx.Payment.V68.PlatformChargebackLogic, :t},
       reference: :string,
       tenderReference: :string,
       uniqueTerminalId: :string

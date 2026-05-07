@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.ClientKeyMerchantLevel do
+defmodule AdyenEx.Management.V1.ClientKeyMerchantLevel do
   @moduledoc """
   Provides API endpoint related to client key merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Generate new client key
@@ -18,8 +18,8 @@ defmodule Adyen.Management.V1.ClientKeyMerchantLevel do
           apiCredentialId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.GenerateClientKeyResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.GenerateClientKeyResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_api_credentials_api_credential_id_generate_client_key(
         merchantId,
         apiCredentialId,
@@ -30,18 +30,18 @@ defmodule Adyen.Management.V1.ClientKeyMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, apiCredentialId: apiCredentialId],
       call:
-        {Adyen.Management.V1.ClientKeyMerchantLevel,
+        {AdyenEx.Management.V1.ClientKeyMerchantLevel,
          :post_merchants_merchant_id_api_credentials_api_credential_id_generate_client_key},
       url: "/merchants/#{merchantId}/apiCredentials/#{apiCredentialId}/generateClientKey",
       method: :post,
       response: [
-        {200, {Adyen.Management.V1.GenerateClientKeyResponse, :t}},
+        {200, {AdyenEx.Management.V1.GenerateClientKeyResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.ThreeDSecure do
+defmodule AdyenEx.Transfer.V4.ThreeDSecure do
   @moduledoc """
   Provides struct and type for a ThreeDSecure
   """

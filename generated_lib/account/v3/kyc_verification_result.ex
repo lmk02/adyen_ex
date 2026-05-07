@@ -1,13 +1,13 @@
-defmodule Adyen.Account.V3.KYCVerificationResult do
+defmodule AdyenEx.Account.V3.KYCVerificationResult do
   @moduledoc """
   Provides struct and type for a KYCVerificationResult
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.Account.V3.KYCCheckResult.t() | nil,
-          bankAccounts: [Adyen.Account.V3.KYCBankAccountCheckResult.t()] | nil,
-          shareholders: [Adyen.Account.V3.KYCShareholderCheckResult.t()] | nil,
-          signatories: [Adyen.Account.V3.KYCSignatoryCheckResult.t()] | nil
+          accountHolder: AdyenEx.Account.V3.KYCCheckResult.t() | nil,
+          bankAccounts: [AdyenEx.Account.V3.KYCBankAccountCheckResult.t()] | nil,
+          shareholders: [AdyenEx.Account.V3.KYCShareholderCheckResult.t()] | nil,
+          signatories: [AdyenEx.Account.V3.KYCSignatoryCheckResult.t()] | nil
         }
 
   defstruct [:accountHolder, :bankAccounts, :shareholders, :signatories]
@@ -18,10 +18,10 @@ defmodule Adyen.Account.V3.KYCVerificationResult do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.Account.V3.KYCCheckResult, :t},
-      bankAccounts: [{Adyen.Account.V3.KYCBankAccountCheckResult, :t}],
-      shareholders: [{Adyen.Account.V3.KYCShareholderCheckResult, :t}],
-      signatories: [{Adyen.Account.V3.KYCSignatoryCheckResult, :t}]
+      accountHolder: {AdyenEx.Account.V3.KYCCheckResult, :t},
+      bankAccounts: [{AdyenEx.Account.V3.KYCBankAccountCheckResult, :t}],
+      shareholders: [{AdyenEx.Account.V3.KYCShareholderCheckResult, :t}],
+      signatories: [{AdyenEx.Account.V3.KYCSignatoryCheckResult, :t}]
     ]
   end
 end

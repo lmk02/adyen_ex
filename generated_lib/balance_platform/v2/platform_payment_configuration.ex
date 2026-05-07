@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.PlatformPaymentConfiguration do
+defmodule AdyenEx.BalancePlatform.V2.PlatformPaymentConfiguration do
   @moduledoc """
   Provides struct and type for a PlatformPaymentConfiguration
   """

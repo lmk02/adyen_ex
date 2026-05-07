@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.LoyaltyAcquirerData do
+defmodule AdyenEx.TerminalAPI.V1.LoyaltyAcquirerData do
   @moduledoc """
   Provides struct and type for a LoyaltyAcquirerData
   """
@@ -7,7 +7,7 @@ defmodule Adyen.TerminalAPI.V1.LoyaltyAcquirerData do
           ApprovalCode: String.t() | nil,
           HostReconciliationID: String.t() | nil,
           LoyaltyAcquirerID: String.t() | nil,
-          LoyaltyTransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil
+          LoyaltyTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil
         }
 
   defstruct [:ApprovalCode, :HostReconciliationID, :LoyaltyAcquirerID, :LoyaltyTransactionID]
@@ -21,7 +21,7 @@ defmodule Adyen.TerminalAPI.V1.LoyaltyAcquirerData do
       ApprovalCode: :string,
       HostReconciliationID: :string,
       LoyaltyAcquirerID: :string,
-      LoyaltyTransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t}
+      LoyaltyTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t}
     ]
   end
 end

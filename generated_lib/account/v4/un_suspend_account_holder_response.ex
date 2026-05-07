@@ -1,10 +1,10 @@
-defmodule Adyen.Account.V4.UnSuspendAccountHolderResponse do
+defmodule AdyenEx.Account.V4.UnSuspendAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a UnSuspendAccountHolderResponse
   """
 
   @type t :: %__MODULE__{
-          accountHolderStatus: Adyen.Account.V4.AccountHolderStatus.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V4.AccountHolderStatus.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Account.V4.UnSuspendAccountHolderResponse do
 
   def __fields__(:t) do
     [
-      accountHolderStatus: {Adyen.Account.V4.AccountHolderStatus, :t},
+      accountHolderStatus: {AdyenEx.Account.V4.AccountHolderStatus, :t},
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean

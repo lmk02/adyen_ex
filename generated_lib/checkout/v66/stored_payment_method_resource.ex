@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.StoredPaymentMethodResource do
+defmodule AdyenEx.Checkout.V66.StoredPaymentMethodResource do
   @moduledoc """
   Provides struct and type for a StoredPaymentMethodResource
   """

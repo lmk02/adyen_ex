@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.CreateCompanyApiCredentialRequest do
+defmodule AdyenEx.Management.V1.CreateCompanyApiCredentialRequest do
   @moduledoc """
   Provides struct and type for a CreateCompanyApiCredentialRequest
   """

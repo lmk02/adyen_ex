@@ -1,15 +1,15 @@
-defmodule Adyen.TerminalAPI.V1.MobileData do
+defmodule AdyenEx.TerminalAPI.V1.MobileData do
   @moduledoc """
   Provides struct and type for a MobileData
   """
 
   @type t :: %__MODULE__{
-          Geolocation: Adyen.TerminalAPI.V1.Geolocation.t() | nil,
+          Geolocation: AdyenEx.TerminalAPI.V1.Geolocation.t() | nil,
           MaskedMSISDN: integer | nil,
           MobileCountryCode: integer | nil,
           MobileNetworkCode: integer | nil,
           ProtectedMobileData: String.t() | nil,
-          SensitiveMobileData: Adyen.TerminalAPI.V1.SensitiveMobileData.t() | nil
+          SensitiveMobileData: AdyenEx.TerminalAPI.V1.SensitiveMobileData.t() | nil
         }
 
   defstruct [
@@ -27,12 +27,12 @@ defmodule Adyen.TerminalAPI.V1.MobileData do
 
   def __fields__(:t) do
     [
-      Geolocation: {Adyen.TerminalAPI.V1.Geolocation, :t},
+      Geolocation: {AdyenEx.TerminalAPI.V1.Geolocation, :t},
       MaskedMSISDN: :integer,
       MobileCountryCode: :integer,
       MobileNetworkCode: :integer,
       ProtectedMobileData: :string,
-      SensitiveMobileData: {Adyen.TerminalAPI.V1.SensitiveMobileData, :t}
+      SensitiveMobileData: {AdyenEx.TerminalAPI.V1.SensitiveMobileData, :t}
     ]
   end
 end

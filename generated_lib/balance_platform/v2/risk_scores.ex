@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RiskScores do
+defmodule AdyenEx.BalancePlatform.V2.RiskScores do
   @moduledoc """
   Provides struct and type for a RiskScores
   """

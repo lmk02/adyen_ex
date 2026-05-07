@@ -1,10 +1,10 @@
-defmodule Adyen.Hop.V6.GetOnboardingUrlResponse do
+defmodule AdyenEx.Hop.V6.GetOnboardingUrlResponse do
   @moduledoc """
   Provides struct and type for a GetOnboardingUrlResponse
   """
 
   @type t :: %__MODULE__{
-          invalidFields: [Adyen.Hop.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Hop.V6.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           redirectUrl: String.t() | nil,
           resultCode: String.t() | nil
@@ -18,7 +18,7 @@ defmodule Adyen.Hop.V6.GetOnboardingUrlResponse do
 
   def __fields__(:t) do
     [
-      invalidFields: [{Adyen.Hop.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Hop.V6.ErrorFieldType, :t}],
       pspReference: :string,
       redirectUrl: :string,
       resultCode: :string

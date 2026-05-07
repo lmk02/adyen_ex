@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.ShopperInteractionDevice do
+defmodule AdyenEx.Payment.V68.ShopperInteractionDevice do
   @moduledoc """
   Provides struct and type for a ShopperInteractionDevice
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.DefaultErrorResponseEntity do
+defmodule AdyenEx.Checkout.V71.DefaultErrorResponseEntity do
   @moduledoc """
   Provides struct and type for a DefaultErrorResponseEntity
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Checkout.V71.DefaultErrorResponseEntity do
           detail: String.t() | nil,
           errorCode: String.t() | nil,
           instance: String.t() | nil,
-          invalidFields: [Adyen.Checkout.V71.InvalidField.t()] | nil,
+          invalidFields: [AdyenEx.Checkout.V71.InvalidField.t()] | nil,
           requestId: String.t() | nil,
           status: integer | nil,
           title: String.t() | nil,
@@ -25,7 +25,7 @@ defmodule Adyen.Checkout.V71.DefaultErrorResponseEntity do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.Checkout.V71.InvalidField, :t}],
+      invalidFields: [{AdyenEx.Checkout.V71.InvalidField, :t}],
       requestId: :string,
       status: {:integer, "int32"},
       title: :string,

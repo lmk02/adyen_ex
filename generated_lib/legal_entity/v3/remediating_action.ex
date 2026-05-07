@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.RemediatingAction do
+defmodule AdyenEx.LegalEntity.V3.RemediatingAction do
   @moduledoc """
   Provides struct and type for a RemediatingAction
   """

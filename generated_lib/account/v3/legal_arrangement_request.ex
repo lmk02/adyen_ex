@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.LegalArrangementRequest do
+defmodule AdyenEx.Account.V3.LegalArrangementRequest do
   @moduledoc """
   Provides struct and type for a LegalArrangementRequest
   """

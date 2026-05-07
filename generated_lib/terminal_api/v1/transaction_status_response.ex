@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.TransactionStatusResponse do
+defmodule AdyenEx.TerminalAPI.V1.TransactionStatusResponse do
   @moduledoc """
   Provides struct and type for a TransactionStatusResponse
   """
 
   @type t :: %__MODULE__{
-          MessageReference: Adyen.TerminalAPI.V1.MessageReference.t() | nil,
-          RepeatedMessageResponse: Adyen.TerminalAPI.V1.RepeatedMessageResponse.t() | nil,
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          MessageReference: AdyenEx.TerminalAPI.V1.MessageReference.t() | nil,
+          RepeatedMessageResponse: AdyenEx.TerminalAPI.V1.RepeatedMessageResponse.t() | nil,
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:MessageReference, :RepeatedMessageResponse, :Response]
@@ -17,9 +17,9 @@ defmodule Adyen.TerminalAPI.V1.TransactionStatusResponse do
 
   def __fields__(:t) do
     [
-      MessageReference: {Adyen.TerminalAPI.V1.MessageReference, :t},
-      RepeatedMessageResponse: {Adyen.TerminalAPI.V1.RepeatedMessageResponse, :t},
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      MessageReference: {AdyenEx.TerminalAPI.V1.MessageReference, :t},
+      RepeatedMessageResponse: {AdyenEx.TerminalAPI.V1.RepeatedMessageResponse, :t},
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

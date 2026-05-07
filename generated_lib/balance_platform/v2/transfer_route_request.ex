@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TransferRouteRequest do
+defmodule AdyenEx.BalancePlatform.V2.TransferRouteRequest do
   @moduledoc """
   Provides struct and type for a TransferRouteRequest
   """
@@ -7,7 +7,7 @@ defmodule Adyen.BalancePlatform.V2.TransferRouteRequest do
           balanceAccountId: String.t() | nil,
           balancePlatform: String.t(),
           category: String.t(),
-          counterparty: Adyen.BalancePlatform.V2.Counterparty.t() | nil,
+          counterparty: AdyenEx.BalancePlatform.V2.Counterparty.t() | nil,
           country: String.t() | nil,
           currency: String.t(),
           priorities: [String.t()] | nil
@@ -32,7 +32,7 @@ defmodule Adyen.BalancePlatform.V2.TransferRouteRequest do
       balanceAccountId: :string,
       balancePlatform: :string,
       category: {:const, "bank"},
-      counterparty: {Adyen.BalancePlatform.V2.Counterparty, :t},
+      counterparty: {AdyenEx.BalancePlatform.V2.Counterparty, :t},
       country: :string,
       currency: :string,
       priorities: [enum: ["crossBorder", "fast", "instant", "internal", "regular", "wire"]]

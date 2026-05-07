@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.BillDeskDetails do
+defmodule AdyenEx.Checkout.V70.BillDeskDetails do
   @moduledoc """
   Provides struct and type for a BillDeskDetails
   """

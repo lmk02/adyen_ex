@@ -1,4 +1,4 @@
-defmodule Adyen.SoftPOSConfiguration.V3.InvalidField do
+defmodule AdyenEx.SoftPOSConfiguration.V3.InvalidField do
   @moduledoc """
   Provides struct and type for a InvalidField
   """

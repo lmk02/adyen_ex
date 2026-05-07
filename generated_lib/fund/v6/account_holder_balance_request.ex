@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V6.AccountHolderBalanceRequest do
+defmodule AdyenEx.Fund.V6.AccountHolderBalanceRequest do
   @moduledoc """
   Provides struct and type for a AccountHolderBalanceRequest
   """

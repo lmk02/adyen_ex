@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.TransferNotificationMerchantData do
+defmodule AdyenEx.Transfer.V4.TransferNotificationMerchantData do
   @moduledoc """
   Provides struct and type for a TransferNotificationMerchantData
   """

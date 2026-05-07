@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.GetTaxFormRequest do
+defmodule AdyenEx.Account.V5.GetTaxFormRequest do
   @moduledoc """
   Provides struct and type for a GetTaxFormRequest
   """

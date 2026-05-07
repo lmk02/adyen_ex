@@ -1,4 +1,4 @@
-defmodule Adyen.ForeignExchange.V1.DefaultErrorResponseEntity do
+defmodule AdyenEx.ForeignExchange.V1.DefaultErrorResponseEntity do
   @moduledoc """
   Provides struct and type for a DefaultErrorResponseEntity
   """
@@ -7,7 +7,7 @@ defmodule Adyen.ForeignExchange.V1.DefaultErrorResponseEntity do
           detail: String.t() | nil,
           errorCode: String.t() | nil,
           instance: String.t() | nil,
-          invalidFields: [Adyen.ForeignExchange.V1.InvalidField.t()] | nil,
+          invalidFields: [AdyenEx.ForeignExchange.V1.InvalidField.t()] | nil,
           requestId: String.t() | nil,
           status: integer | nil,
           title: String.t() | nil,
@@ -25,7 +25,7 @@ defmodule Adyen.ForeignExchange.V1.DefaultErrorResponseEntity do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.ForeignExchange.V1.InvalidField, :t}],
+      invalidFields: [{AdyenEx.ForeignExchange.V1.InvalidField, :t}],
       requestId: :string,
       status: {:integer, "int32"},
       title: :string,

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Timeouts do
+defmodule AdyenEx.Management.V1.Timeouts do
   @moduledoc """
   Provides struct and type for a Timeouts
   """

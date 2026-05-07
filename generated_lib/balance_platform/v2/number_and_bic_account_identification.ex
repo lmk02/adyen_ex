@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.NumberAndBicAccountIdentification do
+defmodule AdyenEx.BalancePlatform.V2.NumberAndBicAccountIdentification do
   @moduledoc """
   Provides struct and type for a NumberAndBicAccountIdentification
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.NumberAndBicAccountIdentification do
   @type t :: %__MODULE__{
           accountNumber: String.t(),
           additionalBankIdentification:
-            Adyen.BalancePlatform.V2.AdditionalBankIdentification.t() | nil,
+            AdyenEx.BalancePlatform.V2.AdditionalBankIdentification.t() | nil,
           bic: String.t(),
           type: String.t()
         }
@@ -20,7 +20,7 @@ defmodule Adyen.BalancePlatform.V2.NumberAndBicAccountIdentification do
   def __fields__(:t) do
     [
       accountNumber: :string,
-      additionalBankIdentification: {Adyen.BalancePlatform.V2.AdditionalBankIdentification, :t},
+      additionalBankIdentification: {AdyenEx.BalancePlatform.V2.AdditionalBankIdentification, :t},
       bic: :string,
       type: {:const, "numberAndBic"}
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V67.DonationCampaignsRequest do
+defmodule AdyenEx.Checkout.V67.DonationCampaignsRequest do
   @moduledoc """
   Provides struct and type for a DonationCampaignsRequest
   """

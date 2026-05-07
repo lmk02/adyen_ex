@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V1.UnincorporatedPartnership do
+defmodule AdyenEx.LegalEntity.V1.UnincorporatedPartnership do
   @moduledoc """
   Provides struct and type for a UnincorporatedPartnership
   """
@@ -7,8 +7,8 @@ defmodule Adyen.LegalEntity.V1.UnincorporatedPartnership do
           countryOfGoverningLaw: String.t(),
           doingBusinessAs: String.t() | nil,
           name: String.t(),
-          principalPlaceOfBusiness: Adyen.LegalEntity.V1.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V1.Address.t(),
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V1.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V1.Address.t(),
           registrationNumber: String.t() | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
@@ -36,8 +36,8 @@ defmodule Adyen.LegalEntity.V1.UnincorporatedPartnership do
       countryOfGoverningLaw: :string,
       doingBusinessAs: :string,
       name: :string,
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V1.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V1.Address, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V1.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V1.Address, :t},
       registrationNumber: :string,
       type:
         {:enum,

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.Destination do
+defmodule AdyenEx.Checkout.V70.Destination do
   @moduledoc """
   Provides struct and type for a Destination
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.ForeignExchange.V1.CalculateRateResponseItem do
+defmodule AdyenEx.ForeignExchange.V1.CalculateRateResponseItem do
   @moduledoc """
   Provides struct and type for a CalculateRateResponseItem
   """
@@ -6,8 +6,8 @@ defmodule Adyen.ForeignExchange.V1.CalculateRateResponseItem do
   @type t :: %__MODULE__{
           appliedExchangeRate: number | nil,
           exchangeSide: String.t() | nil,
-          sourceAmount: Adyen.ForeignExchange.V1.Amount.t() | nil,
-          targetAmount: Adyen.ForeignExchange.V1.Amount.t() | nil,
+          sourceAmount: AdyenEx.ForeignExchange.V1.Amount.t() | nil,
+          targetAmount: AdyenEx.ForeignExchange.V1.Amount.t() | nil,
           type: String.t() | nil
         }
 
@@ -21,8 +21,8 @@ defmodule Adyen.ForeignExchange.V1.CalculateRateResponseItem do
     [
       appliedExchangeRate: :number,
       exchangeSide: :string,
-      sourceAmount: {Adyen.ForeignExchange.V1.Amount, :t},
-      targetAmount: {Adyen.ForeignExchange.V1.Amount, :t},
+      sourceAmount: {AdyenEx.ForeignExchange.V1.Amount, :t},
+      targetAmount: {AdyenEx.ForeignExchange.V1.Amount, :t},
       type: :string
     ]
   end

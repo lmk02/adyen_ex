@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V67.Card do
+defmodule AdyenEx.Payout.V67.Card do
   @moduledoc """
   Provides struct and type for a Card
   """

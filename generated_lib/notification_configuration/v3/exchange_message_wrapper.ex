@@ -1,10 +1,10 @@
-defmodule Adyen.NotificationConfiguration.V3.ExchangeMessageWrapper do
+defmodule AdyenEx.NotificationConfiguration.V3.ExchangeMessageWrapper do
   @moduledoc """
   Provides struct and type for a ExchangeMessageWrapper
   """
 
   @type t :: %__MODULE__{
-          ExchangeMessage: Adyen.NotificationConfiguration.V3.ExchangeMessage.t() | nil
+          ExchangeMessage: AdyenEx.NotificationConfiguration.V3.ExchangeMessage.t() | nil
         }
 
   defstruct [:ExchangeMessage]
@@ -14,6 +14,6 @@ defmodule Adyen.NotificationConfiguration.V3.ExchangeMessageWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [ExchangeMessage: {Adyen.NotificationConfiguration.V3.ExchangeMessage, :t}]
+    [ExchangeMessage: {AdyenEx.NotificationConfiguration.V3.ExchangeMessage, :t}]
   end
 end

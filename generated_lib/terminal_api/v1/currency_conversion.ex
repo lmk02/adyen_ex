@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.CurrencyConversion do
+defmodule AdyenEx.TerminalAPI.V1.CurrencyConversion do
   @moduledoc """
   Provides struct and type for a CurrencyConversion
   """
 
   @type t :: %__MODULE__{
           Commission: number | nil,
-          ConvertedAmount: Adyen.TerminalAPI.V1.ConvertedAmount.t(),
+          ConvertedAmount: AdyenEx.TerminalAPI.V1.ConvertedAmount.t(),
           CustomerApprovedFlag: boolean | nil,
           Declaration: String.t() | nil,
           Markup: number | nil,
@@ -21,7 +21,7 @@ defmodule Adyen.TerminalAPI.V1.CurrencyConversion do
   def __fields__(:t) do
     [
       Commission: :number,
-      ConvertedAmount: {Adyen.TerminalAPI.V1.ConvertedAmount, :t},
+      ConvertedAmount: {AdyenEx.TerminalAPI.V1.ConvertedAmount, :t},
       CustomerApprovedFlag: :boolean,
       Declaration: :string,
       Markup: :number,

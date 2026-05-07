@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.IdentificationData do
+defmodule AdyenEx.LegalEntity.V2.IdentificationData do
   @moduledoc """
   Provides struct and type for a IdentificationData
   """

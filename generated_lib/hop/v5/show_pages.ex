@@ -1,4 +1,4 @@
-defmodule Adyen.Hop.V5.ShowPages do
+defmodule AdyenEx.Hop.V5.ShowPages do
   @moduledoc """
   Provides struct and type for a ShowPages
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.NetworkTokenActivationDataResponse do
+defmodule AdyenEx.BalancePlatform.V2.NetworkTokenActivationDataResponse do
   @moduledoc """
   Provides struct and type for a NetworkTokenActivationDataResponse
   """

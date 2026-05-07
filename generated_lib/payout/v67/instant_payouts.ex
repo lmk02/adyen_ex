@@ -1,9 +1,9 @@
-defmodule Adyen.Payout.V67.InstantPayouts do
+defmodule AdyenEx.Payout.V67.InstantPayouts do
   @moduledoc """
   Provides API endpoint related to instant payouts
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Make an instant card payout
@@ -25,25 +25,26 @@ defmodule Adyen.Payout.V67.InstantPayouts do
 
   **Content Types**: `application/json`
   """
-  @spec post_payout(body :: Adyen.Payout.V67.PayoutRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payout.V67.PayoutResponse.t()} | {:error, Adyen.Payout.V67.ServiceError.t()}
+  @spec post_payout(body :: AdyenEx.Payout.V67.PayoutRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payout.V67.PayoutResponse.t()}
+          | {:error, AdyenEx.Payout.V67.ServiceError.t()}
   def post_payout(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V67.InstantPayouts, :post_payout},
+      call: {AdyenEx.Payout.V67.InstantPayouts, :post_payout},
       url: "/payout",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V67.PayoutRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V67.PayoutRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V67.PayoutResponse, :t}},
-        {400, {Adyen.Payout.V67.ServiceError, :t}},
-        {401, {Adyen.Payout.V67.ServiceError, :t}},
-        {403, {Adyen.Payout.V67.ServiceError, :t}},
-        {422, {Adyen.Payout.V67.ServiceError, :t}},
-        {500, {Adyen.Payout.V67.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V67.PayoutResponse, :t}},
+        {400, {AdyenEx.Payout.V67.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V67.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V67.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V67.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V67.ServiceError, :t}}
       ],
       opts: opts
     })

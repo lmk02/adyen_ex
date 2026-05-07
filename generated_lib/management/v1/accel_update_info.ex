@@ -1,10 +1,10 @@
-defmodule Adyen.Management.V1.AccelUpdateInfo do
+defmodule AdyenEx.Management.V1.AccelUpdateInfo do
   @moduledoc """
   Provides struct and type for a AccelUpdateInfo
   """
 
   @type t :: %__MODULE__{
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V1.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:transactionDescription]
@@ -14,6 +14,6 @@ defmodule Adyen.Management.V1.AccelUpdateInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [transactionDescription: {Adyen.Management.V1.TransactionDescriptionInfo, :t}]
+    [transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionInfo, :t}]
   end
 end

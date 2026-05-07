@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V67.CheckoutForwardRequestCard do
+defmodule AdyenEx.Checkout.V67.CheckoutForwardRequestCard do
   @moduledoc """
   Provides struct and type for a CheckoutForwardRequestCard
   """

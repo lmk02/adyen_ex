@@ -1,9 +1,9 @@
-defmodule Adyen.Capital.V1.GrantOfferFee do
+defmodule AdyenEx.Capital.V1.GrantOfferFee do
   @moduledoc """
   Provides struct and type for a GrantOfferFee
   """
 
-  @type t :: %__MODULE__{amount: Adyen.Capital.V1.Amount.t(), aprBasisPoints: integer | nil}
+  @type t :: %__MODULE__{amount: AdyenEx.Capital.V1.Amount.t(), aprBasisPoints: integer | nil}
 
   defstruct [:amount, :aprBasisPoints]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Capital.V1.GrantOfferFee do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [amount: {Adyen.Capital.V1.Amount, :t}, aprBasisPoints: {:integer, "int32"}]
+    [amount: {AdyenEx.Capital.V1.Amount, :t}, aprBasisPoints: {:integer, "int32"}]
   end
 end

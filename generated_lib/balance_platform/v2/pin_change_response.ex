@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.PinChangeResponse do
+defmodule AdyenEx.BalancePlatform.V2.PinChangeResponse do
   @moduledoc """
   Provides struct and type for a PinChangeResponse
   """

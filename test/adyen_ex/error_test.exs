@@ -1,7 +1,7 @@
-defmodule Adyen.ErrorTest do
+defmodule AdyenEx.ErrorTest do
   use ExUnit.Case
 
-  alias Adyen.Error
+  alias AdyenEx.Error
 
   test "parses Checkout-style error" do
     body = %{

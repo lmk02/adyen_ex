@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V4.CreateAccountHolderRequest do
+defmodule AdyenEx.Account.V4.CreateAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a CreateAccountHolderRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          accountHolderDetails: Adyen.Account.V4.AccountHolderDetails.t(),
+          accountHolderDetails: AdyenEx.Account.V4.AccountHolderDetails.t(),
           createDefaultAccount: boolean | nil,
           description: String.t() | nil,
           legalEntity: String.t(),
@@ -30,7 +30,7 @@ defmodule Adyen.Account.V4.CreateAccountHolderRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V4.AccountHolderDetails, :t},
+      accountHolderDetails: {AdyenEx.Account.V4.AccountHolderDetails, :t},
       createDefaultAccount: :boolean,
       description: :string,
       legalEntity: {:enum, ["Business", "Individual", "NonProfit"]},

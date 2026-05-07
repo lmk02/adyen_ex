@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.CreateAccountHolderResponse do
+defmodule AdyenEx.Account.V6.CreateAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a CreateAccountHolderResponse
   """
@@ -6,15 +6,15 @@ defmodule Adyen.Account.V6.CreateAccountHolderResponse do
   @type t :: %__MODULE__{
           accountCode: String.t() | nil,
           accountHolderCode: String.t() | nil,
-          accountHolderDetails: Adyen.Account.V6.AccountHolderDetails.t() | nil,
-          accountHolderStatus: Adyen.Account.V6.AccountHolderStatus.t() | nil,
+          accountHolderDetails: AdyenEx.Account.V6.AccountHolderDetails.t() | nil,
+          accountHolderStatus: AdyenEx.Account.V6.AccountHolderStatus.t() | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V6.ErrorFieldType.t()] | nil,
           legalEntity: String.t() | nil,
           primaryCurrency: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
-          verification: Adyen.Account.V6.KYCVerificationResult.t() | nil,
+          verification: AdyenEx.Account.V6.KYCVerificationResult.t() | nil,
           verificationProfile: String.t() | nil
         }
 
@@ -41,16 +41,16 @@ defmodule Adyen.Account.V6.CreateAccountHolderResponse do
     [
       accountCode: :string,
       accountHolderCode: :string,
-      accountHolderDetails: {Adyen.Account.V6.AccountHolderDetails, :t},
-      accountHolderStatus: {Adyen.Account.V6.AccountHolderStatus, :t},
+      accountHolderDetails: {AdyenEx.Account.V6.AccountHolderDetails, :t},
+      accountHolderStatus: {AdyenEx.Account.V6.AccountHolderStatus, :t},
       description: :string,
-      invalidFields: [{Adyen.Account.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V6.ErrorFieldType, :t}],
       legalEntity:
         {:enum, ["Business", "Individual", "NonProfit", "Partnership", "PublicCompany"]},
       primaryCurrency: :string,
       pspReference: :string,
       resultCode: :string,
-      verification: {Adyen.Account.V6.KYCVerificationResult, :t},
+      verification: {AdyenEx.Account.V6.KYCVerificationResult, :t},
       verificationProfile: :string
     ]
   end

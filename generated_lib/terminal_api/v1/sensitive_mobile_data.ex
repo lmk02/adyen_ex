@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.SensitiveMobileData do
+defmodule AdyenEx.TerminalAPI.V1.SensitiveMobileData do
   @moduledoc """
   Provides struct and type for a SensitiveMobileData
   """

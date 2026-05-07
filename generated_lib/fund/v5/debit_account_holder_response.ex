@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V5.DebitAccountHolderResponse do
+defmodule AdyenEx.Fund.V5.DebitAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a DebitAccountHolderResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Fund.V5.DebitAccountHolderResponse do
   @type t :: %__MODULE__{
           accountHolderCode: String.t() | nil,
           bankAccountUUID: String.t() | nil,
-          invalidFields: [Adyen.Fund.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Fund.V5.ErrorFieldType.t()] | nil,
           merchantReferences: [String.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
@@ -29,7 +29,7 @@ defmodule Adyen.Fund.V5.DebitAccountHolderResponse do
     [
       accountHolderCode: :string,
       bankAccountUUID: :string,
-      invalidFields: [{Adyen.Fund.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Fund.V5.ErrorFieldType, :t}],
       merchantReferences: [:string],
       pspReference: :string,
       resultCode: :string

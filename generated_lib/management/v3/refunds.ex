@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.Refunds do
+defmodule AdyenEx.Management.V3.Refunds do
   @moduledoc """
   Provides struct and type for a Refunds
   """
 
   @type t :: %__MODULE__{
-          referenced: Adyen.Management.V3.Referenced.t() | nil,
-          unreferenced: Adyen.Management.V3.Unreferenced.t() | nil
+          referenced: AdyenEx.Management.V3.Referenced.t() | nil,
+          unreferenced: AdyenEx.Management.V3.Unreferenced.t() | nil
         }
 
   defstruct [:referenced, :unreferenced]
@@ -16,8 +16,8 @@ defmodule Adyen.Management.V3.Refunds do
 
   def __fields__(:t) do
     [
-      referenced: {Adyen.Management.V3.Referenced, :t},
-      unreferenced: {Adyen.Management.V3.Unreferenced, :t}
+      referenced: {AdyenEx.Management.V3.Referenced, :t},
+      unreferenced: {AdyenEx.Management.V3.Unreferenced, :t}
     ]
   end
 end

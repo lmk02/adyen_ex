@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V6.TestNotificationConfigurationResponse do
+defmodule AdyenEx.NotificationConfiguration.V6.TestNotificationConfigurationResponse do
   @moduledoc """
   Provides struct and type for a TestNotificationConfigurationResponse
   """
@@ -6,8 +6,8 @@ defmodule Adyen.NotificationConfiguration.V6.TestNotificationConfigurationRespon
   @type t :: %__MODULE__{
           errorMessages: [String.t()] | nil,
           eventTypes: [String.t()] | nil,
-          exchangeMessages: [Adyen.NotificationConfiguration.V6.ExchangeMessage.t()] | nil,
-          invalidFields: [Adyen.NotificationConfiguration.V6.ErrorFieldType.t()] | nil,
+          exchangeMessages: [AdyenEx.NotificationConfiguration.V6.ExchangeMessage.t()] | nil,
+          invalidFields: [AdyenEx.NotificationConfiguration.V6.ErrorFieldType.t()] | nil,
           notificationId: integer,
           okMessages: [String.t()] | nil,
           pspReference: String.t() | nil,
@@ -61,8 +61,8 @@ defmodule Adyen.NotificationConfiguration.V6.TestNotificationConfigurationRespon
           "TRANSFER_NOT_PAIDOUT_TRANSFERS"
         ]
       ],
-      exchangeMessages: [{Adyen.NotificationConfiguration.V6.ExchangeMessage, :t}],
-      invalidFields: [{Adyen.NotificationConfiguration.V6.ErrorFieldType, :t}],
+      exchangeMessages: [{AdyenEx.NotificationConfiguration.V6.ExchangeMessage, :t}],
+      invalidFields: [{AdyenEx.NotificationConfiguration.V6.ErrorFieldType, :t}],
       notificationId: {:integer, "int64"},
       okMessages: [:string],
       pspReference: :string,

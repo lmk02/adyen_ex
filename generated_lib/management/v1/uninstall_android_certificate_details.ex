@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UninstallAndroidCertificateDetails do
+defmodule AdyenEx.Management.V1.UninstallAndroidCertificateDetails do
   @moduledoc """
   Provides struct and type for a UninstallAndroidCertificateDetails
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.CheckData do
+defmodule AdyenEx.TerminalAPI.V1.CheckData do
   @moduledoc """
   Provides struct and type for a CheckData
   """
@@ -9,7 +9,7 @@ defmodule Adyen.TerminalAPI.V1.CheckData do
           CheckCardNumber: String.t() | nil,
           CheckNumber: String.t() | nil,
           Country: String.t() | nil,
-          TrackData: Adyen.TerminalAPI.V1.TrackData.t() | nil,
+          TrackData: AdyenEx.TerminalAPI.V1.TrackData.t() | nil,
           TypeCode: String.t() | nil
         }
 
@@ -34,7 +34,7 @@ defmodule Adyen.TerminalAPI.V1.CheckData do
       CheckCardNumber: :string,
       CheckNumber: :string,
       Country: :string,
-      TrackData: {Adyen.TerminalAPI.V1.TrackData, :t},
+      TrackData: {AdyenEx.TerminalAPI.V1.TrackData, :t},
       TypeCode: {:enum, ["Company", "Personal"]}
     ]
   end

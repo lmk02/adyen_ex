@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
+defmodule AdyenEx.Management.V3.SplitConfigurationMerchantLevel do
   @moduledoc """
   Provides API endpoints related to split configuration merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a split configuration profile
@@ -18,8 +18,8 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
           splitConfigurationId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def delete_merchants_merchant_id_split_configurations_split_configuration_id(
         merchantId,
         splitConfigurationId,
@@ -30,18 +30,18 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, splitConfigurationId: splitConfigurationId],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :delete_merchants_merchant_id_split_configurations_split_configuration_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}",
       method: :delete,
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -61,8 +61,8 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
           ruleId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def delete_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id(
         merchantId,
         splitConfigurationId,
@@ -74,18 +74,18 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, splitConfigurationId: splitConfigurationId, ruleId: ruleId],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :delete_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}/rules/#{ruleId}",
       method: :delete,
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -100,26 +100,26 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
   * Management API - SplitConfiguration read and write
   """
   @spec get_merchants_merchant_id_split_configurations(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.SplitConfigurationList.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfigurationList.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_split_configurations(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :get_merchants_merchant_id_split_configurations},
       url: "/merchants/#{merchantId}/splitConfigurations",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.SplitConfigurationList, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfigurationList, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -138,8 +138,8 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
           splitConfigurationId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_merchants_merchant_id_split_configurations_split_configuration_id(
         merchantId,
         splitConfigurationId,
@@ -150,18 +150,18 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, splitConfigurationId: splitConfigurationId],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :get_merchants_merchant_id_split_configurations_split_configuration_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -182,11 +182,11 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
   @spec patch_merchants_merchant_id_split_configurations_split_configuration_id(
           merchantId :: String.t(),
           splitConfigurationId :: String.t(),
-          body :: Adyen.Management.V3.UpdateSplitConfigurationRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateSplitConfigurationRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_split_configurations_split_configuration_id(
         merchantId,
         splitConfigurationId,
@@ -198,20 +198,20 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, splitConfigurationId: splitConfigurationId, body: body],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :patch_merchants_merchant_id_split_configurations_split_configuration_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V3.UpdateSplitConfigurationRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.UpdateSplitConfigurationRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -233,11 +233,11 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
           merchantId :: String.t(),
           splitConfigurationId :: String.t(),
           ruleId :: String.t(),
-          body :: Adyen.Management.V3.UpdateSplitConfigurationRuleRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateSplitConfigurationRuleRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id(
         merchantId,
         splitConfigurationId,
@@ -255,22 +255,22 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
         body: body
       ],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :patch_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}/rules/#{ruleId}",
       body: body,
       method: :patch,
       request: [
-        {"application/json", {Adyen.Management.V3.UpdateSplitConfigurationRuleRequest, :t}}
+        {"application/json", {AdyenEx.Management.V3.UpdateSplitConfigurationRuleRequest, :t}}
       ],
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -293,11 +293,11 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
           splitConfigurationId :: String.t(),
           ruleId :: String.t(),
           splitLogicId :: String.t(),
-          body :: Adyen.Management.V3.UpdateSplitConfigurationLogicRequest.t(),
+          body :: AdyenEx.Management.V3.UpdateSplitConfigurationLogicRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id_split_logic_split_logic_id(
         merchantId,
         splitConfigurationId,
@@ -317,23 +317,23 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
         body: body
       ],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :patch_merchants_merchant_id_split_configurations_split_configuration_id_rules_rule_id_split_logic_split_logic_id},
       url:
         "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}/rules/#{ruleId}/splitLogic/#{splitLogicId}",
       body: body,
       method: :patch,
       request: [
-        {"application/json", {Adyen.Management.V3.UpdateSplitConfigurationLogicRequest, :t}}
+        {"application/json", {AdyenEx.Management.V3.UpdateSplitConfigurationLogicRequest, :t}}
       ],
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -353,31 +353,31 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
   """
   @spec post_merchants_merchant_id_split_configurations(
           merchantId :: String.t(),
-          body :: Adyen.Management.V3.SplitConfiguration.t(),
+          body :: AdyenEx.Management.V3.SplitConfiguration.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_merchants_merchant_id_split_configurations(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :post_merchants_merchant_id_split_configurations},
       url: "/merchants/#{merchantId}/splitConfigurations",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.SplitConfiguration, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.SplitConfiguration, :t}}],
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -398,11 +398,11 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
   @spec post_merchants_merchant_id_split_configurations_split_configuration_id(
           merchantId :: String.t(),
           splitConfigurationId :: String.t(),
-          body :: Adyen.Management.V3.SplitConfigurationRule.t(),
+          body :: AdyenEx.Management.V3.SplitConfigurationRule.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.SplitConfiguration.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.SplitConfiguration.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_merchants_merchant_id_split_configurations_split_configuration_id(
         merchantId,
         splitConfigurationId,
@@ -414,20 +414,20 @@ defmodule Adyen.Management.V3.SplitConfigurationMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, splitConfigurationId: splitConfigurationId, body: body],
       call:
-        {Adyen.Management.V3.SplitConfigurationMerchantLevel,
+        {AdyenEx.Management.V3.SplitConfigurationMerchantLevel,
          :post_merchants_merchant_id_split_configurations_split_configuration_id},
       url: "/merchants/#{merchantId}/splitConfigurations/#{splitConfigurationId}",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V3.SplitConfigurationRule, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V3.SplitConfigurationRule, :t}}],
       response: [
-        {200, {Adyen.Management.V3.SplitConfiguration, :t}},
+        {200, {AdyenEx.Management.V3.SplitConfiguration, :t}},
         {204, :null},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

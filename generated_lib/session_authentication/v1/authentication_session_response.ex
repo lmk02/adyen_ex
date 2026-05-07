@@ -1,4 +1,4 @@
-defmodule Adyen.SessionAuthentication.V1.AuthenticationSessionResponse do
+defmodule AdyenEx.SessionAuthentication.V1.AuthenticationSessionResponse do
   @moduledoc """
   Provides struct and type for a AuthenticationSessionResponse
   """

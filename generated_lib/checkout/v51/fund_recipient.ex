@@ -1,17 +1,17 @@
-defmodule Adyen.Checkout.V51.FundRecipient do
+defmodule AdyenEx.Checkout.V51.FundRecipient do
   @moduledoc """
   Provides struct and type for a FundRecipient
   """
 
   @type t :: %__MODULE__{
           IBAN: String.t() | nil,
-          billingAddress: Adyen.Checkout.V51.Address.t() | nil,
-          paymentMethod: Adyen.Checkout.V51.CardDetails.t() | nil,
+          billingAddress: AdyenEx.Checkout.V51.Address.t() | nil,
+          paymentMethod: AdyenEx.Checkout.V51.CardDetails.t() | nil,
           shopperEmail: String.t() | nil,
-          shopperName: Adyen.Checkout.V51.Name.t() | nil,
+          shopperName: AdyenEx.Checkout.V51.Name.t() | nil,
           shopperReference: String.t() | nil,
           storedPaymentMethodId: String.t() | nil,
-          subMerchant: Adyen.Checkout.V51.SubMerchant.t() | nil,
+          subMerchant: AdyenEx.Checkout.V51.SubMerchant.t() | nil,
           telephoneNumber: String.t() | nil,
           walletIdentifier: String.t() | nil,
           walletOwnerTaxId: String.t() | nil,
@@ -40,13 +40,13 @@ defmodule Adyen.Checkout.V51.FundRecipient do
   def __fields__(:t) do
     [
       IBAN: :string,
-      billingAddress: {Adyen.Checkout.V51.Address, :t},
-      paymentMethod: {Adyen.Checkout.V51.CardDetails, :t},
+      billingAddress: {AdyenEx.Checkout.V51.Address, :t},
+      paymentMethod: {AdyenEx.Checkout.V51.CardDetails, :t},
       shopperEmail: :string,
-      shopperName: {Adyen.Checkout.V51.Name, :t},
+      shopperName: {AdyenEx.Checkout.V51.Name, :t},
       shopperReference: :string,
       storedPaymentMethodId: :string,
-      subMerchant: {Adyen.Checkout.V51.SubMerchant, :t},
+      subMerchant: {AdyenEx.Checkout.V51.SubMerchant, :t},
       telephoneNumber: :string,
       walletIdentifier: :string,
       walletOwnerTaxId: :string,

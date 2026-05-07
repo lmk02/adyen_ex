@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.UpdateAccountRequest do
+defmodule AdyenEx.Account.V5.UpdateAccountRequest do
   @moduledoc """
   Provides struct and type for a UpdateAccountRequest
   """
@@ -9,7 +9,7 @@ defmodule Adyen.Account.V5.UpdateAccountRequest do
           description: String.t() | nil,
           metadata: map | nil,
           payoutMethodCode: String.t() | nil,
-          payoutSchedule: Adyen.Account.V5.UpdatePayoutScheduleRequest.t() | nil,
+          payoutSchedule: AdyenEx.Account.V5.UpdatePayoutScheduleRequest.t() | nil,
           payoutSpeed: String.t() | nil
         }
 
@@ -34,7 +34,7 @@ defmodule Adyen.Account.V5.UpdateAccountRequest do
       description: :string,
       metadata: :map,
       payoutMethodCode: :string,
-      payoutSchedule: {Adyen.Account.V5.UpdatePayoutScheduleRequest, :t},
+      payoutSchedule: {AdyenEx.Account.V5.UpdatePayoutScheduleRequest, :t},
       payoutSpeed: {:enum, ["INSTANT", "SAME_DAY", "STANDARD"]}
     ]
   end

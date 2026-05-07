@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.TerminalReassignmentTarget do
+defmodule AdyenEx.Management.V3.TerminalReassignmentTarget do
   @moduledoc """
   Provides struct and type for a TerminalReassignmentTarget
   """

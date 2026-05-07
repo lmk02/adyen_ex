@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.InvalidField do
+defmodule AdyenEx.BalancePlatform.V2.InvalidField do
   @moduledoc """
   Provides struct and type for a InvalidField
   """

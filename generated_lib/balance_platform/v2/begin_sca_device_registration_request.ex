@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.BeginScaDeviceRegistrationRequest do
+defmodule AdyenEx.BalancePlatform.V2.BeginScaDeviceRegistrationRequest do
   @moduledoc """
   Provides struct and type for a BeginScaDeviceRegistrationRequest
   """

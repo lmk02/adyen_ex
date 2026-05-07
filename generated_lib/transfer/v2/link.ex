@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V2.Link do
+defmodule AdyenEx.Transfer.V2.Link do
   @moduledoc """
   Provides struct and type for a Link
   """

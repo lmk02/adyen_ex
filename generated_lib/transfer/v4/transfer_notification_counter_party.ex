@@ -1,13 +1,13 @@
-defmodule Adyen.Transfer.V4.TransferNotificationCounterParty do
+defmodule AdyenEx.Transfer.V4.TransferNotificationCounterParty do
   @moduledoc """
   Provides struct and type for a TransferNotificationCounterParty
   """
 
   @type t :: %__MODULE__{
           balanceAccountId: String.t() | nil,
-          bankAccount: Adyen.Transfer.V4.BankAccountV3.t() | nil,
-          card: Adyen.Transfer.V4.Card.t() | nil,
-          merchant: Adyen.Transfer.V4.TransferNotificationMerchantData.t() | nil,
+          bankAccount: AdyenEx.Transfer.V4.BankAccountV3.t() | nil,
+          card: AdyenEx.Transfer.V4.Card.t() | nil,
+          merchant: AdyenEx.Transfer.V4.TransferNotificationMerchantData.t() | nil,
           transferInstrumentId: String.t() | nil
         }
 
@@ -20,9 +20,9 @@ defmodule Adyen.Transfer.V4.TransferNotificationCounterParty do
   def __fields__(:t) do
     [
       balanceAccountId: :string,
-      bankAccount: {Adyen.Transfer.V4.BankAccountV3, :t},
-      card: {Adyen.Transfer.V4.Card, :t},
-      merchant: {Adyen.Transfer.V4.TransferNotificationMerchantData, :t},
+      bankAccount: {AdyenEx.Transfer.V4.BankAccountV3, :t},
+      card: {AdyenEx.Transfer.V4.Card, :t},
+      merchant: {AdyenEx.Transfer.V4.TransferNotificationMerchantData, :t},
       transferInstrumentId: :string
     ]
   end

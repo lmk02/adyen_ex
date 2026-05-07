@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.Phone do
+defmodule AdyenEx.BalancePlatform.V1.Phone do
   @moduledoc """
   Provides struct and type for a Phone
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AfterpayTouchResponseInfo do
+defmodule AdyenEx.Management.V1.AfterpayTouchResponseInfo do
   @moduledoc """
   Provides struct and type for a AfterpayTouchResponseInfo
   """

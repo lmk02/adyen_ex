@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.PayByBankAISDirectDebitDetails do
+defmodule AdyenEx.Checkout.V66.PayByBankAISDirectDebitDetails do
   @moduledoc """
   Provides struct and type for a PayByBankAISDirectDebitDetails
   """

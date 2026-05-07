@@ -1,10 +1,10 @@
-defmodule Adyen.OpenBanking.V1.AccountVerificationReportResponse do
+defmodule AdyenEx.OpenBanking.V1.AccountVerificationReportResponse do
   @moduledoc """
   Provides struct and type for a AccountVerificationReportResponse
   """
 
   @type t :: %__MODULE__{
-          accounts: [Adyen.OpenBanking.V1.VerifiedAccount.t()],
+          accounts: [AdyenEx.OpenBanking.V1.VerifiedAccount.t()],
           country: String.t(),
           id: String.t()
         }
@@ -17,7 +17,7 @@ defmodule Adyen.OpenBanking.V1.AccountVerificationReportResponse do
 
   def __fields__(:t) do
     [
-      accounts: [{Adyen.OpenBanking.V1.VerifiedAccount, :t}],
+      accounts: [{AdyenEx.OpenBanking.V1.VerifiedAccount, :t}],
       country:
         {:enum,
          [

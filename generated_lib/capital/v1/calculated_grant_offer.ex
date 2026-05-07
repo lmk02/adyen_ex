@@ -1,15 +1,15 @@
-defmodule Adyen.Capital.V1.CalculatedGrantOffer do
+defmodule AdyenEx.Capital.V1.CalculatedGrantOffer do
   @moduledoc """
   Provides struct and type for a CalculatedGrantOffer
   """
 
   @type t :: %__MODULE__{
           accountHolderId: String.t(),
-          amount: Adyen.Capital.V1.Amount.t(),
+          amount: AdyenEx.Capital.V1.Amount.t(),
           contractType: String.t(),
           expiresAt: DateTime.t(),
-          fee: Adyen.Capital.V1.GrantOfferFee.t(),
-          repayment: Adyen.Capital.V1.Repayment.t(),
+          fee: AdyenEx.Capital.V1.GrantOfferFee.t(),
+          repayment: AdyenEx.Capital.V1.Repayment.t(),
           startsAt: DateTime.t()
         }
 
@@ -22,11 +22,11 @@ defmodule Adyen.Capital.V1.CalculatedGrantOffer do
   def __fields__(:t) do
     [
       accountHolderId: :string,
-      amount: {Adyen.Capital.V1.Amount, :t},
+      amount: {AdyenEx.Capital.V1.Amount, :t},
       contractType: {:enum, ["cashAdvance", "loan"]},
       expiresAt: {:string, "date-time"},
-      fee: {Adyen.Capital.V1.GrantOfferFee, :t},
-      repayment: {Adyen.Capital.V1.Repayment, :t},
+      fee: {AdyenEx.Capital.V1.GrantOfferFee, :t},
+      repayment: {AdyenEx.Capital.V1.Repayment, :t},
       startsAt: {:string, "date-time"}
     ]
   end

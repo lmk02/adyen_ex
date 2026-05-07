@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.PaymentAccountReq do
+defmodule AdyenEx.TerminalAPI.V1.PaymentAccountReq do
   @moduledoc """
   Provides struct and type for a PaymentAccountReq
   """
 
   @type t :: %__MODULE__{
           AccountType: String.t() | nil,
-          CardAcquisitionReference: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
-          PaymentInstrumentData: Adyen.TerminalAPI.V1.PaymentInstrumentData.t() | nil
+          CardAcquisitionReference: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
+          PaymentInstrumentData: AdyenEx.TerminalAPI.V1.PaymentInstrumentData.t() | nil
         }
 
   defstruct [:AccountType, :CardAcquisitionReference, :PaymentInstrumentData]
@@ -29,8 +29,8 @@ defmodule Adyen.TerminalAPI.V1.PaymentAccountReq do
            "Savings",
            "Universal"
          ]},
-      CardAcquisitionReference: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
-      PaymentInstrumentData: {Adyen.TerminalAPI.V1.PaymentInstrumentData, :t}
+      CardAcquisitionReference: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
+      PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t}
     ]
   end
 end

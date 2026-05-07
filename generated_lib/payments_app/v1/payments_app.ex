@@ -1,9 +1,9 @@
-defmodule Adyen.PaymentsApp.V1.PaymentsApp do
+defmodule AdyenEx.PaymentsApp.V1.PaymentsApp do
   @moduledoc """
   Provides API endpoints related to payments app
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of Payments Apps - merchant level
@@ -29,25 +29,25 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
 
   """
   @spec get_merchants_merchant_id_payments_apps(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.PaymentsApp.V1.PaymentsAppResponse.t()}
-          | {:error, Adyen.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.PaymentsApp.V1.PaymentsAppResponse.t()}
+          | {:error, AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
   def get_merchants_merchant_id_payments_apps(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :offset, :statuses])
 
     client.request(%{
       args: [merchantId: merchantId],
-      call: {Adyen.PaymentsApp.V1.PaymentsApp, :get_merchants_merchant_id_payments_apps},
+      call: {AdyenEx.PaymentsApp.V1.PaymentsApp, :get_merchants_merchant_id_payments_apps},
       url: "/merchants/#{merchantId}/paymentsApps",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.PaymentsApp.V1.PaymentsAppResponse, :t}},
-        {400, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.PaymentsApp.V1.PaymentsAppResponse, :t}},
+        {400, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -81,8 +81,8 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
           storeId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.PaymentsApp.V1.PaymentsAppResponse.t()}
-          | {:error, Adyen.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.PaymentsApp.V1.PaymentsAppResponse.t()}
+          | {:error, AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
   def get_merchants_merchant_id_stores_store_id_payments_apps(merchantId, storeId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :offset, :statuses])
@@ -90,18 +90,18 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
     client.request(%{
       args: [merchantId: merchantId, storeId: storeId],
       call:
-        {Adyen.PaymentsApp.V1.PaymentsApp,
+        {AdyenEx.PaymentsApp.V1.PaymentsApp,
          :get_merchants_merchant_id_stores_store_id_payments_apps},
       url: "/merchants/#{merchantId}/stores/#{storeId}/paymentsApps",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.PaymentsApp.V1.PaymentsAppResponse, :t}},
-        {400, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.PaymentsApp.V1.PaymentsAppResponse, :t}},
+        {400, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -121,11 +121,11 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
   """
   @spec post_merchants_merchant_id_generate_payments_app_boarding_token(
           merchantId :: String.t(),
-          body :: Adyen.PaymentsApp.V1.BoardingTokenRequest.t(),
+          body :: AdyenEx.PaymentsApp.V1.BoardingTokenRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.PaymentsApp.V1.BoardingTokenResponse.t()}
-          | {:error, Adyen.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.PaymentsApp.V1.BoardingTokenResponse.t()}
+          | {:error, AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
   def post_merchants_merchant_id_generate_payments_app_boarding_token(
         merchantId,
         body,
@@ -136,19 +136,19 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
     client.request(%{
       args: [merchantId: merchantId, body: body],
       call:
-        {Adyen.PaymentsApp.V1.PaymentsApp,
+        {AdyenEx.PaymentsApp.V1.PaymentsApp,
          :post_merchants_merchant_id_generate_payments_app_boarding_token},
       url: "/merchants/#{merchantId}/generatePaymentsAppBoardingToken",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.PaymentsApp.V1.BoardingTokenRequest, :t}}],
+      request: [{"application/json", {AdyenEx.PaymentsApp.V1.BoardingTokenRequest, :t}}],
       response: [
-        {200, {Adyen.PaymentsApp.V1.BoardingTokenResponse, :t}},
-        {400, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.PaymentsApp.V1.BoardingTokenResponse, :t}},
+        {400, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -167,7 +167,7 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
           merchantId :: String.t(),
           installationId :: String.t(),
           opts :: keyword
-        ) :: {:ok, any} | {:error, Adyen.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
+        ) :: {:ok, any} | {:error, AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
   def post_merchants_merchant_id_payments_apps_installation_id_revoke(
         merchantId,
         installationId,
@@ -178,15 +178,15 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
     client.request(%{
       args: [merchantId: merchantId, installationId: installationId],
       call:
-        {Adyen.PaymentsApp.V1.PaymentsApp,
+        {AdyenEx.PaymentsApp.V1.PaymentsApp,
          :post_merchants_merchant_id_payments_apps_installation_id_revoke},
       url: "/merchants/#{merchantId}/paymentsApps/#{installationId}/revoke",
       method: :post,
       response: [
         {200, :unknown},
-        {400, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
+        {400, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -207,11 +207,11 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
   @spec post_merchants_merchant_id_stores_store_id_generate_payments_app_boarding_token(
           merchantId :: String.t(),
           storeId :: String.t(),
-          body :: Adyen.PaymentsApp.V1.BoardingTokenRequest.t(),
+          body :: AdyenEx.PaymentsApp.V1.BoardingTokenRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.PaymentsApp.V1.BoardingTokenResponse.t()}
-          | {:error, Adyen.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.PaymentsApp.V1.BoardingTokenResponse.t()}
+          | {:error, AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity.t()}
   def post_merchants_merchant_id_stores_store_id_generate_payments_app_boarding_token(
         merchantId,
         storeId,
@@ -223,19 +223,19 @@ defmodule Adyen.PaymentsApp.V1.PaymentsApp do
     client.request(%{
       args: [merchantId: merchantId, storeId: storeId, body: body],
       call:
-        {Adyen.PaymentsApp.V1.PaymentsApp,
+        {AdyenEx.PaymentsApp.V1.PaymentsApp,
          :post_merchants_merchant_id_stores_store_id_generate_payments_app_boarding_token},
       url: "/merchants/#{merchantId}/stores/#{storeId}/generatePaymentsAppBoardingToken",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.PaymentsApp.V1.BoardingTokenRequest, :t}}],
+      request: [{"application/json", {AdyenEx.PaymentsApp.V1.BoardingTokenRequest, :t}}],
       response: [
-        {200, {Adyen.PaymentsApp.V1.BoardingTokenResponse, :t}},
-        {400, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
-        {500, {Adyen.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.PaymentsApp.V1.BoardingTokenResponse, :t}},
+        {400, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.PaymentsApp.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

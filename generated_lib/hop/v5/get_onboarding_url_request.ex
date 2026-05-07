@@ -1,17 +1,17 @@
-defmodule Adyen.Hop.V5.GetOnboardingUrlRequest do
+defmodule AdyenEx.Hop.V5.GetOnboardingUrlRequest do
   @moduledoc """
   Provides struct and type for a GetOnboardingUrlRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          collectInformation: Adyen.Hop.V5.CollectInformation.t() | nil,
+          collectInformation: AdyenEx.Hop.V5.CollectInformation.t() | nil,
           editMode: boolean | nil,
           mobileOAuthCallbackUrl: String.t() | nil,
           platformName: String.t() | nil,
           returnUrl: String.t() | nil,
           shopperLocale: String.t() | nil,
-          showPages: Adyen.Hop.V5.ShowPages.t() | nil
+          showPages: AdyenEx.Hop.V5.ShowPages.t() | nil
         }
 
   defstruct [
@@ -32,13 +32,13 @@ defmodule Adyen.Hop.V5.GetOnboardingUrlRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      collectInformation: {Adyen.Hop.V5.CollectInformation, :t},
+      collectInformation: {AdyenEx.Hop.V5.CollectInformation, :t},
       editMode: :boolean,
       mobileOAuthCallbackUrl: :string,
       platformName: :string,
       returnUrl: :string,
       shopperLocale: :string,
-      showPages: {Adyen.Hop.V5.ShowPages, :t}
+      showPages: {AdyenEx.Hop.V5.ShowPages, :t}
     ]
   end
 end

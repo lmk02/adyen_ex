@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.MigrationData do
+defmodule AdyenEx.Account.V5.MigrationData do
   @moduledoc """
   Provides struct and type for a MigrationData
   """
@@ -7,9 +7,9 @@ defmodule Adyen.Account.V5.MigrationData do
           accountHolderId: String.t() | nil,
           balancePlatform: String.t() | nil,
           migrated: boolean | nil,
-          migratedAccounts: [Adyen.Account.V5.MigratedAccounts.t()] | nil,
-          migratedShareholders: [Adyen.Account.V5.MigratedShareholders.t()] | nil,
-          migratedStores: [Adyen.Account.V5.MigratedStores.t()] | nil,
+          migratedAccounts: [AdyenEx.Account.V5.MigratedAccounts.t()] | nil,
+          migratedShareholders: [AdyenEx.Account.V5.MigratedShareholders.t()] | nil,
+          migratedStores: [AdyenEx.Account.V5.MigratedStores.t()] | nil,
           migrationDate: DateTime.t() | nil
         }
 
@@ -32,9 +32,9 @@ defmodule Adyen.Account.V5.MigrationData do
       accountHolderId: :string,
       balancePlatform: :string,
       migrated: :boolean,
-      migratedAccounts: [{Adyen.Account.V5.MigratedAccounts, :t}],
-      migratedShareholders: [{Adyen.Account.V5.MigratedShareholders, :t}],
-      migratedStores: [{Adyen.Account.V5.MigratedStores, :t}],
+      migratedAccounts: [{AdyenEx.Account.V5.MigratedAccounts, :t}],
+      migratedShareholders: [{AdyenEx.Account.V5.MigratedShareholders, :t}],
+      migratedStores: [{AdyenEx.Account.V5.MigratedStores, :t}],
       migrationDate: {:string, "date-time"}
     ]
   end

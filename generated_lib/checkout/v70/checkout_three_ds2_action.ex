@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.CheckoutThreeDs2Action do
+defmodule AdyenEx.Checkout.V70.CheckoutThreeDs2Action do
   @moduledoc """
   Provides struct and type for a CheckoutThreeDs2Action
   """

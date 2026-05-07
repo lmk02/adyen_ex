@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.KioskModeSettings do
+defmodule AdyenEx.Management.V3.KioskModeSettings do
   @moduledoc """
   Provides struct and type for a KioskModeSettings
   """

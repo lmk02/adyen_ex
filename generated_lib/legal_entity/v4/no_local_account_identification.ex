@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.NOLocalAccountIdentification do
+defmodule AdyenEx.LegalEntity.V4.NOLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a NOLocalAccountIdentification
   """

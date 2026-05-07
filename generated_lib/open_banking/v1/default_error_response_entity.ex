@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.DefaultErrorResponseEntity do
+defmodule AdyenEx.OpenBanking.V1.DefaultErrorResponseEntity do
   @moduledoc """
   Provides struct and type for a DefaultErrorResponseEntity
   """
@@ -7,7 +7,7 @@ defmodule Adyen.OpenBanking.V1.DefaultErrorResponseEntity do
           detail: String.t() | nil,
           errorCode: String.t() | nil,
           instance: String.t() | nil,
-          invalidFields: [Adyen.OpenBanking.V1.InvalidField.t()] | nil,
+          invalidFields: [AdyenEx.OpenBanking.V1.InvalidField.t()] | nil,
           requestId: String.t() | nil,
           status: integer | nil,
           title: String.t() | nil,
@@ -25,7 +25,7 @@ defmodule Adyen.OpenBanking.V1.DefaultErrorResponseEntity do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.OpenBanking.V1.InvalidField, :t}],
+      invalidFields: [{AdyenEx.OpenBanking.V1.InvalidField, :t}],
       requestId: :string,
       status: {:integer, "int32"},
       title: :string,

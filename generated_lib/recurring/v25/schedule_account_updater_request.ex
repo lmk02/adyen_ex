@@ -1,11 +1,11 @@
-defmodule Adyen.Recurring.V25.ScheduleAccountUpdaterRequest do
+defmodule AdyenEx.Recurring.V25.ScheduleAccountUpdaterRequest do
   @moduledoc """
   Provides struct and type for a ScheduleAccountUpdaterRequest
   """
 
   @type t :: %__MODULE__{
           additionalData: map | nil,
-          card: Adyen.Recurring.V25.Card.t() | nil,
+          card: AdyenEx.Recurring.V25.Card.t() | nil,
           merchantAccount: String.t(),
           reference: String.t(),
           selectedRecurringDetailReference: String.t() | nil,
@@ -28,7 +28,7 @@ defmodule Adyen.Recurring.V25.ScheduleAccountUpdaterRequest do
   def __fields__(:t) do
     [
       additionalData: :map,
-      card: {Adyen.Recurring.V25.Card, :t},
+      card: {AdyenEx.Recurring.V25.Card, :t},
       merchantAccount: :string,
       reference: :string,
       selectedRecurringDetailReference: :string,

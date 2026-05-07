@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V41.ForexQuote do
+defmodule AdyenEx.Checkout.V41.ForexQuote do
   @moduledoc """
   Provides struct and type for a ForexQuote
   """
@@ -6,12 +6,12 @@ defmodule Adyen.Checkout.V41.ForexQuote do
   @type t :: %__MODULE__{
           account: String.t() | nil,
           accountType: String.t() | nil,
-          baseAmount: Adyen.Checkout.V41.Amount.t() | nil,
+          baseAmount: AdyenEx.Checkout.V41.Amount.t() | nil,
           basePoints: integer,
-          buy: Adyen.Checkout.V41.Amount.t() | nil,
-          interbank: Adyen.Checkout.V41.Amount.t() | nil,
+          buy: AdyenEx.Checkout.V41.Amount.t() | nil,
+          interbank: AdyenEx.Checkout.V41.Amount.t() | nil,
           reference: String.t() | nil,
-          sell: Adyen.Checkout.V41.Amount.t() | nil,
+          sell: AdyenEx.Checkout.V41.Amount.t() | nil,
           signature: String.t() | nil,
           source: String.t() | nil,
           type: String.t() | nil,
@@ -41,12 +41,12 @@ defmodule Adyen.Checkout.V41.ForexQuote do
     [
       account: :string,
       accountType: :string,
-      baseAmount: {Adyen.Checkout.V41.Amount, :t},
+      baseAmount: {AdyenEx.Checkout.V41.Amount, :t},
       basePoints: {:integer, "int32"},
-      buy: {Adyen.Checkout.V41.Amount, :t},
-      interbank: {Adyen.Checkout.V41.Amount, :t},
+      buy: {AdyenEx.Checkout.V41.Amount, :t},
+      interbank: {AdyenEx.Checkout.V41.Amount, :t},
       reference: :string,
-      sell: {Adyen.Checkout.V41.Amount, :t},
+      sell: {AdyenEx.Checkout.V41.Amount, :t},
       signature: :string,
       source: :string,
       type: :string,

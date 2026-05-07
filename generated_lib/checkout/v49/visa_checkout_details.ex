@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.VisaCheckoutDetails do
+defmodule AdyenEx.Checkout.V49.VisaCheckoutDetails do
   @moduledoc """
   Provides struct and type for a VisaCheckoutDetails
   """

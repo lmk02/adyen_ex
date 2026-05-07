@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V54.MerchantDetails do
+defmodule AdyenEx.BinLookup.V54.MerchantDetails do
   @moduledoc """
   Provides struct and type for a MerchantDetails
   """

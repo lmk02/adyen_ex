@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V1.WebDataExemption do
+defmodule AdyenEx.LegalEntity.V1.WebDataExemption do
   @moduledoc """
   Provides struct and type for a WebDataExemption
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
+defmodule AdyenEx.Management.V3.AndroidFilesCompanyLevel do
   @moduledoc """
   Provides API endpoints related to android files company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of Android apps
@@ -28,8 +28,8 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
 
   """
   @spec get_companies_company_id_android_apps(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.AndroidAppsResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.AndroidAppsResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_android_apps(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:packageName, :pageNumber, :pageSize, :versionCode])
@@ -37,17 +37,17 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel, :get_companies_company_id_android_apps},
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel, :get_companies_company_id_android_apps},
       url: "/companies/#{companyId}/androidApps",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.AndroidAppsResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.AndroidAppsResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -70,24 +70,25 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
           id :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.AndroidApp.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.AndroidApp.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_android_apps_id(companyId, id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, id: id],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel, :get_companies_company_id_android_apps_id},
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel,
+         :get_companies_company_id_android_apps_id},
       url: "/companies/#{companyId}/androidApps/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V3.AndroidApp, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.AndroidApp, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -115,8 +116,8 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
 
   """
   @spec get_companies_company_id_android_certificates(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.AndroidCertificatesResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.AndroidCertificatesResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def get_companies_company_id_android_certificates(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:certificateName, :pageNumber, :pageSize])
@@ -124,18 +125,18 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel,
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel,
          :get_companies_company_id_android_certificates},
       url: "/companies/#{companyId}/androidCertificates",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V3.AndroidCertificatesResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.AndroidCertificatesResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -156,25 +157,25 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
           id :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V3.ReprocessAndroidAppResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.ReprocessAndroidAppResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def patch_companies_company_id_android_apps_id(companyId, id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId, id: id],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel,
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel,
          :patch_companies_company_id_android_apps_id},
       url: "/companies/#{companyId}/androidApps/#{id}",
       method: :patch,
       response: [
-        {200, {Adyen.Management.V3.ReprocessAndroidAppResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.ReprocessAndroidAppResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -192,24 +193,24 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
   >By choosing to upload, install, or run any third-party applications on an Adyen payment terminal, you accept full responsibility and liability for any consequences of uploading, installing, or running any such applications.
   """
   @spec post_companies_company_id_android_apps(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.UploadAndroidAppResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.UploadAndroidAppResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_android_apps(companyId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel, :post_companies_company_id_android_apps},
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel, :post_companies_company_id_android_apps},
       url: "/companies/#{companyId}/androidApps",
       method: :post,
       response: [
-        {200, {Adyen.Management.V3.UploadAndroidAppResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.UploadAndroidAppResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -223,25 +224,25 @@ defmodule Adyen.Management.V3.AndroidFilesCompanyLevel do
   In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).
   """
   @spec post_companies_company_id_android_certificates(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V3.UploadAndroidCertificateResponse.t()}
-          | {:error, Adyen.Management.V3.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V3.UploadAndroidCertificateResponse.t()}
+          | {:error, AdyenEx.Management.V3.RestServiceError.t()}
   def post_companies_company_id_android_certificates(companyId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId],
       call:
-        {Adyen.Management.V3.AndroidFilesCompanyLevel,
+        {AdyenEx.Management.V3.AndroidFilesCompanyLevel,
          :post_companies_company_id_android_certificates},
       url: "/companies/#{companyId}/androidCertificates",
       method: :post,
       response: [
-        {200, {Adyen.Management.V3.UploadAndroidCertificateResponse, :t}},
-        {400, {Adyen.Management.V3.RestServiceError, :t}},
-        {401, {Adyen.Management.V3.RestServiceError, :t}},
-        {403, {Adyen.Management.V3.RestServiceError, :t}},
-        {422, {Adyen.Management.V3.RestServiceError, :t}},
-        {500, {Adyen.Management.V3.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V3.UploadAndroidCertificateResponse, :t}},
+        {400, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V3.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V3.RestServiceError, :t}}
       ],
       opts: opts
     })

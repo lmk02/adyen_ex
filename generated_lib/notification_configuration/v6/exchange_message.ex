@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V6.ExchangeMessage do
+defmodule AdyenEx.NotificationConfiguration.V6.ExchangeMessage do
   @moduledoc """
   Provides struct and type for a ExchangeMessage
   """

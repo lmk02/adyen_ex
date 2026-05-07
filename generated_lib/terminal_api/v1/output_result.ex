@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.OutputResult do
+defmodule AdyenEx.TerminalAPI.V1.OutputResult do
   @moduledoc """
   Provides struct and type for a OutputResult
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TerminalAPI.V1.OutputResult do
   @type t :: %__MODULE__{
           Device: String.t(),
           InfoQualify: String.t(),
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:Device, :InfoQualify, :Response]
@@ -32,7 +32,7 @@ defmodule Adyen.TerminalAPI.V1.OutputResult do
            "Status",
            "Voucher"
          ]},
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

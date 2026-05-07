@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.GenerateClientKeyResponse do
+defmodule AdyenEx.Management.V3.GenerateClientKeyResponse do
   @moduledoc """
   Provides struct and type for a GenerateClientKeyResponse
   """

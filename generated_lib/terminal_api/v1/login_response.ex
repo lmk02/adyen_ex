@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.LoginResponse do
+defmodule AdyenEx.TerminalAPI.V1.LoginResponse do
   @moduledoc """
   Provides struct and type for a LoginResponse
   """
 
   @type t :: %__MODULE__{
-          POISystemData: Adyen.TerminalAPI.V1.POISystemData.t() | nil,
-          Response: Adyen.TerminalAPI.V1.Response.t(),
+          POISystemData: AdyenEx.TerminalAPI.V1.POISystemData.t() | nil,
+          Response: AdyenEx.TerminalAPI.V1.Response.t(),
           TokenRequestStatus: boolean | nil
         }
 
@@ -17,8 +17,8 @@ defmodule Adyen.TerminalAPI.V1.LoginResponse do
 
   def __fields__(:t) do
     [
-      POISystemData: {Adyen.TerminalAPI.V1.POISystemData, :t},
-      Response: {Adyen.TerminalAPI.V1.Response, :t},
+      POISystemData: {AdyenEx.TerminalAPI.V1.POISystemData, :t},
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t},
       TokenRequestStatus: :boolean
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.StoredValue.V46.StoredValueVoidRequest do
+defmodule AdyenEx.StoredValue.V46.StoredValueVoidRequest do
   @moduledoc """
   Provides struct and type for a StoredValueVoidRequest
   """

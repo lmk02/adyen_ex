@@ -1,13 +1,13 @@
-defmodule Adyen.Management.V3.MerchantLinks do
+defmodule AdyenEx.Management.V3.MerchantLinks do
   @moduledoc """
   Provides struct and type for a MerchantLinks
   """
 
   @type t :: %__MODULE__{
-          apiCredentials: Adyen.Management.V3.LinksElement.t() | nil,
-          self: Adyen.Management.V3.LinksElement.t(),
-          users: Adyen.Management.V3.LinksElement.t() | nil,
-          webhooks: Adyen.Management.V3.LinksElement.t() | nil
+          apiCredentials: AdyenEx.Management.V3.LinksElement.t() | nil,
+          self: AdyenEx.Management.V3.LinksElement.t(),
+          users: AdyenEx.Management.V3.LinksElement.t() | nil,
+          webhooks: AdyenEx.Management.V3.LinksElement.t() | nil
         }
 
   defstruct [:apiCredentials, :self, :users, :webhooks]
@@ -18,10 +18,10 @@ defmodule Adyen.Management.V3.MerchantLinks do
 
   def __fields__(:t) do
     [
-      apiCredentials: {Adyen.Management.V3.LinksElement, :t},
-      self: {Adyen.Management.V3.LinksElement, :t},
-      users: {Adyen.Management.V3.LinksElement, :t},
-      webhooks: {Adyen.Management.V3.LinksElement, :t}
+      apiCredentials: {AdyenEx.Management.V3.LinksElement, :t},
+      self: {AdyenEx.Management.V3.LinksElement, :t},
+      users: {AdyenEx.Management.V3.LinksElement, :t},
+      webhooks: {AdyenEx.Management.V3.LinksElement, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UpdateMerchantApiCredentialRequest do
+defmodule AdyenEx.Management.V1.UpdateMerchantApiCredentialRequest do
   @moduledoc """
   Provides struct and type for a UpdateMerchantApiCredentialRequest
   """

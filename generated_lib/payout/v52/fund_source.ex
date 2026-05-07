@@ -1,14 +1,14 @@
-defmodule Adyen.Payout.V52.FundSource do
+defmodule AdyenEx.Payout.V52.FundSource do
   @moduledoc """
   Provides struct and type for a FundSource
   """
 
   @type t :: %__MODULE__{
           additionalData: map | nil,
-          billingAddress: Adyen.Payout.V52.Address.t() | nil,
-          card: Adyen.Payout.V52.Card.t() | nil,
+          billingAddress: AdyenEx.Payout.V52.Address.t() | nil,
+          card: AdyenEx.Payout.V52.Card.t() | nil,
           shopperEmail: String.t() | nil,
-          shopperName: Adyen.Payout.V52.Name.t() | nil,
+          shopperName: AdyenEx.Payout.V52.Name.t() | nil,
           telephoneNumber: String.t() | nil
         }
 
@@ -28,10 +28,10 @@ defmodule Adyen.Payout.V52.FundSource do
   def __fields__(:t) do
     [
       additionalData: :map,
-      billingAddress: {Adyen.Payout.V52.Address, :t},
-      card: {Adyen.Payout.V52.Card, :t},
+      billingAddress: {AdyenEx.Payout.V52.Address, :t},
+      card: {AdyenEx.Payout.V52.Card, :t},
       shopperEmail: :string,
-      shopperName: {Adyen.Payout.V52.Name, :t},
+      shopperName: {AdyenEx.Payout.V52.Name, :t},
       telephoneNumber: :string
     ]
   end

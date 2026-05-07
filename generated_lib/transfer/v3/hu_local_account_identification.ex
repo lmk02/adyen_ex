@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.HULocalAccountIdentification do
+defmodule AdyenEx.Transfer.V3.HULocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a HULocalAccountIdentification
   """

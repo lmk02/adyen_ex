@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.WalletProviderAccountScoreRestriction do
+defmodule AdyenEx.BalancePlatform.V2.WalletProviderAccountScoreRestriction do
   @moduledoc """
   Provides struct and type for a WalletProviderAccountScoreRestriction
   """

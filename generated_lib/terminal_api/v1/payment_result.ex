@@ -1,19 +1,19 @@
-defmodule Adyen.TerminalAPI.V1.PaymentResult do
+defmodule AdyenEx.TerminalAPI.V1.PaymentResult do
   @moduledoc """
   Provides struct and type for a PaymentResult
   """
 
   @type t :: %__MODULE__{
-          AmountsResp: Adyen.TerminalAPI.V1.AmountsResp.t() | nil,
+          AmountsResp: AdyenEx.TerminalAPI.V1.AmountsResp.t() | nil,
           AuthenticationMethod: [String.t()] | nil,
-          CapturedSignature: Adyen.TerminalAPI.V1.CapturedSignature.t() | nil,
-          CurrencyConversion: [Adyen.TerminalAPI.V1.CurrencyConversion.t()] | nil,
+          CapturedSignature: AdyenEx.TerminalAPI.V1.CapturedSignature.t() | nil,
+          CurrencyConversion: [AdyenEx.TerminalAPI.V1.CurrencyConversion.t()] | nil,
           CustomerLanguage: String.t() | nil,
-          Instalment: Adyen.TerminalAPI.V1.Instalment.t() | nil,
+          Instalment: AdyenEx.TerminalAPI.V1.Instalment.t() | nil,
           MerchantOverrideFlag: boolean | nil,
           OnlineFlag: boolean | nil,
-          PaymentAcquirerData: Adyen.TerminalAPI.V1.PaymentAcquirerData.t() | nil,
-          PaymentInstrumentData: Adyen.TerminalAPI.V1.PaymentInstrumentData.t() | nil,
+          PaymentAcquirerData: AdyenEx.TerminalAPI.V1.PaymentAcquirerData.t() | nil,
+          PaymentInstrumentData: AdyenEx.TerminalAPI.V1.PaymentInstrumentData.t() | nil,
           PaymentType: String.t() | nil,
           ProtectedSignature: String.t() | nil,
           ValidityDate: Date.t() | nil
@@ -41,7 +41,7 @@ defmodule Adyen.TerminalAPI.V1.PaymentResult do
 
   def __fields__(:t) do
     [
-      AmountsResp: {Adyen.TerminalAPI.V1.AmountsResp, :t},
+      AmountsResp: {AdyenEx.TerminalAPI.V1.AmountsResp, :t},
       AuthenticationMethod: [
         enum: [
           "Bypass",
@@ -57,14 +57,14 @@ defmodule Adyen.TerminalAPI.V1.PaymentResult do
           "UnknownMethod"
         ]
       ],
-      CapturedSignature: {Adyen.TerminalAPI.V1.CapturedSignature, :t},
-      CurrencyConversion: [{Adyen.TerminalAPI.V1.CurrencyConversion, :t}],
+      CapturedSignature: {AdyenEx.TerminalAPI.V1.CapturedSignature, :t},
+      CurrencyConversion: [{AdyenEx.TerminalAPI.V1.CurrencyConversion, :t}],
       CustomerLanguage: :string,
-      Instalment: {Adyen.TerminalAPI.V1.Instalment, :t},
+      Instalment: {AdyenEx.TerminalAPI.V1.Instalment, :t},
       MerchantOverrideFlag: :boolean,
       OnlineFlag: :boolean,
-      PaymentAcquirerData: {Adyen.TerminalAPI.V1.PaymentAcquirerData, :t},
-      PaymentInstrumentData: {Adyen.TerminalAPI.V1.PaymentInstrumentData, :t},
+      PaymentAcquirerData: {AdyenEx.TerminalAPI.V1.PaymentAcquirerData, :t},
+      PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t},
       PaymentType:
         {:enum,
          [

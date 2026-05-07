@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V46.BrowserInfo do
+defmodule AdyenEx.Payment.V46.BrowserInfo do
   @moduledoc """
   Provides struct and type for a BrowserInfo
   """

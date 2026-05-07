@@ -1,9 +1,9 @@
-defmodule Adyen.PaymentsApp.V1.PaymentsAppResponse do
+defmodule AdyenEx.PaymentsApp.V1.PaymentsAppResponse do
   @moduledoc """
   Provides struct and type for a PaymentsAppResponse
   """
 
-  @type t :: %__MODULE__{paymentsApps: [Adyen.PaymentsApp.V1.PaymentsAppDto.t()]}
+  @type t :: %__MODULE__{paymentsApps: [AdyenEx.PaymentsApp.V1.PaymentsAppDto.t()]}
 
   defstruct [:paymentsApps]
 
@@ -12,6 +12,6 @@ defmodule Adyen.PaymentsApp.V1.PaymentsAppResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [paymentsApps: [{Adyen.PaymentsApp.V1.PaymentsAppDto, :t}]]
+    [paymentsApps: [{AdyenEx.PaymentsApp.V1.PaymentsAppDto, :t}]]
   end
 end

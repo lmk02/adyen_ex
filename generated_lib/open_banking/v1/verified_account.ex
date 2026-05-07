@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.VerifiedAccount do
+defmodule AdyenEx.OpenBanking.V1.VerifiedAccount do
   @moduledoc """
   Provides struct and type for a VerifiedAccount
   """
@@ -10,8 +10,8 @@ defmodule Adyen.OpenBanking.V1.VerifiedAccount do
           accountType: String.t(),
           bankName: String.t() | nil,
           currency: String.t(),
-          identifiers: Adyen.OpenBanking.V1.AccountIdentifiers.t(),
-          parties: [Adyen.OpenBanking.V1.AccountParty.t()]
+          identifiers: AdyenEx.OpenBanking.V1.AccountIdentifiers.t(),
+          parties: [AdyenEx.OpenBanking.V1.AccountParty.t()]
         }
 
   defstruct [
@@ -37,8 +37,8 @@ defmodule Adyen.OpenBanking.V1.VerifiedAccount do
       accountType: {:enum, ["CURRENT", "SAVINGS", "BUSINESS", "CREDIT_CARD", "LOAN", "UNKNOWN"]},
       bankName: :string,
       currency: :string,
-      identifiers: {Adyen.OpenBanking.V1.AccountIdentifiers, :t},
-      parties: [{Adyen.OpenBanking.V1.AccountParty, :t}]
+      identifiers: {AdyenEx.OpenBanking.V1.AccountIdentifiers, :t},
+      parties: [{AdyenEx.OpenBanking.V1.AccountParty, :t}]
     ]
   end
 end

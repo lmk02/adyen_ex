@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.CancelOrderResponse do
+defmodule AdyenEx.Checkout.V40.CancelOrderResponse do
   @moduledoc """
   Provides struct and type for a CancelOrderResponse
   """

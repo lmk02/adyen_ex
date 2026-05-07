@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.InstallAndroidCertificateDetails do
+defmodule AdyenEx.Management.V1.InstallAndroidCertificateDetails do
   @moduledoc """
   Provides struct and type for a InstallAndroidCertificateDetails
   """

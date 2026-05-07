@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.PayToDetails do
+defmodule AdyenEx.Checkout.V66.PayToDetails do
   @moduledoc """
   Provides struct and type for a PayToDetails
   """

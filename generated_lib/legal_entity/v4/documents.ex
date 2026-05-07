@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V4.Documents do
+defmodule AdyenEx.LegalEntity.V4.Documents do
   @moduledoc """
   Provides API endpoints related to documents
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete a document
@@ -20,22 +20,22 @@ defmodule Adyen.LegalEntity.V4.Documents do
 
   """
   @spec delete_documents_id(id :: String.t(), opts :: keyword) ::
-          :ok | {:error, Adyen.LegalEntity.V4.ServiceError.t()}
+          :ok | {:error, AdyenEx.LegalEntity.V4.ServiceError.t()}
   def delete_documents_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V4.Documents, :delete_documents_id},
+      call: {AdyenEx.LegalEntity.V4.Documents, :delete_documents_id},
       url: "/documents/#{id}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V4.ServiceError, :t}}
+        {400, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -61,25 +61,25 @@ defmodule Adyen.LegalEntity.V4.Documents do
 
   """
   @spec get_documents_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V4.Document.t()}
-          | {:error, Adyen.LegalEntity.V4.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V4.Document.t()}
+          | {:error, AdyenEx.LegalEntity.V4.ServiceError.t()}
   def get_documents_id(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:skipContent])
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V4.Documents, :get_documents_id},
+      call: {AdyenEx.LegalEntity.V4.Documents, :get_documents_id},
       url: "/documents/#{id}",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.LegalEntity.V4.Document, :t}},
-        {400, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V4.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V4.Document, :t}},
+        {400, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -107,28 +107,28 @@ defmodule Adyen.LegalEntity.V4.Documents do
   """
   @spec patch_documents_id(
           id :: String.t(),
-          body :: Adyen.LegalEntity.V4.Document.t(),
+          body :: AdyenEx.LegalEntity.V4.Document.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V4.Document.t()}
-          | {:error, Adyen.LegalEntity.V4.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V4.Document.t()}
+          | {:error, AdyenEx.LegalEntity.V4.ServiceError.t()}
   def patch_documents_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.LegalEntity.V4.Documents, :patch_documents_id},
+      call: {AdyenEx.LegalEntity.V4.Documents, :patch_documents_id},
       url: "/documents/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.LegalEntity.V4.Document, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V4.Document, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V4.Document, :t}},
-        {400, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V4.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V4.Document, :t}},
+        {400, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -158,26 +158,26 @@ defmodule Adyen.LegalEntity.V4.Documents do
 
   **Content Types**: `application/json`
   """
-  @spec post_documents(body :: Adyen.LegalEntity.V4.Document.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V4.Document.t()}
-          | {:error, Adyen.LegalEntity.V4.ServiceError.t()}
+  @spec post_documents(body :: AdyenEx.LegalEntity.V4.Document.t(), opts :: keyword) ::
+          {:ok, AdyenEx.LegalEntity.V4.Document.t()}
+          | {:error, AdyenEx.LegalEntity.V4.ServiceError.t()}
   def post_documents(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.LegalEntity.V4.Documents, :post_documents},
+      call: {AdyenEx.LegalEntity.V4.Documents, :post_documents},
       url: "/documents",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.LegalEntity.V4.Document, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V4.Document, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V4.Document, :t}},
-        {400, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V4.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V4.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V4.Document, :t}},
+        {400, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V4.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V4.ServiceError, :t}}
       ],
       opts: opts
     })

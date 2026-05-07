@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V64.SDKEphemPubKey do
+defmodule AdyenEx.Payment.V64.SDKEphemPubKey do
   @moduledoc """
   Provides struct and type for a SDKEphemPubKey
   """

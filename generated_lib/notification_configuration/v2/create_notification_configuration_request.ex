@@ -1,11 +1,11 @@
-defmodule Adyen.NotificationConfiguration.V2.CreateNotificationConfigurationRequest do
+defmodule AdyenEx.NotificationConfiguration.V2.CreateNotificationConfigurationRequest do
   @moduledoc """
   Provides struct and type for a CreateNotificationConfigurationRequest
   """
 
   @type t :: %__MODULE__{
           configurationDetails:
-            Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails.t()
+            AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails.t()
         }
 
   defstruct [:configurationDetails]
@@ -17,7 +17,7 @@ defmodule Adyen.NotificationConfiguration.V2.CreateNotificationConfigurationRequ
   def __fields__(:t) do
     [
       configurationDetails:
-        {Adyen.NotificationConfiguration.V2.NotificationConfigurationDetails, :t}
+        {AdyenEx.NotificationConfiguration.V2.NotificationConfigurationDetails, :t}
     ]
   end
 end

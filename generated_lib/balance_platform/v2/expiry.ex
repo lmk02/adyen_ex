@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Expiry do
+defmodule AdyenEx.BalancePlatform.V2.Expiry do
   @moduledoc """
   Provides struct and type for a Expiry
   """

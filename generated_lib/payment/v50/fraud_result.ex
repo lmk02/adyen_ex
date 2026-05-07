@@ -1,11 +1,11 @@
-defmodule Adyen.Payment.V50.FraudResult do
+defmodule AdyenEx.Payment.V50.FraudResult do
   @moduledoc """
   Provides struct and type for a FraudResult
   """
 
   @type t :: %__MODULE__{
           accountScore: integer,
-          results: [Adyen.Payment.V50.FraudCheckResultWrapper.t()] | nil
+          results: [AdyenEx.Payment.V50.FraudCheckResultWrapper.t()] | nil
         }
 
   defstruct [:accountScore, :results]
@@ -17,7 +17,7 @@ defmodule Adyen.Payment.V50.FraudResult do
   def __fields__(:t) do
     [
       accountScore: {:integer, "int32"},
-      results: [{Adyen.Payment.V50.FraudCheckResultWrapper, :t}]
+      results: [{AdyenEx.Payment.V50.FraudCheckResultWrapper, :t}]
     ]
   end
 end

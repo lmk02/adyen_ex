@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.MigratedStores do
+defmodule AdyenEx.Account.V5.MigratedStores do
   @moduledoc """
   Provides struct and type for a MigratedStores
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V69.PaymentMethodsResponse do
+defmodule AdyenEx.Checkout.V69.PaymentMethodsResponse do
   @moduledoc """
   Provides struct and type for a PaymentMethodsResponse
   """
 
   @type t :: %__MODULE__{
-          paymentMethods: [Adyen.Checkout.V69.PaymentMethod.t()] | nil,
-          storedPaymentMethods: [Adyen.Checkout.V69.StoredPaymentMethod.t()] | nil
+          paymentMethods: [AdyenEx.Checkout.V69.PaymentMethod.t()] | nil,
+          storedPaymentMethods: [AdyenEx.Checkout.V69.StoredPaymentMethod.t()] | nil
         }
 
   defstruct [:paymentMethods, :storedPaymentMethods]
@@ -16,8 +16,8 @@ defmodule Adyen.Checkout.V69.PaymentMethodsResponse do
 
   def __fields__(:t) do
     [
-      paymentMethods: [{Adyen.Checkout.V69.PaymentMethod, :t}],
-      storedPaymentMethods: [{Adyen.Checkout.V69.StoredPaymentMethod, :t}]
+      paymentMethods: [{AdyenEx.Checkout.V69.PaymentMethod, :t}],
+      storedPaymentMethods: [{AdyenEx.Checkout.V69.StoredPaymentMethod, :t}]
     ]
   end
 end

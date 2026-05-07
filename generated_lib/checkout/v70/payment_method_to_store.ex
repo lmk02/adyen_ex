@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.PaymentMethodToStore do
+defmodule AdyenEx.Checkout.V70.PaymentMethodToStore do
   @moduledoc """
   Provides struct and type for a PaymentMethodToStore
   """

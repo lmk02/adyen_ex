@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.IdName do
+defmodule AdyenEx.Management.V1.IdName do
   @moduledoc """
   Provides struct and type for a IdName
   """

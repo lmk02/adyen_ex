@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.PaymentInstrumentGroupInfo do
+defmodule AdyenEx.BalancePlatform.V2.PaymentInstrumentGroupInfo do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentGroupInfo
   """

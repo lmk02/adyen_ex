@@ -1,11 +1,11 @@
-defmodule Adyen.Account.V3.UpdateAccountResponse do
+defmodule AdyenEx.Account.V3.UpdateAccountResponse do
   @moduledoc """
   Provides struct and type for a UpdateAccountResponse
   """
 
   @type t :: %__MODULE__{
           accountCode: String.t(),
-          payoutSchedule: Adyen.Account.V3.PayoutScheduleResponse.t() | nil,
+          payoutSchedule: AdyenEx.Account.V3.PayoutScheduleResponse.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
           submittedAsync: boolean | nil
@@ -20,7 +20,7 @@ defmodule Adyen.Account.V3.UpdateAccountResponse do
   def __fields__(:t) do
     [
       accountCode: :string,
-      payoutSchedule: {Adyen.Account.V3.PayoutScheduleResponse, :t},
+      payoutSchedule: {AdyenEx.Account.V3.PayoutScheduleResponse, :t},
       pspReference: :string,
       resultCode: :string,
       submittedAsync: :boolean

@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.PrintResponse do
+defmodule AdyenEx.TerminalAPI.V1.PrintResponse do
   @moduledoc """
   Provides struct and type for a PrintResponse
   """
 
   @type t :: %__MODULE__{
           DocumentQualifier: String.t(),
-          Response: Adyen.TerminalAPI.V1.Response.t()
+          Response: AdyenEx.TerminalAPI.V1.Response.t()
         }
 
   defstruct [:DocumentQualifier, :Response]
@@ -19,7 +19,7 @@ defmodule Adyen.TerminalAPI.V1.PrintResponse do
       DocumentQualifier:
         {:enum,
          ["CashierReceipt", "CustomerReceipt", "Document", "Journal", "SaleReceipt", "Voucher"]},
-      Response: {Adyen.TerminalAPI.V1.Response, :t}
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end
 end

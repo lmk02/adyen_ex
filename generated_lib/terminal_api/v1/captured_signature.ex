@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.CapturedSignature do
+defmodule AdyenEx.TerminalAPI.V1.CapturedSignature do
   @moduledoc """
   Provides struct and type for a CapturedSignature
   """
 
   @type t :: %__MODULE__{
-          AreaSize: Adyen.TerminalAPI.V1.AreaSize.t() | nil,
-          SignaturePoint: [Adyen.TerminalAPI.V1.Point.t()] | nil
+          AreaSize: AdyenEx.TerminalAPI.V1.AreaSize.t() | nil,
+          SignaturePoint: [AdyenEx.TerminalAPI.V1.Point.t()] | nil
         }
 
   defstruct [:AreaSize, :SignaturePoint]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.CapturedSignature do
 
   def __fields__(:t) do
     [
-      AreaSize: {Adyen.TerminalAPI.V1.AreaSize, :t},
-      SignaturePoint: [{Adyen.TerminalAPI.V1.Point, :t}]
+      AreaSize: {AdyenEx.TerminalAPI.V1.AreaSize, :t},
+      SignaturePoint: [{AdyenEx.TerminalAPI.V1.Point, :t}]
     ]
   end
 end

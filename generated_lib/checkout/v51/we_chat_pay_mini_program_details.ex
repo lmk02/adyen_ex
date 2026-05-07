@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.WeChatPayMiniProgramDetails do
+defmodule AdyenEx.Checkout.V51.WeChatPayMiniProgramDetails do
   @moduledoc """
   Provides struct and type for a WeChatPayMiniProgramDetails
   """

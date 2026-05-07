@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V4.DisputeResponse do
+defmodule AdyenEx.Transaction.V4.DisputeResponse do
   @moduledoc """
   Provides struct and type for a DisputeResponse
   """
@@ -6,12 +6,12 @@ defmodule Adyen.Transaction.V4.DisputeResponse do
   @type t :: %__MODULE__{
           arn: String.t() | nil,
           description: String.t() | nil,
-          disputedAmount: Adyen.Transaction.V4.Amount.t() | nil,
-          duplicateInfo: Adyen.Transaction.V4.DuplicateInfo.t() | nil,
-          fraudInfo: Adyen.Transaction.V4.FraudInfo.t() | nil,
+          disputedAmount: AdyenEx.Transaction.V4.Amount.t() | nil,
+          duplicateInfo: AdyenEx.Transaction.V4.DuplicateInfo.t() | nil,
+          fraudInfo: AdyenEx.Transaction.V4.FraudInfo.t() | nil,
           id: String.t() | nil,
-          notDeliveredInfo: Adyen.Transaction.V4.NotDeliveredInfo.t() | nil,
-          otherInfo: Adyen.Transaction.V4.OtherInfo.t() | nil,
+          notDeliveredInfo: AdyenEx.Transaction.V4.NotDeliveredInfo.t() | nil,
+          otherInfo: AdyenEx.Transaction.V4.OtherInfo.t() | nil,
           status: String.t() | nil,
           transactionId: String.t(),
           type: String.t()
@@ -39,12 +39,12 @@ defmodule Adyen.Transaction.V4.DisputeResponse do
     [
       arn: :string,
       description: :string,
-      disputedAmount: {Adyen.Transaction.V4.Amount, :t},
-      duplicateInfo: {Adyen.Transaction.V4.DuplicateInfo, :t},
-      fraudInfo: {Adyen.Transaction.V4.FraudInfo, :t},
+      disputedAmount: {AdyenEx.Transaction.V4.Amount, :t},
+      duplicateInfo: {AdyenEx.Transaction.V4.DuplicateInfo, :t},
+      fraudInfo: {AdyenEx.Transaction.V4.FraudInfo, :t},
       id: :string,
-      notDeliveredInfo: {Adyen.Transaction.V4.NotDeliveredInfo, :t},
-      otherInfo: {Adyen.Transaction.V4.OtherInfo, :t},
+      notDeliveredInfo: {AdyenEx.Transaction.V4.NotDeliveredInfo, :t},
+      otherInfo: {AdyenEx.Transaction.V4.OtherInfo, :t},
       status: {:enum, ["draft", "submitted", "chargeback", "secondPresentment", "won", "closed"]},
       transactionId: :string,
       type: :string

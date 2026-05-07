@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.AchDetails do
+defmodule AdyenEx.Checkout.V51.AchDetails do
   @moduledoc """
   Provides struct and type for a AchDetails
   """

@@ -1,17 +1,17 @@
-defmodule Adyen.Transfer.V4.CapitalGrant do
+defmodule AdyenEx.Transfer.V4.CapitalGrant do
   @moduledoc """
   Provides struct and type for a CapitalGrant
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Transfer.V4.Amount.t() | nil,
-          balances: Adyen.Transfer.V4.CapitalBalance.t(),
-          counterparty: Adyen.Transfer.V4.GrantCounterparty.t() | nil,
-          fee: Adyen.Transfer.V4.Fee.t() | nil,
+          amount: AdyenEx.Transfer.V4.Amount.t() | nil,
+          balances: AdyenEx.Transfer.V4.CapitalBalance.t(),
+          counterparty: AdyenEx.Transfer.V4.GrantCounterparty.t() | nil,
+          fee: AdyenEx.Transfer.V4.Fee.t() | nil,
           grantAccountId: String.t(),
           grantOfferId: String.t(),
           id: String.t(),
-          repayment: Adyen.Transfer.V4.Repayment.t() | nil,
+          repayment: AdyenEx.Transfer.V4.Repayment.t() | nil,
           status: String.t()
         }
 
@@ -33,14 +33,14 @@ defmodule Adyen.Transfer.V4.CapitalGrant do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Transfer.V4.Amount, :t},
-      balances: {Adyen.Transfer.V4.CapitalBalance, :t},
-      counterparty: {Adyen.Transfer.V4.GrantCounterparty, :t},
-      fee: {Adyen.Transfer.V4.Fee, :t},
+      amount: {AdyenEx.Transfer.V4.Amount, :t},
+      balances: {AdyenEx.Transfer.V4.CapitalBalance, :t},
+      counterparty: {AdyenEx.Transfer.V4.GrantCounterparty, :t},
+      fee: {AdyenEx.Transfer.V4.Fee, :t},
       grantAccountId: :string,
       grantOfferId: :string,
       id: :string,
-      repayment: {Adyen.Transfer.V4.Repayment, :t},
+      repayment: {AdyenEx.Transfer.V4.Repayment, :t},
       status: {:enum, ["Pending", "Active", "Repaid", "Failed", "WrittenOff", "Revoked"]}
     ]
   end

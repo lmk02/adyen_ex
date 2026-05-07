@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.IbanAccountIdentification do
+defmodule AdyenEx.LegalEntity.V4.IbanAccountIdentification do
   @moduledoc """
   Provides struct and type for a IbanAccountIdentification
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.AccountProcessingState do
+defmodule AdyenEx.Account.V5.AccountProcessingState do
   @moduledoc """
   Provides struct and type for a AccountProcessingState
   """
@@ -6,8 +6,8 @@ defmodule Adyen.Account.V5.AccountProcessingState do
   @type t :: %__MODULE__{
           disableReason: String.t() | nil,
           disabled: boolean | nil,
-          processedFrom: Adyen.Account.V5.Amount.t() | nil,
-          processedTo: Adyen.Account.V5.Amount.t() | nil,
+          processedFrom: AdyenEx.Account.V5.Amount.t() | nil,
+          processedTo: AdyenEx.Account.V5.Amount.t() | nil,
           tierNumber: integer | nil
         }
 
@@ -21,8 +21,8 @@ defmodule Adyen.Account.V5.AccountProcessingState do
     [
       disableReason: :string,
       disabled: :boolean,
-      processedFrom: {Adyen.Account.V5.Amount, :t},
-      processedTo: {Adyen.Account.V5.Amount, :t},
+      processedFrom: {AdyenEx.Account.V5.Amount, :t},
+      processedTo: {AdyenEx.Account.V5.Amount, :t},
       tierNumber: {:integer, "int32"}
     ]
   end

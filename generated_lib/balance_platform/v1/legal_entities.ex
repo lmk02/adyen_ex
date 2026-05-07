@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V1.LegalEntities do
+defmodule AdyenEx.BalancePlatform.V1.LegalEntities do
   @moduledoc """
   Provides API endpoints related to legal entities
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a legal entity
@@ -11,23 +11,23 @@ defmodule Adyen.BalancePlatform.V1.LegalEntities do
   Returns a legal entity.
   """
   @spec get_legal_entities_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.LegalEntity.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.LegalEntity.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def get_legal_entities_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.LegalEntities, :get_legal_entities_id},
+      call: {AdyenEx.BalancePlatform.V1.LegalEntities, :get_legal_entities_id},
       url: "/legalEntities/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.LegalEntity, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.LegalEntity, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -46,28 +46,28 @@ defmodule Adyen.BalancePlatform.V1.LegalEntities do
   """
   @spec patch_legal_entities_id(
           id :: String.t(),
-          body :: Adyen.BalancePlatform.V1.LegalEntityInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.LegalEntityInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.LegalEntity.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.LegalEntity.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def patch_legal_entities_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.BalancePlatform.V1.LegalEntities, :patch_legal_entities_id},
+      call: {AdyenEx.BalancePlatform.V1.LegalEntities, :patch_legal_entities_id},
       url: "/legalEntities/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.LegalEntityInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.LegalEntityInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.LegalEntity, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.LegalEntity, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -86,28 +86,30 @@ defmodule Adyen.BalancePlatform.V1.LegalEntities do
   **Content Types**: `application/json`
   """
   @spec post_legal_entities(
-          body :: Adyen.BalancePlatform.V1.LegalEntityInfoRequiredType.t(),
+          body :: AdyenEx.BalancePlatform.V1.LegalEntityInfoRequiredType.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.LegalEntity.t()}
-          | {:error, Adyen.BalancePlatform.V1.ServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.LegalEntity.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.ServiceError.t()}
   def post_legal_entities(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V1.LegalEntities, :post_legal_entities},
+      call: {AdyenEx.BalancePlatform.V1.LegalEntities, :post_legal_entities},
       url: "/legalEntities",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.LegalEntityInfoRequiredType, :t}}],
+      request: [
+        {"application/json", {AdyenEx.BalancePlatform.V1.LegalEntityInfoRequiredType, :t}}
+      ],
       response: [
-        {200, {Adyen.BalancePlatform.V1.LegalEntity, :t}},
-        {400, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.ServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.ServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.LegalEntity, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.ServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.ServiceError, :t}}
       ],
       opts: opts
     })

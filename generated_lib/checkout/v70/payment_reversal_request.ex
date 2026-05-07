@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V70.PaymentReversalRequest do
+defmodule AdyenEx.Checkout.V70.PaymentReversalRequest do
   @moduledoc """
   Provides struct and type for a PaymentReversalRequest
   """
 
   @type t :: %__MODULE__{
-          applicationInfo: Adyen.Checkout.V70.ApplicationInfo.t() | nil,
-          enhancedSchemeData: Adyen.Checkout.V70.EnhancedSchemeData.t() | nil,
+          applicationInfo: AdyenEx.Checkout.V70.ApplicationInfo.t() | nil,
+          enhancedSchemeData: AdyenEx.Checkout.V70.EnhancedSchemeData.t() | nil,
           merchantAccount: String.t(),
           reference: String.t() | nil
         }
@@ -18,8 +18,8 @@ defmodule Adyen.Checkout.V70.PaymentReversalRequest do
 
   def __fields__(:t) do
     [
-      applicationInfo: {Adyen.Checkout.V70.ApplicationInfo, :t},
-      enhancedSchemeData: {Adyen.Checkout.V70.EnhancedSchemeData, :t},
+      applicationInfo: {AdyenEx.Checkout.V70.ApplicationInfo, :t},
+      enhancedSchemeData: {AdyenEx.Checkout.V70.EnhancedSchemeData, :t},
       merchantAccount: :string,
       reference: :string
     ]

@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
+defmodule AdyenEx.BalancePlatform.V1.PaymentInstruments do
   @moduledoc """
   Provides API endpoints related to payment instruments
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a payment instrument
@@ -11,23 +11,23 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
   Returns the details of a payment instrument.
   """
   @spec get_payment_instruments_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.PaymentInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_payment_instruments_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.PaymentInstruments, :get_payment_instruments_id},
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstruments, :get_payment_instruments_id},
       url: "/paymentInstruments/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.PaymentInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -43,23 +43,23 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
   * Balance Platform BCL PCI role
   """
   @spec get_payment_instruments_id_reveal(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.PaymentInstrumentRevealInfo.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealInfo.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_payment_instruments_id_reveal(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V1.PaymentInstruments, :get_payment_instruments_id_reveal},
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstruments, :get_payment_instruments_id_reveal},
       url: "/paymentInstruments/#{id}/reveal",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.PaymentInstrumentRevealInfo, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealInfo, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -71,25 +71,25 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
   Returns a list of transaction rules associated with a payment instrument.
   """
   @spec get_payment_instruments_id_transaction_rules(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V1.TransactionRulesResponse.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.TransactionRulesResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def get_payment_instruments_id_transaction_rules(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
       call:
-        {Adyen.BalancePlatform.V1.PaymentInstruments,
+        {AdyenEx.BalancePlatform.V1.PaymentInstruments,
          :get_payment_instruments_id_transaction_rules},
       url: "/paymentInstruments/#{id}/transactionRules",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V1.TransactionRulesResponse, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.TransactionRulesResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -106,30 +106,30 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
   """
   @spec patch_payment_instruments_id(
           id :: String.t(),
-          body :: Adyen.BalancePlatform.V1.PaymentInstrumentUpdateRequest.t(),
+          body :: AdyenEx.BalancePlatform.V1.PaymentInstrumentUpdateRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.UpdatePaymentInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.UpdatePaymentInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def patch_payment_instruments_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.BalancePlatform.V1.PaymentInstruments, :patch_payment_instruments_id},
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstruments, :patch_payment_instruments_id},
       url: "/paymentInstruments/#{id}",
       body: body,
       method: :patch,
       request: [
-        {"application/json", {Adyen.BalancePlatform.V1.PaymentInstrumentUpdateRequest, :t}}
+        {"application/json", {AdyenEx.BalancePlatform.V1.PaymentInstrumentUpdateRequest, :t}}
       ],
       response: [
-        {200, {Adyen.BalancePlatform.V1.UpdatePaymentInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.UpdatePaymentInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -147,28 +147,28 @@ defmodule Adyen.BalancePlatform.V1.PaymentInstruments do
   **Content Types**: `application/json`
   """
   @spec post_payment_instruments(
-          body :: Adyen.BalancePlatform.V1.PaymentInstrumentInfo.t(),
+          body :: AdyenEx.BalancePlatform.V1.PaymentInstrumentInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V1.PaymentInstrument.t()}
-          | {:error, Adyen.BalancePlatform.V1.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrument.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def post_payment_instruments(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V1.PaymentInstruments, :post_payment_instruments},
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstruments, :post_payment_instruments},
       url: "/paymentInstruments",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V1.PaymentInstrumentInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V1.PaymentInstrumentInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V1.PaymentInstrument, :t}},
-        {400, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V1.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V1.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

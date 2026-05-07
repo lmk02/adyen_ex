@@ -1,10 +1,10 @@
-defmodule Adyen.BalancePlatform.V1.TransferInstrumentInfo do
+defmodule AdyenEx.BalancePlatform.V1.TransferInstrumentInfo do
   @moduledoc """
   Provides struct and type for a TransferInstrumentInfo
   """
 
   @type t :: %__MODULE__{
-          bankAccount: Adyen.BalancePlatform.V1.BankAccountInfo.t(),
+          bankAccount: AdyenEx.BalancePlatform.V1.BankAccountInfo.t(),
           legalEntityId: String.t(),
           type: String.t()
         }
@@ -17,7 +17,7 @@ defmodule Adyen.BalancePlatform.V1.TransferInstrumentInfo do
 
   def __fields__(:t) do
     [
-      bankAccount: {Adyen.BalancePlatform.V1.BankAccountInfo, :t},
+      bankAccount: {AdyenEx.BalancePlatform.V1.BankAccountInfo, :t},
       legalEntityId: :string,
       type: {:enum, ["bankAccount", "recurringDetail"]}
     ]

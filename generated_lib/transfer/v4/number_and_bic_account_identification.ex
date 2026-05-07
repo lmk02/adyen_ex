@@ -1,11 +1,12 @@
-defmodule Adyen.Transfer.V4.NumberAndBicAccountIdentification do
+defmodule AdyenEx.Transfer.V4.NumberAndBicAccountIdentification do
   @moduledoc """
   Provides struct and type for a NumberAndBicAccountIdentification
   """
 
   @type t :: %__MODULE__{
           accountNumber: String.t(),
-          additionalBankIdentification: Adyen.Transfer.V4.AdditionalBankIdentification.t() | nil,
+          additionalBankIdentification:
+            AdyenEx.Transfer.V4.AdditionalBankIdentification.t() | nil,
           bic: String.t(),
           type: String.t()
         }
@@ -19,7 +20,7 @@ defmodule Adyen.Transfer.V4.NumberAndBicAccountIdentification do
   def __fields__(:t) do
     [
       accountNumber: :string,
-      additionalBankIdentification: {Adyen.Transfer.V4.AdditionalBankIdentification, :t},
+      additionalBankIdentification: {AdyenEx.Transfer.V4.AdditionalBankIdentification, :t},
       bic: :string,
       type: {:const, "numberAndBic"}
     ]

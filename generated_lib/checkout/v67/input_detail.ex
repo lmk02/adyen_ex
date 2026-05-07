@@ -1,14 +1,14 @@
-defmodule Adyen.Checkout.V67.InputDetail do
+defmodule AdyenEx.Checkout.V67.InputDetail do
   @moduledoc """
   Provides struct and type for a InputDetail
   """
 
   @type t :: %__MODULE__{
           configuration: map | nil,
-          details: [Adyen.Checkout.V67.SubInputDetail.t()] | nil,
-          inputDetails: [Adyen.Checkout.V67.SubInputDetail.t()] | nil,
+          details: [AdyenEx.Checkout.V67.SubInputDetail.t()] | nil,
+          inputDetails: [AdyenEx.Checkout.V67.SubInputDetail.t()] | nil,
           itemSearchUrl: String.t() | nil,
-          items: [Adyen.Checkout.V67.Item.t()] | nil,
+          items: [AdyenEx.Checkout.V67.Item.t()] | nil,
           key: String.t() | nil,
           optional: boolean | nil,
           type: String.t() | nil,
@@ -34,10 +34,10 @@ defmodule Adyen.Checkout.V67.InputDetail do
   def __fields__(:t) do
     [
       configuration: :map,
-      details: [{Adyen.Checkout.V67.SubInputDetail, :t}],
-      inputDetails: [{Adyen.Checkout.V67.SubInputDetail, :t}],
+      details: [{AdyenEx.Checkout.V67.SubInputDetail, :t}],
+      inputDetails: [{AdyenEx.Checkout.V67.SubInputDetail, :t}],
       itemSearchUrl: :string,
-      items: [{Adyen.Checkout.V67.Item, :t}],
+      items: [{AdyenEx.Checkout.V67.Item, :t}],
       key: :string,
       optional: :boolean,
       type: :string,

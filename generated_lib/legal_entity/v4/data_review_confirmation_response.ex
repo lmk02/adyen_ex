@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.DataReviewConfirmationResponse do
+defmodule AdyenEx.LegalEntity.V4.DataReviewConfirmationResponse do
   @moduledoc """
   Provides struct and type for a DataReviewConfirmationResponse
   """

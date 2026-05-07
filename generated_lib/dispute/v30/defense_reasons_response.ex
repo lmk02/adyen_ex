@@ -1,11 +1,11 @@
-defmodule Adyen.Dispute.V30.DefenseReasonsResponse do
+defmodule AdyenEx.Dispute.V30.DefenseReasonsResponse do
   @moduledoc """
   Provides struct and type for a DefenseReasonsResponse
   """
 
   @type t :: %__MODULE__{
-          defenseReasons: [Adyen.Dispute.V30.DefenseReason.t()] | nil,
-          disputeServiceResult: Adyen.Dispute.V30.DisputeServiceResult.t()
+          defenseReasons: [AdyenEx.Dispute.V30.DefenseReason.t()] | nil,
+          disputeServiceResult: AdyenEx.Dispute.V30.DisputeServiceResult.t()
         }
 
   defstruct [:defenseReasons, :disputeServiceResult]
@@ -16,8 +16,8 @@ defmodule Adyen.Dispute.V30.DefenseReasonsResponse do
 
   def __fields__(:t) do
     [
-      defenseReasons: [{Adyen.Dispute.V30.DefenseReason, :t}],
-      disputeServiceResult: {Adyen.Dispute.V30.DisputeServiceResult, :t}
+      defenseReasons: [{AdyenEx.Dispute.V30.DefenseReason, :t}],
+      disputeServiceResult: {AdyenEx.Dispute.V30.DisputeServiceResult, :t}
     ]
   end
 end

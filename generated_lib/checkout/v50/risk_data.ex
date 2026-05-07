@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.RiskData do
+defmodule AdyenEx.Checkout.V50.RiskData do
   @moduledoc """
   Provides struct and type for a RiskData
   """

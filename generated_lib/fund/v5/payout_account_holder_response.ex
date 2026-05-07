@@ -1,11 +1,11 @@
-defmodule Adyen.Fund.V5.PayoutAccountHolderResponse do
+defmodule AdyenEx.Fund.V5.PayoutAccountHolderResponse do
   @moduledoc """
   Provides struct and type for a PayoutAccountHolderResponse
   """
 
   @type t :: %__MODULE__{
           bankAccountUUID: String.t() | nil,
-          invalidFields: [Adyen.Fund.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Fund.V5.ErrorFieldType.t()] | nil,
           merchantReference: String.t() | nil,
           payoutSpeed: String.t() | nil,
           pspReference: String.t() | nil,
@@ -28,7 +28,7 @@ defmodule Adyen.Fund.V5.PayoutAccountHolderResponse do
   def __fields__(:t) do
     [
       bankAccountUUID: :string,
-      invalidFields: [{Adyen.Fund.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Fund.V5.ErrorFieldType, :t}],
       merchantReference: :string,
       payoutSpeed: {:enum, ["INSTANT", "SAME_DAY", "STANDARD"]},
       pspReference: :string,

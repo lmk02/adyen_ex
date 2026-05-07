@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.OutputBarcode do
+defmodule AdyenEx.TerminalAPI.V1.OutputBarcode do
   @moduledoc """
   Provides struct and type for a OutputBarcode
   """

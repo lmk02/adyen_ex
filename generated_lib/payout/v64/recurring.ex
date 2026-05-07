@@ -1,4 +1,4 @@
-defmodule Adyen.Payout.V64.Recurring do
+defmodule AdyenEx.Payout.V64.Recurring do
   @moduledoc """
   Provides struct and type for a Recurring
   """

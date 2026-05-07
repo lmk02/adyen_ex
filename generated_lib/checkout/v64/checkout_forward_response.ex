@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V64.CheckoutForwardResponse do
+defmodule AdyenEx.Checkout.V64.CheckoutForwardResponse do
   @moduledoc """
   Provides struct and type for a CheckoutForwardResponse
   """
 
   @type t :: %__MODULE__{
           merchantReference: String.t() | nil,
-          response: Adyen.Checkout.V64.CheckoutForwardResponseFromUrl.t(),
+          response: AdyenEx.Checkout.V64.CheckoutForwardResponseFromUrl.t(),
           storedPaymentMethodId: String.t() | nil
         }
 
@@ -18,7 +18,7 @@ defmodule Adyen.Checkout.V64.CheckoutForwardResponse do
   def __fields__(:t) do
     [
       merchantReference: :string,
-      response: {Adyen.Checkout.V64.CheckoutForwardResponseFromUrl, :t},
+      response: {AdyenEx.Checkout.V64.CheckoutForwardResponseFromUrl, :t},
       storedPaymentMethodId: :string
     ]
   end

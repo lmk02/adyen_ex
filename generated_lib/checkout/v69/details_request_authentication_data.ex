@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.DetailsRequestAuthenticationData do
+defmodule AdyenEx.Checkout.V69.DetailsRequestAuthenticationData do
   @moduledoc """
   Provides struct and type for a DetailsRequestAuthenticationData
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.SourceOfFunds do
+defmodule AdyenEx.LegalEntity.V2.SourceOfFunds do
   @moduledoc """
   Provides struct and type for a SourceOfFunds
   """

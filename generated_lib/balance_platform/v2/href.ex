@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Href do
+defmodule AdyenEx.BalancePlatform.V2.Href do
   @moduledoc """
   Provides struct and type for a Href
   """

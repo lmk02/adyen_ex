@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.UpdateCompanyWebhookRequest do
+defmodule AdyenEx.Management.V3.UpdateCompanyWebhookRequest do
   @moduledoc """
   Provides struct and type for a UpdateCompanyWebhookRequest
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Management.V3.UpdateCompanyWebhookRequest do
           acceptsSelfSignedCertificate: boolean | nil,
           acceptsUntrustedRootCertificate: boolean | nil,
           active: boolean | nil,
-          additionalSettings: Adyen.Management.V3.AdditionalSettings.t() | nil,
+          additionalSettings: AdyenEx.Management.V3.AdditionalSettings.t() | nil,
           communicationFormat: String.t() | nil,
           description: String.t() | nil,
           encryptionProtocol: String.t() | nil,
@@ -49,7 +49,7 @@ defmodule Adyen.Management.V3.UpdateCompanyWebhookRequest do
       acceptsSelfSignedCertificate: :boolean,
       acceptsUntrustedRootCertificate: :boolean,
       active: :boolean,
-      additionalSettings: {Adyen.Management.V3.AdditionalSettings, :t},
+      additionalSettings: {AdyenEx.Management.V3.AdditionalSettings, :t},
       communicationFormat: {:enum, ["http", "json", "soap"]},
       description: :string,
       encryptionProtocol: {:enum, ["HTTP", "TLSv1.2", "TLSv1.3"]},

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.AmexResponseInfo do
+defmodule AdyenEx.Management.V1.AmexResponseInfo do
   @moduledoc """
   Provides struct and type for a AmexResponseInfo
   """

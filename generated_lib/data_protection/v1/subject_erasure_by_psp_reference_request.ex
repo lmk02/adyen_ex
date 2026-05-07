@@ -1,4 +1,4 @@
-defmodule Adyen.DataProtection.V1.SubjectErasureByPspReferenceRequest do
+defmodule AdyenEx.DataProtection.V1.SubjectErasureByPspReferenceRequest do
   @moduledoc """
   Provides struct and type for a SubjectErasureByPspReferenceRequest
   """

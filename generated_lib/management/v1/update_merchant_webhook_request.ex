@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UpdateMerchantWebhookRequest do
+defmodule AdyenEx.Management.V1.UpdateMerchantWebhookRequest do
   @moduledoc """
   Provides struct and type for a UpdateMerchantWebhookRequest
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Management.V1.UpdateMerchantWebhookRequest do
           acceptsSelfSignedCertificate: boolean | nil,
           acceptsUntrustedRootCertificate: boolean | nil,
           active: boolean | nil,
-          additionalSettings: Adyen.Management.V1.AdditionalSettings.t() | nil,
+          additionalSettings: AdyenEx.Management.V1.AdditionalSettings.t() | nil,
           communicationFormat: String.t() | nil,
           description: String.t() | nil,
           networkType: String.t() | nil,
@@ -45,7 +45,7 @@ defmodule Adyen.Management.V1.UpdateMerchantWebhookRequest do
       acceptsSelfSignedCertificate: :boolean,
       acceptsUntrustedRootCertificate: :boolean,
       active: :boolean,
-      additionalSettings: {Adyen.Management.V1.AdditionalSettings, :t},
+      additionalSettings: {AdyenEx.Management.V1.AdditionalSettings, :t},
       communicationFormat: {:enum, ["http", "json", "soap"]},
       description: :string,
       networkType: {:enum, ["local", "public"]},

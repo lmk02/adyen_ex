@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.ThreeDSRequestData do
+defmodule AdyenEx.Checkout.V70.ThreeDSRequestData do
   @moduledoc """
   Provides struct and type for a ThreeDSRequestData
   """

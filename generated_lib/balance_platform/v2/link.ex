@@ -1,14 +1,14 @@
-defmodule Adyen.BalancePlatform.V2.Link do
+defmodule AdyenEx.BalancePlatform.V2.Link do
   @moduledoc """
   Provides struct and type for a Link
   """
 
   @type t :: %__MODULE__{
-          first: Adyen.BalancePlatform.V2.Href.t() | nil,
-          last: Adyen.BalancePlatform.V2.Href.t() | nil,
-          next: Adyen.BalancePlatform.V2.Href.t() | nil,
-          previous: Adyen.BalancePlatform.V2.Href.t() | nil,
-          self: Adyen.BalancePlatform.V2.Href.t() | nil
+          first: AdyenEx.BalancePlatform.V2.Href.t() | nil,
+          last: AdyenEx.BalancePlatform.V2.Href.t() | nil,
+          next: AdyenEx.BalancePlatform.V2.Href.t() | nil,
+          previous: AdyenEx.BalancePlatform.V2.Href.t() | nil,
+          self: AdyenEx.BalancePlatform.V2.Href.t() | nil
         }
 
   defstruct [:first, :last, :next, :previous, :self]
@@ -19,11 +19,11 @@ defmodule Adyen.BalancePlatform.V2.Link do
 
   def __fields__(:t) do
     [
-      first: {Adyen.BalancePlatform.V2.Href, :t},
-      last: {Adyen.BalancePlatform.V2.Href, :t},
-      next: {Adyen.BalancePlatform.V2.Href, :t},
-      previous: {Adyen.BalancePlatform.V2.Href, :t},
-      self: {Adyen.BalancePlatform.V2.Href, :t}
+      first: {AdyenEx.BalancePlatform.V2.Href, :t},
+      last: {AdyenEx.BalancePlatform.V2.Href, :t},
+      next: {AdyenEx.BalancePlatform.V2.Href, :t},
+      previous: {AdyenEx.BalancePlatform.V2.Href, :t},
+      self: {AdyenEx.BalancePlatform.V2.Href, :t}
     ]
   end
 end

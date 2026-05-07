@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.TerminalsTerminalLevel do
+defmodule AdyenEx.Management.V1.TerminalsTerminalLevel do
   @moduledoc """
   Provides API endpoint related to terminals terminal level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of terminals
@@ -27,8 +27,8 @@ defmodule Adyen.Management.V1.TerminalsTerminalLevel do
 
   """
   @spec get_terminals(opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ListTerminalsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ListTerminalsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_terminals(opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -46,17 +46,17 @@ defmodule Adyen.Management.V1.TerminalsTerminalLevel do
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V1.TerminalsTerminalLevel, :get_terminals},
+      call: {AdyenEx.Management.V1.TerminalsTerminalLevel, :get_terminals},
       url: "/terminals",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ListTerminalsResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.ListTerminalsResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

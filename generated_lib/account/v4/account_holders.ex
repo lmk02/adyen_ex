@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.AccountHolders do
+defmodule AdyenEx.Account.V4.AccountHolders do
   @moduledoc """
   Provides API endpoints related to account holders
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Close an account holder
@@ -15,29 +15,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_close_account_holder(
-          body :: Adyen.Account.V4.CloseAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.CloseAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.CloseAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.CloseAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_close_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_close_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_close_account_holder},
       url: "/closeAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.CloseAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.CloseAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.CloseAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.CloseAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.CloseAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.CloseAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -53,28 +53,28 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_create_account_holder(
-          body :: Adyen.Account.V4.CreateAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.CreateAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.CreateAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.CreateAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_create_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_create_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_create_account_holder},
       url: "/createAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.CreateAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.CreateAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.CreateAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.CreateAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -90,29 +90,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_get_account_holder(
-          body :: Adyen.Account.V4.GetAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.GetAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GetAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GetAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_get_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_get_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_get_account_holder},
       url: "/getAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.GetAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.GetAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GetAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.GetAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GetAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.GetAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -127,26 +127,26 @@ defmodule Adyen.Account.V4.AccountHolders do
 
   **Content Types**: `application/json`
   """
-  @spec post_get_tax_form(body :: Adyen.Account.V4.GetTaxFormRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Account.V4.GetTaxFormResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+  @spec post_get_tax_form(body :: AdyenEx.Account.V4.GetTaxFormRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Account.V4.GetTaxFormResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_get_tax_form(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_get_tax_form},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_get_tax_form},
       url: "/getTaxForm",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.GetTaxFormRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.GetTaxFormRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GetTaxFormResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GetTaxFormResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -162,29 +162,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_suspend_account_holder(
-          body :: Adyen.Account.V4.SuspendAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.SuspendAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.SuspendAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.SuspendAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_suspend_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_suspend_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_suspend_account_holder},
       url: "/suspendAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.SuspendAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.SuspendAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.SuspendAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.SuspendAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.SuspendAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.SuspendAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -203,29 +203,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_un_suspend_account_holder(
-          body :: Adyen.Account.V4.UnSuspendAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.UnSuspendAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.UnSuspendAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.UnSuspendAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_un_suspend_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_un_suspend_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_un_suspend_account_holder},
       url: "/unSuspendAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.UnSuspendAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.UnSuspendAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.UnSuspendAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.UnSuspendAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.UnSuspendAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.UnSuspendAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -260,29 +260,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_update_account_holder(
-          body :: Adyen.Account.V4.UpdateAccountHolderRequest.t(),
+          body :: AdyenEx.Account.V4.UpdateAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.UpdateAccountHolderResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.UpdateAccountHolderResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_update_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_update_account_holder},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_update_account_holder},
       url: "/updateAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.UpdateAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.UpdateAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.UpdateAccountHolderResponse, :t}},
-        {202, {Adyen.Account.V4.UpdateAccountHolderResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.UpdateAccountHolderResponse, :t}},
+        {202, {AdyenEx.Account.V4.UpdateAccountHolderResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -298,29 +298,29 @@ defmodule Adyen.Account.V4.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_update_account_holder_state(
-          body :: Adyen.Account.V4.UpdateAccountHolderStateRequest.t(),
+          body :: AdyenEx.Account.V4.UpdateAccountHolderStateRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Account.V4.GetAccountHolderStatusResponse.t()}
-          | {:error, Adyen.Account.V4.ServiceError.t()}
+          {:ok, AdyenEx.Account.V4.GetAccountHolderStatusResponse.t()}
+          | {:error, AdyenEx.Account.V4.ServiceError.t()}
   def post_update_account_holder_state(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Account.V4.AccountHolders, :post_update_account_holder_state},
+      call: {AdyenEx.Account.V4.AccountHolders, :post_update_account_holder_state},
       url: "/updateAccountHolderState",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Account.V4.UpdateAccountHolderStateRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Account.V4.UpdateAccountHolderStateRequest, :t}}],
       response: [
-        {200, {Adyen.Account.V4.GetAccountHolderStatusResponse, :t}},
-        {202, {Adyen.Account.V4.GetAccountHolderStatusResponse, :t}},
-        {400, {Adyen.Account.V4.ServiceError, :t}},
-        {401, {Adyen.Account.V4.ServiceError, :t}},
-        {403, {Adyen.Account.V4.ServiceError, :t}},
-        {422, {Adyen.Account.V4.ServiceError, :t}},
-        {500, {Adyen.Account.V4.ServiceError, :t}}
+        {200, {AdyenEx.Account.V4.GetAccountHolderStatusResponse, :t}},
+        {202, {AdyenEx.Account.V4.GetAccountHolderStatusResponse, :t}},
+        {400, {AdyenEx.Account.V4.ServiceError, :t}},
+        {401, {AdyenEx.Account.V4.ServiceError, :t}},
+        {403, {AdyenEx.Account.V4.ServiceError, :t}},
+        {422, {AdyenEx.Account.V4.ServiceError, :t}},
+        {500, {AdyenEx.Account.V4.ServiceError, :t}}
       ],
       opts: opts
     })

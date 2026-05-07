@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.DocumentDetailWrapper do
+defmodule AdyenEx.Account.V4.DocumentDetailWrapper do
   @moduledoc """
   Provides struct and type for a DocumentDetailWrapper
   """
 
-  @type t :: %__MODULE__{DocumentDetail: Adyen.Account.V4.DocumentDetail.t() | nil}
+  @type t :: %__MODULE__{DocumentDetail: AdyenEx.Account.V4.DocumentDetail.t() | nil}
 
   defstruct [:DocumentDetail]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V4.DocumentDetailWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [DocumentDetail: {Adyen.Account.V4.DocumentDetail, :t}]
+    [DocumentDetail: {AdyenEx.Account.V4.DocumentDetail, :t}]
   end
 end

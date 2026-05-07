@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.CheckoutForwardResponse do
+defmodule AdyenEx.Checkout.V71.CheckoutForwardResponse do
   @moduledoc """
   Provides struct and type for a CheckoutForwardResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Checkout.V71.CheckoutForwardResponse do
   @type t :: %__MODULE__{
           merchantReference: String.t() | nil,
           pspReference: String.t() | nil,
-          response: Adyen.Checkout.V71.CheckoutForwardResponseFromUrl.t(),
+          response: AdyenEx.Checkout.V71.CheckoutForwardResponseFromUrl.t(),
           storedPaymentMethodId: String.t() | nil
         }
 
@@ -20,7 +20,7 @@ defmodule Adyen.Checkout.V71.CheckoutForwardResponse do
     [
       merchantReference: :string,
       pspReference: :string,
-      response: {Adyen.Checkout.V71.CheckoutForwardResponseFromUrl, :t},
+      response: {AdyenEx.Checkout.V71.CheckoutForwardResponseFromUrl, :t},
       storedPaymentMethodId: :string
     ]
   end

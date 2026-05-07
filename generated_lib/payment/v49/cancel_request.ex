@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V49.CancelRequest do
+defmodule AdyenEx.Payment.V49.CancelRequest do
   @moduledoc """
   Provides struct and type for a CancelRequest
   """
@@ -6,11 +6,11 @@ defmodule Adyen.Payment.V49.CancelRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          mpiData: Adyen.Payment.V49.ThreeDSecureData.t() | nil,
+          mpiData: AdyenEx.Payment.V49.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V49.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V49.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -35,11 +35,11 @@ defmodule Adyen.Payment.V49.CancelRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      mpiData: {Adyen.Payment.V49.ThreeDSecureData, :t},
+      mpiData: {AdyenEx.Payment.V49.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       originalReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V49.Split, :t}],
+      splits: [{AdyenEx.Payment.V49.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

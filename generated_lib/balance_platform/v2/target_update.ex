@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TargetUpdate do
+defmodule AdyenEx.BalancePlatform.V2.TargetUpdate do
   @moduledoc """
   Provides struct and type for a TargetUpdate
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V3.TestNotificationConfigurationRequest do
+defmodule AdyenEx.NotificationConfiguration.V3.TestNotificationConfigurationRequest do
   @moduledoc """
   Provides struct and type for a TestNotificationConfigurationRequest
   """

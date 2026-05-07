@@ -1,13 +1,13 @@
-defmodule Adyen.TerminalAPI.V1.PaymentRequest do
+defmodule AdyenEx.TerminalAPI.V1.PaymentRequest do
   @moduledoc """
   Provides struct and type for a PaymentRequest
   """
 
   @type t :: %__MODULE__{
-          LoyaltyData: [Adyen.TerminalAPI.V1.LoyaltyData.t()] | nil,
-          PaymentData: Adyen.TerminalAPI.V1.PaymentData.t() | nil,
-          PaymentTransaction: Adyen.TerminalAPI.V1.PaymentTransaction.t(),
-          SaleData: Adyen.TerminalAPI.V1.SaleData.t()
+          LoyaltyData: [AdyenEx.TerminalAPI.V1.LoyaltyData.t()] | nil,
+          PaymentData: AdyenEx.TerminalAPI.V1.PaymentData.t() | nil,
+          PaymentTransaction: AdyenEx.TerminalAPI.V1.PaymentTransaction.t(),
+          SaleData: AdyenEx.TerminalAPI.V1.SaleData.t()
         }
 
   defstruct [:LoyaltyData, :PaymentData, :PaymentTransaction, :SaleData]
@@ -18,10 +18,10 @@ defmodule Adyen.TerminalAPI.V1.PaymentRequest do
 
   def __fields__(:t) do
     [
-      LoyaltyData: [{Adyen.TerminalAPI.V1.LoyaltyData, :t}],
-      PaymentData: {Adyen.TerminalAPI.V1.PaymentData, :t},
-      PaymentTransaction: {Adyen.TerminalAPI.V1.PaymentTransaction, :t},
-      SaleData: {Adyen.TerminalAPI.V1.SaleData, :t}
+      LoyaltyData: [{AdyenEx.TerminalAPI.V1.LoyaltyData, :t}],
+      PaymentData: {AdyenEx.TerminalAPI.V1.PaymentData, :t},
+      PaymentTransaction: {AdyenEx.TerminalAPI.V1.PaymentTransaction, :t},
+      SaleData: {AdyenEx.TerminalAPI.V1.SaleData, :t}
     ]
   end
 end

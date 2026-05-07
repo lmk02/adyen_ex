@@ -1,4 +1,4 @@
-defmodule Adyen.Hop.V6.FieldType do
+defmodule AdyenEx.Hop.V6.FieldType do
   @moduledoc """
   Provides struct and type for a FieldType
   """

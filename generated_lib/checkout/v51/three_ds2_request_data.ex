@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.ThreeDs2RequestData do
+defmodule AdyenEx.Checkout.V51.ThreeDs2RequestData do
   @moduledoc """
   Provides struct and type for a ThreeDs2RequestData
   """
@@ -9,14 +9,14 @@ defmodule Adyen.Checkout.V51.ThreeDs2RequestData do
           authenticationOnly: boolean | nil,
           challengeIndicator: String.t() | nil,
           deviceChannel: String.t(),
-          deviceRenderOptions: Adyen.Checkout.V51.DeviceRenderOptions.t() | nil,
+          deviceRenderOptions: AdyenEx.Checkout.V51.DeviceRenderOptions.t() | nil,
           mcc: String.t() | nil,
           merchantName: String.t() | nil,
           messageVersion: String.t() | nil,
           notificationURL: String.t() | nil,
           sdkAppID: String.t() | nil,
           sdkEncData: String.t() | nil,
-          sdkEphemPubKey: Adyen.Checkout.V51.SDKEphemPubKey.t() | nil,
+          sdkEphemPubKey: AdyenEx.Checkout.V51.SDKEphemPubKey.t() | nil,
           sdkMaxTimeout: integer | nil,
           sdkReferenceNumber: String.t() | nil,
           sdkTransID: String.t() | nil,
@@ -68,14 +68,14 @@ defmodule Adyen.Checkout.V51.ThreeDs2RequestData do
         {:enum,
          ["noPreference", "requestNoChallenge", "requestChallenge", "requestChallengeAsMandate"]},
       deviceChannel: :string,
-      deviceRenderOptions: {Adyen.Checkout.V51.DeviceRenderOptions, :t},
+      deviceRenderOptions: {AdyenEx.Checkout.V51.DeviceRenderOptions, :t},
       mcc: :string,
       merchantName: :string,
       messageVersion: :string,
       notificationURL: :string,
       sdkAppID: :string,
       sdkEncData: :string,
-      sdkEphemPubKey: {Adyen.Checkout.V51.SDKEphemPubKey, :t},
+      sdkEphemPubKey: {AdyenEx.Checkout.V51.SDKEphemPubKey, :t},
       sdkMaxTimeout: {:integer, "int32"},
       sdkReferenceNumber: :string,
       sdkTransID: :string,

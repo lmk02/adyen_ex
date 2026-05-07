@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ReceiptOptions do
+defmodule AdyenEx.Management.V1.ReceiptOptions do
   @moduledoc """
   Provides struct and type for a ReceiptOptions
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.ReleaseUpdateDetails do
+defmodule AdyenEx.Management.V1.ReleaseUpdateDetails do
   @moduledoc """
   Provides struct and type for a ReleaseUpdateDetails
   """

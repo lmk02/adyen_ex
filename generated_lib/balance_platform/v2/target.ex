@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Target do
+defmodule AdyenEx.BalancePlatform.V2.Target do
   @moduledoc """
   Provides struct and type for a Target
   """

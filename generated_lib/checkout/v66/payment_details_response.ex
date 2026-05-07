@@ -1,27 +1,27 @@
-defmodule Adyen.Checkout.V66.PaymentDetailsResponse do
+defmodule AdyenEx.Checkout.V66.PaymentDetailsResponse do
   @moduledoc """
   Provides struct and type for a PaymentDetailsResponse
   """
 
   @type t :: %__MODULE__{
-          action: Adyen.Checkout.V66.CheckoutRedirectAction.t() | nil,
+          action: AdyenEx.Checkout.V66.CheckoutRedirectAction.t() | nil,
           additionalData: map | nil,
-          amount: Adyen.Checkout.V66.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V66.Amount.t() | nil,
           authentication: map | nil,
-          details: [Adyen.Checkout.V66.InputDetail.t()] | nil,
+          details: [AdyenEx.Checkout.V66.InputDetail.t()] | nil,
           donationToken: String.t() | nil,
-          fraudResult: Adyen.Checkout.V66.FraudResult.t() | nil,
+          fraudResult: AdyenEx.Checkout.V66.FraudResult.t() | nil,
           merchantReference: String.t() | nil,
-          order: Adyen.Checkout.V66.CheckoutOrderResponse.t() | nil,
+          order: AdyenEx.Checkout.V66.CheckoutOrderResponse.t() | nil,
           outputDetails: map | nil,
           paymentData: String.t() | nil,
           pspReference: String.t() | nil,
-          redirect: Adyen.Checkout.V66.Redirect.t() | nil,
+          redirect: AdyenEx.Checkout.V66.Redirect.t() | nil,
           refusalReason: String.t() | nil,
           refusalReasonCode: String.t() | nil,
           resultCode: String.t() | nil,
           shopperLocale: String.t() | nil,
-          threeDS2Result: Adyen.Checkout.V66.ThreeDs2Result.t() | nil
+          threeDS2Result: AdyenEx.Checkout.V66.ThreeDs2Result.t() | nil
         }
 
   defstruct [
@@ -51,19 +51,19 @@ defmodule Adyen.Checkout.V66.PaymentDetailsResponse do
 
   def __fields__(:t) do
     [
-      action: {Adyen.Checkout.V66.CheckoutRedirectAction, :t},
+      action: {AdyenEx.Checkout.V66.CheckoutRedirectAction, :t},
       additionalData: :map,
-      amount: {Adyen.Checkout.V66.Amount, :t},
+      amount: {AdyenEx.Checkout.V66.Amount, :t},
       authentication: :map,
-      details: [{Adyen.Checkout.V66.InputDetail, :t}],
+      details: [{AdyenEx.Checkout.V66.InputDetail, :t}],
       donationToken: :string,
-      fraudResult: {Adyen.Checkout.V66.FraudResult, :t},
+      fraudResult: {AdyenEx.Checkout.V66.FraudResult, :t},
       merchantReference: :string,
-      order: {Adyen.Checkout.V66.CheckoutOrderResponse, :t},
+      order: {AdyenEx.Checkout.V66.CheckoutOrderResponse, :t},
       outputDetails: :map,
       paymentData: :string,
       pspReference: :string,
-      redirect: {Adyen.Checkout.V66.Redirect, :t},
+      redirect: {AdyenEx.Checkout.V66.Redirect, :t},
       refusalReason: :string,
       refusalReasonCode: :string,
       resultCode:
@@ -85,7 +85,7 @@ defmodule Adyen.Checkout.V66.PaymentDetailsResponse do
            "Success"
          ]},
       shopperLocale: :string,
-      threeDS2Result: {Adyen.Checkout.V66.ThreeDs2Result, :t}
+      threeDS2Result: {AdyenEx.Checkout.V66.ThreeDs2Result, :t}
     ]
   end
 end

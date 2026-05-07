@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.GenericResponse do
+defmodule AdyenEx.Account.V4.GenericResponse do
   @moduledoc """
   Provides struct and type for a GenericResponse
   """

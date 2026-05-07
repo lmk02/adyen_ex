@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V68.PaymentReversalResponse do
+defmodule AdyenEx.Checkout.V68.PaymentReversalResponse do
   @moduledoc """
   Provides struct and type for a PaymentReversalResponse
   """

@@ -1,10 +1,10 @@
-defmodule Adyen.Account.V6.GenericResponse do
+defmodule AdyenEx.Account.V6.GenericResponse do
   @moduledoc """
   Provides struct and type for a GenericResponse
   """
 
   @type t :: %__MODULE__{
-          invalidFields: [Adyen.Account.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V6.ErrorFieldType.t()] | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Account.V6.GenericResponse do
 
   def __fields__(:t) do
     [
-      invalidFields: [{Adyen.Account.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V6.ErrorFieldType, :t}],
       pspReference: :string,
       resultCode: :string
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.CheckoutAwaitAction do
+defmodule AdyenEx.Checkout.V72.CheckoutAwaitAction do
   @moduledoc """
   Provides struct and type for a CheckoutAwaitAction
   """

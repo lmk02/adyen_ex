@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V3.TermsOfService do
+defmodule AdyenEx.LegalEntity.V3.TermsOfService do
   @moduledoc """
   Provides API endpoints related to terms of service
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get accepted Terms of Service document
@@ -29,8 +29,8 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
           termsofserviceacceptancereference :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V3.GetAcceptedTermsOfServiceDocumentResponse.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.GetAcceptedTermsOfServiceDocumentResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def get_legal_entities_id_accepted_terms_of_service_document_termsofserviceacceptancereference(
         id,
         termsofserviceacceptancereference,
@@ -42,19 +42,19 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
     client.request(%{
       args: [id: id, termsofserviceacceptancereference: termsofserviceacceptancereference],
       call:
-        {Adyen.LegalEntity.V3.TermsOfService,
+        {AdyenEx.LegalEntity.V3.TermsOfService,
          :get_legal_entities_id_accepted_terms_of_service_document_termsofserviceacceptancereference},
       url:
         "/legalEntities/#{id}/acceptedTermsOfServiceDocument/#{termsofserviceacceptancereference}",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.LegalEntity.V3.GetAcceptedTermsOfServiceDocumentResponse, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.GetAcceptedTermsOfServiceDocumentResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -75,25 +75,25 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
 
   """
   @spec get_legal_entities_id_terms_of_service_acceptance_infos(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def get_legal_entities_id_terms_of_service_acceptance_infos(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
       call:
-        {Adyen.LegalEntity.V3.TermsOfService,
+        {AdyenEx.LegalEntity.V3.TermsOfService,
          :get_legal_entities_id_terms_of_service_acceptance_infos},
       url: "/legalEntities/#{id}/termsOfServiceAcceptanceInfos",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.GetTermsOfServiceAcceptanceInfosResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -114,23 +114,24 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
 
   """
   @spec get_legal_entities_id_terms_of_service_status(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.LegalEntity.V3.CalculateTermsOfServiceStatusResponse.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.CalculateTermsOfServiceStatusResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def get_legal_entities_id_terms_of_service_status(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.LegalEntity.V3.TermsOfService, :get_legal_entities_id_terms_of_service_status},
+      call:
+        {AdyenEx.LegalEntity.V3.TermsOfService, :get_legal_entities_id_terms_of_service_status},
       url: "/legalEntities/#{id}/termsOfServiceStatus",
       method: :get,
       response: [
-        {200, {Adyen.LegalEntity.V3.CalculateTermsOfServiceStatusResponse, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.CalculateTermsOfServiceStatusResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -157,11 +158,11 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
   @spec patch_legal_entities_id_terms_of_service_termsofservicedocumentid(
           id :: String.t(),
           termsofservicedocumentid :: String.t(),
-          body :: Adyen.LegalEntity.V3.AcceptTermsOfServiceRequest.t(),
+          body :: AdyenEx.LegalEntity.V3.AcceptTermsOfServiceRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V3.AcceptTermsOfServiceResponse.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.AcceptTermsOfServiceResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def patch_legal_entities_id_terms_of_service_termsofservicedocumentid(
         id,
         termsofservicedocumentid,
@@ -173,19 +174,19 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
     client.request(%{
       args: [id: id, termsofservicedocumentid: termsofservicedocumentid, body: body],
       call:
-        {Adyen.LegalEntity.V3.TermsOfService,
+        {AdyenEx.LegalEntity.V3.TermsOfService,
          :patch_legal_entities_id_terms_of_service_termsofservicedocumentid},
       url: "/legalEntities/#{id}/termsOfService/#{termsofservicedocumentid}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.LegalEntity.V3.AcceptTermsOfServiceRequest, :t}}],
+      request: [{"application/json", {AdyenEx.LegalEntity.V3.AcceptTermsOfServiceRequest, :t}}],
       response: [
-        {200, {Adyen.LegalEntity.V3.AcceptTermsOfServiceResponse, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.AcceptTermsOfServiceResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -211,28 +212,30 @@ defmodule Adyen.LegalEntity.V3.TermsOfService do
   """
   @spec post_legal_entities_id_terms_of_service(
           id :: String.t(),
-          body :: Adyen.LegalEntity.V3.GetTermsOfServiceDocumentRequest.t(),
+          body :: AdyenEx.LegalEntity.V3.GetTermsOfServiceDocumentRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V3.GetTermsOfServiceDocumentResponse.t()}
-          | {:error, Adyen.LegalEntity.V3.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V3.GetTermsOfServiceDocumentResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V3.ServiceError.t()}
   def post_legal_entities_id_terms_of_service(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.LegalEntity.V3.TermsOfService, :post_legal_entities_id_terms_of_service},
+      call: {AdyenEx.LegalEntity.V3.TermsOfService, :post_legal_entities_id_terms_of_service},
       url: "/legalEntities/#{id}/termsOfService",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.LegalEntity.V3.GetTermsOfServiceDocumentRequest, :t}}],
+      request: [
+        {"application/json", {AdyenEx.LegalEntity.V3.GetTermsOfServiceDocumentRequest, :t}}
+      ],
       response: [
-        {200, {Adyen.LegalEntity.V3.GetTermsOfServiceDocumentResponse, :t}},
-        {400, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V3.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V3.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V3.GetTermsOfServiceDocumentResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V3.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V3.ServiceError, :t}}
       ],
       opts: opts
     })

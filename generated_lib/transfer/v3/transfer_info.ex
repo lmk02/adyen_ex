@@ -1,22 +1,22 @@
-defmodule Adyen.Transfer.V3.TransferInfo do
+defmodule AdyenEx.Transfer.V3.TransferInfo do
   @moduledoc """
   Provides struct and type for a TransferInfo
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Transfer.V3.Amount.t(),
+          amount: AdyenEx.Transfer.V3.Amount.t(),
           balanceAccountId: String.t() | nil,
           category: String.t(),
-          counterparty: Adyen.Transfer.V3.CounterpartyInfoV3.t(),
+          counterparty: AdyenEx.Transfer.V3.CounterpartyInfoV3.t(),
           description: String.t() | nil,
-          executionDate: Adyen.Transfer.V3.ExecutionDate.t() | nil,
+          executionDate: AdyenEx.Transfer.V3.ExecutionDate.t() | nil,
           paymentInstrumentId: String.t() | nil,
           priority: String.t() | nil,
           reference: String.t() | nil,
           referenceForBeneficiary: String.t() | nil,
-          review: Adyen.Transfer.V3.TransferRequestReview.t() | nil,
+          review: AdyenEx.Transfer.V3.TransferRequestReview.t() | nil,
           type: String.t() | nil,
-          ultimateParty: Adyen.Transfer.V3.UltimatePartyIdentification.t() | nil
+          ultimateParty: AdyenEx.Transfer.V3.UltimatePartyIdentification.t() | nil
         }
 
   defstruct [
@@ -41,19 +41,19 @@ defmodule Adyen.Transfer.V3.TransferInfo do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Transfer.V3.Amount, :t},
+      amount: {AdyenEx.Transfer.V3.Amount, :t},
       balanceAccountId: :string,
       category: {:enum, ["bank", "card", "internal", "issuedCard", "platformPayment", "topUp"]},
-      counterparty: {Adyen.Transfer.V3.CounterpartyInfoV3, :t},
+      counterparty: {AdyenEx.Transfer.V3.CounterpartyInfoV3, :t},
       description: :string,
-      executionDate: {Adyen.Transfer.V3.ExecutionDate, :t},
+      executionDate: {AdyenEx.Transfer.V3.ExecutionDate, :t},
       paymentInstrumentId: :string,
       priority: {:enum, ["crossBorder", "fast", "instant", "internal", "regular", "wire"]},
       reference: :string,
       referenceForBeneficiary: :string,
-      review: {Adyen.Transfer.V3.TransferRequestReview, :t},
+      review: {AdyenEx.Transfer.V3.TransferRequestReview, :t},
       type: {:enum, ["bankTransfer", "internalTransfer", "internalDirectDebit"]},
-      ultimateParty: {Adyen.Transfer.V3.UltimatePartyIdentification, :t}
+      ultimateParty: {AdyenEx.Transfer.V3.UltimatePartyIdentification, :t}
     ]
   end
 end

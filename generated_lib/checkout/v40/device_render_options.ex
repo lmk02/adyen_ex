@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.DeviceRenderOptions do
+defmodule AdyenEx.Checkout.V40.DeviceRenderOptions do
   @moduledoc """
   Provides struct and type for a DeviceRenderOptions
   """

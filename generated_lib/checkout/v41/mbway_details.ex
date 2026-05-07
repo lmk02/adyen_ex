@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V41.MbwayDetails do
+defmodule AdyenEx.Checkout.V41.MbwayDetails do
   @moduledoc """
   Provides struct and type for a MbwayDetails
   """

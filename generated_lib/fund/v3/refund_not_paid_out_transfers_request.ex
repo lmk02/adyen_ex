@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.RefundNotPaidOutTransfersRequest do
+defmodule AdyenEx.Fund.V3.RefundNotPaidOutTransfersRequest do
   @moduledoc """
   Provides struct and type for a RefundNotPaidOutTransfersRequest
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
+defmodule AdyenEx.CloudDevice.V1.CloudEndpointsAndConnection do
   @moduledoc """
   Provides API endpoints related to cloud endpoints and connection
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of connected devices
@@ -23,8 +23,8 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
           merchantAccount :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.CloudDevice.V1.ConnectedDevicesResponse.t()}
-          | {:error, Adyen.CloudDevice.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.CloudDevice.V1.ConnectedDevicesResponse.t()}
+          | {:error, AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity.t()}
   def get_merchants_merchant_account_connected_devices(merchantAccount, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:store])
@@ -32,15 +32,15 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
     client.request(%{
       args: [merchantAccount: merchantAccount],
       call:
-        {Adyen.CloudDevice.V1.CloudEndpointsAndConnection,
+        {AdyenEx.CloudDevice.V1.CloudEndpointsAndConnection,
          :get_merchants_merchant_account_connected_devices},
       url: "/merchants/#{merchantAccount}/connectedDevices",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.CloudDevice.V1.ConnectedDevicesResponse, :t}},
-        {401, {Adyen.CloudDevice.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.CloudDevice.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.CloudDevice.V1.ConnectedDevicesResponse, :t}},
+        {401, {AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -60,8 +60,8 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
           deviceId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.CloudDevice.V1.DeviceStatusResponse.t()}
-          | {:error, Adyen.CloudDevice.V1.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.CloudDevice.V1.DeviceStatusResponse.t()}
+          | {:error, AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity.t()}
   def get_merchants_merchant_account_devices_device_id_status(
         merchantAccount,
         deviceId,
@@ -72,14 +72,14 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
     client.request(%{
       args: [merchantAccount: merchantAccount, deviceId: deviceId],
       call:
-        {Adyen.CloudDevice.V1.CloudEndpointsAndConnection,
+        {AdyenEx.CloudDevice.V1.CloudEndpointsAndConnection,
          :get_merchants_merchant_account_devices_device_id_status},
       url: "/merchants/#{merchantAccount}/devices/#{deviceId}/status",
       method: :get,
       response: [
-        {200, {Adyen.CloudDevice.V1.DeviceStatusResponse, :t}},
-        {401, {Adyen.CloudDevice.V1.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.CloudDevice.V1.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.CloudDevice.V1.DeviceStatusResponse, :t}},
+        {401, {AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.CloudDevice.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -119,7 +119,7 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
     client.request(%{
       args: [merchantAccount: merchantAccount, deviceId: deviceId, body: body],
       call:
-        {Adyen.CloudDevice.V1.CloudEndpointsAndConnection,
+        {AdyenEx.CloudDevice.V1.CloudEndpointsAndConnection,
          :post_merchants_merchant_account_devices_device_id_async},
       url: "/merchants/#{merchantAccount}/devices/#{deviceId}/async",
       body: body,
@@ -164,7 +164,7 @@ defmodule Adyen.CloudDevice.V1.CloudEndpointsAndConnection do
     client.request(%{
       args: [merchantAccount: merchantAccount, deviceId: deviceId, body: body],
       call:
-        {Adyen.CloudDevice.V1.CloudEndpointsAndConnection,
+        {AdyenEx.CloudDevice.V1.CloudEndpointsAndConnection,
          :post_merchants_merchant_account_devices_device_id_sync},
       url: "/merchants/#{merchantAccount}/devices/#{deviceId}/sync",
       body: body,

@@ -1,10 +1,10 @@
-defmodule Adyen.Capital.V1.GrantInfo do
+defmodule AdyenEx.Capital.V1.GrantInfo do
   @moduledoc """
   Provides struct and type for a GrantInfo
   """
 
   @type t :: %__MODULE__{
-          counterparty: Adyen.Capital.V1.GrantInfoCounterparty.t() | nil,
+          counterparty: AdyenEx.Capital.V1.GrantInfoCounterparty.t() | nil,
           grantAccountId: String.t(),
           grantOfferId: String.t()
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Capital.V1.GrantInfo do
 
   def __fields__(:t) do
     [
-      counterparty: {Adyen.Capital.V1.GrantInfoCounterparty, :t},
+      counterparty: {AdyenEx.Capital.V1.GrantInfoCounterparty, :t},
       grantAccountId: :string,
       grantOfferId: :string
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UpdatableAddress do
+defmodule AdyenEx.Management.V1.UpdatableAddress do
   @moduledoc """
   Provides struct and type for a UpdatableAddress
   """

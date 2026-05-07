@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.PaymentMethodsRequest do
+defmodule AdyenEx.Checkout.V49.PaymentMethodsRequest do
   @moduledoc """
   Provides struct and type for a PaymentMethodsRequest
   """
@@ -6,9 +6,9 @@ defmodule Adyen.Checkout.V49.PaymentMethodsRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           allowedPaymentMethods: [String.t()] | nil,
-          amount: Adyen.Checkout.V49.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V49.Amount.t() | nil,
           blockedPaymentMethods: [String.t()] | nil,
-          browserInfo: Adyen.Checkout.V49.BrowserInfo.t() | nil,
+          browserInfo: AdyenEx.Checkout.V49.BrowserInfo.t() | nil,
           channel: String.t() | nil,
           countryCode: String.t() | nil,
           merchantAccount: String.t(),
@@ -49,9 +49,9 @@ defmodule Adyen.Checkout.V49.PaymentMethodsRequest do
     [
       additionalData: :map,
       allowedPaymentMethods: [:string],
-      amount: {Adyen.Checkout.V49.Amount, :t},
+      amount: {AdyenEx.Checkout.V49.Amount, :t},
       blockedPaymentMethods: [:string],
-      browserInfo: {Adyen.Checkout.V49.BrowserInfo, :t},
+      browserInfo: {AdyenEx.Checkout.V49.BrowserInfo, :t},
       channel: {:enum, ["iOS", "Android", "Web"]},
       countryCode: :string,
       merchantAccount: :string,

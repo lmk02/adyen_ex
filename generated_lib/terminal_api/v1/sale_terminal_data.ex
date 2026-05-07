@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.SaleTerminalData do
+defmodule AdyenEx.TerminalAPI.V1.SaleTerminalData do
   @moduledoc """
   Provides struct and type for a SaleTerminalData
   """

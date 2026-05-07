@@ -1,17 +1,17 @@
-defmodule Adyen.Checkout.V71.PaymentAmountUpdateResponse do
+defmodule AdyenEx.Checkout.V71.PaymentAmountUpdateResponse do
   @moduledoc """
   Provides struct and type for a PaymentAmountUpdateResponse
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V71.Amount.t(),
+          amount: AdyenEx.Checkout.V71.Amount.t(),
           industryUsage: String.t() | nil,
-          lineItems: [Adyen.Checkout.V71.LineItem.t()] | nil,
+          lineItems: [AdyenEx.Checkout.V71.LineItem.t()] | nil,
           merchantAccount: String.t(),
           paymentPspReference: String.t(),
           pspReference: String.t(),
           reference: String.t(),
-          splits: [Adyen.Checkout.V71.Split.t()] | nil,
+          splits: [AdyenEx.Checkout.V71.Split.t()] | nil,
           status: String.t()
         }
 
@@ -33,14 +33,14 @@ defmodule Adyen.Checkout.V71.PaymentAmountUpdateResponse do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V71.Amount, :t},
+      amount: {AdyenEx.Checkout.V71.Amount, :t},
       industryUsage: {:enum, ["delayedCharge", "installment", "noShow"]},
-      lineItems: [{Adyen.Checkout.V71.LineItem, :t}],
+      lineItems: [{AdyenEx.Checkout.V71.LineItem, :t}],
       merchantAccount: :string,
       paymentPspReference: :string,
       pspReference: :string,
       reference: :string,
-      splits: [{Adyen.Checkout.V71.Split, :t}],
+      splits: [{AdyenEx.Checkout.V71.Split, :t}],
       status: {:const, "received"}
     ]
   end

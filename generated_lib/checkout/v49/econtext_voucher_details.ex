@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.EcontextVoucherDetails do
+defmodule AdyenEx.Checkout.V49.EcontextVoucherDetails do
   @moduledoc """
   Provides struct and type for a EcontextVoucherDetails
   """

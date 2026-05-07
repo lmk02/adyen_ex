@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V41.SubMerchant do
+defmodule AdyenEx.Checkout.V41.SubMerchant do
   @moduledoc """
   Provides struct and type for a SubMerchant
   """

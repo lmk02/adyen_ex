@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CounterpartyTypesRestriction do
+defmodule AdyenEx.BalancePlatform.V2.CounterpartyTypesRestriction do
   @moduledoc """
   Provides struct and type for a CounterpartyTypesRestriction
   """

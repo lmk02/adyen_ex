@@ -1,4 +1,4 @@
-defmodule Adyen.OpenBanking.V1.Identity do
+defmodule AdyenEx.OpenBanking.V1.Identity do
   @moduledoc """
   Provides struct and type for a Identity
   """

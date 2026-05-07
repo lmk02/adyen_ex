@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.DKLocalAccountIdentification do
+defmodule AdyenEx.Transfer.V4.DKLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a DKLocalAccountIdentification
   """

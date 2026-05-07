@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.AndroidAppsResponse do
+defmodule AdyenEx.Management.V1.AndroidAppsResponse do
   @moduledoc """
   Provides struct and type for a AndroidAppsResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V1.AndroidApp.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V1.AndroidApp.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.AndroidAppsResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V1.AndroidApp, :t}]]
+    [data: [{AdyenEx.Management.V1.AndroidApp, :t}]]
   end
 end

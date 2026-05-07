@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.TransactionStatusRequest do
+defmodule AdyenEx.TerminalAPI.V1.TransactionStatusRequest do
   @moduledoc """
   Provides struct and type for a TransactionStatusRequest
   """
 
   @type t :: %__MODULE__{
           DocumentQualifier: [String.t()] | nil,
-          MessageReference: Adyen.TerminalAPI.V1.MessageReference.t() | nil,
+          MessageReference: AdyenEx.TerminalAPI.V1.MessageReference.t() | nil,
           ReceiptReprintFlag: boolean | nil
         }
 
@@ -27,7 +27,7 @@ defmodule Adyen.TerminalAPI.V1.TransactionStatusRequest do
           "Voucher"
         ]
       ],
-      MessageReference: {Adyen.TerminalAPI.V1.MessageReference, :t},
+      MessageReference: {AdyenEx.TerminalAPI.V1.MessageReference, :t},
       ReceiptReprintFlag: :boolean
     ]
   end

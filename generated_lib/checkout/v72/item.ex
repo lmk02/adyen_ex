@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.Item do
+defmodule AdyenEx.Checkout.V72.Item do
   @moduledoc """
   Provides struct and type for a Item
   """

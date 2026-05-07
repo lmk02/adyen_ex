@@ -1,13 +1,13 @@
-defmodule Adyen.Management.V3.ApiCredential do
+defmodule AdyenEx.Management.V3.ApiCredential do
   @moduledoc """
   Provides struct and type for a ApiCredential
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V3.ApiCredentialLinks.t() | nil,
+          _links: AdyenEx.Management.V3.ApiCredentialLinks.t() | nil,
           active: boolean,
           allowedIpAddresses: [String.t()],
-          allowedOrigins: [Adyen.Management.V3.AllowedOrigin.t()] | nil,
+          allowedOrigins: [AdyenEx.Management.V3.AllowedOrigin.t()] | nil,
           clientKey: String.t(),
           description: String.t() | nil,
           id: String.t(),
@@ -35,10 +35,10 @@ defmodule Adyen.Management.V3.ApiCredential do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V3.ApiCredentialLinks, :t},
+      _links: {AdyenEx.Management.V3.ApiCredentialLinks, :t},
       active: :boolean,
       allowedIpAddresses: [:string],
-      allowedOrigins: [{Adyen.Management.V3.AllowedOrigin, :t}],
+      allowedOrigins: [{AdyenEx.Management.V3.AllowedOrigin, :t}],
       clientKey: :string,
       description: :string,
       id: :string,

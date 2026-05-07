@@ -1,10 +1,10 @@
-defmodule Adyen.Management.V3.GenericPmWithTdiUpdateInfo do
+defmodule AdyenEx.Management.V3.GenericPmWithTdiUpdateInfo do
   @moduledoc """
   Provides struct and type for a GenericPmWithTdiUpdateInfo
   """
 
   @type t :: %__MODULE__{
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V3.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:transactionDescription]
@@ -14,6 +14,6 @@ defmodule Adyen.Management.V3.GenericPmWithTdiUpdateInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [transactionDescription: {Adyen.Management.V3.TransactionDescriptionInfo, :t}]
+    [transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionInfo, :t}]
   end
 end

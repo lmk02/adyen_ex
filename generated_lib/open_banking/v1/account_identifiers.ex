@@ -1,15 +1,15 @@
-defmodule Adyen.OpenBanking.V1.AccountIdentifiers do
+defmodule AdyenEx.OpenBanking.V1.AccountIdentifiers do
   @moduledoc """
   Provides struct and type for a AccountIdentifiers
   """
 
   @type t :: %__MODULE__{
-          ach: Adyen.OpenBanking.V1.ACHAccountIdentifier.t() | nil,
-          bacs: Adyen.OpenBanking.V1.BACSAccountIdentifier.t() | nil,
-          bsb: Adyen.OpenBanking.V1.BSBAccountIdentifier.t() | nil,
-          eft: Adyen.OpenBanking.V1.EFTAccountIdentifier.t() | nil,
-          iban: Adyen.OpenBanking.V1.IBANAccountIdentifier.t() | nil,
-          rix: Adyen.OpenBanking.V1.RIXAccountIdentifier.t() | nil
+          ach: AdyenEx.OpenBanking.V1.ACHAccountIdentifier.t() | nil,
+          bacs: AdyenEx.OpenBanking.V1.BACSAccountIdentifier.t() | nil,
+          bsb: AdyenEx.OpenBanking.V1.BSBAccountIdentifier.t() | nil,
+          eft: AdyenEx.OpenBanking.V1.EFTAccountIdentifier.t() | nil,
+          iban: AdyenEx.OpenBanking.V1.IBANAccountIdentifier.t() | nil,
+          rix: AdyenEx.OpenBanking.V1.RIXAccountIdentifier.t() | nil
         }
 
   defstruct [:ach, :bacs, :bsb, :eft, :iban, :rix]
@@ -20,12 +20,12 @@ defmodule Adyen.OpenBanking.V1.AccountIdentifiers do
 
   def __fields__(:t) do
     [
-      ach: {Adyen.OpenBanking.V1.ACHAccountIdentifier, :t},
-      bacs: {Adyen.OpenBanking.V1.BACSAccountIdentifier, :t},
-      bsb: {Adyen.OpenBanking.V1.BSBAccountIdentifier, :t},
-      eft: {Adyen.OpenBanking.V1.EFTAccountIdentifier, :t},
-      iban: {Adyen.OpenBanking.V1.IBANAccountIdentifier, :t},
-      rix: {Adyen.OpenBanking.V1.RIXAccountIdentifier, :t}
+      ach: {AdyenEx.OpenBanking.V1.ACHAccountIdentifier, :t},
+      bacs: {AdyenEx.OpenBanking.V1.BACSAccountIdentifier, :t},
+      bsb: {AdyenEx.OpenBanking.V1.BSBAccountIdentifier, :t},
+      eft: {AdyenEx.OpenBanking.V1.EFTAccountIdentifier, :t},
+      iban: {AdyenEx.OpenBanking.V1.IBANAccountIdentifier, :t},
+      rix: {AdyenEx.OpenBanking.V1.RIXAccountIdentifier, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.Address do
+defmodule AdyenEx.BalancePlatform.V1.Address do
   @moduledoc """
   Provides struct and type for a Address
   """

@@ -1,14 +1,14 @@
-defmodule Adyen.Checkout.V71.LevelTwoThree do
+defmodule AdyenEx.Checkout.V71.LevelTwoThree do
   @moduledoc """
   Provides struct and type for a LevelTwoThree
   """
 
   @type t :: %__MODULE__{
           customerReferenceNumber: String.t() | nil,
-          destination: Adyen.Checkout.V71.Destination.t() | nil,
+          destination: AdyenEx.Checkout.V71.Destination.t() | nil,
           dutyAmount: integer | nil,
           freightAmount: integer | nil,
-          itemDetailLines: [Adyen.Checkout.V71.ItemDetailLine.t()] | nil,
+          itemDetailLines: [AdyenEx.Checkout.V71.ItemDetailLine.t()] | nil,
           orderDate: Date.t() | nil,
           shipFromPostalCode: String.t() | nil,
           totalTaxAmount: integer | nil
@@ -32,10 +32,10 @@ defmodule Adyen.Checkout.V71.LevelTwoThree do
   def __fields__(:t) do
     [
       customerReferenceNumber: :string,
-      destination: {Adyen.Checkout.V71.Destination, :t},
+      destination: {AdyenEx.Checkout.V71.Destination, :t},
       dutyAmount: {:integer, "int64"},
       freightAmount: {:integer, "int64"},
-      itemDetailLines: [{Adyen.Checkout.V71.ItemDetailLine, :t}],
+      itemDetailLines: [{AdyenEx.Checkout.V71.ItemDetailLine, :t}],
       orderDate: {:string, "date"},
       shipFromPostalCode: :string,
       totalTaxAmount: {:integer, "int64"}

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.MinorUnitsMonetaryValue do
+defmodule AdyenEx.Management.V1.MinorUnitsMonetaryValue do
   @moduledoc """
   Provides struct and type for a MinorUnitsMonetaryValue
   """

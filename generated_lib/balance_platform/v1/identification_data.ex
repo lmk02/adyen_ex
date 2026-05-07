@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.IdentificationData do
+defmodule AdyenEx.BalancePlatform.V1.IdentificationData do
   @moduledoc """
   Provides struct and type for a IdentificationData
   """

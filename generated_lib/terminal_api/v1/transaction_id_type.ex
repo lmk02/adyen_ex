@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.TransactionIDType do
+defmodule AdyenEx.TerminalAPI.V1.TransactionIDType do
   @moduledoc """
   Provides struct and type for a TransactionIDType
   """

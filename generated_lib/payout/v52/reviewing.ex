@@ -1,9 +1,9 @@
-defmodule Adyen.Payout.V52.Reviewing do
+defmodule AdyenEx.Payout.V52.Reviewing do
   @moduledoc """
   Provides API endpoints related to reviewing
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Confirm a payout
@@ -27,25 +27,26 @@ defmodule Adyen.Payout.V52.Reviewing do
 
   **Content Types**: `application/json`
   """
-  @spec post_confirm_third_party(body :: Adyen.Payout.V52.ModifyRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payout.V52.ModifyResponse.t()} | {:error, Adyen.Payout.V52.ServiceError.t()}
+  @spec post_confirm_third_party(body :: AdyenEx.Payout.V52.ModifyRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payout.V52.ModifyResponse.t()}
+          | {:error, AdyenEx.Payout.V52.ServiceError.t()}
   def post_confirm_third_party(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V52.Reviewing, :post_confirm_third_party},
+      call: {AdyenEx.Payout.V52.Reviewing, :post_confirm_third_party},
       url: "/confirmThirdParty",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V52.ModifyRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V52.ModifyRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V52.ModifyResponse, :t}},
-        {400, {Adyen.Payout.V52.ServiceError, :t}},
-        {401, {Adyen.Payout.V52.ServiceError, :t}},
-        {403, {Adyen.Payout.V52.ServiceError, :t}},
-        {422, {Adyen.Payout.V52.ServiceError, :t}},
-        {500, {Adyen.Payout.V52.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V52.ModifyResponse, :t}},
+        {400, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V52.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -73,25 +74,26 @@ defmodule Adyen.Payout.V52.Reviewing do
 
   **Content Types**: `application/json`
   """
-  @spec post_decline_third_party(body :: Adyen.Payout.V52.ModifyRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payout.V52.ModifyResponse.t()} | {:error, Adyen.Payout.V52.ServiceError.t()}
+  @spec post_decline_third_party(body :: AdyenEx.Payout.V52.ModifyRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payout.V52.ModifyResponse.t()}
+          | {:error, AdyenEx.Payout.V52.ServiceError.t()}
   def post_decline_third_party(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V52.Reviewing, :post_decline_third_party},
+      call: {AdyenEx.Payout.V52.Reviewing, :post_decline_third_party},
       url: "/declineThirdParty",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V52.ModifyRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V52.ModifyRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V52.ModifyResponse, :t}},
-        {400, {Adyen.Payout.V52.ServiceError, :t}},
-        {401, {Adyen.Payout.V52.ServiceError, :t}},
-        {403, {Adyen.Payout.V52.ServiceError, :t}},
-        {422, {Adyen.Payout.V52.ServiceError, :t}},
-        {500, {Adyen.Payout.V52.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V52.ModifyResponse, :t}},
+        {400, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V52.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V52.ServiceError, :t}}
       ],
       opts: opts
     })

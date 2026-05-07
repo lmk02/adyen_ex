@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.ValuelinkInfo do
+defmodule AdyenEx.Management.V3.ValuelinkInfo do
   @moduledoc """
   Provides struct and type for a ValuelinkInfo
   """

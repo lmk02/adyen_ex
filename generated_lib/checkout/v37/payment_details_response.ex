@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V37.PaymentDetailsResponse do
+defmodule AdyenEx.Checkout.V37.PaymentDetailsResponse do
   @moduledoc """
   Provides struct and type for a PaymentDetailsResponse
   """
@@ -6,14 +6,14 @@ defmodule Adyen.Checkout.V37.PaymentDetailsResponse do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           authResponse: String.t() | nil,
-          details: [Adyen.Checkout.V37.InputDetail.t()] | nil,
-          fraudResult: Adyen.Checkout.V37.FraudResult.t() | nil,
+          details: [AdyenEx.Checkout.V37.InputDetail.t()] | nil,
+          fraudResult: AdyenEx.Checkout.V37.FraudResult.t() | nil,
           merchantReference: String.t() | nil,
-          order: Adyen.Checkout.V37.CheckoutOrderResponse.t() | nil,
+          order: AdyenEx.Checkout.V37.CheckoutOrderResponse.t() | nil,
           outputDetails: map | nil,
           paymentData: String.t() | nil,
           pspReference: String.t() | nil,
-          redirect: Adyen.Checkout.V37.Redirect.t() | nil,
+          redirect: AdyenEx.Checkout.V37.Redirect.t() | nil,
           refusalReason: String.t() | nil,
           refusalReasonCode: String.t() | nil,
           resultCode: String.t() | nil,
@@ -45,14 +45,14 @@ defmodule Adyen.Checkout.V37.PaymentDetailsResponse do
     [
       additionalData: :map,
       authResponse: :string,
-      details: [{Adyen.Checkout.V37.InputDetail, :t}],
-      fraudResult: {Adyen.Checkout.V37.FraudResult, :t},
+      details: [{AdyenEx.Checkout.V37.InputDetail, :t}],
+      fraudResult: {AdyenEx.Checkout.V37.FraudResult, :t},
       merchantReference: :string,
-      order: {Adyen.Checkout.V37.CheckoutOrderResponse, :t},
+      order: {AdyenEx.Checkout.V37.CheckoutOrderResponse, :t},
       outputDetails: :map,
       paymentData: :string,
       pspReference: :string,
-      redirect: {Adyen.Checkout.V37.Redirect, :t},
+      redirect: {AdyenEx.Checkout.V37.Redirect, :t},
       refusalReason: :string,
       refusalReasonCode: :string,
       resultCode:

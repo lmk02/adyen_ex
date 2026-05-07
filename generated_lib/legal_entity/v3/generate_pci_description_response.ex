@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.GeneratePciDescriptionResponse do
+defmodule AdyenEx.LegalEntity.V3.GeneratePciDescriptionResponse do
   @moduledoc """
   Provides struct and type for a GeneratePciDescriptionResponse
   """

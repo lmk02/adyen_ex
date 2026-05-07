@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V41.BillingAddress do
+defmodule AdyenEx.Checkout.V41.BillingAddress do
   @moduledoc """
   Provides struct and type for a BillingAddress
   """

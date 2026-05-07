@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.SvsInfo do
+defmodule AdyenEx.Management.V1.SvsInfo do
   @moduledoc """
   Provides struct and type for a SvsInfo
   """

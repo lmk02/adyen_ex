@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
+defmodule AdyenEx.BalancePlatform.V2.AuthorizedCardUsers do
   @moduledoc """
   Provides API endpoints related to authorized card users
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete the authorized users for a card.
@@ -13,7 +13,7 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
   @spec delete_payment_instruments_payment_instrument_id_authorised_card_users(
           paymentInstrumentId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def delete_payment_instruments_payment_instrument_id_authorised_card_users(
         paymentInstrumentId,
         opts \\ []
@@ -23,14 +23,14 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
     client.request(%{
       args: [paymentInstrumentId: paymentInstrumentId],
       call:
-        {Adyen.BalancePlatform.V2.AuthorizedCardUsers,
+        {AdyenEx.BalancePlatform.V2.AuthorizedCardUsers,
          :delete_payment_instruments_payment_instrument_id_authorised_card_users},
       url: "/paymentInstruments/#{paymentInstrumentId}/authorisedCardUsers",
       method: :delete,
       response: [
         {204, :null},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -45,8 +45,8 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
           paymentInstrumentId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V2.AuthorisedCardUsers.t()}
-          | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.AuthorisedCardUsers.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def get_payment_instruments_payment_instrument_id_authorised_card_users(
         paymentInstrumentId,
         opts \\ []
@@ -56,16 +56,16 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
     client.request(%{
       args: [paymentInstrumentId: paymentInstrumentId],
       call:
-        {Adyen.BalancePlatform.V2.AuthorizedCardUsers,
+        {AdyenEx.BalancePlatform.V2.AuthorizedCardUsers,
          :get_payment_instruments_payment_instrument_id_authorised_card_users},
       url: "/paymentInstruments/#{paymentInstrumentId}/authorisedCardUsers",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.AuthorisedCardUsers, :t}},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {404, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.AuthorisedCardUsers, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -84,9 +84,9 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
   """
   @spec patch_payment_instruments_payment_instrument_id_authorised_card_users(
           paymentInstrumentId :: String.t(),
-          body :: Adyen.BalancePlatform.V2.AuthorisedCardUsers.t(),
+          body :: AdyenEx.BalancePlatform.V2.AuthorisedCardUsers.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def patch_payment_instruments_payment_instrument_id_authorised_card_users(
         paymentInstrumentId,
         body,
@@ -97,18 +97,18 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
     client.request(%{
       args: [paymentInstrumentId: paymentInstrumentId, body: body],
       call:
-        {Adyen.BalancePlatform.V2.AuthorizedCardUsers,
+        {AdyenEx.BalancePlatform.V2.AuthorizedCardUsers,
          :patch_payment_instruments_payment_instrument_id_authorised_card_users},
       url: "/paymentInstruments/#{paymentInstrumentId}/authorisedCardUsers",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.AuthorisedCardUsers, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.AuthorisedCardUsers, :t}}],
       response: [
         {204, :null},
-        {400, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {400, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -125,9 +125,9 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
   """
   @spec post_payment_instruments_payment_instrument_id_authorised_card_users(
           paymentInstrumentId :: String.t(),
-          body :: Adyen.BalancePlatform.V2.AuthorisedCardUsers.t(),
+          body :: AdyenEx.BalancePlatform.V2.AuthorisedCardUsers.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
   def post_payment_instruments_payment_instrument_id_authorised_card_users(
         paymentInstrumentId,
         body,
@@ -138,18 +138,18 @@ defmodule Adyen.BalancePlatform.V2.AuthorizedCardUsers do
     client.request(%{
       args: [paymentInstrumentId: paymentInstrumentId, body: body],
       call:
-        {Adyen.BalancePlatform.V2.AuthorizedCardUsers,
+        {AdyenEx.BalancePlatform.V2.AuthorizedCardUsers,
          :post_payment_instruments_payment_instrument_id_authorised_card_users},
       url: "/paymentInstruments/#{paymentInstrumentId}/authorisedCardUsers",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.AuthorisedCardUsers, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.AuthorisedCardUsers, :t}}],
       response: [
         {204, :null},
-        {400, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {401, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {403, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+        {400, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

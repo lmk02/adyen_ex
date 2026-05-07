@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.UpdateAccountResponse do
+defmodule AdyenEx.Account.V5.UpdateAccountResponse do
   @moduledoc """
   Provides struct and type for a UpdateAccountResponse
   """
@@ -7,10 +7,10 @@ defmodule Adyen.Account.V5.UpdateAccountResponse do
           accountCode: String.t(),
           bankAccountUUID: String.t() | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V5.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V5.ErrorFieldType.t()] | nil,
           metadata: map | nil,
           payoutMethodCode: String.t() | nil,
-          payoutSchedule: Adyen.Account.V5.PayoutScheduleResponse.t() | nil,
+          payoutSchedule: AdyenEx.Account.V5.PayoutScheduleResponse.t() | nil,
           payoutSpeed: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
@@ -38,10 +38,10 @@ defmodule Adyen.Account.V5.UpdateAccountResponse do
       accountCode: :string,
       bankAccountUUID: :string,
       description: :string,
-      invalidFields: [{Adyen.Account.V5.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V5.ErrorFieldType, :t}],
       metadata: :map,
       payoutMethodCode: :string,
-      payoutSchedule: {Adyen.Account.V5.PayoutScheduleResponse, :t},
+      payoutSchedule: {AdyenEx.Account.V5.PayoutScheduleResponse, :t},
       payoutSpeed: {:enum, ["INSTANT", "SAME_DAY", "STANDARD"]},
       pspReference: :string,
       resultCode: :string

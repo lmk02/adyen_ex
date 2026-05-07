@@ -1,10 +1,11 @@
-defmodule Adyen.Management.V1.EFTDirectDebitCAResponseInfo do
+defmodule AdyenEx.Management.V1.EFTDirectDebitCAResponseInfo do
   @moduledoc """
   Provides struct and type for a EFTDirectDebitCAResponseInfo
   """
 
   @type t :: %__MODULE__{
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:transactionDescription]
@@ -14,6 +15,6 @@ defmodule Adyen.Management.V1.EFTDirectDebitCAResponseInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [transactionDescription: {Adyen.Management.V1.TransactionDescriptionResponseInfo, :t}]
+    [transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionResponseInfo, :t}]
   end
 end

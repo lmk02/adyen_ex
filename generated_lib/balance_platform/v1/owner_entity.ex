@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.OwnerEntity do
+defmodule AdyenEx.BalancePlatform.V1.OwnerEntity do
   @moduledoc """
   Provides struct and type for a OwnerEntity
   """

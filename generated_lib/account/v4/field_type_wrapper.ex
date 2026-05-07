@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.FieldTypeWrapper do
+defmodule AdyenEx.Account.V4.FieldTypeWrapper do
   @moduledoc """
   Provides struct and type for a FieldTypeWrapper
   """
 
-  @type t :: %__MODULE__{FieldType: Adyen.Account.V4.FieldType.t() | nil}
+  @type t :: %__MODULE__{FieldType: AdyenEx.Account.V4.FieldType.t() | nil}
 
   defstruct [:FieldType]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V4.FieldTypeWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [FieldType: {Adyen.Account.V4.FieldType, :t}]
+    [FieldType: {AdyenEx.Account.V4.FieldType, :t}]
   end
 end

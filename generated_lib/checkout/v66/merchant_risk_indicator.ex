@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V66.MerchantRiskIndicator do
+defmodule AdyenEx.Checkout.V66.MerchantRiskIndicator do
   @moduledoc """
   Provides struct and type for a MerchantRiskIndicator
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Checkout.V66.MerchantRiskIndicator do
           deliveryAddressIndicator: String.t() | nil,
           deliveryEmail: String.t() | nil,
           deliveryTimeframe: String.t() | nil,
-          giftCardAmount: Adyen.Checkout.V66.Amount.t() | nil,
+          giftCardAmount: AdyenEx.Checkout.V66.Amount.t() | nil,
           giftCardCount: integer | nil,
           preOrderDate: DateTime.t() | nil,
           preOrderPurchase: boolean | nil,
@@ -49,7 +49,7 @@ defmodule Adyen.Checkout.V66.MerchantRiskIndicator do
       deliveryTimeframe:
         {:enum,
          ["electronicDelivery", "sameDayShipping", "overnightShipping", "twoOrMoreDaysShipping"]},
-      giftCardAmount: {Adyen.Checkout.V66.Amount, :t},
+      giftCardAmount: {AdyenEx.Checkout.V66.Amount, :t},
       giftCardCount: {:integer, "int32"},
       preOrderDate: {:string, "date-time"},
       preOrderPurchase: :boolean,

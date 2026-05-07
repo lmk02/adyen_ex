@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V25.ServiceError do
+defmodule AdyenEx.Recurring.V25.ServiceError do
   @moduledoc """
   Provides struct and type for a ServiceError
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TerminalOrderRequest do
+defmodule AdyenEx.Management.V1.TerminalOrderRequest do
   @moduledoc """
   Provides struct and type for a TerminalOrderRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Management.V1.TerminalOrderRequest do
   @type t :: %__MODULE__{
           billingEntityId: String.t() | nil,
           customerOrderReference: String.t() | nil,
-          items: [Adyen.Management.V1.OrderItem.t()] | nil,
+          items: [AdyenEx.Management.V1.OrderItem.t()] | nil,
           orderType: String.t() | nil,
           shippingLocationId: String.t() | nil,
           taxId: String.t() | nil
@@ -29,7 +29,7 @@ defmodule Adyen.Management.V1.TerminalOrderRequest do
     [
       billingEntityId: :string,
       customerOrderReference: :string,
-      items: [{Adyen.Management.V1.OrderItem, :t}],
+      items: [{AdyenEx.Management.V1.OrderItem, :t}],
       orderType: :string,
       shippingLocationId: :string,
       taxId: :string

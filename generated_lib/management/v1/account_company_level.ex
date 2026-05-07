@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.AccountCompanyLevel do
+defmodule AdyenEx.Management.V1.AccountCompanyLevel do
   @moduledoc """
   Provides API endpoints related to account company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get a list of company accounts
@@ -21,25 +21,25 @@ defmodule Adyen.Management.V1.AccountCompanyLevel do
 
   """
   @spec get_companies(opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ListCompanyResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ListCompanyResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies(opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize])
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V1.AccountCompanyLevel, :get_companies},
+      call: {AdyenEx.Management.V1.AccountCompanyLevel, :get_companies},
       url: "/companies",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ListCompanyResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.ListCompanyResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -54,23 +54,23 @@ defmodule Adyen.Management.V1.AccountCompanyLevel do
   * Management API—Account read
   """
   @spec get_companies_company_id(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.Company.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Company.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id(companyId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [companyId: companyId],
-      call: {Adyen.Management.V1.AccountCompanyLevel, :get_companies_company_id},
+      call: {AdyenEx.Management.V1.AccountCompanyLevel, :get_companies_company_id},
       url: "/companies/#{companyId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.Company, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.Company, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -91,25 +91,25 @@ defmodule Adyen.Management.V1.AccountCompanyLevel do
 
   """
   @spec get_companies_company_id_merchants(companyId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ListMerchantResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ListMerchantResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id_merchants(companyId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize])
 
     client.request(%{
       args: [companyId: companyId],
-      call: {Adyen.Management.V1.AccountCompanyLevel, :get_companies_company_id_merchants},
+      call: {AdyenEx.Management.V1.AccountCompanyLevel, :get_companies_company_id_merchants},
       url: "/companies/#{companyId}/merchants",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ListMerchantResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.ListMerchantResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

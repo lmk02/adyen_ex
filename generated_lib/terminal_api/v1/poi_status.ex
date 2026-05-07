@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.POIStatus do
+defmodule AdyenEx.TerminalAPI.V1.POIStatus do
   @moduledoc """
   Provides struct and type for a POIStatus
   """

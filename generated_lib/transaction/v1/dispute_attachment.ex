@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V1.DisputeAttachment do
+defmodule AdyenEx.Transaction.V1.DisputeAttachment do
   @moduledoc """
   Provides struct and type for a DisputeAttachment
   """

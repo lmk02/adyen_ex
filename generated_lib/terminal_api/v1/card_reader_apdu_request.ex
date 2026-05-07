@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.CardReaderAPDURequest do
+defmodule AdyenEx.TerminalAPI.V1.CardReaderAPDURequest do
   @moduledoc """
   Provides struct and type for a CardReaderAPDURequest
   """

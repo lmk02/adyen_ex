@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V52.StoredDetails do
+defmodule AdyenEx.Checkout.V52.StoredDetails do
   @moduledoc """
   Provides struct and type for a StoredDetails
   """
 
   @type t :: %__MODULE__{
-          bank: Adyen.Checkout.V52.BankAccount.t() | nil,
-          card: Adyen.Checkout.V52.Card.t() | nil,
+          bank: AdyenEx.Checkout.V52.BankAccount.t() | nil,
+          card: AdyenEx.Checkout.V52.Card.t() | nil,
           emailAddress: String.t() | nil
         }
 
@@ -17,8 +17,8 @@ defmodule Adyen.Checkout.V52.StoredDetails do
 
   def __fields__(:t) do
     [
-      bank: {Adyen.Checkout.V52.BankAccount, :t},
-      card: {Adyen.Checkout.V52.Card, :t},
+      bank: {AdyenEx.Checkout.V52.BankAccount, :t},
+      card: {AdyenEx.Checkout.V52.Card, :t},
       emailAddress: :string
     ]
   end

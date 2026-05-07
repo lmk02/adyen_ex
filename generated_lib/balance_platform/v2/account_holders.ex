@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.AccountHolders do
+defmodule AdyenEx.BalancePlatform.V2.AccountHolders do
   @moduledoc """
   Provides API endpoints related to account holders
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get an account holder
@@ -11,23 +11,23 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
   Returns an account holder.
   """
   @spec get_account_holders_id(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.AccountHolder.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.AccountHolder.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_account_holders_id(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :get_account_holders_id},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :get_account_holders_id},
       url: "/accountHolders/#{id}",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.AccountHolder, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.AccountHolder, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -47,25 +47,25 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
 
   """
   @spec get_account_holders_id_balance_accounts(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.PaginatedBalanceAccountsResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.PaginatedBalanceAccountsResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_account_holders_id_balance_accounts(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:limit, :offset])
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :get_account_holders_id_balance_accounts},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :get_account_holders_id_balance_accounts},
       url: "/accountHolders/#{id}/balanceAccounts",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalancePlatform.V2.PaginatedBalanceAccountsResponse, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.PaginatedBalanceAccountsResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -82,18 +82,18 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
 
   """
   @spec get_account_holders_id_tax_form_summary(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.TaxFormSummaryResponse.t()} | :error
+          {:ok, AdyenEx.BalancePlatform.V2.TaxFormSummaryResponse.t()} | :error
   def get_account_holders_id_tax_form_summary(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:formType])
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :get_account_holders_id_tax_form_summary},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :get_account_holders_id_tax_form_summary},
       url: "/accountHolders/#{id}/taxFormSummary",
       method: :get,
       query: query,
-      response: [{200, {Adyen.BalancePlatform.V2.TaxFormSummaryResponse, :t}}],
+      response: [{200, {AdyenEx.BalancePlatform.V2.TaxFormSummaryResponse, :t}}],
       opts: opts
     })
   end
@@ -111,26 +111,26 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
 
   """
   @spec get_account_holders_id_tax_forms(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.GetTaxFormResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.GetTaxFormResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_account_holders_id_tax_forms(id, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:formType, :legalEntityId, :year])
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :get_account_holders_id_tax_forms},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :get_account_holders_id_tax_forms},
       url: "/accountHolders/#{id}/taxForms",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.BalancePlatform.V2.GetTaxFormResponse, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {404, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.GetTaxFormResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -142,23 +142,24 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
   Returns a list of transaction rules associated with an account holder.
   """
   @spec get_account_holders_id_transaction_rules(id :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.BalancePlatform.V2.TransactionRulesResponse.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.TransactionRulesResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def get_account_holders_id_transaction_rules(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :get_account_holders_id_transaction_rules},
+      call:
+        {AdyenEx.BalancePlatform.V2.AccountHolders, :get_account_holders_id_transaction_rules},
       url: "/accountHolders/#{id}/transactionRules",
       method: :get,
       response: [
-        {200, {Adyen.BalancePlatform.V2.TransactionRulesResponse, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.TransactionRulesResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -175,28 +176,28 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
   """
   @spec patch_account_holders_id(
           id :: String.t(),
-          body :: Adyen.BalancePlatform.V2.AccountHolderUpdateRequest.t(),
+          body :: AdyenEx.BalancePlatform.V2.AccountHolderUpdateRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V2.AccountHolder.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.AccountHolder.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def patch_account_holders_id(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :patch_account_holders_id},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :patch_account_holders_id},
       url: "/accountHolders/#{id}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.AccountHolderUpdateRequest, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.AccountHolderUpdateRequest, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V2.AccountHolder, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.AccountHolder, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -213,28 +214,28 @@ defmodule Adyen.BalancePlatform.V2.AccountHolders do
   **Content Types**: `application/json`
   """
   @spec post_account_holders(
-          body :: Adyen.BalancePlatform.V2.AccountHolderInfo.t(),
+          body :: AdyenEx.BalancePlatform.V2.AccountHolderInfo.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalancePlatform.V2.AccountHolder.t()}
-          | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+          {:ok, AdyenEx.BalancePlatform.V2.AccountHolder.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def post_account_holders(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalancePlatform.V2.AccountHolders, :post_account_holders},
+      call: {AdyenEx.BalancePlatform.V2.AccountHolders, :post_account_holders},
       url: "/accountHolders",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalancePlatform.V2.AccountHolderInfo, :t}}],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.AccountHolderInfo, :t}}],
       response: [
-        {200, {Adyen.BalancePlatform.V2.AccountHolder, :t}},
-        {400, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {200, {AdyenEx.BalancePlatform.V2.AccountHolder, :t}},
+        {400, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })

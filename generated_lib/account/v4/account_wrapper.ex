@@ -1,9 +1,9 @@
-defmodule Adyen.Account.V4.AccountWrapper do
+defmodule AdyenEx.Account.V4.AccountWrapper do
   @moduledoc """
   Provides struct and type for a AccountWrapper
   """
 
-  @type t :: %__MODULE__{Account: Adyen.Account.V4.Account.t() | nil}
+  @type t :: %__MODULE__{Account: AdyenEx.Account.V4.Account.t() | nil}
 
   defstruct [:Account]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Account.V4.AccountWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [Account: {Adyen.Account.V4.Account, :t}]
+    [Account: {AdyenEx.Account.V4.Account, :t}]
   end
 end

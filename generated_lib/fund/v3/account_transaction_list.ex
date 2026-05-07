@@ -1,4 +1,4 @@
-defmodule Adyen.Fund.V3.AccountTransactionList do
+defmodule AdyenEx.Fund.V3.AccountTransactionList do
   @moduledoc """
   Provides struct and type for a AccountTransactionList
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Fund.V3.AccountTransactionList do
   @type t :: %__MODULE__{
           accountCode: String.t() | nil,
           hasNextPage: boolean | nil,
-          transactions: [Adyen.Fund.V3.TransactionWrapper.t()] | nil
+          transactions: [AdyenEx.Fund.V3.TransactionWrapper.t()] | nil
         }
 
   defstruct [:accountCode, :hasNextPage, :transactions]
@@ -19,7 +19,7 @@ defmodule Adyen.Fund.V3.AccountTransactionList do
     [
       accountCode: :string,
       hasNextPage: :boolean,
-      transactions: [{Adyen.Fund.V3.TransactionWrapper, :t}]
+      transactions: [{AdyenEx.Fund.V3.TransactionWrapper, :t}]
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Moto do
+defmodule AdyenEx.Management.V1.Moto do
   @moduledoc """
   Provides struct and type for a Moto
   """

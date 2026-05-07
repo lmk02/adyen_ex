@@ -1,4 +1,4 @@
-defmodule Adyen.Dispute.V30.DefendDisputeRequest do
+defmodule AdyenEx.Dispute.V30.DefendDisputeRequest do
   @moduledoc """
   Provides struct and type for a DefendDisputeRequest
   """

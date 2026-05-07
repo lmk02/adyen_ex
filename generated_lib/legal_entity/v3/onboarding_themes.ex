@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.OnboardingThemes do
+defmodule AdyenEx.LegalEntity.V3.OnboardingThemes do
   @moduledoc """
   Provides struct and type for a OnboardingThemes
   """
@@ -6,7 +6,7 @@ defmodule Adyen.LegalEntity.V3.OnboardingThemes do
   @type t :: %__MODULE__{
           next: String.t() | nil,
           previous: String.t() | nil,
-          themes: [Adyen.LegalEntity.V3.OnboardingTheme.t()]
+          themes: [AdyenEx.LegalEntity.V3.OnboardingTheme.t()]
         }
 
   defstruct [:next, :previous, :themes]
@@ -16,6 +16,6 @@ defmodule Adyen.LegalEntity.V3.OnboardingThemes do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [next: :string, previous: :string, themes: [{Adyen.LegalEntity.V3.OnboardingTheme, :t}]]
+    [next: :string, previous: :string, themes: [{AdyenEx.LegalEntity.V3.OnboardingTheme, :t}]]
   end
 end

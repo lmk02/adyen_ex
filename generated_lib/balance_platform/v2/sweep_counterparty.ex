@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.SweepCounterparty do
+defmodule AdyenEx.BalancePlatform.V2.SweepCounterparty do
   @moduledoc """
   Provides struct and type for a SweepCounterparty
   """

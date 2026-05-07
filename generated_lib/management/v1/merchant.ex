@@ -1,13 +1,13 @@
-defmodule Adyen.Management.V1.Merchant do
+defmodule AdyenEx.Management.V1.Merchant do
   @moduledoc """
   Provides struct and type for a Merchant
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V1.MerchantLinks.t() | nil,
+          _links: AdyenEx.Management.V1.MerchantLinks.t() | nil,
           captureDelay: String.t() | nil,
           companyId: String.t() | nil,
-          dataCenters: [Adyen.Management.V1.DataCenter.t()] | nil,
+          dataCenters: [AdyenEx.Management.V1.DataCenter.t()] | nil,
           defaultShopperInteraction: String.t() | nil,
           description: String.t() | nil,
           id: String.t() | nil,
@@ -43,10 +43,10 @@ defmodule Adyen.Management.V1.Merchant do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V1.MerchantLinks, :t},
+      _links: {AdyenEx.Management.V1.MerchantLinks, :t},
       captureDelay: :string,
       companyId: :string,
-      dataCenters: [{Adyen.Management.V1.DataCenter, :t}],
+      dataCenters: [{AdyenEx.Management.V1.DataCenter, :t}],
       defaultShopperInteraction: :string,
       description: :string,
       id: :string,

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.RestServiceError do
+defmodule AdyenEx.Management.V1.RestServiceError do
   @moduledoc """
   Provides struct and type for a RestServiceError
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Management.V1.RestServiceError do
           detail: String.t(),
           errorCode: String.t(),
           instance: String.t() | nil,
-          invalidFields: [Adyen.Management.V1.InvalidFieldWrapper.t()] | nil,
+          invalidFields: [AdyenEx.Management.V1.InvalidFieldWrapper.t()] | nil,
           requestId: String.t() | nil,
           response: map | nil,
           status: integer,
@@ -36,7 +36,7 @@ defmodule Adyen.Management.V1.RestServiceError do
       detail: :string,
       errorCode: :string,
       instance: :string,
-      invalidFields: [{Adyen.Management.V1.InvalidFieldWrapper, :t}],
+      invalidFields: [{AdyenEx.Management.V1.InvalidFieldWrapper, :t}],
       requestId: :string,
       response: :map,
       status: {:integer, "int32"},

@@ -1,4 +1,4 @@
-defmodule Adyen.DataProtection.V1.SubjectErasureResponse do
+defmodule AdyenEx.DataProtection.V1.SubjectErasureResponse do
   @moduledoc """
   Provides struct and type for a SubjectErasureResponse
   """

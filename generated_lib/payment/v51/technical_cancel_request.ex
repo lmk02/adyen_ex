@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V51.TechnicalCancelRequest do
+defmodule AdyenEx.Payment.V51.TechnicalCancelRequest do
   @moduledoc """
   Provides struct and type for a TechnicalCancelRequest
   """
@@ -6,11 +6,11 @@ defmodule Adyen.Payment.V51.TechnicalCancelRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V51.Amount.t() | nil,
-          mpiData: Adyen.Payment.V51.ThreeDSecureData.t() | nil,
+          modificationAmount: AdyenEx.Payment.V51.Amount.t() | nil,
+          mpiData: AdyenEx.Payment.V51.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t(),
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V51.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V51.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -35,11 +35,11 @@ defmodule Adyen.Payment.V51.TechnicalCancelRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V51.Amount, :t},
-      mpiData: {Adyen.Payment.V51.ThreeDSecureData, :t},
+      modificationAmount: {AdyenEx.Payment.V51.Amount, :t},
+      mpiData: {AdyenEx.Payment.V51.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       reference: :string,
-      splits: [{Adyen.Payment.V51.Split, :t}],
+      splits: [{AdyenEx.Payment.V51.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

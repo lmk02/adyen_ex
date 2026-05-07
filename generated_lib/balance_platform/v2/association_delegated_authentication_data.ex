@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AssociationDelegatedAuthenticationData do
+defmodule AdyenEx.BalancePlatform.V2.AssociationDelegatedAuthenticationData do
   @moduledoc """
   Provides struct and type for a AssociationDelegatedAuthenticationData
   """

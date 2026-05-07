@@ -1,9 +1,9 @@
-defmodule Adyen.TerminalAPI.V1.LogoutResponse do
+defmodule AdyenEx.TerminalAPI.V1.LogoutResponse do
   @moduledoc """
   Provides struct and type for a LogoutResponse
   """
 
-  @type t :: %__MODULE__{Response: Adyen.TerminalAPI.V1.Response.t()}
+  @type t :: %__MODULE__{Response: AdyenEx.TerminalAPI.V1.Response.t()}
 
   defstruct [:Response]
 
@@ -12,6 +12,6 @@ defmodule Adyen.TerminalAPI.V1.LogoutResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [Response: {Adyen.TerminalAPI.V1.Response, :t}]
+    [Response: {AdyenEx.TerminalAPI.V1.Response, :t}]
   end
 end

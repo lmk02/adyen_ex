@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.CreateAccountResponse do
+defmodule AdyenEx.Account.V6.CreateAccountResponse do
   @moduledoc """
   Provides struct and type for a CreateAccountResponse
   """
@@ -8,10 +8,10 @@ defmodule Adyen.Account.V6.CreateAccountResponse do
           accountHolderCode: String.t() | nil,
           bankAccountUUID: String.t() | nil,
           description: String.t() | nil,
-          invalidFields: [Adyen.Account.V6.ErrorFieldType.t()] | nil,
+          invalidFields: [AdyenEx.Account.V6.ErrorFieldType.t()] | nil,
           metadata: map | nil,
           payoutMethodCode: String.t() | nil,
-          payoutSchedule: Adyen.Account.V6.PayoutScheduleResponse.t() | nil,
+          payoutSchedule: AdyenEx.Account.V6.PayoutScheduleResponse.t() | nil,
           payoutSpeed: String.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil,
@@ -43,10 +43,10 @@ defmodule Adyen.Account.V6.CreateAccountResponse do
       accountHolderCode: :string,
       bankAccountUUID: :string,
       description: :string,
-      invalidFields: [{Adyen.Account.V6.ErrorFieldType, :t}],
+      invalidFields: [{AdyenEx.Account.V6.ErrorFieldType, :t}],
       metadata: :map,
       payoutMethodCode: :string,
-      payoutSchedule: {Adyen.Account.V6.PayoutScheduleResponse, :t},
+      payoutSchedule: {AdyenEx.Account.V6.PayoutScheduleResponse, :t},
       payoutSpeed: {:enum, ["INSTANT", "SAME_DAY", "STANDARD"]},
       pspReference: :string,
       resultCode: :string,

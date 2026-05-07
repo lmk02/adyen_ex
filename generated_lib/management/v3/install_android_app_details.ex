@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.InstallAndroidAppDetails do
+defmodule AdyenEx.Management.V3.InstallAndroidAppDetails do
   @moduledoc """
   Provides struct and type for a InstallAndroidAppDetails
   """

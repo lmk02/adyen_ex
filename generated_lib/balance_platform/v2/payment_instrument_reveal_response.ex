@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.PaymentInstrumentRevealResponse do
+defmodule AdyenEx.BalancePlatform.V2.PaymentInstrumentRevealResponse do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentRevealResponse
   """

@@ -1,12 +1,12 @@
-defmodule Adyen.TerminalAPI.V1.PaymentTransaction do
+defmodule AdyenEx.TerminalAPI.V1.PaymentTransaction do
   @moduledoc """
   Provides struct and type for a PaymentTransaction
   """
 
   @type t :: %__MODULE__{
-          AmountsReq: Adyen.TerminalAPI.V1.AmountsReq.t(),
-          OriginalPOITransaction: Adyen.TerminalAPI.V1.OriginalPOITransaction.t() | nil,
-          TransactionConditions: Adyen.TerminalAPI.V1.TransactionConditions.t() | nil
+          AmountsReq: AdyenEx.TerminalAPI.V1.AmountsReq.t(),
+          OriginalPOITransaction: AdyenEx.TerminalAPI.V1.OriginalPOITransaction.t() | nil,
+          TransactionConditions: AdyenEx.TerminalAPI.V1.TransactionConditions.t() | nil
         }
 
   defstruct [:AmountsReq, :OriginalPOITransaction, :TransactionConditions]
@@ -17,9 +17,9 @@ defmodule Adyen.TerminalAPI.V1.PaymentTransaction do
 
   def __fields__(:t) do
     [
-      AmountsReq: {Adyen.TerminalAPI.V1.AmountsReq, :t},
-      OriginalPOITransaction: {Adyen.TerminalAPI.V1.OriginalPOITransaction, :t},
-      TransactionConditions: {Adyen.TerminalAPI.V1.TransactionConditions, :t}
+      AmountsReq: {AdyenEx.TerminalAPI.V1.AmountsReq, :t},
+      OriginalPOITransaction: {AdyenEx.TerminalAPI.V1.OriginalPOITransaction, :t},
+      TransactionConditions: {AdyenEx.TerminalAPI.V1.TransactionConditions, :t}
     ]
   end
 end

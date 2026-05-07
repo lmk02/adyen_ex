@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V64.ExternalPlatform do
+defmodule AdyenEx.Payment.V64.ExternalPlatform do
   @moduledoc """
   Provides struct and type for a ExternalPlatform
   """

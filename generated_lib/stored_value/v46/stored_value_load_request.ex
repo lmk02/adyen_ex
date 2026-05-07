@@ -1,10 +1,10 @@
-defmodule Adyen.StoredValue.V46.StoredValueLoadRequest do
+defmodule AdyenEx.StoredValue.V46.StoredValueLoadRequest do
   @moduledoc """
   Provides struct and type for a StoredValueLoadRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.StoredValue.V46.Amount.t(),
+          amount: AdyenEx.StoredValue.V46.Amount.t(),
           loadType: String.t() | nil,
           merchantAccount: String.t(),
           paymentMethod: map,
@@ -33,7 +33,7 @@ defmodule Adyen.StoredValue.V46.StoredValueLoadRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.StoredValue.V46.Amount, :t},
+      amount: {AdyenEx.StoredValue.V46.Amount, :t},
       loadType: {:enum, ["merchandiseReturn", "load"]},
       merchantAccount: :string,
       paymentMethod: :map,

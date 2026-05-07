@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.BalancePlatform do
+defmodule AdyenEx.BalancePlatform.V1.BalancePlatform do
   @moduledoc """
   Provides struct and type for a BalancePlatform
   """

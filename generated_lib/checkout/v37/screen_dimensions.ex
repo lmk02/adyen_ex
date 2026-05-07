@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V37.ScreenDimensions do
+defmodule AdyenEx.Checkout.V37.ScreenDimensions do
   @moduledoc """
   Provides struct and type for a ScreenDimensions
   """

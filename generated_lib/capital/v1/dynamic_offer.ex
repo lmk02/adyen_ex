@@ -1,4 +1,4 @@
-defmodule Adyen.Capital.V1.DynamicOffer do
+defmodule AdyenEx.Capital.V1.DynamicOffer do
   @moduledoc """
   Provides struct and type for a DynamicOffer
   """
@@ -9,9 +9,9 @@ defmodule Adyen.Capital.V1.DynamicOffer do
           expiresAt: DateTime.t(),
           financingType: String.t(),
           id: String.t(),
-          maximumAmount: Adyen.Capital.V1.Amount.t(),
-          minimumAmount: Adyen.Capital.V1.Amount.t(),
-          repayment: Adyen.Capital.V1.DynamicOfferRepayment.t(),
+          maximumAmount: AdyenEx.Capital.V1.Amount.t(),
+          minimumAmount: AdyenEx.Capital.V1.Amount.t(),
+          repayment: AdyenEx.Capital.V1.DynamicOfferRepayment.t(),
           startsAt: DateTime.t()
         }
 
@@ -38,9 +38,9 @@ defmodule Adyen.Capital.V1.DynamicOffer do
       expiresAt: {:string, "date-time"},
       financingType: {:enum, ["hardwareFinancing", "businessFinancing"]},
       id: :string,
-      maximumAmount: {Adyen.Capital.V1.Amount, :t},
-      minimumAmount: {Adyen.Capital.V1.Amount, :t},
-      repayment: {Adyen.Capital.V1.DynamicOfferRepayment, :t},
+      maximumAmount: {AdyenEx.Capital.V1.Amount, :t},
+      minimumAmount: {AdyenEx.Capital.V1.Amount, :t},
+      repayment: {AdyenEx.Capital.V1.DynamicOfferRepayment, :t},
       startsAt: {:string, "date-time"}
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.BRLocalAccountIdentification do
+defmodule AdyenEx.Transfer.V3.BRLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a BRLocalAccountIdentification
   """

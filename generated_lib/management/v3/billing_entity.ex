@@ -1,10 +1,10 @@
-defmodule Adyen.Management.V3.BillingEntity do
+defmodule AdyenEx.Management.V3.BillingEntity do
   @moduledoc """
   Provides struct and type for a BillingEntity
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Management.V3.Address.t() | nil,
+          address: AdyenEx.Management.V3.Address.t() | nil,
           email: String.t() | nil,
           id: String.t() | nil,
           name: String.t() | nil,
@@ -19,7 +19,7 @@ defmodule Adyen.Management.V3.BillingEntity do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Management.V3.Address, :t},
+      address: {AdyenEx.Management.V3.Address, :t},
       email: :string,
       id: :string,
       name: :string,

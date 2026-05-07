@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.ActiveNetworkTokensRestriction do
+defmodule AdyenEx.BalancePlatform.V2.ActiveNetworkTokensRestriction do
   @moduledoc """
   Provides struct and type for a ActiveNetworkTokensRestriction
   """

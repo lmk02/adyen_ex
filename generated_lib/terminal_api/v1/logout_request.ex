@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.LogoutRequest do
+defmodule AdyenEx.TerminalAPI.V1.LogoutRequest do
   @moduledoc """
   Provides struct and type for a LogoutRequest
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.ListCompanyUsersResponse do
+defmodule AdyenEx.Management.V3.ListCompanyUsersResponse do
   @moduledoc """
   Provides struct and type for a ListCompanyUsersResponse
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V3.PaginationLinks.t() | nil,
-          data: [Adyen.Management.V3.CompanyUser.t()] | nil,
+          _links: AdyenEx.Management.V3.PaginationLinks.t() | nil,
+          data: [AdyenEx.Management.V3.CompanyUser.t()] | nil,
           itemsTotal: integer,
           pagesTotal: integer
         }
@@ -18,8 +18,8 @@ defmodule Adyen.Management.V3.ListCompanyUsersResponse do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V3.PaginationLinks, :t},
-      data: [{Adyen.Management.V3.CompanyUser, :t}],
+      _links: {AdyenEx.Management.V3.PaginationLinks, :t},
+      data: [{AdyenEx.Management.V3.CompanyUser, :t}],
       itemsTotal: {:integer, "int32"},
       pagesTotal: {:integer, "int32"}
     ]

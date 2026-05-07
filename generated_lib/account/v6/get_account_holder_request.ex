@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.GetAccountHolderRequest do
+defmodule AdyenEx.Account.V6.GetAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a GetAccountHolderRequest
   """

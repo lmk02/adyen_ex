@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.StoredValueResult do
+defmodule AdyenEx.TerminalAPI.V1.StoredValueResult do
   @moduledoc """
   Provides struct and type for a StoredValueResult
   """
@@ -6,10 +6,10 @@ defmodule Adyen.TerminalAPI.V1.StoredValueResult do
   @type t :: %__MODULE__{
           Currency: String.t() | nil,
           EanUpc: integer | nil,
-          HostTransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
+          HostTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           ItemAmount: number | nil,
           ProductCode: integer | nil,
-          StoredValueAccountStatus: Adyen.TerminalAPI.V1.StoredValueAccountStatus.t() | nil,
+          StoredValueAccountStatus: AdyenEx.TerminalAPI.V1.StoredValueAccountStatus.t() | nil,
           StoredValueTransactionType: String.t()
         }
 
@@ -31,10 +31,10 @@ defmodule Adyen.TerminalAPI.V1.StoredValueResult do
     [
       Currency: :string,
       EanUpc: :integer,
-      HostTransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
+      HostTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       ItemAmount: :number,
       ProductCode: :integer,
-      StoredValueAccountStatus: {Adyen.TerminalAPI.V1.StoredValueAccountStatus, :t},
+      StoredValueAccountStatus: {AdyenEx.TerminalAPI.V1.StoredValueAccountStatus, :t},
       StoredValueTransactionType:
         {:enum, ["Activate", "Duplicate", "Load", "Reserve", "Reverse", "Unload"]}
     ]

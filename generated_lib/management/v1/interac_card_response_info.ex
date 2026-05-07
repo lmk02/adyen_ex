@@ -1,10 +1,11 @@
-defmodule Adyen.Management.V1.InteracCardResponseInfo do
+defmodule AdyenEx.Management.V1.InteracCardResponseInfo do
   @moduledoc """
   Provides struct and type for a InteracCardResponseInfo
   """
 
   @type t :: %__MODULE__{
-          transactionDescription: Adyen.Management.V1.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:transactionDescription]
@@ -14,6 +15,6 @@ defmodule Adyen.Management.V1.InteracCardResponseInfo do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [transactionDescription: {Adyen.Management.V1.TransactionDescriptionResponseInfo, :t}]
+    [transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionResponseInfo, :t}]
   end
 end

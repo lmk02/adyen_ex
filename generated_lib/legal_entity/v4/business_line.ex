@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.BusinessLine do
+defmodule AdyenEx.LegalEntity.V4.BusinessLine do
   @moduledoc """
   Provides struct and type for a BusinessLine
   """
@@ -8,12 +8,12 @@ defmodule Adyen.LegalEntity.V4.BusinessLine do
           industryCode: String.t(),
           industryCodeDescription: String.t() | nil,
           legalEntityId: String.t(),
-          problems: [Adyen.LegalEntity.V4.CapabilityProblem.t()] | nil,
+          problems: [AdyenEx.LegalEntity.V4.CapabilityProblem.t()] | nil,
           salesChannels: [String.t()] | nil,
           service: String.t(),
-          sourceOfFunds: Adyen.LegalEntity.V4.SourceOfFunds.t() | nil,
-          webData: [Adyen.LegalEntity.V4.WebData.t()] | nil,
-          webDataExemption: Adyen.LegalEntity.V4.WebDataExemption.t() | nil
+          sourceOfFunds: AdyenEx.LegalEntity.V4.SourceOfFunds.t() | nil,
+          webData: [AdyenEx.LegalEntity.V4.WebData.t()] | nil,
+          webDataExemption: AdyenEx.LegalEntity.V4.WebDataExemption.t() | nil
         }
 
   defstruct [
@@ -39,12 +39,12 @@ defmodule Adyen.LegalEntity.V4.BusinessLine do
       industryCode: :string,
       industryCodeDescription: :string,
       legalEntityId: :string,
-      problems: [{Adyen.LegalEntity.V4.CapabilityProblem, :t}],
+      problems: [{AdyenEx.LegalEntity.V4.CapabilityProblem, :t}],
       salesChannels: [:string],
       service: {:enum, ["paymentProcessing", "issuing", "banking"]},
-      sourceOfFunds: {Adyen.LegalEntity.V4.SourceOfFunds, :t},
-      webData: [{Adyen.LegalEntity.V4.WebData, :t}],
-      webDataExemption: {Adyen.LegalEntity.V4.WebDataExemption, :t}
+      sourceOfFunds: {AdyenEx.LegalEntity.V4.SourceOfFunds, :t},
+      webData: [{AdyenEx.LegalEntity.V4.WebData, :t}],
+      webDataExemption: {AdyenEx.LegalEntity.V4.WebDataExemption, :t}
     ]
   end
 end

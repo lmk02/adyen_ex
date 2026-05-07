@@ -1,21 +1,21 @@
-defmodule Adyen.Transfer.V4.Transaction do
+defmodule AdyenEx.Transfer.V4.Transaction do
   @moduledoc """
   Provides struct and type for a Transaction
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.Transfer.V4.ResourceReference.t(),
-          amount: Adyen.Transfer.V4.Amount.t(),
-          balanceAccount: Adyen.Transfer.V4.ResourceReference.t(),
+          accountHolder: AdyenEx.Transfer.V4.ResourceReference.t(),
+          amount: AdyenEx.Transfer.V4.Amount.t(),
+          balanceAccount: AdyenEx.Transfer.V4.ResourceReference.t(),
           balancePlatform: String.t(),
           bookingDate: DateTime.t(),
           creationDate: DateTime.t() | nil,
           description: String.t() | nil,
           id: String.t(),
-          paymentInstrument: Adyen.Transfer.V4.PaymentInstrument.t() | nil,
+          paymentInstrument: AdyenEx.Transfer.V4.PaymentInstrument.t() | nil,
           referenceForBeneficiary: String.t() | nil,
           status: String.t(),
-          transfer: Adyen.Transfer.V4.TransferView.t() | nil,
+          transfer: AdyenEx.Transfer.V4.TransferView.t() | nil,
           valueDate: DateTime.t()
         }
 
@@ -41,18 +41,18 @@ defmodule Adyen.Transfer.V4.Transaction do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.Transfer.V4.ResourceReference, :t},
-      amount: {Adyen.Transfer.V4.Amount, :t},
-      balanceAccount: {Adyen.Transfer.V4.ResourceReference, :t},
+      accountHolder: {AdyenEx.Transfer.V4.ResourceReference, :t},
+      amount: {AdyenEx.Transfer.V4.Amount, :t},
+      balanceAccount: {AdyenEx.Transfer.V4.ResourceReference, :t},
       balancePlatform: :string,
       bookingDate: {:string, "date-time"},
       creationDate: {:string, "date-time"},
       description: :string,
       id: :string,
-      paymentInstrument: {Adyen.Transfer.V4.PaymentInstrument, :t},
+      paymentInstrument: {AdyenEx.Transfer.V4.PaymentInstrument, :t},
       referenceForBeneficiary: :string,
       status: {:enum, ["booked", "pending"]},
-      transfer: {Adyen.Transfer.V4.TransferView, :t},
+      transfer: {AdyenEx.Transfer.V4.TransferView, :t},
       valueDate: {:string, "date-time"}
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V64.PaymentMethodsRequest do
+defmodule AdyenEx.Checkout.V64.PaymentMethodsRequest do
   @moduledoc """
   Provides struct and type for a PaymentMethodsRequest
   """
@@ -6,14 +6,14 @@ defmodule Adyen.Checkout.V64.PaymentMethodsRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           allowedPaymentMethods: [String.t()] | nil,
-          amount: Adyen.Checkout.V64.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V64.Amount.t() | nil,
           blockedPaymentMethods: [String.t()] | nil,
-          browserInfo: Adyen.Checkout.V64.BrowserInfo.t() | nil,
+          browserInfo: AdyenEx.Checkout.V64.BrowserInfo.t() | nil,
           channel: String.t() | nil,
           countryCode: String.t() | nil,
           enableRealTimeUpdate: boolean | nil,
           merchantAccount: String.t(),
-          order: Adyen.Checkout.V64.EncryptedOrderData.t() | nil,
+          order: AdyenEx.Checkout.V64.EncryptedOrderData.t() | nil,
           shopperConversionId: String.t() | nil,
           shopperEmail: String.t() | nil,
           shopperIP: String.t() | nil,
@@ -55,14 +55,14 @@ defmodule Adyen.Checkout.V64.PaymentMethodsRequest do
     [
       additionalData: :map,
       allowedPaymentMethods: [:string],
-      amount: {Adyen.Checkout.V64.Amount, :t},
+      amount: {AdyenEx.Checkout.V64.Amount, :t},
       blockedPaymentMethods: [:string],
-      browserInfo: {Adyen.Checkout.V64.BrowserInfo, :t},
+      browserInfo: {AdyenEx.Checkout.V64.BrowserInfo, :t},
       channel: {:enum, ["iOS", "Android", "Web"]},
       countryCode: :string,
       enableRealTimeUpdate: :boolean,
       merchantAccount: :string,
-      order: {Adyen.Checkout.V64.EncryptedOrderData, :t},
+      order: {AdyenEx.Checkout.V64.EncryptedOrderData, :t},
       shopperConversionId: :string,
       shopperEmail: :string,
       shopperIP: :string,

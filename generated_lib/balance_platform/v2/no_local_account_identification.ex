@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.NOLocalAccountIdentification do
+defmodule AdyenEx.BalancePlatform.V2.NOLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a NOLocalAccountIdentification
   """

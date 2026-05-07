@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.OriginalPOITransaction do
+defmodule AdyenEx.TerminalAPI.V1.OriginalPOITransaction do
   @moduledoc """
   Provides struct and type for a OriginalPOITransaction
   """
@@ -7,9 +7,9 @@ defmodule Adyen.TerminalAPI.V1.OriginalPOITransaction do
           AcquirerID: integer | nil,
           AmountValue: number | nil,
           ApprovalCode: String.t() | nil,
-          HostTransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
+          HostTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           POIID: String.t() | nil,
-          POITransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
+          POITransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           ReuseCardDataFlag: boolean | nil,
           SaleID: String.t() | nil
         }
@@ -34,9 +34,9 @@ defmodule Adyen.TerminalAPI.V1.OriginalPOITransaction do
       AcquirerID: :integer,
       AmountValue: :number,
       ApprovalCode: :string,
-      HostTransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
+      HostTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       POIID: :string,
-      POITransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
+      POITransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       ReuseCardDataFlag: :boolean,
       SaleID: :string
     ]

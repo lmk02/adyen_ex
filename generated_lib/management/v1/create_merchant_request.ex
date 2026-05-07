@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.CreateMerchantRequest do
+defmodule AdyenEx.Management.V1.CreateMerchantRequest do
   @moduledoc """
   Provides struct and type for a CreateMerchantRequest
   """

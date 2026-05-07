@@ -1,9 +1,9 @@
-defmodule Adyen.BalanceControl.V2.BalanceTransfers do
+defmodule AdyenEx.BalanceControl.V2.BalanceTransfers do
   @moduledoc """
   Provides API endpoint related to balance transfers
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Performs a balance transfer
@@ -19,25 +19,25 @@ defmodule Adyen.BalanceControl.V2.BalanceTransfers do
   **Content Types**: `application/json`
   """
   @spec post_balance_transfers(
-          body :: Adyen.BalanceControl.V2.BalanceTransferRequest.t(),
+          body :: AdyenEx.BalanceControl.V2.BalanceTransferRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.BalanceControl.V2.BalanceTransferResponse.t()}
-          | {:error, Adyen.BalanceControl.V2.DefaultErrorResponseEntity.t()}
+          {:ok, AdyenEx.BalanceControl.V2.BalanceTransferResponse.t()}
+          | {:error, AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity.t()}
   def post_balance_transfers(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.BalanceControl.V2.BalanceTransfers, :post_balance_transfers},
+      call: {AdyenEx.BalanceControl.V2.BalanceTransfers, :post_balance_transfers},
       url: "/balanceTransfers",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.BalanceControl.V2.BalanceTransferRequest, :t}}],
+      request: [{"application/json", {AdyenEx.BalanceControl.V2.BalanceTransferRequest, :t}}],
       response: [
-        {200, {Adyen.BalanceControl.V2.BalanceTransferResponse, :t}},
-        {401, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
-        {422, {Adyen.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
+        {200, {AdyenEx.BalanceControl.V2.BalanceTransferResponse, :t}},
+        {401, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalanceControl.V2.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })

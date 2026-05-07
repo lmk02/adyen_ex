@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.LoyaltyAccountReq do
+defmodule AdyenEx.TerminalAPI.V1.LoyaltyAccountReq do
   @moduledoc """
   Provides struct and type for a LoyaltyAccountReq
   """
 
   @type t :: %__MODULE__{
-          CardAcquisitionReference: Adyen.TerminalAPI.V1.TransactionIDType.t() | nil,
-          LoyaltyAccountID: Adyen.TerminalAPI.V1.LoyaltyAccountID.t() | nil
+          CardAcquisitionReference: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
+          LoyaltyAccountID: AdyenEx.TerminalAPI.V1.LoyaltyAccountID.t() | nil
         }
 
   defstruct [:CardAcquisitionReference, :LoyaltyAccountID]
@@ -16,8 +16,8 @@ defmodule Adyen.TerminalAPI.V1.LoyaltyAccountReq do
 
   def __fields__(:t) do
     [
-      CardAcquisitionReference: {Adyen.TerminalAPI.V1.TransactionIDType, :t},
-      LoyaltyAccountID: {Adyen.TerminalAPI.V1.LoyaltyAccountID, :t}
+      CardAcquisitionReference: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
+      LoyaltyAccountID: {AdyenEx.TerminalAPI.V1.LoyaltyAccountID, :t}
     ]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V65.ApplePayDonations do
+defmodule AdyenEx.Checkout.V65.ApplePayDonations do
   @moduledoc """
   Provides struct and type for a ApplePayDonations
   """

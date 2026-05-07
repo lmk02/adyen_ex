@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TerminalProduct do
+defmodule AdyenEx.Management.V1.TerminalProduct do
   @moduledoc """
   Provides struct and type for a TerminalProduct
   """
@@ -8,7 +8,7 @@ defmodule Adyen.Management.V1.TerminalProduct do
           id: String.t() | nil,
           itemsIncluded: [String.t()] | nil,
           name: String.t() | nil,
-          price: Adyen.Management.V1.TerminalProductPrice.t() | nil
+          price: AdyenEx.Management.V1.TerminalProductPrice.t() | nil
         }
 
   defstruct [:description, :id, :itemsIncluded, :name, :price]
@@ -23,7 +23,7 @@ defmodule Adyen.Management.V1.TerminalProduct do
       id: :string,
       itemsIncluded: [:string],
       name: :string,
-      price: {Adyen.Management.V1.TerminalProductPrice, :t}
+      price: {AdyenEx.Management.V1.TerminalProductPrice, :t}
     ]
   end
 end

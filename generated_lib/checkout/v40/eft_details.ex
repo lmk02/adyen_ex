@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V40.EftDetails do
+defmodule AdyenEx.Checkout.V40.EftDetails do
   @moduledoc """
   Provides struct and type for a EftDetails
   """

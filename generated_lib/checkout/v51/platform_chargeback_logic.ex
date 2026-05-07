@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.PlatformChargebackLogic do
+defmodule AdyenEx.Checkout.V51.PlatformChargebackLogic do
   @moduledoc """
   Provides struct and type for a PlatformChargebackLogic
   """

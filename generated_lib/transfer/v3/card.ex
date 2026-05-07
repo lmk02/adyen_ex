@@ -1,11 +1,11 @@
-defmodule Adyen.Transfer.V3.Card do
+defmodule AdyenEx.Transfer.V3.Card do
   @moduledoc """
   Provides struct and type for a Card
   """
 
   @type t :: %__MODULE__{
-          cardHolder: Adyen.Transfer.V3.PartyIdentification.t(),
-          cardIdentification: Adyen.Transfer.V3.CardIdentification.t()
+          cardHolder: AdyenEx.Transfer.V3.PartyIdentification.t(),
+          cardIdentification: AdyenEx.Transfer.V3.CardIdentification.t()
         }
 
   defstruct [:cardHolder, :cardIdentification]
@@ -16,8 +16,8 @@ defmodule Adyen.Transfer.V3.Card do
 
   def __fields__(:t) do
     [
-      cardHolder: {Adyen.Transfer.V3.PartyIdentification, :t},
-      cardIdentification: {Adyen.Transfer.V3.CardIdentification, :t}
+      cardHolder: {AdyenEx.Transfer.V3.PartyIdentification, :t},
+      cardIdentification: {AdyenEx.Transfer.V3.CardIdentification, :t}
     ]
   end
 end

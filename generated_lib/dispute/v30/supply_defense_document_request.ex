@@ -1,10 +1,10 @@
-defmodule Adyen.Dispute.V30.SupplyDefenseDocumentRequest do
+defmodule AdyenEx.Dispute.V30.SupplyDefenseDocumentRequest do
   @moduledoc """
   Provides struct and type for a SupplyDefenseDocumentRequest
   """
 
   @type t :: %__MODULE__{
-          defenseDocuments: [Adyen.Dispute.V30.DefenseDocument.t()],
+          defenseDocuments: [AdyenEx.Dispute.V30.DefenseDocument.t()],
           disputePspReference: String.t(),
           merchantAccountCode: String.t()
         }
@@ -17,7 +17,7 @@ defmodule Adyen.Dispute.V30.SupplyDefenseDocumentRequest do
 
   def __fields__(:t) do
     [
-      defenseDocuments: [{Adyen.Dispute.V30.DefenseDocument, :t}],
+      defenseDocuments: [{AdyenEx.Dispute.V30.DefenseDocument, :t}],
       disputePspReference: :string,
       merchantAccountCode: :string
     ]

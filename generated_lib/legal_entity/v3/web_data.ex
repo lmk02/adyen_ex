@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.WebData do
+defmodule AdyenEx.LegalEntity.V3.WebData do
   @moduledoc """
   Provides struct and type for a WebData
   """

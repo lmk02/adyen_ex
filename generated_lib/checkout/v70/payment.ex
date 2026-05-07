@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V70.Payment do
+defmodule AdyenEx.Checkout.V70.Payment do
   @moduledoc """
   Provides struct and type for a Payment
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V70.Amount.t() | nil,
-          paymentMethod: Adyen.Checkout.V70.ResponsePaymentMethod.t() | nil,
+          amount: AdyenEx.Checkout.V70.Amount.t() | nil,
+          paymentMethod: AdyenEx.Checkout.V70.ResponsePaymentMethod.t() | nil,
           pspReference: String.t() | nil,
           resultCode: String.t() | nil
         }
@@ -18,8 +18,8 @@ defmodule Adyen.Checkout.V70.Payment do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V70.Amount, :t},
-      paymentMethod: {Adyen.Checkout.V70.ResponsePaymentMethod, :t},
+      amount: {AdyenEx.Checkout.V70.Amount, :t},
+      paymentMethod: {AdyenEx.Checkout.V70.ResponsePaymentMethod, :t},
       pspReference: :string,
       resultCode: {:enum, ["Authorised", "Received", "Pending"]}
     ]

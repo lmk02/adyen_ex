@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.Leg do
+defmodule AdyenEx.Checkout.V70.Leg do
   @moduledoc """
   Provides struct and type for a Leg
   """

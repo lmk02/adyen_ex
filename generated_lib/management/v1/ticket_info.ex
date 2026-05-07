@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.TicketInfo do
+defmodule AdyenEx.Management.V1.TicketInfo do
   @moduledoc """
   Provides struct and type for a TicketInfo
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V41.Modifications do
+defmodule AdyenEx.Checkout.V41.Modifications do
   @moduledoc """
   Provides API endpoints related to modifications
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Cancel an authorised payment
@@ -21,28 +21,28 @@ defmodule Adyen.Checkout.V41.Modifications do
   **Content Types**: `application/json`
   """
   @spec post_cancels(
-          body :: Adyen.Checkout.V41.StandalonePaymentCancelRequest.t(),
+          body :: AdyenEx.Checkout.V41.StandalonePaymentCancelRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.StandalonePaymentCancelResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.StandalonePaymentCancelResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_cancels(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Checkout.V41.Modifications, :post_cancels},
+      call: {AdyenEx.Checkout.V41.Modifications, :post_cancels},
       url: "/cancels",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.StandalonePaymentCancelRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.StandalonePaymentCancelRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.StandalonePaymentCancelResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.StandalonePaymentCancelResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -65,29 +65,29 @@ defmodule Adyen.Checkout.V41.Modifications do
   """
   @spec post_payments_payment_psp_reference_amount_updates(
           paymentPspReference :: String.t(),
-          body :: Adyen.Checkout.V41.PaymentAmountUpdateRequest.t(),
+          body :: AdyenEx.Checkout.V41.PaymentAmountUpdateRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.PaymentAmountUpdateResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.PaymentAmountUpdateResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_payments_payment_psp_reference_amount_updates(paymentPspReference, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [paymentPspReference: paymentPspReference, body: body],
       call:
-        {Adyen.Checkout.V41.Modifications, :post_payments_payment_psp_reference_amount_updates},
+        {AdyenEx.Checkout.V41.Modifications, :post_payments_payment_psp_reference_amount_updates},
       url: "/payments/#{paymentPspReference}/amountUpdates",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.PaymentAmountUpdateRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.PaymentAmountUpdateRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.PaymentAmountUpdateResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.PaymentAmountUpdateResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -110,28 +110,28 @@ defmodule Adyen.Checkout.V41.Modifications do
   """
   @spec post_payments_payment_psp_reference_cancels(
           paymentPspReference :: String.t(),
-          body :: Adyen.Checkout.V41.PaymentCancelRequest.t(),
+          body :: AdyenEx.Checkout.V41.PaymentCancelRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.PaymentCancelResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.PaymentCancelResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_payments_payment_psp_reference_cancels(paymentPspReference, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [paymentPspReference: paymentPspReference, body: body],
-      call: {Adyen.Checkout.V41.Modifications, :post_payments_payment_psp_reference_cancels},
+      call: {AdyenEx.Checkout.V41.Modifications, :post_payments_payment_psp_reference_cancels},
       url: "/payments/#{paymentPspReference}/cancels",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.PaymentCancelRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.PaymentCancelRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.PaymentCancelResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.PaymentCancelResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -154,28 +154,28 @@ defmodule Adyen.Checkout.V41.Modifications do
   """
   @spec post_payments_payment_psp_reference_captures(
           paymentPspReference :: String.t(),
-          body :: Adyen.Checkout.V41.PaymentCaptureRequest.t(),
+          body :: AdyenEx.Checkout.V41.PaymentCaptureRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.PaymentCaptureResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.PaymentCaptureResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_payments_payment_psp_reference_captures(paymentPspReference, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [paymentPspReference: paymentPspReference, body: body],
-      call: {Adyen.Checkout.V41.Modifications, :post_payments_payment_psp_reference_captures},
+      call: {AdyenEx.Checkout.V41.Modifications, :post_payments_payment_psp_reference_captures},
       url: "/payments/#{paymentPspReference}/captures",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.PaymentCaptureRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.PaymentCaptureRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.PaymentCaptureResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.PaymentCaptureResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -200,28 +200,28 @@ defmodule Adyen.Checkout.V41.Modifications do
   """
   @spec post_payments_payment_psp_reference_refunds(
           paymentPspReference :: String.t(),
-          body :: Adyen.Checkout.V41.PaymentRefundRequest.t(),
+          body :: AdyenEx.Checkout.V41.PaymentRefundRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.PaymentRefundResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.PaymentRefundResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_payments_payment_psp_reference_refunds(paymentPspReference, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [paymentPspReference: paymentPspReference, body: body],
-      call: {Adyen.Checkout.V41.Modifications, :post_payments_payment_psp_reference_refunds},
+      call: {AdyenEx.Checkout.V41.Modifications, :post_payments_payment_psp_reference_refunds},
       url: "/payments/#{paymentPspReference}/refunds",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.PaymentRefundRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.PaymentRefundRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.PaymentRefundResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.PaymentRefundResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -243,28 +243,28 @@ defmodule Adyen.Checkout.V41.Modifications do
   """
   @spec post_payments_payment_psp_reference_reversals(
           paymentPspReference :: String.t(),
-          body :: Adyen.Checkout.V41.PaymentReversalRequest.t(),
+          body :: AdyenEx.Checkout.V41.PaymentReversalRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Checkout.V41.PaymentReversalResponse.t()}
-          | {:error, Adyen.Checkout.V41.ServiceError.t()}
+          {:ok, AdyenEx.Checkout.V41.PaymentReversalResponse.t()}
+          | {:error, AdyenEx.Checkout.V41.ServiceError.t()}
   def post_payments_payment_psp_reference_reversals(paymentPspReference, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [paymentPspReference: paymentPspReference, body: body],
-      call: {Adyen.Checkout.V41.Modifications, :post_payments_payment_psp_reference_reversals},
+      call: {AdyenEx.Checkout.V41.Modifications, :post_payments_payment_psp_reference_reversals},
       url: "/payments/#{paymentPspReference}/reversals",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Checkout.V41.PaymentReversalRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Checkout.V41.PaymentReversalRequest, :t}}],
       response: [
-        {201, {Adyen.Checkout.V41.PaymentReversalResponse, :t}},
-        {400, {Adyen.Checkout.V41.ServiceError, :t}},
-        {401, {Adyen.Checkout.V41.ServiceError, :t}},
-        {403, {Adyen.Checkout.V41.ServiceError, :t}},
-        {422, {Adyen.Checkout.V41.ServiceError, :t}},
-        {500, {Adyen.Checkout.V41.ServiceError, :t}}
+        {201, {AdyenEx.Checkout.V41.PaymentReversalResponse, :t}},
+        {400, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {401, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {403, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {422, {AdyenEx.Checkout.V41.ServiceError, :t}},
+        {500, {AdyenEx.Checkout.V41.ServiceError, :t}}
       ],
       opts: opts
     })

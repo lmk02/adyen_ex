@@ -1,9 +1,9 @@
-defmodule Adyen.Recurring.V67.General do
+defmodule AdyenEx.Recurring.V67.General do
   @moduledoc """
   Provides API endpoints related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Create new permits linked to a recurring contract.
@@ -14,26 +14,26 @@ defmodule Adyen.Recurring.V67.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_create_permit(body :: Adyen.Recurring.V67.CreatePermitRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Recurring.V67.CreatePermitResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+  @spec post_create_permit(body :: AdyenEx.Recurring.V67.CreatePermitRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Recurring.V67.CreatePermitResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_create_permit(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_create_permit},
+      call: {AdyenEx.Recurring.V67.General, :post_create_permit},
       url: "/createPermit",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.CreatePermitRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.CreatePermitRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.CreatePermitResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.CreatePermitResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -50,26 +50,26 @@ defmodule Adyen.Recurring.V67.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_disable(body :: Adyen.Recurring.V67.DisableRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Recurring.V67.DisableResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+  @spec post_disable(body :: AdyenEx.Recurring.V67.DisableRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Recurring.V67.DisableResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_disable(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_disable},
+      call: {AdyenEx.Recurring.V67.General, :post_disable},
       url: "/disable",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.DisableRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.DisableRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.DisableResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.DisableResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -84,26 +84,29 @@ defmodule Adyen.Recurring.V67.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_disable_permit(body :: Adyen.Recurring.V67.DisablePermitRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Recurring.V67.DisablePermitResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+  @spec post_disable_permit(
+          body :: AdyenEx.Recurring.V67.DisablePermitRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.Recurring.V67.DisablePermitResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_disable_permit(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_disable_permit},
+      call: {AdyenEx.Recurring.V67.General, :post_disable_permit},
       url: "/disablePermit",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.DisablePermitRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.DisablePermitRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.DisablePermitResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.DisablePermitResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -121,28 +124,28 @@ defmodule Adyen.Recurring.V67.General do
   **Content Types**: `application/json`
   """
   @spec post_list_recurring_details(
-          body :: Adyen.Recurring.V67.RecurringDetailsRequest.t(),
+          body :: AdyenEx.Recurring.V67.RecurringDetailsRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Recurring.V67.RecurringDetailsResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+          {:ok, AdyenEx.Recurring.V67.RecurringDetailsResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_list_recurring_details(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_list_recurring_details},
+      call: {AdyenEx.Recurring.V67.General, :post_list_recurring_details},
       url: "/listRecurringDetails",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.RecurringDetailsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.RecurringDetailsRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.RecurringDetailsResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.RecurringDetailsResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -157,26 +160,29 @@ defmodule Adyen.Recurring.V67.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_notify_shopper(body :: Adyen.Recurring.V67.NotifyShopperRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Recurring.V67.NotifyShopperResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+  @spec post_notify_shopper(
+          body :: AdyenEx.Recurring.V67.NotifyShopperRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.Recurring.V67.NotifyShopperResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_notify_shopper(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_notify_shopper},
+      call: {AdyenEx.Recurring.V67.General, :post_notify_shopper},
       url: "/notifyShopper",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.NotifyShopperRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.NotifyShopperRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.NotifyShopperResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.NotifyShopperResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -194,28 +200,28 @@ defmodule Adyen.Recurring.V67.General do
   **Content Types**: `application/json`
   """
   @spec post_schedule_account_updater(
-          body :: Adyen.Recurring.V67.ScheduleAccountUpdaterRequest.t(),
+          body :: AdyenEx.Recurring.V67.ScheduleAccountUpdaterRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Recurring.V67.ScheduleAccountUpdaterResult.t()}
-          | {:error, Adyen.Recurring.V67.ServiceError.t()}
+          {:ok, AdyenEx.Recurring.V67.ScheduleAccountUpdaterResult.t()}
+          | {:error, AdyenEx.Recurring.V67.ServiceError.t()}
   def post_schedule_account_updater(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Recurring.V67.General, :post_schedule_account_updater},
+      call: {AdyenEx.Recurring.V67.General, :post_schedule_account_updater},
       url: "/scheduleAccountUpdater",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Recurring.V67.ScheduleAccountUpdaterRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Recurring.V67.ScheduleAccountUpdaterRequest, :t}}],
       response: [
-        {200, {Adyen.Recurring.V67.ScheduleAccountUpdaterResult, :t}},
-        {400, {Adyen.Recurring.V67.ServiceError, :t}},
-        {401, {Adyen.Recurring.V67.ServiceError, :t}},
-        {403, {Adyen.Recurring.V67.ServiceError, :t}},
-        {422, {Adyen.Recurring.V67.ServiceError, :t}},
-        {500, {Adyen.Recurring.V67.ServiceError, :t}}
+        {200, {AdyenEx.Recurring.V67.ScheduleAccountUpdaterResult, :t}},
+        {400, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {401, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {403, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {422, {AdyenEx.Recurring.V67.ServiceError, :t}},
+        {500, {AdyenEx.Recurring.V67.ServiceError, :t}}
       ],
       opts: opts
     })

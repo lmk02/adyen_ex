@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.ReconciliationResponse do
+defmodule AdyenEx.TerminalAPI.V1.ReconciliationResponse do
   @moduledoc """
   Provides struct and type for a ReconciliationResponse
   """
@@ -6,8 +6,8 @@ defmodule Adyen.TerminalAPI.V1.ReconciliationResponse do
   @type t :: %__MODULE__{
           POIReconciliationID: integer | nil,
           ReconciliationType: String.t(),
-          Response: Adyen.TerminalAPI.V1.Response.t(),
-          TransactionTotals: [Adyen.TerminalAPI.V1.TransactionTotals.t()] | nil
+          Response: AdyenEx.TerminalAPI.V1.Response.t(),
+          TransactionTotals: [AdyenEx.TerminalAPI.V1.TransactionTotals.t()] | nil
         }
 
   defstruct [:POIReconciliationID, :ReconciliationType, :Response, :TransactionTotals]
@@ -27,8 +27,8 @@ defmodule Adyen.TerminalAPI.V1.ReconciliationResponse do
            "PreviousReconciliation",
            "SaleReconciliation"
          ]},
-      Response: {Adyen.TerminalAPI.V1.Response, :t},
-      TransactionTotals: [{Adyen.TerminalAPI.V1.TransactionTotals, :t}]
+      Response: {AdyenEx.TerminalAPI.V1.Response, :t},
+      TransactionTotals: [{AdyenEx.TerminalAPI.V1.TransactionTotals, :t}]
     ]
   end
 end

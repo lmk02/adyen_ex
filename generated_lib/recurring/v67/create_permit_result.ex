@@ -1,10 +1,10 @@
-defmodule Adyen.Recurring.V67.CreatePermitResult do
+defmodule AdyenEx.Recurring.V67.CreatePermitResult do
   @moduledoc """
   Provides struct and type for a CreatePermitResult
   """
 
   @type t :: %__MODULE__{
-          permitResultList: [Adyen.Recurring.V67.PermitResult.t()] | nil,
+          permitResultList: [AdyenEx.Recurring.V67.PermitResult.t()] | nil,
           pspReference: String.t() | nil
         }
 
@@ -15,6 +15,6 @@ defmodule Adyen.Recurring.V67.CreatePermitResult do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [permitResultList: [{Adyen.Recurring.V67.PermitResult, :t}], pspReference: :string]
+    [permitResultList: [{AdyenEx.Recurring.V67.PermitResult, :t}], pspReference: :string]
   end
 end

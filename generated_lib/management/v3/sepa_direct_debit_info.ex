@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.SepaDirectDebitInfo do
+defmodule AdyenEx.Management.V3.SepaDirectDebitInfo do
   @moduledoc """
   Provides struct and type for a SepaDirectDebitInfo
   """
 
   @type t :: %__MODULE__{
           creditorId: String.t() | nil,
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V3.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:creditorId, :transactionDescription]
@@ -17,7 +17,7 @@ defmodule Adyen.Management.V3.SepaDirectDebitInfo do
   def __fields__(:t) do
     [
       creditorId: :string,
-      transactionDescription: {Adyen.Management.V3.TransactionDescriptionInfo, :t}
+      transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionInfo, :t}
     ]
   end
 end

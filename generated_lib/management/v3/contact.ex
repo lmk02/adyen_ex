@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.Contact do
+defmodule AdyenEx.Management.V3.Contact do
   @moduledoc """
   Provides struct and type for a Contact
   """

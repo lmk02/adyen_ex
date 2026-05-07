@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.BillingEntitiesResponse do
+defmodule AdyenEx.Management.V1.BillingEntitiesResponse do
   @moduledoc """
   Provides struct and type for a BillingEntitiesResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V1.BillingEntity.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V1.BillingEntity.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V1.BillingEntitiesResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V1.BillingEntity, :t}]]
+    [data: [{AdyenEx.Management.V1.BillingEntity, :t}]]
   end
 end

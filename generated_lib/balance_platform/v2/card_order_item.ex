@@ -1,16 +1,16 @@
-defmodule Adyen.BalancePlatform.V2.CardOrderItem do
+defmodule AdyenEx.BalancePlatform.V2.CardOrderItem do
   @moduledoc """
   Provides struct and type for a CardOrderItem
   """
 
   @type t :: %__MODULE__{
           balancePlatform: String.t() | nil,
-          card: Adyen.BalancePlatform.V2.CardOrderItemDeliveryStatus.t() | nil,
+          card: AdyenEx.BalancePlatform.V2.CardOrderItemDeliveryStatus.t() | nil,
           cardOrderItemId: String.t() | nil,
           creationDate: DateTime.t() | nil,
           id: String.t() | nil,
           paymentInstrumentId: String.t() | nil,
-          pin: Adyen.BalancePlatform.V2.CardOrderItemDeliveryStatus.t() | nil,
+          pin: AdyenEx.BalancePlatform.V2.CardOrderItemDeliveryStatus.t() | nil,
           shippingMethod: String.t() | nil
         }
 
@@ -32,12 +32,12 @@ defmodule Adyen.BalancePlatform.V2.CardOrderItem do
   def __fields__(:t) do
     [
       balancePlatform: :string,
-      card: {Adyen.BalancePlatform.V2.CardOrderItemDeliveryStatus, :t},
+      card: {AdyenEx.BalancePlatform.V2.CardOrderItemDeliveryStatus, :t},
       cardOrderItemId: :string,
       creationDate: {:string, "date-time"},
       id: :string,
       paymentInstrumentId: :string,
-      pin: {Adyen.BalancePlatform.V2.CardOrderItemDeliveryStatus, :t},
+      pin: {AdyenEx.BalancePlatform.V2.CardOrderItemDeliveryStatus, :t},
       shippingMethod: :string
     ]
   end

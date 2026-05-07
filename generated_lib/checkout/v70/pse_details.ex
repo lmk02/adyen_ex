@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.PseDetails do
+defmodule AdyenEx.Checkout.V70.PseDetails do
   @moduledoc """
   Provides struct and type for a PseDetails
   """

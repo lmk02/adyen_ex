@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V4.OtherInfo do
+defmodule AdyenEx.Transaction.V4.OtherInfo do
   @moduledoc """
   Provides struct and type for a OtherInfo
   """

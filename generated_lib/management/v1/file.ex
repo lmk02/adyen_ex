@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.File do
+defmodule AdyenEx.Management.V1.File do
   @moduledoc """
   Provides struct and type for a File
   """

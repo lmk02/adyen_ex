@@ -1,4 +1,4 @@
-defmodule Adyen.Capital.V1.Action do
+defmodule AdyenEx.Capital.V1.Action do
   @moduledoc """
   Provides struct and type for a Action
   """

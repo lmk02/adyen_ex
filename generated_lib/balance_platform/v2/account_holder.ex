@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AccountHolder do
+defmodule AdyenEx.BalancePlatform.V2.AccountHolder do
   @moduledoc """
   Provides struct and type for a AccountHolder
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.AccountHolder do
   @type t :: %__MODULE__{
           balancePlatform: String.t() | nil,
           capabilities: map | nil,
-          contactDetails: Adyen.BalancePlatform.V2.ContactDetails.t() | nil,
+          contactDetails: AdyenEx.BalancePlatform.V2.ContactDetails.t() | nil,
           description: String.t() | nil,
           id: String.t(),
           legalEntityId: String.t(),
@@ -16,7 +16,7 @@ defmodule Adyen.BalancePlatform.V2.AccountHolder do
           reference: String.t() | nil,
           status: String.t() | nil,
           timeZone: String.t() | nil,
-          verificationDeadlines: [Adyen.BalancePlatform.V2.VerificationDeadline.t()] | nil
+          verificationDeadlines: [AdyenEx.BalancePlatform.V2.VerificationDeadline.t()] | nil
         }
 
   defstruct [
@@ -43,7 +43,7 @@ defmodule Adyen.BalancePlatform.V2.AccountHolder do
     [
       balancePlatform: :string,
       capabilities: :map,
-      contactDetails: {Adyen.BalancePlatform.V2.ContactDetails, :t},
+      contactDetails: {AdyenEx.BalancePlatform.V2.ContactDetails, :t},
       description: :string,
       id: :string,
       legalEntityId: :string,
@@ -53,7 +53,7 @@ defmodule Adyen.BalancePlatform.V2.AccountHolder do
       reference: :string,
       status: {:enum, ["active", "closed", "suspended"]},
       timeZone: :string,
-      verificationDeadlines: [{Adyen.BalancePlatform.V2.VerificationDeadline, :t}]
+      verificationDeadlines: [{AdyenEx.BalancePlatform.V2.VerificationDeadline, :t}]
     ]
   end
 end

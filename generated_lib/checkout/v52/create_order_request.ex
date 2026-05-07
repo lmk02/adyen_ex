@@ -1,10 +1,10 @@
-defmodule Adyen.Checkout.V52.CreateOrderRequest do
+defmodule AdyenEx.Checkout.V52.CreateOrderRequest do
   @moduledoc """
   Provides struct and type for a CreateOrderRequest
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Checkout.V52.Amount.t(),
+          amount: AdyenEx.Checkout.V52.Amount.t(),
           expiresAt: String.t() | nil,
           merchantAccount: String.t(),
           reference: String.t()
@@ -18,7 +18,7 @@ defmodule Adyen.Checkout.V52.CreateOrderRequest do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Checkout.V52.Amount, :t},
+      amount: {AdyenEx.Checkout.V52.Amount, :t},
       expiresAt: :string,
       merchantAccount: :string,
       reference: :string

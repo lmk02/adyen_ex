@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.LoginRequest do
+defmodule AdyenEx.TerminalAPI.V1.LoginRequest do
   @moduledoc """
   Provides struct and type for a LoginRequest
   """
@@ -9,8 +9,8 @@ defmodule Adyen.TerminalAPI.V1.LoginRequest do
           OperatorID: String.t() | nil,
           OperatorLanguage: String.t(),
           POISerialNumber: String.t() | nil,
-          SaleSoftware: Adyen.TerminalAPI.V1.SaleSoftware.t(),
-          SaleTerminalData: Adyen.TerminalAPI.V1.SaleTerminalData.t() | nil,
+          SaleSoftware: AdyenEx.TerminalAPI.V1.SaleSoftware.t(),
+          SaleTerminalData: AdyenEx.TerminalAPI.V1.SaleTerminalData.t() | nil,
           ShiftNumber: String.t() | nil,
           TokenRequestedType: String.t() | nil,
           TrainingModeFlag: boolean | nil
@@ -40,8 +40,8 @@ defmodule Adyen.TerminalAPI.V1.LoginRequest do
       OperatorID: :string,
       OperatorLanguage: :string,
       POISerialNumber: :string,
-      SaleSoftware: {Adyen.TerminalAPI.V1.SaleSoftware, :t},
-      SaleTerminalData: {Adyen.TerminalAPI.V1.SaleTerminalData, :t},
+      SaleSoftware: {AdyenEx.TerminalAPI.V1.SaleSoftware, :t},
+      SaleTerminalData: {AdyenEx.TerminalAPI.V1.SaleTerminalData, :t},
       ShiftNumber: :string,
       TokenRequestedType: {:enum, ["Customer", "Transaction"]},
       TrainingModeFlag: :boolean

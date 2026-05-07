@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.GetUploadedDocumentsRequest do
+defmodule AdyenEx.Account.V4.GetUploadedDocumentsRequest do
   @moduledoc """
   Provides struct and type for a GetUploadedDocumentsRequest
   """

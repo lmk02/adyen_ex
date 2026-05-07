@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.POIData do
+defmodule AdyenEx.TerminalAPI.V1.POIData do
   @moduledoc """
   Provides struct and type for a POIData
   """
 
   @type t :: %__MODULE__{
           POIReconciliationID: integer | nil,
-          POITransactionID: Adyen.TerminalAPI.V1.TransactionIDType.t()
+          POITransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t()
         }
 
   defstruct [:POIReconciliationID, :POITransactionID]
@@ -17,7 +17,7 @@ defmodule Adyen.TerminalAPI.V1.POIData do
   def __fields__(:t) do
     [
       POIReconciliationID: :integer,
-      POITransactionID: {Adyen.TerminalAPI.V1.TransactionIDType, :t}
+      POITransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t}
     ]
   end
 end

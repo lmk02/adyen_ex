@@ -1,4 +1,4 @@
-defmodule Adyen.TestCard.V1.TestCardRangeCreationResult do
+defmodule AdyenEx.TestCard.V1.TestCardRangeCreationResult do
   @moduledoc """
   Provides struct and type for a TestCardRangeCreationResult
   """

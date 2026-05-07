@@ -1,13 +1,13 @@
-defmodule Adyen.BalancePlatform.V2.BalanceWebhookSettingInfoUpdate do
+defmodule AdyenEx.BalancePlatform.V2.BalanceWebhookSettingInfoUpdate do
   @moduledoc """
   Provides struct and type for a BalanceWebhookSettingInfoUpdate
   """
 
   @type t :: %__MODULE__{
-          conditions: [Adyen.BalancePlatform.V2.Condition.t()] | nil,
+          conditions: [AdyenEx.BalancePlatform.V2.Condition.t()] | nil,
           currency: String.t() | nil,
           status: String.t() | nil,
-          target: Adyen.BalancePlatform.V2.TargetUpdate.t() | nil,
+          target: AdyenEx.BalancePlatform.V2.TargetUpdate.t() | nil,
           type: String.t() | nil
         }
 
@@ -19,10 +19,10 @@ defmodule Adyen.BalancePlatform.V2.BalanceWebhookSettingInfoUpdate do
 
   def __fields__(:t) do
     [
-      conditions: {:union, [[{Adyen.BalancePlatform.V2.Condition, :t}], :null]},
+      conditions: {:union, [[{AdyenEx.BalancePlatform.V2.Condition, :t}], :null]},
       currency: :string,
       status: {:enum, ["active", "inactive"]},
-      target: {Adyen.BalancePlatform.V2.TargetUpdate, :t},
+      target: {AdyenEx.BalancePlatform.V2.TargetUpdate, :t},
       type: {:const, "balance"}
     ]
   end

@@ -1,11 +1,11 @@
-defmodule Adyen.TerminalAPI.V1.GetTotalsRequest do
+defmodule AdyenEx.TerminalAPI.V1.GetTotalsRequest do
   @moduledoc """
   Provides struct and type for a GetTotalsRequest
   """
 
   @type t :: %__MODULE__{
           TotalDetails: [String.t()] | nil,
-          TotalFilter: Adyen.TerminalAPI.V1.TotalFilter.t() | nil
+          TotalFilter: AdyenEx.TerminalAPI.V1.TotalFilter.t() | nil
         }
 
   defstruct [:TotalDetails, :TotalFilter]
@@ -17,7 +17,7 @@ defmodule Adyen.TerminalAPI.V1.GetTotalsRequest do
   def __fields__(:t) do
     [
       TotalDetails: [enum: ["OperatorID", "POIID", "SaleID", "ShiftNumber", "TotalsGroupID"]],
-      TotalFilter: {Adyen.TerminalAPI.V1.TotalFilter, :t}
+      TotalFilter: {AdyenEx.TerminalAPI.V1.TotalFilter, :t}
     ]
   end
 end

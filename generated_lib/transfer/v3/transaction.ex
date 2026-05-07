@@ -1,22 +1,22 @@
-defmodule Adyen.Transfer.V3.Transaction do
+defmodule AdyenEx.Transfer.V3.Transaction do
   @moduledoc """
   Provides struct and type for a Transaction
   """
 
   @type t :: %__MODULE__{
           accountHolderId: String.t(),
-          amount: Adyen.Transfer.V3.Amount.t(),
+          amount: AdyenEx.Transfer.V3.Amount.t(),
           balanceAccountId: String.t(),
           balancePlatform: String.t(),
           bookingDate: DateTime.t(),
           category: String.t() | nil,
-          counterparty: Adyen.Transfer.V3.CounterpartyV3.t(),
+          counterparty: AdyenEx.Transfer.V3.CounterpartyV3.t(),
           createdAt: DateTime.t(),
           creationDate: DateTime.t() | nil,
           description: String.t() | nil,
           eventId: String.t() | nil,
           id: String.t(),
-          instructedAmount: Adyen.Transfer.V3.Amount.t() | nil,
+          instructedAmount: AdyenEx.Transfer.V3.Amount.t() | nil,
           paymentInstrumentId: String.t() | nil,
           reference: String.t(),
           referenceForBeneficiary: String.t() | nil,
@@ -56,7 +56,7 @@ defmodule Adyen.Transfer.V3.Transaction do
   def __fields__(:t) do
     [
       accountHolderId: :string,
-      amount: {Adyen.Transfer.V3.Amount, :t},
+      amount: {AdyenEx.Transfer.V3.Amount, :t},
       balanceAccountId: :string,
       balancePlatform: :string,
       bookingDate: {:string, "date-time"},
@@ -74,13 +74,13 @@ defmodule Adyen.Transfer.V3.Transaction do
            "topUp",
            "upgrade"
          ]},
-      counterparty: {Adyen.Transfer.V3.CounterpartyV3, :t},
+      counterparty: {AdyenEx.Transfer.V3.CounterpartyV3, :t},
       createdAt: {:string, "date-time"},
       creationDate: {:string, "date-time"},
       description: :string,
       eventId: :string,
       id: :string,
-      instructedAmount: {Adyen.Transfer.V3.Amount, :t},
+      instructedAmount: {AdyenEx.Transfer.V3.Amount, :t},
       paymentInstrumentId: :string,
       reference: :string,
       referenceForBeneficiary: :string,

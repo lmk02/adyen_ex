@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.SepaDirectDebitDetails do
+defmodule AdyenEx.Checkout.V50.SepaDirectDebitDetails do
   @moduledoc """
   Provides struct and type for a SepaDirectDebitDetails
   """

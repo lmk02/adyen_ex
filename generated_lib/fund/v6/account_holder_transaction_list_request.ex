@@ -1,11 +1,11 @@
-defmodule Adyen.Fund.V6.AccountHolderTransactionListRequest do
+defmodule AdyenEx.Fund.V6.AccountHolderTransactionListRequest do
   @moduledoc """
   Provides struct and type for a AccountHolderTransactionListRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          transactionListsPerAccount: [Adyen.Fund.V6.TransactionListForAccount.t()] | nil,
+          transactionListsPerAccount: [AdyenEx.Fund.V6.TransactionListForAccount.t()] | nil,
           transactionStatuses: [String.t()] | nil
         }
 
@@ -18,7 +18,7 @@ defmodule Adyen.Fund.V6.AccountHolderTransactionListRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      transactionListsPerAccount: [{Adyen.Fund.V6.TransactionListForAccount, :t}],
+      transactionListsPerAccount: [{AdyenEx.Fund.V6.TransactionListForAccount, :t}],
       transactionStatuses: [
         enum: [
           "BalanceNotPaidOutTransfer",

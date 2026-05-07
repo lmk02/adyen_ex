@@ -1,9 +1,9 @@
-defmodule Adyen.Payout.V50.Initialization do
+defmodule AdyenEx.Payout.V50.Initialization do
   @moduledoc """
   Provides API endpoints related to initialization
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Store payout details
@@ -25,26 +25,26 @@ defmodule Adyen.Payout.V50.Initialization do
 
   **Content Types**: `application/json`
   """
-  @spec post_store_detail(body :: Adyen.Payout.V50.StoreDetailRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payout.V50.StoreDetailResponse.t()}
-          | {:error, Adyen.Payout.V50.ServiceError.t()}
+  @spec post_store_detail(body :: AdyenEx.Payout.V50.StoreDetailRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payout.V50.StoreDetailResponse.t()}
+          | {:error, AdyenEx.Payout.V50.ServiceError.t()}
   def post_store_detail(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V50.Initialization, :post_store_detail},
+      call: {AdyenEx.Payout.V50.Initialization, :post_store_detail},
       url: "/storeDetail",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V50.StoreDetailRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V50.StoreDetailRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V50.StoreDetailResponse, :t}},
-        {400, {Adyen.Payout.V50.ServiceError, :t}},
-        {401, {Adyen.Payout.V50.ServiceError, :t}},
-        {403, {Adyen.Payout.V50.ServiceError, :t}},
-        {422, {Adyen.Payout.V50.ServiceError, :t}},
-        {500, {Adyen.Payout.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V50.StoreDetailResponse, :t}},
+        {400, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -73,28 +73,28 @@ defmodule Adyen.Payout.V50.Initialization do
   **Content Types**: `application/json`
   """
   @spec post_store_detail_and_submit_third_party(
-          body :: Adyen.Payout.V50.StoreDetailAndSubmitRequest.t(),
+          body :: AdyenEx.Payout.V50.StoreDetailAndSubmitRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Payout.V50.StoreDetailAndSubmitResponse.t()}
-          | {:error, Adyen.Payout.V50.ServiceError.t()}
+          {:ok, AdyenEx.Payout.V50.StoreDetailAndSubmitResponse.t()}
+          | {:error, AdyenEx.Payout.V50.ServiceError.t()}
   def post_store_detail_and_submit_third_party(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V50.Initialization, :post_store_detail_and_submit_third_party},
+      call: {AdyenEx.Payout.V50.Initialization, :post_store_detail_and_submit_third_party},
       url: "/storeDetailAndSubmitThirdParty",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V50.StoreDetailAndSubmitRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V50.StoreDetailAndSubmitRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V50.StoreDetailAndSubmitResponse, :t}},
-        {400, {Adyen.Payout.V50.ServiceError, :t}},
-        {401, {Adyen.Payout.V50.ServiceError, :t}},
-        {403, {Adyen.Payout.V50.ServiceError, :t}},
-        {422, {Adyen.Payout.V50.ServiceError, :t}},
-        {500, {Adyen.Payout.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V50.StoreDetailAndSubmitResponse, :t}},
+        {400, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V50.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -122,25 +122,26 @@ defmodule Adyen.Payout.V50.Initialization do
 
   **Content Types**: `application/json`
   """
-  @spec post_submit_third_party(body :: Adyen.Payout.V50.SubmitRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Payout.V50.SubmitResponse.t()} | {:error, Adyen.Payout.V50.ServiceError.t()}
+  @spec post_submit_third_party(body :: AdyenEx.Payout.V50.SubmitRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Payout.V50.SubmitResponse.t()}
+          | {:error, AdyenEx.Payout.V50.ServiceError.t()}
   def post_submit_third_party(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Payout.V50.Initialization, :post_submit_third_party},
+      call: {AdyenEx.Payout.V50.Initialization, :post_submit_third_party},
       url: "/submitThirdParty",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Payout.V50.SubmitRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Payout.V50.SubmitRequest, :t}}],
       response: [
-        {200, {Adyen.Payout.V50.SubmitResponse, :t}},
-        {400, {Adyen.Payout.V50.ServiceError, :t}},
-        {401, {Adyen.Payout.V50.ServiceError, :t}},
-        {403, {Adyen.Payout.V50.ServiceError, :t}},
-        {422, {Adyen.Payout.V50.ServiceError, :t}},
-        {500, {Adyen.Payout.V50.ServiceError, :t}}
+        {200, {AdyenEx.Payout.V50.SubmitResponse, :t}},
+        {400, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {401, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {403, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {422, {AdyenEx.Payout.V50.ServiceError, :t}},
+        {500, {AdyenEx.Payout.V50.ServiceError, :t}}
       ],
       opts: opts
     })

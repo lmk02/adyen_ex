@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.GetTerminalsUnderAccountResponse do
+defmodule AdyenEx.TfmAPI.V1.GetTerminalsUnderAccountResponse do
   @moduledoc """
   Provides struct and type for a GetTerminalsUnderAccountResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TfmAPI.V1.GetTerminalsUnderAccountResponse do
   @type t :: %__MODULE__{
           companyAccount: String.t(),
           inventoryTerminals: [String.t()] | nil,
-          merchantAccounts: [Adyen.TfmAPI.V1.MerchantAccount.t()] | nil
+          merchantAccounts: [AdyenEx.TfmAPI.V1.MerchantAccount.t()] | nil
         }
 
   defstruct [:companyAccount, :inventoryTerminals, :merchantAccounts]
@@ -19,7 +19,7 @@ defmodule Adyen.TfmAPI.V1.GetTerminalsUnderAccountResponse do
     [
       companyAccount: :string,
       inventoryTerminals: [:string],
-      merchantAccounts: [{Adyen.TfmAPI.V1.MerchantAccount, :t}]
+      merchantAccounts: [{AdyenEx.TfmAPI.V1.MerchantAccount, :t}]
     ]
   end
 end

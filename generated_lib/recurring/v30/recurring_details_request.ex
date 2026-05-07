@@ -1,11 +1,11 @@
-defmodule Adyen.Recurring.V30.RecurringDetailsRequest do
+defmodule AdyenEx.Recurring.V30.RecurringDetailsRequest do
   @moduledoc """
   Provides struct and type for a RecurringDetailsRequest
   """
 
   @type t :: %__MODULE__{
           merchantAccount: String.t(),
-          recurring: Adyen.Recurring.V30.Recurring.t() | nil,
+          recurring: AdyenEx.Recurring.V30.Recurring.t() | nil,
           shopperReference: String.t()
         }
 
@@ -18,7 +18,7 @@ defmodule Adyen.Recurring.V30.RecurringDetailsRequest do
   def __fields__(:t) do
     [
       merchantAccount: :string,
-      recurring: {Adyen.Recurring.V30.Recurring, :t},
+      recurring: {AdyenEx.Recurring.V30.Recurring, :t},
       shopperReference: :string
     ]
   end

@@ -1,12 +1,12 @@
-defmodule Adyen.BalancePlatform.V2.PaymentInstrumentInfo do
+defmodule AdyenEx.BalancePlatform.V2.PaymentInstrumentInfo do
   @moduledoc """
   Provides struct and type for a PaymentInstrumentInfo
   """
 
   @type t :: %__MODULE__{
           balanceAccountId: String.t(),
-          bankAccount: Adyen.BalancePlatform.V2.BankAccountModel.t() | nil,
-          card: Adyen.BalancePlatform.V2.CardInfo.t() | nil,
+          bankAccount: AdyenEx.BalancePlatform.V2.BankAccountModel.t() | nil,
+          card: AdyenEx.BalancePlatform.V2.CardInfo.t() | nil,
           description: String.t() | nil,
           issuingCountryCode: String.t(),
           paymentInstrumentGroupId: String.t() | nil,
@@ -38,8 +38,8 @@ defmodule Adyen.BalancePlatform.V2.PaymentInstrumentInfo do
   def __fields__(:t) do
     [
       balanceAccountId: :string,
-      bankAccount: {Adyen.BalancePlatform.V2.BankAccountModel, :t},
-      card: {Adyen.BalancePlatform.V2.CardInfo, :t},
+      bankAccount: {AdyenEx.BalancePlatform.V2.BankAccountModel, :t},
+      card: {AdyenEx.BalancePlatform.V2.CardInfo, :t},
       description: :string,
       issuingCountryCode: :string,
       paymentInstrumentGroupId: :string,

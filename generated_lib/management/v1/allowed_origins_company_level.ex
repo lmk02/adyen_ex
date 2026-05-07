@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
+defmodule AdyenEx.Management.V1.AllowedOriginsCompanyLevel do
   @moduledoc """
   Provides API endpoints related to allowed origins company level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Delete an allowed origin
@@ -18,7 +18,7 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
           apiCredentialId :: String.t(),
           originId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Management.V1.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def delete_companies_company_id_api_credentials_api_credential_id_allowed_origins_origin_id(
         companyId,
         apiCredentialId,
@@ -30,17 +30,17 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId, originId: originId],
       call:
-        {Adyen.Management.V1.AllowedOriginsCompanyLevel,
+        {AdyenEx.Management.V1.AllowedOriginsCompanyLevel,
          :delete_companies_company_id_api_credentials_api_credential_id_allowed_origins_origin_id},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}/allowedOrigins/#{originId}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -59,8 +59,8 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
           apiCredentialId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOriginsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOriginsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id_api_credentials_api_credential_id_allowed_origins(
         companyId,
         apiCredentialId,
@@ -71,17 +71,17 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId],
       call:
-        {Adyen.Management.V1.AllowedOriginsCompanyLevel,
+        {AdyenEx.Management.V1.AllowedOriginsCompanyLevel,
          :get_companies_company_id_api_credentials_api_credential_id_allowed_origins},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}/allowedOrigins",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOriginsResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOriginsResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -101,8 +101,8 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
           originId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_companies_company_id_api_credentials_api_credential_id_allowed_origins_origin_id(
         companyId,
         apiCredentialId,
@@ -114,17 +114,17 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId, originId: originId],
       call:
-        {Adyen.Management.V1.AllowedOriginsCompanyLevel,
+        {AdyenEx.Management.V1.AllowedOriginsCompanyLevel,
          :get_companies_company_id_api_credentials_api_credential_id_allowed_origins_origin_id},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}/allowedOrigins/#{originId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -145,11 +145,11 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
   @spec post_companies_company_id_api_credentials_api_credential_id_allowed_origins(
           companyId :: String.t(),
           apiCredentialId :: String.t(),
-          body :: Adyen.Management.V1.AllowedOrigin.t(),
+          body :: AdyenEx.Management.V1.AllowedOrigin.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_companies_company_id_api_credentials_api_credential_id_allowed_origins(
         companyId,
         apiCredentialId,
@@ -161,19 +161,19 @@ defmodule Adyen.Management.V1.AllowedOriginsCompanyLevel do
     client.request(%{
       args: [companyId: companyId, apiCredentialId: apiCredentialId, body: body],
       call:
-        {Adyen.Management.V1.AllowedOriginsCompanyLevel,
+        {AdyenEx.Management.V1.AllowedOriginsCompanyLevel,
          :post_companies_company_id_api_credentials_api_credential_id_allowed_origins},
       url: "/companies/#{companyId}/apiCredentials/#{apiCredentialId}/allowedOrigins",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.AllowedOrigin, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.AllowedOrigin, :t}}],
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.CheckoutDelegatedAuthenticationAction do
+defmodule AdyenEx.Checkout.V69.CheckoutDelegatedAuthenticationAction do
   @moduledoc """
   Provides struct and type for a CheckoutDelegatedAuthenticationAction
   """

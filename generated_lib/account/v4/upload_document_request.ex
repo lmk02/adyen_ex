@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V4.UploadDocumentRequest do
+defmodule AdyenEx.Account.V4.UploadDocumentRequest do
   @moduledoc """
   Provides struct and type for a UploadDocumentRequest
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Account.V4.UploadDocumentRequest do
           accountHolderCode: String.t() | nil,
           bankAccountUUID: String.t() | nil,
           documentContent: String.t(),
-          documentDetail: Adyen.Account.V4.DocumentDetail.t(),
+          documentDetail: AdyenEx.Account.V4.DocumentDetail.t(),
           shareholderCode: String.t() | nil
         }
 
@@ -28,7 +28,7 @@ defmodule Adyen.Account.V4.UploadDocumentRequest do
       accountHolderCode: :string,
       bankAccountUUID: :string,
       documentContent: {:string, "byte"},
-      documentDetail: {Adyen.Account.V4.DocumentDetail, :t},
+      documentDetail: {AdyenEx.Account.V4.DocumentDetail, :t},
       shareholderCode: :string
     ]
   end

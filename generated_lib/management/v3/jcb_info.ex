@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.JCBInfo do
+defmodule AdyenEx.Management.V3.JCBInfo do
   @moduledoc """
   Provides struct and type for a JCBInfo
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Management.V3.JCBInfo do
           midNumber: String.t() | nil,
           reuseMidNumber: boolean | nil,
           serviceLevel: String.t() | nil,
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionInfo.t() | nil
+          transactionDescription: AdyenEx.Management.V3.TransactionDescriptionInfo.t() | nil
         }
 
   defstruct [:midNumber, :reuseMidNumber, :serviceLevel, :transactionDescription]
@@ -21,7 +21,7 @@ defmodule Adyen.Management.V3.JCBInfo do
       midNumber: :string,
       reuseMidNumber: :boolean,
       serviceLevel: {:enum, ["noContract", "gatewayContract", "paymentDesignatorContract"]},
-      transactionDescription: {Adyen.Management.V3.TransactionDescriptionInfo, :t}
+      transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionInfo, :t}
     ]
   end
 end

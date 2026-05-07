@@ -1,35 +1,35 @@
-defmodule Adyen.Checkout.V53.PaymentResponse do
+defmodule AdyenEx.Checkout.V53.PaymentResponse do
   @moduledoc """
   Provides struct and type for a PaymentResponse
   """
 
   @type t :: %__MODULE__{
           action:
-            Adyen.Checkout.V53.CheckoutAwaitAction.t()
-            | Adyen.Checkout.V53.CheckoutBankTransferAction.t()
-            | Adyen.Checkout.V53.CheckoutNativeRedirectAction.t()
-            | Adyen.Checkout.V53.CheckoutQrCodeAction.t()
-            | Adyen.Checkout.V53.CheckoutRedirectAction.t()
-            | Adyen.Checkout.V53.CheckoutSDKAction.t()
-            | Adyen.Checkout.V53.CheckoutThreeDs2ChallengeAction.t()
-            | Adyen.Checkout.V53.CheckoutThreeDs2FingerPrintAction.t()
-            | Adyen.Checkout.V53.CheckoutVoucherAction.t()
+            AdyenEx.Checkout.V53.CheckoutAwaitAction.t()
+            | AdyenEx.Checkout.V53.CheckoutBankTransferAction.t()
+            | AdyenEx.Checkout.V53.CheckoutNativeRedirectAction.t()
+            | AdyenEx.Checkout.V53.CheckoutQrCodeAction.t()
+            | AdyenEx.Checkout.V53.CheckoutRedirectAction.t()
+            | AdyenEx.Checkout.V53.CheckoutSDKAction.t()
+            | AdyenEx.Checkout.V53.CheckoutThreeDs2ChallengeAction.t()
+            | AdyenEx.Checkout.V53.CheckoutThreeDs2FingerPrintAction.t()
+            | AdyenEx.Checkout.V53.CheckoutVoucherAction.t()
             | nil,
           additionalData: map | nil,
-          amount: Adyen.Checkout.V53.Amount.t() | nil,
+          amount: AdyenEx.Checkout.V53.Amount.t() | nil,
           authentication: map | nil,
-          details: [Adyen.Checkout.V53.InputDetail.t()] | nil,
-          fraudResult: Adyen.Checkout.V53.FraudResult.t() | nil,
+          details: [AdyenEx.Checkout.V53.InputDetail.t()] | nil,
+          fraudResult: AdyenEx.Checkout.V53.FraudResult.t() | nil,
           merchantReference: String.t() | nil,
-          order: Adyen.Checkout.V53.CheckoutOrderResponse.t() | nil,
+          order: AdyenEx.Checkout.V53.CheckoutOrderResponse.t() | nil,
           outputDetails: map | nil,
           paymentData: String.t() | nil,
           pspReference: String.t() | nil,
-          redirect: Adyen.Checkout.V53.Redirect.t() | nil,
+          redirect: AdyenEx.Checkout.V53.Redirect.t() | nil,
           refusalReason: String.t() | nil,
           refusalReasonCode: String.t() | nil,
           resultCode: String.t() | nil,
-          threeDS2Result: Adyen.Checkout.V53.ThreeDs2Result.t() | nil
+          threeDS2Result: AdyenEx.Checkout.V53.ThreeDs2Result.t() | nil
         }
 
   defstruct [
@@ -60,27 +60,27 @@ defmodule Adyen.Checkout.V53.PaymentResponse do
       action:
         {:union,
          [
-           {Adyen.Checkout.V53.CheckoutAwaitAction, :t},
-           {Adyen.Checkout.V53.CheckoutBankTransferAction, :t},
-           {Adyen.Checkout.V53.CheckoutNativeRedirectAction, :t},
-           {Adyen.Checkout.V53.CheckoutQrCodeAction, :t},
-           {Adyen.Checkout.V53.CheckoutRedirectAction, :t},
-           {Adyen.Checkout.V53.CheckoutSDKAction, :t},
-           {Adyen.Checkout.V53.CheckoutThreeDs2ChallengeAction, :t},
-           {Adyen.Checkout.V53.CheckoutThreeDs2FingerPrintAction, :t},
-           {Adyen.Checkout.V53.CheckoutVoucherAction, :t}
+           {AdyenEx.Checkout.V53.CheckoutAwaitAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutBankTransferAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutNativeRedirectAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutQrCodeAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutRedirectAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutSDKAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutThreeDs2ChallengeAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutThreeDs2FingerPrintAction, :t},
+           {AdyenEx.Checkout.V53.CheckoutVoucherAction, :t}
          ]},
       additionalData: :map,
-      amount: {Adyen.Checkout.V53.Amount, :t},
+      amount: {AdyenEx.Checkout.V53.Amount, :t},
       authentication: :map,
-      details: [{Adyen.Checkout.V53.InputDetail, :t}],
-      fraudResult: {Adyen.Checkout.V53.FraudResult, :t},
+      details: [{AdyenEx.Checkout.V53.InputDetail, :t}],
+      fraudResult: {AdyenEx.Checkout.V53.FraudResult, :t},
       merchantReference: :string,
-      order: {Adyen.Checkout.V53.CheckoutOrderResponse, :t},
+      order: {AdyenEx.Checkout.V53.CheckoutOrderResponse, :t},
       outputDetails: :map,
       paymentData: :string,
       pspReference: :string,
-      redirect: {Adyen.Checkout.V53.Redirect, :t},
+      redirect: {AdyenEx.Checkout.V53.Redirect, :t},
       refusalReason: :string,
       refusalReasonCode: :string,
       resultCode:
@@ -101,7 +101,7 @@ defmodule Adyen.Checkout.V53.PaymentResponse do
            "Refused",
            "Success"
          ]},
-      threeDS2Result: {Adyen.Checkout.V53.ThreeDs2Result, :t}
+      threeDS2Result: {AdyenEx.Checkout.V53.ThreeDs2Result, :t}
     ]
   end
 end

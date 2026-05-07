@@ -1,4 +1,4 @@
-defmodule Adyen.BinLookup.V40.Amount do
+defmodule AdyenEx.BinLookup.V40.Amount do
   @moduledoc """
   Provides struct and type for a Amount
   """

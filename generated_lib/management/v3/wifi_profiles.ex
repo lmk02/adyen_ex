@@ -1,11 +1,11 @@
-defmodule Adyen.Management.V3.WifiProfiles do
+defmodule AdyenEx.Management.V3.WifiProfiles do
   @moduledoc """
   Provides struct and type for a WifiProfiles
   """
 
   @type t :: %__MODULE__{
-          profiles: [Adyen.Management.V3.Profile.t()] | nil,
-          settings: Adyen.Management.V3.Settings.t() | nil
+          profiles: [AdyenEx.Management.V3.Profile.t()] | nil,
+          settings: AdyenEx.Management.V3.Settings.t() | nil
         }
 
   defstruct [:profiles, :settings]
@@ -15,6 +15,9 @@ defmodule Adyen.Management.V3.WifiProfiles do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [profiles: [{Adyen.Management.V3.Profile, :t}], settings: {Adyen.Management.V3.Settings, :t}]
+    [
+      profiles: [{AdyenEx.Management.V3.Profile, :t}],
+      settings: {AdyenEx.Management.V3.Settings, :t}
+    ]
   end
 end

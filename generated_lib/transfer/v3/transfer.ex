@@ -1,32 +1,32 @@
-defmodule Adyen.Transfer.V3.Transfer do
+defmodule AdyenEx.Transfer.V3.Transfer do
   @moduledoc """
   Provides struct and type for a Transfer
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.Transfer.V3.ResourceReference.t() | nil,
-          amount: Adyen.Transfer.V3.Amount.t(),
-          balanceAccount: Adyen.Transfer.V3.ResourceReference.t() | nil,
+          accountHolder: AdyenEx.Transfer.V3.ResourceReference.t() | nil,
+          amount: AdyenEx.Transfer.V3.Amount.t(),
+          balanceAccount: AdyenEx.Transfer.V3.ResourceReference.t() | nil,
           balanceAccountId: String.t() | nil,
           category: String.t(),
-          counterparty: Adyen.Transfer.V3.CounterpartyV3.t(),
+          counterparty: AdyenEx.Transfer.V3.CounterpartyV3.t(),
           createdAt: DateTime.t() | nil,
           creationDate: DateTime.t() | nil,
           description: String.t() | nil,
-          directDebitInformation: Adyen.Transfer.V3.DirectDebitInformation.t() | nil,
+          directDebitInformation: AdyenEx.Transfer.V3.DirectDebitInformation.t() | nil,
           direction: String.t() | nil,
-          executionDate: Adyen.Transfer.V3.ExecutionDate.t() | nil,
+          executionDate: AdyenEx.Transfer.V3.ExecutionDate.t() | nil,
           id: String.t() | nil,
-          paymentInstrument: Adyen.Transfer.V3.PaymentInstrument.t() | nil,
+          paymentInstrument: AdyenEx.Transfer.V3.PaymentInstrument.t() | nil,
           paymentInstrumentId: String.t() | nil,
           priority: String.t() | nil,
           reason: String.t() | nil,
           reference: String.t() | nil,
           referenceForBeneficiary: String.t() | nil,
-          review: Adyen.Transfer.V3.TransferReview.t() | nil,
+          review: AdyenEx.Transfer.V3.TransferReview.t() | nil,
           status: String.t(),
           type: String.t() | nil,
-          ultimateParty: Adyen.Transfer.V3.UltimatePartyIdentification.t() | nil
+          ultimateParty: AdyenEx.Transfer.V3.UltimatePartyIdentification.t() | nil
         }
 
   defstruct [
@@ -61,20 +61,20 @@ defmodule Adyen.Transfer.V3.Transfer do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.Transfer.V3.ResourceReference, :t},
-      amount: {Adyen.Transfer.V3.Amount, :t},
-      balanceAccount: {Adyen.Transfer.V3.ResourceReference, :t},
+      accountHolder: {AdyenEx.Transfer.V3.ResourceReference, :t},
+      amount: {AdyenEx.Transfer.V3.Amount, :t},
+      balanceAccount: {AdyenEx.Transfer.V3.ResourceReference, :t},
       balanceAccountId: :string,
       category: {:enum, ["bank", "card", "internal", "issuedCard", "platformPayment", "topUp"]},
-      counterparty: {Adyen.Transfer.V3.CounterpartyV3, :t},
+      counterparty: {AdyenEx.Transfer.V3.CounterpartyV3, :t},
       createdAt: {:string, "date-time"},
       creationDate: {:string, "date-time"},
       description: :string,
-      directDebitInformation: {Adyen.Transfer.V3.DirectDebitInformation, :t},
+      directDebitInformation: {AdyenEx.Transfer.V3.DirectDebitInformation, :t},
       direction: {:enum, ["incoming", "outgoing"]},
-      executionDate: {Adyen.Transfer.V3.ExecutionDate, :t},
+      executionDate: {AdyenEx.Transfer.V3.ExecutionDate, :t},
       id: :string,
-      paymentInstrument: {Adyen.Transfer.V3.PaymentInstrument, :t},
+      paymentInstrument: {AdyenEx.Transfer.V3.PaymentInstrument, :t},
       paymentInstrumentId: :string,
       priority: {:enum, ["crossBorder", "fast", "instant", "internal", "regular", "wire"]},
       reason:
@@ -168,7 +168,7 @@ defmodule Adyen.Transfer.V3.Transfer do
          ]},
       reference: :string,
       referenceForBeneficiary: :string,
-      review: {Adyen.Transfer.V3.TransferReview, :t},
+      review: {AdyenEx.Transfer.V3.TransferReview, :t},
       status:
         {:enum,
          [
@@ -285,7 +285,7 @@ defmodule Adyen.Transfer.V3.Transfer do
            "balanceRollover",
            "balanceMigration"
          ]},
-      ultimateParty: {Adyen.Transfer.V3.UltimatePartyIdentification, :t}
+      ultimateParty: {AdyenEx.Transfer.V3.UltimatePartyIdentification, :t}
     ]
   end
 end

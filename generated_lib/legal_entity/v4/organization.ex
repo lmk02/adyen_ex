@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.Organization do
+defmodule AdyenEx.LegalEntity.V4.Organization do
   @moduledoc """
   Provides struct and type for a Organization
   """
@@ -12,26 +12,26 @@ defmodule Adyen.LegalEntity.V4.Organization do
           doingBusinessAsAbsent: boolean | nil,
           economicSector: String.t() | nil,
           email: String.t() | nil,
-          financialReports: [Adyen.LegalEntity.V4.FinancialReport.t()] | nil,
+          financialReports: [AdyenEx.LegalEntity.V4.FinancialReport.t()] | nil,
           globalLegalEntityIdentifier: String.t() | nil,
           headOfficeIndicator: boolean | nil,
           institutionalSector: String.t() | nil,
           legalForm: String.t() | nil,
           legalName: String.t(),
-          phone: Adyen.LegalEntity.V4.PhoneNumber.t() | nil,
-          principalPlaceOfBusiness: Adyen.LegalEntity.V4.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V4.Address.t(),
+          phone: AdyenEx.LegalEntity.V4.PhoneNumber.t() | nil,
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V4.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V4.Address.t(),
           registrationNumber: String.t() | nil,
           registrationNumberAbsent: boolean | nil,
           statusOfLegalProceeding: String.t() | nil,
-          stockData: Adyen.LegalEntity.V4.StockData.t() | nil,
-          support: Adyen.LegalEntity.V4.Support.t() | nil,
-          taxInformation: [Adyen.LegalEntity.V4.TaxInformation.t()] | nil,
-          taxReportingClassification: Adyen.LegalEntity.V4.TaxReportingClassification.t() | nil,
+          stockData: AdyenEx.LegalEntity.V4.StockData.t() | nil,
+          support: AdyenEx.LegalEntity.V4.Support.t() | nil,
+          taxInformation: [AdyenEx.LegalEntity.V4.TaxInformation.t()] | nil,
+          taxReportingClassification: AdyenEx.LegalEntity.V4.TaxReportingClassification.t() | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil,
-          webData: Adyen.LegalEntity.V4.WebData.t() | nil
+          webData: AdyenEx.LegalEntity.V4.WebData.t() | nil
         }
 
   defstruct [
@@ -79,7 +79,7 @@ defmodule Adyen.LegalEntity.V4.Organization do
       doingBusinessAsAbsent: :boolean,
       economicSector: :string,
       email: :string,
-      financialReports: [{Adyen.LegalEntity.V4.FinancialReport, :t}],
+      financialReports: [{AdyenEx.LegalEntity.V4.FinancialReport, :t}],
       globalLegalEntityIdentifier: :string,
       headOfficeIndicator: :boolean,
       institutionalSector:
@@ -105,9 +105,9 @@ defmodule Adyen.LegalEntity.V4.Organization do
          ]},
       legalForm: :string,
       legalName: :string,
-      phone: {Adyen.LegalEntity.V4.PhoneNumber, :t},
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V4.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V4.Address, :t},
+      phone: {AdyenEx.LegalEntity.V4.PhoneNumber, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V4.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V4.Address, :t},
       registrationNumber: :string,
       registrationNumberAbsent: :boolean,
       statusOfLegalProceeding:
@@ -118,10 +118,10 @@ defmodule Adyen.LegalEntity.V4.Organization do
            "bankruptcyInsolvency",
            "otherLegalMeasures"
          ]},
-      stockData: {Adyen.LegalEntity.V4.StockData, :t},
-      support: {Adyen.LegalEntity.V4.Support, :t},
-      taxInformation: [{Adyen.LegalEntity.V4.TaxInformation, :t}],
-      taxReportingClassification: {Adyen.LegalEntity.V4.TaxReportingClassification, :t},
+      stockData: {AdyenEx.LegalEntity.V4.StockData, :t},
+      support: {AdyenEx.LegalEntity.V4.Support, :t},
+      taxInformation: [{AdyenEx.LegalEntity.V4.TaxInformation, :t}],
+      taxReportingClassification: {AdyenEx.LegalEntity.V4.TaxReportingClassification, :t},
       type:
         {:enum,
          [
@@ -134,7 +134,7 @@ defmodule Adyen.LegalEntity.V4.Organization do
          ]},
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
       vatNumber: :string,
-      webData: {Adyen.LegalEntity.V4.WebData, :t}
+      webData: {AdyenEx.LegalEntity.V4.WebData, :t}
     ]
   end
 end

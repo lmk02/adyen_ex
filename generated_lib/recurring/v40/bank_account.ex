@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V40.BankAccount do
+defmodule AdyenEx.Recurring.V40.BankAccount do
   @moduledoc """
   Provides struct and type for a BankAccount
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Device do
+defmodule AdyenEx.BalancePlatform.V2.Device do
   @moduledoc """
   Provides struct and type for a Device
   """

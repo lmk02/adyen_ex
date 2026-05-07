@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.CheckoutNativeRedirectAction do
+defmodule AdyenEx.Checkout.V72.CheckoutNativeRedirectAction do
   @moduledoc """
   Provides struct and type for a CheckoutNativeRedirectAction
   """

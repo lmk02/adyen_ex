@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V1.Authentication do
+defmodule AdyenEx.BalancePlatform.V1.Authentication do
   @moduledoc """
   Provides struct and type for a Authentication
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V1.Authentication do
   @type t :: %__MODULE__{
           email: String.t() | nil,
           password: String.t() | nil,
-          phone: Adyen.BalancePlatform.V1.Phone.t() | nil
+          phone: AdyenEx.BalancePlatform.V1.Phone.t() | nil
         }
 
   defstruct [:email, :password, :phone]
@@ -16,6 +16,6 @@ defmodule Adyen.BalancePlatform.V1.Authentication do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [email: :string, password: :string, phone: {Adyen.BalancePlatform.V1.Phone, :t}]
+    [email: :string, password: :string, phone: {AdyenEx.BalancePlatform.V1.Phone, :t}]
   end
 end

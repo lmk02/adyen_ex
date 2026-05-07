@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.DeleteSignatoriesRequest do
+defmodule AdyenEx.Account.V3.DeleteSignatoriesRequest do
   @moduledoc """
   Provides struct and type for a DeleteSignatoriesRequest
   """

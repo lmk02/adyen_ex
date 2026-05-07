@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.Input do
+defmodule AdyenEx.TerminalAPI.V1.Input do
   @moduledoc """
   Provides struct and type for a Input
   """

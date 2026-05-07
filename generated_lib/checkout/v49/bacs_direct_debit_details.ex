@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.BacsDirectDebitDetails do
+defmodule AdyenEx.Checkout.V49.BacsDirectDebitDetails do
   @moduledoc """
   Provides struct and type for a BacsDirectDebitDetails
   """

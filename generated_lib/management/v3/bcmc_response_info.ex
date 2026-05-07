@@ -1,11 +1,12 @@
-defmodule Adyen.Management.V3.BcmcResponseInfo do
+defmodule AdyenEx.Management.V3.BcmcResponseInfo do
   @moduledoc """
   Provides struct and type for a BcmcResponseInfo
   """
 
   @type t :: %__MODULE__{
           enableBcmcMobile: boolean | nil,
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V3.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:enableBcmcMobile, :transactionDescription]
@@ -17,7 +18,7 @@ defmodule Adyen.Management.V3.BcmcResponseInfo do
   def __fields__(:t) do
     [
       enableBcmcMobile: :boolean,
-      transactionDescription: {Adyen.Management.V3.TransactionDescriptionResponseInfo, :t}
+      transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionResponseInfo, :t}
     ]
   end
 end

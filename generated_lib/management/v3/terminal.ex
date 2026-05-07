@@ -1,16 +1,16 @@
-defmodule Adyen.Management.V3.Terminal do
+defmodule AdyenEx.Management.V3.Terminal do
   @moduledoc """
   Provides struct and type for a Terminal
   """
 
   @type t :: %__MODULE__{
-          assignment: Adyen.Management.V3.TerminalAssignment.t() | nil,
+          assignment: AdyenEx.Management.V3.TerminalAssignment.t() | nil,
           cloudDeviceApiEndpoint: String.t() | nil,
-          connectivity: Adyen.Management.V3.TerminalConnectivity.t() | nil,
+          connectivity: AdyenEx.Management.V3.TerminalConnectivity.t() | nil,
           countryCode: String.t() | nil,
           firmwareVersion: String.t() | nil,
           id: String.t() | nil,
-          installedAPKs: [Adyen.Management.V3.InstalledAPKs.t()] | nil,
+          installedAPKs: [AdyenEx.Management.V3.InstalledAPKs.t()] | nil,
           lastActivityAt: DateTime.t() | nil,
           lastTransactionAt: DateTime.t() | nil,
           model: String.t() | nil,
@@ -39,13 +39,13 @@ defmodule Adyen.Management.V3.Terminal do
 
   def __fields__(:t) do
     [
-      assignment: {Adyen.Management.V3.TerminalAssignment, :t},
+      assignment: {AdyenEx.Management.V3.TerminalAssignment, :t},
       cloudDeviceApiEndpoint: :string,
-      connectivity: {Adyen.Management.V3.TerminalConnectivity, :t},
+      connectivity: {AdyenEx.Management.V3.TerminalConnectivity, :t},
       countryCode: :string,
       firmwareVersion: :string,
       id: :string,
-      installedAPKs: [{Adyen.Management.V3.InstalledAPKs, :t}],
+      installedAPKs: [{AdyenEx.Management.V3.InstalledAPKs, :t}],
       lastActivityAt: {:string, "date-time"},
       lastTransactionAt: {:string, "date-time"},
       model: :string,

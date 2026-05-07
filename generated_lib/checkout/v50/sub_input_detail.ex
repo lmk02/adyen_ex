@@ -1,11 +1,11 @@
-defmodule Adyen.Checkout.V50.SubInputDetail do
+defmodule AdyenEx.Checkout.V50.SubInputDetail do
   @moduledoc """
   Provides struct and type for a SubInputDetail
   """
 
   @type t :: %__MODULE__{
           configuration: map | nil,
-          items: [Adyen.Checkout.V50.Item.t()] | nil,
+          items: [AdyenEx.Checkout.V50.Item.t()] | nil,
           key: String.t() | nil,
           optional: boolean | nil,
           type: String.t() | nil,
@@ -21,7 +21,7 @@ defmodule Adyen.Checkout.V50.SubInputDetail do
   def __fields__(:t) do
     [
       configuration: :map,
-      items: [{Adyen.Checkout.V50.Item, :t}],
+      items: [{AdyenEx.Checkout.V50.Item, :t}],
       key: :string,
       optional: :boolean,
       type: :string,

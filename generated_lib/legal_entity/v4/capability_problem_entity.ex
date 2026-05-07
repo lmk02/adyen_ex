@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.CapabilityProblemEntity do
+defmodule AdyenEx.LegalEntity.V4.CapabilityProblemEntity do
   @moduledoc """
   Provides struct and type for a CapabilityProblemEntity
   """
@@ -6,7 +6,7 @@ defmodule Adyen.LegalEntity.V4.CapabilityProblemEntity do
   @type t :: %__MODULE__{
           documents: [String.t()] | nil,
           id: String.t() | nil,
-          owner: Adyen.LegalEntity.V4.CapabilityProblemEntityRecursive.t() | nil,
+          owner: AdyenEx.LegalEntity.V4.CapabilityProblemEntityRecursive.t() | nil,
           type: String.t() | nil
         }
 
@@ -20,7 +20,7 @@ defmodule Adyen.LegalEntity.V4.CapabilityProblemEntity do
     [
       documents: [:string],
       id: :string,
-      owner: {Adyen.LegalEntity.V4.CapabilityProblemEntityRecursive, :t},
+      owner: {AdyenEx.LegalEntity.V4.CapabilityProblemEntityRecursive, :t},
       type: {:enum, ["BankAccount", "Document", "LegalEntity", "product"]}
     ]
   end

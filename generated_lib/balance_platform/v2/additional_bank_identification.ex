@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AdditionalBankIdentification do
+defmodule AdyenEx.BalancePlatform.V2.AdditionalBankIdentification do
   @moduledoc """
   Provides struct and type for a AdditionalBankIdentification
   """

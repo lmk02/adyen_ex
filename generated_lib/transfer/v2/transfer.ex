@@ -1,13 +1,13 @@
-defmodule Adyen.Transfer.V2.Transfer do
+defmodule AdyenEx.Transfer.V2.Transfer do
   @moduledoc """
   Provides struct and type for a Transfer
   """
 
   @type t :: %__MODULE__{
-          amount: Adyen.Transfer.V2.Amount.t(),
+          amount: AdyenEx.Transfer.V2.Amount.t(),
           balanceAccountId: String.t() | nil,
-          bank: Adyen.Transfer.V2.Bank.t() | nil,
-          counterparty: Adyen.Transfer.V2.Counterparty.t(),
+          bank: AdyenEx.Transfer.V2.Bank.t() | nil,
+          counterparty: AdyenEx.Transfer.V2.Counterparty.t(),
           description: String.t() | nil,
           direction: String.t() | nil,
           id: String.t() | nil,
@@ -39,10 +39,10 @@ defmodule Adyen.Transfer.V2.Transfer do
 
   def __fields__(:t) do
     [
-      amount: {Adyen.Transfer.V2.Amount, :t},
+      amount: {AdyenEx.Transfer.V2.Amount, :t},
       balanceAccountId: :string,
-      bank: {Adyen.Transfer.V2.Bank, :t},
-      counterparty: {Adyen.Transfer.V2.Counterparty, :t},
+      bank: {AdyenEx.Transfer.V2.Bank, :t},
+      counterparty: {AdyenEx.Transfer.V2.Counterparty, :t},
       description: :string,
       direction: {:enum, ["incoming", "outgoing"]},
       id: :string,

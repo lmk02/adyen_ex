@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.DisplayOutput do
+defmodule AdyenEx.TerminalAPI.V1.DisplayOutput do
   @moduledoc """
   Provides struct and type for a DisplayOutput
   """
@@ -6,9 +6,9 @@ defmodule Adyen.TerminalAPI.V1.DisplayOutput do
   @type t :: %__MODULE__{
           Device: String.t(),
           InfoQualify: String.t(),
-          MenuEntry: [Adyen.TerminalAPI.V1.MenuEntry.t()] | nil,
+          MenuEntry: [AdyenEx.TerminalAPI.V1.MenuEntry.t()] | nil,
           MinimumDisplayTime: integer | nil,
-          OutputContent: Adyen.TerminalAPI.V1.OutputContent.t(),
+          OutputContent: AdyenEx.TerminalAPI.V1.OutputContent.t(),
           OutputSignature: String.t() | nil,
           ResponseRequiredFlag: boolean | nil
         }
@@ -44,9 +44,9 @@ defmodule Adyen.TerminalAPI.V1.DisplayOutput do
            "Status",
            "Voucher"
          ]},
-      MenuEntry: [{Adyen.TerminalAPI.V1.MenuEntry, :t}],
+      MenuEntry: [{AdyenEx.TerminalAPI.V1.MenuEntry, :t}],
       MinimumDisplayTime: :integer,
-      OutputContent: {Adyen.TerminalAPI.V1.OutputContent, :t},
+      OutputContent: {AdyenEx.TerminalAPI.V1.OutputContent, :t},
       OutputSignature: {:string, "byte"},
       ResponseRequiredFlag: :boolean
     ]

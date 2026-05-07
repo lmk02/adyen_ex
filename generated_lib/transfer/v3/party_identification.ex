@@ -1,10 +1,10 @@
-defmodule Adyen.Transfer.V3.PartyIdentification do
+defmodule AdyenEx.Transfer.V3.PartyIdentification do
   @moduledoc """
   Provides struct and type for a PartyIdentification
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Transfer.V3.Address.t() | nil,
+          address: AdyenEx.Transfer.V3.Address.t() | nil,
           dateOfBirth: Date.t() | nil,
           email: String.t() | nil,
           firstName: String.t() | nil,
@@ -33,7 +33,7 @@ defmodule Adyen.Transfer.V3.PartyIdentification do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Transfer.V3.Address, :t},
+      address: {AdyenEx.Transfer.V3.Address, :t},
       dateOfBirth: {:string, "date"},
       email: :string,
       firstName: :string,

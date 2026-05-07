@@ -1,16 +1,16 @@
-defmodule Adyen.Account.V5.SignatoryContact do
+defmodule AdyenEx.Account.V5.SignatoryContact do
   @moduledoc """
   Provides struct and type for a SignatoryContact
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Account.V5.ViasAddress.t() | nil,
+          address: AdyenEx.Account.V5.ViasAddress.t() | nil,
           email: String.t() | nil,
           fullPhoneNumber: String.t() | nil,
           jobTitle: String.t() | nil,
-          name: Adyen.Account.V5.ViasName.t() | nil,
-          personalData: Adyen.Account.V5.ViasPersonalData.t() | nil,
-          phoneNumber: Adyen.Account.V5.ViasPhoneNumber.t() | nil,
+          name: AdyenEx.Account.V5.ViasName.t() | nil,
+          personalData: AdyenEx.Account.V5.ViasPersonalData.t() | nil,
+          phoneNumber: AdyenEx.Account.V5.ViasPhoneNumber.t() | nil,
           signatoryCode: String.t() | nil,
           signatoryReference: String.t() | nil,
           webAddress: String.t() | nil
@@ -35,13 +35,13 @@ defmodule Adyen.Account.V5.SignatoryContact do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Account.V5.ViasAddress, :t},
+      address: {AdyenEx.Account.V5.ViasAddress, :t},
       email: :string,
       fullPhoneNumber: :string,
       jobTitle: :string,
-      name: {Adyen.Account.V5.ViasName, :t},
-      personalData: {Adyen.Account.V5.ViasPersonalData, :t},
-      phoneNumber: {Adyen.Account.V5.ViasPhoneNumber, :t},
+      name: {AdyenEx.Account.V5.ViasName, :t},
+      personalData: {AdyenEx.Account.V5.ViasPersonalData, :t},
+      phoneNumber: {AdyenEx.Account.V5.ViasPhoneNumber, :t},
       signatoryCode: :string,
       signatoryReference: :string,
       webAddress: :string

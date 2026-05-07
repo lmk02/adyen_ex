@@ -1,9 +1,9 @@
-defmodule AdyenTest do
+defmodule AdyenExTest do
   use ExUnit.Case
 
-  doctest Adyen
+  doctest AdyenEx
 
   test "version returns the library version" do
-    assert Adyen.version() == "0.1.0"
+    assert AdyenEx.version() == "0.1.0"
   end
 end

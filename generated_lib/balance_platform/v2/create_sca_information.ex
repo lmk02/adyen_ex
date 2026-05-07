@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.CreateScaInformation do
+defmodule AdyenEx.BalancePlatform.V2.CreateScaInformation do
   @moduledoc """
   Provides struct and type for a CreateScaInformation
   """

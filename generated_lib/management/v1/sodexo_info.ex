@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.SodexoInfo do
+defmodule AdyenEx.Management.V1.SodexoInfo do
   @moduledoc """
   Provides struct and type for a SodexoInfo
   """

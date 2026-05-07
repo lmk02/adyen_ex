@@ -1,13 +1,13 @@
-defmodule Adyen.Capital.V1.GrantAccount do
+defmodule AdyenEx.Capital.V1.GrantAccount do
   @moduledoc """
   Provides struct and type for a GrantAccount
   """
 
   @type t :: %__MODULE__{
-          balances: [Adyen.Capital.V1.Balance.t()] | nil,
+          balances: [AdyenEx.Capital.V1.Balance.t()] | nil,
           fundingBalanceAccountId: String.t() | nil,
           id: String.t() | nil,
-          limits: [Adyen.Capital.V1.GrantLimit.t()] | nil
+          limits: [AdyenEx.Capital.V1.GrantLimit.t()] | nil
         }
 
   defstruct [:balances, :fundingBalanceAccountId, :id, :limits]
@@ -18,10 +18,10 @@ defmodule Adyen.Capital.V1.GrantAccount do
 
   def __fields__(:t) do
     [
-      balances: [{Adyen.Capital.V1.Balance, :t}],
+      balances: [{AdyenEx.Capital.V1.Balance, :t}],
       fundingBalanceAccountId: :string,
       id: :string,
-      limits: [{Adyen.Capital.V1.GrantLimit, :t}]
+      limits: [{AdyenEx.Capital.V1.GrantLimit, :t}]
     ]
   end
 end

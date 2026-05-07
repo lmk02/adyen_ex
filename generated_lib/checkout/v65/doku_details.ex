@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V65.DokuDetails do
+defmodule AdyenEx.Checkout.V65.DokuDetails do
   @moduledoc """
   Provides struct and type for a DokuDetails
   """

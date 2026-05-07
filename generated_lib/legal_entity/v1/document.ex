@@ -1,11 +1,11 @@
-defmodule Adyen.LegalEntity.V1.Document do
+defmodule AdyenEx.LegalEntity.V1.Document do
   @moduledoc """
   Provides struct and type for a Document
   """
 
   @type t :: %__MODULE__{
-          attachment: Adyen.LegalEntity.V1.Attachment.t() | nil,
-          attachments: [Adyen.LegalEntity.V1.Attachment.t()] | nil,
+          attachment: AdyenEx.LegalEntity.V1.Attachment.t() | nil,
+          attachments: [AdyenEx.LegalEntity.V1.Attachment.t()] | nil,
           creationDate: DateTime.t() | nil,
           description: String.t(),
           expiryDate: String.t() | nil,
@@ -15,7 +15,7 @@ defmodule Adyen.LegalEntity.V1.Document do
           issuerState: String.t() | nil,
           modificationDate: DateTime.t() | nil,
           number: String.t() | nil,
-          owner: Adyen.LegalEntity.V1.OwnerEntity.t() | nil,
+          owner: AdyenEx.LegalEntity.V1.OwnerEntity.t() | nil,
           type: String.t()
         }
 
@@ -41,8 +41,8 @@ defmodule Adyen.LegalEntity.V1.Document do
 
   def __fields__(:t) do
     [
-      attachment: {Adyen.LegalEntity.V1.Attachment, :t},
-      attachments: [{Adyen.LegalEntity.V1.Attachment, :t}],
+      attachment: {AdyenEx.LegalEntity.V1.Attachment, :t},
+      attachments: [{AdyenEx.LegalEntity.V1.Attachment, :t}],
       creationDate: {:string, "date-time"},
       description: :string,
       expiryDate: :string,
@@ -52,7 +52,7 @@ defmodule Adyen.LegalEntity.V1.Document do
       issuerState: :string,
       modificationDate: {:string, "date-time"},
       number: :string,
-      owner: {Adyen.LegalEntity.V1.OwnerEntity, :t},
+      owner: {AdyenEx.LegalEntity.V1.OwnerEntity, :t},
       type:
         {:enum,
          [

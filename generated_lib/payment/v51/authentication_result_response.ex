@@ -1,11 +1,11 @@
-defmodule Adyen.Payment.V51.AuthenticationResultResponse do
+defmodule AdyenEx.Payment.V51.AuthenticationResultResponse do
   @moduledoc """
   Provides struct and type for a AuthenticationResultResponse
   """
 
   @type t :: %__MODULE__{
-          threeDS1Result: Adyen.Payment.V51.ThreeDs1Result.t() | nil,
-          threeDS2Result: Adyen.Payment.V51.ThreeDs2Result.t() | nil
+          threeDS1Result: AdyenEx.Payment.V51.ThreeDs1Result.t() | nil,
+          threeDS2Result: AdyenEx.Payment.V51.ThreeDs2Result.t() | nil
         }
 
   defstruct [:threeDS1Result, :threeDS2Result]
@@ -16,8 +16,8 @@ defmodule Adyen.Payment.V51.AuthenticationResultResponse do
 
   def __fields__(:t) do
     [
-      threeDS1Result: {Adyen.Payment.V51.ThreeDs1Result, :t},
-      threeDS2Result: {Adyen.Payment.V51.ThreeDs2Result, :t}
+      threeDS1Result: {AdyenEx.Payment.V51.ThreeDs1Result, :t},
+      threeDS2Result: {AdyenEx.Payment.V51.ThreeDs2Result, :t}
     ]
   end
 end

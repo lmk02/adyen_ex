@@ -1,17 +1,15 @@
-defmodule Adyen.ConfigTest do
+defmodule AdyenEx.ConfigTest do
   # Not async because we modifying app env
   use ExUnit.Case, async: false
 
-  alias Adyen.Config
+  alias AdyenEx.Config
 
   setup do
-    # Reset config
     original_config = Application.get_all_env(:adyen_ex)
 
     on_exit(fn ->
-      # Clear existing env before reset
       for {k, _} <- Application.get_all_env(:adyen_ex), do: Application.delete_env(:adyen_ex, k)
-      Application.put_all_env(adyen: original_config)
+      Application.put_all_env(adyen_ex: original_config)
     end)
 
     :ok

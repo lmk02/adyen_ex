@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.AndroidApp do
+defmodule AdyenEx.Management.V3.AndroidApp do
   @moduledoc """
   Provides struct and type for a AndroidApp
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Management.V3.AndroidApp do
   @type t :: %__MODULE__{
           description: String.t() | nil,
           errorCode: String.t() | nil,
-          errors: [Adyen.Management.V3.AndroidAppError.t()] | nil,
+          errors: [AdyenEx.Management.V3.AndroidAppError.t()] | nil,
           id: String.t(),
           label: String.t() | nil,
           packageName: String.t() | nil,
@@ -35,7 +35,7 @@ defmodule Adyen.Management.V3.AndroidApp do
     [
       description: :string,
       errorCode: :string,
-      errors: [{Adyen.Management.V3.AndroidAppError, :t}],
+      errors: [{AdyenEx.Management.V3.AndroidAppError, :t}],
       id: :string,
       label: :string,
       packageName: :string,

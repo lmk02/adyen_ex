@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.SoleProprietorship do
+defmodule AdyenEx.LegalEntity.V4.SoleProprietorship do
   @moduledoc """
   Provides struct and type for a SoleProprietorship
   """
@@ -8,13 +8,13 @@ defmodule Adyen.LegalEntity.V4.SoleProprietorship do
           dateOfIncorporation: String.t() | nil,
           doingBusinessAs: String.t() | nil,
           doingBusinessAsAbsent: boolean | nil,
-          financialReports: [Adyen.LegalEntity.V4.FinancialReport.t()] | nil,
+          financialReports: [AdyenEx.LegalEntity.V4.FinancialReport.t()] | nil,
           name: String.t(),
-          principalPlaceOfBusiness: Adyen.LegalEntity.V4.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V4.Address.t(),
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V4.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V4.Address.t(),
           registrationNumber: String.t() | nil,
           taxAbsent: boolean | nil,
-          taxInformation: [Adyen.LegalEntity.V4.TaxInformation.t()] | nil,
+          taxInformation: [AdyenEx.LegalEntity.V4.TaxInformation.t()] | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil
         }
@@ -45,13 +45,13 @@ defmodule Adyen.LegalEntity.V4.SoleProprietorship do
       dateOfIncorporation: :string,
       doingBusinessAs: :string,
       doingBusinessAsAbsent: :boolean,
-      financialReports: [{Adyen.LegalEntity.V4.FinancialReport, :t}],
+      financialReports: [{AdyenEx.LegalEntity.V4.FinancialReport, :t}],
       name: :string,
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V4.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V4.Address, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V4.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V4.Address, :t},
       registrationNumber: :string,
       taxAbsent: :boolean,
-      taxInformation: [{Adyen.LegalEntity.V4.TaxInformation, :t}],
+      taxInformation: [{AdyenEx.LegalEntity.V4.TaxInformation, :t}],
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
       vatNumber: :string
     ]

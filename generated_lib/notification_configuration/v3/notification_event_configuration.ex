@@ -1,4 +1,4 @@
-defmodule Adyen.NotificationConfiguration.V3.NotificationEventConfiguration do
+defmodule AdyenEx.NotificationConfiguration.V3.NotificationEventConfiguration do
   @moduledoc """
   Provides struct and type for a NotificationEventConfiguration
   """

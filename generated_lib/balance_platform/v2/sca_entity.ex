@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.ScaEntity do
+defmodule AdyenEx.BalancePlatform.V2.ScaEntity do
   @moduledoc """
   Provides struct and type for a ScaEntity
   """

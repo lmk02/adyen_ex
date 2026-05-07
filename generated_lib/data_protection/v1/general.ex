@@ -1,9 +1,9 @@
-defmodule Adyen.DataProtection.V1.General do
+defmodule AdyenEx.DataProtection.V1.General do
   @moduledoc """
   Provides API endpoint related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Submit a Subject Erasure Request.
@@ -15,30 +15,30 @@ defmodule Adyen.DataProtection.V1.General do
   **Content Types**: `application/json`
   """
   @spec post_request_subject_erasure(
-          body :: Adyen.DataProtection.V1.SubjectErasureByPspReferenceRequest.t(),
+          body :: AdyenEx.DataProtection.V1.SubjectErasureByPspReferenceRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.DataProtection.V1.SubjectErasureResponse.t()}
-          | {:error, Adyen.DataProtection.V1.ServiceError.t()}
+          {:ok, AdyenEx.DataProtection.V1.SubjectErasureResponse.t()}
+          | {:error, AdyenEx.DataProtection.V1.ServiceError.t()}
   def post_request_subject_erasure(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.DataProtection.V1.General, :post_request_subject_erasure},
+      call: {AdyenEx.DataProtection.V1.General, :post_request_subject_erasure},
       url: "/requestSubjectErasure",
       body: body,
       method: :post,
       request: [
-        {"application/json", {Adyen.DataProtection.V1.SubjectErasureByPspReferenceRequest, :t}}
+        {"application/json", {AdyenEx.DataProtection.V1.SubjectErasureByPspReferenceRequest, :t}}
       ],
       response: [
-        {200, {Adyen.DataProtection.V1.SubjectErasureResponse, :t}},
-        {400, {Adyen.DataProtection.V1.ServiceError, :t}},
-        {401, {Adyen.DataProtection.V1.ServiceError, :t}},
-        {403, {Adyen.DataProtection.V1.ServiceError, :t}},
-        {422, {Adyen.DataProtection.V1.ServiceError, :t}},
-        {500, {Adyen.DataProtection.V1.ServiceError, :t}}
+        {200, {AdyenEx.DataProtection.V1.SubjectErasureResponse, :t}},
+        {400, {AdyenEx.DataProtection.V1.ServiceError, :t}},
+        {401, {AdyenEx.DataProtection.V1.ServiceError, :t}},
+        {403, {AdyenEx.DataProtection.V1.ServiceError, :t}},
+        {422, {AdyenEx.DataProtection.V1.ServiceError, :t}},
+        {500, {AdyenEx.DataProtection.V1.ServiceError, :t}}
       ],
       opts: opts
     })

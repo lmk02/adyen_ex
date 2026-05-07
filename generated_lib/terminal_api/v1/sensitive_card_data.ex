@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.SensitiveCardData do
+defmodule AdyenEx.TerminalAPI.V1.SensitiveCardData do
   @moduledoc """
   Provides struct and type for a SensitiveCardData
   """
@@ -7,7 +7,7 @@ defmodule Adyen.TerminalAPI.V1.SensitiveCardData do
           CardSeqNumb: integer | nil,
           ExpiryDate: integer | nil,
           PAN: integer | nil,
-          TrackData: [Adyen.TerminalAPI.V1.TrackData.t()] | nil
+          TrackData: [AdyenEx.TerminalAPI.V1.TrackData.t()] | nil
         }
 
   defstruct [:CardSeqNumb, :ExpiryDate, :PAN, :TrackData]
@@ -21,7 +21,7 @@ defmodule Adyen.TerminalAPI.V1.SensitiveCardData do
       CardSeqNumb: :integer,
       ExpiryDate: :integer,
       PAN: :integer,
-      TrackData: [{Adyen.TerminalAPI.V1.TrackData, :t}]
+      TrackData: [{AdyenEx.TerminalAPI.V1.TrackData, :t}]
     ]
   end
 end

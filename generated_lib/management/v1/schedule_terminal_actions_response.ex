@@ -1,18 +1,18 @@
-defmodule Adyen.Management.V1.ScheduleTerminalActionsResponse do
+defmodule AdyenEx.Management.V1.ScheduleTerminalActionsResponse do
   @moduledoc """
   Provides struct and type for a ScheduleTerminalActionsResponse
   """
 
   @type t :: %__MODULE__{
           actionDetails:
-            Adyen.Management.V1.ForceRebootDetails.t()
-            | Adyen.Management.V1.InstallAndroidAppDetails.t()
-            | Adyen.Management.V1.InstallAndroidCertificateDetails.t()
-            | Adyen.Management.V1.ReleaseUpdateDetails.t()
-            | Adyen.Management.V1.UninstallAndroidAppDetails.t()
-            | Adyen.Management.V1.UninstallAndroidCertificateDetails.t()
+            AdyenEx.Management.V1.ForceRebootDetails.t()
+            | AdyenEx.Management.V1.InstallAndroidAppDetails.t()
+            | AdyenEx.Management.V1.InstallAndroidCertificateDetails.t()
+            | AdyenEx.Management.V1.ReleaseUpdateDetails.t()
+            | AdyenEx.Management.V1.UninstallAndroidAppDetails.t()
+            | AdyenEx.Management.V1.UninstallAndroidCertificateDetails.t()
             | nil,
-          items: [Adyen.Management.V1.TerminalActionScheduleDetail.t()] | nil,
+          items: [AdyenEx.Management.V1.TerminalActionScheduleDetail.t()] | nil,
           scheduledAt: String.t() | nil,
           storeId: String.t() | nil,
           terminalIds: [String.t()] | nil,
@@ -41,14 +41,14 @@ defmodule Adyen.Management.V1.ScheduleTerminalActionsResponse do
       actionDetails:
         {:union,
          [
-           {Adyen.Management.V1.ForceRebootDetails, :t},
-           {Adyen.Management.V1.InstallAndroidAppDetails, :t},
-           {Adyen.Management.V1.InstallAndroidCertificateDetails, :t},
-           {Adyen.Management.V1.ReleaseUpdateDetails, :t},
-           {Adyen.Management.V1.UninstallAndroidAppDetails, :t},
-           {Adyen.Management.V1.UninstallAndroidCertificateDetails, :t}
+           {AdyenEx.Management.V1.ForceRebootDetails, :t},
+           {AdyenEx.Management.V1.InstallAndroidAppDetails, :t},
+           {AdyenEx.Management.V1.InstallAndroidCertificateDetails, :t},
+           {AdyenEx.Management.V1.ReleaseUpdateDetails, :t},
+           {AdyenEx.Management.V1.UninstallAndroidAppDetails, :t},
+           {AdyenEx.Management.V1.UninstallAndroidCertificateDetails, :t}
          ]},
-      items: [{Adyen.Management.V1.TerminalActionScheduleDetail, :t}],
+      items: [{AdyenEx.Management.V1.TerminalActionScheduleDetail, :t}],
       scheduledAt: :string,
       storeId: :string,
       terminalIds: [:string],

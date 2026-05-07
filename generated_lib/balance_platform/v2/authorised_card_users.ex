@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.AuthorisedCardUsers do
+defmodule AdyenEx.BalancePlatform.V2.AuthorisedCardUsers do
   @moduledoc """
   Provides struct and type for a AuthorisedCardUsers
   """

@@ -1,14 +1,14 @@
-defmodule Adyen.BalancePlatform.V2.UpdatePaymentInstrument do
+defmodule AdyenEx.BalancePlatform.V2.UpdatePaymentInstrument do
   @moduledoc """
   Provides struct and type for a UpdatePaymentInstrument
   """
 
   @type t :: %__MODULE__{
           additionalBankAccountIdentifications:
-            [Adyen.BalancePlatform.V2.IbanAccountIdentification.t()] | nil,
+            [AdyenEx.BalancePlatform.V2.IbanAccountIdentification.t()] | nil,
           balanceAccountId: String.t(),
-          bankAccount: Adyen.BalancePlatform.V2.BankAccountDetails.t() | nil,
-          card: Adyen.BalancePlatform.V2.Card.t() | nil,
+          bankAccount: AdyenEx.BalancePlatform.V2.BankAccountDetails.t() | nil,
+          card: AdyenEx.BalancePlatform.V2.Card.t() | nil,
           description: String.t() | nil,
           id: String.t(),
           issuingCountryCode: String.t(),
@@ -47,11 +47,11 @@ defmodule Adyen.BalancePlatform.V2.UpdatePaymentInstrument do
   def __fields__(:t) do
     [
       additionalBankAccountIdentifications: [
-        {Adyen.BalancePlatform.V2.IbanAccountIdentification, :t}
+        {AdyenEx.BalancePlatform.V2.IbanAccountIdentification, :t}
       ],
       balanceAccountId: :string,
-      bankAccount: {Adyen.BalancePlatform.V2.BankAccountDetails, :t},
-      card: {Adyen.BalancePlatform.V2.Card, :t},
+      bankAccount: {AdyenEx.BalancePlatform.V2.BankAccountDetails, :t},
+      card: {AdyenEx.BalancePlatform.V2.Card, :t},
       description: :string,
       id: :string,
       issuingCountryCode: :string,

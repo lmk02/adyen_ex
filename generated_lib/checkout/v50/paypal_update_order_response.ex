@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.PaypalUpdateOrderResponse do
+defmodule AdyenEx.Checkout.V50.PaypalUpdateOrderResponse do
   @moduledoc """
   Provides struct and type for a PaypalUpdateOrderResponse
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.RequestActivationResponse do
+defmodule AdyenEx.Management.V3.RequestActivationResponse do
   @moduledoc """
   Provides struct and type for a RequestActivationResponse
   """

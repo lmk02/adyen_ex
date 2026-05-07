@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.LegalEntityAssociation do
+defmodule AdyenEx.LegalEntity.V2.LegalEntityAssociation do
   @moduledoc """
   Provides struct and type for a LegalEntityAssociation
   """

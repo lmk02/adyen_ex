@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PaymentAccountStatus do
+defmodule AdyenEx.TerminalAPI.V1.PaymentAccountStatus do
   @moduledoc """
   Provides struct and type for a PaymentAccountStatus
   """
@@ -6,8 +6,8 @@ defmodule Adyen.TerminalAPI.V1.PaymentAccountStatus do
   @type t :: %__MODULE__{
           Currency: String.t() | nil,
           CurrentBalance: number | nil,
-          PaymentAcquirerData: Adyen.TerminalAPI.V1.PaymentAcquirerData.t() | nil,
-          PaymentInstrumentData: Adyen.TerminalAPI.V1.PaymentInstrumentData.t() | nil
+          PaymentAcquirerData: AdyenEx.TerminalAPI.V1.PaymentAcquirerData.t() | nil,
+          PaymentInstrumentData: AdyenEx.TerminalAPI.V1.PaymentInstrumentData.t() | nil
         }
 
   defstruct [:Currency, :CurrentBalance, :PaymentAcquirerData, :PaymentInstrumentData]
@@ -20,8 +20,8 @@ defmodule Adyen.TerminalAPI.V1.PaymentAccountStatus do
     [
       Currency: :string,
       CurrentBalance: :number,
-      PaymentAcquirerData: {Adyen.TerminalAPI.V1.PaymentAcquirerData, :t},
-      PaymentInstrumentData: {Adyen.TerminalAPI.V1.PaymentInstrumentData, :t}
+      PaymentAcquirerData: {AdyenEx.TerminalAPI.V1.PaymentAcquirerData, :t},
+      PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t}
     ]
   end
 end

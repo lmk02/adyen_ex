@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V1.PatchableNotDeliveredInfo do
+defmodule AdyenEx.Transaction.V1.PatchableNotDeliveredInfo do
   @moduledoc """
   Provides struct and type for a PatchableNotDeliveredInfo
   """

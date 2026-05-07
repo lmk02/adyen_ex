@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V1.Organization do
+defmodule AdyenEx.LegalEntity.V1.Organization do
   @moduledoc """
   Provides struct and type for a Organization
   """
@@ -8,16 +8,16 @@ defmodule Adyen.LegalEntity.V1.Organization do
           doingBusinessAs: String.t() | nil,
           email: String.t() | nil,
           legalName: String.t(),
-          phone: Adyen.LegalEntity.V1.PhoneNumber.t() | nil,
-          principalPlaceOfBusiness: Adyen.LegalEntity.V1.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V1.Address.t(),
+          phone: AdyenEx.LegalEntity.V1.PhoneNumber.t() | nil,
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V1.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V1.Address.t(),
           registrationNumber: String.t() | nil,
-          stockData: Adyen.LegalEntity.V1.StockData.t() | nil,
+          stockData: AdyenEx.LegalEntity.V1.StockData.t() | nil,
           taxExempt: boolean | nil,
           taxId: String.t() | nil,
           taxIdAbsenceReason: String.t() | nil,
           type: String.t() | nil,
-          webData: Adyen.LegalEntity.V1.WebData.t() | nil
+          webData: AdyenEx.LegalEntity.V1.WebData.t() | nil
         }
 
   defstruct [
@@ -47,11 +47,11 @@ defmodule Adyen.LegalEntity.V1.Organization do
       doingBusinessAs: :string,
       email: :string,
       legalName: :string,
-      phone: {Adyen.LegalEntity.V1.PhoneNumber, :t},
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V1.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V1.Address, :t},
+      phone: {AdyenEx.LegalEntity.V1.PhoneNumber, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V1.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V1.Address, :t},
       registrationNumber: :string,
-      stockData: {Adyen.LegalEntity.V1.StockData, :t},
+      stockData: {AdyenEx.LegalEntity.V1.StockData, :t},
       taxExempt: :boolean,
       taxId: :string,
       taxIdAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
@@ -65,7 +65,7 @@ defmodule Adyen.LegalEntity.V1.Organization do
            "partnershipIncorporated",
            "privateCompany"
          ]},
-      webData: {Adyen.LegalEntity.V1.WebData, :t}
+      webData: {AdyenEx.LegalEntity.V1.WebData, :t}
     ]
   end
 end

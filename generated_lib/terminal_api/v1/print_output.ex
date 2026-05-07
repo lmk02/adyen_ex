@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PrintOutput do
+defmodule AdyenEx.TerminalAPI.V1.PrintOutput do
   @moduledoc """
   Provides struct and type for a PrintOutput
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TerminalAPI.V1.PrintOutput do
   @type t :: %__MODULE__{
           DocumentQualifier: String.t(),
           IntegratedPrintFlag: boolean | nil,
-          OutputContent: Adyen.TerminalAPI.V1.OutputContent.t(),
+          OutputContent: AdyenEx.TerminalAPI.V1.OutputContent.t(),
           RequiredSignatureFlag: boolean | nil,
           ResponseMode: String.t()
         }
@@ -29,7 +29,7 @@ defmodule Adyen.TerminalAPI.V1.PrintOutput do
         {:enum,
          ["CashierReceipt", "CustomerReceipt", "Document", "Journal", "SaleReceipt", "Voucher"]},
       IntegratedPrintFlag: :boolean,
-      OutputContent: {Adyen.TerminalAPI.V1.OutputContent, :t},
+      OutputContent: {AdyenEx.TerminalAPI.V1.OutputContent, :t},
       RequiredSignatureFlag: :boolean,
       ResponseMode: {:enum, ["Immediate", "NotRequired", "PrintEnd", "SoundEnd"]}
     ]

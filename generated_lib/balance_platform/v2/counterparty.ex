@@ -1,10 +1,10 @@
-defmodule Adyen.BalancePlatform.V2.Counterparty do
+defmodule AdyenEx.BalancePlatform.V2.Counterparty do
   @moduledoc """
   Provides struct and type for a Counterparty
   """
 
   @type t :: %__MODULE__{
-          bankAccount: Adyen.BalancePlatform.V2.BankAccount.t() | nil,
+          bankAccount: AdyenEx.BalancePlatform.V2.BankAccount.t() | nil,
           transferInstrumentId: String.t() | nil
         }
 
@@ -15,6 +15,6 @@ defmodule Adyen.BalancePlatform.V2.Counterparty do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [bankAccount: {Adyen.BalancePlatform.V2.BankAccount, :t}, transferInstrumentId: :string]
+    [bankAccount: {AdyenEx.BalancePlatform.V2.BankAccount, :t}, transferInstrumentId: :string]
   end
 end

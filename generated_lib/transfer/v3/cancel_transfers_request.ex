@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.CancelTransfersRequest do
+defmodule AdyenEx.Transfer.V3.CancelTransfersRequest do
   @moduledoc """
   Provides struct and type for a CancelTransfersRequest
   """

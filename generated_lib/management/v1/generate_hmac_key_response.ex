@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.GenerateHmacKeyResponse do
+defmodule AdyenEx.Management.V1.GenerateHmacKeyResponse do
   @moduledoc """
   Provides struct and type for a GenerateHmacKeyResponse
   """

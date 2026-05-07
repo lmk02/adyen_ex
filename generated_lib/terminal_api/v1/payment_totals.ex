@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.PaymentTotals do
+defmodule AdyenEx.TerminalAPI.V1.PaymentTotals do
   @moduledoc """
   Provides struct and type for a PaymentTotals
   """

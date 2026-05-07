@@ -1,17 +1,17 @@
-defmodule Adyen.Management.V1.CompanyUser do
+defmodule AdyenEx.Management.V1.CompanyUser do
   @moduledoc """
   Provides struct and type for a CompanyUser
   """
 
   @type t :: %__MODULE__{
-          _links: Adyen.Management.V1.Links.t() | nil,
+          _links: AdyenEx.Management.V1.Links.t() | nil,
           accountGroups: [String.t()] | nil,
           active: boolean | nil,
           apps: [String.t()] | nil,
           associatedMerchantAccounts: [String.t()] | nil,
           email: String.t(),
           id: String.t(),
-          name: Adyen.Management.V1.Name.t() | nil,
+          name: AdyenEx.Management.V1.Name.t() | nil,
           roles: [String.t()],
           timeZoneCode: String.t(),
           username: String.t()
@@ -37,14 +37,14 @@ defmodule Adyen.Management.V1.CompanyUser do
 
   def __fields__(:t) do
     [
-      _links: {Adyen.Management.V1.Links, :t},
+      _links: {AdyenEx.Management.V1.Links, :t},
       accountGroups: [:string],
       active: :boolean,
       apps: [:string],
       associatedMerchantAccounts: [:string],
       email: :string,
       id: :string,
-      name: {Adyen.Management.V1.Name, :t},
+      name: {AdyenEx.Management.V1.Name, :t},
       roles: [:string],
       timeZoneCode: :string,
       username: :string

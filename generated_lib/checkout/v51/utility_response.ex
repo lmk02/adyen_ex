@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.UtilityResponse do
+defmodule AdyenEx.Checkout.V51.UtilityResponse do
   @moduledoc """
   Provides struct and type for a UtilityResponse
   """

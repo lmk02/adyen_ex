@@ -1,9 +1,9 @@
-defmodule Adyen.Checkout.V50.SubMerchantInfoWrapper do
+defmodule AdyenEx.Checkout.V50.SubMerchantInfoWrapper do
   @moduledoc """
   Provides struct and type for a SubMerchantInfoWrapper
   """
 
-  @type t :: %__MODULE__{SubMerchant: Adyen.Checkout.V50.SubMerchantInfo.t() | nil}
+  @type t :: %__MODULE__{SubMerchant: AdyenEx.Checkout.V50.SubMerchantInfo.t() | nil}
 
   defstruct [:SubMerchant]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Checkout.V50.SubMerchantInfoWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [SubMerchant: {Adyen.Checkout.V50.SubMerchantInfo, :t}]
+    [SubMerchant: {AdyenEx.Checkout.V50.SubMerchantInfo, :t}]
   end
 end

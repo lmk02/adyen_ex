@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.AccountInfo do
+defmodule AdyenEx.Payment.V68.AccountInfo do
   @moduledoc """
   Provides struct and type for a AccountInfo
   """

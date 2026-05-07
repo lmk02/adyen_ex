@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V70.ZipDetails do
+defmodule AdyenEx.Checkout.V70.ZipDetails do
   @moduledoc """
   Provides struct and type for a ZipDetails
   """

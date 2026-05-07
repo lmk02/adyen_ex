@@ -1,11 +1,12 @@
-defmodule Adyen.Management.V3.PayByBankPlaidResponseInfo do
+defmodule AdyenEx.Management.V3.PayByBankPlaidResponseInfo do
   @moduledoc """
   Provides struct and type for a PayByBankPlaidResponseInfo
   """
 
   @type t :: %__MODULE__{
           logo: String.t() | nil,
-          transactionDescription: Adyen.Management.V3.TransactionDescriptionResponseInfo.t() | nil
+          transactionDescription:
+            AdyenEx.Management.V3.TransactionDescriptionResponseInfo.t() | nil
         }
 
   defstruct [:logo, :transactionDescription]
@@ -17,7 +18,7 @@ defmodule Adyen.Management.V3.PayByBankPlaidResponseInfo do
   def __fields__(:t) do
     [
       logo: :string,
-      transactionDescription: {Adyen.Management.V3.TransactionDescriptionResponseInfo, :t}
+      transactionDescription: {AdyenEx.Management.V3.TransactionDescriptionResponseInfo, :t}
     ]
   end
 end

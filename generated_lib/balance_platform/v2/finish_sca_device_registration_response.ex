@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.FinishScaDeviceRegistrationResponse do
+defmodule AdyenEx.BalancePlatform.V2.FinishScaDeviceRegistrationResponse do
   @moduledoc """
   Provides struct and type for a FinishScaDeviceRegistrationResponse
   """
 
-  @type t :: %__MODULE__{scaDevice: Adyen.BalancePlatform.V2.ScaDevice.t() | nil}
+  @type t :: %__MODULE__{scaDevice: AdyenEx.BalancePlatform.V2.ScaDevice.t() | nil}
 
   defstruct [:scaDevice]
 
@@ -12,6 +12,6 @@ defmodule Adyen.BalancePlatform.V2.FinishScaDeviceRegistrationResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [scaDevice: {Adyen.BalancePlatform.V2.ScaDevice, :t}]
+    [scaDevice: {AdyenEx.BalancePlatform.V2.ScaDevice, :t}]
   end
 end

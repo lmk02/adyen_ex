@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Terminal do
+defmodule AdyenEx.Management.V1.Terminal do
   @moduledoc """
   Provides struct and type for a Terminal
   """

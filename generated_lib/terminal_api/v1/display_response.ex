@@ -1,9 +1,9 @@
-defmodule Adyen.TerminalAPI.V1.DisplayResponse do
+defmodule AdyenEx.TerminalAPI.V1.DisplayResponse do
   @moduledoc """
   Provides struct and type for a DisplayResponse
   """
 
-  @type t :: %__MODULE__{OutputResult: [Adyen.TerminalAPI.V1.OutputResult.t()]}
+  @type t :: %__MODULE__{OutputResult: [AdyenEx.TerminalAPI.V1.OutputResult.t()]}
 
   defstruct [:OutputResult]
 
@@ -12,6 +12,6 @@ defmodule Adyen.TerminalAPI.V1.DisplayResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [OutputResult: [{Adyen.TerminalAPI.V1.OutputResult, :t}]]
+    [OutputResult: [{AdyenEx.TerminalAPI.V1.OutputResult, :t}]]
   end
 end

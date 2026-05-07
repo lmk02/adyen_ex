@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.VippsResponseInfo do
+defmodule AdyenEx.Management.V3.VippsResponseInfo do
   @moduledoc """
   Provides struct and type for a VippsResponseInfo
   """

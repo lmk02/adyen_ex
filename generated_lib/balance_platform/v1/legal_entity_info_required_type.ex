@@ -1,13 +1,13 @@
-defmodule Adyen.BalancePlatform.V1.LegalEntityInfoRequiredType do
+defmodule AdyenEx.BalancePlatform.V1.LegalEntityInfoRequiredType do
   @moduledoc """
   Provides struct and type for a LegalEntityInfoRequiredType
   """
 
   @type t :: %__MODULE__{
           capabilities: map | nil,
-          entityAssociations: [Adyen.BalancePlatform.V1.LegalEntityAssociation.t()] | nil,
-          individual: Adyen.BalancePlatform.V1.Individual.t() | nil,
-          organization: Adyen.BalancePlatform.V1.Organization.t() | nil,
+          entityAssociations: [AdyenEx.BalancePlatform.V1.LegalEntityAssociation.t()] | nil,
+          individual: AdyenEx.BalancePlatform.V1.Individual.t() | nil,
+          organization: AdyenEx.BalancePlatform.V1.Organization.t() | nil,
           reference: String.t() | nil,
           type: String.t()
         }
@@ -21,9 +21,9 @@ defmodule Adyen.BalancePlatform.V1.LegalEntityInfoRequiredType do
   def __fields__(:t) do
     [
       capabilities: :map,
-      entityAssociations: [{Adyen.BalancePlatform.V1.LegalEntityAssociation, :t}],
-      individual: {Adyen.BalancePlatform.V1.Individual, :t},
-      organization: {Adyen.BalancePlatform.V1.Organization, :t},
+      entityAssociations: [{AdyenEx.BalancePlatform.V1.LegalEntityAssociation, :t}],
+      individual: {AdyenEx.BalancePlatform.V1.Individual, :t},
+      organization: {AdyenEx.BalancePlatform.V1.Organization, :t},
       reference: :string,
       type: {:enum, ["individual", "organization"]}
     ]

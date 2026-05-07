@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V50.PaymentMethodUPIApps do
+defmodule AdyenEx.Checkout.V50.PaymentMethodUPIApps do
   @moduledoc """
   Provides struct and type for a PaymentMethodUPIApps
   """

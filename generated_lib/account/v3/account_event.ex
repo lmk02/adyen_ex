@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.AccountEvent do
+defmodule AdyenEx.Account.V3.AccountEvent do
   @moduledoc """
   Provides struct and type for a AccountEvent
   """

@@ -1,10 +1,10 @@
-defmodule Adyen.BalancePlatform.V2.PaginatedBalanceAccountsResponse do
+defmodule AdyenEx.BalancePlatform.V2.PaginatedBalanceAccountsResponse do
   @moduledoc """
   Provides struct and type for a PaginatedBalanceAccountsResponse
   """
 
   @type t :: %__MODULE__{
-          balanceAccounts: [Adyen.BalancePlatform.V2.BalanceAccountBase.t()],
+          balanceAccounts: [AdyenEx.BalancePlatform.V2.BalanceAccountBase.t()],
           hasNext: boolean,
           hasPrevious: boolean
         }
@@ -17,7 +17,7 @@ defmodule Adyen.BalancePlatform.V2.PaginatedBalanceAccountsResponse do
 
   def __fields__(:t) do
     [
-      balanceAccounts: [{Adyen.BalancePlatform.V2.BalanceAccountBase, :t}],
+      balanceAccounts: [{AdyenEx.BalancePlatform.V2.BalanceAccountBase, :t}],
       hasNext: :boolean,
       hasPrevious: :boolean
     ]

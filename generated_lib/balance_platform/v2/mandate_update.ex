@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MandateUpdate do
+defmodule AdyenEx.BalancePlatform.V2.MandateUpdate do
   @moduledoc """
   Provides struct and type for a MandateUpdate
   """

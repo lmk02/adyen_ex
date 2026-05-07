@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V52.StandalonePaymentCancelResponse do
+defmodule AdyenEx.Checkout.V52.StandalonePaymentCancelResponse do
   @moduledoc """
   Provides struct and type for a StandalonePaymentCancelResponse
   """

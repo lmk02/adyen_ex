@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.CalculatePciStatusRequest do
+defmodule AdyenEx.LegalEntity.V4.CalculatePciStatusRequest do
   @moduledoc """
   Provides struct and type for a CalculatePciStatusRequest
   """

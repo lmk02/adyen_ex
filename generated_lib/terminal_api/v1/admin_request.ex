@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.AdminRequest do
+defmodule AdyenEx.TerminalAPI.V1.AdminRequest do
   @moduledoc """
   Provides struct and type for a AdminRequest
   """

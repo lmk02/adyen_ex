@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.DKLocalAccountIdentification do
+defmodule AdyenEx.BalancePlatform.V2.DKLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a DKLocalAccountIdentification
   """

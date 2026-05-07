@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.SplitConfigurationRule do
+defmodule AdyenEx.Management.V3.SplitConfigurationRule do
   @moduledoc """
   Provides struct and type for a SplitConfigurationRule
   """
@@ -10,7 +10,7 @@ defmodule Adyen.Management.V3.SplitConfigurationRule do
           paymentMethod: String.t(),
           ruleId: String.t() | nil,
           shopperInteraction: String.t(),
-          splitLogic: Adyen.Management.V3.SplitConfigurationLogic.t()
+          splitLogic: AdyenEx.Management.V3.SplitConfigurationLogic.t()
         }
 
   defstruct [
@@ -37,7 +37,7 @@ defmodule Adyen.Management.V3.SplitConfigurationRule do
       paymentMethod: :string,
       ruleId: :string,
       shopperInteraction: {:enum, ["Ecommerce", "ContAuth", "Moto", "POS", "ANY"]},
-      splitLogic: {Adyen.Management.V3.SplitConfigurationLogic, :t}
+      splitLogic: {AdyenEx.Management.V3.SplitConfigurationLogic, :t}
     ]
   end
 end

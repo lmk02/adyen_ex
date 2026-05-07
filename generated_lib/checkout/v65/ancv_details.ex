@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V65.AncvDetails do
+defmodule AdyenEx.Checkout.V65.AncvDetails do
   @moduledoc """
   Provides struct and type for a AncvDetails
   """

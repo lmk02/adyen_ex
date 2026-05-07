@@ -1,15 +1,15 @@
-defmodule Adyen.Fund.V5.DebitAccountHolderRequest do
+defmodule AdyenEx.Fund.V5.DebitAccountHolderRequest do
   @moduledoc """
   Provides struct and type for a DebitAccountHolderRequest
   """
 
   @type t :: %__MODULE__{
           accountHolderCode: String.t(),
-          amount: Adyen.Fund.V5.Amount.t(),
+          amount: AdyenEx.Fund.V5.Amount.t(),
           bankAccountUUID: String.t(),
           description: String.t() | nil,
           merchantAccount: String.t(),
-          splits: [Adyen.Fund.V5.Split.t()]
+          splits: [AdyenEx.Fund.V5.Split.t()]
         }
 
   defstruct [
@@ -28,11 +28,11 @@ defmodule Adyen.Fund.V5.DebitAccountHolderRequest do
   def __fields__(:t) do
     [
       accountHolderCode: :string,
-      amount: {Adyen.Fund.V5.Amount, :t},
+      amount: {AdyenEx.Fund.V5.Amount, :t},
       bankAccountUUID: :string,
       description: :string,
       merchantAccount: :string,
-      splits: [{Adyen.Fund.V5.Split, :t}]
+      splits: [{AdyenEx.Fund.V5.Split, :t}]
     ]
   end
 end

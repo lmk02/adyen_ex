@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V1.InternalPartyIdentification do
+defmodule AdyenEx.Transfer.V1.InternalPartyIdentification do
   @moduledoc """
   Provides struct and type for a InternalPartyIdentification
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V4.PatchableDuplicateInfo do
+defmodule AdyenEx.Transaction.V4.PatchableDuplicateInfo do
   @moduledoc """
   Provides struct and type for a PatchableDuplicateInfo
   """

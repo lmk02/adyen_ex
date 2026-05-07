@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V3.FraudInfo do
+defmodule AdyenEx.Transaction.V3.FraudInfo do
   @moduledoc """
   Provides struct and type for a FraudInfo
   """

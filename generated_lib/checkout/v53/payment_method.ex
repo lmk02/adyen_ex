@@ -1,16 +1,16 @@
-defmodule Adyen.Checkout.V53.PaymentMethod do
+defmodule AdyenEx.Checkout.V53.PaymentMethod do
   @moduledoc """
   Provides struct and type for a PaymentMethod
   """
 
   @type t :: %__MODULE__{
-          apps: [Adyen.Checkout.V53.PaymentMethodUPIApps.t()] | nil,
+          apps: [AdyenEx.Checkout.V53.PaymentMethodUPIApps.t()] | nil,
           brands: [String.t()] | nil,
           configuration: map | nil,
-          details: [Adyen.Checkout.V53.InputDetail.t()] | nil,
+          details: [AdyenEx.Checkout.V53.InputDetail.t()] | nil,
           fundingSource: String.t() | nil,
-          group: Adyen.Checkout.V53.PaymentMethodGroup.t() | nil,
-          inputDetails: [Adyen.Checkout.V53.InputDetail.t()] | nil,
+          group: AdyenEx.Checkout.V53.PaymentMethodGroup.t() | nil,
+          inputDetails: [AdyenEx.Checkout.V53.InputDetail.t()] | nil,
           name: String.t() | nil,
           promoted: boolean | nil,
           supportsRecurring: boolean | nil,
@@ -37,13 +37,13 @@ defmodule Adyen.Checkout.V53.PaymentMethod do
 
   def __fields__(:t) do
     [
-      apps: [{Adyen.Checkout.V53.PaymentMethodUPIApps, :t}],
+      apps: [{AdyenEx.Checkout.V53.PaymentMethodUPIApps, :t}],
       brands: [:string],
       configuration: :map,
-      details: [{Adyen.Checkout.V53.InputDetail, :t}],
+      details: [{AdyenEx.Checkout.V53.InputDetail, :t}],
       fundingSource: {:enum, ["credit", "debit", "prepaid"]},
-      group: {Adyen.Checkout.V53.PaymentMethodGroup, :t},
-      inputDetails: [{Adyen.Checkout.V53.InputDetail, :t}],
+      group: {AdyenEx.Checkout.V53.PaymentMethodGroup, :t},
+      inputDetails: [{AdyenEx.Checkout.V53.InputDetail, :t}],
       name: :string,
       promoted: :boolean,
       supportsRecurring: :boolean,

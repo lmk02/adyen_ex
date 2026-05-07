@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MandatePartyIdentification do
+defmodule AdyenEx.BalancePlatform.V2.MandatePartyIdentification do
   @moduledoc """
   Provides struct and type for a MandatePartyIdentification
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V3.ResourceReference do
+defmodule AdyenEx.Transfer.V3.ResourceReference do
   @moduledoc """
   Provides struct and type for a ResourceReference
   """

@@ -1,9 +1,9 @@
-defmodule Adyen.BalancePlatform.V2.BankAccountValidation do
+defmodule AdyenEx.BalancePlatform.V2.BankAccountValidation do
   @moduledoc """
   Provides API endpoint related to bank account validation
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Validate a bank account
@@ -15,30 +15,30 @@ defmodule Adyen.BalancePlatform.V2.BankAccountValidation do
   **Content Types**: `application/json`
   """
   @spec post_validate_bank_account_identification(
-          body :: Adyen.BalancePlatform.V2.BankAccountIdentificationValidationRequest.t(),
+          body :: AdyenEx.BalancePlatform.V2.BankAccountIdentificationValidationRequest.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.BalancePlatform.V2.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V2.RestServiceError.t()}
   def post_validate_bank_account_identification(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
       call:
-        {Adyen.BalancePlatform.V2.BankAccountValidation,
+        {AdyenEx.BalancePlatform.V2.BankAccountValidation,
          :post_validate_bank_account_identification},
       url: "/validateBankAccountIdentification",
       body: body,
       method: :post,
       request: [
         {"application/json",
-         {Adyen.BalancePlatform.V2.BankAccountIdentificationValidationRequest, :t}}
+         {AdyenEx.BalancePlatform.V2.BankAccountIdentificationValidationRequest, :t}}
       ],
       response: [
         {200, :null},
-        {401, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {403, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {422, {Adyen.BalancePlatform.V2.RestServiceError, :t}},
-        {500, {Adyen.BalancePlatform.V2.RestServiceError, :t}}
+        {401, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.RestServiceError, :t}}
       ],
       opts: opts
     })

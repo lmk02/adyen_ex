@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.MigratedShareholders do
+defmodule AdyenEx.Account.V5.MigratedShareholders do
   @moduledoc """
   Provides struct and type for a MigratedShareholders
   """

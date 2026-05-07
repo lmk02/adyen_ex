@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.NetworkToken do
+defmodule AdyenEx.BalancePlatform.V2.NetworkToken do
   @moduledoc """
   Provides struct and type for a NetworkToken
   """
@@ -6,12 +6,12 @@ defmodule Adyen.BalancePlatform.V2.NetworkToken do
   @type t :: %__MODULE__{
           brandVariant: String.t() | nil,
           creationDate: DateTime.t() | nil,
-          device: Adyen.BalancePlatform.V2.DeviceInfo.t() | nil,
+          device: AdyenEx.BalancePlatform.V2.DeviceInfo.t() | nil,
           id: String.t() | nil,
           paymentInstrumentId: String.t() | nil,
           status: String.t() | nil,
           tokenLastFour: String.t() | nil,
-          tokenRequestor: Adyen.BalancePlatform.V2.NetworkTokenRequestor.t() | nil,
+          tokenRequestor: AdyenEx.BalancePlatform.V2.NetworkTokenRequestor.t() | nil,
           type: String.t() | nil
         }
 
@@ -35,12 +35,12 @@ defmodule Adyen.BalancePlatform.V2.NetworkToken do
     [
       brandVariant: :string,
       creationDate: {:string, "date-time"},
-      device: {Adyen.BalancePlatform.V2.DeviceInfo, :t},
+      device: {AdyenEx.BalancePlatform.V2.DeviceInfo, :t},
       id: :string,
       paymentInstrumentId: :string,
       status: {:enum, ["active", "inactive", "suspended", "closed"]},
       tokenLastFour: :string,
-      tokenRequestor: {Adyen.BalancePlatform.V2.NetworkTokenRequestor, :t},
+      tokenRequestor: {AdyenEx.BalancePlatform.V2.NetworkTokenRequestor, :t},
       type: :string
     ]
   end

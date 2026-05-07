@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.DocumentReference do
+defmodule AdyenEx.LegalEntity.V3.DocumentReference do
   @moduledoc """
   Provides struct and type for a DocumentReference
   """
@@ -9,7 +9,7 @@ defmodule Adyen.LegalEntity.V3.DocumentReference do
           fileName: String.t() | nil,
           id: String.t() | nil,
           modificationDate: DateTime.t() | nil,
-          pages: [Adyen.LegalEntity.V3.DocumentPage.t()] | nil,
+          pages: [AdyenEx.LegalEntity.V3.DocumentPage.t()] | nil,
           type: String.t() | nil
         }
 
@@ -26,7 +26,7 @@ defmodule Adyen.LegalEntity.V3.DocumentReference do
       fileName: :string,
       id: :string,
       modificationDate: {:string, "date-time"},
-      pages: [{Adyen.LegalEntity.V3.DocumentPage, :t}],
+      pages: [{AdyenEx.LegalEntity.V3.DocumentPage, :t}],
       type: :string
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.DirectDebitInformation do
+defmodule AdyenEx.Transfer.V4.DirectDebitInformation do
   @moduledoc """
   Provides struct and type for a DirectDebitInformation
   """

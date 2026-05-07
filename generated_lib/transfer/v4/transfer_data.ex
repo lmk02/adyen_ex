@@ -1,47 +1,47 @@
-defmodule Adyen.Transfer.V4.TransferData do
+defmodule AdyenEx.Transfer.V4.TransferData do
   @moduledoc """
   Provides struct and type for a TransferData
   """
 
   @type t :: %__MODULE__{
-          accountHolder: Adyen.Transfer.V4.ResourceReference.t() | nil,
-          amount: Adyen.Transfer.V4.Amount.t(),
-          balanceAccount: Adyen.Transfer.V4.ResourceReference.t() | nil,
+          accountHolder: AdyenEx.Transfer.V4.ResourceReference.t() | nil,
+          amount: AdyenEx.Transfer.V4.Amount.t(),
+          balanceAccount: AdyenEx.Transfer.V4.ResourceReference.t() | nil,
           balancePlatform: String.t() | nil,
-          balances: [Adyen.Transfer.V4.BalanceMutation.t()] | nil,
+          balances: [AdyenEx.Transfer.V4.BalanceMutation.t()] | nil,
           category: String.t(),
           categoryData:
-            Adyen.Transfer.V4.BankCategoryData.t()
-            | Adyen.Transfer.V4.InternalCategoryData.t()
-            | Adyen.Transfer.V4.IssuedCard.t()
-            | Adyen.Transfer.V4.PlatformPayment.t()
+            AdyenEx.Transfer.V4.BankCategoryData.t()
+            | AdyenEx.Transfer.V4.InternalCategoryData.t()
+            | AdyenEx.Transfer.V4.IssuedCard.t()
+            | AdyenEx.Transfer.V4.PlatformPayment.t()
             | nil,
-          counterparty: Adyen.Transfer.V4.TransferNotificationCounterParty.t() | nil,
+          counterparty: AdyenEx.Transfer.V4.TransferNotificationCounterParty.t() | nil,
           createdAt: DateTime.t() | nil,
           creationDate: DateTime.t() | nil,
           description: String.t() | nil,
-          directDebitInformation: Adyen.Transfer.V4.DirectDebitInformation.t() | nil,
+          directDebitInformation: AdyenEx.Transfer.V4.DirectDebitInformation.t() | nil,
           direction: String.t() | nil,
           eventId: String.t() | nil,
-          events: [Adyen.Transfer.V4.TransferEvent.t()] | nil,
-          executionDate: Adyen.Transfer.V4.ExecutionDate.t() | nil,
-          externalReason: Adyen.Transfer.V4.ExternalReason.t() | nil,
+          events: [AdyenEx.Transfer.V4.TransferEvent.t()] | nil,
+          executionDate: AdyenEx.Transfer.V4.ExecutionDate.t() | nil,
+          externalReason: AdyenEx.Transfer.V4.ExternalReason.t() | nil,
           id: String.t() | nil,
-          paymentInstrument: Adyen.Transfer.V4.PaymentInstrument.t() | nil,
+          paymentInstrument: AdyenEx.Transfer.V4.PaymentInstrument.t() | nil,
           reason: String.t() | nil,
           reference: String.t() | nil,
           referenceForBeneficiary: String.t() | nil,
-          review: Adyen.Transfer.V4.TransferReview.t() | nil,
+          review: AdyenEx.Transfer.V4.TransferReview.t() | nil,
           sequenceNumber: integer | nil,
           status: String.t(),
           tracking:
-            Adyen.Transfer.V4.ConfirmationTrackingData.t()
-            | Adyen.Transfer.V4.EstimationTrackingData.t()
-            | Adyen.Transfer.V4.InternalReviewTrackingData.t()
+            AdyenEx.Transfer.V4.ConfirmationTrackingData.t()
+            | AdyenEx.Transfer.V4.EstimationTrackingData.t()
+            | AdyenEx.Transfer.V4.InternalReviewTrackingData.t()
             | nil,
-          transactionRulesResult: Adyen.Transfer.V4.TransactionRulesResult.t() | nil,
+          transactionRulesResult: AdyenEx.Transfer.V4.TransactionRulesResult.t() | nil,
           type: String.t() | nil,
-          ultimateParty: Adyen.Transfer.V4.UltimatePartyIdentification.t() | nil,
+          ultimateParty: AdyenEx.Transfer.V4.UltimatePartyIdentification.t() | nil,
           updatedAt: DateTime.t() | nil
         }
 
@@ -84,32 +84,32 @@ defmodule Adyen.Transfer.V4.TransferData do
 
   def __fields__(:t) do
     [
-      accountHolder: {Adyen.Transfer.V4.ResourceReference, :t},
-      amount: {Adyen.Transfer.V4.Amount, :t},
-      balanceAccount: {Adyen.Transfer.V4.ResourceReference, :t},
+      accountHolder: {AdyenEx.Transfer.V4.ResourceReference, :t},
+      amount: {AdyenEx.Transfer.V4.Amount, :t},
+      balanceAccount: {AdyenEx.Transfer.V4.ResourceReference, :t},
       balancePlatform: :string,
-      balances: [{Adyen.Transfer.V4.BalanceMutation, :t}],
+      balances: [{AdyenEx.Transfer.V4.BalanceMutation, :t}],
       category: {:enum, ["bank", "card", "internal", "issuedCard", "platformPayment", "topUp"]},
       categoryData:
         {:union,
          [
-           {Adyen.Transfer.V4.BankCategoryData, :t},
-           {Adyen.Transfer.V4.InternalCategoryData, :t},
-           {Adyen.Transfer.V4.IssuedCard, :t},
-           {Adyen.Transfer.V4.PlatformPayment, :t}
+           {AdyenEx.Transfer.V4.BankCategoryData, :t},
+           {AdyenEx.Transfer.V4.InternalCategoryData, :t},
+           {AdyenEx.Transfer.V4.IssuedCard, :t},
+           {AdyenEx.Transfer.V4.PlatformPayment, :t}
          ]},
-      counterparty: {Adyen.Transfer.V4.TransferNotificationCounterParty, :t},
+      counterparty: {AdyenEx.Transfer.V4.TransferNotificationCounterParty, :t},
       createdAt: {:string, "date-time"},
       creationDate: {:string, "date-time"},
       description: :string,
-      directDebitInformation: {Adyen.Transfer.V4.DirectDebitInformation, :t},
+      directDebitInformation: {AdyenEx.Transfer.V4.DirectDebitInformation, :t},
       direction: {:enum, ["incoming", "outgoing"]},
       eventId: :string,
-      events: [{Adyen.Transfer.V4.TransferEvent, :t}],
-      executionDate: {Adyen.Transfer.V4.ExecutionDate, :t},
-      externalReason: {Adyen.Transfer.V4.ExternalReason, :t},
+      events: [{AdyenEx.Transfer.V4.TransferEvent, :t}],
+      executionDate: {AdyenEx.Transfer.V4.ExecutionDate, :t},
+      externalReason: {AdyenEx.Transfer.V4.ExternalReason, :t},
       id: :string,
-      paymentInstrument: {Adyen.Transfer.V4.PaymentInstrument, :t},
+      paymentInstrument: {AdyenEx.Transfer.V4.PaymentInstrument, :t},
       reason:
         {:enum,
          [
@@ -201,7 +201,7 @@ defmodule Adyen.Transfer.V4.TransferData do
          ]},
       reference: :string,
       referenceForBeneficiary: :string,
-      review: {Adyen.Transfer.V4.TransferReview, :t},
+      review: {AdyenEx.Transfer.V4.TransferReview, :t},
       sequenceNumber: {:integer, "int32"},
       status:
         {:enum,
@@ -280,11 +280,11 @@ defmodule Adyen.Transfer.V4.TransferData do
       tracking:
         {:union,
          [
-           {Adyen.Transfer.V4.ConfirmationTrackingData, :t},
-           {Adyen.Transfer.V4.EstimationTrackingData, :t},
-           {Adyen.Transfer.V4.InternalReviewTrackingData, :t}
+           {AdyenEx.Transfer.V4.ConfirmationTrackingData, :t},
+           {AdyenEx.Transfer.V4.EstimationTrackingData, :t},
+           {AdyenEx.Transfer.V4.InternalReviewTrackingData, :t}
          ]},
-      transactionRulesResult: {Adyen.Transfer.V4.TransactionRulesResult, :t},
+      transactionRulesResult: {AdyenEx.Transfer.V4.TransactionRulesResult, :t},
       type:
         {:enum,
          [
@@ -327,7 +327,7 @@ defmodule Adyen.Transfer.V4.TransferData do
            "balanceRollover",
            "balanceMigration"
          ]},
-      ultimateParty: {Adyen.Transfer.V4.UltimatePartyIdentification, :t},
+      ultimateParty: {AdyenEx.Transfer.V4.UltimatePartyIdentification, :t},
       updatedAt: {:string, "date-time"}
     ]
   end

@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.StoredValueData do
+defmodule AdyenEx.TerminalAPI.V1.StoredValueData do
   @moduledoc """
   Provides struct and type for a StoredValueData
   """
@@ -7,9 +7,9 @@ defmodule Adyen.TerminalAPI.V1.StoredValueData do
           Currency: String.t() | nil,
           EanUpc: integer | nil,
           ItemAmount: number | nil,
-          OriginalPOITransaction: Adyen.TerminalAPI.V1.OriginalPOITransaction.t() | nil,
+          OriginalPOITransaction: AdyenEx.TerminalAPI.V1.OriginalPOITransaction.t() | nil,
           ProductCode: integer | nil,
-          StoredValueAccountID: Adyen.TerminalAPI.V1.StoredValueAccountID.t() | nil,
+          StoredValueAccountID: AdyenEx.TerminalAPI.V1.StoredValueAccountID.t() | nil,
           StoredValueProvider: String.t() | nil,
           StoredValueTransactionType: String.t()
         }
@@ -34,9 +34,9 @@ defmodule Adyen.TerminalAPI.V1.StoredValueData do
       Currency: :string,
       EanUpc: :integer,
       ItemAmount: :number,
-      OriginalPOITransaction: {Adyen.TerminalAPI.V1.OriginalPOITransaction, :t},
+      OriginalPOITransaction: {AdyenEx.TerminalAPI.V1.OriginalPOITransaction, :t},
       ProductCode: :integer,
-      StoredValueAccountID: {Adyen.TerminalAPI.V1.StoredValueAccountID, :t},
+      StoredValueAccountID: {AdyenEx.TerminalAPI.V1.StoredValueAccountID, :t},
       StoredValueProvider: :string,
       StoredValueTransactionType:
         {:enum, ["Activate", "Duplicate", "Load", "Reserve", "Reverse", "Unload"]}

@@ -1,4 +1,4 @@
-defmodule Adyen.Recurring.V40.Permit do
+defmodule AdyenEx.Recurring.V40.Permit do
   @moduledoc """
   Provides struct and type for a Permit
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Recurring.V40.Permit do
   @type t :: %__MODULE__{
           partnerId: String.t() | nil,
           profileReference: String.t() | nil,
-          restriction: Adyen.Recurring.V40.PermitRestriction.t() | nil,
+          restriction: AdyenEx.Recurring.V40.PermitRestriction.t() | nil,
           resultKey: String.t() | nil,
           validTillDate: DateTime.t() | nil
         }
@@ -21,7 +21,7 @@ defmodule Adyen.Recurring.V40.Permit do
     [
       partnerId: :string,
       profileReference: :string,
-      restriction: {Adyen.Recurring.V40.PermitRestriction, :t},
+      restriction: {AdyenEx.Recurring.V40.PermitRestriction, :t},
       resultKey: :string,
       validTillDate: {:string, "date-time"}
     ]

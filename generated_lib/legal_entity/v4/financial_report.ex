@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.FinancialReport do
+defmodule AdyenEx.LegalEntity.V4.FinancialReport do
   @moduledoc """
   Provides struct and type for a FinancialReport
   """

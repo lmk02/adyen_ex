@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V49.EncryptedOrderData do
+defmodule AdyenEx.Checkout.V49.EncryptedOrderData do
   @moduledoc """
   Provides struct and type for a EncryptedOrderData
   """

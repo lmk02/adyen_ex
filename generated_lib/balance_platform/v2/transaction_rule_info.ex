@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TransactionRuleInfo do
+defmodule AdyenEx.BalancePlatform.V2.TransactionRuleInfo do
   @moduledoc """
   Provides struct and type for a TransactionRuleInfo
   """
@@ -7,13 +7,13 @@ defmodule Adyen.BalancePlatform.V2.TransactionRuleInfo do
           aggregationLevel: String.t() | nil,
           description: String.t(),
           endDate: String.t() | nil,
-          entityKey: Adyen.BalancePlatform.V2.TransactionRuleEntityKey.t(),
-          interval: Adyen.BalancePlatform.V2.TransactionRuleInterval.t(),
+          entityKey: AdyenEx.BalancePlatform.V2.TransactionRuleEntityKey.t(),
+          interval: AdyenEx.BalancePlatform.V2.TransactionRuleInterval.t(),
           outcomeType: String.t() | nil,
           purpose: String.t() | nil,
           reference: String.t(),
           requestType: String.t() | nil,
-          ruleRestrictions: Adyen.BalancePlatform.V2.TransactionRuleRestrictions.t(),
+          ruleRestrictions: AdyenEx.BalancePlatform.V2.TransactionRuleRestrictions.t(),
           score: integer | nil,
           startDate: String.t() | nil,
           status: String.t() | nil,
@@ -46,13 +46,13 @@ defmodule Adyen.BalancePlatform.V2.TransactionRuleInfo do
       aggregationLevel: :string,
       description: :string,
       endDate: :string,
-      entityKey: {Adyen.BalancePlatform.V2.TransactionRuleEntityKey, :t},
-      interval: {Adyen.BalancePlatform.V2.TransactionRuleInterval, :t},
+      entityKey: {AdyenEx.BalancePlatform.V2.TransactionRuleEntityKey, :t},
+      interval: {AdyenEx.BalancePlatform.V2.TransactionRuleInterval, :t},
       outcomeType: {:enum, ["enforceSCA", "hardBlock", "scoreBased", "timedBlock"]},
       purpose: {:enum, ["compliance", "fraud", "internalPolicy", "policy", "system"]},
       reference: :string,
       requestType: {:enum, ["authentication", "authorization", "bankTransfer", "tokenization"]},
-      ruleRestrictions: {Adyen.BalancePlatform.V2.TransactionRuleRestrictions, :t},
+      ruleRestrictions: {AdyenEx.BalancePlatform.V2.TransactionRuleRestrictions, :t},
       score: {:integer, "int32"},
       startDate: :string,
       status: {:enum, ["active", "inactive"]},

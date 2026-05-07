@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.USInternationalAchAddressRequirement do
+defmodule AdyenEx.BalancePlatform.V2.USInternationalAchAddressRequirement do
   @moduledoc """
   Provides struct and type for a USInternationalAchAddressRequirement
   """

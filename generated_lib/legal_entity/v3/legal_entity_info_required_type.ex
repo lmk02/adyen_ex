@@ -1,18 +1,18 @@
-defmodule Adyen.LegalEntity.V3.LegalEntityInfoRequiredType do
+defmodule AdyenEx.LegalEntity.V3.LegalEntityInfoRequiredType do
   @moduledoc """
   Provides struct and type for a LegalEntityInfoRequiredType
   """
 
   @type t :: %__MODULE__{
           capabilities: map | nil,
-          entityAssociations: [Adyen.LegalEntity.V3.LegalEntityAssociation.t()] | nil,
-          individual: Adyen.LegalEntity.V3.Individual.t() | nil,
-          organization: Adyen.LegalEntity.V3.Organization.t() | nil,
+          entityAssociations: [AdyenEx.LegalEntity.V3.LegalEntityAssociation.t()] | nil,
+          individual: AdyenEx.LegalEntity.V3.Individual.t() | nil,
+          organization: AdyenEx.LegalEntity.V3.Organization.t() | nil,
           reference: String.t() | nil,
-          soleProprietorship: Adyen.LegalEntity.V3.SoleProprietorship.t() | nil,
-          trust: Adyen.LegalEntity.V3.Trust.t() | nil,
+          soleProprietorship: AdyenEx.LegalEntity.V3.SoleProprietorship.t() | nil,
+          trust: AdyenEx.LegalEntity.V3.Trust.t() | nil,
           type: String.t(),
-          unincorporatedPartnership: Adyen.LegalEntity.V3.UnincorporatedPartnership.t() | nil,
+          unincorporatedPartnership: AdyenEx.LegalEntity.V3.UnincorporatedPartnership.t() | nil,
           verificationPlan: String.t() | nil
         }
 
@@ -36,12 +36,12 @@ defmodule Adyen.LegalEntity.V3.LegalEntityInfoRequiredType do
   def __fields__(:t) do
     [
       capabilities: :map,
-      entityAssociations: [{Adyen.LegalEntity.V3.LegalEntityAssociation, :t}],
-      individual: {Adyen.LegalEntity.V3.Individual, :t},
-      organization: {Adyen.LegalEntity.V3.Organization, :t},
+      entityAssociations: [{AdyenEx.LegalEntity.V3.LegalEntityAssociation, :t}],
+      individual: {AdyenEx.LegalEntity.V3.Individual, :t},
+      organization: {AdyenEx.LegalEntity.V3.Organization, :t},
       reference: :string,
-      soleProprietorship: {Adyen.LegalEntity.V3.SoleProprietorship, :t},
-      trust: {Adyen.LegalEntity.V3.Trust, :t},
+      soleProprietorship: {AdyenEx.LegalEntity.V3.SoleProprietorship, :t},
+      trust: {AdyenEx.LegalEntity.V3.Trust, :t},
       type:
         {:enum,
          [
@@ -51,7 +51,7 @@ defmodule Adyen.LegalEntity.V3.LegalEntityInfoRequiredType do
            "trust",
            "unincorporatedPartnership"
          ]},
-      unincorporatedPartnership: {Adyen.LegalEntity.V3.UnincorporatedPartnership, :t},
+      unincorporatedPartnership: {AdyenEx.LegalEntity.V3.UnincorporatedPartnership, :t},
       verificationPlan: :string
     ]
   end

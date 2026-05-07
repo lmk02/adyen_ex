@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V68.CancelRequest do
+defmodule AdyenEx.Payment.V68.CancelRequest do
   @moduledoc """
   Provides struct and type for a CancelRequest
   """
@@ -6,12 +6,12 @@ defmodule Adyen.Payment.V68.CancelRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          mpiData: Adyen.Payment.V68.ThreeDSecureData.t() | nil,
+          mpiData: AdyenEx.Payment.V68.ThreeDSecureData.t() | nil,
           originalMerchantReference: String.t() | nil,
           originalReference: String.t(),
-          platformChargebackLogic: Adyen.Payment.V68.PlatformChargebackLogic.t() | nil,
+          platformChargebackLogic: AdyenEx.Payment.V68.PlatformChargebackLogic.t() | nil,
           reference: String.t() | nil,
-          splits: [Adyen.Payment.V68.Split.t()] | nil,
+          splits: [AdyenEx.Payment.V68.Split.t()] | nil,
           tenderReference: String.t() | nil,
           uniqueTerminalId: String.t() | nil
         }
@@ -37,12 +37,12 @@ defmodule Adyen.Payment.V68.CancelRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      mpiData: {Adyen.Payment.V68.ThreeDSecureData, :t},
+      mpiData: {AdyenEx.Payment.V68.ThreeDSecureData, :t},
       originalMerchantReference: :string,
       originalReference: :string,
-      platformChargebackLogic: {Adyen.Payment.V68.PlatformChargebackLogic, :t},
+      platformChargebackLogic: {AdyenEx.Payment.V68.PlatformChargebackLogic, :t},
       reference: :string,
-      splits: [{Adyen.Payment.V68.Split, :t}],
+      splits: [{AdyenEx.Payment.V68.Split, :t}],
       tenderReference: :string,
       uniqueTerminalId: :string
     ]

@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.MatchingTransactionsRestriction do
+defmodule AdyenEx.BalancePlatform.V2.MatchingTransactionsRestriction do
   @moduledoc """
   Provides struct and type for a MatchingTransactionsRestriction
   """

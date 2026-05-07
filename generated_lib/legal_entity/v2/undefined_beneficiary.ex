@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V2.UndefinedBeneficiary do
+defmodule AdyenEx.LegalEntity.V2.UndefinedBeneficiary do
   @moduledoc """
   Provides struct and type for a UndefinedBeneficiary
   """

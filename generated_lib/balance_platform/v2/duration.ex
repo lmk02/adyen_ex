@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Duration do
+defmodule AdyenEx.BalancePlatform.V2.Duration do
   @moduledoc """
   Provides struct and type for a Duration
   """

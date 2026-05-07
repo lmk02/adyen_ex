@@ -1,4 +1,4 @@
-defmodule Adyen.TestCard.V1.CreateTestCardRangesRequest do
+defmodule AdyenEx.TestCard.V1.CreateTestCardRangesRequest do
   @moduledoc """
   Provides struct and type for a CreateTestCardRangesRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.TestCard.V1.CreateTestCardRangesRequest do
   @type t :: %__MODULE__{
           accountCode: String.t(),
           accountTypeCode: String.t(),
-          testCardRanges: [Adyen.TestCard.V1.TestCardRange.t()]
+          testCardRanges: [AdyenEx.TestCard.V1.TestCardRange.t()]
         }
 
   defstruct [:accountCode, :accountTypeCode, :testCardRanges]
@@ -19,7 +19,7 @@ defmodule Adyen.TestCard.V1.CreateTestCardRangesRequest do
     [
       accountCode: :string,
       accountTypeCode: :string,
-      testCardRanges: [{Adyen.TestCard.V1.TestCardRange, :t}]
+      testCardRanges: [{AdyenEx.TestCard.V1.TestCardRange, :t}]
     ]
   end
 end

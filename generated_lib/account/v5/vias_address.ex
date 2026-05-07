@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V5.ViasAddress do
+defmodule AdyenEx.Account.V5.ViasAddress do
   @moduledoc """
   Provides struct and type for a ViasAddress
   """

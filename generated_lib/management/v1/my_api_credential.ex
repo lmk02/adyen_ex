@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.MyAPICredential do
+defmodule AdyenEx.Management.V1.MyAPICredential do
   @moduledoc """
   Provides API endpoints related to my api credential
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Remove allowed origin
@@ -14,22 +14,22 @@ defmodule Adyen.Management.V1.MyAPICredential do
   You can make this request with any of the Management API roles.
   """
   @spec delete_me_allowed_origins_origin_id(originId :: String.t(), opts :: keyword) ::
-          :ok | {:error, Adyen.Management.V1.RestServiceError.t()}
+          :ok | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def delete_me_allowed_origins_origin_id(originId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [originId: originId],
-      call: {Adyen.Management.V1.MyAPICredential, :delete_me_allowed_origins_origin_id},
+      call: {AdyenEx.Management.V1.MyAPICredential, :delete_me_allowed_origins_origin_id},
       url: "/me/allowedOrigins/#{originId}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -43,23 +43,23 @@ defmodule Adyen.Management.V1.MyAPICredential do
   You can make this request with any of the Management API roles.
   """
   @spec get_me(opts :: keyword) ::
-          {:ok, Adyen.Management.V1.MeApiCredential.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.MeApiCredential.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_me(opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V1.MyAPICredential, :get_me},
+      call: {AdyenEx.Management.V1.MyAPICredential, :get_me},
       url: "/me",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.MeApiCredential, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.MeApiCredential, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -73,23 +73,23 @@ defmodule Adyen.Management.V1.MyAPICredential do
   You can make this request with any of the Management API roles.
   """
   @spec get_me_allowed_origins(opts :: keyword) ::
-          {:ok, Adyen.Management.V1.AllowedOriginsResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOriginsResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_me_allowed_origins(opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V1.MyAPICredential, :get_me_allowed_origins},
+      call: {AdyenEx.Management.V1.MyAPICredential, :get_me_allowed_origins},
       url: "/me/allowedOrigins",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOriginsResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOriginsResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -104,23 +104,23 @@ defmodule Adyen.Management.V1.MyAPICredential do
   You can make this request with any of the Management API roles.
   """
   @spec get_me_allowed_origins_origin_id(originId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_me_allowed_origins_origin_id(originId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [originId: originId],
-      call: {Adyen.Management.V1.MyAPICredential, :get_me_allowed_origins_origin_id},
+      call: {AdyenEx.Management.V1.MyAPICredential, :get_me_allowed_origins_origin_id},
       url: "/me/allowedOrigins/#{originId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -139,28 +139,28 @@ defmodule Adyen.Management.V1.MyAPICredential do
   **Content Types**: `application/json`
   """
   @spec post_me_allowed_origins(
-          body :: Adyen.Management.V1.CreateAllowedOriginRequest.t(),
+          body :: AdyenEx.Management.V1.CreateAllowedOriginRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.AllowedOrigin.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.AllowedOrigin.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_me_allowed_origins(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Management.V1.MyAPICredential, :post_me_allowed_origins},
+      call: {AdyenEx.Management.V1.MyAPICredential, :post_me_allowed_origins},
       url: "/me/allowedOrigins",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.CreateAllowedOriginRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.CreateAllowedOriginRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.AllowedOrigin, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.AllowedOrigin, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -177,23 +177,23 @@ defmodule Adyen.Management.V1.MyAPICredential do
   * Management API—API credentials read and write
   """
   @spec post_me_generate_client_key(opts :: keyword) ::
-          {:ok, Adyen.Management.V1.GenerateClientKeyResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.GenerateClientKeyResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_me_generate_client_key(opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [],
-      call: {Adyen.Management.V1.MyAPICredential, :post_me_generate_client_key},
+      call: {AdyenEx.Management.V1.MyAPICredential, :post_me_generate_client_key},
       url: "/me/generateClientKey",
       method: :post,
       response: [
-        {200, {Adyen.Management.V1.GenerateClientKeyResponse, :t}},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {200, {AdyenEx.Management.V1.GenerateClientKeyResponse, :t}},
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

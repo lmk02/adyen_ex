@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V71.Mandate do
+defmodule AdyenEx.Checkout.V71.Mandate do
   @moduledoc """
   Provides struct and type for a Mandate
   """

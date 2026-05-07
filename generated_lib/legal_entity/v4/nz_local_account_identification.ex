@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V4.NZLocalAccountIdentification do
+defmodule AdyenEx.LegalEntity.V4.NZLocalAccountIdentification do
   @moduledoc """
   Provides struct and type for a NZLocalAccountIdentification
   """

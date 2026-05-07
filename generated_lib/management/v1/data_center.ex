@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.DataCenter do
+defmodule AdyenEx.Management.V1.DataCenter do
   @moduledoc """
   Provides struct and type for a DataCenter
   """

@@ -1,11 +1,11 @@
-defmodule Adyen.Recurring.V49.CreatePermitRequest do
+defmodule AdyenEx.Recurring.V49.CreatePermitRequest do
   @moduledoc """
   Provides struct and type for a CreatePermitRequest
   """
 
   @type t :: %__MODULE__{
           merchantAccount: String.t(),
-          permits: [Adyen.Recurring.V49.Permit.t()],
+          permits: [AdyenEx.Recurring.V49.Permit.t()],
           recurringDetailReference: String.t(),
           shopperReference: String.t()
         }
@@ -19,7 +19,7 @@ defmodule Adyen.Recurring.V49.CreatePermitRequest do
   def __fields__(:t) do
     [
       merchantAccount: :string,
-      permits: [{Adyen.Recurring.V49.Permit, :t}],
+      permits: [{AdyenEx.Recurring.V49.Permit, :t}],
       recurringDetailReference: :string,
       shopperReference: :string
     ]

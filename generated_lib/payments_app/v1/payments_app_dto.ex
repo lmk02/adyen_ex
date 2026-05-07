@@ -1,4 +1,4 @@
-defmodule Adyen.PaymentsApp.V1.PaymentsAppDto do
+defmodule AdyenEx.PaymentsApp.V1.PaymentsAppDto do
   @moduledoc """
   Provides struct and type for a PaymentsAppDto
   """

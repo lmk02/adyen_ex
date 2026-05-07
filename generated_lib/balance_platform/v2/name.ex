@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.Name do
+defmodule AdyenEx.BalancePlatform.V2.Name do
   @moduledoc """
   Provides struct and type for a Name
   """

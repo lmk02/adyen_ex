@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.TokenRequestorsRestriction do
+defmodule AdyenEx.BalancePlatform.V2.TokenRequestorsRestriction do
   @moduledoc """
   Provides struct and type for a TokenRequestorsRestriction
   """

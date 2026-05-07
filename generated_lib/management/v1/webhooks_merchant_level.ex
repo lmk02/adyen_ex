@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V1.WebhooksMerchantLevel do
+defmodule AdyenEx.Management.V1.WebhooksMerchantLevel do
   @moduledoc """
   Provides API endpoints related to webhooks merchant level
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Remove a webhook
@@ -17,24 +17,24 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
           merchantId :: String.t(),
           webhookId :: String.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.Management.V1.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def delete_merchants_merchant_id_webhooks_webhook_id(merchantId, webhookId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, webhookId: webhookId],
       call:
-        {Adyen.Management.V1.WebhooksMerchantLevel,
+        {AdyenEx.Management.V1.WebhooksMerchantLevel,
          :delete_merchants_merchant_id_webhooks_webhook_id},
       url: "/merchants/#{merchantId}/webhooks/#{webhookId}",
       method: :delete,
       response: [
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -58,26 +58,26 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
 
   """
   @spec get_merchants_merchant_id_webhooks(merchantId :: String.t(), opts :: keyword) ::
-          {:ok, Adyen.Management.V1.ListWebhooksResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.ListWebhooksResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_webhooks(merchantId, opts \\ []) do
     client = opts[:client] || @default_client
     query = Keyword.take(opts, [:pageNumber, :pageSize])
 
     client.request(%{
       args: [merchantId: merchantId],
-      call: {Adyen.Management.V1.WebhooksMerchantLevel, :get_merchants_merchant_id_webhooks},
+      call: {AdyenEx.Management.V1.WebhooksMerchantLevel, :get_merchants_merchant_id_webhooks},
       url: "/merchants/#{merchantId}/webhooks",
       method: :get,
       query: query,
       response: [
-        {200, {Adyen.Management.V1.ListWebhooksResponse, :t}},
+        {200, {AdyenEx.Management.V1.ListWebhooksResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -97,26 +97,26 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
           webhookId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Webhook.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Webhook.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def get_merchants_merchant_id_webhooks_webhook_id(merchantId, webhookId, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, webhookId: webhookId],
       call:
-        {Adyen.Management.V1.WebhooksMerchantLevel,
+        {AdyenEx.Management.V1.WebhooksMerchantLevel,
          :get_merchants_merchant_id_webhooks_webhook_id},
       url: "/merchants/#{merchantId}/webhooks/#{webhookId}",
       method: :get,
       response: [
-        {200, {Adyen.Management.V1.Webhook, :t}},
+        {200, {AdyenEx.Management.V1.Webhook, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -137,31 +137,31 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
   @spec patch_merchants_merchant_id_webhooks_webhook_id(
           merchantId :: String.t(),
           webhookId :: String.t(),
-          body :: Adyen.Management.V1.UpdateMerchantWebhookRequest.t(),
+          body :: AdyenEx.Management.V1.UpdateMerchantWebhookRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Webhook.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Webhook.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def patch_merchants_merchant_id_webhooks_webhook_id(merchantId, webhookId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, webhookId: webhookId, body: body],
       call:
-        {Adyen.Management.V1.WebhooksMerchantLevel,
+        {AdyenEx.Management.V1.WebhooksMerchantLevel,
          :patch_merchants_merchant_id_webhooks_webhook_id},
       url: "/merchants/#{merchantId}/webhooks/#{webhookId}",
       body: body,
       method: :patch,
-      request: [{"application/json", {Adyen.Management.V1.UpdateMerchantWebhookRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.UpdateMerchantWebhookRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.Webhook, :t}},
+        {200, {AdyenEx.Management.V1.Webhook, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -181,29 +181,29 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
   """
   @spec post_merchants_merchant_id_webhooks(
           merchantId :: String.t(),
-          body :: Adyen.Management.V1.CreateMerchantWebhookRequest.t(),
+          body :: AdyenEx.Management.V1.CreateMerchantWebhookRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.Webhook.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.Webhook.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_webhooks(merchantId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, body: body],
-      call: {Adyen.Management.V1.WebhooksMerchantLevel, :post_merchants_merchant_id_webhooks},
+      call: {AdyenEx.Management.V1.WebhooksMerchantLevel, :post_merchants_merchant_id_webhooks},
       url: "/merchants/#{merchantId}/webhooks",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.CreateMerchantWebhookRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.CreateMerchantWebhookRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.Webhook, :t}},
+        {200, {AdyenEx.Management.V1.Webhook, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -222,8 +222,8 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
           webhookId :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.GenerateHmacKeyResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.GenerateHmacKeyResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_webhooks_webhook_id_generate_hmac(
         merchantId,
         webhookId,
@@ -234,18 +234,18 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
     client.request(%{
       args: [merchantId: merchantId, webhookId: webhookId],
       call:
-        {Adyen.Management.V1.WebhooksMerchantLevel,
+        {AdyenEx.Management.V1.WebhooksMerchantLevel,
          :post_merchants_merchant_id_webhooks_webhook_id_generate_hmac},
       url: "/merchants/#{merchantId}/webhooks/#{webhookId}/generateHmac",
       method: :post,
       response: [
-        {200, {Adyen.Management.V1.GenerateHmacKeyResponse, :t}},
+        {200, {AdyenEx.Management.V1.GenerateHmacKeyResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })
@@ -270,31 +270,31 @@ defmodule Adyen.Management.V1.WebhooksMerchantLevel do
   @spec post_merchants_merchant_id_webhooks_webhook_id_test(
           merchantId :: String.t(),
           webhookId :: String.t(),
-          body :: Adyen.Management.V1.TestWebhookRequest.t(),
+          body :: AdyenEx.Management.V1.TestWebhookRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Management.V1.TestWebhookResponse.t()}
-          | {:error, Adyen.Management.V1.RestServiceError.t()}
+          {:ok, AdyenEx.Management.V1.TestWebhookResponse.t()}
+          | {:error, AdyenEx.Management.V1.RestServiceError.t()}
   def post_merchants_merchant_id_webhooks_webhook_id_test(merchantId, webhookId, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [merchantId: merchantId, webhookId: webhookId, body: body],
       call:
-        {Adyen.Management.V1.WebhooksMerchantLevel,
+        {AdyenEx.Management.V1.WebhooksMerchantLevel,
          :post_merchants_merchant_id_webhooks_webhook_id_test},
       url: "/merchants/#{merchantId}/webhooks/#{webhookId}/test",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Management.V1.TestWebhookRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Management.V1.TestWebhookRequest, :t}}],
       response: [
-        {200, {Adyen.Management.V1.TestWebhookResponse, :t}},
+        {200, {AdyenEx.Management.V1.TestWebhookResponse, :t}},
         {204, :null},
-        {400, {Adyen.Management.V1.RestServiceError, :t}},
-        {401, {Adyen.Management.V1.RestServiceError, :t}},
-        {403, {Adyen.Management.V1.RestServiceError, :t}},
-        {422, {Adyen.Management.V1.RestServiceError, :t}},
-        {500, {Adyen.Management.V1.RestServiceError, :t}}
+        {400, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {401, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {422, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],
       opts: opts
     })

@@ -1,4 +1,4 @@
-defmodule Adyen.TfmAPI.V1.MerchantAccount do
+defmodule AdyenEx.TfmAPI.V1.MerchantAccount do
   @moduledoc """
   Provides struct and type for a MerchantAccount
   """
@@ -7,7 +7,7 @@ defmodule Adyen.TfmAPI.V1.MerchantAccount do
           inStoreTerminals: [String.t()] | nil,
           inventoryTerminals: [String.t()] | nil,
           merchantAccount: String.t(),
-          stores: [Adyen.TfmAPI.V1.Store.t()] | nil
+          stores: [AdyenEx.TfmAPI.V1.Store.t()] | nil
         }
 
   defstruct [:inStoreTerminals, :inventoryTerminals, :merchantAccount, :stores]
@@ -21,7 +21,7 @@ defmodule Adyen.TfmAPI.V1.MerchantAccount do
       inStoreTerminals: [:string],
       inventoryTerminals: [:string],
       merchantAccount: :string,
-      stores: [{Adyen.TfmAPI.V1.Store, :t}]
+      stores: [{AdyenEx.TfmAPI.V1.Store, :t}]
     ]
   end
 end

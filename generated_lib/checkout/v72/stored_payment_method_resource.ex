@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.StoredPaymentMethodResource do
+defmodule AdyenEx.Checkout.V72.StoredPaymentMethodResource do
   @moduledoc """
   Provides struct and type for a StoredPaymentMethodResource
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Checkout.V72.StoredPaymentMethodResource do
   @type t :: %__MODULE__{
           alias: String.t() | nil,
           aliasType: String.t() | nil,
-          billingAddress: Adyen.Checkout.V72.Address.t() | nil,
+          billingAddress: AdyenEx.Checkout.V72.Address.t() | nil,
           brand: String.t() | nil,
           cardBin: String.t() | nil,
           createdAt: DateTime.t() | nil,
@@ -20,7 +20,7 @@ defmodule Adyen.Checkout.V72.StoredPaymentMethodResource do
           id: String.t() | nil,
           issuerName: String.t() | nil,
           lastFour: String.t() | nil,
-          mandate: Adyen.Checkout.V72.TokenMandate.t() | nil,
+          mandate: AdyenEx.Checkout.V72.TokenMandate.t() | nil,
           name: String.t() | nil,
           networkTxReference: String.t() | nil,
           ownerName: String.t() | nil,
@@ -65,7 +65,7 @@ defmodule Adyen.Checkout.V72.StoredPaymentMethodResource do
     [
       alias: :string,
       aliasType: :string,
-      billingAddress: {Adyen.Checkout.V72.Address, :t},
+      billingAddress: {AdyenEx.Checkout.V72.Address, :t},
       brand: :string,
       cardBin: :string,
       createdAt: {:string, "date-time"},
@@ -79,7 +79,7 @@ defmodule Adyen.Checkout.V72.StoredPaymentMethodResource do
       id: :string,
       issuerName: :string,
       lastFour: :string,
-      mandate: {Adyen.Checkout.V72.TokenMandate, :t},
+      mandate: {AdyenEx.Checkout.V72.TokenMandate, :t},
       name: :string,
       networkTxReference: :string,
       ownerName: :string,

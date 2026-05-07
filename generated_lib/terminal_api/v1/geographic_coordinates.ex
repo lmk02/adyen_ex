@@ -1,4 +1,4 @@
-defmodule Adyen.TerminalAPI.V1.GeographicCoordinates do
+defmodule AdyenEx.TerminalAPI.V1.GeographicCoordinates do
   @moduledoc """
   Provides struct and type for a GeographicCoordinates
   """

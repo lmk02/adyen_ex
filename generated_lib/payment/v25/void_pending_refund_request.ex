@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V25.VoidPendingRefundRequest do
+defmodule AdyenEx.Payment.V25.VoidPendingRefundRequest do
   @moduledoc """
   Provides struct and type for a VoidPendingRefundRequest
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Payment.V25.VoidPendingRefundRequest do
   @type t :: %__MODULE__{
           additionalData: map | nil,
           merchantAccount: String.t(),
-          modificationAmount: Adyen.Payment.V25.Amount.t() | nil,
+          modificationAmount: AdyenEx.Payment.V25.Amount.t() | nil,
           originalReference: String.t() | nil,
           reference: String.t() | nil,
           tenderReference: String.t() | nil,
@@ -31,7 +31,7 @@ defmodule Adyen.Payment.V25.VoidPendingRefundRequest do
     [
       additionalData: :map,
       merchantAccount: :string,
-      modificationAmount: {Adyen.Payment.V25.Amount, :t},
+      modificationAmount: {AdyenEx.Payment.V25.Amount, :t},
       originalReference: :string,
       reference: :string,
       tenderReference: :string,

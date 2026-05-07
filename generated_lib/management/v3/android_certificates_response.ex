@@ -1,9 +1,9 @@
-defmodule Adyen.Management.V3.AndroidCertificatesResponse do
+defmodule AdyenEx.Management.V3.AndroidCertificatesResponse do
   @moduledoc """
   Provides struct and type for a AndroidCertificatesResponse
   """
 
-  @type t :: %__MODULE__{data: [Adyen.Management.V3.AndroidCertificate.t()] | nil}
+  @type t :: %__MODULE__{data: [AdyenEx.Management.V3.AndroidCertificate.t()] | nil}
 
   defstruct [:data]
 
@@ -12,6 +12,6 @@ defmodule Adyen.Management.V3.AndroidCertificatesResponse do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [data: [{Adyen.Management.V3.AndroidCertificate, :t}]]
+    [data: [{AdyenEx.Management.V3.AndroidCertificate, :t}]]
   end
 end

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.Organization do
+defmodule AdyenEx.LegalEntity.V3.Organization do
   @moduledoc """
   Provides struct and type for a Organization
   """
@@ -11,24 +11,24 @@ defmodule Adyen.LegalEntity.V3.Organization do
           doingBusinessAs: String.t() | nil,
           economicSector: String.t() | nil,
           email: String.t() | nil,
-          financialReports: [Adyen.LegalEntity.V3.FinancialReport.t()] | nil,
+          financialReports: [AdyenEx.LegalEntity.V3.FinancialReport.t()] | nil,
           globalLegalEntityIdentifier: String.t() | nil,
           headOfficeIndicator: boolean | nil,
           institutionalSector: String.t() | nil,
           legalForm: String.t() | nil,
           legalName: String.t(),
-          phone: Adyen.LegalEntity.V3.PhoneNumber.t() | nil,
-          principalPlaceOfBusiness: Adyen.LegalEntity.V3.Address.t() | nil,
-          registeredAddress: Adyen.LegalEntity.V3.Address.t(),
+          phone: AdyenEx.LegalEntity.V3.PhoneNumber.t() | nil,
+          principalPlaceOfBusiness: AdyenEx.LegalEntity.V3.Address.t() | nil,
+          registeredAddress: AdyenEx.LegalEntity.V3.Address.t(),
           registrationNumber: String.t() | nil,
           statusOfLegalProceeding: String.t() | nil,
-          stockData: Adyen.LegalEntity.V3.StockData.t() | nil,
-          taxInformation: [Adyen.LegalEntity.V3.TaxInformation.t()] | nil,
-          taxReportingClassification: Adyen.LegalEntity.V3.TaxReportingClassification.t() | nil,
+          stockData: AdyenEx.LegalEntity.V3.StockData.t() | nil,
+          taxInformation: [AdyenEx.LegalEntity.V3.TaxInformation.t()] | nil,
+          taxReportingClassification: AdyenEx.LegalEntity.V3.TaxReportingClassification.t() | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
           vatNumber: String.t() | nil,
-          webData: Adyen.LegalEntity.V3.WebData.t() | nil
+          webData: AdyenEx.LegalEntity.V3.WebData.t() | nil
         }
 
   defstruct [
@@ -72,7 +72,7 @@ defmodule Adyen.LegalEntity.V3.Organization do
       doingBusinessAs: :string,
       economicSector: :string,
       email: :string,
-      financialReports: [{Adyen.LegalEntity.V3.FinancialReport, :t}],
+      financialReports: [{AdyenEx.LegalEntity.V3.FinancialReport, :t}],
       globalLegalEntityIdentifier: :string,
       headOfficeIndicator: :boolean,
       institutionalSector:
@@ -98,9 +98,9 @@ defmodule Adyen.LegalEntity.V3.Organization do
          ]},
       legalForm: :string,
       legalName: :string,
-      phone: {Adyen.LegalEntity.V3.PhoneNumber, :t},
-      principalPlaceOfBusiness: {Adyen.LegalEntity.V3.Address, :t},
-      registeredAddress: {Adyen.LegalEntity.V3.Address, :t},
+      phone: {AdyenEx.LegalEntity.V3.PhoneNumber, :t},
+      principalPlaceOfBusiness: {AdyenEx.LegalEntity.V3.Address, :t},
+      registeredAddress: {AdyenEx.LegalEntity.V3.Address, :t},
       registrationNumber: :string,
       statusOfLegalProceeding:
         {:enum,
@@ -110,9 +110,9 @@ defmodule Adyen.LegalEntity.V3.Organization do
            "bankruptcyInsolvency",
            "otherLegalMeasures"
          ]},
-      stockData: {Adyen.LegalEntity.V3.StockData, :t},
-      taxInformation: [{Adyen.LegalEntity.V3.TaxInformation, :t}],
-      taxReportingClassification: {Adyen.LegalEntity.V3.TaxReportingClassification, :t},
+      stockData: {AdyenEx.LegalEntity.V3.StockData, :t},
+      taxInformation: [{AdyenEx.LegalEntity.V3.TaxInformation, :t}],
+      taxReportingClassification: {AdyenEx.LegalEntity.V3.TaxReportingClassification, :t},
       type:
         {:enum,
          [
@@ -125,7 +125,7 @@ defmodule Adyen.LegalEntity.V3.Organization do
          ]},
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},
       vatNumber: :string,
-      webData: {Adyen.LegalEntity.V3.WebData, :t}
+      webData: {AdyenEx.LegalEntity.V3.WebData, :t}
     ]
   end
 end

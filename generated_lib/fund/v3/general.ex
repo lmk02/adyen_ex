@@ -1,9 +1,9 @@
-defmodule Adyen.Fund.V3.General do
+defmodule AdyenEx.Fund.V3.General do
   @moduledoc """
   Provides API endpoints related to general
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Get the balances of an account holder
@@ -15,29 +15,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_account_holder_balance(
-          body :: Adyen.Fund.V3.AccountHolderBalanceRequest.t(),
+          body :: AdyenEx.Fund.V3.AccountHolderBalanceRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.AccountHolderBalanceResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.AccountHolderBalanceResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_account_holder_balance(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_account_holder_balance},
+      call: {AdyenEx.Fund.V3.General, :post_account_holder_balance},
       url: "/accountHolderBalance",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.AccountHolderBalanceRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.AccountHolderBalanceRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.AccountHolderBalanceResponse, :t}},
-        {202, {Adyen.Fund.V3.AccountHolderBalanceResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.AccountHolderBalanceResponse, :t}},
+        {202, {AdyenEx.Fund.V3.AccountHolderBalanceResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -53,29 +53,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_account_holder_transaction_list(
-          body :: Adyen.Fund.V3.AccountHolderTransactionListRequest.t(),
+          body :: AdyenEx.Fund.V3.AccountHolderTransactionListRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.AccountHolderTransactionListResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.AccountHolderTransactionListResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_account_holder_transaction_list(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_account_holder_transaction_list},
+      call: {AdyenEx.Fund.V3.General, :post_account_holder_transaction_list},
       url: "/accountHolderTransactionList",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.AccountHolderTransactionListRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.AccountHolderTransactionListRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.AccountHolderTransactionListResponse, :t}},
-        {202, {Adyen.Fund.V3.AccountHolderTransactionListResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.AccountHolderTransactionListResponse, :t}},
+        {202, {AdyenEx.Fund.V3.AccountHolderTransactionListResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -93,29 +93,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_debit_account_holder(
-          body :: Adyen.Fund.V3.DebitAccountHolderRequest.t(),
+          body :: AdyenEx.Fund.V3.DebitAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.DebitAccountHolderResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.DebitAccountHolderResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_debit_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_debit_account_holder},
+      call: {AdyenEx.Fund.V3.General, :post_debit_account_holder},
       url: "/debitAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.DebitAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.DebitAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.DebitAccountHolderResponse, :t}},
-        {202, {Adyen.Fund.V3.DebitAccountHolderResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.DebitAccountHolderResponse, :t}},
+        {202, {AdyenEx.Fund.V3.DebitAccountHolderResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -131,29 +131,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_payout_account_holder(
-          body :: Adyen.Fund.V3.PayoutAccountHolderRequest.t(),
+          body :: AdyenEx.Fund.V3.PayoutAccountHolderRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.PayoutAccountHolderResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.PayoutAccountHolderResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_payout_account_holder(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_payout_account_holder},
+      call: {AdyenEx.Fund.V3.General, :post_payout_account_holder},
       url: "/payoutAccountHolder",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.PayoutAccountHolderRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.PayoutAccountHolderRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.PayoutAccountHolderResponse, :t}},
-        {202, {Adyen.Fund.V3.PayoutAccountHolderResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.PayoutAccountHolderResponse, :t}},
+        {202, {AdyenEx.Fund.V3.PayoutAccountHolderResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -169,29 +169,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_refund_funds_transfer(
-          body :: Adyen.Fund.V3.RefundFundsTransferRequest.t(),
+          body :: AdyenEx.Fund.V3.RefundFundsTransferRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.RefundFundsTransferResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.RefundFundsTransferResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_refund_funds_transfer(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_refund_funds_transfer},
+      call: {AdyenEx.Fund.V3.General, :post_refund_funds_transfer},
       url: "/refundFundsTransfer",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.RefundFundsTransferRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.RefundFundsTransferRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.RefundFundsTransferResponse, :t}},
-        {202, {Adyen.Fund.V3.RefundFundsTransferResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.RefundFundsTransferResponse, :t}},
+        {202, {AdyenEx.Fund.V3.RefundFundsTransferResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -207,29 +207,29 @@ defmodule Adyen.Fund.V3.General do
   **Content Types**: `application/json`
   """
   @spec post_refund_not_paid_out_transfers(
-          body :: Adyen.Fund.V3.RefundNotPaidOutTransfersRequest.t(),
+          body :: AdyenEx.Fund.V3.RefundNotPaidOutTransfersRequest.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.Fund.V3.RefundNotPaidOutTransfersResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+          {:ok, AdyenEx.Fund.V3.RefundNotPaidOutTransfersResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_refund_not_paid_out_transfers(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_refund_not_paid_out_transfers},
+      call: {AdyenEx.Fund.V3.General, :post_refund_not_paid_out_transfers},
       url: "/refundNotPaidOutTransfers",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.RefundNotPaidOutTransfersRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.RefundNotPaidOutTransfersRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.RefundNotPaidOutTransfersResponse, :t}},
-        {202, {Adyen.Fund.V3.RefundNotPaidOutTransfersResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.RefundNotPaidOutTransfersResponse, :t}},
+        {202, {AdyenEx.Fund.V3.RefundNotPaidOutTransfersResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -244,27 +244,30 @@ defmodule Adyen.Fund.V3.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_setup_beneficiary(body :: Adyen.Fund.V3.SetupBeneficiaryRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Fund.V3.SetupBeneficiaryResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+  @spec post_setup_beneficiary(
+          body :: AdyenEx.Fund.V3.SetupBeneficiaryRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.Fund.V3.SetupBeneficiaryResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_setup_beneficiary(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_setup_beneficiary},
+      call: {AdyenEx.Fund.V3.General, :post_setup_beneficiary},
       url: "/setupBeneficiary",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.SetupBeneficiaryRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.SetupBeneficiaryRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.SetupBeneficiaryResponse, :t}},
-        {202, {Adyen.Fund.V3.SetupBeneficiaryResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.SetupBeneficiaryResponse, :t}},
+        {202, {AdyenEx.Fund.V3.SetupBeneficiaryResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -279,27 +282,27 @@ defmodule Adyen.Fund.V3.General do
 
   **Content Types**: `application/json`
   """
-  @spec post_transfer_funds(body :: Adyen.Fund.V3.TransferFundsRequest.t(), opts :: keyword) ::
-          {:ok, Adyen.Fund.V3.TransferFundsResponse.t()}
-          | {:error, Adyen.Fund.V3.ServiceError.t()}
+  @spec post_transfer_funds(body :: AdyenEx.Fund.V3.TransferFundsRequest.t(), opts :: keyword) ::
+          {:ok, AdyenEx.Fund.V3.TransferFundsResponse.t()}
+          | {:error, AdyenEx.Fund.V3.ServiceError.t()}
   def post_transfer_funds(body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [body: body],
-      call: {Adyen.Fund.V3.General, :post_transfer_funds},
+      call: {AdyenEx.Fund.V3.General, :post_transfer_funds},
       url: "/transferFunds",
       body: body,
       method: :post,
-      request: [{"application/json", {Adyen.Fund.V3.TransferFundsRequest, :t}}],
+      request: [{"application/json", {AdyenEx.Fund.V3.TransferFundsRequest, :t}}],
       response: [
-        {200, {Adyen.Fund.V3.TransferFundsResponse, :t}},
-        {202, {Adyen.Fund.V3.TransferFundsResponse, :t}},
-        {400, {Adyen.Fund.V3.ServiceError, :t}},
-        {401, {Adyen.Fund.V3.ServiceError, :t}},
-        {403, {Adyen.Fund.V3.ServiceError, :t}},
-        {422, {Adyen.Fund.V3.ServiceError, :t}},
-        {500, {Adyen.Fund.V3.ServiceError, :t}}
+        {200, {AdyenEx.Fund.V3.TransferFundsResponse, :t}},
+        {202, {AdyenEx.Fund.V3.TransferFundsResponse, :t}},
+        {400, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {401, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {403, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {422, {AdyenEx.Fund.V3.ServiceError, :t}},
+        {500, {AdyenEx.Fund.V3.ServiceError, :t}}
       ],
       opts: opts
     })

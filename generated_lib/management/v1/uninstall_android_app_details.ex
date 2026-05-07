@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.UninstallAndroidAppDetails do
+defmodule AdyenEx.Management.V1.UninstallAndroidAppDetails do
   @moduledoc """
   Provides struct and type for a UninstallAndroidAppDetails
   """

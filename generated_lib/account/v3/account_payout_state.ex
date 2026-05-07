@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V3.AccountPayoutState do
+defmodule AdyenEx.Account.V3.AccountPayoutState do
   @moduledoc """
   Provides struct and type for a AccountPayoutState
   """
@@ -7,7 +7,7 @@ defmodule Adyen.Account.V3.AccountPayoutState do
           allowPayout: boolean | nil,
           disableReason: String.t() | nil,
           disabled: boolean | nil,
-          payoutLimit: Adyen.Account.V3.Amount.t() | nil,
+          payoutLimit: AdyenEx.Account.V3.Amount.t() | nil,
           tierNumber: integer | nil
         }
 
@@ -22,7 +22,7 @@ defmodule Adyen.Account.V3.AccountPayoutState do
       allowPayout: :boolean,
       disableReason: :string,
       disabled: :boolean,
-      payoutLimit: {Adyen.Account.V3.Amount, :t},
+      payoutLimit: {AdyenEx.Account.V3.Amount, :t},
       tierNumber: {:integer, "int32"}
     ]
   end

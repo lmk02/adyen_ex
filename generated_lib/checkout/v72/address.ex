@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.Address do
+defmodule AdyenEx.Checkout.V72.Address do
   @moduledoc """
   Provides struct and type for a Address
   """

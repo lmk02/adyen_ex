@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V51.ConfidenceScore do
+defmodule AdyenEx.Checkout.V51.ConfidenceScore do
   @moduledoc """
   Provides struct and type for a ConfidenceScore
   """

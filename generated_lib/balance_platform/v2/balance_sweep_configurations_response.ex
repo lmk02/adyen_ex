@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.BalanceSweepConfigurationsResponse do
+defmodule AdyenEx.BalancePlatform.V2.BalanceSweepConfigurationsResponse do
   @moduledoc """
   Provides struct and type for a BalanceSweepConfigurationsResponse
   """
@@ -6,7 +6,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceSweepConfigurationsResponse do
   @type t :: %__MODULE__{
           hasNext: boolean,
           hasPrevious: boolean,
-          sweeps: [Adyen.BalancePlatform.V2.SweepConfigurationV2.t()]
+          sweeps: [AdyenEx.BalancePlatform.V2.SweepConfigurationV2.t()]
         }
 
   defstruct [:hasNext, :hasPrevious, :sweeps]
@@ -19,7 +19,7 @@ defmodule Adyen.BalancePlatform.V2.BalanceSweepConfigurationsResponse do
     [
       hasNext: :boolean,
       hasPrevious: :boolean,
-      sweeps: [{Adyen.BalancePlatform.V2.SweepConfigurationV2, :t}]
+      sweeps: [{AdyenEx.BalancePlatform.V2.SweepConfigurationV2, :t}]
     ]
   end
 end

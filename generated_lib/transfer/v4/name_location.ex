@@ -1,4 +1,4 @@
-defmodule Adyen.Transfer.V4.NameLocation do
+defmodule AdyenEx.Transfer.V4.NameLocation do
   @moduledoc """
   Provides struct and type for a NameLocation
   """

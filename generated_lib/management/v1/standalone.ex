@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V1.Standalone do
+defmodule AdyenEx.Management.V1.Standalone do
   @moduledoc """
   Provides struct and type for a Standalone
   """

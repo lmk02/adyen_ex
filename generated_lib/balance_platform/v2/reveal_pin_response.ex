@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.RevealPinResponse do
+defmodule AdyenEx.BalancePlatform.V2.RevealPinResponse do
   @moduledoc """
   Provides struct and type for a RevealPinResponse
   """

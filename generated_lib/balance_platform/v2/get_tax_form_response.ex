@@ -1,4 +1,4 @@
-defmodule Adyen.BalancePlatform.V2.GetTaxFormResponse do
+defmodule AdyenEx.BalancePlatform.V2.GetTaxFormResponse do
   @moduledoc """
   Provides struct and type for a GetTaxFormResponse
   """

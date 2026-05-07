@@ -1,4 +1,4 @@
-defmodule Adyen.Transaction.V2.DuplicateInfo do
+defmodule AdyenEx.Transaction.V2.DuplicateInfo do
   @moduledoc """
   Provides struct and type for a DuplicateInfo
   """

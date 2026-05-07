@@ -1,15 +1,15 @@
-defmodule Adyen.Management.V1.UpdateStoreRequest do
+defmodule AdyenEx.Management.V1.UpdateStoreRequest do
   @moduledoc """
   Provides struct and type for a UpdateStoreRequest
   """
 
   @type t :: %__MODULE__{
-          address: Adyen.Management.V1.UpdatableAddress.t() | nil,
+          address: AdyenEx.Management.V1.UpdatableAddress.t() | nil,
           businessLineIds: [String.t()] | nil,
           description: String.t() | nil,
           externalReferenceId: String.t() | nil,
           phoneNumber: String.t() | nil,
-          splitConfiguration: Adyen.Management.V1.StoreSplitConfiguration.t() | nil,
+          splitConfiguration: AdyenEx.Management.V1.StoreSplitConfiguration.t() | nil,
           status: String.t() | nil
         }
 
@@ -29,12 +29,12 @@ defmodule Adyen.Management.V1.UpdateStoreRequest do
 
   def __fields__(:t) do
     [
-      address: {Adyen.Management.V1.UpdatableAddress, :t},
+      address: {AdyenEx.Management.V1.UpdatableAddress, :t},
       businessLineIds: [:string],
       description: :string,
       externalReferenceId: :string,
       phoneNumber: :string,
-      splitConfiguration: {Adyen.Management.V1.StoreSplitConfiguration, :t},
+      splitConfiguration: {AdyenEx.Management.V1.StoreSplitConfiguration, :t},
       status: {:enum, ["active", "closed", "inactive"]}
     ]
   end

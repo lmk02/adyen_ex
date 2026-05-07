@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V69.CellulantDetails do
+defmodule AdyenEx.Checkout.V69.CellulantDetails do
   @moduledoc """
   Provides struct and type for a CellulantDetails
   """

@@ -1,4 +1,4 @@
-defmodule Adyen.LegalEntity.V3.OnboardingLinkInfo do
+defmodule AdyenEx.LegalEntity.V3.OnboardingLinkInfo do
   @moduledoc """
   Provides struct and type for a OnboardingLinkInfo
   """
@@ -6,7 +6,7 @@ defmodule Adyen.LegalEntity.V3.OnboardingLinkInfo do
   @type t :: %__MODULE__{
           locale: String.t() | nil,
           redirectUrl: String.t() | nil,
-          settings: Adyen.LegalEntity.V3.OnboardingLinkSettings.t() | nil,
+          settings: AdyenEx.LegalEntity.V3.OnboardingLinkSettings.t() | nil,
           themeId: String.t() | nil
         }
 
@@ -20,7 +20,7 @@ defmodule Adyen.LegalEntity.V3.OnboardingLinkInfo do
     [
       locale: :string,
       redirectUrl: :string,
-      settings: {Adyen.LegalEntity.V3.OnboardingLinkSettings, :t},
+      settings: {AdyenEx.LegalEntity.V3.OnboardingLinkSettings, :t},
       themeId: :string
     ]
   end

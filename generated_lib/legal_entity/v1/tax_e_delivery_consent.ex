@@ -1,9 +1,9 @@
-defmodule Adyen.LegalEntity.V1.TaxEDeliveryConsent do
+defmodule AdyenEx.LegalEntity.V1.TaxEDeliveryConsent do
   @moduledoc """
   Provides API endpoints related to tax e delivery consent
   """
 
-  @default_client Adyen.Client
+  @default_client AdyenEx.Client
 
   @doc """
   Check the status of consent for electronic delivery of tax forms
@@ -23,25 +23,25 @@ defmodule Adyen.LegalEntity.V1.TaxEDeliveryConsent do
           id :: String.t(),
           opts :: keyword
         ) ::
-          {:ok, Adyen.LegalEntity.V1.CheckTaxElectronicDeliveryConsentResponse.t()}
-          | {:error, Adyen.LegalEntity.V1.ServiceError.t()}
+          {:ok, AdyenEx.LegalEntity.V1.CheckTaxElectronicDeliveryConsentResponse.t()}
+          | {:error, AdyenEx.LegalEntity.V1.ServiceError.t()}
   def post_legal_entities_id_check_tax_electronic_delivery_consent(id, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id],
       call:
-        {Adyen.LegalEntity.V1.TaxEDeliveryConsent,
+        {AdyenEx.LegalEntity.V1.TaxEDeliveryConsent,
          :post_legal_entities_id_check_tax_electronic_delivery_consent},
       url: "/legalEntities/#{id}/checkTaxElectronicDeliveryConsent",
       method: :post,
       response: [
-        {200, {Adyen.LegalEntity.V1.CheckTaxElectronicDeliveryConsentResponse, :t}},
-        {400, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V1.ServiceError, :t}}
+        {200, {AdyenEx.LegalEntity.V1.CheckTaxElectronicDeliveryConsentResponse, :t}},
+        {400, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V1.ServiceError, :t}}
       ],
       opts: opts
     })
@@ -67,30 +67,30 @@ defmodule Adyen.LegalEntity.V1.TaxEDeliveryConsent do
   """
   @spec post_legal_entities_id_set_tax_electronic_delivery_consent(
           id :: String.t(),
-          body :: Adyen.LegalEntity.V1.SetTaxElectronicDeliveryConsentRequest.t(),
+          body :: AdyenEx.LegalEntity.V1.SetTaxElectronicDeliveryConsentRequest.t(),
           opts :: keyword
-        ) :: :ok | {:error, Adyen.LegalEntity.V1.ServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.LegalEntity.V1.ServiceError.t()}
   def post_legal_entities_id_set_tax_electronic_delivery_consent(id, body, opts \\ []) do
     client = opts[:client] || @default_client
 
     client.request(%{
       args: [id: id, body: body],
       call:
-        {Adyen.LegalEntity.V1.TaxEDeliveryConsent,
+        {AdyenEx.LegalEntity.V1.TaxEDeliveryConsent,
          :post_legal_entities_id_set_tax_electronic_delivery_consent},
       url: "/legalEntities/#{id}/setTaxElectronicDeliveryConsent",
       body: body,
       method: :post,
       request: [
-        {"application/json", {Adyen.LegalEntity.V1.SetTaxElectronicDeliveryConsentRequest, :t}}
+        {"application/json", {AdyenEx.LegalEntity.V1.SetTaxElectronicDeliveryConsentRequest, :t}}
       ],
       response: [
         {200, :null},
-        {400, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {401, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {403, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {422, {Adyen.LegalEntity.V1.ServiceError, :t}},
-        {500, {Adyen.LegalEntity.V1.ServiceError, :t}}
+        {400, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {401, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {403, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {422, {AdyenEx.LegalEntity.V1.ServiceError, :t}},
+        {500, {AdyenEx.LegalEntity.V1.ServiceError, :t}}
       ],
       opts: opts
     })

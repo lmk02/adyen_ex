@@ -1,12 +1,12 @@
-defmodule Adyen.Transfer.V4.Repayment do
+defmodule AdyenEx.Transfer.V4.Repayment do
   @moduledoc """
   Provides struct and type for a Repayment
   """
 
   @type t :: %__MODULE__{
           basisPoints: integer,
-          term: Adyen.Transfer.V4.RepaymentTerm.t() | nil,
-          threshold: Adyen.Transfer.V4.ThresholdRepayment.t() | nil
+          term: AdyenEx.Transfer.V4.RepaymentTerm.t() | nil,
+          threshold: AdyenEx.Transfer.V4.ThresholdRepayment.t() | nil
         }
 
   defstruct [:basisPoints, :term, :threshold]
@@ -18,8 +18,8 @@ defmodule Adyen.Transfer.V4.Repayment do
   def __fields__(:t) do
     [
       basisPoints: {:integer, "int32"},
-      term: {Adyen.Transfer.V4.RepaymentTerm, :t},
-      threshold: {Adyen.Transfer.V4.ThresholdRepayment, :t}
+      term: {AdyenEx.Transfer.V4.RepaymentTerm, :t},
+      threshold: {AdyenEx.Transfer.V4.ThresholdRepayment, :t}
     ]
   end
 end

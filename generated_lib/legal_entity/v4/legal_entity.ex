@@ -1,24 +1,24 @@
-defmodule Adyen.LegalEntity.V4.LegalEntity do
+defmodule AdyenEx.LegalEntity.V4.LegalEntity do
   @moduledoc """
   Provides struct and type for a LegalEntity
   """
 
   @type t :: %__MODULE__{
           capabilities: map | nil,
-          documentDetails: [Adyen.LegalEntity.V4.DocumentReference.t()] | nil,
-          documents: [Adyen.LegalEntity.V4.EntityReference.t()] | nil,
-          entityAssociations: [Adyen.LegalEntity.V4.LegalEntityAssociation.t()] | nil,
+          documentDetails: [AdyenEx.LegalEntity.V4.DocumentReference.t()] | nil,
+          documents: [AdyenEx.LegalEntity.V4.EntityReference.t()] | nil,
+          entityAssociations: [AdyenEx.LegalEntity.V4.LegalEntityAssociation.t()] | nil,
           id: String.t(),
-          individual: Adyen.LegalEntity.V4.Individual.t() | nil,
-          organization: Adyen.LegalEntity.V4.Organization.t() | nil,
-          problems: [Adyen.LegalEntity.V4.CapabilityProblem.t()] | nil,
+          individual: AdyenEx.LegalEntity.V4.Individual.t() | nil,
+          organization: AdyenEx.LegalEntity.V4.Organization.t() | nil,
+          problems: [AdyenEx.LegalEntity.V4.CapabilityProblem.t()] | nil,
           reference: String.t() | nil,
-          soleProprietorship: Adyen.LegalEntity.V4.SoleProprietorship.t() | nil,
-          transferInstruments: [Adyen.LegalEntity.V4.TransferInstrumentReference.t()] | nil,
-          trust: Adyen.LegalEntity.V4.Trust.t() | nil,
+          soleProprietorship: AdyenEx.LegalEntity.V4.SoleProprietorship.t() | nil,
+          transferInstruments: [AdyenEx.LegalEntity.V4.TransferInstrumentReference.t()] | nil,
+          trust: AdyenEx.LegalEntity.V4.Trust.t() | nil,
           type: String.t() | nil,
-          unincorporatedPartnership: Adyen.LegalEntity.V4.UnincorporatedPartnership.t() | nil,
-          verificationDeadlines: [Adyen.LegalEntity.V4.VerificationDeadline.t()] | nil,
+          unincorporatedPartnership: AdyenEx.LegalEntity.V4.UnincorporatedPartnership.t() | nil,
+          verificationDeadlines: [AdyenEx.LegalEntity.V4.VerificationDeadline.t()] | nil,
           verificationPlan: String.t() | nil
         }
 
@@ -48,17 +48,17 @@ defmodule Adyen.LegalEntity.V4.LegalEntity do
   def __fields__(:t) do
     [
       capabilities: :map,
-      documentDetails: [{Adyen.LegalEntity.V4.DocumentReference, :t}],
-      documents: [{Adyen.LegalEntity.V4.EntityReference, :t}],
-      entityAssociations: [{Adyen.LegalEntity.V4.LegalEntityAssociation, :t}],
+      documentDetails: [{AdyenEx.LegalEntity.V4.DocumentReference, :t}],
+      documents: [{AdyenEx.LegalEntity.V4.EntityReference, :t}],
+      entityAssociations: [{AdyenEx.LegalEntity.V4.LegalEntityAssociation, :t}],
       id: :string,
-      individual: {Adyen.LegalEntity.V4.Individual, :t},
-      organization: {Adyen.LegalEntity.V4.Organization, :t},
-      problems: [{Adyen.LegalEntity.V4.CapabilityProblem, :t}],
+      individual: {AdyenEx.LegalEntity.V4.Individual, :t},
+      organization: {AdyenEx.LegalEntity.V4.Organization, :t},
+      problems: [{AdyenEx.LegalEntity.V4.CapabilityProblem, :t}],
       reference: :string,
-      soleProprietorship: {Adyen.LegalEntity.V4.SoleProprietorship, :t},
-      transferInstruments: [{Adyen.LegalEntity.V4.TransferInstrumentReference, :t}],
-      trust: {Adyen.LegalEntity.V4.Trust, :t},
+      soleProprietorship: {AdyenEx.LegalEntity.V4.SoleProprietorship, :t},
+      transferInstruments: [{AdyenEx.LegalEntity.V4.TransferInstrumentReference, :t}],
+      trust: {AdyenEx.LegalEntity.V4.Trust, :t},
       type:
         {:enum,
          [
@@ -68,8 +68,8 @@ defmodule Adyen.LegalEntity.V4.LegalEntity do
            "trust",
            "unincorporatedPartnership"
          ]},
-      unincorporatedPartnership: {Adyen.LegalEntity.V4.UnincorporatedPartnership, :t},
-      verificationDeadlines: [{Adyen.LegalEntity.V4.VerificationDeadline, :t}],
+      unincorporatedPartnership: {AdyenEx.LegalEntity.V4.UnincorporatedPartnership, :t},
+      verificationDeadlines: [{AdyenEx.LegalEntity.V4.VerificationDeadline, :t}],
       verificationPlan: :string
     ]
   end

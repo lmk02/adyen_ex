@@ -1,4 +1,4 @@
-defmodule Adyen.Management.V3.TestOutput do
+defmodule AdyenEx.Management.V3.TestOutput do
   @moduledoc """
   Provides struct and type for a TestOutput
   """

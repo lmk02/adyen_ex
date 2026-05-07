@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V72.UpiCollectDetails do
+defmodule AdyenEx.Checkout.V72.UpiCollectDetails do
   @moduledoc """
   Provides struct and type for a UpiCollectDetails
   """

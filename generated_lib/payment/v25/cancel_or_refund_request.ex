@@ -1,4 +1,4 @@
-defmodule Adyen.Payment.V25.CancelOrRefundRequest do
+defmodule AdyenEx.Payment.V25.CancelOrRefundRequest do
   @moduledoc """
   Provides struct and type for a CancelOrRefundRequest
   """

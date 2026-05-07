@@ -1,4 +1,4 @@
-defmodule Adyen.Account.V6.KYCCheckStatusData do
+defmodule AdyenEx.Account.V6.KYCCheckStatusData do
   @moduledoc """
   Provides struct and type for a KYCCheckStatusData
   """
@@ -6,7 +6,7 @@ defmodule Adyen.Account.V6.KYCCheckStatusData do
   @type t :: %__MODULE__{
           requiredFields: [String.t()] | nil,
           status: String.t(),
-          summary: Adyen.Account.V6.KYCCheckSummary.t() | nil,
+          summary: AdyenEx.Account.V6.KYCCheckSummary.t() | nil,
           type: String.t()
         }
 
@@ -32,7 +32,7 @@ defmodule Adyen.Account.V6.KYCCheckStatusData do
            "RETRY_LIMIT_REACHED",
            "UNCHECKED"
          ]},
-      summary: {Adyen.Account.V6.KYCCheckSummary, :t},
+      summary: {AdyenEx.Account.V6.KYCCheckSummary, :t},
       type:
         {:enum,
          [

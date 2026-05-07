@@ -1,4 +1,4 @@
-defmodule Adyen.Checkout.V52.VippsDetails do
+defmodule AdyenEx.Checkout.V52.VippsDetails do
   @moduledoc """
   Provides struct and type for a VippsDetails
   """

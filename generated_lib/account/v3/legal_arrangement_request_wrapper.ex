@@ -1,10 +1,10 @@
-defmodule Adyen.Account.V3.LegalArrangementRequestWrapper do
+defmodule AdyenEx.Account.V3.LegalArrangementRequestWrapper do
   @moduledoc """
   Provides struct and type for a LegalArrangementRequestWrapper
   """
 
   @type t :: %__MODULE__{
-          LegalArrangementRequest: Adyen.Account.V3.LegalArrangementRequest.t() | nil
+          LegalArrangementRequest: AdyenEx.Account.V3.LegalArrangementRequest.t() | nil
         }
 
   defstruct [:LegalArrangementRequest]
@@ -14,6 +14,6 @@ defmodule Adyen.Account.V3.LegalArrangementRequestWrapper do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [LegalArrangementRequest: {Adyen.Account.V3.LegalArrangementRequest, :t}]
+    [LegalArrangementRequest: {AdyenEx.Account.V3.LegalArrangementRequest, :t}]
   end
 end
