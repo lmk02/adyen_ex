@@ -1,0 +1,20 @@
+defmodule AdyenEx.BalancePlatform.V1.Counterparty do
+  @moduledoc """
+  Provides struct and type for a Counterparty
+  """
+
+  @type t :: %__MODULE__{
+          bankAccount: AdyenEx.BalancePlatform.V1.BankAccount.t() | nil,
+          transferInstrumentId: String.t() | nil
+        }
+
+  defstruct [:bankAccount, :transferInstrumentId]
+
+  @doc false
+  @spec __fields__(atom) :: keyword
+  def __fields__(type \\ :t)
+
+  def __fields__(:t) do
+    [bankAccount: {AdyenEx.BalancePlatform.V1.BankAccount, :t}, transferInstrumentId: :string]
+  end
+end

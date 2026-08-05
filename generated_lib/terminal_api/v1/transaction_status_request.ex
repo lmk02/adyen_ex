@@ -19,12 +19,12 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionStatusRequest do
     [
       DocumentQualifier: [
         enum: [
+          "SaleReceipt",
           "CashierReceipt",
           "CustomerReceipt",
           "Document",
-          "Journal",
-          "SaleReceipt",
-          "Voucher"
+          "Voucher",
+          "Journal"
         ]
       ],
       MessageReference: {AdyenEx.TerminalAPI.V1.MessageReference, :t},

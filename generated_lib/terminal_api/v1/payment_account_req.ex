@@ -20,14 +20,14 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentAccountReq do
       AccountType:
         {:enum,
          [
-           "CardTotals",
+           "Default",
+           "Savings",
            "Checking",
            "CreditCard",
-           "Default",
-           "EpurseCard",
+           "Universal",
            "Investment",
-           "Savings",
-           "Universal"
+           "CardTotals",
+           "EpurseCard"
          ]},
       CardAcquisitionReference: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t}

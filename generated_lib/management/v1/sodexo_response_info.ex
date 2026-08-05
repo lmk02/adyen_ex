@@ -3,7 +3,7 @@ defmodule AdyenEx.Management.V1.SodexoResponseInfo do
   Provides struct and type for a SodexoResponseInfo
   """
 
-  @type t :: %__MODULE__{merchantContactPhone: String.t()}
+  @type t :: %__MODULE__{merchantContactPhone: String.t() | nil}
 
   defstruct [:merchantContactPhone]
 

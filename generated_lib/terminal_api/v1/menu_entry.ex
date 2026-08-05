@@ -28,8 +28,8 @@ defmodule AdyenEx.TerminalAPI.V1.MenuEntry do
   def __fields__(:t) do
     [
       DefaultSelectedFlag: :boolean,
-      MenuEntryTag: {:enum, ["NonSelectable", "NonSelectableSubMenu", "Selectable", "SubMenu"]},
-      OutputFormat: {:enum, ["BarCode", "MessageRef", "Text", "XHTML"]},
+      MenuEntryTag: {:enum, ["Selectable", "NonSelectable", "SubMenu", "NonSelectableSubMenu"]},
+      OutputFormat: {:enum, ["MessageRef", "Text", "XHTML", "BarCode"]},
       OutputText: [{AdyenEx.TerminalAPI.V1.OutputText, :t}],
       OutputXHTML: {:string, "byte"},
       PredefinedContent: {AdyenEx.TerminalAPI.V1.PredefinedContent, :t}

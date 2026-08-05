@@ -399,6 +399,27 @@
                },
                "accountIdentification" : {
                   "description" : "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "iban" : "#/components/schemas/IbanAccountIdentification",
+                        "numberAndBic" : "#/components/schemas/NumberAndBicAccountIdentification",
+                        "auLocal" : "#/components/schemas/AULocalAccountIdentification",
+                        "czLocal" : "#/components/schemas/CZLocalAccountIdentification",
+                        "noLocal" : "#/components/schemas/NOLocalAccountIdentification",
+                        "plLocal" : "#/components/schemas/PLLocalAccountIdentification",
+                        "huLocal" : "#/components/schemas/HULocalAccountIdentification",
+                        "seLocal" : "#/components/schemas/SELocalAccountIdentification",
+                        "sgLocal" : "#/components/schemas/SGLocalAccountIdentification",
+                        "ukLocal" : "#/components/schemas/UKLocalAccountIdentification",
+                        "usLocal" : "#/components/schemas/USLocalAccountIdentification",
+                        "brLocal" : "#/components/schemas/BRLocalAccountIdentification",
+                        "dkLocal" : "#/components/schemas/DKLocalAccountIdentification",
+                        "caLocal" : "#/components/schemas/CALocalAccountIdentification",
+                        "nzLocal" : "#/components/schemas/NZLocalAccountIdentification",
+                        "hkLocal" : "#/components/schemas/HKLocalAccountIdentification"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/AULocalAccountIdentification"
@@ -1359,6 +1380,30 @@
             },
             "type" : "object"
          },
+         "NetworkReason" : {
+            "additionalProperties" : false,
+            "properties" : {
+               "code" : {
+                  "description" : "The reason code provided by the network.",
+                  "type" : "string"
+               },
+               "description" : {
+                  "description" : "The description of the reason code.",
+                  "type" : "string"
+               },
+               "namespace" : {
+                  "description" : "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **iso8583ResponseCode**\n\n",
+                  "enum" : [
+                     "iso8583ResponseCode",
+                     "ukFpsRejectionCode",
+                     "ukFpsReturnReasonCode",
+                     "usAchReturnReasonCode"
+                  ],
+                  "type" : "string"
+               }
+            },
+            "type" : "object"
+         },
          "NumberAndBicAccountIdentification" : {
             "additionalProperties" : false,
             "properties" : {
@@ -1814,6 +1859,15 @@
                "categoryData" : {
                   "x-addedInVersion" : "4",
                   "description" : "The relevant data according to the transfer category.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "issuedCard" : "#/components/schemas/IssuedCard",
+                        "platformPayment" : "#/components/schemas/PlatformPayment",
+                        "bank" : "#/components/schemas/BankCategoryData",
+                        "internal" : "#/components/schemas/InternalCategoryData"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/BankCategoryData"
@@ -1894,6 +1948,11 @@
                "id" : {
                   "description" : "The ID of the resource.",
                   "type" : "string"
+               },
+               "networkReason" : {
+                  "x-addedInVersion" : "4",
+                  "description" : "Contains information that explains why the transfer was rejected or returned by the network.",
+                  "$ref" : "#/components/schemas/NetworkReason"
                },
                "paymentInstrument" : {
                   "x-addedInVersion" : "3",
@@ -2016,7 +2075,7 @@
                },
                "status" : {
                   "x-addedInVersion" : "2",
-                  "description" : "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Lack of funds in the balance account.\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
+                  "description" : "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
                   "enum" : [
                      "approvalPending",
                      "atmWithdrawal",
@@ -2091,9 +2150,36 @@
                   ],
                   "type" : "string"
                },
+               "tracing" : {
+                  "x-addedInVersion" : "4",
+                  "description" : "Contains information for tracing the transfer after Adyen forwards it to the network.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "usAch" : "#/components/schemas/USAchTracingData",
+                        "ukFps" : "#/components/schemas/UKFpsTracingData"
+                     },
+                     "propertyName" : "type"
+                  },
+                  "oneOf" : [
+                     {
+                        "$ref" : "#/components/schemas/UKFpsTracingData"
+                     },
+                     {
+                        "$ref" : "#/components/schemas/USAchTracingData"
+                     }
+                  ]
+               },
                "tracking" : {
                   "x-addedInVersion" : "3",
                   "description" : "The latest tracking information of the transfer.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "estimation" : "#/components/schemas/EstimationTrackingData",
+                        "confirmation" : "#/components/schemas/ConfirmationTrackingData",
+                        "internalReview" : "#/components/schemas/InternalReviewTrackingData"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/ConfirmationTrackingData"
@@ -2212,6 +2298,14 @@
                   "x-addedInVersion" : "4",
                   "description" : "A list of event data.",
                   "items" : {
+                     "discriminator" : {
+                        "mapping" : {
+                           "merchantPurchaseData" : "#/components/schemas/MerchantPurchaseData",
+                           "issuingTransactionData" : "#/components/schemas/IssuingTransactionData",
+                           "interchangeData" : "#/components/schemas/InterchangeData"
+                        },
+                        "propertyName" : "type"
+                     },
                      "oneOf" : [
                         {
                            "$ref" : "#/components/schemas/InterchangeData"
@@ -2423,9 +2517,36 @@
                   ],
                   "type" : "string"
                },
+               "tracingData" : {
+                  "x-addedInVersion" : "4",
+                  "description" : "Additional tracing information for the tracing event.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "usAch" : "#/components/schemas/USAchTracingData",
+                        "ukFps" : "#/components/schemas/UKFpsTracingData"
+                     },
+                     "propertyName" : "type"
+                  },
+                  "oneOf" : [
+                     {
+                        "$ref" : "#/components/schemas/UKFpsTracingData"
+                     },
+                     {
+                        "$ref" : "#/components/schemas/USAchTracingData"
+                     }
+                  ]
+               },
                "trackingData" : {
                   "x-addedInVersion" : "3",
                   "description" : "Additional information for the tracking event.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "estimation" : "#/components/schemas/EstimationTrackingData",
+                        "confirmation" : "#/components/schemas/ConfirmationTrackingData",
+                        "internalReview" : "#/components/schemas/InternalReviewTrackingData"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/ConfirmationTrackingData"
@@ -2597,6 +2718,28 @@
             },
             "type" : "object"
          },
+         "UKFpsTracingData" : {
+            "additionalProperties" : false,
+            "properties" : {
+               "fpid" : {
+                  "description" : "The FPS trace number. This is a unique identifier assigned to transfers processed by [FPS](https://www.bankofengland.co.uk/payment-systems/services/faster-payments-service).",
+                  "type" : "string"
+               },
+               "type" : {
+                  "default" : "ukFps",
+                  "description" : "**ukFps**",
+                  "enum" : [
+                     "ukFps"
+                  ],
+                  "type" : "string"
+               }
+            },
+            "required" : [
+               "type",
+               "fpid"
+            ],
+            "type" : "object"
+         },
          "UKLocalAccountIdentification" : {
             "additionalProperties" : false,
             "properties" : {
@@ -2625,6 +2768,28 @@
                "type",
                "accountNumber",
                "sortCode"
+            ],
+            "type" : "object"
+         },
+         "USAchTracingData" : {
+            "additionalProperties" : false,
+            "properties" : {
+               "traceNumber" : {
+                  "description" : "The ACH trace number. This is a unique 15-digit identifier assigned to transfers processed by [ACH](https://fiscal.treasury.gov/payments-from-government/automated-clearing-house-ach).",
+                  "type" : "string"
+               },
+               "type" : {
+                  "default" : "usAch",
+                  "description" : "**usAch**",
+                  "enum" : [
+                     "usAch"
+                  ],
+                  "type" : "string"
+               }
+            },
+            "required" : [
+               "type",
+               "traceNumber"
             ],
             "type" : "object"
          },

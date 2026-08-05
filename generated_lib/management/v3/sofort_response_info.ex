@@ -3,7 +3,7 @@ defmodule AdyenEx.Management.V3.SofortResponseInfo do
   Provides struct and type for a SofortResponseInfo
   """
 
-  @type t :: %__MODULE__{currencyCode: String.t(), logo: String.t()}
+  @type t :: %__MODULE__{currencyCode: String.t() | nil, logo: String.t() | nil}
 
   defstruct [:currencyCode, :logo]
 

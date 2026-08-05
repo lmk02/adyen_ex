@@ -3,21 +3,15 @@ defmodule AdyenEx.Management.V3.OfflineProcessing do
   Provides struct and type for a OfflineProcessing
   """
 
-  @type t :: %__MODULE__{
-          chipFloorLimit: integer | nil,
-          offlineSwipeLimits: [AdyenEx.Management.V3.MinorUnitsMonetaryValue.t()] | nil
-        }
+  @type t :: %__MODULE__{chipFloorLimit: integer | nil}
 
-  defstruct [:chipFloorLimit, :offlineSwipeLimits]
+  defstruct [:chipFloorLimit]
 
   @doc false
   @spec __fields__(atom) :: keyword
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [
-      chipFloorLimit: {:integer, "int32"},
-      offlineSwipeLimits: [{AdyenEx.Management.V3.MinorUnitsMonetaryValue, :t}]
-    ]
+    [chipFloorLimit: {:integer, "int32"}]
   end
 end

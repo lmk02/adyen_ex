@@ -121,7 +121,7 @@ defmodule AdyenEx.Checkout.V70.Utility do
           opts :: keyword
         ) ::
           {:ok, AdyenEx.Checkout.V70.ValidateShopperIdResponse.t()}
-          | {:error, AdyenEx.Checkout.V70.DefaultErrorResponseEntity.t()}
+          | {:error, AdyenEx.Checkout.V70.CheckoutErrorResponseEntity.t()}
   def post_validate_shopper_id(body, opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -134,11 +134,11 @@ defmodule AdyenEx.Checkout.V70.Utility do
       request: [{"application/json", {AdyenEx.Checkout.V70.ValidateShopperIdRequest, :t}}],
       response: [
         {200, {AdyenEx.Checkout.V70.ValidateShopperIdResponse, :t}},
-        {400, {AdyenEx.Checkout.V70.DefaultErrorResponseEntity, :t}},
-        {401, {AdyenEx.Checkout.V70.DefaultErrorResponseEntity, :t}},
-        {403, {AdyenEx.Checkout.V70.DefaultErrorResponseEntity, :t}},
-        {422, {AdyenEx.Checkout.V70.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Checkout.V70.DefaultErrorResponseEntity, :t}}
+        {400, {AdyenEx.Checkout.V70.CheckoutErrorResponseEntity, :t}},
+        {401, {AdyenEx.Checkout.V70.CheckoutErrorResponseEntity, :t}},
+        {403, {AdyenEx.Checkout.V70.CheckoutErrorResponseEntity, :t}},
+        {422, {AdyenEx.Checkout.V70.CheckoutErrorResponseEntity, :t}},
+        {500, {AdyenEx.Checkout.V70.CheckoutErrorResponseEntity, :t}}
       ],
       opts: opts
     })

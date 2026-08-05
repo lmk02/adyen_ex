@@ -6,6 +6,34 @@ defmodule AdyenEx.BalancePlatform.V2.SCADeviceManagement do
   @default_client AdyenEx.Client
 
   @doc """
+  Delete an SCA device
+
+  Deletes a Strong Customer Authentication (SCA) device.
+  """
+  @spec delete_sca_devices_device_id(deviceId :: String.t(), opts :: keyword) ::
+          :ok | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+  def delete_sca_devices_device_id(deviceId, opts \\ []) do
+    client = opts[:client] || @default_client
+
+    client.request(%{
+      args: [deviceId: deviceId],
+      call: {AdyenEx.BalancePlatform.V2.SCADeviceManagement, :delete_sca_devices_device_id},
+      url: "/scaDevices/#{deviceId}",
+      method: :delete,
+      response: [
+        {204, :null},
+        {400, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {403, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
   Finish registration process for a SCA device
 
   Finishes the registration process for a new Strong Customer Authentication (SCA) device.

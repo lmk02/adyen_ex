@@ -20,6 +20,7 @@ defmodule AdyenEx.Recurring.V68.RecurringDetail do
           shopperName: AdyenEx.Recurring.V68.Name.t() | nil,
           socialSecurityNumber: String.t() | nil,
           tokenDetails: AdyenEx.Recurring.V68.TokenDetails.t() | nil,
+          transactionLinkId: String.t() | nil,
           variant: String.t()
         }
 
@@ -40,6 +41,7 @@ defmodule AdyenEx.Recurring.V68.RecurringDetail do
     :shopperName,
     :socialSecurityNumber,
     :tokenDetails,
+    :transactionLinkId,
     :variant
   ]
 
@@ -65,6 +67,7 @@ defmodule AdyenEx.Recurring.V68.RecurringDetail do
       shopperName: {AdyenEx.Recurring.V68.Name, :t},
       socialSecurityNumber: :string,
       tokenDetails: {AdyenEx.Recurring.V68.TokenDetails, :t},
+      transactionLinkId: :string,
       variant: :string
     ]
   end

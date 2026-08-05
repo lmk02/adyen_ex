@@ -9,7 +9,7 @@ defmodule AdyenEx.BalancePlatform.V1.RestServiceError do
           instance: String.t() | nil,
           invalidFields: [AdyenEx.BalancePlatform.V1.InvalidField.t()] | nil,
           requestId: String.t() | nil,
-          response: AdyenEx.BalancePlatform.V1.JSONObject.t() | nil,
+          response: map | nil,
           status: integer,
           title: String.t(),
           type: String.t()
@@ -38,7 +38,7 @@ defmodule AdyenEx.BalancePlatform.V1.RestServiceError do
       instance: :string,
       invalidFields: [{AdyenEx.BalancePlatform.V1.InvalidField, :t}],
       requestId: :string,
-      response: {AdyenEx.BalancePlatform.V1.JSONObject, :t},
+      response: :map,
       status: {:integer, "int32"},
       title: :string,
       type: :string
