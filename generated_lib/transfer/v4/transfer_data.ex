@@ -27,6 +27,7 @@ defmodule AdyenEx.Transfer.V4.TransferData do
           executionDate: AdyenEx.Transfer.V4.ExecutionDate.t() | nil,
           externalReason: AdyenEx.Transfer.V4.ExternalReason.t() | nil,
           id: String.t() | nil,
+          networkReason: AdyenEx.Transfer.V4.NetworkReason.t() | nil,
           paymentInstrument: AdyenEx.Transfer.V4.PaymentInstrument.t() | nil,
           reason: String.t() | nil,
           reference: String.t() | nil,
@@ -34,6 +35,10 @@ defmodule AdyenEx.Transfer.V4.TransferData do
           review: AdyenEx.Transfer.V4.TransferReview.t() | nil,
           sequenceNumber: integer | nil,
           status: String.t(),
+          tracing:
+            AdyenEx.Transfer.V4.UKFpsTracingData.t()
+            | AdyenEx.Transfer.V4.USAchTracingData.t()
+            | nil,
           tracking:
             AdyenEx.Transfer.V4.ConfirmationTrackingData.t()
             | AdyenEx.Transfer.V4.EstimationTrackingData.t()
@@ -64,6 +69,7 @@ defmodule AdyenEx.Transfer.V4.TransferData do
     :executionDate,
     :externalReason,
     :id,
+    :networkReason,
     :paymentInstrument,
     :reason,
     :reference,
@@ -71,6 +77,7 @@ defmodule AdyenEx.Transfer.V4.TransferData do
     :review,
     :sequenceNumber,
     :status,
+    :tracing,
     :tracking,
     :transactionRulesResult,
     :type,
@@ -109,6 +116,7 @@ defmodule AdyenEx.Transfer.V4.TransferData do
       executionDate: {AdyenEx.Transfer.V4.ExecutionDate, :t},
       externalReason: {AdyenEx.Transfer.V4.ExternalReason, :t},
       id: :string,
+      networkReason: {AdyenEx.Transfer.V4.NetworkReason, :t},
       paymentInstrument: {AdyenEx.Transfer.V4.PaymentInstrument, :t},
       reason:
         {:enum,
@@ -277,6 +285,9 @@ defmodule AdyenEx.Transfer.V4.TransferData do
            "secondChargebackPending",
            "undefined"
          ]},
+      tracing:
+        {:union,
+         [{AdyenEx.Transfer.V4.UKFpsTracingData, :t}, {AdyenEx.Transfer.V4.USAchTracingData, :t}]},
       tracking:
         {:union,
          [

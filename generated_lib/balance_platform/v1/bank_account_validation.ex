@@ -17,7 +17,7 @@ defmodule AdyenEx.BalancePlatform.V1.BankAccountValidation do
   @spec post_validate_bank_account_identification(
           body :: AdyenEx.BalancePlatform.V1.BankAccountIdentificationValidationRequest.t(),
           opts :: keyword
-        ) :: {:ok, map} | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
+        ) :: :ok | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
   def post_validate_bank_account_identification(body, opts \\ []) do
     client = opts[:client] || @default_client
 
@@ -34,7 +34,7 @@ defmodule AdyenEx.BalancePlatform.V1.BankAccountValidation do
          {AdyenEx.BalancePlatform.V1.BankAccountIdentificationValidationRequest, :t}}
       ],
       response: [
-        {200, :map},
+        {200, :null},
         {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
         {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
         {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},

@@ -327,6 +327,27 @@
                },
                "accountIdentification" : {
                   "description" : "Contains the bank account details. The fields required in this object depend on the country of the bank account and the currency of the transfer.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "iban" : "#/components/schemas/IbanAccountIdentification",
+                        "numberAndBic" : "#/components/schemas/NumberAndBicAccountIdentification",
+                        "auLocal" : "#/components/schemas/AULocalAccountIdentification",
+                        "czLocal" : "#/components/schemas/CZLocalAccountIdentification",
+                        "noLocal" : "#/components/schemas/NOLocalAccountIdentification",
+                        "plLocal" : "#/components/schemas/PLLocalAccountIdentification",
+                        "huLocal" : "#/components/schemas/HULocalAccountIdentification",
+                        "seLocal" : "#/components/schemas/SELocalAccountIdentification",
+                        "sgLocal" : "#/components/schemas/SGLocalAccountIdentification",
+                        "ukLocal" : "#/components/schemas/UKLocalAccountIdentification",
+                        "usLocal" : "#/components/schemas/USLocalAccountIdentification",
+                        "brLocal" : "#/components/schemas/BRLocalAccountIdentification",
+                        "dkLocal" : "#/components/schemas/DKLocalAccountIdentification",
+                        "caLocal" : "#/components/schemas/CALocalAccountIdentification",
+                        "nzLocal" : "#/components/schemas/NZLocalAccountIdentification",
+                        "hkLocal" : "#/components/schemas/HKLocalAccountIdentification"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/AULocalAccountIdentification"
@@ -1724,7 +1745,7 @@
                },
                "status" : {
                   "x-addedInVersion" : "2",
-                  "description" : "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Lack of funds in the balance account.\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
+                  "description" : "The result of the transfer.\n\nFor example:\n\n- **received**: an outgoing transfer request is created.\n- **refused**: the transfer request is rejected by Adyen for one of the following reasons:\n  - Transfer limit exceeded.\n  - Transaction rule requirements violated.\n- **authorised**: the transfer request is authorized and the funds are reserved.\n- **booked**: the funds are deducted from your user's balance account.\n - **failed**: the transfer is rejected by the counterparty's bank.\n- **returned**: the transfer is returned by the counterparty's bank.",
                   "enum" : [
                      "approvalPending",
                      "atmWithdrawal",
@@ -1802,6 +1823,14 @@
                "tracking" : {
                   "x-addedInVersion" : "3",
                   "description" : "The latest tracking information of the transfer.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "estimation" : "#/components/schemas/EstimationTrackingData",
+                        "confirmation" : "#/components/schemas/ConfirmationTrackingData",
+                        "internalReview" : "#/components/schemas/InternalReviewTrackingData"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/ConfirmationTrackingData"
@@ -2140,6 +2169,14 @@
                "trackingData" : {
                   "x-addedInVersion" : "3",
                   "description" : "Additional information for the tracking event.",
+                  "discriminator" : {
+                     "mapping" : {
+                        "estimation" : "#/components/schemas/EstimationTrackingData",
+                        "confirmation" : "#/components/schemas/ConfirmationTrackingData",
+                        "internalReview" : "#/components/schemas/InternalReviewTrackingData"
+                     },
+                     "propertyName" : "type"
+                  },
                   "oneOf" : [
                      {
                         "$ref" : "#/components/schemas/ConfirmationTrackingData"

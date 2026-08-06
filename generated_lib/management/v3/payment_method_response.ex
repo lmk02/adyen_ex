@@ -64,6 +64,7 @@ defmodule AdyenEx.Management.V3.PaymentMethodResponse do
           "br_schemes",
           "carnet",
           "cartebancaire",
+          "cashapp",
           "clearpay",
           "clicktopay",
           "cooper",

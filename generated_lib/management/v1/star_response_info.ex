@@ -4,7 +4,7 @@ defmodule AdyenEx.Management.V1.StarResponseInfo do
   """
 
   @type t :: %__MODULE__{
-          processingType: String.t(),
+          processingType: String.t() | nil,
           transactionDescription:
             AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }

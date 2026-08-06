@@ -4,7 +4,7 @@ defmodule AdyenEx.BalancePlatform.V1.PaginatedBalanceAccountsResponse do
   """
 
   @type t :: %__MODULE__{
-          balanceAccounts: [AdyenEx.BalancePlatform.V1.BalanceAccount.t()],
+          balanceAccounts: [AdyenEx.BalancePlatform.V1.BalanceAccountBase.t()],
           hasNext: boolean,
           hasPrevious: boolean
         }
@@ -17,7 +17,7 @@ defmodule AdyenEx.BalancePlatform.V1.PaginatedBalanceAccountsResponse do
 
   def __fields__(:t) do
     [
-      balanceAccounts: [{AdyenEx.BalancePlatform.V1.BalanceAccount, :t}],
+      balanceAccounts: [{AdyenEx.BalancePlatform.V1.BalanceAccountBase, :t}],
       hasNext: :boolean,
       hasPrevious: :boolean
     ]

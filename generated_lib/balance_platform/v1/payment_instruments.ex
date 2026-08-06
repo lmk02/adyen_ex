@@ -34,6 +34,69 @@ defmodule AdyenEx.BalancePlatform.V1.PaymentInstruments do
   end
 
   @doc """
+  Get network token activation data
+
+  Get the network token activation data for a payment instrument.
+  """
+  @spec get_payment_instruments_id_network_token_activation_data(
+          id :: String.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
+  def get_payment_instruments_id_network_token_activation_data(id, opts \\ []) do
+    client = opts[:client] || @default_client
+
+    client.request(%{
+      args: [id: id],
+      call:
+        {AdyenEx.BalancePlatform.V1.PaymentInstruments,
+         :get_payment_instruments_id_network_token_activation_data},
+      url: "/paymentInstruments/#{id}/networkTokenActivationData",
+      method: :get,
+      response: [
+        {200, {AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
+  List network tokens
+
+  List the network tokens connected to a payment instrument.
+  """
+  @spec get_payment_instruments_id_network_tokens(id :: String.t(), opts :: keyword) ::
+          {:ok, AdyenEx.BalancePlatform.V1.ListNetworkTokensResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
+  def get_payment_instruments_id_network_tokens(id, opts \\ []) do
+    client = opts[:client] || @default_client
+
+    client.request(%{
+      args: [id: id],
+      call:
+        {AdyenEx.BalancePlatform.V1.PaymentInstruments,
+         :get_payment_instruments_id_network_tokens},
+      url: "/paymentInstruments/#{id}/networkTokens",
+      method: :get,
+      response: [
+        {200, {AdyenEx.BalancePlatform.V1.ListNetworkTokensResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
   Get the PAN of a payment instrument
 
   Returns the primary account number (PAN) of a payment instrument.
@@ -140,7 +203,7 @@ defmodule AdyenEx.BalancePlatform.V1.PaymentInstruments do
 
   Creates a payment instrument to issue a physical card, a virtual card, or a business account to your user.
 
-   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/marketplaces-and-platforms/business-accounts).
+   For more information, refer to [Issue cards](https://docs.adyen.com/issuing/create-cards) or [Issue business accounts](https://docs.adyen.com/platforms/business-accounts).
 
   ## Request Body
 
@@ -164,6 +227,96 @@ defmodule AdyenEx.BalancePlatform.V1.PaymentInstruments do
       request: [{"application/json", {AdyenEx.BalancePlatform.V1.PaymentInstrumentInfo, :t}}],
       response: [
         {200, {AdyenEx.BalancePlatform.V1.PaymentInstrument, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
+  Create network token provisioning data
+
+  Create provisioning data for a network token. Use the provisioning data to add a user's payment instrument to their digital wallet.
+
+  ## Request Body
+
+  **Content Types**: `application/json`
+  """
+  @spec post_payment_instruments_id_network_token_activation_data(
+          id :: String.t(),
+          body :: AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
+  def post_payment_instruments_id_network_token_activation_data(id, body, opts \\ []) do
+    client = opts[:client] || @default_client
+
+    client.request(%{
+      args: [id: id, body: body],
+      call:
+        {AdyenEx.BalancePlatform.V1.PaymentInstruments,
+         :post_payment_instruments_id_network_token_activation_data},
+      url: "/paymentInstruments/#{id}/networkTokenActivationData",
+      body: body,
+      method: :post,
+      request: [
+        {"application/json", {AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataRequest, :t}}
+      ],
+      response: [
+        {200, {AdyenEx.BalancePlatform.V1.NetworkTokenActivationDataResponse, :t}},
+        {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {422, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
+        {500, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
+  Reveal the data of a payment instrument
+
+  Returns the encrypted data of a specified payment instrument. These data include:
+
+  - The primary account number (PAN)
+  - The card verification code (CVC)
+  - The expiry date
+
+  You can decrypt the data to reveal it in your user interface.
+
+  To make this request, your API credential must have the following role:
+  * Bank Issuing PAN Reveal Webservice role
+
+  ## Request Body
+
+  **Content Types**: `application/json`
+  """
+  @spec post_payment_instruments_reveal(
+          body :: AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealRequest.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealResponse.t()}
+          | {:error, AdyenEx.BalancePlatform.V1.RestServiceError.t()}
+  def post_payment_instruments_reveal(body, opts \\ []) do
+    client = opts[:client] || @default_client
+
+    client.request(%{
+      args: [body: body],
+      call: {AdyenEx.BalancePlatform.V1.PaymentInstruments, :post_payment_instruments_reveal},
+      url: "/paymentInstruments/reveal",
+      body: body,
+      method: :post,
+      request: [
+        {"application/json", {AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealRequest, :t}}
+      ],
+      response: [
+        {200, {AdyenEx.BalancePlatform.V1.PaymentInstrumentRevealResponse, :t}},
         {400, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
         {401, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},
         {403, {AdyenEx.BalancePlatform.V1.RestServiceError, :t}},

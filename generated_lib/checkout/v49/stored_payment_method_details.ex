@@ -53,7 +53,8 @@ defmodule AdyenEx.Checkout.V49.StoredPaymentMethodDetails do
            "dana",
            "kakaopay",
            "truemoney",
-           "paysafecard"
+           "paysafecard",
+           "gopay_wallet"
          ]}
     ]
   end

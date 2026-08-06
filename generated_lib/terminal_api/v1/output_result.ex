@@ -17,19 +17,19 @@ defmodule AdyenEx.TerminalAPI.V1.OutputResult do
 
   def __fields__(:t) do
     [
-      Device: {:enum, ["CashierDisplay", "CashierInput", "CustomerDisplay", "CustomerInput"]},
+      Device: {:enum, ["CashierDisplay", "CustomerDisplay", "CashierInput", "CustomerInput"]},
       InfoQualify:
         {:enum,
          [
-           "CustomerAssistance",
-           "Display",
-           "Document",
+           "Status",
            "Error",
+           "Display",
+           "Sound",
            "Input",
            "POIReplication",
+           "CustomerAssistance",
            "Receipt",
-           "Sound",
-           "Status",
+           "Document",
            "Voucher"
          ]},
       Response: {AdyenEx.TerminalAPI.V1.Response, :t}

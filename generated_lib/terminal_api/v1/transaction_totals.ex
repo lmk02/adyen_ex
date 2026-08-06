@@ -43,7 +43,7 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionTotals do
       OperatorID: :string,
       POIID: :string,
       PaymentCurrency: :string,
-      PaymentInstrumentType: {:enum, ["Card", "Cash", "Check", "Mobile", "StoredValue"]},
+      PaymentInstrumentType: {:enum, ["Card", "Check", "Mobile", "StoredValue", "Cash"]},
       PaymentTotals: [{AdyenEx.TerminalAPI.V1.PaymentTotals, :t}],
       SaleID: :string,
       ShiftNumber: :string,

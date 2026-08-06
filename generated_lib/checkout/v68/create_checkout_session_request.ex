@@ -41,6 +41,7 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
           reference: String.t(),
           returnUrl: String.t(),
           riskData: AdyenEx.Checkout.V68.RiskData.t() | nil,
+          shopperConversionId: String.t() | nil,
           shopperEmail: String.t() | nil,
           shopperIP: String.t() | nil,
           shopperInteraction: String.t() | nil,
@@ -57,6 +58,8 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
           storeFiltrationMode: String.t() | nil,
           storePaymentMethod: boolean | nil,
           telephoneNumber: String.t() | nil,
+          thirdPartyTokenRedundancyInfo:
+            AdyenEx.Checkout.V68.ThirdPartyTokenRedundancyInfo.t() | nil,
           threeDS2RequestData: AdyenEx.Checkout.V68.CheckoutSessionThreeDs2RequestData.t() | nil,
           threeDSAuthenticationOnly: boolean | nil,
           trustedShopper: boolean | nil
@@ -100,6 +103,7 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
     :reference,
     :returnUrl,
     :riskData,
+    :shopperConversionId,
     :shopperEmail,
     :shopperIP,
     :shopperInteraction,
@@ -116,6 +120,7 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
     :storeFiltrationMode,
     :storePaymentMethod,
     :telephoneNumber,
+    :thirdPartyTokenRedundancyInfo,
     :threeDS2RequestData,
     :threeDSAuthenticationOnly,
     :trustedShopper
@@ -164,6 +169,7 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
       reference: :string,
       returnUrl: :string,
       riskData: {AdyenEx.Checkout.V68.RiskData, :t},
+      shopperConversionId: :string,
       shopperEmail: :string,
       shopperIP: :string,
       shopperInteraction: {:enum, ["Ecommerce", "ContAuth", "Moto", "POS"]},
@@ -180,6 +186,7 @@ defmodule AdyenEx.Checkout.V68.CreateCheckoutSessionRequest do
       storeFiltrationMode: {:enum, ["exclusive", "inclusive", "skipFilter"]},
       storePaymentMethod: :boolean,
       telephoneNumber: :string,
+      thirdPartyTokenRedundancyInfo: {AdyenEx.Checkout.V68.ThirdPartyTokenRedundancyInfo, :t},
       threeDS2RequestData: {AdyenEx.Checkout.V68.CheckoutSessionThreeDs2RequestData, :t},
       threeDSAuthenticationOnly: :boolean,
       trustedShopper: :boolean

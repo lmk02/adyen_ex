@@ -10,7 +10,9 @@ defmodule AdyenEx.BalancePlatform.V1.CardInfo do
           cardholderName: String.t(),
           configuration: AdyenEx.BalancePlatform.V1.CardConfiguration.t() | nil,
           deliveryContact: AdyenEx.BalancePlatform.V1.Contact.t() | nil,
-          formFactor: String.t()
+          formFactor: String.t(),
+          threeDSecure: String.t() | nil,
+          usage: String.t() | nil
         }
 
   defstruct [
@@ -20,7 +22,9 @@ defmodule AdyenEx.BalancePlatform.V1.CardInfo do
     :cardholderName,
     :configuration,
     :deliveryContact,
-    :formFactor
+    :formFactor,
+    :threeDSecure,
+    :usage
   ]
 
   @doc false
@@ -35,7 +39,9 @@ defmodule AdyenEx.BalancePlatform.V1.CardInfo do
       cardholderName: :string,
       configuration: {AdyenEx.BalancePlatform.V1.CardConfiguration, :t},
       deliveryContact: {AdyenEx.BalancePlatform.V1.Contact, :t},
-      formFactor: {:enum, ["physical", "unknown", "virtual"]}
+      formFactor: {:enum, ["physical", "unknown", "virtual"]},
+      threeDSecure: :string,
+      usage: :string
     ]
   end
 end

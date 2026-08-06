@@ -16,7 +16,7 @@ defmodule AdyenEx.TerminalAPI.V1.GetTotalsRequest do
 
   def __fields__(:t) do
     [
-      TotalDetails: [enum: ["OperatorID", "POIID", "SaleID", "ShiftNumber", "TotalsGroupID"]],
+      TotalDetails: [enum: ["POIID", "SaleID", "OperatorID", "ShiftNumber", "TotalsGroupID"]],
       TotalFilter: {AdyenEx.TerminalAPI.V1.TotalFilter, :t}
     ]
   end

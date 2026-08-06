@@ -20,7 +20,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentReceipt do
     [
       DocumentQualifier:
         {:enum,
-         ["CashierReceipt", "CustomerReceipt", "Document", "Journal", "SaleReceipt", "Voucher"]},
+         ["SaleReceipt", "CashierReceipt", "CustomerReceipt", "Document", "Voucher", "Journal"]},
       IntegratedPrintFlag: :boolean,
       OutputContent: {AdyenEx.TerminalAPI.V1.OutputContent, :t},
       RequiredSignatureFlag: :boolean

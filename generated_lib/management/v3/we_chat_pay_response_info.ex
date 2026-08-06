@@ -3,7 +3,7 @@ defmodule AdyenEx.Management.V3.WeChatPayResponseInfo do
   Provides struct and type for a WeChatPayResponseInfo
   """
 
-  @type t :: %__MODULE__{contactPersonName: String.t(), email: String.t()}
+  @type t :: %__MODULE__{contactPersonName: String.t() | nil, email: String.t() | nil}
 
   defstruct [:contactPersonName, :email]
 

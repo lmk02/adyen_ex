@@ -18,7 +18,7 @@ defmodule AdyenEx.TerminalAPI.V1.PrintResponse do
     [
       DocumentQualifier:
         {:enum,
-         ["CashierReceipt", "CustomerReceipt", "Document", "Journal", "SaleReceipt", "Voucher"]},
+         ["SaleReceipt", "CashierReceipt", "CustomerReceipt", "Document", "Voucher", "Journal"]},
       Response: {AdyenEx.TerminalAPI.V1.Response, :t}
     ]
   end

@@ -3,7 +3,7 @@ defmodule AdyenEx.Management.V3.SwishResponseInfo do
   Provides struct and type for a SwishResponseInfo
   """
 
-  @type t :: %__MODULE__{swishNumber: String.t()}
+  @type t :: %__MODULE__{swishNumber: String.t() | nil}
 
   defstruct [:swishNumber]
 

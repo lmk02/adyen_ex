@@ -41,7 +41,7 @@ defmodule AdyenEx.TerminalAPI.V1.Instalment do
       FirstPaymentDate: {:string, "date"},
       InstalmentType: {:enum, ["DeferredInstalments", "EqualInstalments", "InequalInstalments"]},
       Period: :integer,
-      PeriodUnit: {:enum, ["Annual", "Daily", "Monthly", "Weekly"]},
+      PeriodUnit: {:enum, ["Daily", "Weekly", "Monthly", "Annual"]},
       PlanID: :string,
       SequenceNumber: :integer,
       TotalNbOfPayments: :integer

@@ -7,6 +7,7 @@ defmodule AdyenEx.Checkout.V68.PixDetails do
           checkoutAttemptId: String.t() | nil,
           pixRecurring: AdyenEx.Checkout.V68.PixRecurring.t() | nil,
           recurringDetailReference: String.t() | nil,
+          sdkData: String.t() | nil,
           storedPaymentMethodId: String.t() | nil,
           type: String.t() | nil
         }
@@ -15,6 +16,7 @@ defmodule AdyenEx.Checkout.V68.PixDetails do
     :checkoutAttemptId,
     :pixRecurring,
     :recurringDetailReference,
+    :sdkData,
     :storedPaymentMethodId,
     :type
   ]
@@ -28,6 +30,7 @@ defmodule AdyenEx.Checkout.V68.PixDetails do
       checkoutAttemptId: :string,
       pixRecurring: {AdyenEx.Checkout.V68.PixRecurring, :t},
       recurringDetailReference: :string,
+      sdkData: :string,
       storedPaymentMethodId: :string,
       type: {:const, "pix"}
     ]
