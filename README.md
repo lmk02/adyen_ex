@@ -71,6 +71,21 @@ request = %CheckoutV71.CreateCheckoutSessionRequest{
 {:ok, session} = CheckoutV71.Payments.post_sessions(request)
 ```
 
+### Custom headers (Idempotency-Key)
+
+The code generator drops OpenAPI parameters declared with `"in": "header"`, so headers like Adyen's
+`Idempotency-Key` are not part of the generated function signatures. Pass them through the
+`:headers` option, which every generated operation forwards to the client:
+
+```elixir
+{:ok, payment} =
+  CheckoutV71.Payments.post_payments(request,
+    headers: [{"idempotency-key", "37ca9c97-d1d1-4c62-89e8-706891a563ed"}]
+  )
+```
+
+Header names are case-insensitive and override the defaults (`x-api-key`, `content-type`).
+
 ## License
 
 MIT

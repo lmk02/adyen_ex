@@ -4,6 +4,19 @@ defmodule AdyenEx.Client do
 
   This module implements the `request/1` callback expected by `oapi_generator`.
   All generated API operations call this module to execute HTTP requests through `Req`.
+
+  ## Per-request headers
+
+  `oapi_generator` drops OpenAPI parameters declared with `"in": "header"`, so headers
+  such as Adyen's `Idempotency-Key` never appear in the generated function signatures.
+  Pass them via the `:headers` option instead, which every generated operation forwards
+  here untouched:
+
+      CheckoutV71.Payments.post_payments(request,
+        headers: [{"idempotency-key", "37ca9c97-d1d1-4c62-89e8-706891a563ed"}]
+      )
+
+  Header names are case-insensitive and override the defaults set below.
   """
 
   require Logger
@@ -26,10 +39,7 @@ defmodule AdyenEx.Client do
     request =
       Req.new(
         base_url: base_url,
-        headers: [
-          {"x-api-key", api_key},
-          {"content-type", "application/json"}
-        ],
+        headers: build_headers(api_key, opts),
         retry: :transient,
         max_retries: 3,
         decode_body: false
@@ -47,6 +57,17 @@ defmodule AdyenEx.Client do
       {:error, exception} ->
         {:error, AdyenEx.Error.from_exception(exception)}
     end
+  end
+
+  @doc false
+  @spec build_headers(String.t() | nil, keyword()) :: map()
+  def build_headers(api_key, opts) do
+    overrides =
+      opts
+      |> Keyword.get(:headers, [])
+      |> Map.new(fn {k, v} -> {k |> to_string() |> String.downcase(), v} end)
+
+    Map.merge(%{"x-api-key" => api_key, "content-type" => "application/json"}, overrides)
   end
 
   defp detect_context(%{call: {module, _func}}) do
