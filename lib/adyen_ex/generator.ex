@@ -96,6 +96,9 @@ defmodule AdyenEx.Generator do
       ]
     )
 
+    # Replace, not merge: stale modules from removed schemas must disappear so a
+    # regeneration diff shows removals honestly.
+    File.rm_rf!(location)
     OpenAPI.run(to_string(profile_name), [spec_path])
     {:ok, {service, version, location}}
   end

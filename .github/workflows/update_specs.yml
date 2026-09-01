@@ -83,7 +83,45 @@ jobs:
 
       - name: Regenerate APIs
         if: steps.services.outputs.list != ''
-        run: mix adyen.gen ${{ steps.services.outputs.list }}
+        env:
+          SERVICES: ${{ steps.services.outputs.list }}
+        run: mix adyen.gen $SERVICES
+
+      # Classify against the generated client surface rather than the specs:
+      # this is what consumers actually compile against.
+      - name: Classify API surface change
+        id: surface
+        run: |
+          mkdir -p /tmp/before
+          git archive HEAD generated_lib | tar -x -C /tmp/before
+
+          surface() {
+            find "$1" -name '*.ex' -print0 2>/dev/null \
+              | xargs -0 -r awk -f scripts/api_surface.awk \
+              | LC_ALL=C sort -u
+          }
+          surface /tmp/before/generated_lib > /tmp/surface_before
+          surface generated_lib > /tmp/surface_after
+
+          REMOVED=$(LC_ALL=C comm -23 /tmp/surface_before /tmp/surface_after | wc -l)
+          ADDED=$(LC_ALL=C comm -13 /tmp/surface_before /tmp/surface_after | wc -l)
+
+          if [ "$REMOVED" -gt 0 ]; then
+            BUMP=major; TYPE='feat(api)!'
+          elif [ "$ADDED" -gt 0 ]; then
+            BUMP=minor; TYPE='feat(api)'
+          else
+            BUMP=patch; TYPE='fix(api)'
+          fi
+
+          echo "bump=$BUMP" >> $GITHUB_OUTPUT
+          echo "type=$TYPE" >> $GITHUB_OUTPUT
+          {
+            echo "### API surface: \`$BUMP\`"
+            echo "- removed: $REMOVED"
+            echo "- added: $ADDED"
+            LC_ALL=C comm -23 /tmp/surface_before /tmp/surface_after | head -20
+          } >> $GITHUB_STEP_SUMMARY
 
       - name: Configure Git
         run: |
@@ -94,29 +132,26 @@ jobs:
         run: |
           git add priv/specs priv/ADYEN_OPENAPI_SHA generated_lib
           git diff --cached --quiet \
-            || git commit -m "feat(api): update adyen specs and regenerate code"
-
-      - name: Install git-cliff
-        uses: kenji-miyake/setup-git-cliff@v1
+            || git commit -m "$TYPE: update adyen specs and regenerate code"
+        env:
+          TYPE: ${{ steps.surface.outputs.type }}
 
       - name: Bump version
         id: bump
+        env:
+          BUMP: ${{ steps.surface.outputs.bump }}
         run: |
-          CURRENT_VERSION=$(elixir scripts/bump_version.exs --current)
-          NEXT_VERSION=$(git-cliff --bump --unreleased | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+          CURRENT=$(elixir scripts/bump_version.exs --current)
+          IFS=. read -r MAJOR MINOR PATCH <<< "$CURRENT"
 
-          echo "Current: $CURRENT_VERSION, Next from cliff: $NEXT_VERSION"
+          case "$BUMP" in
+            major) NEXT="$((MAJOR + 1)).0.0" ;;
+            minor) NEXT="$MAJOR.$((MINOR + 1)).0" ;;
+            *)     NEXT="$MAJOR.$MINOR.$((PATCH + 1))" ;;
+          esac
 
-          # Only use git-cliff's suggestion if it is strictly higher than current
-          # (guards against no-tags case where cliff outputs 0.1.0 regardless of current)
-          IS_HIGHER=$(printf '%s\n%s' "$CURRENT_VERSION" "$NEXT_VERSION" | sort -V | tail -n 1)
-          if [ -n "$NEXT_VERSION" ] && [ "$IS_HIGHER" = "$NEXT_VERSION" ] && [ "$NEXT_VERSION" != "$CURRENT_VERSION" ]; then
-            FINAL_VERSION=$(elixir scripts/bump_version.exs "$NEXT_VERSION")
-          else
-            FINAL_VERSION=$(elixir scripts/bump_version.exs)
-          fi
-
-          echo "version=$FINAL_VERSION" >> $GITHUB_OUTPUT
+          echo "Current: $CURRENT, $BUMP bump -> $NEXT"
+          echo "version=$(elixir scripts/bump_version.exs "$NEXT")" >> $GITHUB_OUTPUT
 
       - name: Commit Release
         run: |
@@ -140,7 +175,9 @@ jobs:
             - Synced `priv/specs/` with the latest adyen-openapi commit.
             - Updated `priv/ADYEN_OPENAPI_SHA` to track the synced commit.
             - Regenerated changed API clients in `generated_lib/` via `mix adyen.gen`.
-            - Bumped version in `mix.exs` using `git-cliff`.
+            - Bumped version in `mix.exs` (`${{ steps.surface.outputs.bump }}`), classified
+              from the generated client surface: struct fields and function heads
+              removed count as breaking, added-only counts as a feature.
           branch: "release/v${{ steps.bump.outputs.version }}"
           base: "main"
           delete-branch: true
