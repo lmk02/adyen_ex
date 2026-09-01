@@ -14,7 +14,10 @@ defmodule AdyenEx.DocumentCollector.V1.Documents do
 
   **Content Types**: `multipart/form-data`
   """
-  @spec post_cross_border_invoices(body :: map, opts :: keyword) ::
+  @spec post_cross_border_invoices(
+          body :: AdyenEx.DocumentCollector.V1.DocumentUploadRequest.t(),
+          opts :: keyword
+        ) ::
           {:ok, AdyenEx.DocumentCollector.V1.DocumentUploadResponse.t()}
           | {:error, AdyenEx.DocumentCollector.V1.DefaultErrorResponseEntity.t()}
   def post_cross_border_invoices(body, opts \\ []) do
@@ -26,7 +29,7 @@ defmodule AdyenEx.DocumentCollector.V1.Documents do
       url: "/crossBorderInvoices",
       body: body,
       method: :post,
-      request: [{"multipart/form-data", :map}],
+      request: [{"multipart/form-data", {AdyenEx.DocumentCollector.V1.DocumentUploadRequest, :t}}],
       response: [
         {201, {AdyenEx.DocumentCollector.V1.DocumentUploadResponse, :t}},
         {400, {AdyenEx.DocumentCollector.V1.DefaultErrorResponseEntity, :t}},
