@@ -5,8 +5,39 @@ on:
     - cron: "0 0 * * *" # Daily at midnight
   workflow_dispatch: # Manual trigger
 
+concurrency:
+  group: update-specs
+  cancel-in-progress: false
+
 jobs:
-  update-specs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.check.outputs.changes }}
+      sha: ${{ steps.check.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: priv/ADYEN_OPENAPI_SHA
+          sparse-checkout-cone-mode: false
+
+      - name: Compare tracked SHA against adyen-openapi HEAD
+        id: check
+        run: |
+          OLD_SHA=$(cat priv/ADYEN_OPENAPI_SHA 2>/dev/null || echo "")
+          NEW_SHA=$(git ls-remote https://github.com/Adyen/adyen-openapi HEAD | cut -f1)
+
+          echo "sha=$NEW_SHA" >> $GITHUB_OUTPUT
+          if [ "$OLD_SHA" = "$NEW_SHA" ]; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+  update:
+    needs: check
+    if: needs.check.outputs.changes == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,93 +47,62 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Clone Adyen OpenAPI Specs
-        run: |
-          git clone --depth 100 https://github.com/Adyen/adyen-openapi /tmp/adyen-openapi
-
-      - name: Check for changes in specs
-        id: check_specs
-        run: |
-          OLD_SHA=$(cat priv/ADYEN_OPENAPI_SHA 2>/dev/null || echo "")
-          NEW_SHA=$(git -C /tmp/adyen-openapi rev-parse HEAD)
-
-          if [ "$OLD_SHA" = "$NEW_SHA" ]; then
-            echo "changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "changes=true" >> $GITHUB_OUTPUT
-
-            if [ -n "$OLD_SHA" ]; then
-              git -C /tmp/adyen-openapi fetch --deepen=200 origin 2>/dev/null || true
-              CHANGED_FILES=$(git -C /tmp/adyen-openapi diff --name-only --diff-filter=ACMR "$OLD_SHA" "$NEW_SHA" -- json/ 2>/dev/null \
-                | grep '\.json$' || \
-                git -C /tmp/adyen-openapi ls-files json/ | grep '\.json$' || true)
-            else
-              CHANGED_FILES=$(git -C /tmp/adyen-openapi ls-files json/ | grep '\.json$' || true)
-            fi
-
-            if [ -n "$CHANGED_FILES" ]; then
-              SERVICES=$(echo "$CHANGED_FILES" | sed -E 's|json/||g' | sed -E 's|\.json||g' | sed -E 's|-v|:v|g' | tr '\n' ' ')
-              echo "services=$SERVICES" >> $GITHUB_OUTPUT
-            else
-              echo "services=" >> $GITHUB_OUTPUT
-            fi
-          fi
-
       - name: Sync specs into repo
-        if: steps.check_specs.outputs.changes == 'true'
         run: |
+          git clone --depth 1 https://github.com/Adyen/adyen-openapi /tmp/adyen-openapi
           rsync -a --delete --exclude='.git' /tmp/adyen-openapi/ priv/specs/
+          echo "${{ needs.check.outputs.sha }}" > priv/ADYEN_OPENAPI_SHA
 
-      - name: Set up Elixir
-        if: steps.check_specs.outputs.changes == 'true'
-        uses: erlef/setup-beam@v1
+      # Diff our own working tree instead of upstream history: no deep clone,
+      # and it also catches drift where priv/specs fell out of sync with the SHA.
+      - name: Collect changed services
+        id: services
+        run: |
+          SERVICES=$(git status --porcelain -uall -- priv/specs/json \
+            | grep -v '^ *D' \
+            | sed -E 's|^...||; s|.*/||; s|\.json$||; s|-v([0-9]+)$|:v\1|' \
+            | tr '\n' ' ')
+          echo "list=$SERVICES" >> $GITHUB_OUTPUT
+
+      - uses: erlef/setup-beam@v1
+        id: beam
         with:
           elixir-version: "1.19"
           otp-version: "27"
 
       - name: Cache Mix deps
-        if: steps.check_specs.outputs.changes == 'true'
         uses: actions/cache@v4
         with:
           path: |
             deps
             _build
-          key: ${{ runner.os }}-mix-${{ hashFiles('mix.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-mix-
+          key: mix-${{ steps.beam.outputs.otp-version }}-${{ steps.beam.outputs.elixir-version }}-${{ hashFiles('mix.lock') }}
 
       - name: Install Dependencies
-        if: steps.check_specs.outputs.changes == 'true'
         run: mix deps.get
 
       - name: Regenerate APIs
-        if: steps.check_specs.outputs.changes == 'true' && steps.check_specs.outputs.services != ''
-        run: mix adyen.gen ${{ steps.check_specs.outputs.services }}
+        if: steps.services.outputs.list != ''
+        run: mix adyen.gen ${{ steps.services.outputs.list }}
 
       - name: Configure Git
-        if: steps.check_specs.outputs.changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Commit Spec Updates
-        if: steps.check_specs.outputs.changes == 'true'
         run: |
-          git -C /tmp/adyen-openapi rev-parse HEAD > priv/ADYEN_OPENAPI_SHA
           git add priv/specs priv/ADYEN_OPENAPI_SHA generated_lib
-          git commit -m "feat(api): update adyen specs and regenerate code"
+          git diff --cached --quiet \
+            || git commit -m "feat(api): update adyen specs and regenerate code"
 
       - name: Install git-cliff
-        if: steps.check_specs.outputs.changes == 'true'
         uses: kenji-miyake/setup-git-cliff@v1
 
       - name: Bump version
-        if: steps.check_specs.outputs.changes == 'true'
         id: bump
         run: |
           CURRENT_VERSION=$(elixir scripts/bump_version.exs --current)
-
-          git fetch --tags
           NEXT_VERSION=$(git-cliff --bump --unreleased | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
 
           echo "Current: $CURRENT_VERSION, Next from cliff: $NEXT_VERSION"
@@ -119,24 +119,17 @@ jobs:
           echo "version=$FINAL_VERSION" >> $GITHUB_OUTPUT
 
       - name: Commit Release
-        if: steps.check_specs.outputs.changes == 'true'
         run: |
-          if [ -n "$(git status --porcelain mix.exs)" ]; then
-            git add mix.exs
-            git commit -m "chore(release): bump version to ${{ steps.bump.outputs.version }}"
-          else
-            echo "No changes in mix.exs, skipping release commit."
-          fi
+          git add mix.exs
+          git diff --cached --quiet \
+            || git commit -m "chore(release): bump version to ${{ steps.bump.outputs.version }}"
 
       - name: Tag release
-        if: steps.check_specs.outputs.changes == 'true'
-        run: |
-          git tag "v${{ steps.bump.outputs.version }}"
+        run: git tag "v${{ steps.bump.outputs.version }}"
 
       - name: Create Pull Request
-        if: steps.check_specs.outputs.changes == 'true'
         id: cpr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "chore: update adyen specs (v${{ steps.bump.outputs.version }})"
@@ -153,6 +146,5 @@ jobs:
           delete-branch: true
 
       - name: Push release tag
-        if: steps.check_specs.outputs.changes == 'true' && steps.cpr.outputs.pull-request-number != ''
-        run: |
-          git push origin "v${{ steps.bump.outputs.version }}"
+        if: steps.cpr.outputs.pull-request-number != ''
+        run: git push origin "v${{ steps.bump.outputs.version }}"
