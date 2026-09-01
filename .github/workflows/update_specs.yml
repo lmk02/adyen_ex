@@ -50,7 +50,7 @@ jobs:
       - name: Sync specs into repo
         run: |
           git clone --depth 1 https://github.com/Adyen/adyen-openapi /tmp/adyen-openapi
-          rsync -a --delete --exclude='.git' /tmp/adyen-openapi/ priv/specs/
+          rsync -a --delete --exclude='.git' --exclude='yaml' /tmp/adyen-openapi/ priv/specs/
           echo "${{ needs.check.outputs.sha }}" > priv/ADYEN_OPENAPI_SHA
 
       # Diff our own working tree instead of upstream history: no deep clone,
@@ -159,9 +159,6 @@ jobs:
           git diff --cached --quiet \
             || git commit -m "chore(release): bump version to ${{ steps.bump.outputs.version }}"
 
-      - name: Tag release
-        run: git tag "v${{ steps.bump.outputs.version }}"
-
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
@@ -181,7 +178,3 @@ jobs:
           branch: "release/v${{ steps.bump.outputs.version }}"
           base: "main"
           delete-branch: true
-
-      - name: Push release tag
-        if: steps.cpr.outputs.pull-request-number != ''
-        run: git push origin "v${{ steps.bump.outputs.version }}"
