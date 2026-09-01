@@ -42,6 +42,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write # gh label create
     steps:
       - uses: actions/checkout@v4
         with:
@@ -103,12 +104,17 @@ jobs:
           surface /tmp/before/generated_lib > /tmp/surface_before
           surface generated_lib > /tmp/surface_after
 
-          REMOVED=$(LC_ALL=C comm -23 /tmp/surface_before /tmp/surface_after | wc -l)
-          ADDED=$(LC_ALL=C comm -13 /tmp/surface_before /tmp/surface_after | wc -l)
+          LC_ALL=C comm -23 /tmp/surface_before /tmp/surface_after > /tmp/removed
+          REMOVED=$(wc -l < /tmp/removed | tr -d ' ')
+          ADDED=$(LC_ALL=C comm -13 /tmp/surface_before /tmp/surface_after | wc -l | tr -d ' ')
 
-          if [ "$REMOVED" -gt 0 ]; then
-            BUMP=major; TYPE='feat(api)!'
-          elif [ "$ADDED" -gt 0 ]; then
+          # Major is deliberately never automatic. Adyen edits already-published
+          # API versions in place, and because the version sits in the module path
+          # (AdyenEx.Checkout.V68), a removal there cannot affect a consumer on a
+          # different version - and one pinned to it can stay on the previous tag.
+          # So removals get flagged for review rather than spending the major slot,
+          # which belongs to changes in this library's own contract.
+          if [ "$REMOVED" -gt 0 ] || [ "$ADDED" -gt 0 ]; then
             BUMP=minor; TYPE='feat(api)'
           else
             BUMP=patch; TYPE='fix(api)'
@@ -116,11 +122,16 @@ jobs:
 
           echo "bump=$BUMP" >> $GITHUB_OUTPUT
           echo "type=$TYPE" >> $GITHUB_OUTPUT
+          echo "removed=$REMOVED" >> $GITHUB_OUTPUT
+          echo "added=$ADDED" >> $GITHUB_OUTPUT
           {
-            echo "### API surface: \`$BUMP\`"
-            echo "- removed: $REMOVED"
-            echo "- added: $ADDED"
-            LC_ALL=C comm -23 /tmp/surface_before /tmp/surface_after | head -20
+            echo "### API surface: \`$BUMP\` (added $ADDED, removed $REMOVED)"
+            if [ "$REMOVED" -gt 0 ]; then
+              echo "Removed elements need a human call on whether this warrants a major bump:"
+              echo '```'
+              head -20 /tmp/removed
+              echo '```'
+            fi
           } >> $GITHUB_STEP_SUMMARY
 
       - name: Configure Git
@@ -131,10 +142,16 @@ jobs:
       - name: Commit Spec Updates
         run: |
           git add priv/specs priv/ADYEN_OPENAPI_SHA generated_lib
-          git diff --cached --quiet \
-            || git commit -m "$TYPE: update adyen specs and regenerate code"
+          git diff --cached --quiet && exit 0
+          if [ "$REMOVED" -gt 0 ]; then
+            git commit -m "$TYPE: update adyen specs and regenerate code" \
+              -m "Removes $REMOVED API surface elements from already-published Adyen versions."
+          else
+            git commit -m "$TYPE: update adyen specs and regenerate code"
+          fi
         env:
           TYPE: ${{ steps.surface.outputs.type }}
+          REMOVED: ${{ steps.surface.outputs.removed }}
 
       - name: Bump version
         id: bump
@@ -145,7 +162,6 @@ jobs:
           IFS=. read -r MAJOR MINOR PATCH <<< "$CURRENT"
 
           case "$BUMP" in
-            major) NEXT="$((MAJOR + 1)).0.0" ;;
             minor) NEXT="$MAJOR.$((MINOR + 1)).0" ;;
             *)     NEXT="$MAJOR.$MINOR.$((PATCH + 1))" ;;
           esac
@@ -159,22 +175,58 @@ jobs:
           git diff --cached --quiet \
             || git commit -m "chore(release): bump version to ${{ steps.bump.outputs.version }}"
 
+      - name: Build PR body
+        env:
+          BUMP: ${{ steps.surface.outputs.bump }}
+          ADDED: ${{ steps.surface.outputs.added }}
+          REMOVED: ${{ steps.surface.outputs.removed }}
+        run: |
+          {
+            echo "Automated update of the Adyen OpenAPI specifications."
+            echo
+            echo "- Synced \`priv/specs/\` with the latest adyen-openapi commit."
+            echo "- Updated \`priv/ADYEN_OPENAPI_SHA\` to track the synced commit."
+            echo "- Regenerated changed API clients in \`generated_lib/\` via \`mix adyen.gen\`."
+            echo "- Bumped \`mix.exs\` (\`$BUMP\`): $ADDED surface elements added, $REMOVED removed."
+            echo
+
+            if [ "$REMOVED" -gt 0 ]; then
+              echo "## :warning: $REMOVED API surface elements removed"
+              echo
+              echo "Adyen changed API versions that were already published, so this is"
+              echo "breaking for anyone pinned to the affected version namespaces."
+              echo "The bump stays \`$BUMP\` because the major slot tracks this library's"
+              echo "own contract, not upstream spec churn - **if these removals warrant a"
+              echo "major, edit \`@version\` in \`mix.exs\` on this branch before merging.**"
+              echo
+              echo "<details><summary>Removed elements (first 50)</summary>"
+              echo
+              echo '```'
+              head -50 /tmp/removed
+              echo '```'
+              echo
+              echo "</details>"
+            fi
+          } > /tmp/pr_body.md
+
+      - name: Ensure removal label exists
+        if: steps.surface.outputs.removed != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create api-removal \
+            --color B60205 \
+            --description "Upstream removed elements from a published API version" \
+            --force
+
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: "chore: update adyen specs (v${{ steps.bump.outputs.version }})"
-          body: |
-            This is an automated PR to update Adyen OpenAPI specifications.
-
-            Changes:
-            - Synced `priv/specs/` with the latest adyen-openapi commit.
-            - Updated `priv/ADYEN_OPENAPI_SHA` to track the synced commit.
-            - Regenerated changed API clients in `generated_lib/` via `mix adyen.gen`.
-            - Bumped version in `mix.exs` (`${{ steps.surface.outputs.bump }}`), classified
-              from the generated client surface: struct fields and function heads
-              removed count as breaking, added-only counts as a feature.
+          body-path: /tmp/pr_body.md
+          labels: ${{ steps.surface.outputs.removed != '0' && 'api-removal' || '' }}
           branch: "release/v${{ steps.bump.outputs.version }}"
           base: "main"
           delete-branch: true
