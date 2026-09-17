@@ -110,7 +110,7 @@ defmodule AdyenEx.PaymentsApp.V1.PaymentsApp do
   @doc """
   Create a boarding token - merchant level
 
-  Creates a boarding token used to authenticate the installation of a Payments App instance on an Android device. The boarding token is created for the `boardingRequestToken` of the Payments App for the merchant account identified in the path. 
+  Creates a boarding token used to authenticate the installation of a Payments App instance on a device. The boarding token is created for the `boardingRequestToken` of the Payments App for the merchant account identified in the path. 
 
   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
   * Adyen Payments App role
@@ -195,7 +195,7 @@ defmodule AdyenEx.PaymentsApp.V1.PaymentsApp do
   @doc """
   Create a boarding token - store level
 
-  Creates a boarding token used to authenticate the installation of a Payments App instance on an Android device. The boarding token is created for the `boardingRequestToken` of the Payments App for the store identified in the path.
+  Creates a boarding token used to authenticate the installation of a Payments App instance on a device. The boarding token is created for the `boardingRequestToken` of the Payments App for the store identified in the path.
 
   To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
   * Adyen Payments App role
