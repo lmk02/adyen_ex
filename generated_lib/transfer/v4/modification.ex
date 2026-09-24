@@ -91,6 +91,7 @@ defmodule AdyenEx.Transfer.V4.Modification do
            "reserveAdjustment",
            "reserveAdjustmentPending",
            "returned",
+           "reversalReceived",
            "reversed",
            "secondChargeback",
            "secondChargebackPending",

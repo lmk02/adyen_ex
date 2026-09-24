@@ -4,13 +4,13 @@ defmodule AdyenEx.Management.V1.ValuelinkInfo do
   """
 
   @type t :: %__MODULE__{
+          alternateMerchantNumber: String.t() | nil,
           authorisationMid: String.t(),
           pinSupport: String.t(),
-          submitterId: String.t() | nil,
           terminalId: String.t() | nil
         }
 
-  defstruct [:authorisationMid, :pinSupport, :submitterId, :terminalId]
+  defstruct [:alternateMerchantNumber, :authorisationMid, :pinSupport, :terminalId]
 
   @doc false
   @spec __fields__(atom) :: keyword
@@ -18,9 +18,9 @@ defmodule AdyenEx.Management.V1.ValuelinkInfo do
 
   def __fields__(:t) do
     [
+      alternateMerchantNumber: :string,
       authorisationMid: :string,
       pinSupport: {:enum, ["PIN", "NO PIN"]},
-      submitterId: :string,
       terminalId: :string
     ]
   end

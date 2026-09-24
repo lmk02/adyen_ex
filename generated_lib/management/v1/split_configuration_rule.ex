@@ -5,6 +5,7 @@ defmodule AdyenEx.Management.V1.SplitConfigurationRule do
 
   @type t :: %__MODULE__{
           cardRegion: String.t() | nil,
+          cardUsageType: String.t() | nil,
           currency: String.t(),
           fundingSource: String.t(),
           paymentMethod: String.t(),
@@ -15,6 +16,7 @@ defmodule AdyenEx.Management.V1.SplitConfigurationRule do
 
   defstruct [
     :cardRegion,
+    :cardUsageType,
     :currency,
     :fundingSource,
     :paymentMethod,
@@ -32,6 +34,7 @@ defmodule AdyenEx.Management.V1.SplitConfigurationRule do
       cardRegion:
         {:enum,
          ["international", "intraEEA", "intraRegional", "interRegional", "domestic", "ANY"]},
+      cardUsageType: {:enum, ["commercial", "consumer", "ANY"]},
       currency: :string,
       fundingSource: {:enum, ["charged", "credit", "debit", "deferred_debit", "prepaid", "ANY"]},
       paymentMethod: :string,

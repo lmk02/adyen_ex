@@ -244,6 +244,7 @@ defmodule AdyenEx.Transfer.V4.Transfer do
            "reserveAdjustment",
            "reserveAdjustmentPending",
            "returned",
+           "reversalReceived",
            "reversed",
            "secondChargeback",
            "secondChargebackPending",
@@ -289,7 +290,9 @@ defmodule AdyenEx.Transfer.V4.Transfer do
            "installmentReversal",
            "balanceAdjustment",
            "balanceRollover",
-           "balanceMigration"
+           "balanceMigration",
+           "fxSell",
+           "fxBuy"
          ]},
       ultimateParty: {AdyenEx.Transfer.V4.UltimatePartyIdentification, :t}
     ]

@@ -4,13 +4,14 @@ defmodule AdyenEx.Management.V3.UpdateSplitConfigurationRuleRequest do
   """
 
   @type t :: %__MODULE__{
+          cardUsageType: String.t() | nil,
           currency: String.t(),
           fundingSource: String.t(),
           paymentMethod: String.t(),
           shopperInteraction: String.t()
         }
 
-  defstruct [:currency, :fundingSource, :paymentMethod, :shopperInteraction]
+  defstruct [:cardUsageType, :currency, :fundingSource, :paymentMethod, :shopperInteraction]
 
   @doc false
   @spec __fields__(atom) :: keyword
@@ -18,6 +19,7 @@ defmodule AdyenEx.Management.V3.UpdateSplitConfigurationRuleRequest do
 
   def __fields__(:t) do
     [
+      cardUsageType: {:enum, ["commercial", "consumer", "ANY"]},
       currency: :string,
       fundingSource: :string,
       paymentMethod: :string,

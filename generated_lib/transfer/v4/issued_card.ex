@@ -5,6 +5,7 @@ defmodule AdyenEx.Transfer.V4.IssuedCard do
 
   @type t :: %__MODULE__{
           authorisationType: String.t() | nil,
+          networkVariant: String.t() | nil,
           panEntryMode: String.t() | nil,
           processingType: String.t() | nil,
           relayedAuthorisationData: AdyenEx.Transfer.V4.RelayedAuthorisationData.t() | nil,
@@ -17,6 +18,7 @@ defmodule AdyenEx.Transfer.V4.IssuedCard do
 
   defstruct [
     :authorisationType,
+    :networkVariant,
     :panEntryMode,
     :processingType,
     :relayedAuthorisationData,
@@ -34,6 +36,7 @@ defmodule AdyenEx.Transfer.V4.IssuedCard do
   def __fields__(:t) do
     [
       authorisationType: :string,
+      networkVariant: {:enum, ["maestro_us", "mastercard", "visa"]},
       panEntryMode:
         {:enum, ["chip", "cof", "contactless", "ecommerce", "magstripe", "manual", "token"]},
       processingType:
