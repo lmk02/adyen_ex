@@ -217,9 +217,12 @@ defmodule AdyenEx.Management.V3.AndroidFilesCompanyLevel do
   end
 
   @doc """
-  Upload Android Certificate
+  Upload Android certificate
 
-  Uploads an Android Certificate file to Adyen.
+  Uploads an Android certificate file to Adyen.
+
+  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#manage-api-permissions):
+  * Management API—Android files read and write
 
   In the live environment, requests to this endpoint are subject to [rate limits](https://docs.adyen.com/point-of-sale/automating-terminal-management#rate-limits-in-the-live-environment).
   """

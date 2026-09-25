@@ -112,6 +112,8 @@ defmodule AdyenEx.Transfer.V3.Transaction do
            "chargebackReversalCorrection",
            "depositCorrection",
            "fee",
+           "fxBuy",
+           "fxSell",
            "grant",
            "installment",
            "installmentReversal",

@@ -50,6 +50,7 @@ defmodule AdyenEx.Management.V1.PaymentMethodResponse do
           "alipay_plus_truemoney",
           "alipay_wap",
           "amex",
+          "ancv",
           "applepay",
           "avancard",
           "avancard_credit",
@@ -83,6 +84,7 @@ defmodule AdyenEx.Management.V1.PaymentMethodResponse do
           "directdebit_GB",
           "discover",
           "ebanking_FI",
+          "ebt",
           "eft_directdebit_CA",
           "eftpos_australia",
           "elo",
@@ -172,7 +174,8 @@ defmodule AdyenEx.Management.V1.PaymentMethodResponse do
           "visadebit",
           "vpay",
           "wechatpay",
-          "wechatpay_pos"
+          "wechatpay_pos",
+          "wero"
         ]
       ]
     ]

@@ -241,6 +241,7 @@ defmodule AdyenEx.Transfer.V4.TransferEvent do
            "reserveAdjustment",
            "reserveAdjustmentPending",
            "returned",
+           "reversalReceived",
            "reversed",
            "secondChargeback",
            "secondChargebackPending",

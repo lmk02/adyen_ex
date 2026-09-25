@@ -38,7 +38,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -89,7 +90,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -141,7 +143,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -183,7 +186,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -227,7 +231,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
@@ -274,7 +279,8 @@ defmodule AdyenEx.Management.V1.DonationCampaigns do
         {401, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {403, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
         {422, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
-        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
+        {500, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}},
+        {503, {AdyenEx.Management.V1.DefaultErrorResponseEntity, :t}}
       ],
       opts: opts
     })
