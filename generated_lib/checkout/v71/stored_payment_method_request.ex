@@ -5,6 +5,7 @@ defmodule AdyenEx.Checkout.V71.StoredPaymentMethodRequest do
 
   @type t :: %__MODULE__{
           merchantAccount: String.t(),
+          opi: AdyenEx.Checkout.V71.OpiRequest.t() | nil,
           paymentMethod: AdyenEx.Checkout.V71.PaymentMethodToStore.t(),
           recurringProcessingModel: String.t(),
           shopperEmail: String.t() | nil,
@@ -14,6 +15,7 @@ defmodule AdyenEx.Checkout.V71.StoredPaymentMethodRequest do
 
   defstruct [
     :merchantAccount,
+    :opi,
     :paymentMethod,
     :recurringProcessingModel,
     :shopperEmail,
@@ -28,6 +30,7 @@ defmodule AdyenEx.Checkout.V71.StoredPaymentMethodRequest do
   def __fields__(:t) do
     [
       merchantAccount: :string,
+      opi: {AdyenEx.Checkout.V71.OpiRequest, :t},
       paymentMethod: {AdyenEx.Checkout.V71.PaymentMethodToStore, :t},
       recurringProcessingModel: {:enum, ["CardOnFile", "Subscription", "UnscheduledCardOnFile"]},
       shopperEmail: :string,

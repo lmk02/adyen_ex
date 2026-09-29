@@ -4,7 +4,7 @@ defmodule AdyenEx.SessionAuthentication.V1.AuthenticationSessionRequest do
   """
 
   @type t :: %__MODULE__{
-          allowOrigin: String.t(),
+          allowOrigin: String.t() | nil,
           policy: AdyenEx.SessionAuthentication.V1.Policy.t(),
           product: String.t()
         }

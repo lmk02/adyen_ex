@@ -36,6 +36,10 @@ defmodule AdyenEx.Checkout.V68.Recurring do
 
   Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.
 
+  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
+
+  * API tokenise payment details
+
   ## Request Body
 
   **Content Types**: `application/json`

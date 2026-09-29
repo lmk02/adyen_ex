@@ -6,6 +6,7 @@ defmodule AdyenEx.Checkout.V50.KlarnaNetworkDetails do
   @type t :: %__MODULE__{
           checkoutAttemptId: String.t() | nil,
           klarnaNetworkData: String.t() | nil,
+          klarnaNetworkPaymentAccountId: String.t() | nil,
           klarnaNetworkSessionToken: String.t() | nil,
           recurringDetailReference: String.t() | nil,
           storedPaymentMethodId: String.t() | nil,
@@ -15,6 +16,7 @@ defmodule AdyenEx.Checkout.V50.KlarnaNetworkDetails do
   defstruct [
     :checkoutAttemptId,
     :klarnaNetworkData,
+    :klarnaNetworkPaymentAccountId,
     :klarnaNetworkSessionToken,
     :recurringDetailReference,
     :storedPaymentMethodId,
@@ -29,6 +31,7 @@ defmodule AdyenEx.Checkout.V50.KlarnaNetworkDetails do
     [
       checkoutAttemptId: :string,
       klarnaNetworkData: :string,
+      klarnaNetworkPaymentAccountId: :string,
       klarnaNetworkSessionToken: :string,
       recurringDetailReference: :string,
       storedPaymentMethodId: :string,
