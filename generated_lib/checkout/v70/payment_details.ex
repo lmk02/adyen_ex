@@ -59,6 +59,7 @@ defmodule AdyenEx.Checkout.V70.PaymentDetails do
            "walley",
            "walley_b2b",
            "paypo",
+           "satispay",
            "scalapay",
            "scalapay_3x",
            "scalapay_4x",

@@ -10,6 +10,10 @@ defmodule AdyenEx.Checkout.V72.Recurring do
 
   Deletes the token identified in the path. The token can no longer be used with payment requests.
 
+  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
+
+  * API tokenise payment details
+
   ## Options
 
     * `shopperReference`: Your reference to uniquely identify this shopper, for example user ID or account ID. Minimum length: 3 characters.
@@ -42,6 +46,9 @@ defmodule AdyenEx.Checkout.V72.Recurring do
 
   Lists the tokens for stored payment details for the shopper identified in the path, if there are any available. The token ID can be used with payment requests for the shopper's payment. A summary of the stored details is included.
 
+  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
+
+  * API tokenise payment details
 
   ## Options
 
@@ -97,6 +104,10 @@ defmodule AdyenEx.Checkout.V72.Recurring do
   Create a token to store payment details
 
   Creates a token to store the shopper's payment details. This token can be used for the shopper's future payments.
+
+  To make this request, your API credential must have the following [role](https://docs.adyen.com/development-resources/api-credentials#api-permissions):
+
+  * API tokenise payment details
 
   ## Request Body
 
