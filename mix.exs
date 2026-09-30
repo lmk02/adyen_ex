@@ -1,7 +1,8 @@
 defmodule AdyenEx.MixProject do
   use Mix.Project
 
-  @version "0.29.0"
+  @version "1.0.0"
+  @source_url "https://github.com/lmk02/adyen_ex"
 
   def project do
     [
@@ -10,7 +11,11 @@ defmodule AdyenEx.MixProject do
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
-      deps: deps()
+      deps: deps(),
+      description: "Elixir client for the Adyen API, generated from Adyen's OpenAPI specs",
+      package: package(),
+      source_url: @source_url,
+      docs: [main: "readme", extras: ["README.md"], source_ref: "v#{@version}"]
     ]
   end
 
@@ -50,6 +55,14 @@ defmodule AdyenEx.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url},
+      files: ~w(lib generated_lib priv/specs/json mix.exs README.md LICENSE)
     ]
   end
 
