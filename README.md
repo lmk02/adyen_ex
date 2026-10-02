@@ -1,8 +1,8 @@
 # Adyen Elixir SDK
 
-A lean, on-the-fly code-generation Elixir client library for the [Adyen API](https://docs.adyen.com/).
+A lean, code-generated Elixir client library for the [Adyen API](https://docs.adyen.com/).
 
-This SDK provides core HTTP client components and dynamically generates exactly the API versions you need at compile-time. All OpenAPI specifications are bundled within the library via a git submodule in `priv/specs`.
+This SDK provides core HTTP client components plus modules pre-generated from Adyen's OpenAPI specifications, and compiles only the API versions you configure. The specifications are bundled in `priv/specs`.
 
 ## Features
 
@@ -12,34 +12,36 @@ This SDK provides core HTTP client components and dynamically generates exactly 
 
 ## Installation
 
-Add `adyen` to your list of dependencies in `mix.exs`:
+Add `adyen_ex` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:adyen_ex, "~> 0.1.0"}
+    {:adyen_ex, "~> 1.0"}
   ]
 end
 ```
 
-> **Note:** If you are developing this library or using it from source, ensure you initialize the submodules:
-> `git submodule update --init --recursive`
-
 ## Configuration
 
-In your `config/config.exs` (or `runtime.exs`), specify the Adyen services and versions you want to include:
+In `config/config.exs`, specify the Adyen services and versions you want to compile. This is read when the library compiles, so it must not go in `runtime.exs`:
 
 ```elixir
 config :adyen_ex,
-  # 1. Compile-time settings: Defines which services and exact versions to generate modules for
   services: [
     "CheckoutService:v71",
     "PayoutService:v68"
-  ],
-  # 2. Global fallback API key (optional)
+  ]
+```
+
+API keys and other settings are read at runtime, so put them in `config/runtime.exs`:
+
+```elixir
+config :adyen_ex,
+  # Global fallback API key (optional)
   api_key: System.get_env("ADYEN_API_KEY"),
-  
-  # 3. Service-specific configuration
+
+  # Service-specific configuration
   CheckoutService: [
     # Optional: overrides the default `v71` or whatever is inferred from the caller module
     # version: "v71",
@@ -50,16 +52,16 @@ config :adyen_ex,
   ]
 ```
 
-Available services can be found in the `priv/specs/json` directory of the library.
+Available services and versions match the file names in `priv/specs/json` (e.g. `CheckoutService-v71.json` → `"CheckoutService:v71"`).
 
 ## Usage
 
-Once configured, only the specified services will be compiled. The modules are available under the `Adyen` namespace.
+Once configured, only the specified services will be compiled. The modules are available under the `AdyenEx` namespace.
 
 ### Checkout Service (Example for v71)
 
 ```elixir
-alias Adyen.Checkout.V71, as: CheckoutV71
+alias AdyenEx.Checkout.V71, as: CheckoutV71
 
 request = %CheckoutV71.CreateCheckoutSessionRequest{
   merchantAccount: "YOUR_MERCHANT_ACCOUNT",
