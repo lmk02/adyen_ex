@@ -77,6 +77,7 @@ defmodule AdyenEx.Checkout.V41.PaymentRequest do
             | AdyenEx.Checkout.V41.MolPayDetails.t()
             | AdyenEx.Checkout.V41.OpenInvoiceDetails.t()
             | AdyenEx.Checkout.V41.PayByBankAISDirectDebitDetails.t()
+            | AdyenEx.Checkout.V41.PayByBankCADirectDebitDetails.t()
             | AdyenEx.Checkout.V41.PayByBankDetails.t()
             | AdyenEx.Checkout.V41.PayPalDetails.t()
             | AdyenEx.Checkout.V41.PayPayDetails.t()
@@ -279,6 +280,7 @@ defmodule AdyenEx.Checkout.V41.PaymentRequest do
            {AdyenEx.Checkout.V41.MolPayDetails, :t},
            {AdyenEx.Checkout.V41.OpenInvoiceDetails, :t},
            {AdyenEx.Checkout.V41.PayByBankAISDirectDebitDetails, :t},
+           {AdyenEx.Checkout.V41.PayByBankCADirectDebitDetails, :t},
            {AdyenEx.Checkout.V41.PayByBankDetails, :t},
            {AdyenEx.Checkout.V41.PayPalDetails, :t},
            {AdyenEx.Checkout.V41.PayPayDetails, :t},
