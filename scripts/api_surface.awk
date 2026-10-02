@@ -7,10 +7,32 @@
 # read as a removal. Field splitting tracks bracket depth so that neither a
 # single-line struct type nor a field type wrapped across lines is misparsed.
 
-function out(f) {
+function out(f,   p) {
   gsub(/[ \t]+/, " ", f)
   gsub(/^ +| +$/, "", f)
-  if (f != "") print mod " field " f
+  if (f == "") return
+  p = index(f, ": ")
+  if (p == 0) { print mod " field " f; return }
+  emit_members(mod " field " substr(f, 1, p + 1), substr(f, p + 2))
+}
+
+# One line per top-level union member: widening a union then reads as an
+# addition only, while dropping a member still reads as a removal.
+function emit_members(prefix, t,   i, c, d, cur) {
+  d = 0; cur = ""
+  for (i = 1; i <= length(t); i++) {
+    c = substr(t, i, 1)
+    if (c == "{" || c == "[" || c == "(") d++
+    else if (c == "}" || c == "]" || c == ")") d--
+    if (c == "|" && d == 0) { member(prefix, cur); cur = "" }
+    else cur = cur c
+  }
+  member(prefix, cur)
+}
+
+function member(prefix, m) {
+  gsub(/^ +| +$/, "", m)
+  if (m != "") print prefix m
 }
 
 # split the struct interior on commas at bracket depth 0
