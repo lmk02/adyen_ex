@@ -17,6 +17,12 @@ defmodule AdyenEx.Client do
       )
 
   Header names are case-insensitive and override the defaults set below.
+
+  ## Retries
+
+  Transient failures (timeouts, 408, 429, 5xx) are retried for GET and HEAD only. A retried
+  POST can execute twice on Adyen's side, e.g. charge a shopper twice, unless it carries an
+  idempotency key. When it does, opt in with `retry: :transient`.
   """
 
   require Logger
@@ -40,7 +46,7 @@ defmodule AdyenEx.Client do
       Req.new(
         base_url: base_url,
         headers: build_headers(api_key, opts),
-        retry: :transient,
+        retry: Keyword.get(opts, :retry, :safe_transient),
         max_retries: 3,
         decode_body: false
       )

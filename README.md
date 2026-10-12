@@ -88,6 +88,19 @@ The code generator drops OpenAPI parameters declared with `"in": "header"`, so h
 
 Header names are case-insensitive and override the defaults (`x-api-key`, `content-type`).
 
+### Retries
+
+Transient failures (timeouts, 408, 429, 5xx) are retried up to 3 times for `GET` and `HEAD`
+requests only. A retried `POST` can execute twice on Adyen's side unless it carries an
+idempotency key, so opt in per call when it does:
+
+```elixir
+CheckoutV71.Payments.post_payments(request,
+  headers: [{"idempotency-key", key}],
+  retry: :transient
+)
+```
+
 ## License
 
 MIT
