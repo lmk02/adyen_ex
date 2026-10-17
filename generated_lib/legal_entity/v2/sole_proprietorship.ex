@@ -4,13 +4,14 @@ defmodule AdyenEx.LegalEntity.V2.SoleProprietorship do
   """
 
   @type t :: %__MODULE__{
-          countryOfGoverningLaw: String.t(),
+          countryOfGoverningLaw: String.t() | nil,
           dateOfIncorporation: String.t() | nil,
           doingBusinessAs: String.t() | nil,
           name: String.t(),
           principalPlaceOfBusiness: AdyenEx.LegalEntity.V2.Address.t() | nil,
           registeredAddress: AdyenEx.LegalEntity.V2.Address.t(),
           registrationNumber: String.t() | nil,
+          residentialAddressIndicator: boolean | nil,
           taxAbsent: boolean | nil,
           taxInformation: [AdyenEx.LegalEntity.V2.TaxInformation.t()] | nil,
           vatAbsenceReason: String.t() | nil,
@@ -25,6 +26,7 @@ defmodule AdyenEx.LegalEntity.V2.SoleProprietorship do
     :principalPlaceOfBusiness,
     :registeredAddress,
     :registrationNumber,
+    :residentialAddressIndicator,
     :taxAbsent,
     :taxInformation,
     :vatAbsenceReason,
@@ -44,6 +46,7 @@ defmodule AdyenEx.LegalEntity.V2.SoleProprietorship do
       principalPlaceOfBusiness: {AdyenEx.LegalEntity.V2.Address, :t},
       registeredAddress: {AdyenEx.LegalEntity.V2.Address, :t},
       registrationNumber: :string,
+      residentialAddressIndicator: :boolean,
       taxAbsent: :boolean,
       taxInformation: [{AdyenEx.LegalEntity.V2.TaxInformation, :t}],
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},

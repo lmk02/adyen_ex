@@ -4,7 +4,7 @@ defmodule AdyenEx.LegalEntity.V3.SoleProprietorship do
   """
 
   @type t :: %__MODULE__{
-          countryOfGoverningLaw: String.t(),
+          countryOfGoverningLaw: String.t() | nil,
           dateOfIncorporation: String.t() | nil,
           doingBusinessAs: String.t() | nil,
           financialReports: [AdyenEx.LegalEntity.V3.FinancialReport.t()] | nil,
@@ -12,6 +12,7 @@ defmodule AdyenEx.LegalEntity.V3.SoleProprietorship do
           principalPlaceOfBusiness: AdyenEx.LegalEntity.V3.Address.t() | nil,
           registeredAddress: AdyenEx.LegalEntity.V3.Address.t(),
           registrationNumber: String.t() | nil,
+          residentialAddressIndicator: boolean | nil,
           taxAbsent: boolean | nil,
           taxInformation: [AdyenEx.LegalEntity.V3.TaxInformation.t()] | nil,
           vatAbsenceReason: String.t() | nil,
@@ -27,6 +28,7 @@ defmodule AdyenEx.LegalEntity.V3.SoleProprietorship do
     :principalPlaceOfBusiness,
     :registeredAddress,
     :registrationNumber,
+    :residentialAddressIndicator,
     :taxAbsent,
     :taxInformation,
     :vatAbsenceReason,
@@ -47,6 +49,7 @@ defmodule AdyenEx.LegalEntity.V3.SoleProprietorship do
       principalPlaceOfBusiness: {AdyenEx.LegalEntity.V3.Address, :t},
       registeredAddress: {AdyenEx.LegalEntity.V3.Address, :t},
       registrationNumber: :string,
+      residentialAddressIndicator: :boolean,
       taxAbsent: :boolean,
       taxInformation: [{AdyenEx.LegalEntity.V3.TaxInformation, :t}],
       vatAbsenceReason: {:enum, ["industryExemption", "belowTaxThreshold"]},

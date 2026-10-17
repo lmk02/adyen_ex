@@ -17,6 +17,7 @@ defmodule AdyenEx.LegalEntity.V4.CalculateTermsOfServiceStatusResponse do
         enum: [
           "adyenAccount",
           "adyenCapital",
+          "adyenCapitalCashAdvance",
           "adyenCard",
           "adyenChargeCard",
           "adyenForPlatformsAdvanced",
@@ -24,6 +25,7 @@ defmodule AdyenEx.LegalEntity.V4.CalculateTermsOfServiceStatusResponse do
           "adyenFranchisee",
           "adyenIssuing",
           "adyenPccr",
+          "directDebit",
           "kycOnInvite"
         ]
       ]
