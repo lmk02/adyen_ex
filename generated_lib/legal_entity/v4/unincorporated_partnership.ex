@@ -13,6 +13,7 @@ defmodule AdyenEx.LegalEntity.V4.UnincorporatedPartnership do
           principalPlaceOfBusiness: AdyenEx.LegalEntity.V4.Address.t() | nil,
           registeredAddress: AdyenEx.LegalEntity.V4.Address.t(),
           registrationNumber: String.t() | nil,
+          residentialAddressIndicator: boolean | nil,
           taxInformation: [AdyenEx.LegalEntity.V4.TaxInformation.t()] | nil,
           type: String.t() | nil,
           vatAbsenceReason: String.t() | nil,
@@ -29,6 +30,7 @@ defmodule AdyenEx.LegalEntity.V4.UnincorporatedPartnership do
     :principalPlaceOfBusiness,
     :registeredAddress,
     :registrationNumber,
+    :residentialAddressIndicator,
     :taxInformation,
     :type,
     :vatAbsenceReason,
@@ -50,6 +52,7 @@ defmodule AdyenEx.LegalEntity.V4.UnincorporatedPartnership do
       principalPlaceOfBusiness: {AdyenEx.LegalEntity.V4.Address, :t},
       registeredAddress: {AdyenEx.LegalEntity.V4.Address, :t},
       registrationNumber: :string,
+      residentialAddressIndicator: :boolean,
       taxInformation: [{AdyenEx.LegalEntity.V4.TaxInformation, :t}],
       type:
         {:enum,

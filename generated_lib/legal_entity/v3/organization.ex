@@ -21,6 +21,7 @@ defmodule AdyenEx.LegalEntity.V3.Organization do
           principalPlaceOfBusiness: AdyenEx.LegalEntity.V3.Address.t() | nil,
           registeredAddress: AdyenEx.LegalEntity.V3.Address.t(),
           registrationNumber: String.t() | nil,
+          residentialAddressIndicator: boolean | nil,
           statusOfLegalProceeding: String.t() | nil,
           stockData: AdyenEx.LegalEntity.V3.StockData.t() | nil,
           taxInformation: [AdyenEx.LegalEntity.V3.TaxInformation.t()] | nil,
@@ -49,6 +50,7 @@ defmodule AdyenEx.LegalEntity.V3.Organization do
     :principalPlaceOfBusiness,
     :registeredAddress,
     :registrationNumber,
+    :residentialAddressIndicator,
     :statusOfLegalProceeding,
     :stockData,
     :taxInformation,
@@ -102,6 +104,7 @@ defmodule AdyenEx.LegalEntity.V3.Organization do
       principalPlaceOfBusiness: {AdyenEx.LegalEntity.V3.Address, :t},
       registeredAddress: {AdyenEx.LegalEntity.V3.Address, :t},
       registrationNumber: :string,
+      residentialAddressIndicator: :boolean,
       statusOfLegalProceeding:
         {:enum,
          [

@@ -29,6 +29,7 @@ defmodule AdyenEx.LegalEntity.V2.TermsOfServiceAcceptanceInfo do
          [
            "adyenAccount",
            "adyenCapital",
+           "adyenCapitalCashAdvance",
            "adyenCard",
            "adyenChargeCard",
            "adyenForPlatformsAdvanced",
@@ -36,6 +37,7 @@ defmodule AdyenEx.LegalEntity.V2.TermsOfServiceAcceptanceInfo do
            "adyenFranchisee",
            "adyenIssuing",
            "adyenPccr",
+           "directDebit",
            "kycOnInvite"
          ]},
       validTo: {:string, "date-time"}

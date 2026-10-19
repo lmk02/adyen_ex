@@ -11,6 +11,7 @@ defmodule AdyenEx.LegalEntity.V2.Trust do
           principalPlaceOfBusiness: AdyenEx.LegalEntity.V2.Address.t() | nil,
           registeredAddress: AdyenEx.LegalEntity.V2.Address.t(),
           registrationNumber: String.t() | nil,
+          residentialAddressIndicator: boolean | nil,
           taxInformation: [AdyenEx.LegalEntity.V2.TaxInformation.t()] | nil,
           type: String.t(),
           undefinedBeneficiaryInfo: [AdyenEx.LegalEntity.V2.UndefinedBeneficiary.t()] | nil,
@@ -26,6 +27,7 @@ defmodule AdyenEx.LegalEntity.V2.Trust do
     :principalPlaceOfBusiness,
     :registeredAddress,
     :registrationNumber,
+    :residentialAddressIndicator,
     :taxInformation,
     :type,
     :undefinedBeneficiaryInfo,
@@ -46,6 +48,7 @@ defmodule AdyenEx.LegalEntity.V2.Trust do
       principalPlaceOfBusiness: {AdyenEx.LegalEntity.V2.Address, :t},
       registeredAddress: {AdyenEx.LegalEntity.V2.Address, :t},
       registrationNumber: :string,
+      residentialAddressIndicator: :boolean,
       taxInformation: [{AdyenEx.LegalEntity.V2.TaxInformation, :t}],
       type:
         {:enum,

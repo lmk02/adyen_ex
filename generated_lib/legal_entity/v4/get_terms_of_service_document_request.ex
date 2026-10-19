@@ -24,6 +24,7 @@ defmodule AdyenEx.LegalEntity.V4.GetTermsOfServiceDocumentRequest do
          [
            "adyenAccount",
            "adyenCapital",
+           "adyenCapitalCashAdvance",
            "adyenCard",
            "adyenChargeCard",
            "adyenForPlatformsAdvanced",
@@ -31,6 +32,7 @@ defmodule AdyenEx.LegalEntity.V4.GetTermsOfServiceDocumentRequest do
            "adyenFranchisee",
            "adyenIssuing",
            "adyenPccr",
+           "directDebit",
            "kycOnInvite"
          ]}
     ]

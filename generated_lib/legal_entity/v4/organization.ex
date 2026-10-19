@@ -23,6 +23,7 @@ defmodule AdyenEx.LegalEntity.V4.Organization do
           registeredAddress: AdyenEx.LegalEntity.V4.Address.t(),
           registrationNumber: String.t() | nil,
           registrationNumberAbsent: boolean | nil,
+          residentialAddressIndicator: boolean | nil,
           statusOfLegalProceeding: String.t() | nil,
           stockData: AdyenEx.LegalEntity.V4.StockData.t() | nil,
           support: AdyenEx.LegalEntity.V4.Support.t() | nil,
@@ -54,6 +55,7 @@ defmodule AdyenEx.LegalEntity.V4.Organization do
     :registeredAddress,
     :registrationNumber,
     :registrationNumberAbsent,
+    :residentialAddressIndicator,
     :statusOfLegalProceeding,
     :stockData,
     :support,
@@ -110,6 +112,7 @@ defmodule AdyenEx.LegalEntity.V4.Organization do
       registeredAddress: {AdyenEx.LegalEntity.V4.Address, :t},
       registrationNumber: :string,
       registrationNumberAbsent: :boolean,
+      residentialAddressIndicator: :boolean,
       statusOfLegalProceeding:
         {:enum,
          [
