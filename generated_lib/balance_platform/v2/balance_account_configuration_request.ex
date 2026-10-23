@@ -8,7 +8,7 @@ defmodule AdyenEx.BalancePlatform.V2.BalanceAccountConfigurationRequest do
           currency: String.t() | nil,
           description: String.t() | nil,
           enabled: boolean | nil,
-          frequency: String.t(),
+          frequency: String.t() | nil,
           frequencyValue: integer | nil,
           maxPayoutAmount: integer | nil,
           minPayoutAmount: integer | nil,

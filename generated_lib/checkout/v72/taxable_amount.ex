@@ -1,9 +1,9 @@
-defmodule AdyenEx.BalancePlatform.V2.PatchableAmountDTO do
+defmodule AdyenEx.Checkout.V72.TaxableAmount do
   @moduledoc """
-  Provides struct and type for a PatchableAmountDTO
+  Provides struct and type for a TaxableAmount
   """
 
-  @type t :: %__MODULE__{currency: String.t() | nil, value: integer | nil}
+  @type t :: %__MODULE__{currency: String.t(), value: integer}
 
   defstruct [:currency, :value]
 
