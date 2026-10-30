@@ -38,7 +38,9 @@ defmodule AdyenEx.Checkout.V72.AfterpayDetails do
       recurringDetailReference: :string,
       sdkData: :string,
       storedPaymentMethodId: :string,
-      type: {:enum, ["afterpay_default", "afterpaytouch", "afterpay_b2b", "clearpay"]}
+      type:
+        {:enum,
+         ["afterpay_default", "afterpaytouch", "afterpaytouch_US", "afterpay_b2b", "clearpay"]}
     ]
   end
 end

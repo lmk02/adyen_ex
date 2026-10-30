@@ -1015,16 +1015,16 @@
         "properties" : {
           "code" : {
             "type" : "string",
-            "description" : "The reason code provided by the network."
+            "description" : "The network-specific reason code. Use `namespace` to identify the code set."
           },
           "description" : {
             "type" : "string",
-            "description" : "The description of the reason code."
+            "description" : "A human-readable description of the reason code."
           },
           "namespace" : {
             "type" : "string",
-            "description" : "The namespace that corresponds to the reason code.\n\nPossible values:\n*  **ukFpsRejectionCode**\n*  **ukFpsReturnReasonCode**\n*  **usAchReturnReasonCode**\n*  **usAchCorrectionReasonCode**\n*  **iso8583ResponseCode**\n\n",
-            "enum" : [ "iso8583ResponseCode", "ukFpsRejectionCode", "ukFpsReturnReasonCode", "usAchReturnReasonCode", "usAchCorrectionReasonCode" ]
+            "description" : "The category of codes that `code` belongs to. The `namespace` identifies the payment network and the type of reason\n\nPossible values:\n*  **ukFpsRejectionCode** : Reason code for a rejected Faster Payments transfer.\n*  **ukFpsReturnReasonCode** : Reason code for a returned Faster Payments transfer.\n*  **usAchReturnReasonCode** : Reason code for a returned ACH transfer.\n*  **usAchCorrectionReasonCode** : Reason code for an ACH Notification of Change.\n*  **iso8583ResponseCode** : ISO 8583 response code for a card transfer.\n\n",
+            "enum" : [ "iso8583ResponseCode", "ukFpsRejectionCode", "ukFpsReturnReasonCode", "usAchCorrectionReasonCode", "usAchReturnReasonCode" ]
           }
         }
       },
@@ -1423,8 +1423,8 @@
           },
           "category" : {
             "type" : "string",
-            "description" : "The category of the transfer.\n\nPossible values:\n\n - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.\n\n- **card**: A transfer involving a third-party card.\n\n- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.\n\n- **issuedCard**: A transfer initiated by an Adyen-issued card.\n\n- **platformPayment**: Funds movements related to payments that are acquired for your users.\n\n- **topUp**: An incoming transfer initiated by your user to top up their balance account.",
-            "enum" : [ "bank", "card", "internal", "issuedCard", "platformPayment", "topUp" ],
+            "description" : "The category of the transfer.\n\nPossible values:\n\n - **bank**: A transfer involving a [transfer instrument](https://docs.adyen.com/api-explorer/legalentity/latest/post/transferInstruments#responses-200-id) or a bank account.\n\n- **card**: A transfer involving a third-party card.\n\n- **interest**: A transfer that settles accrued [interest](https://docs.adyen.com/business-accounts/earn-returns) on a business account.\n\n- **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.\n\n- **issuedCard**: A transfer initiated by an Adyen-issued card.\n\n- **platformPayment**: Funds movements related to payments that are acquired for your users.\n\n- **topUp**: An incoming transfer initiated by your user to top up their balance account.",
+            "enum" : [ "bank", "card", "interest", "internal", "issuedCard", "platformPayment", "topUp" ],
             "x-addedInVersion" : "3"
           },
           "categoryData" : {
@@ -1599,7 +1599,7 @@
           "type" : {
             "type" : "string",
             "description" : "The type of transfer or transaction. For example, **refund**, **payment**, **internalTransfer**, **bankTransfer**.",
-            "enum" : [ "payment", "capture", "captureReversal", "refund", "refundReversal", "chargeback", "chargebackCorrection", "chargebackReversal", "chargebackReversalCorrection", "secondChargeback", "secondChargebackCorrection", "atmWithdrawal", "atmWithdrawalReversal", "internalTransfer", "internalDirectDebit", "manualCorrection", "invoiceDeduction", "depositCorrection", "reserveAdjustment", "bankTransfer", "bankDirectDebit", "cardTransfer", "miscCost", "paymentCost", "fee", "leftover", "grant", "capitalFundsCollection", "cashOutInstruction", "cashoutFee", "cashoutRepayment", "cashoutFunding", "repayment", "installment", "installmentReversal", "balanceAdjustment", "balanceRollover", "balanceMigration", "fxSell", "fxBuy" ],
+            "enum" : [ "payment", "capture", "captureReversal", "refund", "refundReversal", "chargeback", "chargebackCorrection", "chargebackReversal", "chargebackReversalCorrection", "secondChargeback", "secondChargebackCorrection", "atmWithdrawal", "atmWithdrawalReversal", "internalTransfer", "internalDirectDebit", "manualCorrection", "invoiceDeduction", "depositCorrection", "reserveAdjustment", "bankTransfer", "bankDirectDebit", "cardTransfer", "miscCost", "paymentCost", "fee", "leftover", "grant", "capitalFundsCollection", "cashOutInstruction", "cashoutFee", "cashoutRepayment", "cashoutFunding", "repayment", "installment", "installmentReversal", "balanceAdjustment", "balanceRollover", "balanceMigration", "interestPayout", "fxSell", "fxBuy" ],
             "x-addedInVersion" : "3"
           },
           "ultimateParty" : {
