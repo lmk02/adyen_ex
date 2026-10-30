@@ -123,6 +123,57 @@ defmodule AdyenEx.BalancePlatform.V2.CustomPayoutSchedulesSweeps do
   end
 
   @doc """
+  View executions of a custom payout schedule
+
+  Returns a paginated list of executions of a custom payout schedule on a balance account. You can use query parameters to filter the executions that are returned in the list.
+
+  ## Options
+
+    * `results`: Contains a comma-separated list of sweep execution results. If included, the response returns only sweep executions with the specified results.
+      
+      Possible results:
+      - **succeeded**: The sweep payout was completed successfully.
+      - **failed**: The sweep payout was not completed due to an error.
+      - **skipped**: The sweep payout was not triggered as expected.
+    * `limit`: The number of items returned per page. By default, the response returns 10 items per page.
+    * `cursor`: The cursor from the `next` or `previous` pagination link in the previous response.
+
+  """
+  @spec get_balance_accounts_balance_account_id_sweeps_sweep_id_executions(
+          balanceAccountId :: String.t(),
+          sweepId :: String.t(),
+          opts :: keyword
+        ) ::
+          {:ok, AdyenEx.BalancePlatform.V2.PayoutSweepExecutions.t()}
+          | {:error, AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity.t()}
+  def get_balance_accounts_balance_account_id_sweeps_sweep_id_executions(
+        balanceAccountId,
+        sweepId,
+        opts \\ []
+      ) do
+    client = opts[:client] || @default_client
+    query = Keyword.take(opts, [:cursor, :limit, :results])
+
+    client.request(%{
+      args: [balanceAccountId: balanceAccountId, sweepId: sweepId],
+      call:
+        {AdyenEx.BalancePlatform.V2.CustomPayoutSchedulesSweeps,
+         :get_balance_accounts_balance_account_id_sweeps_sweep_id_executions},
+      url: "/balanceAccounts/#{balanceAccountId}/sweeps/#{sweepId}/executions",
+      method: :get,
+      query: query,
+      response: [
+        {200, {AdyenEx.BalancePlatform.V2.PayoutSweepExecutions, :t}},
+        {401, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {404, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {422, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},
+        {500, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}}
+      ],
+      opts: opts
+    })
+  end
+
+  @doc """
   Update a sweep
 
   Updates a sweep. When updating a sweep resource, note that if a request parameter is not provided, the parameter is left unchanged.

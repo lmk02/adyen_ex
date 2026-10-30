@@ -11,6 +11,7 @@ defmodule AdyenEx.Checkout.V67.KlarnaNetworkDetails do
           recurringDetailReference: String.t() | nil,
           sdkData: String.t() | nil,
           storedPaymentMethodId: String.t() | nil,
+          subtype: String.t() | nil,
           type: String.t()
         }
 
@@ -22,6 +23,7 @@ defmodule AdyenEx.Checkout.V67.KlarnaNetworkDetails do
     :recurringDetailReference,
     :sdkData,
     :storedPaymentMethodId,
+    :subtype,
     :type
   ]
 
@@ -38,6 +40,7 @@ defmodule AdyenEx.Checkout.V67.KlarnaNetworkDetails do
       recurringDetailReference: :string,
       sdkData: :string,
       storedPaymentMethodId: :string,
+      subtype: {:enum, ["redirect", "sdk"]},
       type: {:const, "klarna_network"}
     ]
   end

@@ -25,8 +25,8 @@ defmodule AdyenEx.Transfer.V4.NetworkReason do
            "iso8583ResponseCode",
            "ukFpsRejectionCode",
            "ukFpsReturnReasonCode",
-           "usAchReturnReasonCode",
-           "usAchCorrectionReasonCode"
+           "usAchCorrectionReasonCode",
+           "usAchReturnReasonCode"
          ]}
     ]
   end

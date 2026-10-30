@@ -65,7 +65,9 @@ defmodule AdyenEx.Transfer.V3.Transfer do
       amount: {AdyenEx.Transfer.V3.Amount, :t},
       balanceAccount: {AdyenEx.Transfer.V3.ResourceReference, :t},
       balanceAccountId: :string,
-      category: {:enum, ["bank", "card", "internal", "issuedCard", "platformPayment", "topUp"]},
+      category:
+        {:enum,
+         ["bank", "card", "interest", "internal", "issuedCard", "platformPayment", "topUp"]},
       counterparty: {AdyenEx.Transfer.V3.CounterpartyV3, :t},
       createdAt: {:string, "date-time"},
       creationDate: {:string, "date-time"},
@@ -285,6 +287,7 @@ defmodule AdyenEx.Transfer.V3.Transfer do
            "balanceAdjustment",
            "balanceRollover",
            "balanceMigration",
+           "interestPayout",
            "fxSell",
            "fxBuy"
          ]},
