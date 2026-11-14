@@ -4,8 +4,8 @@ defmodule AdyenEx.TerminalAPI.V1.ReconciliationRequest do
   """
 
   @type t :: %__MODULE__{
-          AcquirerID: [integer] | nil,
-          POIReconciliationID: integer | nil,
+          AcquirerID: [String.t()] | nil,
+          POIReconciliationID: String.t() | nil,
           ReconciliationType: String.t()
         }
 
@@ -17,8 +17,8 @@ defmodule AdyenEx.TerminalAPI.V1.ReconciliationRequest do
 
   def __fields__(:t) do
     [
-      AcquirerID: [:integer],
-      POIReconciliationID: :integer,
+      AcquirerID: [:string],
+      POIReconciliationID: :string,
       ReconciliationType:
         {:enum,
          [

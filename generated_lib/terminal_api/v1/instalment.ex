@@ -35,9 +35,9 @@ defmodule AdyenEx.TerminalAPI.V1.Instalment do
 
   def __fields__(:t) do
     [
-      Charges: :number,
-      CumulativeAmount: :number,
-      FirstAmount: :number,
+      Charges: {:number, "double"},
+      CumulativeAmount: {:number, "double"},
+      FirstAmount: {:number, "double"},
       FirstPaymentDate: {:string, "date"},
       InstalmentType: {:enum, ["DeferredInstalments", "EqualInstalments", "InequalInstalments"]},
       Period: :integer,

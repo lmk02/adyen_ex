@@ -4,9 +4,9 @@ defmodule AdyenEx.TerminalAPI.V1.SensitiveCardData do
   """
 
   @type t :: %__MODULE__{
-          CardSeqNumb: integer | nil,
-          ExpiryDate: integer | nil,
-          PAN: integer | nil,
+          CardSeqNumb: String.t() | nil,
+          ExpiryDate: String.t() | nil,
+          PAN: String.t() | nil,
           TrackData: [AdyenEx.TerminalAPI.V1.TrackData.t()] | nil
         }
 
@@ -18,9 +18,9 @@ defmodule AdyenEx.TerminalAPI.V1.SensitiveCardData do
 
   def __fields__(:t) do
     [
-      CardSeqNumb: :integer,
-      ExpiryDate: :integer,
-      PAN: :integer,
+      CardSeqNumb: :string,
+      ExpiryDate: :string,
+      PAN: :string,
       TrackData: [{AdyenEx.TerminalAPI.V1.TrackData, :t}]
     ]
   end

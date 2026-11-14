@@ -6,16 +6,22 @@ defmodule AdyenEx.Management.V3.Standalone do
   @type t :: %__MODULE__{
           currencyCode: String.t() | nil,
           enableGratuities: boolean | nil,
-          enableStandalone: boolean | nil
+          enableStandalone: boolean | nil,
+          merchantReference: String.t() | nil
         }
 
-  defstruct [:currencyCode, :enableGratuities, :enableStandalone]
+  defstruct [:currencyCode, :enableGratuities, :enableStandalone, :merchantReference]
 
   @doc false
   @spec __fields__(atom) :: keyword
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [currencyCode: :string, enableGratuities: :boolean, enableStandalone: :boolean]
+    [
+      currencyCode: :string,
+      enableGratuities: :boolean,
+      enableStandalone: :boolean,
+      merchantReference: :string
+    ]
   end
 end

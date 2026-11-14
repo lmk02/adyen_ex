@@ -120,6 +120,7 @@ defmodule AdyenEx.Management.V1.UsersMerchantLevel do
         {400, {AdyenEx.Management.V1.RestServiceError, :t}},
         {401, {AdyenEx.Management.V1.RestServiceError, :t}},
         {403, {AdyenEx.Management.V1.RestServiceError, :t}},
+        {409, {AdyenEx.Management.V1.RestServiceError, :t}},
         {422, {AdyenEx.Management.V1.RestServiceError, :t}},
         {500, {AdyenEx.Management.V1.RestServiceError, :t}}
       ],

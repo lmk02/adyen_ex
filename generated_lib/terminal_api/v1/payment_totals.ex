@@ -17,7 +17,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentTotals do
 
   def __fields__(:t) do
     [
-      TransactionAmount: :number,
+      TransactionAmount: {:number, "double"},
       TransactionCount: :integer,
       TransactionType:
         {:enum,

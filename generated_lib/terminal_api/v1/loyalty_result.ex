@@ -17,7 +17,7 @@ defmodule AdyenEx.TerminalAPI.V1.LoyaltyResult do
 
   def __fields__(:t) do
     [
-      CurrentBalance: :number,
+      CurrentBalance: {:number, "double"},
       LoyaltyAccount: {AdyenEx.TerminalAPI.V1.LoyaltyAccount, :t},
       LoyaltyAcquirerData: {AdyenEx.TerminalAPI.V1.LoyaltyAcquirerData, :t}
     ]

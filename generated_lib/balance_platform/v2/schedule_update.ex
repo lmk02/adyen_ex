@@ -1,6 +1,6 @@
-defmodule AdyenEx.BalancePlatform.V2.PatchableSchedule do
+defmodule AdyenEx.BalancePlatform.V2.ScheduleUpdate do
   @moduledoc """
-  Provides struct and type for a PatchableSchedule
+  Provides struct and type for a ScheduleUpdate
   """
 
   @type t :: %__MODULE__{type: String.t() | nil}

@@ -116,7 +116,7 @@ defmodule AdyenEx.BalancePlatform.V2.SCADeviceManagement do
   @doc """
   Create a new SCA association for a device
 
-  Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices.
+  Creates an association between an SCA-enabled device and an entity, such as an account holder. This action does not guarantee the association is immediately ready for use; its status may be `pendingApproval` if the account holder has existing devices. If the entity is configured to allow only a single associated device and single-device replacement is enabled for your account, the new association immediately replaces the existing one: its status is `active` and the previously associated device is no longer associated.
 
   ## Request Body
 

@@ -4,10 +4,12 @@ defmodule AdyenEx.RaiseDisputes.V4.DisputeRequest do
   """
 
   @type t :: %__MODULE__{
+          cancelledInfo: AdyenEx.RaiseDisputes.V4.CancelledInfo.t() | nil,
           description: String.t() | nil,
           disputedAmount: AdyenEx.RaiseDisputes.V4.Amount.t() | nil,
           duplicateInfo: AdyenEx.RaiseDisputes.V4.DuplicateInfo.t() | nil,
           fraudInfo: AdyenEx.RaiseDisputes.V4.FraudInfo.t() | nil,
+          notAsDescribedInfo: AdyenEx.RaiseDisputes.V4.NotAsDescribedInfo.t() | nil,
           notDeliveredInfo: AdyenEx.RaiseDisputes.V4.NotDeliveredInfo.t() | nil,
           otherInfo: AdyenEx.RaiseDisputes.V4.OtherInfo.t() | nil,
           status: String.t() | nil,
@@ -16,10 +18,12 @@ defmodule AdyenEx.RaiseDisputes.V4.DisputeRequest do
         }
 
   defstruct [
+    :cancelledInfo,
     :description,
     :disputedAmount,
     :duplicateInfo,
     :fraudInfo,
+    :notAsDescribedInfo,
     :notDeliveredInfo,
     :otherInfo,
     :status,
@@ -33,10 +37,12 @@ defmodule AdyenEx.RaiseDisputes.V4.DisputeRequest do
 
   def __fields__(:t) do
     [
+      cancelledInfo: {AdyenEx.RaiseDisputes.V4.CancelledInfo, :t},
       description: :string,
       disputedAmount: {AdyenEx.RaiseDisputes.V4.Amount, :t},
       duplicateInfo: {AdyenEx.RaiseDisputes.V4.DuplicateInfo, :t},
       fraudInfo: {AdyenEx.RaiseDisputes.V4.FraudInfo, :t},
+      notAsDescribedInfo: {AdyenEx.RaiseDisputes.V4.NotAsDescribedInfo, :t},
       notDeliveredInfo: {AdyenEx.RaiseDisputes.V4.NotDeliveredInfo, :t},
       otherInfo: {AdyenEx.RaiseDisputes.V4.OtherInfo, :t},
       status: {:enum, ["draft", "submitted", "chargeback", "secondPresentment", "won", "closed"]},

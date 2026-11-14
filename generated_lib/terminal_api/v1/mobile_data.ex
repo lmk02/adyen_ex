@@ -5,9 +5,9 @@ defmodule AdyenEx.TerminalAPI.V1.MobileData do
 
   @type t :: %__MODULE__{
           Geolocation: AdyenEx.TerminalAPI.V1.Geolocation.t() | nil,
-          MaskedMSISDN: integer | nil,
-          MobileCountryCode: integer | nil,
-          MobileNetworkCode: integer | nil,
+          MaskedMSISDN: String.t() | nil,
+          MobileCountryCode: String.t() | nil,
+          MobileNetworkCode: String.t() | nil,
           ProtectedMobileData: String.t() | nil,
           SensitiveMobileData: AdyenEx.TerminalAPI.V1.SensitiveMobileData.t() | nil
         }
@@ -28,10 +28,10 @@ defmodule AdyenEx.TerminalAPI.V1.MobileData do
   def __fields__(:t) do
     [
       Geolocation: {AdyenEx.TerminalAPI.V1.Geolocation, :t},
-      MaskedMSISDN: :integer,
-      MobileCountryCode: :integer,
-      MobileNetworkCode: :integer,
-      ProtectedMobileData: :string,
+      MaskedMSISDN: :string,
+      MobileCountryCode: :string,
+      MobileNetworkCode: :string,
+      ProtectedMobileData: {:string, "byte"},
       SensitiveMobileData: {AdyenEx.TerminalAPI.V1.SensitiveMobileData, :t}
     ]
   end

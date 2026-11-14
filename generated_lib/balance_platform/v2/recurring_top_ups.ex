@@ -101,7 +101,7 @@ defmodule AdyenEx.BalancePlatform.V2.RecurringTopUps do
   @spec patch_balance_accounts_balance_account_id_recurring_top_ups_top_up_id(
           balanceAccountId :: String.t(),
           topUpId :: String.t(),
-          body :: AdyenEx.BalancePlatform.V2.PatchableCreateRecurringTopUp.t(),
+          body :: AdyenEx.BalancePlatform.V2.RecurringTopUpUpdate.t(),
           opts :: keyword
         ) ::
           {:ok, AdyenEx.BalancePlatform.V2.RecurringTopUp.t()}
@@ -122,9 +122,7 @@ defmodule AdyenEx.BalancePlatform.V2.RecurringTopUps do
       url: "/balanceAccounts/#{balanceAccountId}/recurringTopUps/#{topUpId}",
       body: body,
       method: :patch,
-      request: [
-        {"application/json", {AdyenEx.BalancePlatform.V2.PatchableCreateRecurringTopUp, :t}}
-      ],
+      request: [{"application/json", {AdyenEx.BalancePlatform.V2.RecurringTopUpUpdate, :t}}],
       response: [
         {200, {AdyenEx.BalancePlatform.V2.RecurringTopUp, :t}},
         {400, {AdyenEx.BalancePlatform.V2.DefaultErrorResponseEntity, :t}},

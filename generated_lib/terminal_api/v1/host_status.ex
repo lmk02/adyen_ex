@@ -3,7 +3,7 @@ defmodule AdyenEx.TerminalAPI.V1.HostStatus do
   Provides struct and type for a HostStatus
   """
 
-  @type t :: %__MODULE__{AcquirerID: integer, IsReachableFlag: boolean | nil}
+  @type t :: %__MODULE__{AcquirerID: String.t(), IsReachableFlag: boolean | nil}
 
   defstruct [:AcquirerID, :IsReachableFlag]
 
@@ -12,6 +12,6 @@ defmodule AdyenEx.TerminalAPI.V1.HostStatus do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [AcquirerID: :integer, IsReachableFlag: :boolean]
+    [AcquirerID: :string, IsReachableFlag: :boolean]
   end
 end
