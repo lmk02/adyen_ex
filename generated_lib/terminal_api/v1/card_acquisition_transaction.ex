@@ -70,7 +70,7 @@ defmodule AdyenEx.TerminalAPI.V1.CardAcquisitionTransaction do
            "IssuerInstalment",
            "PaidOut"
          ]},
-      TotalAmount: :number
+      TotalAmount: {:number, "double"}
     ]
   end
 end

@@ -5,7 +5,7 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueAccountID do
 
   @type t :: %__MODULE__{
           EntryMode: [String.t()],
-          ExpiryDate: integer | nil,
+          ExpiryDate: String.t() | nil,
           IdentificationType: String.t(),
           OwnerName: String.t() | nil,
           StoredValueAccountType: String.t(),
@@ -44,7 +44,7 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueAccountID do
           "Mobile"
         ]
       ],
-      ExpiryDate: :integer,
+      ExpiryDate: :string,
       IdentificationType:
         {:enum, ["PAN", "ISOTrack2", "BarCode", "AccountNumber", "PhoneNumber"]},
       OwnerName: :string,

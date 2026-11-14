@@ -298,7 +298,7 @@ defmodule AdyenEx.Management.V1.TerminalThemesCompanyLevel do
   An asset is used for a specific screen type or screen element, and a specific Android terminal model. You must specify this using the query parameters `type` and `model`. The asset binary itself is uploaded as multipart/form-data with a single file part called `file`, which must declare one of the following supported Content-Type values:
 
   - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**.
-  - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**.
+  - **video/mp4** or **video/quicktime**: for all `model` values except **All**.
   - **image/jpeg** (or **image/jpg**): for all `model` values except **All**.
   - **image/png**: for all `model` values except **All**.
   - **image/gif**: for all `model` values except **SFO1** and **M450**.
@@ -371,7 +371,7 @@ defmodule AdyenEx.Management.V1.TerminalThemesCompanyLevel do
   called `file`, which must declare one of the following supported Content-Type values:
 
   - **image/svg+xml**: only for the combination `type` **logo** with `model` **All**.
-  - **video/mp4** or **video/quicktime**: only for `model` **SFO1** or **M450**.
+  - **video/mp4** or **video/quicktime**: for all `model` values except **All**.
   - **image/jpeg** (or **image/jpg**): for all `model` values except **All**.
   - **image/png**: for all `model` values except **All**.
   - **image/gif**: for all `model` values except **SFO1** and **M450**.

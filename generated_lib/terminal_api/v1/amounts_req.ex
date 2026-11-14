@@ -31,14 +31,14 @@ defmodule AdyenEx.TerminalAPI.V1.AmountsReq do
 
   def __fields__(:t) do
     [
-      CashBackAmount: :number,
+      CashBackAmount: {:number, "double"},
       Currency: :string,
-      MaximumCashBackAmount: :number,
-      MinimumAmountToDeliver: :number,
-      MinimumSplitAmount: :number,
-      PaidAmount: :number,
-      RequestedAmount: :number,
-      TipAmount: :number
+      MaximumCashBackAmount: {:number, "double"},
+      MinimumAmountToDeliver: {:number, "double"},
+      MinimumSplitAmount: {:number, "double"},
+      PaidAmount: {:number, "double"},
+      RequestedAmount: {:number, "double"},
+      TipAmount: {:number, "double"}
     ]
   end
 end

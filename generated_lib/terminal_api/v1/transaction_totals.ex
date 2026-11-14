@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionTotals do
   """
 
   @type t :: %__MODULE__{
-          AcquirerID: integer | nil,
+          AcquirerID: String.t() | nil,
           CardBrand: String.t() | nil,
           HostReconciliationID: String.t() | nil,
           OperatorID: String.t() | nil,
@@ -37,7 +37,7 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionTotals do
 
   def __fields__(:t) do
     [
-      AcquirerID: :integer,
+      AcquirerID: :string,
       CardBrand: :string,
       HostReconciliationID: :string,
       OperatorID: :string,

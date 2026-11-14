@@ -1,14 +1,14 @@
-defmodule AdyenEx.BalancePlatform.V2.PatchableCreateRecurringTopUp do
+defmodule AdyenEx.BalancePlatform.V2.RecurringTopUpUpdate do
   @moduledoc """
-  Provides struct and type for a PatchableCreateRecurringTopUp
+  Provides struct and type for a RecurringTopUpUpdate
   """
 
   @type t :: %__MODULE__{
           description: String.t() | nil,
           referenceForBeneficiary: String.t() | nil,
           status: String.t() | nil,
-          topUpAmount: AdyenEx.BalancePlatform.V2.PatchableTopUpAmount.t() | nil,
-          trigger: AdyenEx.BalancePlatform.V2.PatchableTrigger.t() | nil
+          topUpAmount: AdyenEx.BalancePlatform.V2.TopUpAmountUpdate.t() | nil,
+          trigger: AdyenEx.BalancePlatform.V2.TriggerUpdate.t() | nil
         }
 
   defstruct [:description, :referenceForBeneficiary, :status, :topUpAmount, :trigger]
@@ -22,8 +22,8 @@ defmodule AdyenEx.BalancePlatform.V2.PatchableCreateRecurringTopUp do
       description: :string,
       referenceForBeneficiary: {:union, [:string, :null]},
       status: {:enum, ["active", "inactive"]},
-      topUpAmount: {AdyenEx.BalancePlatform.V2.PatchableTopUpAmount, :t},
-      trigger: {AdyenEx.BalancePlatform.V2.PatchableTrigger, :t}
+      topUpAmount: {AdyenEx.BalancePlatform.V2.TopUpAmountUpdate, :t},
+      trigger: {AdyenEx.BalancePlatform.V2.TriggerUpdate, :t}
     ]
   end
 end

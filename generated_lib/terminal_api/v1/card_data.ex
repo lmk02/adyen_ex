@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.CardData do
   """
 
   @type t :: %__MODULE__{
-          CardCountryCode: integer | nil,
+          CardCountryCode: String.t() | nil,
           EntryMode: [String.t()] | nil,
           MaskedPan: String.t() | nil,
           PaymentAccountRef: String.t() | nil,
@@ -31,7 +31,7 @@ defmodule AdyenEx.TerminalAPI.V1.CardData do
 
   def __fields__(:t) do
     [
-      CardCountryCode: :integer,
+      CardCountryCode: :string,
       EntryMode: [
         enum: [
           "RFID",
@@ -51,7 +51,7 @@ defmodule AdyenEx.TerminalAPI.V1.CardData do
       PaymentAccountRef: :string,
       PaymentBrand: :string,
       PaymentToken: {AdyenEx.TerminalAPI.V1.PaymentToken, :t},
-      ProtectedCardData: :string,
+      ProtectedCardData: {:string, "byte"},
       SensitiveCardData: {AdyenEx.TerminalAPI.V1.SensitiveCardData, :t}
     ]
   end
