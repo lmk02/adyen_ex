@@ -5,10 +5,10 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueResult do
 
   @type t :: %__MODULE__{
           Currency: String.t() | nil,
-          EanUpc: integer | nil,
+          EanUpc: String.t() | nil,
           HostTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           ItemAmount: number | nil,
-          ProductCode: integer | nil,
+          ProductCode: String.t() | nil,
           StoredValueAccountStatus: AdyenEx.TerminalAPI.V1.StoredValueAccountStatus.t() | nil,
           StoredValueTransactionType: String.t()
         }
@@ -30,10 +30,10 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueResult do
   def __fields__(:t) do
     [
       Currency: :string,
-      EanUpc: :integer,
+      EanUpc: :string,
       HostTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
-      ItemAmount: :number,
-      ProductCode: :integer,
+      ItemAmount: {:number, "double"},
+      ProductCode: :string,
       StoredValueAccountStatus: {AdyenEx.TerminalAPI.V1.StoredValueAccountStatus, :t},
       StoredValueTransactionType:
         {:enum, ["Reserve", "Activate", "Load", "Unload", "Reverse", "Duplicate"]}

@@ -23,7 +23,7 @@ defmodule AdyenEx.TerminalAPI.V1.ReversalResponse do
       POIData: {AdyenEx.TerminalAPI.V1.POIData, :t},
       PaymentReceipt: [{AdyenEx.TerminalAPI.V1.PaymentReceipt, :t}],
       Response: {AdyenEx.TerminalAPI.V1.Response, :t},
-      ReversedAmount: :number
+      ReversedAmount: {:number, "double"}
     ]
   end
 end

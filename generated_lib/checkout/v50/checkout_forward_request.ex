@@ -11,7 +11,7 @@ defmodule AdyenEx.Checkout.V50.CheckoutForwardRequest do
           options: AdyenEx.Checkout.V50.CheckoutForwardRequestOptions.t() | nil,
           paymentMethod: AdyenEx.Checkout.V50.CheckoutForwardRequestCard.t() | nil,
           request: AdyenEx.Checkout.V50.CheckoutOutgoingForwardRequest.t(),
-          shopperReference: String.t(),
+          shopperReference: String.t() | nil,
           storedPaymentMethodId: String.t() | nil
         }
 

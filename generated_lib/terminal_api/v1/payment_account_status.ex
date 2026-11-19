@@ -19,7 +19,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentAccountStatus do
   def __fields__(:t) do
     [
       Currency: :string,
-      CurrentBalance: :number,
+      CurrentBalance: {:number, "double"},
       PaymentAcquirerData: {AdyenEx.TerminalAPI.V1.PaymentAcquirerData, :t},
       PaymentInstrumentData: {AdyenEx.TerminalAPI.V1.PaymentInstrumentData, :t}
     ]

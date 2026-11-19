@@ -29,6 +29,7 @@ defmodule AdyenEx.Checkout.V72.CardDonations do
           srcDigitalCardId: String.t() | nil,
           srcScheme: String.t() | nil,
           srcTokenReference: String.t() | nil,
+          storeClickToPayProfile: boolean | nil,
           storedPaymentMethodId: String.t() | nil,
           threeDS2SdkVersion: String.t() | nil,
           type: String.t() | nil
@@ -60,6 +61,7 @@ defmodule AdyenEx.Checkout.V72.CardDonations do
     :srcDigitalCardId,
     :srcScheme,
     :srcTokenReference,
+    :storeClickToPayProfile,
     :storedPaymentMethodId,
     :threeDS2SdkVersion,
     :type
@@ -96,6 +98,7 @@ defmodule AdyenEx.Checkout.V72.CardDonations do
       srcDigitalCardId: :string,
       srcScheme: :string,
       srcTokenReference: :string,
+      storeClickToPayProfile: :boolean,
       storedPaymentMethodId: :string,
       threeDS2SdkVersion: :string,
       type: {:enum, ["bcmc", "scheme", "networkToken", "giftcard", "card", "clicktopay"]}

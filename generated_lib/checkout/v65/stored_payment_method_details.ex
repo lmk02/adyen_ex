@@ -41,6 +41,7 @@ defmodule AdyenEx.Checkout.V65.StoredPaymentMethodDetails do
            "bcmc_mobile_app",
            "momo_wallet",
            "momo_wallet_app",
+           "revolutpay",
            "paymaya_wallet",
            "grabpay_SG",
            "grabpay_MY",

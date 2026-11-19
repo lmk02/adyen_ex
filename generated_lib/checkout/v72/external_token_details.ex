@@ -9,6 +9,7 @@ defmodule AdyenEx.Checkout.V72.ExternalTokenDetails do
           expiryYear: String.t() | nil,
           holderName: String.t() | nil,
           number: String.t() | nil,
+          storeClickToPayProfile: boolean | nil,
           storedPaymentMethodId: String.t(),
           subtype: String.t(),
           type: String.t()
@@ -20,6 +21,7 @@ defmodule AdyenEx.Checkout.V72.ExternalTokenDetails do
     :expiryYear,
     :holderName,
     :number,
+    :storeClickToPayProfile,
     :storedPaymentMethodId,
     :subtype,
     :type
@@ -36,6 +38,7 @@ defmodule AdyenEx.Checkout.V72.ExternalTokenDetails do
       expiryYear: :string,
       holderName: :string,
       number: :string,
+      storeClickToPayProfile: :boolean,
       storedPaymentMethodId: :string,
       subtype: {:const, "hilton"},
       type: {:const, "externalToken"}

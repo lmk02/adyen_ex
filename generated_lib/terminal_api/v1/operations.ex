@@ -118,35 +118,6 @@ defmodule AdyenEx.TerminalAPI.V1.Operations do
   end
 
   @doc """
-  CardReaderAPDU Request
-
-  It contains the APDU request to send to the chip of the card, and a possible invitation message to display on the CashierInterface or the CustomerInterface.
-  Content of the Card Reader APDU Request message.
-
-  ## Request Body
-
-  **Content Types**: `application/json`
-  """
-  @spec cardreaderapdu_post(
-          body :: AdyenEx.TerminalAPI.V1.CardReaderAPDURequest.t(),
-          opts :: keyword
-        ) :: {:ok, AdyenEx.TerminalAPI.V1.CardReaderAPDUResponse.t()} | :error
-  def cardreaderapdu_post(body, opts \\ []) do
-    client = opts[:client] || @default_client
-
-    client.request(%{
-      args: [body: body],
-      call: {AdyenEx.TerminalAPI.V1.Operations, :cardreaderapdu_post},
-      url: "/cardreaderapdu",
-      body: body,
-      method: :post,
-      request: [{"application/json", {AdyenEx.TerminalAPI.V1.CardReaderAPDURequest, :t}}],
-      response: [{200, {AdyenEx.TerminalAPI.V1.CardReaderAPDUResponse, :t}}],
-      opts: opts
-    })
-  end
-
-  @doc """
   Diagnosis Request
 
   It conveys Information related to the target POI for which the diagnosis is requested.

@@ -22,7 +22,7 @@ defmodule AdyenEx.BalancePlatform.V2.BalancePlatformConfiguration do
           retainedAmount: integer | nil,
           updatedAt: DateTime.t() | nil,
           userSettlementDelay: integer,
-          userSettlementTime: AdyenEx.BalancePlatform.V2.LocalTime.t(),
+          userSettlementTime: String.t(),
           userSettlementTimeZone: String.t()
         }
 
@@ -73,7 +73,7 @@ defmodule AdyenEx.BalancePlatform.V2.BalancePlatformConfiguration do
       retainedAmount: {:integer, "int64"},
       updatedAt: {:string, "date-time"},
       userSettlementDelay: {:integer, "int32"},
-      userSettlementTime: {AdyenEx.BalancePlatform.V2.LocalTime, :t},
+      userSettlementTime: :string,
       userSettlementTimeZone: :string
     ]
   end

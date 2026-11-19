@@ -20,12 +20,12 @@ defmodule AdyenEx.TerminalAPI.V1.CurrencyConversion do
 
   def __fields__(:t) do
     [
-      Commission: :number,
+      Commission: {:number, "double"},
       ConvertedAmount: {AdyenEx.TerminalAPI.V1.ConvertedAmount, :t},
       CustomerApprovedFlag: :boolean,
       Declaration: :string,
-      Markup: :number,
-      Rate: :number
+      Markup: {:number, "double"},
+      Rate: {:number, "double"}
     ]
   end
 end

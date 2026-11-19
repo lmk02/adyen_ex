@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.DiagnosisRequest do
   """
 
   @type t :: %__MODULE__{
-          AcquirerID: [integer] | nil,
+          AcquirerID: [String.t()] | nil,
           HostDiagnosisFlag: boolean | nil,
           POIID: String.t() | nil
         }
@@ -16,6 +16,6 @@ defmodule AdyenEx.TerminalAPI.V1.DiagnosisRequest do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [AcquirerID: [:integer], HostDiagnosisFlag: :boolean, POIID: :string]
+    [AcquirerID: [:string], HostDiagnosisFlag: :boolean, POIID: :string]
   end
 end

@@ -32,7 +32,9 @@ defmodule AdyenEx.Checkout.V40.AfterpayDetails do
       deliveryAddress: :string,
       personalDetails: :string,
       recurringDetailReference: :string,
-      type: {:enum, ["afterpay_default", "afterpaytouch", "afterpay_b2b", "clearpay"]}
+      type:
+        {:enum,
+         ["afterpay_default", "afterpaytouch", "afterpaytouch_US", "afterpay_b2b", "clearpay"]}
     ]
   end
 end
