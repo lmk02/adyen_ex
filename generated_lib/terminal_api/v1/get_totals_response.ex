@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.GetTotalsResponse do
   """
 
   @type t :: %__MODULE__{
-          POIReconciliationID: integer,
+          POIReconciliationID: String.t(),
           Response: AdyenEx.TerminalAPI.V1.Response.t(),
           TransactionTotals: [AdyenEx.TerminalAPI.V1.TransactionTotals.t()] | nil
         }
@@ -17,7 +17,7 @@ defmodule AdyenEx.TerminalAPI.V1.GetTotalsResponse do
 
   def __fields__(:t) do
     [
-      POIReconciliationID: :integer,
+      POIReconciliationID: :string,
       Response: {AdyenEx.TerminalAPI.V1.Response, :t},
       TransactionTotals: [{AdyenEx.TerminalAPI.V1.TransactionTotals, :t}]
     ]

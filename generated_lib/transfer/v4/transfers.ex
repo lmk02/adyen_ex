@@ -47,6 +47,10 @@ defmodule AdyenEx.Transfer.V4.Transfers do
       
       - **card**: A transfer involving a third-party card.
       
+      - **grants**: A transfer related to a capital grant, such as a disbursement or a repayment.
+      
+      - **interest**: A transfer that settles accrued [interest](https://docs.adyen.com/business-accounts/earn-returns) on a business account.
+      
       - **internal**: A transfer between [balance accounts](https://docs.adyen.com/api-explorer/balanceplatform/latest/post/balanceAccounts#responses-200-id) within your platform.
       
       - **issuedCard**: A transfer initiated by an Adyen-issued card.

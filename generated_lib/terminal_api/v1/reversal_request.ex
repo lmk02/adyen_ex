@@ -20,7 +20,7 @@ defmodule AdyenEx.TerminalAPI.V1.ReversalRequest do
     [
       OriginalPOITransaction: {AdyenEx.TerminalAPI.V1.OriginalPOITransaction, :t},
       ReversalReason: {:enum, ["CustCancel", "MerchantCancel", "Malfunction", "Unable2Compl"]},
-      ReversedAmount: :number,
+      ReversedAmount: {:number, "double"},
       SaleData: {AdyenEx.TerminalAPI.V1.SaleData, :t}
     ]
   end

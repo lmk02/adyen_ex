@@ -12,6 +12,6 @@ defmodule AdyenEx.TerminalAPI.V1.ConvertedAmount do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [AmountValue: :number, Currency: :string]
+    [AmountValue: {:number, "double"}, Currency: :string]
   end
 end

@@ -27,12 +27,12 @@ defmodule AdyenEx.TerminalAPI.V1.AmountsResp do
 
   def __fields__(:t) do
     [
-      AuthorizedAmount: :number,
-      CashBackAmount: :number,
+      AuthorizedAmount: {:number, "double"},
+      CashBackAmount: {:number, "double"},
       Currency: :string,
-      TipAmount: :number,
-      TotalFeesAmount: :number,
-      TotalRebatesAmount: :number
+      TipAmount: {:number, "double"},
+      TotalFeesAmount: {:number, "double"},
+      TotalRebatesAmount: {:number, "double"}
     ]
   end
 end

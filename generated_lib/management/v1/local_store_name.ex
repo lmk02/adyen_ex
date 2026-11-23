@@ -1,0 +1,17 @@
+defmodule AdyenEx.Management.V1.LocalStoreName do
+  @moduledoc """
+  Provides struct and type for a LocalStoreName
+  """
+
+  @type t :: %__MODULE__{script: String.t(), value: String.t()}
+
+  defstruct [:script, :value]
+
+  @doc false
+  @spec __fields__(atom) :: keyword
+  def __fields__(type \\ :t)
+
+  def __fields__(:t) do
+    [script: :string, value: :string]
+  end
+end

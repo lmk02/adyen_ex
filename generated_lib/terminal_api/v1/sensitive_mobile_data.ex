@@ -3,7 +3,7 @@ defmodule AdyenEx.TerminalAPI.V1.SensitiveMobileData do
   Provides struct and type for a SensitiveMobileData
   """
 
-  @type t :: %__MODULE__{IMEI: integer | nil, IMSI: integer | nil, MSISDN: integer}
+  @type t :: %__MODULE__{IMEI: String.t() | nil, IMSI: String.t() | nil, MSISDN: String.t()}
 
   defstruct [:IMEI, :IMSI, :MSISDN]
 
@@ -12,6 +12,6 @@ defmodule AdyenEx.TerminalAPI.V1.SensitiveMobileData do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [IMEI: :integer, IMSI: :integer, MSISDN: :integer]
+    [IMEI: :string, IMSI: :string, MSISDN: :string]
   end
 end

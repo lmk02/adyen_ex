@@ -5,10 +5,10 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueData do
 
   @type t :: %__MODULE__{
           Currency: String.t() | nil,
-          EanUpc: integer | nil,
+          EanUpc: String.t() | nil,
           ItemAmount: number | nil,
           OriginalPOITransaction: AdyenEx.TerminalAPI.V1.OriginalPOITransaction.t() | nil,
-          ProductCode: integer | nil,
+          ProductCode: String.t() | nil,
           StoredValueAccountID: AdyenEx.TerminalAPI.V1.StoredValueAccountID.t() | nil,
           StoredValueProvider: String.t() | nil,
           StoredValueTransactionType: String.t()
@@ -32,10 +32,10 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueData do
   def __fields__(:t) do
     [
       Currency: :string,
-      EanUpc: :integer,
-      ItemAmount: :number,
+      EanUpc: :string,
+      ItemAmount: {:number, "double"},
       OriginalPOITransaction: {AdyenEx.TerminalAPI.V1.OriginalPOITransaction, :t},
-      ProductCode: :integer,
+      ProductCode: :string,
       StoredValueAccountID: {AdyenEx.TerminalAPI.V1.StoredValueAccountID, :t},
       StoredValueProvider: :string,
       StoredValueTransactionType:

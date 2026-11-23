@@ -81,7 +81,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentResult do
            "IssuerInstalment",
            "PaidOut"
          ]},
-      ProtectedSignature: :string,
+      ProtectedSignature: {:string, "byte"},
       ValidityDate: {:string, "date"}
     ]
   end

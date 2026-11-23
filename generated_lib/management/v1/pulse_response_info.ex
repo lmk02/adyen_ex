@@ -4,12 +4,13 @@ defmodule AdyenEx.Management.V1.PulseResponseInfo do
   """
 
   @type t :: %__MODULE__{
+          networkProcessingMode: String.t() | nil,
           processingType: String.t() | nil,
           transactionDescription:
             AdyenEx.Management.V1.TransactionDescriptionResponseInfo.t() | nil
         }
 
-  defstruct [:processingType, :transactionDescription]
+  defstruct [:networkProcessingMode, :processingType, :transactionDescription]
 
   @doc false
   @spec __fields__(atom) :: keyword
@@ -17,6 +18,7 @@ defmodule AdyenEx.Management.V1.PulseResponseInfo do
 
   def __fields__(:t) do
     [
+      networkProcessingMode: {:enum, ["auth", "sale"]},
       processingType: {:enum, ["billpay", "ecom", "pos"]},
       transactionDescription: {AdyenEx.Management.V1.TransactionDescriptionResponseInfo, :t}
     ]

@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentAcquirerData do
   """
 
   @type t :: %__MODULE__{
-          AcquirerID: integer | nil,
+          AcquirerID: String.t() | nil,
           AcquirerPOIID: String.t(),
           AcquirerTransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t() | nil,
           ApprovalCode: String.t() | nil,
@@ -27,7 +27,7 @@ defmodule AdyenEx.TerminalAPI.V1.PaymentAcquirerData do
 
   def __fields__(:t) do
     [
-      AcquirerID: :integer,
+      AcquirerID: :string,
       AcquirerPOIID: :string,
       AcquirerTransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t},
       ApprovalCode: :string,

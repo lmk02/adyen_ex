@@ -5,8 +5,8 @@ defmodule AdyenEx.TerminalAPI.V1.Input do
 
   @type t :: %__MODULE__{
           ConfirmedFlag: boolean | nil,
-          DigitInput: integer | nil,
-          FunctionKey: integer | nil,
+          DigitInput: String.t() | nil,
+          FunctionKey: String.t() | nil,
           InputCommand: String.t(),
           MenuEntryNumber: [integer] | nil,
           Password: String.t() | nil,
@@ -30,8 +30,8 @@ defmodule AdyenEx.TerminalAPI.V1.Input do
   def __fields__(:t) do
     [
       ConfirmedFlag: :boolean,
-      DigitInput: :integer,
-      FunctionKey: :integer,
+      DigitInput: :string,
+      FunctionKey: :string,
       InputCommand:
         {:enum,
          [
@@ -46,7 +46,7 @@ defmodule AdyenEx.TerminalAPI.V1.Input do
            "Password"
          ]},
       MenuEntryNumber: [:integer],
-      Password: :string,
+      Password: {:string, "byte"},
       TextInput: :string
     ]
   end

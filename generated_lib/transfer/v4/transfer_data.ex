@@ -96,7 +96,18 @@ defmodule AdyenEx.Transfer.V4.TransferData do
       balanceAccount: {AdyenEx.Transfer.V4.ResourceReference, :t},
       balancePlatform: :string,
       balances: [{AdyenEx.Transfer.V4.BalanceMutation, :t}],
-      category: {:enum, ["bank", "card", "internal", "issuedCard", "platformPayment", "topUp"]},
+      category:
+        {:enum,
+         [
+           "bank",
+           "card",
+           "grants",
+           "interest",
+           "internal",
+           "issuedCard",
+           "platformPayment",
+           "topUp"
+         ]},
       categoryData:
         {:union,
          [
@@ -338,6 +349,7 @@ defmodule AdyenEx.Transfer.V4.TransferData do
            "balanceAdjustment",
            "balanceRollover",
            "balanceMigration",
+           "interestPayout",
            "fxSell",
            "fxBuy"
          ]},

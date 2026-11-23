@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.POIData do
   """
 
   @type t :: %__MODULE__{
-          POIReconciliationID: integer | nil,
+          POIReconciliationID: String.t() | nil,
           POITransactionID: AdyenEx.TerminalAPI.V1.TransactionIDType.t()
         }
 
@@ -16,7 +16,7 @@ defmodule AdyenEx.TerminalAPI.V1.POIData do
 
   def __fields__(:t) do
     [
-      POIReconciliationID: :integer,
+      POIReconciliationID: :string,
       POITransactionID: {AdyenEx.TerminalAPI.V1.TransactionIDType, :t}
     ]
   end

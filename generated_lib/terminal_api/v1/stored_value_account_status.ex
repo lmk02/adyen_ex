@@ -16,7 +16,7 @@ defmodule AdyenEx.TerminalAPI.V1.StoredValueAccountStatus do
 
   def __fields__(:t) do
     [
-      CurrentBalance: :number,
+      CurrentBalance: {:number, "double"},
       StoredValueAccountID: {AdyenEx.TerminalAPI.V1.StoredValueAccountID, :t}
     ]
   end

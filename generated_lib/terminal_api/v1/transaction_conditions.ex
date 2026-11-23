@@ -4,7 +4,7 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionConditions do
   """
 
   @type t :: %__MODULE__{
-          AcquirerID: [integer] | nil,
+          AcquirerID: [String.t()] | nil,
           AllowedLoyaltyBrand: [String.t()] | nil,
           AllowedPaymentBrand: [String.t()] | nil,
           CustomerLanguage: String.t() | nil,
@@ -33,7 +33,7 @@ defmodule AdyenEx.TerminalAPI.V1.TransactionConditions do
 
   def __fields__(:t) do
     [
-      AcquirerID: [:integer],
+      AcquirerID: [:string],
       AllowedLoyaltyBrand: [:string],
       AllowedPaymentBrand: [:string],
       CustomerLanguage: :string,
