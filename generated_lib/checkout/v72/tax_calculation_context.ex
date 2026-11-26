@@ -17,7 +17,7 @@ defmodule AdyenEx.Checkout.V72.TaxCalculationContext do
 
   def __fields__(:t) do
     [
-      calculationType: {:const, "LRS_TCS"},
+      calculationType: {:const, "lrsTcs"},
       lrs: {AdyenEx.Checkout.V72.LrsContext, :t},
       taxCountryCode: :string
     ]

@@ -13,8 +13,8 @@ defmodule AdyenEx.Checkout.V72.LrsContext do
 
   def __fields__(:t) do
     [
-      remittancePurpose: {:enum, ["TOUR_PROGRAMME", "TRAVEL_NON_TOUR", "EDUCATION", "DIGITAL"]},
-      sublimitStatus: {:enum, ["EXCEEDED", "NOT_EXCEEDED"]}
+      remittancePurpose: {:enum, ["tourProgramme", "travelNonTour", "education", "digital"]},
+      sublimitStatus: {:enum, ["exceeded", "notExceeded"]}
     ]
   end
 end

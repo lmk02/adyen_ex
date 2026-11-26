@@ -15,6 +15,6 @@ defmodule AdyenEx.Checkout.V72.TaxCalculationComponent do
   def __fields__(type \\ :t)
 
   def __fields__(:t) do
-    [taxAmount: {AdyenEx.Checkout.V72.TaxAmount, :t}, type: {:const, "LRS_TCS"}]
+    [taxAmount: {AdyenEx.Checkout.V72.TaxAmount, :t}, type: {:const, "lrsTcs"}]
   end
 end
