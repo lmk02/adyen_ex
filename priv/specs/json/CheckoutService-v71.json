@@ -5842,6 +5842,16 @@
             "type" : "string",
             "description" : "The merchant account identifier, with which you want to process the transaction."
           },
+          "shopperReference" : {
+            "type" : "string",
+            "description" : "Your reference to uniquely identify the shopper that owns the `storedPaymentMethodId`. Required when `storedPaymentMethodId` is provided.",
+            "maxLength" : 256
+          },
+          "storedPaymentMethodId" : {
+            "type" : "string",
+            "description" : "The unique identifier of the stored payment method to look up, as returned by [`/storedPaymentMethods`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/get/storedPaymentMethods). Use this to get the details of a stored card that is not present at charge time.\n\nWhen provided, `shopperReference` is required and you must not include `cardNumber` or `encryptedCardNumber`.",
+            "maxLength" : 64
+          },
           "supportedBrands" : {
             "type" : "array",
             "description" : "The card brands you support. This is the [`brands`](https://docs.adyen.com/api-explorer/Checkout/latest/post/paymentMethods#responses-200-paymentMethods-brands) array from your [`/paymentMethods`](https://docs.adyen.com/api-explorer/#/CheckoutService/latest/post/paymentMethods) response. \n\nIf not included, our API uses the ones configured for your merchant account and, if provided, the country code.",

@@ -8,10 +8,20 @@ defmodule AdyenEx.Checkout.V46.CardDetailsRequest do
           countryCode: String.t() | nil,
           encryptedCardNumber: String.t() | nil,
           merchantAccount: String.t(),
+          shopperReference: String.t() | nil,
+          storedPaymentMethodId: String.t() | nil,
           supportedBrands: [String.t()] | nil
         }
 
-  defstruct [:cardNumber, :countryCode, :encryptedCardNumber, :merchantAccount, :supportedBrands]
+  defstruct [
+    :cardNumber,
+    :countryCode,
+    :encryptedCardNumber,
+    :merchantAccount,
+    :shopperReference,
+    :storedPaymentMethodId,
+    :supportedBrands
+  ]
 
   @doc false
   @spec __fields__(atom) :: keyword
@@ -23,6 +33,8 @@ defmodule AdyenEx.Checkout.V46.CardDetailsRequest do
       countryCode: :string,
       encryptedCardNumber: :string,
       merchantAccount: :string,
+      shopperReference: :string,
+      storedPaymentMethodId: :string,
       supportedBrands: [:string]
     ]
   end
